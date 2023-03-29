@@ -1,0 +1,171 @@
+---
+import "../styles/style.scss";
+import "../styles/settings/_design.scss";
+---
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Desing system</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <main id="content" role="main">
+      <h1 class="title text--center">Design System</h1>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">Colors</h1>
+          <div class="colors">
+            <div class="color">
+              <div class="color__box" style="background-color: #00494F;">
+                <p class="color__hex" style="color: white;">#00494F</p>
+              </div>
+              <p class="color__variable">$color-dark-green</p>
+            </div>
+            <div class="color">
+              <div class="color__box" style="background-color: #48D597;">
+                <p class="color__hex" style="color: white;">#48D597</p>
+              </div>
+              <p class="color__variable">$color-green</p>
+            </div>
+            <div class="color">
+              <div class="color__box" style="background-color: #006F97;">
+                <p class="color__hex" style="color: white;">#006F97</p>
+              </div>
+              <p class="color__variable">$color-blue</p>
+            </div>
+            <div class="color">
+              <div class="color__box" style="background-color: #B41E8C;">
+                <p class="color__hex" style="color: white;">#B41E8C</p>
+              </div>
+              <p class="color__variable">$color-dark-pink</p>
+            </div>
+            <div class="color">
+              <div class="color__box" style="background-color: #DFDF00;">
+                <p class="color__hex">#DFDF00</p>
+              </div>
+              <p class="color__variable">$color-dark-yellow</p>
+            </div>
+            <div class="color">
+              <div class="color__box" style="background-color: #626469;">
+                <p class="color__hex" style="color: white;">#626469</p>
+              </div>
+              <p class="color__variable">$color-dark-gray</p>
+            </div>
+            <div class="color">
+              <div class="color__box" style="background-color: #E2E7EA;">
+                <p class="color__hex">#E2E7EA</p>
+              </div>
+              <p class="color__variable">$color-bright-gray</p>
+            </div>
+            <div class="color">
+              <div class="color__box" style="background-color: #000000;">
+                <p class="color__hex" style="color: white;">#000000</p>
+              </div>
+              <p class="color__variable">$color-black</p>
+            </div>
+            <div class="color">
+              <div
+                class="color__box"
+                style="background-color: #ffffff; border: 1px solid #000"
+              >
+                <p class="color__hex">#ffffff</p>
+              </div>
+              <p class="color__variable">$color-white</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">Fonts</h1>
+
+          <div class="fonts-preview">
+            <h2>Roboto</h2>
+            <p>AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz</p>
+            <p>1234567890</p>
+            <p>!@#$%^&*(</p>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Tag</th>
+                <th>Weight</th>
+                <th>Size</th>
+                <th>Line height</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="h1">
+                <td>h1</td>
+                <td>Bold</td>
+                <td>40px</td>
+                <td>46.88px</td>
+              </tr>
+              <tr class="h2">
+                <td>h2</td>
+                <td>600</td>
+                <td>30px</td>
+                <td>35.16px</td>
+              </tr>
+              <tr class="h3">
+                <td>h3</td>
+                <td>500</td>
+                <td>24px</td>
+                <td>28.13px</td>
+              </tr>
+              <tr class="h4">
+                <td>h4</td>
+                <td>500</td>
+                <td>20px</td>
+                <td>23.44px</td>
+              </tr>
+              <tr class="h5">
+                <td>h5</td>
+                <td>500</td>
+                <td>16px</td>
+                <td>24px</td>
+              </tr>
+              <tr class="p">
+                <td>p</td>
+                <td>400</td>
+                <td>18px</td>
+                <td>21.09px</td>
+              </tr>
+              <tr class="small">
+                <td>small</td>
+                <td>300</td>
+                <td>12px</td>
+                <td>14.06px</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">Buttons</h1>
+          <div class="buttons">
+            <!-- Default button -->
+            <button class="button"> Button Primary / Default</button>
+            <button class="button button--secondary"> Button Secondary</button>
+            <button class="button button--tertiary"> Tertiary Button</button>
+            <button class="button button--drawer" aria-expanded="false">
+              Dwawer Button Collapsed</button
+            >
+            <button class="button button--drawer" aria-expanded="true">
+              Dwawer Button Expanded</button
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/assets/js/script.js" type="module"></script>
+  </body>
+</html>
