@@ -1,0 +1,119 @@
+.button {
+  background-color: $color-dark-pink;
+  border-radius: 1.5625rem;
+  color: $color-white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @include flex-gap(1rem);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.125rem;
+  max-height: 3.125rem;
+  padding: .9375rem 1.25rem;
+
+  @include transition('all, 0.4s, ease-in-out');
+
+  &::after {
+    content: '';
+    background-image: url('/assets/icons/icon-arrow-white.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    display: inline-block;
+    @include transition('all, 0.4s, ease-in-out');
+
+    height: 1.125rem;
+    width: 1.125rem;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-white;
+    color: $color-dark-pink;
+
+    &::after {
+      background-image: url('/assets/icons/icon-arrow-pink.svg');
+    }
+  }
+
+
+  // Secondary
+  &--secondary {
+    background-color: $color-dark-green;
+    color: $color-white;
+
+    &:hover,
+    &:focus {
+      color: $color-dark-green;
+
+      &::after {
+        background-image: url('/assets/icons/icon-arrow-green.svg');
+      }
+    }
+  }
+
+
+  // Tertiary
+  &--tertiary {
+    background-color: $color-blue;
+    color: $color-white;
+
+    &::after {
+      content: '';
+      background-image: url('/assets/icons/icon-arrows-expand.svg');
+      height: 1.875rem;
+      width: 1.875rem;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-blue;
+
+      &::after {
+        background-image: url('/assets/icons/icon-arrows-expand-blue.svg');
+      }
+    }
+  }
+
+  // Drawer
+  &--drawer {
+    background-color: $color-blue;
+    border-top-right-radius: 1.875rem;
+    border-top-left-radius: 1.875rem;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    color: $color-white;
+
+    &::after {
+      content: '';
+      background-image: url('/assets/icons/icon-arrow-down.svg');
+      height: 1.1875rem;
+      width: 1.1875rem;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-blue;
+      color: $color-white;
+
+      &::after {
+        background-image: url('/assets/icons/icon-arrow-down.svg');
+      }
+    }
+
+
+    &[aria-expanded='true'] {
+
+      &::after {
+        background-image: url('/assets/icons/icon-arrow-up.svg');
+      }
+    }
+
+  }
+
+
+}

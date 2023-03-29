@@ -1,0 +1,60 @@
+// Utility classes file
+.mobile--only {
+  display: block;
+
+  @include media('desktop') {
+    display: none;
+  }
+}
+
+.desktop--only {
+  display: none;
+
+  @include media('desktop') {
+    display: block;
+  }
+}
+
+.text-transform--none {
+  text-transform: none;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.text--left {
+  text-align: left;
+}
+
+.text--justify {
+  text-align: justify;
+}
+
+.text--nowrap {
+  white-space: nowrap;
+}
+
+.text--decoration-underline {
+  text-decoration: underline !important;
+}
+
+.color--yellow {
+  color: $color-dark-yellow;
+}
+
+.color--white {
+  color: $color-white;
+}
