@@ -74,3 +74,13 @@ ul li {
 ul li::marker {
   display: none;
 }
+
+main {
+  ul li {
+    list-style-type: disc;
+  }
+
+  ul li::marker {
+    color: $color-green;
+  }
+}
