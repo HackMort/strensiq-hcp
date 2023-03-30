@@ -39,12 +39,10 @@ document.addEventListener('DOMContentLoaded', function (e) {
         isiHeader.classList.add('is--fixed')
         if (entry.isIntersecting) {
           isiHeader.classList.remove('is--fixed', 'is--open')
-          console.log('open')
         } else {
           if (entry.boundingClientRect.top < 0) {
-            isiHeader.classList.add('is--fixed')
+            isiHeader.classList.remove('is--fixed')
           }
-          isiHeader.classList.add('is--fixed')
         }
       })
     }

@@ -33,7 +33,9 @@
 
   .isi__section.grid {
     display: grid;
+    padding-top: .9375rem;
     padding-right: 1.5rem;
+    padding-bottom: .9375rem;
     padding-left: 1.5rem;
 
     @media screen and (min-width: 1024px) {
@@ -82,7 +84,6 @@
     font-size: 1.125rem;
     font-weight: 600;
     line-height: 1.6875rem;
-    margin-top: .9375rem;
     margin-bottom: 0.25rem;
   }
 
