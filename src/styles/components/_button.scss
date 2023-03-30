@@ -13,7 +13,7 @@
   line-height: 1.125rem;
   max-height: 3.125rem;
   padding: .9375rem 1.25rem;
-
+  width: max-content;
   @include transition('all, 0.4s, ease-in-out');
 
   &::after {
@@ -113,6 +113,25 @@
       }
     }
 
+  }
+
+  // White
+  &--white {
+    background-color: $color-white;
+    color: $color-dark-green;
+
+    &::after {
+      background-image: url('/assets/icons/icon-arrow-green.svg');
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-dark-green;
+
+      &::after {
+        background-image: url('/assets/icons/icon-arrow-green.svg');
+      }
+    }
   }
 
 
