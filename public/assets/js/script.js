@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
    * @see https://caniuse.com/#feat=intersectionobserver
   */
   function isiHeaderFixed () {
-    const mobileMedia = window.matchMedia('(min-width: 100px)')
+    // const mobileMedia = window.matchMedia('(min-width: 100px)')
     const isiHeader = document.querySelector('.isi__section_header')
     const isiSection = document.querySelector('.isi')
     const observerOptions = {
@@ -30,12 +30,13 @@ document.addEventListener('DOMContentLoaded', function (e) {
     }
     const isiObserver = new window.IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-        if (!mobileMedia.matches) {
-          isiHeader.classList.remove('is--fixed')
-          return
-        } else {
-          isiHeader.classList.add('is--fixed')
-        }
+        // if (!mobileMedia.matches) {
+        //   isiHeader.classList.remove('is--fixed')
+        //   return
+        // } else {
+        // isiHeader.classList.add('is--fixed')
+        // }
+        isiHeader.classList.add('is--fixed')
         if (entry.isIntersecting) {
           isiHeader.classList.remove('is--fixed', 'is--open')
           console.log('open')
