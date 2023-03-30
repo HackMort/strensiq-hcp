@@ -4,6 +4,7 @@ import ISI from "../components/ISI.astro";
 import Footer from "../components/Footer.astro";
 import References from "../components/References.astro";
 import CTA from "../components/CTA.astro";
+import Header from "../components/Header.astro";
 export interface Props {
   title: string;
   displayReferences?: boolean;
@@ -23,6 +24,7 @@ const { title, displayReferences, displayCTA } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <Header />
     <main class="main">
       <slot />
       <div style="height: 100vh"></div>
