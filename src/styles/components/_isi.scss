@@ -12,6 +12,14 @@
     line-height: 1.25rem;
   }
 
+  ul li {
+    list-style-type: disc;
+  }
+
+  ul li::marker {
+    color: $color-green;
+  }
+
   p {
     font-size: inherit;
     font-weight: inherit;
@@ -25,16 +33,13 @@
 
   .isi__section.grid {
     display: grid;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
 
     @media screen and (min-width: 1024px) {
       grid-template-columns: 1fr 26.75rem;
       gap: 2.75rem;
     }
-  }
-
-  .isi__section_content {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
   }
 
   &__section_header_inner {
