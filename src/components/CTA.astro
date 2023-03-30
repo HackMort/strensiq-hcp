@@ -1,0 +1,14 @@
+---
+type Props = {
+  heading: string;
+  linkText: string;
+  linkUrl: string;
+};
+
+const { heading, linkText, LinkUrl } = Astro.props;
+---
+
+<div class="cta">
+  <h3 class="cta__heading">{heading}</h3>
+  <a class="button button--white cta__link" href="{linkUrl}">{linkText}</a>
+</div>
