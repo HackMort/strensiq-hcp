@@ -1,11 +1,15 @@
 .site__header {
   background-color: $color-white;
 
+  @media screen and (min-width: 1100px) {
+    box-shadow: 0px 4px 4px rgba(221, 221, 221, 0.8);
+  }
 
   .top_bar {
     background-color: $color-dark-green;
     color: $color-white;
-    padding: .8125rem 1rem;
+    padding-top: .8125rem;
+    padding-bottom: .8125rem;
     width: 100%;
 
     .header__links {
@@ -25,8 +29,8 @@
   }
 
   .main_bar {
-    padding-top: .3125rem;
-    padding-bottom: .3125rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
 
     .wrapper {
       display: grid;
@@ -48,6 +52,15 @@
   .mobile {
     @media screen and (min-width: 1100px) {
       display: none;
+    }
+
+    .top_bar {
+      .header__links {
+        @media screen and (min-width: 600px) {
+          justify-content: center;
+          font-size: .875rem;
+        }
+      }
     }
 
     .main_bar {
@@ -114,16 +127,34 @@
     }
 
     .top_bar {
+      padding-right: 0;
+      padding-left: 0;
+
       .header__links {
+        font-size: .875rem;
+        line-height: 1.4rem;
+        font-weight: 400;
         justify-content: flex-end;
       }
     }
 
     .main_bar {
+      padding-top: .875rem;
+      padding-bottom: .875rem;
 
       .wrapper {
-        grid-template-columns: 127px 1fr 191px;
+        grid-template-columns: 188px 1fr 191px;
         align-items: center;
+        gap: 1.5rem;
+
+        @media screen and (min-width: 1365px) {
+          gap: 60px;
+        }
+
+        @media screen and (min-width: 1440px) {
+          gap: 80px;
+        }
+
       }
 
       .nav__menu {
@@ -139,6 +170,10 @@
           flex: 1 1 auto;
           text-align: center;
 
+          // @media screen and (min-width: 1200px) {
+          //   flex: 0 1 auto;
+          // }
+
 
           &.has__sub_menu {
 
@@ -149,6 +184,14 @@
               border-top: 2px solid $color-dark-green;
               border-right: 2px solid $color-dark-green;
               width: 0.5rem;
+            }
+
+          }
+
+          &_link {
+            @media screen and (min-width: 1200px) {
+              font-size: 1.125rem;
+              line-height: 1.8rem;
             }
           }
 
