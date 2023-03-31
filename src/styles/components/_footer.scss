@@ -1,13 +1,26 @@
 .footer {
+  position: relative;
+  overflow: hidden;
   padding-top: .875rem;
 
   @include media('tablet') {
-    // background-image: url('/assets/vectors/footer-vector.svg');
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: 100%;
     padding-top: 2.6875rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -54%;
+      background: $color-bright-gray;
+      border-radius: 36.1168rem;
+      height: 100%;
+      transform: rotate(173deg);
+      width: 100%;
+      z-index: -1;
+    }
   }
+
+
 
   .wrapper {
     @include media('tablet') {
