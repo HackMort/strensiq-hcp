@@ -3,6 +3,7 @@ import "../styles/style.scss";
 import "../styles/settings/_design.scss";
 import References from "../components/References.astro";
 import CTA from "../components/CTA.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 ---
 
 <!DOCTYPE html>
@@ -182,6 +183,14 @@ import CTA from "../components/CTA.astro";
         <div class="section-wrapper section-wrapper--small">
           <h1 class="title">References Section</h1>
           <References />
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">
+            Cookie Banner (Clear your localStorage if you don't see it)
+          </h1>
+          <CookieBanner />
         </div>
       </section>
     </main>
