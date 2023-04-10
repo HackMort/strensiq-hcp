@@ -1,6 +1,23 @@
 .site__header {
   background-color: $color-white;
 
+  .header__inner {
+    position: relative;
+
+    &.is--sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 4;
+
+      .main_bar {
+        display: none;
+      }
+
+    }
+  }
+
   @media screen and (min-width: 1100px) {
     box-shadow: 0px 4px 4px rgba(221, 221, 221, 0.8);
   }
