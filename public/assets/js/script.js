@@ -47,6 +47,30 @@ document.addEventListener('DOMContentLoaded', function (e) {
     })
   })
 })
+
+// Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
+const header = document.querySelector('.site__header')
+const headerInner = document.querySelector('.header__inner')
+const headerHeight = header.offsetHeight
+const headerObserver = new window.IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    // I think we need to play with this 2 variables
+    // const isAbove = entry.boundingClientRect.y < entry.rootBounds.y
+    // const isBelow = entry.boundingClientRect.y > entry.rootBounds.y
+    if (!entry.isIntersecting && window.scrollY >= headerHeight) {
+      headerInner.classList.add('is--sticky')
+    } else {
+      headerInner.classList.remove('is--sticky')
+    }
+  })
+}
+, {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0
+})
+headerObserver.observe(header)
+
 /**
    * isiHeaderFixed
    * @description
