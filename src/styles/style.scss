@@ -14,3 +14,45 @@
 @import './components/_references.scss';
 @import './components/_cta.scss';
 @import './components/_footer.scss';
+@import './components/work-chart';
+
+.lets-work{
+    &__title{
+        color: $color-dark-green;
+        margin-bottom: 1.6694rem;
+
+        @include media('tablet') {
+            margin-bottom: 2.6694rem;
+        }
+    }
+
+    .work-chart{
+        margin-bottom: 1.25rem;
+        @media screen and (min-width:768px) {
+            margin-bottom: 4.25rem;
+        }
+
+        @media screen and (min-width:970px) {
+            margin-bottom: 1.25rem;
+        }
+    }
+    
+    &__charts{
+        @media screen and (min-width:970px) {
+            display: flex;
+            max-width: 64.5rem;
+            margin: auto;
+        }
+    }
+
+    .modifier{
+        p{
+            max-width: 12.125rem;
+        }
+        @media screen and (min-width:800px) {
+            p{
+                max-width: 214px;
+            }
+        }
+    }
+}
