@@ -15,16 +15,21 @@ const { heading, items } = Astro.props;
 {
   items && (
     <nav class="internal__nav">
-      <h4 class="internal__nav_heading">{heading ? heading : ""}</h4>
+      <h4
+        class="internal__nav_heading"
+        set:html={heading ? heading : "Infants/ <br/> Young Children"}
+      />
       <ul class="internal__nav_list">
         {items.map((item) => {
           const classes = item.classes ? item.classes.join(" ") : "";
-          const active = item.active ? "active" : "";
+          const active = item.active ? "is--active" : "";
           return (
             <li class={`internal__nav_list_item ${active} ${classes}`}>
-              <a href={`#${item.href}`} class="internal__nav_list_item_link">
-                {item.label}
-              </a>
+              <a
+                href={`#${item.href}`}
+                class="internal__nav_list_item_link"
+                set:html={item.label}
+              />
             </li>
           );
         })}
