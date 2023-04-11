@@ -1,0 +1,48 @@
+---
+import Navigation from "./Navigation.astro";
+---
+
+<div class="mobile">
+  <div class="top_bar">
+    <div class="wrapper">
+      <ul class="header__links">
+        <li>
+          <a href="#">ISI</a>
+        </li>
+        <li>
+          <a href="#">PI</a>
+        </li>
+        <li>
+          <a href="#">Prescribing Form</a>
+        </li>
+        <li>
+          <a href="#">Instructions for use</a>
+        </li>
+        <li>
+          <a href="#">Patient Site</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main_bar">
+    <div class="wrapper">
+      <div class="logo">
+        <a href="/">
+          <img src="/assets/images/Strensiq-Logo-Header.png" alt="Strensiq" />
+        </a>
+      </div>
+      <div class="buttons">
+        <a href="#" class="button button--primary">Request a Rep</a>
+        <!-- Menu Toggle -->
+        <button id="toggle-menu-button" class="menu__toggle">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile_navigation">
+      <Navigation />
+    </div>
+  </div>
+</div>

@@ -1,6 +1,9 @@
 ---
 import "../styles/style.scss";
 import "../styles/settings/_design.scss";
+import References from "../components/References.astro";
+import CTA from "../components/CTA.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 ---
 
 <!DOCTYPE html>
@@ -156,6 +159,7 @@ import "../styles/settings/_design.scss";
             <button class="button"> Button Primary / Default</button>
             <button class="button button--secondary"> Button Secondary</button>
             <button class="button button--tertiary"> Tertiary Button</button>
+            <button class="button button--white">Button White</button>
             <button class="button button--drawer" aria-expanded="false">
               Dwawer Button Collapsed</button
             >
@@ -163,6 +167,30 @@ import "../styles/settings/_design.scss";
               Dwawer Button Expanded</button
             >
           </div>
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">CTA Section</h1>
+          <CTA
+            heading="Get them off to a solid start"
+            linkText="Infants/young children"
+            linkUrl="#"
+          />
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">References Section</h1>
+          <References />
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">
+            Cookie Banner (Clear your localStorage if you don't see it)
+          </h1>
+          <CookieBanner />
         </div>
       </section>
     </main>

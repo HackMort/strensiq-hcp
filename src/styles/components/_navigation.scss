@@ -1,0 +1,136 @@
+.site__navigation {
+  position: relative;
+}
+
+.nav__menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $color-white;
+  color: $color-dark-green;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 26px;
+  margin: 0;
+  padding-top: 2.5rem;
+  padding-right: 1.5625rem;
+  padding-left: 1.5625rem;
+  text-align: center;
+  width: 100%;
+
+  &.is--open {
+    display: flex;
+    z-index: 3;
+  }
+
+  &_item {
+    border-bottom: 1px solid $color-light-gray;
+    text-align: left;
+    width: 100%;
+
+    &.has__sub_menu {
+      position: relative;
+
+      .nav__menu_item_link::after {
+        content: '';
+        position: absolute;
+        top: 1.75rem;
+        right: 0.5rem;
+        transform: translateY(-50%);
+        width: 0.75rem;
+        height: 0.75rem;
+        border-top: 3px solid $color-dark-green;
+        border-right: 3px solid $color-dark-green;
+        transform: translateY(-50%) rotate(135deg);
+      }
+
+      &.is--open {
+
+        .nav__sub_menu {
+          display: block;
+        }
+
+        .nav__menu_item_link {
+          color: $color-dark-pink;
+        }
+
+        .nav__menu_item_link::after {
+          top: 50%;
+          border-top: 3px solid $color-dark-pink;
+          border-right: 3px solid $color-dark-pink;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+
+      }
+
+    }
+
+    &_link {
+      position: relative;
+      color: $color-dark-green;
+      display: block;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      text-decoration: none;
+
+      // &:hover {
+      //   color: $color-dark-pink;
+
+      //   &::after {
+      //     border-top: 3px solid $color-dark-pink;
+      //     border-right: 3px solid $color-dark-pink;
+      //   }
+
+      // }
+
+    }
+
+  }
+
+  .nav__sub_menu {
+    position: relative;
+    display: none;
+    @include transition('display', 0.5s, ease-in-out);
+    width: 100%;
+
+    &_item {
+      border-bottom: 0;
+      text-align: left;
+      width: 100%;
+
+      &:first-of-type {
+        a {
+          padding-top: 0;
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 1rem;
+      }
+
+      &_link {
+        position: relative;
+        color: $color-dark-gray;
+        display: block;
+        font-size: 1rem;
+        line-height: 1.625rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        text-decoration: none;
+        @include transition('all', 0.5s, ease-in-out);
+
+        &:hover {
+          color: $color-dark-pink;
+        }
+
+      }
+
+    }
+
+  }
+
+}

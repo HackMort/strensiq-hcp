@@ -1,0 +1,43 @@
+.cta {
+  background-color: $color-green;
+  padding-top: 4.5rem;
+  padding-right: 2rem;
+  padding-bottom: 2.5rem;
+  padding-left: 2rem;
+  text-align: center;
+
+  @include media('tablet') {
+    padding-left: 3.125rem;
+  }
+
+  &__heading {
+    color: $color-dark-green;
+    font-size: 1.875rem;
+    font-weight: 900;
+    line-height: 2.1563rem;
+    letter-spacing: -0.03em;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: .9513rem;
+
+    @media screen and (max-width: 375px) {
+      max-width: 205px;
+    }
+
+    @include media('tablet') {
+      margin-bottom: 1.3125rem;
+    }
+
+  }
+
+  &__link {
+    margin-right: auto;
+    margin-left: auto;
+    width: max-content;
+    // @include media('tablet') {
+    //   margin-bottom: 1.3125rem;
+    // }
+
+  }
+
+}

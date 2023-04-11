@@ -1,0 +1,68 @@
+.cookie {
+  background-color: $color-bright-gray;
+
+  &.hidden {
+    display: none;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include flex-gap(2rem);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    @media screen and (min-width: 1200px) {
+      @include flex-gap(6.25rem);
+    }
+
+  }
+
+  &__text {
+    color: $color-dark-green;
+    font-size: .75rem;
+    font-weight: 300;
+    line-height: .8125rem;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 1.125rem;
+      line-height: 1.6875rem;
+    }
+
+    a {
+      color: $color-dark-pink;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+  }
+
+  &__button {
+    position: relative;
+    color: $color-dark-pink;
+    cursor: pointer;
+    height: 30px;
+    padding: 4px;
+    padding-bottom: 0;
+
+    .line {
+      background-color: $color-dark-pink;
+      display: block;
+      height: 3px;
+      width: 1.5rem;
+    }
+
+    .line:first-of-type {
+      transform: rotate(45deg);
+    }
+
+    .line:last-of-type {
+      position: relative;
+      top: -3px;
+      transform: rotate(-45deg);
+    }
+
+  }
+
+}
