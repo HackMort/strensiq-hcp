@@ -62,7 +62,7 @@ const headerHeight = header.offsetHeight
 const headerObserverOptions = { root: null, rootMargin: '0px', threshold: 0 }
 let lastScrollPosition = 0
 
-addEventListener('scroll', () => {
+window.addEventListener('scroll', () => {
   const headerObserver = new window.IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
     // I think we need to play with this 2 variables
