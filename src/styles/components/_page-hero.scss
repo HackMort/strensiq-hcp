@@ -1,0 +1,112 @@
+.page-hero {
+    background: $color-white;
+    position: relative;
+    height: 12.5rem;
+    overflow: hidden;
+
+    @media screen and (min-width: 1024px) {
+        height: 20.25rem;
+    }
+
+    .wrapper {
+        z-index: 3;
+        padding-top: 1.5625rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .shape {
+        position: absolute;
+    }
+
+    .shape--primary {
+        z-index: 2;
+        background: $color-dark-green;
+    }
+
+    .shape--secondary {
+        z-index: 1;
+        background: $color-green;
+    }
+
+    .shape--tertiary {
+        z-index: 3;
+        height: .8125rem;
+        border-top-right-radius: 5rem;
+        border-bottom-right-radius: 5rem;
+        width: calc(100% - 5.9375rem);
+        max-width: 29.5625rem;
+        background: $color-dark-yellow;
+
+        bottom: 1.875rem;
+        left: 0;
+
+        @media screen and (min-width: 1024px) {
+            bottom: 4.5625rem;
+        }
+
+        @media screen and (min-width: 1600px) {
+            max-width: 50rem;
+        }
+    }
+
+    /*
+        ###########################################################################################
+        STYLES BY PAGE
+    */
+
+    &#hypophosphatasia-page {
+        .wrapper {
+            @media screen and (min-width: 768px) {
+                justify-content: center;
+                padding: 0;
+            }
+        }
+
+        .page-hero__title {
+            color: $color-white;
+            max-width: 21.5625rem;
+
+            @media screen and (min-width: 768px) {
+                max-width: 25.9375rem;
+            }
+        }
+
+        .shape--primary {
+            top: 0;
+            right: -2rem;
+            bottom: .9375rem;
+            width: calc(100% + 2rem);
+
+            border-radius: 0rem 0rem 10.875rem 0rem;
+
+            @media screen and (min-width: 1024px) {
+                right: initial;
+                top: initial;
+                bottom: 0;
+                left: 0;
+                width: 70%;
+                height: 36.125rem;
+                border-radius: 0rem 24.4609rem 24.4609rem 0rem
+            }
+        }
+
+        .shape--secondary {
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+
+            @media screen and (min-width: 1024px) {
+                height: 36.1875rem;
+                top: initial;
+                bottom: 6.75rem;
+                right: -2rem;
+                left: initial;
+                width: calc(100% + 2rem);
+                border-radius: 544.869px;
+            }
+        }
+    }
+}
