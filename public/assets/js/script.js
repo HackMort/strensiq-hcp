@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 const header = document.querySelector('.site__header')
 const headerInner = document.querySelector('.header__inner')
 const headerMainBar = document.querySelectorAll('.main_bar')
-//NodeList to Array
+// NodeList to Array
 const headerMainBarArray = Array.prototype.slice.call(headerMainBar)
 
 const headerHeight = header.offsetHeight
@@ -63,79 +63,42 @@ const headerObserverOptions = { root: null, rootMargin: '0px', threshold: 0 }
 let lastScrollPosition = 0
 
 addEventListener('scroll', () => {
-
-const headerObserver = new window.IntersectionObserver((entries, observer) => {
-
-  entries.forEach(entry => {
+  const headerObserver = new window.IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
     // I think we need to play with this 2 variables
     // const isAbove = entry.boundingClientRect.y < entry.rootBounds.y
     // const isBelow = entry.boundingClientRect.y > entry.rootBounds.y
 
-    let currentScrollPosition = window.scrollY 
+      const currentScrollPosition = window.scrollY
 
-    //When the user scrolls down the page and the header is not in viewport add class is-.sticky-down to header that class hide main bar,
-    //then add class is--sticky-up to header to show main bar
-    if (!entry.isIntersecting && window.scrollY >= headerHeight) {
+      // When the user scrolls down the page and the header is not in viewport add class is-.sticky-down to header that class hide main bar,
+      // then add class is--sticky-up to header to show main bar
+      if (!entry.isIntersecting && window.scrollY >= headerHeight) {
+        if (currentScrollPosition > lastScrollPosition) {
+          headerInner.classList.contains('is--sticky-up') && headerInner.classList.remove('is--sticky-up')
+          headerInner.classList.add('is--sticky-down')
 
-      if(currentScrollPosition > lastScrollPosition) {
-        headerInner.classList.contains('is--sticky-up') && headerInner.classList.remove('is--sticky-up')
-        headerInner.classList.add('is--sticky-down')
+          // Save the current scroll position
+          lastScrollPosition = currentScrollPosition
+        } else if (!entry.isIntersecting && window.scrollY >= headerHeight && currentScrollPosition < lastScrollPosition) {
+          headerInner.classList.contains('is--sticky-down') && headerInner.classList.remove('is--sticky-down')
+          headerInner.classList.add('is--sticky-up')
 
-        //Save the current scroll position
-        lastScrollPosition = currentScrollPosition
-      } else if (!entry.isIntersecting && window.scrollY >= headerHeight && currentScrollPosition < lastScrollPosition) {
-        headerInner.classList.contains('is--sticky-down') && headerInner.classList.remove('is--sticky-down')
-        headerInner.classList.add('is--sticky-up')
-        
-        //Save the current scroll position
-        lastScrollPosition = currentScrollPosition
+          // Save the current scroll position
+          lastScrollPosition = currentScrollPosition
+        }
+      } else {
+        headerInner.classList.remove('is--sticky-down')
+
+        // In this way avoid a unwanted jump of the header
+        if (currentScrollPosition === 0) {
+          headerInner.classList.remove('is--sticky-up')
+        }
       }
-
-    } else {
-      headerInner.classList.remove('is--sticky-down')
-      
-      //In this way avoid a unwanted jump of the header
-      if (currentScrollPosition === 0) {
-        headerInner.classList.remove('is--sticky-up')
-      }
-
-    }
-    
-  })
-}, headerObserverOptions)
-headerObserver.observe(header)
-
-/*
-  * setActiveIternalNavItemOnClick
-  * @description
-  * - Add class is--active to internal navigation items when the link is clicked
-  * - Scroll to section
-  * It requires IntersectionObserver API
-  * * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
-*/
-function setActiveIternalNavItemOnClick () {
-  const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
-  internalNavItems.forEach((item) => {
-    const anchor = item.querySelector('a')
-    anchor.addEventListener('click', (e) => {
-      e.preventDefault()
-      internalNavItems.forEach((item) => {
-        item.classList.remove('is--active')
-      })
-      anchor.parentElement.classList.add('is--active')
-      // scroll to section
-      const sectionID = anchor.getAttribute('href')
-      const target = document.querySelector(sectionID)
-      const marginOffset = -250
-      const totalOffset = target.getBoundingClientRect().top + window.pageYOffset + marginOffset
-      window.scrollTo({
-        top: totalOffset,
-        behavior: 'smooth'
-      })
     })
-  })
-}, headerObserverOptions)
-headerObserver.observe(header)
+  }, headerObserverOptions)
+  headerObserver.observe(header)
+})
 
 /*
   * setActiveIternalNavItemOnClick
@@ -200,7 +163,6 @@ function highlightActiveInternalNavOnScroll () {
     sectionObserver.observe(section)
   })
 }
-})
 
 /**
    * isiHeaderFixed
