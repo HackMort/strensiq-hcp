@@ -1,0 +1,34 @@
+---
+type Props = {
+  heading?: string;
+  items: Array<{
+    active?: boolean;
+    href: string;
+    label: string;
+    classes?: Array<string>;
+  }>;
+};
+
+const { heading, items } = Astro.props;
+---
+
+{
+  items && (
+    <nav class="internal__nav">
+      <h4 class="internal__nav_heading">{heading ? heading : ""}</h4>
+      <ul class="internal__nav_list">
+        {items.map((item) => {
+          const classes = item.classes ? item.classes.join(" ") : "";
+          const active = item.active ? "active" : "";
+          return (
+            <li class={`internal__nav_list_item ${active} ${classes}`}>
+              <a href={`#${item.href}`} class="internal__nav_list_item_link">
+                {item.label}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  )
+}
