@@ -15,7 +15,10 @@
 @import './components/_cta.scss';
 @import './components/_footer.scss';
 @import './components/work-chart';
+@import './components/_main-hero.scss';
 
+
+//-------------------------------------------------------------lets work together section-------------------------------------------------------------    
 .lets-work{
     &__title{
         color: $color-dark-green;
@@ -56,3 +59,4 @@
         }
     }
 }
+//-------------------------------------------------------------lets work together section-------------------------------------------------------------    
