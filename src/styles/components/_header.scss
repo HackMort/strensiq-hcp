@@ -4,7 +4,7 @@
   .header__inner {
     position: relative;
 
-    &.is--sticky {
+    &.is--sticky-down {
       position: fixed;
       top: 0;
       left: 0;
@@ -13,6 +13,19 @@
 
       .main_bar {
         display: none;
+      }
+
+    }
+
+    &.is--sticky-up {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 4;
+
+      .main_bar {
+        display: block;
       }
 
     }
@@ -48,7 +61,7 @@
   .main_bar {
     padding-top: .5rem;
     padding-bottom: .5rem;
-
+    background-color: $color-white;
     .wrapper {
       display: grid;
       grid-template-columns: 127px 1fr;
