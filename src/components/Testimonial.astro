@@ -1,0 +1,26 @@
+---
+    export interface Props {
+        imageURL: string;
+        imageAlt?: string;
+        quote: string;
+        authorInformation: string;
+        authorDescription: string;
+    }
+
+    const { imageURL, imageAlt = " ", quote, authorInformation, authorDescription } = Astro.props;
+---
+
+<section class="testimonial">
+    <!-- <picture class="testimonial__shape-container">
+        <source media="(min-width: 768px)" srcset="/assets/images/homepage/testimonial-shape-desktop.svg">
+        <img class="testimonial__shape" src="/assets/images/homepage/testimonial-shape-mobile.svg" alt=" ">
+    </picture> -->
+    <figure class="testimonial__image-container">
+        <img src={imageURL} alt={imageAlt} class="testimonial__image">
+    </figure>
+    <article class="testimonial__content">
+        <blockquote class="testimonial__quote"><p>{quote}</p></blockquote>
+        <p class="testimonial__author">{authorInformation}</p>
+        <p class="testimonial__author-description">{authorDescription}</p>
+    </article>
+</section>
