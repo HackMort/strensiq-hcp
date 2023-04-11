@@ -89,6 +89,12 @@ const headerObserver = new window.IntersectionObserver((entries, observer) => {
 
     } else {
       headerInner.classList.remove('is--sticky-down')
+      
+      //In this way avoid a unwanted jump of the header
+      if (currentScrollPosition === 0) {
+        headerInner.classList.remove('is--sticky-up')
+      }
+
     }
     
   })
