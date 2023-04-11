@@ -1,12 +1,94 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import InternalNavigation from "../components/InternalNavigation.astro";
+const internalNavLinks = [
+  { href: "about", label: "About HPP", active: true },
+  { href: "symptoms", label: "Symptoms" },
+  { href: "disease", label: "Burden of Disease" },
+  { href: "misdiagnoses", label: "Common Misdiagnoses" },
+];
 ---
 
 <Layout title="Hypophosphatasia">
+  {internalNavLinks && <InternalNavigation items={internalNavLinks} />}
   <div class="wrapper">
     <h1>Hypophosphatasia</h1>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id magni vel minima
-    omnis numquam maiores corporis sint ea atque quas, exercitationem laudantium.
-    Fugiat, harum quidem quam possimus natus qui quae?
+    <div class="section" id="about">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+        consequuntur vero molestiae at enim voluptatem blanditiis maiores harum
+        excepturi ipsam accusamus id tenetur molestias corporis ad quidem,
+        repellat pariatur? Suscipit laboriosam voluptatem blanditiis provident
+        non itaque voluptatibus! Itaque, blanditiis inventore, nemo repellat at
+        deleniti ipsum amet libero molestiae laborum est enim cumque beatae
+        neque, vel necessitatibus saepe molestias ducimus asperiores! Optio,
+        asperiores doloribus magni quidem deserunt omnis unde eum quaerat
+        ratione provident eos harum corrupti, aperiam recusandae. Magni facere
+        pariatur reprehenderit temporibus consequatur sapiente natus libero
+        voluptatum nam, necessitatibus rerum delectus magnam. Ex temporibus
+        dicta aperiam magni debitis dolorem modi voluptates perferendis cumque
+        voluptatum voluptatem eum vel fuga corporis et, itaque fugiat quis unde
+        harum dolore deserunt repellat sapiente maiores. Quibusdam culpa fuga,
+        qui id, provident assumenda maiores illo libero hic veritatis molestiae.
+        Nam minima assumenda enim voluptatibus. Rerum hic omnis alias eveniet
+        fugit quisquam a perspiciatis cum provident totam aliquid quos ullam
+        adipisci sunt eligendi id rem, consequatur modi assumenda voluptas
+        distinctio quam saepe tenetur. Rem, beatae. Provident officia maiores
+        unde dolore, enim neque dolorem. Repellendus nihil sint eligendi
+        reiciendis nulla, praesentium a doloremque debitis ullam necessitatibus
+        ea libero quibusdam commodi sit, id maxime accusantium fugiat harum aut
+        rem maiores doloribus dolores dolorem? Laudantium eligendi, doloremque
+        cum officiis accusantium hic sit illo ducimus provident dolorem
+        consequatur ex iste facilis sunt quasi. Odio qui, quidem reprehenderit
+        omnis a nemo sed numquam sunt nostrum doloremque dicta pariatur
+        blanditiis voluptas incidunt voluptatibus explicabo accusantium!
+        Asperiores cum culpa laudantium impedit nihil non saepe earum esse
+        commodi magnam nostrum quis perferendis, nobis hic officia veritatis quo
+        vel at suscipit nisi dignissimos, maiores vero quam? Harum tempore
+        inventore provident odit esse eius quae, est laboriosam dolor minus
+        eveniet accusantium quaerat sapiente voluptatibus deleniti totam!
+        Blanditiis reiciendis expedita, optio unde ut rerum dolore. Debitis
+        officia illum quia voluptas aut, vero obcaecati deserunt laboriosam
+        dolorem temporibus harum veritatis, culpa a eius? Ab harum fuga mollitia
+        officiis suscipit, consectetur dicta eaque, natus saepe, at libero vero!
+        Quas delectus voluptatibus recusandae illum esse porro. Sunt a repellat
+        tempore provident rerum consequuntur fugit numquam nesciunt, inventore,
+        dolorem, culpa accusamus praesentium quas quae commodi? Blanditiis alias
+        voluptates nemo recusandae? Voluptatem nemo exercitationem magni
+        suscipit iusto voluptate assumenda quod nesciunt distinctio sed
+        perspiciatis velit non esse, reprehenderit sapiente illum nulla pariatur
+        delectus ratione aperiam officia dolore. Voluptates harum consequatur
+        temporibus tempora, nam doloribus voluptatem quis fuga alias dicta
+        recusandae hic culpa praesentium? Rerum fugiat quasi error nemo at
+        voluptates, fugit nobis eaque enim molestias iure! Cupiditate laboriosam
+        doloremque corrupti magnam similique eos a ipsa! Necessitatibus nihil,
+        beatae corrupti, omnis, debitis totam ratione nemo illo odit nostrum
+        odio in illum repellendus tempora alias voluptates possimus temporibus
+        vitae explicabo nisi. Non amet vero quibusdam veritatis. Aperiam magnam
+        at deserunt fugit aliquid rerum ipsa, impedit illum minus ut ducimus
+        vero libero molestiae fugiat beatae earum voluptates? Dolorum tempora
+        omnis quibusdam at, delectus ipsa dolore error accusamus cupiditate,
+        odio alias praesentium ullam porro! Ad, maxime! In officiis id dolorem
+        nihil deleniti provident dolores excepturi fugiat modi?
+      </p>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div class="section" id="symptoms">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+        quaerat sint voluptates et dicta alias natus. Expedita, laborum
+        nesciunt! Eligendi iste et enim laudantium laborum repellendus
+        repudiandae fugit! Ab fuga, ex et natus nihil, repellendus reiciendis
+        perspiciatis laborum quis minima placeat qui ducimus exercitationem sit
+        maiores neque vero dolorum nisi facilis molestiae at eligendi officia
+        minus tempore? Tenetur blanditiis cumque quo rem eum, accusamus iusto
+        perferendis repellendus sunt voluptatibus vel repudiandae hic. Nesciunt
+        vero quasi odit dolores officia cupiditate nemo fuga corporis doloribus
+        dolore esse in magnam iste illo, quaerat asperiores ad, sunt fugiat non
+        optio dolorem modi velit. Harum.
+      </p>
+    </div>
   </div>
 </Layout>
