@@ -46,12 +46,16 @@ document.addEventListener('DOMContentLoaded', function (e) {
       }
     })
   })
+
+  setActiveIternalNavItemOnClick()
+  highlightActiveInternalNavOnScroll()
 })
 
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
 const header = document.querySelector('.site__header')
 const headerInner = document.querySelector('.header__inner')
 const headerHeight = header.offsetHeight
+const headerObserverOptions = { root: null, rootMargin: '0px', threshold: 0 }
 const headerObserver = new window.IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     // I think we need to play with this 2 variables
@@ -63,13 +67,72 @@ const headerObserver = new window.IntersectionObserver((entries, observer) => {
       headerInner.classList.remove('is--sticky')
     }
   })
-}
-, {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0
-})
+}, headerObserverOptions)
 headerObserver.observe(header)
+
+/*
+  * setActiveIternalNavItemOnClick
+  * @description
+  * - Add class is--active to internal navigation items when the link is clicked
+  * - Scroll to section
+  * It requires IntersectionObserver API
+  * * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+*/
+function setActiveIternalNavItemOnClick () {
+  const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
+  internalNavItems.forEach((item) => {
+    const anchor = item.querySelector('a')
+    anchor.addEventListener('click', (e) => {
+      e.preventDefault()
+      internalNavItems.forEach((item) => {
+        item.classList.remove('is--active')
+      })
+      anchor.parentElement.classList.add('is--active')
+      // scroll to section
+      const sectionID = anchor.getAttribute('href')
+      const target = document.querySelector(sectionID)
+      const marginOffset = -250
+      const totalOffset = target.getBoundingClientRect().top + window.pageYOffset + marginOffset
+      window.scrollTo({
+        top: totalOffset,
+        behavior: 'smooth'
+      })
+    })
+  })
+}
+/*
+  * highlightActiveInternalNavOnScroll
+  * @description
+  * - Add class is--active to internal navigation items when the section is in viewport
+  * It requires IntersectionObserver API
+  * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+ */
+function highlightActiveInternalNavOnScroll () {
+  const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
+  const sections = document.querySelectorAll('.section')
+  const sectionObserverOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.25
+  }
+  const sectionObserver = new window.IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.getAttribute('id')
+        internalNavItems.forEach((item) => {
+          item.classList.remove('is--active')
+          if (item.querySelector('a').getAttribute('href') === `#${sectionId}`) {
+            item.classList.add('is--active')
+          }
+        })
+      }
+    })
+  }
+  , sectionObserverOptions)
+  sections.forEach((section) => {
+    sectionObserver.observe(section)
+  })
+}
 
 /**
    * isiHeaderFixed
