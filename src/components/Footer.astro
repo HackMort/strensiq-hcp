@@ -1,8 +1,8 @@
 ---
+import FooterNavigation from "./FooterNavigation.astro";
+import FooterAlexion from "./FooterAlexion.astro";
 type Props = {};
-
 const {} = Astro.props;
-const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
@@ -25,69 +25,14 @@ const currentYear = new Date().getFullYear();
 
     <!-- Footer Navigation -->
     <div class="footer__links">
-      <nav class="footer__nav">
-        <ul class="footer__nav_menu">
-          <li class="footer__nav_menu_item">
-            <a class="footer__nav_menu_item_link" href="#">Hypophosphatasia</a>
-          </li>
-          <li class="footer__nav_menu_item">
-            <a class="footer__nav_menu_item_link" href="#">How It Works</a>
-          </li>
-          <li class="footer__nav_menu_item">
-            <a class="footer__nav_menu_item_link" href="#">Clinical Data</a>
-          </li>
-          <li class="footer__nav_menu_item">
-            <a class="footer__nav_menu_item_link" href="#">Dosing</a>
-          </li>
-          <li class="footer__nav_menu_item">
-            <a class="footer__nav_menu_item_link" href="#">Toolkit</a>
-          </li>
-        </ul>
-      </nav>
+      <FooterNavigation />
     </div>
-
+    <!-- Alextion -->
+    <FooterAlexion />
     <!-- Footer Text -->
     <div class="footer__text">
       <p>Want to dig deeper into STRENSIQ? Alexion is at your service.</p>
       <button class="button">Request a Rep</button>
-    </div>
-
-    <!-- Alexion -->
-    <div class="footer__alexion">
-      <div class="footer__alexion_logo">
-        <a class="footer__alexion_logo_link" href="#">
-          <img
-            src="/assets/images/Alexion-Logo.png"
-            alt="Alexion"
-            class="footer__alextion_logo_image"
-          />
-        </a>
-      </div>
-      <p class="footer__alexion_text">
-        This website is intended for US healthcare professionals only. <br /> STRENSIQ,
-        ALEXION, the Alexion logo, and the OneSource logo are registered <br />
-        trademarks and OneSource is a trademark of Alexion Pharmaceuticals, Inc.
-        <br />
-        &copy;{currentYear}, Alexion Pharmaceuticals, Inc. All rights reserved. <br
-        />
-        03/2023 US/STQ-H/0422 V1
-      </p>
-      <nav class="footer__nav">
-        <ul class="footer__nav_menu">
-          <li class="footer__nav_menu_item">
-            <a class="footer__nav_menu_item_link" href="#">Legal</a>
-          </li>
-          <li class="footer__nav_menu_item">
-            <a class="footer__nav_menu_item_link" href="#">Privacy Notice</a>
-          </li>
-          <li class="footer__nav_menu_item">
-            <a class="footer__nav_menu_item_link" href="#">Terms of Use</a>
-          </li>
-          <li class="footer__nav_menu_item">
-            <a class="footer__nav_menu_item_link" href="#">Contact Us</a>
-          </li>
-        </ul>
-      </nav>
     </div>
   </div>
 </footer>
