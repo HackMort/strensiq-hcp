@@ -14,6 +14,11 @@
         height: 100%;
         display: flex;
         flex-direction: column;
+
+        @media screen and (min-width: 768px) {
+            justify-content: center;
+            padding: 0;
+        }
     }
 
     .shape {
@@ -56,13 +61,7 @@
         STYLES BY PAGE
     */
 
-    &#hypophosphatasia-page {
-        .wrapper {
-            @media screen and (min-width: 768px) {
-                justify-content: center;
-                padding: 0;
-            }
-        }
+    &#hypophosphatasia-page-hero {
 
         .page-hero__title {
             color: $color-white;
@@ -107,6 +106,34 @@
                 width: calc(100% + 2rem);
                 border-radius: 544.869px;
             }
+        }
+    }
+
+    &#how-it-woks-page-hero {
+        .page-hero__title {
+            color: $color-dark-green;
+        }
+
+        .shape--primary {
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .shape--secondary {
+            z-index: 2;
+            right: -92px;
+            bottom: -365px;
+            width: 1182.11px;
+            height: 792.68px;
+            border-radius: 416.484px;
+            transform: rotate(34deg);
+        }
+
+        .shape--tertiary {
+            background: $color-white;
         }
     }
 }
