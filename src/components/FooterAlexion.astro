@@ -1,0 +1,28 @@
+---
+import FooterAlexionLinks from "./FooterAlexionLinks.astro";
+type Props = {};
+const {} = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<div class="footer__alexion">
+  <div class="footer__alexion_logo">
+    <a class="footer__alexion_logo_link" href="#">
+      <img
+        src="/assets/images/Alexion-Logo.png"
+        alt="Alexion"
+        class="footer__alextion_logo_image"
+      />
+    </a>
+  </div>
+  <p class="footer__alexion_text">
+    This website is intended for US healthcare professionals only. <br /> STRENSIQ,
+    ALEXION, the Alexion logo, and the OneSource logo are registered <br />
+    trademarks and OneSource is a trademark of Alexion Pharmaceuticals, Inc.
+    <br />
+    &copy;{currentYear}, Alexion Pharmaceuticals, Inc. All rights reserved. <br
+    />
+    03/{currentYear} US/STQ-H/0422 V1
+  </p>
+  <FooterAlexionLinks />
+</div>
