@@ -1,14 +1,13 @@
-.work-chart{
+.work-box{
     background-color: $color-dark-green;
-    height: auto;
+    height: 6.25rem;
     max-width: 20.5rem;
     margin: auto;
     display: flex;
     align-items: center;
     padding-top: .8125rem;    
     padding-bottom: .8125rem;    
-    padding-right: .5rem;    
-    padding-left: .805rem;    
+    padding-right: .5rem;   
     
     
     @include media('tablet') {
@@ -22,10 +21,12 @@
     
 
     &__image{
-        width: 3.625rem;
-        margin-right: .9375rem;
+        width: 6.5625rem;
+        margin-bottom: -39px;
+        
 
         @include media('tablet') {
+            margin-bottom: unset;
             position: absolute;
             bottom: -64px;
             right: 4rem;
@@ -36,9 +37,11 @@
     &__content{
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     &__content-arrow{
+
         width: 2.0625rem;
 
         @include media('tablet') {
@@ -49,15 +52,22 @@
     }
 
     &__content-text{
-        p{
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 125%;
-            color: $color-white;
-            max-width: 12.1875rem;
-
+        max-width: 9.75rem;
+        
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.125rem;
+        line-height: 125%;
+        color: $color-white;
+        
+        @media screen and (min-width:350px) {
+        margin-right: 1rem;
+        }
+        @media screen and (min-width:360px) {
+        margin-right: unset;
+        max-width: 11.75rem;
+        }
             @include media('tablet') {
                 font-weight: 700;
                 line-height: 115%;
@@ -65,6 +75,6 @@
                 font-size: 1.5625rem;
                 max-width: 12.9375rem;
             }
-        }
+        
     }
 }

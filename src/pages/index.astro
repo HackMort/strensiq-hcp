@@ -1,7 +1,7 @@
 ---
 import MainHero from '../components/MainHero.astro';
 import Layout from "../layouts/Layout.astro";
-import WorkChart from "../components/WorkChart.astro";
+import WorkBox from "../components/WorkBox.astro";
 ---
 
 <Layout title="STRENSIQ | HCP">
@@ -11,18 +11,18 @@ import WorkChart from "../components/WorkChart.astro";
   <section class="lets-work wrapper">
     <h1 class="lets-work__title">Let's get to work</h1>
 
-    <div class="lets-work__charts">
-      <WorkChart img="/assets/images/glass.png" href="#"> 
-        <p>Learn more about hypophosphatasia</p>
-    </WorkChart>
+    <div class="lets-work__boxes">
+      <WorkBox imgSrc="/assets/images/glass.png" link="#"> 
+        Learn more about hypophosphatasia
+    </WorkBox>
 
-    <WorkChart img="/assets/images/tool.png" href="#"> 
-      <p>See how STRENSIQ works </p>
-    </WorkChart>
+    <WorkBox imgSrc="/assets/images/tool.png" link="#"> 
+      See how STRENSIQ works 
+    </WorkBox>
     
-    <WorkChart img="/assets/images/stats.png" href="#" chartModifier="modifier"> 
-      <p>Clinical data, including real-world outcomes in adults</p>
-    </WorkChart>
+    <WorkBox imgSrc="/assets/images/stats.png" link="#" className="modifier"> 
+    Clinical data, including real-world outcomes in adults
+    </WorkBox>
   </div>
   </section>
 </Layout>
