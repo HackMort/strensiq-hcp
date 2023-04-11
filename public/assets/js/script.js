@@ -51,17 +51,46 @@ document.addEventListener('DOMContentLoaded', function (e) {
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
 const header = document.querySelector('.site__header')
 const headerInner = document.querySelector('.header__inner')
+const headerMainBar = document.querySelectorAll('.main_bar')
+//NodeList to Array
+const headerMainBarArray = Array.prototype.slice.call(headerMainBar)
+
 const headerHeight = header.offsetHeight
+let lastScrollPosition = 0
+
+addEventListener('scroll', () => {
+
 const headerObserver = new window.IntersectionObserver((entries, observer) => {
+
   entries.forEach(entry => {
     // I think we need to play with this 2 variables
     // const isAbove = entry.boundingClientRect.y < entry.rootBounds.y
     // const isBelow = entry.boundingClientRect.y > entry.rootBounds.y
+
+    let currentScrollPosition = window.scrollY 
+
+    //When the user scrolls down the page and the header is not in viewport add class is-.sticky-down to header that class hide main bar,
+    //then add class is--sticky-up to header to show main bar
     if (!entry.isIntersecting && window.scrollY >= headerHeight) {
-      headerInner.classList.add('is--sticky')
+
+      if(currentScrollPosition > lastScrollPosition) {
+        headerInner.classList.contains('is--sticky-up') && headerInner.classList.remove('is--sticky-up')
+        headerInner.classList.add('is--sticky-down')
+
+        //Save the current scroll position
+        lastScrollPosition = currentScrollPosition
+      } else if (!entry.isIntersecting && window.scrollY >= headerHeight && currentScrollPosition < lastScrollPosition) {
+        headerInner.classList.contains('is--sticky-down') && headerInner.classList.remove('is--sticky-down')
+        headerInner.classList.add('is--sticky-up')
+        
+        //Save the current scroll position
+        lastScrollPosition = currentScrollPosition
+      }
+
     } else {
-      headerInner.classList.remove('is--sticky')
+      headerInner.classList.remove('is--sticky-down')
     }
+    
   })
 }
 , {
@@ -70,6 +99,7 @@ const headerObserver = new window.IntersectionObserver((entries, observer) => {
   threshold: 0
 })
 headerObserver.observe(header)
+})
 
 /**
    * isiHeaderFixed
