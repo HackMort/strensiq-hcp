@@ -50,6 +50,8 @@
       line-height: .9375rem;
       @include flex-gap(.45rem);
 
+      // TODO add divider and change font weight
+
       @media screen and (min-width: 375px) {
         @include flex-gap(1rem);
       }
@@ -62,6 +64,7 @@
     padding-top: .5rem;
     padding-bottom: .5rem;
     background-color: $color-white;
+
     .wrapper {
       display: grid;
       grid-template-columns: 127px 1fr;
@@ -89,6 +92,33 @@
         @media screen and (min-width: 600px) {
           justify-content: center;
           font-size: .875rem;
+        }
+
+        li {
+          position: relative;
+        }
+
+        li+li::before {
+          content: '';
+          position: absolute;
+          top: 0.1rem;
+          left: -0.35rem;
+          background-color: $color-green;
+          display: inline-block;
+          height: 0.7rem;
+          width: 1px;
+
+          @media screen and (min-width: 375px) {
+            left: -0.85rem;
+          }
+
+          @media screen and (min-width: 480px) {
+            left: -1.5rem;
+          }
+
+          @media screen and (min-width: 600px) {
+            left: -0.55rem;
+          }
         }
       }
     }
@@ -178,11 +208,11 @@
         gap: 1.5rem;
 
         @media screen and (min-width: 1365px) {
-          gap: 60px;
+          gap: 3.75rem;
         }
 
         @media screen and (min-width: 1440px) {
-          gap: 80px;
+          gap: 5rem;
         }
 
       }
@@ -213,7 +243,7 @@
               background: $color-white;
               box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
               width: 13.875rem;
-              z-index: 3;
+              z-index: 4;
             }
 
             .nav__sub_menu_item {
