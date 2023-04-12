@@ -1,6 +1,11 @@
 .not-found-hero {
-    height: 12.5rem;
+    width: 100%;
     position: relative;
+    overflow: hidden;
+
+    min-height: 12.5rem;
+    height: calc(200px + (690 - 200) * ((100vw - 375px) / (1440 - 375)));
+    max-height: 43.125rem;
 
     .not-found-hero__content {
         position: absolute;
@@ -16,16 +21,90 @@
     .not-found-hero__title {
         font-size: 1.5rem;
         font-weight: 900;
-        max-width: 50%;
+        max-width: 45%;
+        color: $color-dark-green;
+
+        @media screen and (min-width: 515px) {
+            max-width: 13.3125rem;
+        }
+
+        @media screen and (min-width: 555px) {
+            font-size: 1.875rem;
+            max-width: 16.3125rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            font-size: 2.5rem;
+            max-width: 21.3125rem;
+        }
+
+        @media screen and (min-width: 885px) {
+            font-size: 3.125rem;
+            max-width: 27.3125rem;
+        }
+
+        @media screen and (min-width: 885px) {
+            font-size: 3.75rem;
+            max-width: 32.3125rem;
+            line-height: 62.8px;
+        }
+    }
+
+    .not-found-hero__shape {
+        position: absolute;
+        z-index: 2;
+
+        width: 301.33px;
+        height: 492.48px;
+        border-radius: 187.5px;
+        background: $color-green;
+
+        transform: rotate(-24.25deg);
+
+        bottom: -8rem;
+        right: 13rem;
+
+        @media screen and (min-width: 450px) {
+            right: 16rem;
+        }
+
+        @media screen and (min-width: 515px) {
+            right: 18rem;
+            width: 593.33px;
+            height: 523.48px;
+        }
+
+        @media screen and (min-width: 640px) {
+            right: 20rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            width: 1494.64px;
+            height: 894.64px;
+            border-radius: 504.78px;
+            transform: rotate(49.87deg);
+
+            right: 24%;
+            bottom: -13rem;
+        }
+
+        @media screen and (min-width: 1024px) {
+            right: 29%;
+            bottom: -9rem;
+        }
     }
 
     .not-found-hero__image {
-        position: relative;
+        position: absolute;
         z-index: 1;
+        top: 0;
+        right: 0;
         height: 100%;
-        
+        width: auto;
+
         img {
             height: 100%;
+            width: auto;
         }
     }
 }
