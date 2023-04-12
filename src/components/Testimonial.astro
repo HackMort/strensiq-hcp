@@ -1,22 +1,22 @@
 ---
     export interface Props {
-        imageURL: string;
-        imageAlt?: string;
+        mainImageAlt?: string;
         quote: string;
         authorInformation: string;
         authorDescription: string;
+        page:string;
     }
 
-    const { imageURL, imageAlt = " ", quote, authorInformation, authorDescription } = Astro.props;
+    const { imageAlt = " ", quote, authorInformation, authorDescription, page } = Astro.props;
 ---
 
-<section class="testimonial">
+<section class={`testimonial testimonial--${page}`}>
     <picture class="testimonial__shape-container">
-        <!-- <source media="(min-width: 768px)" srcset="/assets/images/homepage/testimonial-shape-desktop.svg"> -->
-        <img class="testimonial__shape" src="/assets/images/homepage/testimonial-shape-mobile.svg" alt=" ">
+        <source media="(min-width: 1024px)" srcset={`/assets/images/${page}/testimonial/testimonial-shape-desktop.svg`}>
+        <img class="testimonial__shape" src={`/assets/images/${page}/testimonial/testimonial-shape-mobile.svg`} alt=" ">
     </picture>
     <figure class="testimonial__image-container">
-        <img src={imageURL} alt={imageAlt} class="testimonial__image">
+        <img src={`/assets/images/${page}/testimonial/testimonial.png`} alt={mainImageAlt} class="testimonial__image">
     </figure>
     <article class="testimonial__content">
         <blockquote class="testimonial__quote"><p>{quote}</p></blockquote>
