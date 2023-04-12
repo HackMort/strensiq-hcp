@@ -89,3 +89,17 @@
         }
     }
 }
+
+//Dosing page
+.dosing__page-hero {
+    .page-hero__title {
+        br {
+            display: none;
+        }
+        @media screen and (min-width: 1024px) {
+           br {
+            display: block;
+           }
+        }
+    }
+}

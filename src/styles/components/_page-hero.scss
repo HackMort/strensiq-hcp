@@ -213,4 +213,54 @@
             }
         }
     }
+
+    &#dosing-page-hero {
+        .page-hero__title {
+            color: $color-dark-green;
+            font-weight: bold;
+        }
+
+        .shape--tertiary {
+            background: $color-white;
+        }
+
+        .shape--primary {
+            z-index: 1;
+
+            @media screen and (min-width: 1024px) {
+                width: calc(100% + 3.75rem);
+                height: 603px;
+                border-radius: 416.484px;
+                bottom: 5.375rem;
+                right: 3.75rem;
+            }
+        }
+
+        .shape--secondary {
+            z-index: 2;
+            width: calc(100% + 33rem);
+            height: 415px;
+            border-radius: 207.5px;
+
+            bottom: 0;
+            right: -47px;
+
+            @media screen and (min-width: 1024px) {
+                width: 1182.11px;
+                height: 792.68px;
+                left: -33rem;
+                transform: rotate(22deg);
+                bottom: -28rem;
+                border-radius: 416.484px;
+            }
+
+            @media screen and (min-width: 1440px) {
+                // left: -20rem;
+                left: auto;
+                right: 45%;
+                width: 1700.11px;
+                height: 880.68px;
+            }
+        }
+    }
 }
