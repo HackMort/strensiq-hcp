@@ -78,7 +78,7 @@
                 }
 
                 &::after {
-                    top: 2.1875rem;
+                    bottom: .9375rem;
                 }
 
                 p {
@@ -122,6 +122,10 @@
 
             @media (min-width: 700px) {
                 max-width: 19.375rem;
+                width: 14.0625rem;
+            }
+
+            @media (min-width: 1024px) {
                 width: 19.375rem;
             }
         }
@@ -165,11 +169,11 @@
 
         &::after {
             content: close-quote;
-            top: .75rem;
+            bottom: 1.25rem;
             right: 0;
 
             @media (min-width: 1024px) {
-                top: 1.5625rem;
+                bottom: 2.1875rem;
                 right: -0.625rem;
             }
         }
@@ -181,11 +185,11 @@
             position: relative;
 
             @media (min-width: 700px) {
-                font-size: 1.5rem;
+                font-size: 24px;
                 line-height: 2.25rem;
             }
 
-            &::after {
+            &:last-child:after {
                 background-color: $color-dark-pink;
                 bottom: -0.625rem;
                 content: '';

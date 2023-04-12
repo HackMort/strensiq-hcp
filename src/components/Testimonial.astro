@@ -1,13 +1,12 @@
 ---
     export interface Props {
         mainImageAlt?: string;
-        quote: string;
         authorInformation: string;
         authorDescription: string;
         page:string;
     }
 
-    const { mainImageAlt = " ", quote, authorInformation, authorDescription, page } = Astro.props;
+    const { mainImageAlt = " ", authorInformation, authorDescription, page} = Astro.props;
 ---
 
 <section class={`testimonial testimonial--${page}`}>
@@ -19,7 +18,9 @@
         <img src={`/assets/images/${page}/testimonial/testimonial.png`} alt={mainImageAlt} class="testimonial__image">
     </figure>
     <article class="testimonial__content">
-        <blockquote class="testimonial__quote"><p>{quote}</p></blockquote>
+        <blockquote class="testimonial__quote">
+            <slot/>
+        </blockquote>
         <p class="testimonial__author">{authorInformation}</p>
         <p class="testimonial__author-description">{authorDescription}</p>
     </article>
