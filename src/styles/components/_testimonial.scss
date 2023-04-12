@@ -14,89 +14,6 @@
         padding-bottom: 8.125rem;
     }
 
-    &--home {
-        &::before {
-            @media(min-width: 1024px) {
-                --width-shape: 152.25rem;
-                --height-shape: 85.3125rem;
-                --rotation-shape: 32deg;
-                background-color: $color-green;
-                border-radius: 45.0506rem;
-                bottom: 50%;
-                content: '';
-                height: var(--height-shape);
-                margin-left: calc(-1 * (var(--width-shape) / 2) + (var(--height-shape) / 2) * tan(var(--rotation-shape)));
-                position: absolute;
-                transform: rotate(var(--rotation-shape));
-                width: var(--width-shape);
-                z-index: -1;
-            }
-        }
-
-        .testimonial__shape-container {
-            bottom: 1.5625rem;
-
-            @media (min-width: 1024px) {
-                display: none;
-            }
-        }
-    }
-
-    &--hypophosphatasia {
-        padding-top: 5.625rem;
-
-        &::before {
-            --width-shape: 93.75rem;
-            --height-shape: 80%;
-            background-color: $color-green;
-            border-radius: 36.36rem;
-            content: '';
-            height: var(--height-shape);
-            left: 0;
-            position: absolute;
-            top: 20%;
-            width: var(--width-shape);
-            z-index: -1;
-
-            @media (min-width: 1024px) {
-                --width-shape: 200vw;
-                --height-shape: calc(var(--width-shape) * 0.4);
-                left: unset;
-                margin-left: 170%;
-                top: 0;
-            }
-        }
-
-        .testimonial {
-            &__quote {
-                &::before {
-                    top: -1.5625rem;
-
-                    @media (min-width: 1024px) {
-                        top: -2.8125rem;
-                    }
-                }
-
-                &::after {
-                    bottom: .9375rem;
-                }
-
-                p {
-                    max-width: 37ch;
-
-                    @media (min-width: 1024px) {
-                        max-width: 38.4ch;
-                    }
-                }
-
-            }
-
-            &__shape-container {
-                display: none;
-            }
-        }
-    }
-
     &__author {
         font-weight: 500;
     }
@@ -224,6 +141,93 @@
         @media (min-width: 700px) {
             font-size: 20px;
             line-height: 1.5625rem;
+        }
+    }
+
+    &--hypophosphatasia {
+        padding-top: 5.625rem;
+
+
+
+        .testimonial__quote {
+            &::before {
+                top: -1.5625rem;
+
+                @media (min-width: 1024px) {
+                    top: -2.8125rem;
+                }
+            }
+
+            &::after {
+                bottom: .9375rem;
+            }
+
+            p {
+                max-width: 37ch;
+
+                @media (min-width: 1024px) {
+                    max-width: 38.4ch;
+                }
+            }
+        }
+    }
+
+    &--shape {
+
+        &-top {
+            &::before {
+                @media(min-width: 1024px) {
+                    --width-shape: 152.25rem;
+                    --height-shape: 85.3125rem;
+                    --rotation-shape: 32deg;
+                    background-color: $color-green;
+                    border-radius: 45.0506rem;
+                    bottom: 50%;
+                    content: '';
+                    height: var(--height-shape);
+                    margin-left: calc(-1 * (var(--width-shape) / 2) + (var(--height-shape) / 2) * tan(var(--rotation-shape)));
+                    position: absolute;
+                    transform: rotate(var(--rotation-shape));
+                    width: var(--width-shape);
+                    z-index: -1;
+                }
+            }
+
+            .testimonial__shape-container {
+                bottom: 1.5625rem;
+
+                @media (min-width: 1024px) {
+                    display: none;
+                }
+            }
+        }
+
+        &-right {
+            &::before {
+                --width-shape: 93.75rem;
+                --height-shape: 80%;
+                background-color: $color-green;
+                border-radius: 36.36rem;
+                content: '';
+                height: var(--height-shape);
+                left: 0;
+                position: absolute;
+                top: 20%;
+                width: var(--width-shape);
+                z-index: -1;
+
+                @media (min-width: 1024px) {
+                    --width-shape: 200vw;
+                    --height-shape: calc(var(--width-shape) * 0.4);
+                    left: unset;
+                    margin-left: 170%;
+                    top: 0;
+                }
+            }
+
+            .testimonial__shape-container {
+                display: none;
+            }
         }
     }
 }
