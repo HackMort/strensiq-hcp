@@ -47,15 +47,18 @@ document.addEventListener('DOMContentLoaded', function (e) {
     })
   })
 
+
+  const headerHeight = document.querySelector('.site__header').offsetHeight
+  window.addEventListener('scroll', () => {
+    highlightActiveInternalNavOnScroll(headerHeight)
+  })
   setActiveIternalNavItemOnClick()
-  highlightActiveInternalNavOnScroll()
 })
 
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
 const header = document.querySelector('.site__header')
 const headerInner = document.querySelector('.header__inner')
 const headerMainBar = document.querySelectorAll('.main_bar')
-
 const internalNav = document.querySelector('.internal__nav')
 // NodeList to Array
 const headerMainBarArray = Array.prototype.slice.call(headerMainBar)
@@ -143,7 +146,7 @@ function setActiveIternalNavItemOnClick () {
   * It requires IntersectionObserver API
   * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
  */
-function highlightActiveInternalNavOnScroll () {
+function highlightActiveInternalNavOnScroll (headerHeight) {
   const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
   const sections = document.querySelectorAll('.section')
   const sectionObserverOptions = {
@@ -153,10 +156,18 @@ function highlightActiveInternalNavOnScroll () {
   }
   const sectionObserver = new window.IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+
+      //Distance between the top of the section and the top of the viewport
+      const sectionTop = entry.boundingClientRect.top
+
+      //Validate if the section that are in viewport and is closer of the header
+      if (entry.isIntersecting && sectionTop <= headerHeight+100) {
         const sectionId = entry.target.getAttribute('id')
+
         internalNavItems.forEach((item) => {
           item.classList.remove('is--active')
+          /*Valide is the section is in viewport, if the scroll position is between the section top and the section top + section height, and
+          the section that is closser of the header */
           if (item.querySelector('a').getAttribute('href') === `#${sectionId}`) {
             item.classList.add('is--active')
           }
