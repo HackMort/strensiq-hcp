@@ -17,10 +17,11 @@
 @import './components/work-box';
 @import './components/_main-hero.scss';
 @import './components/_page-hero.scss';
+@import './components/_testimonial.scss';
 @import './components/_not-found-hero.scss';
 
 
-//-------------------------------------------------------------lets work together section-------------------------------------------------------------    
+//-------------------------------------------------------------lets work together section-------------------------------------------------------------
 .lets-work{
     padding-top: 2rem;
     padding-bottom: 5rem;
@@ -48,7 +49,7 @@
             margin-bottom: 1.25rem;
         }
     }
-    
+
     &__boxes{
         @media screen and (min-width:768px) {
             display: flex;
@@ -63,98 +64,10 @@
             max-width: 11.625rem;
         }
         @media screen and (min-width:800px) {
-            
+
                 max-width: 13.375rem;
-            
+
         }
     }
 }
-//-------------------------------------------------------------lets work together section-------------------------------------------------------------    
-
-
-// How it works page
-.how-it-works__page-hero {
-    .page-hero__title br {
-        @media screen and (min-width: 500px) {
-            display: none;
-        }
-    }
-}
-
-// Clinical data page - Overview
-.clinical-data-overview__page-hero {
-    .page-hero__title {
-        @media screen and (min-width: 500px) {
-            br {
-                display: none;
-            }
-        }
-
-        @media screen and (min-width: 768px) {
-            max-width: 28.75rem;
-        }
-    }
-}
-
-// Clinical data page - infants young children
-.clinical-data-infants-young-children__page-hero {
-    .page-hero__title {
-        @media screen and (min-width: 500px) {
-            br {
-                display: none;
-            }
-        }
-
-        @media screen and (min-width: 768px) {
-            max-width: 28.75rem;
-        }
-    }
-}
-
-// Clinical data page - infants young children
-.clinical-data-children__page-hero {
-    .page-hero__title {
-        @media screen and (min-width: 500px) {
-            br {
-                display: none;
-            }
-        }
-
-        @media screen and (min-width: 768px) {
-            max-width: 43.75rem;
-        }
-
-        @media screen and (min-width: 1024px) {
-            max-width: 36.75rem;
-            margin-bottom: 1rem;
-        }
-    }
-}
-
-// Clinical data page - adolescents
-.clinical-data-adolescents__page-hero {
-    .page-hero__title {
-        br {
-            display: none;
-        }
-        @media screen and (min-width: 1024px) {
-           br {
-            display: block;
-           }
-        }
-    }
-}
-
-//Dosing page
-.dosing__page-hero {
-    .page-hero__title {
-        br {
-            display: none;
-        }
-        @media screen and (min-width: 1024px) {
-           br {
-            display: block;
-           }
-        }
-    }
-}
+//-------------------------------------------------------------lets work together section-------------------------------------------------------------
