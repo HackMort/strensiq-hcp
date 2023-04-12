@@ -12,8 +12,8 @@
 
 <section class={`testimonial testimonial--${page} testimonial--shape-${shapeType}`}>
     <picture class="testimonial__shape-container">
-        <source media="(min-width: 1024px)" srcset={`/assets/images/testimonial-shapes/testimonial-shape-desktop.svg`}>
-        <img class="testimonial__shape" src={`/assets/images/testimonial-shapes/testimonial-shape-mobile.svg`} alt=" ">
+        <source media="(min-width: 1024px)" srcset={`/assets/images/testimonial-shapes/${shapeType}/testimonial-shape-desktop.svg`}>
+        <img class="testimonial__shape" src={`/assets/images/testimonial-shapes/${shapeType}/testimonial-shape-mobile.svg`} alt=" ">
     </picture>
     <figure class="testimonial__image-container">
         <img src={`/assets/images/${page}/testimonial/testimonial.png`} alt={mainImageAlt} class="testimonial__image">
