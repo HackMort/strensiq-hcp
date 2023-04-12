@@ -208,11 +208,11 @@
         gap: 1.5rem;
 
         @media screen and (min-width: 1365px) {
-          gap: 60px;
+          gap: 3.75rem;
         }
 
         @media screen and (min-width: 1440px) {
-          gap: 80px;
+          gap: 5rem;
         }
 
       }
@@ -243,7 +243,7 @@
               background: $color-white;
               box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
               width: 13.875rem;
-              z-index: 3;
+              z-index: 4;
             }
 
             .nav__sub_menu_item {
