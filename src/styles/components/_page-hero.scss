@@ -56,6 +56,13 @@
         }
     }
 
+    .page-hero__subtitle {
+        color: $color-green;
+        font-size: .875rem;
+        line-height: 16.8px;
+        font-weight: 500;
+    }
+
     /*
         ###########################################################################################
         STYLES BY PAGE
@@ -104,7 +111,7 @@
                 right: -2rem;
                 left: initial;
                 width: calc(100% + 2rem);
-                border-radius: 544.869px;
+                border-radius: 34.0543rem;
             }
         }
     }
@@ -161,6 +168,48 @@
 
         .shape--tertiary {
             background: $color-white;
+        }
+    }
+
+    &#clinical-data-page-hero {
+        .page-hero__title {
+            color: $color-white;
+        }
+
+        .shape--primary {
+            top: 0;
+            right: -2rem;
+            bottom: 0;
+            width: calc(100% + 2rem);
+
+            border-radius: 0rem 0rem 10.875rem 0rem;
+
+            @media screen and (min-width: 1024px) {
+                right: initial;
+                top: initial;
+                bottom: 2.375rem;
+                left: 0;
+                width: 70%;
+                height: 37.6875rem;
+                border-radius: 0rem 26.0302rem 26.0302rem 0rem
+            }
+        }
+
+        .shape--secondary {
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+
+            @media screen and (min-width: 1024px) {
+                height: 36.1875rem;
+                top: 50%;
+                bottom: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                width: calc(100% + 11rem);
+                border-radius: 24.4609rem;
+            }
         }
     }
 }

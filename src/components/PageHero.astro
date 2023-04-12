@@ -5,14 +5,14 @@ type Props = {
 }
 
 const { pageId, classNames = '' } = Astro.props;
-let classname = 'page-hero'
+let classes = 'page-hero'
 
 if (classNames) {
-    classname += ` ${classNames}`
+    classes += ` ${classNames}`
 }
 ---
 
-<section id={`${pageId}-page-hero`} class={classname}>
+<section id={`${pageId}-page-hero`} class={classes}>
     <div class="wrapper">
         <div>
             <slot/>

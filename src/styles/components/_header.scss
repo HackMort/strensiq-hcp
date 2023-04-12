@@ -50,6 +50,8 @@
       line-height: .9375rem;
       @include flex-gap(.45rem);
 
+      // TODO add divider and change font weight
+
       @media screen and (min-width: 375px) {
         @include flex-gap(1rem);
       }
