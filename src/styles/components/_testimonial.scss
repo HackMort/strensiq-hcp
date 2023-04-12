@@ -5,7 +5,7 @@
     @include flex-gap(1rem);
     justify-content: center;
     overflow: hidden;
-    padding: 30px 10px 50px;
+    padding: 1.875rem .625rem 3.125rem;
     position: relative;
 
     @media (min-width: 1024px) {
@@ -17,11 +17,11 @@
     &--home {
         &::before {
             @media(min-width: 1024px) {
-                --width-shape: 2436px;
-                --height-shape: 1365px;
+                --width-shape: 152.25rem;
+                --height-shape: 85.3125rem;
                 --rotation-shape: 32deg;
                 background-color: $color-green;
-                border-radius: 720.81px;
+                border-radius: 45.0506rem;
                 bottom: 50%;
                 content: '';
                 height: var(--height-shape);
@@ -34,7 +34,7 @@
         }
 
         .testimonial__shape-container {
-            bottom: 25px;
+            bottom: 1.5625rem;
 
             @media (min-width: 1024px) {
                 display: none;
@@ -46,10 +46,10 @@
         padding-top: 5.625rem;
 
         &::before {
-            --width-shape: 1500px;
-            --height-shape: 500px;
+            --width-shape: 93.75rem;
+            --height-shape: 31.25rem;
             background-color: $color-green;
-            border-radius: 581.76px;
+            border-radius: 36.36rem;
             content: '';
             height: var(--height-shape);
             left: 0;
@@ -70,15 +70,15 @@
         .testimonial {
             &__quote {
                 &::before {
-                    top: -25px;
+                    top: -1.5625rem;
 
                     @media (min-width: 1024px) {
-                        top: -45px;
+                        top: -2.8125rem;
                     }
                 }
 
                 &::after {
-                    top: 35px
+                    top: 2.1875rem;
                 }
 
                 p {
@@ -117,12 +117,12 @@
         width: 100%;
 
         &-container {
-            max-width: 170px;
-            width: 170px;
+            max-width: 10.625rem;
+            width: 10.625rem;
 
             @media (min-width: 700px) {
-                max-width: 310px;
-                width: 310px;
+                max-width: 19.375rem;
+                width: 19.375rem;
             }
         }
     }
@@ -139,16 +139,16 @@
             display: inline;
             font-size: 150px;
             font-weight: 900;
-            height: 75px;
-            line-height: 187.5008px;
+            height: 4.6875rem;
+            line-height: 11.7188rem;
             margin: 0;
             position: absolute;
-            width: 60px;
+            width: 3.75rem;
             z-index: -1;
 
             @media(min-width: 1024px) {
-                font-size: 200px;
-                line-height: 250px;
+                font-size: 12.5rem;
+                line-height: 15.625rem;
             }
         }
 
@@ -158,8 +158,8 @@
             top: -1.25rem;
 
             @media (min-width: 1024px) {
-                left: -40px;
-                top: -10px;
+                left: -2.5rem;
+                top: -0.625rem;
             }
         }
 
@@ -169,8 +169,8 @@
             right: 0;
 
             @media (min-width: 1024px) {
-                top: 25px;
-                right: -10px;
+                top: 1.5625rem;
+                right: -0.625rem;
             }
         }
 
@@ -181,24 +181,24 @@
             position: relative;
 
             @media (min-width: 700px) {
-                font-size: 24px;
-                line-height: 36px;
+                font-size: 1.5rem;
+                line-height: 2.25rem;
             }
 
             &::after {
                 background-color: $color-dark-pink;
-                bottom: -10px;
+                bottom: -0.625rem;
                 content: '';
                 display: block;
                 left: 0;
                 margin: auto;
                 position: absolute;
                 right: 0;
-                width: 112px;
-                height: 3px;
+                width: 7rem;
+                height: .1875rem;
 
                 @media (min-width: 1024px) {
-                    width: 171px;
+                    width: 10.6875rem;
                 }
             }
         }
@@ -213,13 +213,13 @@
     p {
         color: $color-dark-green;
         font-size: 14px;
-        line-height: 17.5008px;
-        margin-bottom: 6px;
+        line-height: 1.0938rem;
+        margin-bottom: .375rem;
         text-align: center;
 
         @media (min-width: 700px) {
             font-size: 20px;
-            line-height: 25px;
+            line-height: 1.5625rem;
         }
     }
 }
