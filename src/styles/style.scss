@@ -20,7 +20,8 @@
 
 //-------------------------------------------------------------lets work together section-------------------------------------------------------------    
 .lets-work{
-    padding-bottom: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
     &__title{
         color: $color-dark-green;
         margin-bottom: 1.6694rem;
@@ -34,6 +35,11 @@
         margin-bottom: 1.25rem;
         @media screen and (min-width:768px) {
             margin-bottom: 4.25rem;
+            margin-right: .3125rem;
+        }
+        @media screen and (min-width:980px) {
+            margin: auto!important;
+            margin-right: 0;
         }
 
         @media screen and (min-width:970px) {
@@ -42,7 +48,7 @@
     }
     
     &__boxes{
-        @media screen and (min-width:970px) {
+        @media screen and (min-width:768px) {
             display: flex;
             max-width: 64.5rem;
             margin: auto;
@@ -50,8 +56,8 @@
     }
 
     .modifier{
-        max-width: 9.75rem;
-        @media screen and (min-width:360px) {
+        max-width: 8.75rem;
+        @media screen and (min-width:370px) {
             max-width: 11.625rem;
         }
         @media screen and (min-width:800px) {

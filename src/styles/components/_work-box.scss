@@ -1,7 +1,7 @@
 .work-box{
     background-color: $color-dark-green;
+    max-width: 18.5rem;
     height: 6.25rem;
-    max-width: 20.5rem;
     margin: auto;
     display: flex;
     align-items: center;
@@ -9,7 +9,10 @@
     padding-bottom: .8125rem;    
     padding-right: .5rem;   
     
-    
+    @media screen and (min-width:350px) {
+    max-width: 21.5rem;
+    }
+
     @include media('tablet') {
         height: 11.7825rem;
         width: 18.75rem;
@@ -21,9 +24,9 @@
     
 
     &__image{
-        width: 6.5625rem;
-        margin-bottom: -39px;
-        
+        width: 7.5625rem;
+        margin-bottom: -27px;
+        margin-left: -10px;        
 
         @include media('tablet') {
             margin-bottom: unset;
@@ -52,7 +55,7 @@
     }
 
     &__content-text{
-        max-width: 9.75rem;
+        max-width: 8.75rem;
         
         font-family: 'Roboto';
         font-style: normal;
@@ -62,9 +65,9 @@
         color: $color-white;
         
         @media screen and (min-width:350px) {
-        margin-right: 1rem;
+        margin-right: 2rem;
         }
-        @media screen and (min-width:360px) {
+        @media screen and (min-width:370px) {
         margin-right: unset;
         max-width: 11.75rem;
         }

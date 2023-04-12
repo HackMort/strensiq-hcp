@@ -2,7 +2,7 @@
 type Props = {
   imgSrc: string;
   className?: string;
-  link?: string;
+  link: string;
   imgAlt?: string;
 };
 
@@ -13,6 +13,6 @@ const { imgSrc, className,link, imgAlt} = Astro.props;
     <img src={imgSrc} alt={imgAlt} class="work-box__image">
     <div class="work-box__content">
         <p class={`work-box__content-text ${className}`}> <slot /> </p>
-        <div><a href={link}><img src="/assets/icons/right-arrow.png" class="work-box__content-arrow"></a></div>
+        <a href={link}><img src="/assets/icons/right-arrow.png" class="work-box__content-arrow"></a>
     </div>
 </div>
