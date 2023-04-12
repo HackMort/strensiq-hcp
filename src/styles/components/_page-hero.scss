@@ -1,0 +1,350 @@
+.page-hero {
+    background: $color-white;
+    position: relative;
+    height: 12.5rem;
+    overflow: hidden;
+
+    @media screen and (min-width: 1024px) {
+        height: 20.25rem;
+    }
+
+    .wrapper {
+        z-index: 3;
+        padding-top: 1.5625rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 768px) {
+            justify-content: center;
+            padding: 0;
+        }
+    }
+
+    .shape {
+        position: absolute;
+    }
+
+    .shape--primary {
+        z-index: 2;
+        background: $color-dark-green;
+    }
+
+    .shape--secondary {
+        z-index: 1;
+        background: $color-green;
+    }
+
+    .shape--tertiary {
+        z-index: 3;
+        height: .8125rem;
+        border-top-right-radius: 5rem;
+        border-bottom-right-radius: 5rem;
+        width: calc(100% - 5.9375rem);
+        max-width: 29.5625rem;
+        background: $color-dark-yellow;
+
+        bottom: 1.875rem;
+        left: 0;
+
+        @media screen and (min-width: 1024px) {
+            bottom: 4.5625rem;
+        }
+
+        @media screen and (min-width: 1600px) {
+            max-width: 50rem;
+        }
+    }
+
+    .page-hero__subtitle {
+        color: $color-green;
+        font-size: .875rem;
+        line-height: 16.8px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    /*
+        ###########################################################################################
+        STYLES BY PAGE
+    */
+
+    &#hypophosphatasia-page-hero {
+
+        .page-hero__title {
+            color: $color-white;
+            max-width: 21.5625rem;
+
+            @media screen and (min-width: 768px) {
+                max-width: 25.9375rem;
+            }
+        }
+
+        .shape--primary {
+            top: 0;
+            right: -2rem;
+            bottom: .9375rem;
+            width: calc(100% + 2rem);
+
+            border-radius: 0rem 0rem 10.875rem 0rem;
+
+            @media screen and (min-width: 1024px) {
+                right: initial;
+                top: initial;
+                bottom: 0;
+                left: 0;
+                width: 70%;
+                height: 36.125rem;
+                border-radius: 0rem 24.4609rem 24.4609rem 0rem
+            }
+        }
+
+        .shape--secondary {
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+
+            @media screen and (min-width: 1024px) {
+                height: 36.1875rem;
+                top: initial;
+                bottom: 6.75rem;
+                right: -2rem;
+                left: initial;
+                width: calc(100% + 2rem);
+                border-radius: 34.0543rem;
+            }
+        }
+    }
+
+    &#how-it-works-page-hero {
+        .page-hero__title {
+            color: $color-dark-green;
+
+            @media screen and (min-width: 768px) {
+                max-width: 40.625rem;
+            }
+        }
+
+        .shape--primary {
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .shape--secondary {
+            z-index: 2;
+            right: -92px;
+            bottom: -365px;
+            width: 1182.11px;
+            height: 792.68px;
+            border-radius: 416.484px;
+            transform: rotate(34deg);
+
+            @media screen and (min-width: 1024px) {
+                right: auto;
+                left: -200px;
+                bottom: -413px;
+                transform: rotate(28deg);
+            }
+
+            @media screen and (min-width: 1770px) {
+                left: -369px;
+                bottom: -336px;
+                width: 1761px;
+            }
+
+            @media screen and (min-width: 2220px) {
+                left: -200px;
+            }
+
+            @media screen and (min-width: 2715px) {
+                width: 2047px;
+                height: 872.68px;
+                bottom: -396px;
+            }
+        }
+
+        .shape--tertiary {
+            background: $color-white;
+
+            @media screen and (min-width: 768px) {
+                max-width: 44rem;
+            }
+        }
+    }
+
+    &#clinical-data-page-hero {
+        .page-hero__title {
+            color: $color-white;
+        }
+
+        .shape--primary {
+            top: 0;
+            right: -2rem;
+            bottom: 0;
+            width: calc(100% + 2rem);
+
+            border-radius: 0rem 0rem 10.875rem 0rem;
+
+            @media screen and (min-width: 1024px) {
+                right: initial;
+                top: initial;
+                bottom: 2.375rem;
+                left: 0;
+                width: 70%;
+                height: 37.6875rem;
+                border-radius: 0rem 26.0302rem 26.0302rem 0rem
+            }
+        }
+
+        .shape--secondary {
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+
+            @media screen and (min-width: 1024px) {
+                height: 36.1875rem;
+                top: 50%;
+                bottom: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                width: calc(100% + 11rem);
+                border-radius: 24.4609rem;
+            }
+        }
+
+        .shape--tertiary {
+            @media screen and (min-width: 1440px) {
+                max-width: 32.375rem;
+            }
+        }
+    }
+
+    &#dosing-page-hero {
+        .page-hero__title {
+            color: $color-dark-green;
+            font-weight: bold;
+        }
+
+        .shape--tertiary {
+            background: $color-white;
+
+            @media screen and (min-width: 500px) {
+                max-width: 27.5rem;
+            }
+        }
+
+        .shape--primary {
+            z-index: 1;
+
+            @media screen and (min-width: 1024px) {
+                width: calc(100% + 3.75rem);
+                height: 603px;
+                border-radius: 416.484px;
+                bottom: 5.375rem;
+                right: 3.75rem;
+            }
+        }
+
+        .shape--secondary {
+            z-index: 2;
+            width: calc(100% + 33rem);
+            height: 415px;
+            border-radius: 207.5px;
+
+            bottom: 0;
+            right: -47px;
+
+            @media screen and (min-width: 1024px) {
+                width: 1182.11px;
+                height: 792.68px;
+                left: -33rem;
+                transform: rotate(22deg);
+                bottom: -28rem;
+                border-radius: 416.484px;
+            }
+
+            @media screen and (min-width: 1440px) {
+                // left: -20rem;
+                left: auto;
+                right: 45%;
+                width: 1700.11px;
+                height: 880.68px;
+            }
+        }
+    }
+
+    &#toolkit-page-hero {
+        .page-hero__title {
+            color: $color-white;
+            max-width: 19.5rem;
+
+            @media screen and (min-width: 500px) {
+                max-width: max-content;
+            }
+
+            @media screen and (min-width: 1024px) {
+                max-width: 35.5rem;
+            }
+        }
+
+        .shape--primary {
+            top: 0;
+            right: -2rem;
+            bottom: .9375rem;
+            width: calc(100% + 2rem);
+
+            border-radius: 0rem 0rem 10.875rem 0rem;
+
+            @media screen and (min-width: 1024px) {
+                right: initial;
+                bottom: initial;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+                z-index: 1;
+            }
+        }
+
+        .shape--secondary {
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+
+            @media screen and (min-width: 1024px) {
+                z-index: 2;
+
+                width: 1625.1px;
+                height: 1089.74px;
+                border-radius: 544.869px;
+
+                left: 45%;
+                top: auto;
+                bottom: 0px;
+            }
+
+            @media screen and (min-width: 1440px) {
+                bottom: -40px;
+            }
+        }
+
+        .shape--tertiary {
+            @media screen and (min-width: 1440px) {
+                width: 50%;
+                max-width: initial;
+            }
+        }
+    }
+
+    /*
+        STYLES BY PAGE
+        ###########################################################################################
+    */
+}

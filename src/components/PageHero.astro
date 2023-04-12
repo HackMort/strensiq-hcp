@@ -1,0 +1,25 @@
+---
+type Props = {
+    pageId: string;
+    classNames?: string;
+}
+
+const { pageId, classNames = '' } = Astro.props;
+let classes = 'page-hero'
+
+if (classNames) {
+    classes += ` ${classNames}`
+}
+---
+
+<section id={`${pageId}-page-hero`} class={classes}>
+    <div class="wrapper">
+        <div>
+            <slot/>
+        </div>
+    </div>
+
+    <div class="shape shape--primary"></div>
+    <div class="shape shape--secondary"></div>
+    <div class="shape shape--tertiary"></div>
+</section>
