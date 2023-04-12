@@ -169,6 +169,10 @@
 
         .shape--tertiary {
             background: $color-white;
+
+            @media screen and (min-width: 768px) {
+                max-width: 44rem;
+            }
         }
     }
 
@@ -212,6 +216,12 @@
                 border-radius: 24.4609rem;
             }
         }
+
+        .shape--tertiary {
+            @media screen and (min-width: 1440px) {
+                max-width: 32.375rem;
+            }
+        }
     }
 
     &#dosing-page-hero {
@@ -222,6 +232,10 @@
 
         .shape--tertiary {
             background: $color-white;
+
+            @media screen and (min-width: 500px) {
+                max-width: 27.5rem;
+            }
         }
 
         .shape--primary {
@@ -306,7 +320,7 @@
 
             @media screen and (min-width: 1024px) {
                 z-index: 2;
-                
+
                 width: 1625.1px;
                 height: 1089.74px;
                 border-radius: 544.869px;
@@ -328,4 +342,9 @@
             }
         }
     }
+
+    /*
+        STYLES BY PAGE
+        ###########################################################################################
+    */
 }
