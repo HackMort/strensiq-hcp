@@ -22,14 +22,14 @@
                 --rotation-shape: 32deg;
                 background-color: $color-green;
                 border-radius: 720.81px;
+                bottom: 50%;
                 content: '';
                 height: var(--height-shape);
+                margin-left: calc(-1 * (var(--width-shape) / 2) + (var(--height-shape) / 2) * tan(var(--rotation-shape)));
                 position: absolute;
+                transform: rotate(var(--rotation-shape));
                 width: var(--width-shape);
                 z-index: -1;
-                bottom: 50%;
-                transform: rotate(var(--rotation-shape));
-                margin-left: calc(-1 * (var(--width-shape) / 2) + (var(--height-shape) / 2) * tan(var(--rotation-shape)));
             }
         }
 
@@ -45,16 +45,6 @@
     &--hypophosphatasia {
         padding-top: 5.625rem;
 
-        .testimonial__shape-container {
-            display: none;
-
-            /* @media (min-width: 1024px) {
-                display: block;
-                top: 0;
-                width: 65%;
-            } */
-        }
-
         &::before {
             --width-shape: 1500px;
             --height-shape: 500px;
@@ -62,55 +52,53 @@
             border-radius: 581.76px;
             content: '';
             height: var(--height-shape);
+            left: 0;
             position: absolute;
+            top: 20%;
             width: var(--width-shape);
             z-index: -1;
-            left: 0;
-            top: 20%;
 
             @media (min-width: 1024px) {
-                --width-shape: 2175px;
-                --height-shape: 968px;
-                left: 15%;
+                --width-shape: 200vw;
+                --height-shape: calc(var(--width-shape) * 0.4);
+                left: unset;
+                margin-left: 170%;
                 top: 0;
-            }
-
-            @media (min-width: 1070px) {
-                left: 20%;
-            }
-
-            @media (min-width: 1250px) {
-                left: 25%;
             }
         }
 
-        .testimonial__quote {
-            &::before {
-                top: -25px;
+        .testimonial {
+            &__quote {
+                &::before {
+                    top: -25px;
 
-                @media (min-width: 1024px) {
-                    top: -45px;
+                    @media (min-width: 1024px) {
+                        top: -45px;
+                    }
                 }
+
+                &::after {
+                    top: 35px
+                }
+
+                p {
+                    max-width: 37ch;
+
+                    @media (min-width: 1024px) {
+                        max-width: 38.4ch;
+                    }
+                }
+
             }
 
-            &::after {
-                top: 35px
-            }
-
-            p {
-                max-width: 37ch;
-
-                @media (min-width: 1024px) {
-                    max-width: 38.4ch;
-                }
+            &__shape-container {
+                display: none;
             }
         }
     }
 
-
-    &__shape-container {
-        position: absolute;
-        z-index: -1;
+    &__author {
+        font-weight: 500;
     }
 
     &__content {
@@ -119,6 +107,10 @@
         @media (min-width: 1024px) {
             width: fit-content;
         }
+    }
+
+    &__description {
+         font-weight: 400;
     }
 
     &__image {
@@ -212,12 +204,9 @@
         }
     }
 
-    &__author {
-        font-weight: 500;
-    }
-
-    &__description {
-         font-weight: 400;
+    &__shape-container {
+        position: absolute;
+        z-index: -1;
     }
 
     p {
