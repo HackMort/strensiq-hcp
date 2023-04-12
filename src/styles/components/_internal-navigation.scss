@@ -1,7 +1,7 @@
 .internal__nav {
   scroll-margin-top: 7em;
   position: sticky;
-  top: 40px;
+  top: 48px;
   left: 0;
   z-index: 2;
   background-color: $color-bright-gray;
@@ -37,7 +37,7 @@
   &_list {
     display: flex;
     justify-content: flex-start;
-    overflow-x: scroll;
+    overflow-x: hidden;
 
     @media screen and (min-width: 1200px) {
       justify-content: center;
@@ -77,6 +77,13 @@
       padding-left: 1.25rem;
     }
 
+  }
+
+  &.is--fixed {
+    position: fixed;
+    top: 165px;
+    left: 0;
+    width: 100%;
   }
 
 }

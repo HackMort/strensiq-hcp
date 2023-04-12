@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
 const header = document.querySelector('.site__header')
 const headerInner = document.querySelector('.header__inner')
 const headerMainBar = document.querySelectorAll('.main_bar')
+
+const internalNav = document.querySelector('.internal__nav')
 // NodeList to Array
 const headerMainBarArray = Array.prototype.slice.call(headerMainBar)
 
@@ -78,11 +80,14 @@ window.addEventListener('scroll', () => {
           headerInner.classList.contains('is--sticky-up') && headerInner.classList.remove('is--sticky-up')
           headerInner.classList.add('is--sticky-down')
 
+          internalNav.classList.contains('is--fixed') && internalNav.classList.remove('is--fixed')
+
           // Save the current scroll position
           lastScrollPosition = currentScrollPosition
         } else if (!entry.isIntersecting && window.scrollY >= headerHeight && currentScrollPosition < lastScrollPosition) {
           headerInner.classList.contains('is--sticky-down') && headerInner.classList.remove('is--sticky-down')
           headerInner.classList.add('is--sticky-up')
+          internalNav.classList.add('is--fixed')
 
           // Save the current scroll position
           lastScrollPosition = currentScrollPosition
@@ -93,6 +98,7 @@ window.addEventListener('scroll', () => {
         // In this way avoid a unwanted jump of the header
         if (currentScrollPosition === 0) {
           headerInner.classList.remove('is--sticky-up')
+          internalNav.classList.remove('is--fixed')
         }
       }
     })
