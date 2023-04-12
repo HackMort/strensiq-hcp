@@ -61,7 +61,7 @@
         font-style: normal;
         font-weight: 700;
         font-size: 1.125rem;
-        line-height: 125%;
+        line-height: 1.25rem;
         color: $color-white;
         
         @media screen and (min-width:350px) {
@@ -73,7 +73,7 @@
         }
             @include media('tablet') {
                 font-weight: 700;
-                line-height: 115%;
+                line-height: 1.15rem;
                 letter-spacing: -0.5px;
                 font-size: 1.5625rem;
                 max-width: 12.9375rem;
