@@ -1,8 +1,28 @@
 ---
 import MainHero from '../components/MainHero.astro';
 import Layout from "../layouts/Layout.astro";
+import WorkBox from "../components/WorkBox.astro";
 ---
 
 <Layout title="STRENSIQ | HCP">
+
   <MainHero />
+
+  <section class="lets-work wrapper">
+    <h1 class="lets-work__title">Let's get to work</h1>
+
+    <div class="lets-work__boxes">
+      <WorkBox imgSrc="/assets/images/glass.png" link="/hypophosphatasia"> 
+        Learn more about hypophosphatasia
+    </WorkBox>
+
+    <WorkBox imgSrc="/assets/images/tool.png" link="/how-it-works"> 
+      See how STRENSIQ works 
+    </WorkBox>
+    
+    <WorkBox imgSrc="/assets/images/stats.png" link="/clinical-data/overview" className="modifier"> 
+    Clinical data, including real-world outcomes in adults
+    </WorkBox>
+  </div>
+  </section>
 </Layout>

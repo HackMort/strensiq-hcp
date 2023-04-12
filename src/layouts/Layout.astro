@@ -24,6 +24,7 @@ const { title, displayReferences, displayCTA } = Astro.props;
     <link rel="icon" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script src="/assets/js/validate.js" type="module"></script>
   </head>
   <body>
     <Header />
@@ -32,12 +33,12 @@ const { title, displayReferences, displayCTA } = Astro.props;
       <slot />
     </main>
     <ISI />
-    <CTA
+    <!-- <CTA
       heading="Get them off to a solid start"
       linkText="Infants/young children"
       linkUrl="#"
-    />
-    <References />
+    /> -->
+    <!-- <References /> -->
     <Footer />
     <script src="/assets/js/script.js" type="module"></script>
     <script src="../js/modal.js"></script>
