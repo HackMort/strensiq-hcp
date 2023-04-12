@@ -109,9 +109,13 @@
         }
     }
 
-    &#how-it-woks-page-hero {
+    &#how-it-works-page-hero {
         .page-hero__title {
             color: $color-dark-green;
+
+            @media screen and (min-width: 768px) {
+                max-width: 40.625rem;
+            }
         }
 
         .shape--primary {
@@ -130,6 +134,29 @@
             height: 792.68px;
             border-radius: 416.484px;
             transform: rotate(34deg);
+
+            @media screen and (min-width: 1024px) {
+                right: auto;
+                left: -200px;
+                bottom: -413px;
+                transform: rotate(28deg);
+            }
+
+            @media screen and (min-width: 1770px) {
+                left: -369px;
+                bottom: -336px;
+                width: 1761px;
+            }
+
+            @media screen and (min-width: 2220px) {
+                left: -200px;
+            }
+
+            @media screen and (min-width: 2715px) {
+                width: 2047px;
+                height: 872.68px;
+                bottom: -396px;
+            }
         }
 
         .shape--tertiary {

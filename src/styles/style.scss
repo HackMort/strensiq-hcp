@@ -16,3 +16,12 @@
 @import './components/_footer.scss';
 @import './components/_main-hero.scss';
 @import './components/_page-hero.scss';
+
+// How it works page
+.how-it-works__page-hero {
+    .page-hero__title br {
+        @media screen and (min-width: 500px) {
+            display: none;
+        }
+    }
+}

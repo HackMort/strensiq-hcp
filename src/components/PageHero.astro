@@ -1,12 +1,18 @@
 ---
 type Props = {
     pageId: string;
+    classNames?: string;
 }
 
-const { pageId } = Astro.props
+const { pageId, classNames = '' } = Astro.props;
+let classname = 'page-hero'
+
+if (classNames) {
+    classname += ` ${classNames}`
+}
 ---
 
-<section id={`${pageId}-page-hero`} class="page-hero">
+<section id={`${pageId}-page-hero`} class={classname}>
     <div class="wrapper">
         <div>
             <slot/>
