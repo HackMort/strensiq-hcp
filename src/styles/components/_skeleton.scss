@@ -2,8 +2,190 @@
     background-color: $color-dark-green;
     border-radius: 1.875rem;
     box-sizing: border-box;
+    width: fit-content;
 
     @include media('desktop') {
         border-radius: 36.3544rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        padding: 3.125rem 15% 0;
+    }
+
+    &__point {
+        --point-border-style: solid;
+        --point-before-width: 5.3094rem;
+        background-color: $color-green;
+        border-radius: 50px;
+        height: 1.125rem;
+        position: absolute;
+        width: 1.125rem;
+
+        &::before,
+        &::after {
+            bottom: 0;
+            content: '';
+            height: 0;
+            margin: auto;
+            position: absolute;
+            top: 0;
+        }
+
+        &::before {
+            border-bottom: 1px var(--point-border-style) $color-white;
+            right: 100%;
+            width: var(--point-before-width);
+        }
+
+        &::after {
+            background-color: $color-white;
+            border-radius: 50%;
+            height: .3125rem;
+            left: calc(var(--point-before-width) * -1);
+            width: .3125rem;
+        }
+
+        &--invert {
+            &::before {
+                left: 100%;
+                right: unset;
+            }
+
+            &::after {
+                left: unset;
+                right: calc(var(--point-before-width) * -1);
+            }
+
+            .skeleton__word {
+                left: unset;
+                right: calc(var(--point-before-width) * -1);
+            }
+        }
+
+        &--active {
+            --point-border-style: dashed;
+            border: 2px solid $color-white;
+            background-color: $color-dark-pink;
+
+            .skeleton__word {
+                color: $color-white;
+            }
+
+            &::before {
+                left: 100%;
+                right: unset;
+            }
+
+            &::after {
+                border: 2px var(--point-border-style) $color-white;
+                border-radius: unset;
+                height: .3125rem;
+                left: calc(var(--point-before-width) * -1);
+                width: 0;
+            }
+        }
+
+        &[data-word="neurologic"] {
+            --point-before-width: 8.8775rem;
+            right: 35%;
+            top: 5%;
+
+            &.skeleton__point--active {
+                --point-before-width: 3.0938rem;
+            }
+        }
+
+        &[data-word="dental"] {
+            --point-before-width: 6.6581rem;
+            right: 38%;
+            top: 18%;
+        }
+
+        &[data-word="respiratory"] {
+            --point-before-width: 5.0481rem;
+            right: 50%;
+            top: 38%;
+        }
+
+        &[data-word="muscular"] {
+            right: 14%;
+            top: 43%;
+        }
+
+        &[data-word="renal"] {
+            --point-before-width: 2.8894rem;
+            right: 35%;
+            top: 54%;
+        }
+
+        &[data-word="rheumatic"] {
+            --point-before-width: 2.2194rem;
+            right: 63%;
+            top: 57%;
+        }
+
+        &[data-word="skeletal"] {
+            --point-before-width: 6.5625rem;
+            right: 71%;
+            top: 71%;
+        }
+
+        &[data-word="orthopedic"] {
+            right: 30%;
+            top: 90%;
+        }
+
+    }
+
+    &__image {
+        max-width: 418px;
+
+        &-container {
+            position: relative;
+            width: fit-content;
+        }
+    }
+
+    &__symptom {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.0938rem;
+
+        &::marker {
+            color: $color-black;
+        }
+
+        &s-list {
+            background-color: $color-white;
+            border-radius: 0 0 0 1.875rem;
+            border-top: .7881rem solid $color-green;
+            height: 7rem;
+            margin: 0 auto;
+            left: 0;
+            padding-top: 1.125rem;
+            padding-left: 2rem;
+            position: absolute;
+            right: 0;
+            top: 26%;
+            width: 16.875rem;
+
+            &--hidden {
+                display: none;
+            }
+        }
+    }
+
+    &__word {
+        color: $color-green;
+        cursor: pointer;
+        font-size: 25px;
+        font-weight: 900;
+        left: calc(var(--point-before-width) * -1);
+        line-height: 1.7969rem;
+        position: absolute;
+        top: -1.625rem;
+
+        &:hover {
+            color: $color-white;
+        }
     }
 }
