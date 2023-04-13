@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault()
       const accessCode = form.querySelector('input[name="access-code"]').value
       if (accessCode === 'STr3Ns!Q') {
-        document.cookie = `accessCookie=${accessCode};max-age=604800` // 1 week
+        document.cookie = `accessCookie=${accessCode};max-age=604800;path=/`
         window.location.href = '/'
       } else {
         window.alert('Invalid Access Code')
