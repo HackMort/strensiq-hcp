@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
   })
 
 
+  //Internal Navigation
   const headerHeight = document.querySelector('.site__header').offsetHeight
   window.addEventListener('scroll', () => {
     highlightActiveInternalNavOnScroll(headerHeight)
@@ -130,8 +131,10 @@ function setActiveIternalNavItemOnClick () {
       // scroll to section
       const sectionID = anchor.getAttribute('href')
       const target = document.querySelector(sectionID)
-      const marginOffset = -250
+      console.log(sectionID, "sectionID 1")
+      const marginOffset = -300
       const totalOffset = target.getBoundingClientRect().top + window.pageYOffset + marginOffset
+      console.log(totalOffset, "totalOffset")
       window.scrollTo({
         top: totalOffset,
         behavior: 'smooth'
@@ -148,6 +151,8 @@ function setActiveIternalNavItemOnClick () {
  */
 function highlightActiveInternalNavOnScroll (headerHeight) {
   const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
+  const internalNav = document.querySelector('.internal__nav_list')
+  const activeLi = document.querySelector('.internal__nav_list_item.is--active')
   const sections = document.querySelectorAll('.section')
   const sectionObserverOptions = {
     root: null,
@@ -159,17 +164,21 @@ function highlightActiveInternalNavOnScroll (headerHeight) {
 
       //Distance between the top of the section and the top of the viewport
       const sectionTop = entry.boundingClientRect.top
+      const internalNavWidth = internalNav.offsetWidth
+      const activeLiPosition = activeLi.offsetLeft
 
       //Validate if the section that are in viewport and is closer of the header
-      if (entry.isIntersecting && sectionTop <= headerHeight+100) {
+      if (entry.isIntersecting && sectionTop <= headerHeight + 30) {
         const sectionId = entry.target.getAttribute('id')
-
+        console.log(sectionId, "sectionId")
+        console.log(sectionTop, "sectionTop")
         internalNavItems.forEach((item) => {
           item.classList.remove('is--active')
-          /*Valide is the section is in viewport, if the scroll position is between the section top and the section top + section height, and
-          the section that is closser of the header */
+          /*Valide is the section is in viewport*/
           if (item.querySelector('a').getAttribute('href') === `#${sectionId}`) {
             item.classList.add('is--active')
+            //Scroll left
+            internalNav.scrollLeft = activeLiPosition - internalNavWidth + 100
           }
         })
       }

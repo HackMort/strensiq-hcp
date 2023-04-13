@@ -41,7 +41,15 @@
   &_list {
     display: flex;
     justify-content: flex-start;
-    overflow-x: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    scroll-behavior: smooth;
+
+    @media screen and (min-width: 768px) {
+      overflow-x: hidden;
+    }
 
     @media screen and (min-width: 1200px) {
       justify-content: center;
