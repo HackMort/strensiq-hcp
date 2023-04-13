@@ -145,9 +145,8 @@
     }
 
     &--hypophosphatasia {
-        padding-top: 5.625rem;
-
-
+        padding-top: 3.125rem;
+        padding-bottom: 6.875rem;
 
         .testimonial__quote {
             &::before {
@@ -220,7 +219,7 @@
                     --width-shape: 200vw;
                     --height-shape: calc(var(--width-shape) * 0.4);
                     left: unset;
-                    margin-left: 170%;
+                    margin-left: calc(var(--width-shape) * 0.70);
                     top: 0;
                 }
             }
