@@ -15,6 +15,7 @@
 @import './components/_cta.scss';
 @import './components/_footer.scss';
 @import './components/work-box';
+@import './components/steps-box';
 @import './components/_main-hero.scss';
 @import './components/_page-hero.scss';
 
@@ -157,3 +158,44 @@
         }
     }
 }
+
+
+//-------------------------------------------------------------toolkit steps section -------------------------------------------------------------    
+.toolkit-steps{
+    margin-top: 1.5625rem;
+    margin-bottom: 2rem;
+    @include media('tablet') {
+        margin-top: 3rem;
+    }
+
+    &__desc{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.25rem;
+        line-height: 125%;
+        margin-bottom: 1rem;
+        color: $color-dark-green;
+    }
+    &__boxes{
+        
+        @include media('tablet') {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+    }
+
+    .image-modifier{
+        width: 5.1856rem;
+    }
+    .image-modifier-arrow{
+        width: 5.1856rem;
+    }
+
+    .title-modifier{
+        line-height: 4.5rem;
+    }
+}
+//-------------------------------------------------------------toolkit steps section -------------------------------------------------------------    
+

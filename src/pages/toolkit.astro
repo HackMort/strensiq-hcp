@@ -1,6 +1,7 @@
 ---
 import PageHero from '../components/PageHero.astro';
 import Layout from "../layouts/Layout.astro";
+import StepsBox from '../components/StepsBox.astro';
 ---
 
 <Layout title="Toolkit">
@@ -9,10 +10,25 @@ import Layout from "../layouts/Layout.astro";
             Tools to start treating hypophosphatasia at its source
         </h1>
     </PageHero>
-  <div class="wrapper">
-    <h1>Toolkit</h1>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id magni vel minima
-    omnis numquam maiores corporis sint ea atque quas, exercitationem laudantium.
-    Fugiat, harum quidem quam possimus natus qui quae?
-  </div>
+
+
+  <section class="toolkit-steps wrapper">
+    <p class="toolkit-steps__desc">3 steps for starting patients on STRENSIQ</p>
+    <div class="toolkit-steps__boxes">
+
+      <StepsBox imgSrc="clipboard-icon" stepNumber="1" imgAlt="clipboard">
+        Reach out to your local Alexion representative who will help guide you through the prescription fulfillment process and connect you with your support team
+        <a href="#" class="button">Request a Rep</a>
+      </StepsBox> 
+      
+      <StepsBox imgSrc="arrow-box-icon" stepNumber="2" imgAlt="arrow" className="image-modifier-arrow" classTitle="title-modifier">
+        Your Alexion team will help you identify and submit the necessary forms to PANTHERx, the STRENSIQ specialty pharmacy
+      </StepsBox> 
+      
+      <StepsBox imgSrc="monitor-icon" stepNumber="3" imgAlt="monitor" className="image-modifier">
+        Work with your patient to enroll in OneSourceTM—the complimentary, personalized patient support program from Alexion
+      </StepsBox> 
+    </div>
+  </section>
+
 </Layout>
