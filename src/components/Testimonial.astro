@@ -1,0 +1,28 @@
+---
+    export interface Props {
+        mainImageAlt?: string;
+        authorInformation: string;
+        authorDescription: string;
+        page:string;
+        shapeType?: string;
+    }
+
+    const { mainImageAlt = " ", authorInformation, authorDescription, page, shapeType = "top"} = Astro.props;
+---
+
+<section class={`testimonial testimonial--${page} testimonial--shape-${shapeType}`}>
+    <picture class="testimonial__shape-container">
+        <source media="(min-width: 1024px)" srcset={`/assets/images/testimonial-shapes/${shapeType}/testimonial-shape-desktop.svg`}>
+        <img class="testimonial__shape" src={`/assets/images/testimonial-shapes/${shapeType}/testimonial-shape-mobile.svg`} alt=" ">
+    </picture>
+    <figure class="testimonial__image-container">
+        <img src={`/assets/images/${page}/testimonial/testimonial.png`} alt={mainImageAlt} class="testimonial__image">
+    </figure>
+    <article class="testimonial__content">
+        <blockquote class="testimonial__quote">
+            <slot/>
+        </blockquote>
+        <p class="testimonial__author">{authorInformation}</p>
+        <p class="testimonial__author-description">{authorDescription}</p>
+    </article>
+</section>

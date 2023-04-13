@@ -1,12 +1,21 @@
 ---
+import PageHero from "../../components/PageHero.astro";
 import Layout from "../../layouts/Layout.astro";
+import CTA from "../../components/CTA.astro";
+import References from "../../components/References.astro";
 ---
 
 <Layout title="Adults">
-  <div class="wrapper">
-    <h1>Adults</h1>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id magni vel minima
-    omnis numquam maiores corporis sint ea atque quas, exercitationem laudantium.
-    Fugiat, harum quidem quam possimus natus qui quae?
-  </div>
+  <PageHero pageId="clinical-data" classNames="clinical-data-adults__page-hero">
+    <h2 class="page-hero__subtitle">
+      for adults with pediatric-onset hypophosphatasia
+    </h2>
+    <h1 class="page-hero__title">See STRENSIQ results</h1>
+  </PageHero>
+  <CTA
+    heading="Get the blueprint for STRENSIQ dosing"
+    linkText="Dosing"
+    linkUrl="/dosing"
+  />
+  <References />
 </Layout>

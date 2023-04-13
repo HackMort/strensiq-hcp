@@ -1,4 +1,7 @@
 ---
+import CTA from "../components/CTA.astro";
+import PageHero from "../components/PageHero.astro";
+import References from "../components/References.astro";
 import Layout from "../layouts/Layout.astro";
 import InternalNavigation from "../components/InternalNavigation.astro";
 const internalNavLinks = [
@@ -10,6 +13,15 @@ const internalNavLinks = [
 ---
 
 <Layout title="Hypophosphatasia">
+  <PageHero pageId="hypophosphatasia">
+    <h1 class="page-hero__title">Hypophosphatasia can be damaging</h1>
+  </PageHero>
+  <CTA
+    heading="Get to know the nuts and bolts of STRENSIQ"
+    linkText="How it works"
+    linkUrl="/how-it-works"
+  />
+  <References />
   {internalNavLinks && <InternalNavigation items={internalNavLinks} />}
   <div class="wrapper">
     <h1>Hypophosphatasia</h1>
@@ -175,4 +187,3 @@ const internalNavLinks = [
     </div>
   </div>
 </Layout>
- 

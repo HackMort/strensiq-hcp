@@ -1,12 +1,19 @@
 ---
+import PageHero from "../components/PageHero.astro";
 import Layout from "../layouts/Layout.astro";
+import CTA from "../components/CTA.astro";
 ---
 
 <Layout title="Toolkit">
-  <div class="wrapper">
-    <h1>Toolkit</h1>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id magni vel minima
-    omnis numquam maiores corporis sint ea atque quas, exercitationem laudantium.
-    Fugiat, harum quidem quam possimus natus qui quae?
-  </div>
+  <PageHero pageId="toolkit" classNames="toolkit__page-hero">
+    <h1 class="page-hero__title">
+      Tools to start treating hypophosphatasia at its source
+    </h1>
+  </PageHero>
+  <CTA
+    heading="Need more tools? <br /> Head to Alexion Access Navigator for more access and reimbursement resources"
+    linkText="Alexion Access Navigator"
+    linkUrl="https://alexionaccessnavigator.com/"
+    linkTarget="_blank"
+  />
 </Layout>

@@ -1,12 +1,18 @@
 ---
+import PageHero from "../components/PageHero.astro";
 import Layout from "../layouts/Layout.astro";
+import CTA from "../components/CTA.astro";
 ---
 
 <Layout title="Dosing">
-  <div class="wrapper">
-    <h1>Dosing</h1>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id magni vel minima
-    omnis numquam maiores corporis sint ea atque quas, exercitationem laudantium.
-    Fugiat, harum quidem quam possimus natus qui quae?
-  </div>
+  <PageHero pageId="dosing" classNames="dosing__page-hero">
+    <h1 class="page-hero__title">
+      STRENSIQ offers<br /> at-home dosing
+    </h1>
+  </PageHero>
+  <CTA
+    heading="Getting started is easier  when you have the right tools"
+    linkText="Toolkit"
+    linkUrl="/toolkit"
+  />
 </Layout>

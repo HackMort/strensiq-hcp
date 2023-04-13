@@ -1,12 +1,24 @@
 ---
+import PageHero from "../../components/PageHero.astro";
 import Layout from "../../layouts/Layout.astro";
+import CTA from "../../components/CTA.astro";
+import References from "../../components/References.astro";
 ---
 
 <Layout title="Children">
-  <div class="wrapper">
-    <h1>Children</h1>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id magni vel minima
-    omnis numquam maiores corporis sint ea atque quas, exercitationem laudantium.
-    Fugiat, harum quidem quam possimus natus qui quae?
-  </div>
+  <PageHero
+    pageId="clinical-data"
+    classNames="clinical-data-children__page-hero"
+  >
+    <h2 class="page-hero__subtitle">in children with hypophosphatasia</h2>
+    <h1 class="page-hero__title">
+      STRENSIQ helps build<br /> their framework and<br /> gets them moving
+    </h1>
+  </PageHero>
+  <CTA
+    heading="Watch them fortify their foundation"
+    linkText="Adolescents"
+    linkUrl="/clinical-data/adolescents"
+  />
+  <References />
 </Layout>
