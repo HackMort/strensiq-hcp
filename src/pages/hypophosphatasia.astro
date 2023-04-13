@@ -1,19 +1,30 @@
 ---
-import PageHero from '../components/PageHero.astro';
+import CTA from "../components/CTA.astro";
+import PageHero from "../components/PageHero.astro";
+import References from "../components/References.astro";
 import Layout from "../layouts/Layout.astro";
+import Testimonial from "../components/Testimonial.astro";
 ---
 
 <Layout title="Hypophosphatasia">
-    <PageHero pageId="hypophosphatasia">
-        <h1 class="page-hero__title">
-            Hypophosphatasia can be damaging
-        </h1>
-    </PageHero>
-  <div class="wrapper">
-    <h1>Hypophosphatasia</h1>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id magni vel minima
-    omnis numquam maiores corporis sint ea atque quas, exercitationem laudantium.
-    Fugiat, harum quidem quam possimus natus qui quae? 
-  </div>
+  <PageHero pageId="hypophosphatasia">
+    <h1 class="page-hero__title">Hypophosphatasia can be damaging</h1>
+  </PageHero>
+  <Testimonial
+    authorInformation="Eric Rush, MD, Clinical Geneticist"
+    authorDescription="Alexion-sponsored speaker"
+    page="hypophosphatasia"
+    shapeType="right"
+  >
+    <p>
+      As we continue to learn about hypophosphatasia, we are truly understanding
+      that it is a multisystemic disease and not just a skeletal disease.
+    </p>
+  </Testimonial>
+  <CTA
+    heading="Get to know the nuts and bolts of STRENSIQ"
+    linkText="How it works"
+    linkUrl="/how-it-works"
+  />
+  <References />
 </Layout>
- 
