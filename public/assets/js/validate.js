@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const accessCookie = document.cookie.split(';').filter((item) => item.trim().startsWith('accessCookie=')).pop()
-  if (!accessCookie && accessCookie !== 'accessCookie=STr3Ns!Q' && window.location.pathname !== '/validate') {
-    window.location.href = '/validate'
+  if (!accessCookie && accessCookie !== 'accessCookie=STr3Ns!Q' && window.location.pathname !== '/validate/') {
+    window.location.href = '/validate/'
   }
 
   // Validate Form
