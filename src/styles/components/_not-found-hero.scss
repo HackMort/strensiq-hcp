@@ -5,7 +5,7 @@
 
     min-height: 12.5rem;
     height: calc(200px + (690 - 200) * ((100vw - 375px) / (1440 - 375)));
-    max-height: 43.125rem;
+    // max-height: 43.125rem;
 
     .not-found-hero__content {
         position: absolute;
@@ -81,7 +81,7 @@
         @media screen and (min-width: 768px) {
             width: 1494.64px;
             height: 894.64px;
-            border-radius: 504.78px;
+            border-radius: 31.5487rem;
             transform: rotate(49.87deg);
 
             right: 24%;
@@ -91,6 +91,14 @@
         @media screen and (min-width: 1024px) {
             right: 29%;
             bottom: -9rem;
+        }
+
+        @media screen and (min-width: 1440px) {
+            transform: rotate(59.87deg);
+            right: 22%;
+            width: calc(1494.64px + 75%);
+            height: calc(894.64px + 75%);
+            border-radius: calc(31.5487rem + 50%);
         }
     }
 
