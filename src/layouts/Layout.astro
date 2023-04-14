@@ -1,6 +1,7 @@
 ---
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import "../styles/style.scss";
+import ExitModal from "../components/ExitModal.astro";
 import ISI from "../components/ISI.astro";
 import Footer from "../components/Footer.astro";
 import References from "../components/References.astro";
@@ -50,6 +51,7 @@ const {
         }
         { displayReferences && <References /> }
         <Footer />
+        <ExitModal />
         <script src="/assets/js/script.js" type="module"></script>
         <script src="../js/modal.js"></script>
     </body>
