@@ -19,12 +19,16 @@
         line-height: 4.5rem;
         letter-spacing: -0.03em;
         color: $color-dark-green;
-        @include media('tablet') {
+        @media screen and (min-width:768px) {
             font-size: 2.5rem;
+        }
+        @media screen and (min-width:1024px) {
+            line-height: 3.5rem;
+            font-size: 3rem;
         }
 
         @media screen and (min-width:1366px) {
-            font-size: 4.375rem;
+            line-height: 4.5rem;
         }
     }
 
@@ -33,6 +37,10 @@
         justify-content: space-between;
         align-items: center;
         padding-right: 2rem;
+        
+        @media screen and (min-width:1024px) {
+            min-height: 4.4725rem;
+        }
 
         @media screen and (min-width:1366px) {
             padding-right: 4rem;

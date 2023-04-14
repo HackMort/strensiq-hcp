@@ -180,7 +180,7 @@
         margin-bottom: 2rem;
         color: $color-dark-green;
 
-        @media screen and (min-width:1366px) {
+        @media screen and (min-width:1365px) {
             font-size: 1.875rem;
             margin-bottom: 3rem;
         }
@@ -203,6 +203,12 @@
 
     .title-modifier{
         line-height: 4.5rem;
+        @media screen and (min-width:1024px) {
+            line-height: 70px!important;
+        }
+        @media screen and (min-width:1366px) {
+            line-height: 4.5rem;
+        }
     }
 }
 //-------------------------------------------------------------toolkit steps section -------------------------------------------------------------    
