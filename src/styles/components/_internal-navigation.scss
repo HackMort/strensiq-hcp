@@ -1,0 +1,140 @@
+.internal__nav {
+  scroll-margin-top: 7em;
+  position: sticky;
+  top: 48px;
+  left: 0;
+  z-index: 2;
+  background-color: $color-bright-gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  align-items: center;
+  padding-top: .3125rem;
+  padding-right: 0;
+  padding-bottom: .3125rem;
+  padding-left: 1rem;
+
+  @media screen and (max-width: 1100px) {
+    top: 40px;
+  }
+
+  @media screen and (min-width: 500px) {
+    gap: 3rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  @media screen and (min-width: 1200px) {
+    // gap: 9.0625rem;
+  }
+
+
+  &_heading {
+    color: $color-dark-gray;
+    font-family: Inter;
+    font-size: .875rem;
+    font-weight: 900;
+    line-height: 1.125rem;
+  }
+
+  &_list {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    scroll-behavior: smooth;
+
+
+    @media screen and (min-width: 500px) {
+      margin: auto;
+    }
+
+    @media screen and (min-width: 768px) {
+      overflow-x: hidden;
+    }
+
+    &_item {
+      flex: 0 0 auto;
+      list-style-type: none;
+      marker: none;
+      text-align: center;
+
+      &:not(:last-of-type) {
+        margin-right: 0.75rem;
+      }
+
+      &.is--active {
+
+        a {
+          background-color: $color-dark-green;
+          border-radius: 3.6875rem;
+          color: $color-white;
+          font-weight: 900;
+        }
+
+      }
+    }
+
+    a {
+      color: $color-dark-green;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.125rem;
+      text-decoration: none;
+      padding-top: 1rem;
+      padding-right: 1.25rem;
+      padding-bottom: 1rem;
+      padding-left: 1.25rem;
+    }
+
+  }
+
+  &.is--fixed {
+    position: fixed;
+    top: 165px;
+    left: 0;
+    width: 100%;
+
+    @media screen and (max-width: 1100px) {
+      top: 117px;
+    }
+  }
+
+  &_expand-icon {
+    border-bottom: 3px solid $color-blue;
+
+    &--desktop {
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @media screen and (max-width: 500px) {
+        display: block;
+      }
+    }
+
+    &--anchor {
+      display: flex;
+      flex-direction: row;
+      color: $color-blue !important;
+      font-size: 1rem;
+      font-weight: 900;
+      padding-top: auto !important;
+      padding-right: 0 !important;
+      padding-bottom: 0 !important;
+      padding-left: 0 !important;
+    }
+    &--img {
+      height: 25px;
+      width: 25px;
+      margin-left: 10px;
+    }
+  }
+
+}

@@ -46,66 +46,173 @@ document.addEventListener('DOMContentLoaded', function (e) {
       }
     })
   })
+
+
+  //Internal Navigation
+  window.addEventListener('scroll', () => {
+    highlightActiveInternalNavOnScroll()
+  })
+  setActiveIternalNavItemOnClick()
 })
 
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
 const header = document.querySelector('.site__header')
 const headerInner = document.querySelector('.header__inner')
 const headerMainBar = document.querySelectorAll('.main_bar')
-//NodeList to Array
+const internalNav = document.querySelector('.internal__nav')
+// NodeList to Array
 const headerMainBarArray = Array.prototype.slice.call(headerMainBar)
 
 const headerHeight = header.offsetHeight
+const headerObserverOptions = { root: null, rootMargin: '0px', threshold: 0 }
 let lastScrollPosition = 0
 
-addEventListener('scroll', () => {
-
-const headerObserver = new window.IntersectionObserver((entries, observer) => {
-
-  entries.forEach(entry => {
+window.addEventListener('scroll', () => {
+  const headerObserver = new window.IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
     // I think we need to play with this 2 variables
     // const isAbove = entry.boundingClientRect.y < entry.rootBounds.y
     // const isBelow = entry.boundingClientRect.y > entry.rootBounds.y
 
-    let currentScrollPosition = window.scrollY 
+      const currentScrollPosition = window.scrollY
 
-    //When the user scrolls down the page and the header is not in viewport add class is-.sticky-down to header that class hide main bar,
-    //then add class is--sticky-up to header to show main bar
-    if (!entry.isIntersecting && window.scrollY >= headerHeight) {
+      // When the user scrolls down the page and the header is not in viewport add class is-.sticky-down to header that class hide main bar,
+      // then add class is--sticky-up to header to show main bar
+      if (!entry.isIntersecting && window.scrollY >= headerHeight) {
+        if (currentScrollPosition > lastScrollPosition) {
+          headerInner.classList.contains('is--sticky-up') && headerInner.classList.remove('is--sticky-up')
+          headerInner.classList.add('is--sticky-down')
 
-      if(currentScrollPosition > lastScrollPosition) {
-        headerInner.classList.contains('is--sticky-up') && headerInner.classList.remove('is--sticky-up')
-        headerInner.classList.add('is--sticky-down')
+          internalNav && internalNav.classList.contains('is--fixed') && internalNav.classList.remove('is--fixed')
 
-        //Save the current scroll position
-        lastScrollPosition = currentScrollPosition
-      } else if (!entry.isIntersecting && window.scrollY >= headerHeight && currentScrollPosition < lastScrollPosition) {
-        headerInner.classList.contains('is--sticky-down') && headerInner.classList.remove('is--sticky-down')
-        headerInner.classList.add('is--sticky-up')
+          // Save the current scroll position
+          lastScrollPosition = currentScrollPosition
+        } else if (!entry.isIntersecting && window.scrollY >= headerHeight && currentScrollPosition < lastScrollPosition) {
+          headerInner.classList.contains('is--sticky-down') && headerInner.classList.remove('is--sticky-down')
+          headerInner.classList.add('is--sticky-up')
+          internalNav && internalNav.classList.add('is--fixed')
+
+          // Save the current scroll position
+          lastScrollPosition = currentScrollPosition
+        }
+      } else {
+        headerInner.classList.remove('is--sticky-down')
+
+        // In this way avoid a unwanted jump of the header
+        if (currentScrollPosition === 0) {
+          headerInner.classList.remove('is--sticky-up')
+          internalNav && internalNav.classList.remove('is--fixed')
+        }
+      }
+    })
+  }, headerObserverOptions)
+  headerObserver.observe(header)
+})
+
+
+/*
+  * highlightActiveInternalNavOnScroll
+  * @description
+  * - Add class is--active to internal navigation items when the section is in viewport
+  * It requires IntersectionObserver API
+  * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+ */
+function highlightActiveInternalNavOnScroll () {
+  const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
+  const internalNav = document.querySelector('.internal__nav_list')
+  const activeLi = document.querySelector('.internal__nav_list_item.is--active') || internalNavItems[0]
+  const sections = document.querySelectorAll('.section')
+  const headerHeight = header.offsetHeight
+  const sectionObserverOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.25
+  }
+  const sectionObserver = new window.IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+
+      //Distance between the top of the section and the top of the viewport
+      const sectionTop = entry.boundingClientRect.top
+      const internalNavWidth = internalNav.offsetWidth
+      const activeLiPosition = activeLi.offsetLeft
+
+      //Validate if the section that are in viewport and is closer of the top of the viewport
+      if (entry.isIntersecting && sectionTop <=  headerHeight) {
+        const sectionId = entry.target.getAttribute('id')
+        internalNavItems.forEach((item) => {
+          item.classList.remove('is--active') 
+        })
+
+        const activeLi = document.querySelector(`.internal__nav_list_item a[href="#${sectionId}"]`).parentElement
+        activeLi.classList.add('is--active')
         
-        //Save the current scroll position
-        lastScrollPosition = currentScrollPosition
+        //Scroll the internal navigation to the active item
+        internalNav.scrollLeft = activeLiPosition - internalNavWidth / 2 
+
       }
 
-    } else {
-      headerInner.classList.remove('is--sticky-down')
-      
-      //In this way avoid a unwanted jump of the header
-      if (currentScrollPosition === 0) {
-        headerInner.classList.remove('is--sticky-up')
-      }
-
-    }
-    
+    })
+  }
+  , sectionObserverOptions)
+  sections.forEach((section) => {
+    sectionObserver.observe(section)
   })
 }
-, {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0
-})
-headerObserver.observe(header)
-})
+
+
+/*
+  * setActiveIternalNavItemOnClick
+  * @description
+  * - Add class is--active to internal navigation items when the link is clicked
+  * - Scroll to section
+  * It requires IntersectionObserver API
+  * * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+*/
+function setActiveIternalNavItemOnClick () {
+  const headerNavHeight = document.querySelector('.site__header')
+  const internalNav = document.querySelector('.internal__nav') 
+  const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
+  const headerInner = document.querySelector('.site__header .header__inner')
+  let marginYOff = 0
+
+  internalNav &&
+  internalNav.addEventListener('click', (e) => {
+    e.preventDefault()
+    const target = e.target
+
+    if (target.tagName === 'A') {
+      const sectionID = target.getAttribute('href')
+      const targetSection = document.querySelector(sectionID)
+
+      // Get the height of the header when the user scrolls down the page and the header is not in viewport
+      if (headerInner.classList.contains('is--sticky-down')) {
+        marginYOff = headerNavHeight.offsetHeight + 150
+      } else if (headerInner.classList.contains('is--sticky-up')) {
+        marginYOff = 0
+      } else {
+        marginYOff = headerNavHeight.offsetHeight + 150
+      }
+
+      // Scroll to section
+      const totalOffset = targetSection.getBoundingClientRect().top + window.pageYOffset - marginYOff
+
+      window.scrollTo({
+        top: totalOffset,
+        behavior: 'smooth'
+      })
+    }
+
+    // Remove class is--active from all internal navigation items
+    internalNavItems.forEach((item) => {
+      item.classList.remove('is--active')
+    })
+
+    // Add class is--active to the clicked internal navigation item
+    target.parentElement.classList.add('is--active')
+
+  })
+
+}
 
 /**
    * isiHeaderFixed
