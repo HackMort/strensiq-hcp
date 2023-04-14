@@ -2,12 +2,9 @@
        
     display: none;
      padding-top: 41px;
-     padding-right: 74px;
-     padding-bottom: 41px;
-     padding-left: 74px;
      max-width: 960px;
      min-height: 29.75rem;
-    border-radius: 0;   
+    border-radius: 1.25rem;   
     overflow: hidden;
     
     &::before {
@@ -56,7 +53,7 @@
             transform: rotate(45deg);
             background-color: $color-white;
             position: absolute;
-            right: -29px;
+            right: -20px;
             top: 21px;
             cursor: pointer;
             font-style: normal;
@@ -71,9 +68,17 @@
 
         @media screen and (max-width:768px) {
             .modal__close{
+                width: 6.2rem;
                 font-size: 40px;
-                right: -40px;
-                top: 6px;
+                right: -2.875rem;
+                top: 11px;
+            }
+        }
+        @media screen and (max-width:400px) {
+            .modal__close{
+                width: 4rem;
+                right: -16px;
+                top: 0px;
             }
         }
 
@@ -81,20 +86,20 @@
 
     &__content{
         height: 100%;
-        max-width: 38.875rem;
+        max-width: 44.875rem;
         margin: auto;
     }
 
     &__title {
         text-align: center;
         font-size: 50px;
-        margin-bottom: .625rem;
+        margin-bottom: .875rem;
         max-height: 162px;
         line-height: 1.1;
         color: $color-white;
 
         @media screen and (max-width:768px) {
-          padding-bottom: 18px;
+          padding-bottom: 0;
           font-size: 30px;
         }           
     }
@@ -110,6 +115,10 @@
 
         @media screen and (max-width:768px) {
             font-size: 18px;
+            text-align: center;
+            max-width: 248px;
+            margin: auto;
+            margin-bottom: 2rem;
         }
     }
 
@@ -123,7 +132,7 @@
             color: $color-dark-gray;
 
             @media screen and (max-width:768px) {
-                font-size: 16px;
+                font-size: 14px;
                 padding: .0625rem;
             }  
     }
@@ -149,8 +158,9 @@
     &__buttons{
         margin-bottom: 5.5625rem;
         @media screen and (max-width:768px) {
-            margin-bottom: 3.5625rem;
+            margin-bottom: 4.5625rem;
         }
+
         button{
             margin: auto;
             margin-bottom: 1rem;
@@ -260,6 +270,13 @@
         &__title {
             font-size: 32px;
             line-height: 32px;
+        }
+    }
+
+    @media screen and (max-width:400px) {
+    
+        &__title {
+            margin-top: 1rem;
         }
     }
     
