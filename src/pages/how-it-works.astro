@@ -3,6 +3,7 @@ import PageHero from "../components/PageHero.astro";
 import Layout from "../layouts/Layout.astro";
 import CTA from "../components/CTA.astro";
 import References from "../components/References.astro";
+import Section from '../components/Section.astro';
 ---
 
 <Layout title="How It Works">
@@ -11,6 +12,13 @@ import References from "../components/References.astro";
       Only STRENSIQ starts <br /> at the source of hypophosphatasia (HPP)
     </h1>
   </PageHero>
+  <br><br>
+  <Section>
+    <p class="custom-section__title" slot="header">Hypophosphatasia mechanism of disease (MOD)</p>
+    <div>
+        <!-- content here -->
+    </div>
+  </Section>
   <CTA
     heading="Learn more about the treatment that answers the call"
     linkText="Clinical data"

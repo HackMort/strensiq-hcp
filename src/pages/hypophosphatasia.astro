@@ -3,6 +3,7 @@ import CTA from "../components/CTA.astro";
 import PageHero from "../components/PageHero.astro";
 import References from "../components/References.astro";
 import Layout from "../layouts/Layout.astro";
+import Testimonial from "../components/Testimonial.astro";
 import InternalNavigation from "../components/InternalNavigation.astro";
 const internalNavLinks = [
   { href: "about", label: "About HPP", active: true },
@@ -16,6 +17,17 @@ const internalNavLinks = [
   <PageHero pageId="hypophosphatasia">
     <h1 class="page-hero__title">Hypophosphatasia can be damaging</h1>
   </PageHero>
+  <Testimonial
+    authorInformation="Eric Rush, MD, Clinical Geneticist"
+    authorDescription="Alexion-sponsored speaker"
+    page="hypophosphatasia"
+    shapeType="right"
+  >
+    <p>
+      As we continue to learn about hypophosphatasia, we are truly understanding
+      that it is a multisystemic disease and not just a skeletal disease.
+    </p>
+  </Testimonial>
   {internalNavLinks && <InternalNavigation items={internalNavLinks} icon={false} />}
   <div class="wrapper">
     <h1>Hypophosphatasia</h1>
