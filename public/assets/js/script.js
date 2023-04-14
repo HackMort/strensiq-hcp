@@ -49,9 +49,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
 
   //Internal Navigation
-  const headerHeight = document.querySelector('.site__header').offsetHeight
   window.addEventListener('scroll', () => {
-    highlightActiveInternalNavOnScroll(headerHeight)
+    highlightActiveInternalNavOnScroll()
   })
   setActiveIternalNavItemOnClick()
 })
@@ -84,14 +83,14 @@ window.addEventListener('scroll', () => {
           headerInner.classList.contains('is--sticky-up') && headerInner.classList.remove('is--sticky-up')
           headerInner.classList.add('is--sticky-down')
 
-          internalNav.classList.contains('is--fixed') && internalNav.classList.remove('is--fixed')
+          internalNav && internalNav.classList.contains('is--fixed') && internalNav.classList.remove('is--fixed')
 
           // Save the current scroll position
           lastScrollPosition = currentScrollPosition
         } else if (!entry.isIntersecting && window.scrollY >= headerHeight && currentScrollPosition < lastScrollPosition) {
           headerInner.classList.contains('is--sticky-down') && headerInner.classList.remove('is--sticky-down')
           headerInner.classList.add('is--sticky-up')
-          internalNav.classList.add('is--fixed')
+          internalNav && internalNav.classList.add('is--fixed')
 
           // Save the current scroll position
           lastScrollPosition = currentScrollPosition
@@ -102,7 +101,7 @@ window.addEventListener('scroll', () => {
         // In this way avoid a unwanted jump of the header
         if (currentScrollPosition === 0) {
           headerInner.classList.remove('is--sticky-up')
-          internalNav.classList.remove('is--fixed')
+          internalNav && internalNav.classList.remove('is--fixed')
         }
       }
     })
@@ -118,11 +117,12 @@ window.addEventListener('scroll', () => {
   * It requires IntersectionObserver API
   * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
  */
-function highlightActiveInternalNavOnScroll (headerHeight) {
+function highlightActiveInternalNavOnScroll () {
   const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
   const internalNav = document.querySelector('.internal__nav_list')
-  const activeLi = document.querySelector('.internal__nav_list_item.is--active')
+  const activeLi = document.querySelector('.internal__nav_list_item.is--active') || internalNavItems[0]
   const sections = document.querySelectorAll('.section')
+  const headerHeight = header.offsetHeight
   const sectionObserverOptions = {
     root: null,
     rootMargin: '0px',
@@ -136,19 +136,23 @@ function highlightActiveInternalNavOnScroll (headerHeight) {
       const internalNavWidth = internalNav.offsetWidth
       const activeLiPosition = activeLi.offsetLeft
 
-      //Validate if the section that are in viewport and is closer of the header
-      if (entry.isIntersecting && sectionTop <= headerHeight + 30) {
+      //Validate if the section that are in viewport and is closer of the top of the viewport
+      if (entry.isIntersecting && sectionTop <=  headerHeight) {
         const sectionId = entry.target.getAttribute('id')
         internalNavItems.forEach((item) => {
-          item.classList.remove('is--active')
-          /*Valide is the section is in viewport*/
-          if (item.querySelector('a').getAttribute('href') === `#${sectionId}`) {
-            item.classList.add('is--active')
-            //Scroll left
-            internalNav.scrollLeft = activeLiPosition - internalNavWidth / 2
-          }
+          item.classList.remove('is--active') 
         })
+
+        const activeLi = document.querySelector(`.internal__nav_list_item a[href="#${sectionId}"]`).parentElement
+        activeLi.classList.add('is--active')
+
+        console.log(sectionId)
+
+        //Scroll left
+        internalNav.scrollLeft = activeLiPosition - internalNavWidth + 50
+
       }
+
     })
   }
   , sectionObserverOptions)
@@ -168,11 +172,12 @@ function highlightActiveInternalNavOnScroll (headerHeight) {
 */
 function setActiveIternalNavItemOnClick () {
   const headerNavHeight = document.querySelector('.site__header')
-  const internalNav = document.querySelector('.internal__nav') ? document.querySelector('.internal__nav') : []
+  const internalNav = document.querySelector('.internal__nav') 
   const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
   const headerInner = document.querySelector('.site__header .header__inner')
   let marginYOff = 0
 
+  internalNav &&
   internalNav.addEventListener('click', (e) => {
     e.preventDefault()
     const target = e.target
