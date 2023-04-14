@@ -50,6 +50,10 @@
         font-size: 1rem;
         line-height: 1.5rem;
         max-width: 20.625rem;
+
+        @media screen and (min-width:1024px) {
+            font-size: 1.5rem;
+        }
     }
 
     a{
