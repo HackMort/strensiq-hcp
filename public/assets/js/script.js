@@ -148,8 +148,8 @@ function highlightActiveInternalNavOnScroll () {
 
         console.log(sectionId)
 
-        //Scroll left
-        internalNav.scrollLeft = activeLiPosition - internalNavWidth + 50
+        //Scroll the internal navigation to the active item
+        internalNav.scrollLeft = activeLiPosition - internalNavWidth / 2 
 
       }
 
