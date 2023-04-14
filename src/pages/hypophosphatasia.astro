@@ -16,13 +16,7 @@ const internalNavLinks = [
   <PageHero pageId="hypophosphatasia">
     <h1 class="page-hero__title">Hypophosphatasia can be damaging</h1>
   </PageHero>
-  <CTA
-    heading="Get to know the nuts and bolts of STRENSIQ"
-    linkText="How it works"
-    linkUrl="/how-it-works"
-  />
-  <References />
-  {internalNavLinks && <InternalNavigation items={internalNavLinks} />}
+  {internalNavLinks && <InternalNavigation items={internalNavLinks} icon={false} />}
   <div class="wrapper">
     <h1>Hypophosphatasia</h1>
     <div class="section" id="about">
@@ -186,4 +180,11 @@ const internalNavLinks = [
       
     </div>
   </div>
+  <CTA
+    heading="Get to know the nuts and bolts of STRENSIQ"
+    linkText="How it works"
+    linkUrl="/how-it-works"
+  />
+  <References />
+  
 </Layout>

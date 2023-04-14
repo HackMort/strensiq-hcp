@@ -3,6 +3,11 @@ import PageHero from "../../components/PageHero.astro";
 import Layout from "../../layouts/Layout.astro";
 import CTA from "../../components/CTA.astro";
 import References from "../../components/References.astro";
+import InternalNavigation from "../../components/InternalNavigation.astro";
+const internalNavLinks = [
+  { href: "hpp-related", label: "HPP-related rickets", active: true },
+  { href: "survival", label: "Survival" },
+];
 ---
 
 <Layout title="Infants">
@@ -17,6 +22,7 @@ import References from "../../components/References.astro";
       STRENSIQ helps build<br /> a strong foundation
     </h1>
   </PageHero>
+  {internalNavLinks && <InternalNavigation items={internalNavLinks} heading="Infants/Young Children" icon/>}
   <CTA
     heading="Help them build from the inside out"
     linkText="Children"

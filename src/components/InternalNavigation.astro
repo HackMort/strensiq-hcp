@@ -7,18 +7,25 @@ type Props = {
     label: string;
     classes?: Array<string>;
   }>;
+  icon: boolean;
 };
 
-const { heading, items } = Astro.props;
+const { heading, items, icon } = Astro.props;
 ---
 
 {
   items && (
     <nav class="internal__nav">
-      <h4
-        class="internal__nav_heading"
-        set:html={heading ? heading : "Infants/ <br/> Young Children"}
-      />
+
+      {
+        heading &&
+        <h4
+          class="internal__nav_heading"
+          set:html={heading}
+        />
+      }
+
+
       <ul class="internal__nav_list">
         {items.map((item) => {
           const classes = item.classes ? item.classes.join(" ") : "";
@@ -33,7 +40,32 @@ const { heading, items } = Astro.props;
             </li>
           );
         })}
+
+
+        {
+          icon && (
+            <li class="internal__nav_list_item internal__nav_expand-icon internal__nav_expand-icon--mobile">
+              <a class="internal__nav_expand-icon--anchor" href="#">
+                Study design
+                <img class="internal__nav_expand-icon--img" src="/assets/icons/icon-arrows-expand-blue.svg" alt="incon expand blue" /> 
+              </a>
+            </li>
+          )
+        }
+
       </ul>
+      
+        {
+          icon && (
+            <p class="internal__nav_expand-icon internal__nav_expand-icon--desktop">
+              <a class="internal__nav_expand-icon--anchor" href="#">
+                Study design
+                <img class="internal__nav_expand-icon--img" src="/assets/icons/icon-arrows-expand-blue.svg" alt="incon expand blue" /> 
+              </a>
+            </p>
+          )
+        }
+      
     </nav>
   )
 }
