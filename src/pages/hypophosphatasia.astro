@@ -4,6 +4,8 @@ import PageHero from "../components/PageHero.astro";
 import References from "../components/References.astro";
 import Layout from "../layouts/Layout.astro";
 import Testimonial from "../components/Testimonial.astro";
+import SkeletonMobile from "../components/SkeletonMobile.astro";
+import SkeletonDesktop from "../components/SkeletonDesktop.astro";
 ---
 
 <Layout title="Hypophosphatasia">
@@ -21,6 +23,8 @@ import Testimonial from "../components/Testimonial.astro";
       that it is a multisystemic disease and not just a skeletal disease.
     </p>
   </Testimonial>
+  <SkeletonMobile></SkeletonMobile>
+  <SkeletonDesktop></SkeletonDesktop>
   <CTA
     heading="Get to know the nuts and bolts of STRENSIQ"
     linkText="How it works"

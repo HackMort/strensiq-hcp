@@ -4,13 +4,6 @@
     box-sizing: border-box;
     width: fit-content;
 
-    @include media('desktop') {
-        border-radius: 36.3544rem 0 0 0;
-        display: flex;
-        justify-content: center;
-        padding: 3.125rem 15% 0;
-    }
-
     &__point {
         --point-border-style: solid;
         --point-before-width: 5.3094rem;
@@ -18,6 +11,7 @@
         border-radius: 50px;
         height: 1.125rem;
         position: absolute;
+        transition: all 1s;
         width: 1.125rem;
 
         &::before,
@@ -44,7 +38,7 @@
             width: .3125rem;
         }
 
-        &--invert {
+        &[data-word-alignment="right"] {
             &::before {
                 left: 100%;
                 right: unset;
@@ -63,6 +57,8 @@
 
         &--active {
             --point-border-style: dashed;
+            --point-active-before-width: 0px;
+            --point-active-after-height: 3.125rem;
             border: 2px solid $color-white;
             background-color: $color-dark-pink;
 
@@ -71,16 +67,79 @@
             }
 
             &::before {
-                left: 100%;
+                border-color: $color-green;
+                border-width: 3px;
+                bottom: unset;
+                left: unset;
                 right: unset;
+                top: unset;
+                width: var(--point-active-before-width);
             }
 
             &::after {
-                border: 2px var(--point-border-style) $color-white;
+                background-color: transparent;
+                border-left: 3px var(--point-border-style) $color-green;
                 border-radius: unset;
-                height: .3125rem;
-                left: calc(var(--point-before-width) * -1);
+                bottom: unset;
+                height: var(--point-active-after-height);
+                left: unset;
+                right: unset;
+                top: unset;
                 width: 0;
+            }
+
+            &[data-horizontal-line="none"] {
+                &::after {
+                    left: 0;
+                    margin: 0 auto;
+                    right: 0;
+                }
+            }
+
+            &[data-horizontal-line="left"] {
+                &::before {
+                    bottom: 0;
+                    margin: auto;
+                    right: 100%;
+                    top: 0;
+                }
+
+                &[data-vertical-line="bottom"],
+                &[data-vertical-line="top"]{
+                    &::after {
+                        bottom: 50%;
+                        right: calc(100% + var(--point-active-before-width));
+                    }
+                }
+            }
+
+            &[data-horizontal-line="right"] {
+                &::before {
+                    bottom: 0;
+                    margin: auto;
+                    top: 0;
+                    left: 100%;
+                }
+
+                &[data-vertical-line="bottom"],
+                &[data-vertical-line="top"] {
+                    &::after {
+                        left: calc(100% + var(--point-active-before-width));
+                        top: 50%;
+                    }
+                }
+            }
+
+            &[data-vertical-line="bottom"] {
+                &::after {
+                    top: 120%;
+                }
+            }
+
+            &[data-vertical-line="top"] {
+                &::after {
+                    bottom: 120%;
+                }
             }
         }
 
@@ -90,7 +149,7 @@
             top: 5%;
 
             &.skeleton__point--active {
-                --point-before-width: 3.0938rem;
+                --point-active-before-width: 3.0938rem;
             }
         }
 
@@ -115,23 +174,44 @@
             --point-before-width: 2.8894rem;
             right: 35%;
             top: 54%;
+
+            &.skeleton__point--active {
+                --point-active-before-width: .3125rem;
+            }
         }
 
         &[data-word="rheumatic"] {
-            --point-before-width: 2.2194rem;
+            --point-before-width: 3.125rem;
             right: 63%;
             top: 57%;
+
+            &.skeleton__point--active {
+                --point-active-before-width: 3.4375rem;
+            }
         }
 
         &[data-word="skeletal"] {
             --point-before-width: 6.5625rem;
             right: 71%;
             top: 71%;
+
+            &.skeleton__point--active {
+                --point-active-before-width: 1.875rem;
+            }
         }
 
         &[data-word="orthopedic"] {
             right: 30%;
             top: 90%;
+
+            &.skeleton__point--active {
+                --point-active-before-width: 50vw;
+
+                @media (min-width: 365px) {
+                    --point-active-before-width: 12.1875rem;
+                }
+            }
+
         }
 
     }
@@ -149,6 +229,7 @@
         font-size: 14px;
         font-weight: 300;
         line-height: 1.0938rem;
+        margin-left: 2rem;
 
         &::marker {
             color: $color-black;
@@ -161,15 +242,17 @@
             height: 7rem;
             margin: 0 auto;
             left: 0;
+            max-width: 19rem;
             padding-top: 1.125rem;
-            padding-left: 2rem;
             position: absolute;
             right: 0;
             top: 26%;
-            width: 16.875rem;
+            transition: all 1s;
+            width: 80%;
 
             &--hidden {
                 display: none;
+                transition: all 1s;
             }
         }
     }
@@ -186,6 +269,46 @@
 
         &:hover {
             color: $color-white;
+        }
+    }
+
+    &--desktop {
+
+        @include media('desktop') {
+            border-radius: 36.3544rem 0 0 0;
+            display: flex;
+            justify-content: center;
+            padding: 3.125rem 20% 0;
+        }
+
+        .skeleton {
+
+            &__point {
+                height: 1.375rem;
+                width: 1.375rem;
+
+                &[data-word-alignment="right"] {
+                    .skeleton__word {
+                        left: calc(var(--point-before-width) + 100%);
+                        right: unset;
+                    }
+                }
+            }
+
+            &__symptoms-list {
+                margin: 0;
+                max-width: 12.5rem;
+                left: unset;
+                right: unset;
+            }
+
+            &__word {
+                font-size: 40px;
+                left: unset;
+                line-height: 3.125rem;
+                right: calc(var(--point-before-width) + 100%);
+                top: -1.125rem;
+            }
         }
     }
 }
