@@ -10,19 +10,18 @@
     }
 
     &__title{
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
-        font-size: 50px;
+        font-size: 3.125rem;
         line-height: 4.5rem;
         letter-spacing: -0.03em;
         color: $color-dark-green;
         @include media('tablet') {
-            font-size: 40px;
+            font-size: 2.5rem;
         }
 
         @media screen and (min-width:1024px) {
-            font-size: 50px;
+            font-size: 3.125rem;
         }
     }
 
@@ -46,7 +45,6 @@
     }
 
     &__text{
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 600;
         font-size: 1rem;
