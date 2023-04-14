@@ -179,6 +179,10 @@
         line-height: 125%;
         margin-bottom: 1rem;
         color: $color-dark-green;
+
+        @media screen and (min-width:1024px) {
+            font-size: 1.875rem;
+        }
     }
     &__boxes{
         
