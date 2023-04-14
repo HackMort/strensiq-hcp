@@ -5,9 +5,9 @@ input {
     &[type="checkbox"],
     &[type="radio"] {
         color: currentColor;
-        width: 1.375rem;
-        height: 1.375rem;
-        border: 1px solid $color-neutral-500;
+        width: 2rem;
+        height: 2rem;
+        border: 3px solid $color-green;
         transform: translateY(-0.075em);
 
         display: flex;
@@ -27,7 +27,7 @@ input {
             border-radius: 50%;
             transform: scale(0);
             transition: 120ms transform ease-in-out;
-            box-shadow: inset 1em 1em $color-light-rose;
+            box-shadow: inset 1em 1em $color-green;
             background-color: CanvasText;
         }
 
@@ -42,25 +42,8 @@ input {
         position: relative;
 
         &:checked {
-            background-color: $color-light-rose;
-            border-color: $color-light-rose;
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            transition: 120ms transform ease-in-out;
-            border: solid $color-white;
-
-            right: 50%;
-            top: 45%;
-            width: 7px;
-            height: 15px;
-
-            border-width: 0 2px 2px 0;
-            margin: -1px -1px 0 -1px;
-            transform: rotate(45deg) translate(-50%, -50%);
-            z-index: 2;
+            background-color: $color-green;
+            border-color: $color-green;
         }
     }
 }
@@ -69,29 +52,16 @@ input {
     display: block;
     position: relative;
     padding-bottom: 0;
-    margin-bottom: .75rem;
+    margin-bottom: 1.25rem;
 
     transition: all 100ms ease-in-out;
-
-    * {
-        color: $color-black;
-    }
-
-    .legend-container {
-        display: flex;
-    }
-
-    .label__hint {
-        margin-left: .5rem;
-        color: $color-silver-chalice;
-    }
 
     .form__control-label,
     .form__control-legend {
         font-size: 1rem;
         font-weight: 400;
         line-height: 14px;
-        color: $color-black;
+        color: $color-dark-gray;
         display: inline-block;
         cursor: pointer;
     }
@@ -122,31 +92,28 @@ input {
         }
     }
 
-    .form__control-input,
-    .form__control-select {
-        height: 2.125rem;
-        border-radius: .25rem;
-        padding: .5rem;
-        background-color: $color-concrete;
+    .form__control-input {
+        height: 2.9375rem;
+        padding: .625rem 1.875rem;
+        background-color: $color-white;
         width: 100%;
 
-        outline: 1px solid transparent;
+        outline: 1px solid $color-dark-gray;
 
-        &:hover,
-        &:focus,
-        &:focus-visible {
-            outline-color: $color-aqua;
+        color: $color-dark-gray;
+        font-size: 1.125rem;
+        font-weight: 300;
+
+        &::placeholder {
+            color: $color-dark-gray;
+            font-size: 1.125rem;
+            font-weight: 300;
         }
     }
 
-    .form__control-select {
-        display: inline-block;
-        background-image: url("/assets/icons/arrow-down-black.svg");
-        background-repeat: no-repeat;
-        background-position: calc(100% - 11px) calc(1em - 3px), calc(100% - 15px) calc(1em + 2px), 100% 0;
-
-        &:focus {
-            background-image: url("/assets/icons/arrow-up-black.svg");
+    .form__control-select-wrapper {
+        .form__control-select {
+            width: 100%;
         }
     }
 
@@ -165,6 +132,7 @@ input {
 
         .form__control-label {
             cursor: pointer;
+
             &::after {
                 display: none;
             }
@@ -173,48 +141,12 @@ input {
 
     .form__control-checkbox {
 
-        align-items: flex-start;
+        align-items: center;
 
         .form__control-label {
-            font-size: .625rem;
+            font-size: .875rem;
             font-weight: 300;
-            line-height: 14px;
-            letter-spacing: .6px;
-        }
-
-        &.form__control-checkbox--rounded {
-            align-items: center;
-
-            input {
-                border-radius: 50%;
-
-                &:checked {
-                    background-color: transparent;
-                    border-color: $color-neutral-500;
-                }
-
-                &::before {
-                    position: initial;
-                    content: "";
-                    width: 0.65em;
-                    height: 0.65em;
-                    border-radius: 50%;
-                    transform: scale(0);
-                    transition: 120ms transform ease-in-out;
-                    box-shadow: inset 1em 1em $color-light-rose;
-                    border: initial;
-                }
-
-                &:checked::before {
-                    transform: scale(1.5);
-                }
-            }
-
-            .form__control-label {
-                font-size: 1rem;
-                font-weight: 400;
-                line-height: 14px;
-            }
+            line-height: 17.5px;
         }
     }
 

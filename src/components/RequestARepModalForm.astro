@@ -6,7 +6,7 @@
                     <div class="request-a-rep__actions">
                         <button
                             data-fancybox-close
-                            class="request-a-rep__close-button">X</button
+                            class="request-a-rep__close-button">×</button
                         >
                     </div>
                     <h1 class="request-a-rep__title">
@@ -300,7 +300,7 @@
                                 data-required="false"
                                 data-is-valid="false"
                             >
-                                <div class="form__control-checkbox">
+                                <div class="form__control-checkbox form__control-checkbox--last">
                                     <input
                                         id="terms-and-conditions"
                                         type="checkbox"
@@ -315,7 +315,7 @@
                                     >
                                         By checking this box and submitting this
                                         form, I give <a
-                                            href="Link to https://alexion.com/Legal#privacynotice%5D"
+                                            href="https://alexion.com/Legal#privacynotice%5D"
                                             target="_blank">Alexion</a
                                         > permission to contact me for commercial
                                         purposes or otherwise provide me with information
@@ -337,9 +337,11 @@
                             >.
                         </p>
 
-                        <button class="button button--primary button--submit">
-                            Submit
-                        </button>
+                        <div class="form__submit">
+                            <a class="button button--primary button--submit">
+                                Submit
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -378,6 +380,7 @@
                 placeFocusBack: true,
                 trapFocus: true,
                 closeButton: false,
+                height: 'auto'
             });
         }
 
