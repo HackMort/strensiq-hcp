@@ -1,0 +1,34 @@
+.request-a-rep__modal-form {
+    width: 100%;
+    height: 100%;
+    background: $color-white;
+
+    padding: 1rem .7813rem;
+
+    .request-a-rep__header {
+
+        .request-a-rep__actions {
+            text-align: end;
+        }
+        .request-a-rep__close-button {
+            color: $color-dark-pink;
+            font-size: 3rem;
+            font-weight: 500;
+            display: inline;
+        }
+        .request-a-rep__title {
+            color: $color-dark-green;
+            font-weight: 900;
+            text-align: center;
+            font-size: 2.25rem;
+            line-height: 35.82px;
+        }
+        .request-a-rep__subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 25px;
+            color: $color-dark-gray;
+        }
+    }
+}
