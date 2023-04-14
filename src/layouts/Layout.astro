@@ -1,6 +1,7 @@
 ---
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import "../styles/style.scss";
+import ExitModal from "../components/ExitModal.astro";
 import ISI from "../components/ISI.astro";
 import Footer from "../components/Footer.astro";
 import References from "../components/References.astro";
@@ -30,6 +31,9 @@ const {
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" href="/favicon.png" />
         <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <title>{title}</title>
       <script src="/assets/js/validate.js" type="module"></script>
   </head>
@@ -51,6 +55,7 @@ const {
         }
         { displayReferences && <References /> }
         <Footer />
+        <ExitModal />
         <RequestARepModalForm />
         <script src="/assets/js/script.js" type="module"></script>
         <script is:inline src="/assets/js/form-validation.js"></script>
