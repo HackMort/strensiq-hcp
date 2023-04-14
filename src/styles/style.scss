@@ -177,11 +177,12 @@
         font-weight: 700;
         font-size: 1.25rem;
         line-height: 125%;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         color: $color-dark-green;
 
-        @media screen and (min-width:1024px) {
+        @media screen and (min-width:1366px) {
             font-size: 1.875rem;
+            margin-bottom: 3rem;
         }
     }
     &__boxes{

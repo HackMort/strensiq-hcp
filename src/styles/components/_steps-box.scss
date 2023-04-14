@@ -23,8 +23,8 @@
             font-size: 2.5rem;
         }
 
-        @media screen and (min-width:1024px) {
-            font-size: 3.125rem;
+        @media screen and (min-width:1366px) {
+            font-size: 4.375rem;
         }
     }
 
@@ -34,8 +34,8 @@
         align-items: center;
         padding-right: 2rem;
 
-        @media screen and (min-width:1300px) {
-            padding-right: 5rem;
+        @media screen and (min-width:1366px) {
+            padding-right: 4rem;
         }
     }
 
@@ -53,16 +53,15 @@
 
     &__text{
         font-style: normal;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 1rem;
         line-height: 1.5rem;
         max-width: 20.625rem;
 
-        @media screen and (min-width:1024px) {
-            font-size: 1.5rem;
-        }
-        @media screen and (min-width:1300px) {
+        @media screen and (min-width:1366px) {
             max-width: unset;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
         }
     }
 
