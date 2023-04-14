@@ -123,6 +123,11 @@
 
             @media screen and (min-width: 768px) {
                 max-width: 40.625rem;
+                margin-bottom: 2.5rem;
+            }
+
+            @media screen and (min-width: 1024px) {
+                margin-bottom: 0;
             }
         }
 
