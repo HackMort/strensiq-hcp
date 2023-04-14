@@ -1,54 +1,56 @@
-.modal{
-       
+.modal {
+
     display: none;
-     padding-top: 2.5625rem;
-     max-width: 57.125rem;
-     min-height: 29.75rem;
-    border-radius: 1.25rem;   
+    padding-top: 2.5625rem;
+    max-width: 57.125rem;
+    min-height: 29.75rem;
+    border-radius: 1.25rem;
     overflow: hidden;
-    
+
     &::before {
-        
-            --width-shape: 96.25rem;
-            --height-shape: 40.3125rem;
-            --rotation-shape: 21deg;
-            background-color: $color-dark-green;
-            border-radius: 45.0506rem;
-            bottom: 18.125rem;
-            right: 3.3125rem;
-            content: "";
-            height: var(--height-shape);
-            margin-left: calc(-1 * var(--width-shape) / 2 + var(--height-shape) / 2 * tan(var(--rotation-shape)));
-            position: absolute;
-            transform: rotate(var(--rotation-shape));
-            width: var(--width-shape);
-            z-index: -100;
-    
-    
-    @media screen and (max-width:768px) {
-    --height-shape: 21.3125rem;
-    --rotation-shape: -141deg;
-    bottom: 34rem;
-    right: -7.5625rem;
-    }    
-    @media screen and (max-width:400px) {
-    --height-shape: 23.3125rem;
-    --rotation-shape: -141deg;
-    bottom: 34.6875rem;
-    right: -7.8125rem;
-    }
+
+        --width-shape: 96.25rem;
+        --height-shape: 40.3125rem;
+        --rotation-shape: 21deg;
+        background-color: $color-dark-green;
+        border-radius: 45.0506rem;
+        bottom: 18.125rem;
+        right: 3.3125rem;
+        content: "";
+        height: var(--height-shape);
+        margin-left: calc(-1 * var(--width-shape) / 2 + var(--height-shape) / 2 * tan(var(--rotation-shape)));
+        position: absolute;
+        transform: rotate(var(--rotation-shape));
+        width: var(--width-shape);
+        z-index: -100;
+
+
+        @media screen and (max-width:768px) {
+            --height-shape: 21.3125rem;
+            --rotation-shape: -141deg;
+            bottom: 34rem;
+            right: -7.5625rem;
+        }
+
+        @media screen and (max-width:400px) {
+            --height-shape: 23.3125rem;
+            --rotation-shape: -141deg;
+            bottom: 34.6875rem;
+            right: -7.8125rem;
+        }
     }
 
-    &__wrapper{
+    &__wrapper {
         height: auto;
         margin: auto;
         border-radius: .9375rem;
+
         @media screen and (max-width:990px) {
             padding-top: 1rem;
         }
-        
 
-        .modal__close{
+
+        .modal__close {
             width: 6.0625rem;
             transform: rotate(45deg);
             background-color: $color-white;
@@ -67,15 +69,16 @@
         }
 
         @media screen and (max-width:768px) {
-            .modal__close{
+            .modal__close {
                 width: 6.2rem;
                 font-size: 2.5rem;
                 right: -2.875rem;
                 top: .6875rem;
             }
         }
+
         @media screen and (max-width:400px) {
-            .modal__close{
+            .modal__close {
                 width: 4rem;
                 right: -1rem;
                 top: 0;
@@ -84,7 +87,7 @@
 
     }
 
-    &__content{
+    &__content {
         height: 100%;
         max-width: 44.875rem;
         margin: auto;
@@ -103,12 +106,12 @@
 
 
         @media screen and (max-width:768px) {
-          padding-bottom: 0;
-          font-size: 1.875rem;
-        }           
+            padding-bottom: 0;
+            font-size: 1.875rem;
+        }
     }
 
-    &__sub-title{
+    &__sub-title {
         font-style: normal;
         font-weight: 300;
         font-size: 1.5rem;
@@ -126,8 +129,8 @@
         }
     }
 
-    &__text{
-        p{
+    &__text {
+        p {
             font-style: normal;
             font-weight: 300;
             font-size: 1.125rem;
@@ -138,10 +141,10 @@
             @media screen and (max-width:768px) {
                 font-size: .875rem;
                 padding: .0625rem;
-            }  
-    }
-        
-        &-link{
+            }
+        }
+
+        &-link {
             color: $color-dark-pink;
             font-weight: 700;
             cursor: pointer;
@@ -149,25 +152,28 @@
         }
     }
 
-    &__buttons{
-        margin-bottom: 5.5625rem;
+    &__buttons {
+        // margin-bottom: 5.5625rem;
+        margin-bottom: 5rem;
+
         @media screen and (max-width:768px) {
             margin-bottom: 4.5625rem;
         }
 
-        button{
+        button {
             margin: auto;
             margin-bottom: 1rem;
-            
+
         }
-        a{
+
+        a {
             margin: auto;
         }
     }
 
 
     @media screen and (max-width:768px) {
-    
+
         &__title {
             font-size: 2rem;
             line-height: 2rem;
@@ -175,20 +181,22 @@
     }
 
     @media screen and (max-width:400px) {
-    
+
         &__title {
             margin-top: 1rem;
         }
     }
-    
+
 }
+
 @media screen and (max-width:1260px) {
-    .modal{
+    .modal {
         width: 59.375rem;
     }
 }
+
 @media screen and (max-width:990px) {
-    .modal{
+    .modal {
         max-width: 48rem;
         padding-top: unset;
         padding-right: unset;
@@ -196,49 +204,50 @@
         padding-left: unset;
     }
 
-    .modal{
+    .modal {
         padding-top: 1.25rem;
         padding-right: 1.25rem;
         padding-bottom: 1.25rem;
         padding-left: 1.25rem;
-        }
-}   
-@media screen and (max-width:768px) {
-    .modal{
-        max-width: 23.4375rem;
-        
-    }
-}
-//aqui
-@media screen and (max-width:400px) {
-    .modal{
-        max-width: 20rem;
-        height: 32.5rem!important;
     }
 }
 
-.fancybox__backdrop{
-    background-color: rgba(0,0,0,0.4)!important;
+@media screen and (max-width:768px) {
+    .modal {
+        max-width: 23.4375rem;
+
+    }
+}
+
+//aqui
+@media screen and (max-width:400px) {
+    .modal {
+        max-width: 20rem;
+        height: 32.5rem !important;
+    }
+}
+
+.fancybox__backdrop {
+    background-color: rgba(0, 0, 0, 0.4) !important;
     position: absolute;
     height: 110%;
 }
 
 .fancybox__content {
-    width: 57.125rem!important;
+    width: 57.125rem !important;
     height: 0;
-    background-color: $color-white!important;
+    background-color: $color-white !important;
     /* padding-left: 0!important;
     padding-right: 0!important; */
     position: relative;
-    margin-left: 5rem!important;
-    margin-right: 5rem!important;
-} 
+    margin-left: 5rem !important;
+    margin-right: 5rem !important;
+}
 
-.fancybox__content>.f-button.is-close-btn{
+.fancybox__content>.f-button.is-close-btn {
     display: none;
 }
 
 html.with-fancybox {
     overflow: hidden;
 }
- 
