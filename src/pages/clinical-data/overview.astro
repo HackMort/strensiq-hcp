@@ -3,6 +3,11 @@ import PageHero from "../../components/PageHero.astro";
 import Layout from "../../layouts/Layout.astro";
 import CTA from "../../components/CTA.astro";
 import References from "../../components/References.astro";
+import InternalNavigation from "../../components/InternalNavigation.astro";
+const internalNavLinks = [
+  { href: "#study-design", label: "Study design", active: true },
+  { href: "#safety", label: "Safety" },
+];
 ---
 
 <Layout title="Overview">
@@ -15,6 +20,7 @@ import References from "../../components/References.astro";
       Get straight to the<br /> source with STRENSIQ
     </h1>
   </PageHero>
+  {internalNavLinks && <InternalNavigation items={internalNavLinks} heading="Overview" icon={false} />}
   <CTA
     heading="Get them off to a solid start"
     linkText="Infants/young children"
