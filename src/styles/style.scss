@@ -24,10 +24,11 @@
 
 
 //-------------------------------------------------------------lets work together section-------------------------------------------------------------
-.lets-work{
+.lets-work {
     padding-top: 2rem;
     padding-bottom: 5rem;
-    &__title{
+
+    &__title {
         color: $color-dark-green;
         margin-bottom: 1.6694rem;
 
@@ -36,14 +37,16 @@
         }
     }
 
-    .work-box{
+    .work-box {
         margin-bottom: 1.25rem;
+
         @media screen and (min-width:768px) {
             margin-bottom: 4.25rem;
             margin-right: .3125rem;
         }
+
         @media screen and (min-width:980px) {
-            margin: auto!important;
+            margin: auto !important;
             margin-right: 0;
         }
 
@@ -52,7 +55,7 @@
         }
     }
 
-    &__boxes{
+    &__boxes {
         @media screen and (min-width:768px) {
             display: flex;
             max-width: 64.5rem;
@@ -60,18 +63,21 @@
         }
     }
 
-    .modifier{
+    .modifier {
         max-width: 8.75rem;
+
         @media screen and (min-width:370px) {
             max-width: 11.625rem;
         }
+
         @media screen and (min-width:800px) {
 
-                max-width: 13.375rem;
+            max-width: 13.375rem;
 
         }
     }
 }
+
 //-------------------------------------------------------------lets work together section-------------------------------------------------------------    
 
 
@@ -140,10 +146,11 @@
         br {
             display: none;
         }
+
         @media screen and (min-width: 1024px) {
-           br {
-            display: block;
-           }
+            br {
+                display: block;
+            }
         }
     }
 }
@@ -154,39 +161,40 @@
         br {
             display: none;
         }
+
         @media screen and (min-width: 1024px) {
-           br {
-            display: block;
-           }
+            br {
+                display: block;
+            }
         }
     }
 }
 
 
 //-------------------------------------------------------------toolkit steps section -------------------------------------------------------------    
-.toolkit-steps{
+.toolkit-steps {
     margin-top: 1.5625rem;
     margin-bottom: 2rem;
+
     @include media('tablet') {
         margin-top: 3rem;
     }
 
-    &__desc{
-        font-family: 'Roboto';
-        font-style: normal;
+    &__desc {
         font-weight: 700;
         font-size: 1.25rem;
-        line-height: 125%;
+        line-height: 2.3438rem;
         margin-bottom: 2rem;
         color: $color-dark-green;
 
-        @media screen and (min-width:1365px) {
+        @media screen and (min-width: 1200px) {
             font-size: 1.875rem;
             margin-bottom: 3rem;
         }
     }
-    &__boxes{
-        
+
+    &__boxes {
+
         @include media('tablet') {
             display: flex;
             align-items: baseline;
@@ -194,19 +202,21 @@
         }
     }
 
-    .image-modifier{
+    .image-modifier {
         width: 4.1856rem;
     }
 
-    .title-modifier{
+    .title-modifier {
         line-height: 4.5rem;
+
         @media screen and (min-width:1024px) {
-            line-height: 4.375rem!important;
+            line-height: 4.375rem !important;
         }
+
         @media screen and (min-width:1366px) {
             line-height: 4.5rem;
         }
     }
 }
-//-------------------------------------------------------------toolkit steps section -------------------------------------------------------------    
 
+//-------------------------------------------------------------toolkit steps section -------------------------------------------------------------    
