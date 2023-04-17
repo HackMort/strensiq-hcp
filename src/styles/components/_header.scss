@@ -219,23 +219,46 @@
 
       .nav__menu {
         position: relative;
-        display: flex;
+        /* display: flex;
         flex-direction: row;
         @include flex-gap(1rem);
-        justify-content: flex-end;
+        justify-content: flex-end; */
+        display: block;
+        font-size: 0;
         padding: 0;
 
         &_item {
           border-bottom: 0;
-          flex: 1 1 auto;
+          // flex: 1 1 auto;
           text-align: center;
+          display: inline-block;
+          font-size: 1rem;
+          margin-right: 1rem;
+          margin-left: 1rem;
+          width: auto;
 
-          // @media screen and (min-width: 1200px) {
-          //   flex: 0 1 auto;
-          // }
+          @media screen and (min-width: 1366px) {
+            margin-right: 1.5rem;
+            margin-left: 1.5rem;
+          }
+
+          @media screen and (min-width: 1600px) {
+            margin-right: 2rem;
+            margin-left: 2rem;
+          }
 
 
           &.has__sub_menu {
+
+            &.current-page {
+              .nav__menu_item_link {
+                &::after {
+                  border-top: 2px solid $color-dark-pink;
+                  border-right: 2px solid $color-dark-pink;
+                  font-weight: 900;
+                }
+              }
+            }
 
             .nav__sub_menu {
               position: absolute;
@@ -250,6 +273,12 @@
               text-align: center;
             }
 
+            .nav__menu_item_link {
+              &.current-page {
+                color: $color-dark-pink;
+              }
+            }
+
             .nav__menu_item_link::after {
               top: 1.65rem;
               right: 0;
@@ -257,12 +286,14 @@
               border-top: 2px solid $color-dark-green;
               border-right: 2px solid $color-dark-green;
               width: 0.5rem;
+
+              @media screen and (min-width: 1100px) {
+                right: -1rem;
+              }
             }
 
             @media screen and (min-width: 1100px) {
-
               &:hover {
-
                 .nav__sub_menu {
                   display: block;
                 }
@@ -277,7 +308,6 @@
                   border-right: 3px solid $color-dark-pink;
                   transform: translateY(-50%) rotate(-45deg);
                 }
-
               }
             }
 
@@ -285,8 +315,29 @@
 
           &_link {
             @media screen and (min-width: 1200px) {
+              display: inline-block;
               font-size: 1.125rem;
               line-height: 1.8rem;
+              width: auto;
+
+              &:hover,
+              &.current-page {
+                color: $color-dark-pink;
+                font-weight: 900;
+                // transition: all 0.3s ease-in-out;
+                position: relative;
+
+                &::before {
+                  content: '';
+                  position: absolute;
+                  bottom: 0.5rem;
+                  left: 0;
+                  width: 100%;
+                  border-bottom: 4px solid $color-dark-pink;
+                  // transition: all 0.3s ease-in-out;
+                }
+              }
+
             }
           }
 

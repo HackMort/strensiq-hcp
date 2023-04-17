@@ -17,23 +17,18 @@ const internalNavLinks = [
   <PageHero pageId="hypophosphatasia">
     <h1 class="page-hero__title">Hypophosphatasia can be damaging</h1>
   </PageHero>
-  <Testimonial
-    authorInformation="Eric Rush, MD, Clinical Geneticist"
-    authorDescription="Alexion-sponsored speaker"
-    page="hypophosphatasia"
-    shapeType="right"
-  >
-    <p>
-      As we continue to learn about hypophosphatasia, we are truly understanding
-      that it is a multisystemic disease and not just a skeletal disease.
-    </p>
-  </Testimonial>
-  {internalNavLinks && <InternalNavigation items={internalNavLinks} icon={false} />}
+
+  {
+    internalNavLinks && (
+      <InternalNavigation items={internalNavLinks} icon={false} />
+    )
+  }
   <div class="wrapper">
     <h1>Hypophosphatasia</h1>
     <div class="section" id="about">
       <h1>About HPP</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
         consequuntur vero molestiae at enim voluptatem blanditiis maiores harum
         excepturi ipsam accusamus id tenetur molestias corporis ad quidem,
         repellat pariatur? Suscipit laboriosam voluptatem blanditiis provident
@@ -103,18 +98,18 @@ const internalNavLinks = [
         perferendis repellendus sunt voluptatibus vel repudiandae hic. Nesciunt
         vero quasi odit dolores officia cupiditate nemo fuga corporis doloribus
         dolore esse in magnam iste illo, quaerat asperiores ad, sunt fugiat non
-        optio dolorem modi velit. Harum.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-        quaerat sint voluptates et dicta alias natus. Expedita, laborum
-        nesciunt! Eligendi iste et enim laudantium laborum repellendus
-        repudiandae fugit! Ab fuga, ex et natus nihil, repellendus reiciendis
-        perspiciatis laborum quis minima placeat qui ducimus exercitationem sit
-        maiores neque vero dolorum nisi facilis molestiae at eligendi officia
-        minus tempore? Tenetur blanditiis cumque quo rem eum, accusamus iusto
-        perferendis repellendus sunt voluptatibus vel repudiandae hic. Nesciunt
-        vero quasi odit dolores officia cupiditate nemo fuga corporis doloribus
-        dolore esse in magnam iste illo, quaerat asperiores ad, sunt fugiat non
-        optio dolorem modi velit. Harum.sasdasdq wewq dqwe2e 321231|3213
+        optio dolorem modi velit. Harum. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Laudantium quaerat sint voluptates et dicta alias
+        natus. Expedita, laborum nesciunt! Eligendi iste et enim laudantium
+        laborum repellendus repudiandae fugit! Ab fuga, ex et natus nihil,
+        repellendus reiciendis perspiciatis laborum quis minima placeat qui
+        ducimus exercitationem sit maiores neque vero dolorum nisi facilis
+        molestiae at eligendi officia minus tempore? Tenetur blanditiis cumque
+        quo rem eum, accusamus iusto perferendis repellendus sunt voluptatibus
+        vel repudiandae hic. Nesciunt vero quasi odit dolores officia cupiditate
+        nemo fuga corporis doloribus dolore esse in magnam iste illo, quaerat
+        asperiores ad, sunt fugiat non optio dolorem modi velit. Harum.sasdasdq
+        wewq dqwe2e 321231|3213
       </p>
     </div>
     <div class="section" id="disease">
@@ -130,32 +125,28 @@ const internalNavLinks = [
         perferendis repellendus sunt voluptatibus vel repudiandae hic. Nesciunt
         vero quasi odit dolores officia cupiditate nemo fuga corporis doloribus
         dolore esse in magnam iste illo, quaerat asperiores ad, sunt fugiat non
-        optio dolorem modi velit. Harum.
-
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-        quaerat sint voluptates et dicta alias natus. Expedita, laborum
-        nesciunt! Eligendi iste et enim laudantium laborum repellendus
-        repudiandae fugit! Ab fuga, ex et natus nihil, repellendus reiciendis
-        perspiciatis laborum quis minima placeat qui ducimus exercitationem sit
-        maiores neque vero dolorum nisi facilis molestiae at eligendi officia
-        minus tempore? Tenetur blanditiis cumque quo rem eum, accusamus iusto
-        perferendis repellendus sunt voluptatibus vel repudiandae hic. Nesciunt
-        vero quasi odit dolores officia cupiditate nemo fuga corporis doloribus
-        dolore esse in magnam iste illo, quaerat asperiores ad, sunt fugiat non
-        optio dolorem modi velit. Harum.
-
-
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-        quaerat sint voluptates et dicta alias natus. Expedita, laborum
-        nesciunt! Eligendi iste et enim laudantium laborum repellendus
-        repudiandae fugit! Ab fuga, ex et natus nihil, repellendus reiciendis
-        perspiciatis laborum quis minima placeat qui ducimus exercitationem sit
-        maiores neque vero dolorum nisi facilis molestiae at eligendi officia
-        minus tempore? Tenetur blanditiis cumque quo rem eum, accusamus iusto
-        perferendis repellendus sunt voluptatibus vel repudiandae hic. Nesciunt
-        vero quasi odit dolores officia cupiditate nemo fuga corporis doloribus
-        dolore esse in magnam iste illo, quaerat asperiores ad, sunt fugiat non
-        optio dolorem modi velit. Harum.
+        optio dolorem modi velit. Harum. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Laudantium quaerat sint voluptates et dicta alias
+        natus. Expedita, laborum nesciunt! Eligendi iste et enim laudantium
+        laborum repellendus repudiandae fugit! Ab fuga, ex et natus nihil,
+        repellendus reiciendis perspiciatis laborum quis minima placeat qui
+        ducimus exercitationem sit maiores neque vero dolorum nisi facilis
+        molestiae at eligendi officia minus tempore? Tenetur blanditiis cumque
+        quo rem eum, accusamus iusto perferendis repellendus sunt voluptatibus
+        vel repudiandae hic. Nesciunt vero quasi odit dolores officia cupiditate
+        nemo fuga corporis doloribus dolore esse in magnam iste illo, quaerat
+        asperiores ad, sunt fugiat non optio dolorem modi velit. Harum. Lorem
+        ipsum dolor sit amet consectetur adipisicing elit. Laudantium quaerat
+        sint voluptates et dicta alias natus. Expedita, laborum nesciunt!
+        Eligendi iste et enim laudantium laborum repellendus repudiandae fugit!
+        Ab fuga, ex et natus nihil, repellendus reiciendis perspiciatis laborum
+        quis minima placeat qui ducimus exercitationem sit maiores neque vero
+        dolorum nisi facilis molestiae at eligendi officia minus tempore?
+        Tenetur blanditiis cumque quo rem eum, accusamus iusto perferendis
+        repellendus sunt voluptatibus vel repudiandae hic. Nesciunt vero quasi
+        odit dolores officia cupiditate nemo fuga corporis doloribus dolore esse
+        in magnam iste illo, quaerat asperiores ad, sunt fugiat non optio
+        dolorem modi velit. Harum.
       </p>
     </div>
     <div class="section" id="misdiagnoses">
@@ -171,16 +162,13 @@ const internalNavLinks = [
         perferendis repellendus sunt voluptatibus vel repudiandae hic. Nesciunt
         vero quasi odit dolores officia cupiditate nemo fuga corporis doloribus
         dolore esse in magnam iste illo, quaerat asperiores ad, sunt fugiat non
-        optio dolorem modi velit. Harum.
-
-        erspiciatis laborum quis minima placeat qui ducimus exercitationem sit
-        maiores neque vero dolorum nisi facilis molestiae at eligendi officia
-        minus tempore? Tenetur blanditiis cumque quo rem eum, accusamus iusto
-        perferendis repellendus sunt voluptatibus vel repudiandae hic. Nesciunt
-        vero quasi odit dolores officia cupiditate nemo fuga corporis doloribus
-        dolore esse in magnam iste illo, quaerat asperiores ad, sunt fugiat non
-        optio dolorem modi velit. Harum.
-
+        optio dolorem modi velit. Harum. erspiciatis laborum quis minima placeat
+        qui ducimus exercitationem sit maiores neque vero dolorum nisi facilis
+        molestiae at eligendi officia minus tempore? Tenetur blanditiis cumque
+        quo rem eum, accusamus iusto perferendis repellendus sunt voluptatibus
+        vel repudiandae hic. Nesciunt vero quasi odit dolores officia cupiditate
+        nemo fuga corporis doloribus dolore esse in magnam iste illo, quaerat
+        asperiores ad, sunt fugiat non optio dolorem modi velit. Harum.
         erspiciatis laborum quis minima placeat qui ducimus exercitationem sit
         maiores neque vero dolorum nisi facilis molestiae at eligendi officia
         minus tempore? Tenetur blanditiis cumque quo rem eum, accusamus iusto
@@ -189,14 +177,23 @@ const internalNavLinks = [
         dolore esse in magnam iste illo, quaerat asperiores ad, sunt fugiat non
         optio dolorem modi velit. Harum.
       </p>
-      
     </div>
   </div>
+  <Testimonial
+    authorInformation="Eric Rush, MD, Clinical Geneticist"
+    authorDescription="Alexion-sponsored speaker"
+    page="hypophosphatasia"
+    shapeType="right"
+  >
+    <p>
+      As we continue to learn about hypophosphatasia, we are truly understanding
+      that it is a multisystemic disease and not just a skeletal disease.
+    </p>
+  </Testimonial>
   <CTA
     heading="Get to know the nuts and bolts of STRENSIQ"
     linkText="How it works"
     linkUrl="/how-it-works"
   />
   <References />
-  
 </Layout>

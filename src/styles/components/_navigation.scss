@@ -35,6 +35,35 @@
     &.has__sub_menu {
       position: relative;
 
+      &.current-page {
+
+        .nav__menu_item_link {
+          color: $color-dark-pink;
+          font-weight: 900;
+
+          @media screen and (min-width: 1200px) {
+            position: relative;
+
+            &::before {
+              content: '';
+              position: absolute;
+              bottom: 0.5rem;
+              left: 0;
+              width: 118%;
+              border-bottom: 4px solid $color-dark-pink;
+            }
+          }
+
+
+          &::after {
+            border-top: 2px solid $color-dark-pink;
+            border-right: 2px solid $color-dark-pink;
+            font-weight: 900;
+          }
+
+        }
+      }
+
       .nav__menu_item_link::after {
         content: '';
         position: absolute;
@@ -76,6 +105,11 @@
       padding-top: 1rem;
       padding-bottom: 1rem;
       text-decoration: none;
+
+      &.current-page {
+        color: $color-dark-pink;
+        font-weight: 900;
+      }
 
       // &:hover {
       //   color: $color-dark-pink;
@@ -122,6 +156,11 @@
         padding-bottom: 0.5rem;
         text-decoration: none;
         @include transition('all', 0.5s, ease-in-out);
+
+        &.current-page {
+          color: $color-dark-pink;
+          font-weight: 900;
+        }
 
         &:hover {
           color: $color-dark-pink;
