@@ -99,6 +99,7 @@
             &[data-horizontal-line="left"] {
                 &::before {
                     bottom: 0;
+                    left: unset;
                     margin: auto;
                     right: 100%;
                     top: 0;
@@ -145,12 +146,9 @@
 
         &[data-word="neurologic"] {
             --point-before-width: 8.8775rem;
+            --point-active-before-width: 3.0938rem;
             right: 35%;
             top: 5%;
-
-            &.skeleton__point--active {
-                --point-active-before-width: 3.0938rem;
-            }
         }
 
         &[data-word="dental"] {
@@ -172,46 +170,33 @@
 
         &[data-word="renal"] {
             --point-before-width: 2.8894rem;
+            --point-active-before-width: .3125rem;
             right: 35%;
             top: 54%;
-
-            &.skeleton__point--active {
-                --point-active-before-width: .3125rem;
-            }
         }
 
         &[data-word="rheumatic"] {
             --point-before-width: 3.125rem;
+            --point-active-before-width: 3.4375rem;
             right: 63%;
             top: 57%;
-
-            &.skeleton__point--active {
-                --point-active-before-width: 3.4375rem;
-            }
         }
 
         &[data-word="skeletal"] {
             --point-before-width: 6.5625rem;
+            --point-active-before-width: 1.875rem;
             right: 71%;
             top: 71%;
-
-            &.skeleton__point--active {
-                --point-active-before-width: 1.875rem;
-            }
         }
 
         &[data-word="orthopedic"] {
+            --point-active-before-width: 50vw;
             right: 30%;
             top: 90%;
 
-            &.skeleton__point--active {
-                --point-active-before-width: 50vw;
-
-                @media (min-width: 365px) {
-                    --point-active-before-width: 12.1875rem;
-                }
+            @media (min-width: 365px) {
+                --point-active-before-width: 12.1875rem;
             }
-
         }
 
     }
@@ -254,6 +239,14 @@
                 display: none;
                 transition: all 1s;
             }
+
+            &.in-animation {
+                animation: fadeIn 1s
+            }
+
+            &.out-animation {
+                animation: fadeOut 1s;
+            }
         }
     }
 
@@ -266,6 +259,7 @@
         line-height: 1.7969rem;
         position: absolute;
         top: -1.625rem;
+        transition: none;
 
         &:hover {
             color: $color-white;
@@ -273,25 +267,96 @@
     }
 
     &--desktop {
+        border-radius: 36.3544rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        min-width: 53.125rem;
+        padding: 3.125rem 15% 0;
 
-        @include media('desktop') {
-            border-radius: 36.3544rem 0 0 0;
-            display: flex;
-            justify-content: center;
-            padding: 3.125rem 20% 0;
-        }
 
         .skeleton {
 
             &__point {
+                --point-before-width: 6.875rem;
                 height: 1.375rem;
                 width: 1.375rem;
+
+                &--active {
+                    &[data-horizontal-line="right"],
+                    &[data-horizontal-line="left"] {
+                        &::after {
+                            left: 0;
+                            margin: 0 auto;
+                            right: 0;
+                        }
+                    }
+
+                    &[data-vertical-line="top"] {
+                        &::before {
+                            top: -120px;
+                        }
+
+                        &::after {
+                            bottom: 125%;
+                            top: unset;
+                        }
+                    }
+
+                    &[data-vertical-line="bottom"] {
+                        &::before {
+                            bottom: -20px;
+                            margin: 0;
+                            top: unset;
+                        }
+
+                        &::after {
+                            top: 125%;
+                        }
+                    }
+
+                    &[data-horizontal-line="left"] {
+                        &::before {
+                            right: 10px;
+                        }
+                    }
+
+                    &[data-horizontal-line="right"] {
+                        &::before {
+                            left: 10px;
+                            margin: 0;
+                        }
+                    }
+                }
 
                 &[data-word-alignment="right"] {
                     .skeleton__word {
                         left: calc(var(--point-before-width) + 100%);
                         right: unset;
                     }
+                }
+
+                &[data-word="neurologic"] {
+                    --point-before-width: 4.5rem;
+                }
+
+                &[data-word="dental"] {
+                    --point-before-width: 8.1875rem;
+                }
+
+                &[data-word="respiratory"] {
+                    --point-before-width: 7.25rem;
+                }
+
+                &[data-word="muscular"] {
+                    --point-before-width: 4.125rem;
+                }
+
+                &[data-word="rheumatic"] {
+                    --point-before-width: 7.25rem;
+                }
+
+                &[data-word="skeletal"] {
+                    --point-before-width: 10.1875rem;
                 }
             }
 
@@ -311,4 +376,14 @@
             }
         }
     }
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
 }
