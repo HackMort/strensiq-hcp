@@ -1,6 +1,9 @@
 input {
     width: 100%;
-    cursor: pointer;
+    
+    &[type="submit"] {
+        cursor: pointer;
+    }
 
     &[type="checkbox"],
     &[type="radio"] {
@@ -63,7 +66,6 @@ input {
         line-height: 14px;
         color: $color-dark-gray;
         display: inline-block;
-        cursor: pointer;
     }
 
     .form__control-legend {
@@ -175,14 +177,6 @@ input {
 
         input {
             margin-right: .625rem;
-        }
-
-        .form__control-label {
-            cursor: pointer;
-
-            &::after {
-                display: none;
-            }
         }
     }
 
