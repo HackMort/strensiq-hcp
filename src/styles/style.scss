@@ -280,7 +280,7 @@
 
         @include media('desktop') {
             max-width: 48ch;
-            padding: 2rem 0 0 1.5rem;
+            padding: 2rem 0 0 0;
 
             p {
                 font-size: 18px;
