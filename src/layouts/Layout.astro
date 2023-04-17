@@ -8,6 +8,7 @@ import References from "../components/References.astro";
 import CTA from "../components/CTA.astro";
 import Header from "../components/Header.astro";
 import CookieBanner from "../components/CookieBanner.astro";
+import RequestARepModalForm from '../components/RequestARepModalForm.astro';
 export interface Props {
   title: string;
   displayReferences?: boolean;
@@ -58,8 +59,10 @@ const {
     {displayReferences && <References />}
     <Footer />
     <ExitModal />
+    <RequestARepModalForm />
     <script src="/assets/js/script.js" type="module"></script>
     <script src="/assets/js/tabs.js" type="module"></script>
+    <script is:inline src="/assets/js/form-validation.js"></script>
     <script src="../js/modal.js"></script>
   </body>
 </html>
