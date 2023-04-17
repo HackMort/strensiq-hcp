@@ -82,7 +82,7 @@ async function wordClickEventHandler (event) {
 
   /* If point is not on an active state hide previous and change this element to active */
   const isThisPointActive = pointElement.classList.contains('skeleton__point--active')
-  await hiddenSymponstList(!isThisPointActive)
+  await hiddenSymponstList()
 
   if (!isThisPointActive) {
     /* Calculate position of symptoms list, length of vertical and horizontal lines from point */
@@ -105,7 +105,7 @@ async function wordClickEventHandler (event) {
 
 /* Hide the symptoms list, if this function is fired by the current active element
 awaits 500ms to let the fade out animation runs */
-async function hiddenSymponstList (isAnotherElementActive = true) {
+async function hiddenSymponstList () {
   const activeElement = document.querySelector('.skeleton__point--active')
   if (activeElement) {
     activeElement.classList.remove('skeleton__point--active')
@@ -113,21 +113,13 @@ async function hiddenSymponstList (isAnotherElementActive = true) {
     const symptomsList = activeElement.closest('.skeleton__image-container').querySelector('.skeleton__symptoms-list')
     if (!symptomsList.classList.contains('skeleton__symptoms-list--hidden')) {
       symptomsList.classList.remove('in-animation')
-      symptomsList.classList.add('out-animation')
-      if (isAnotherElementActive) {
-        symptomsList.classList.add('skeleton__symptoms-list--hidden')
-      } else {
-        setTimeout(() => {
-          symptomsList.classList.add('skeleton__symptoms-list--hidden')
-        }, 500)
-      }
+      symptomsList.classList.add('skeleton__symptoms-list--hidden')
     }
   }
 }
 
 function showSymptonsList (symptomsList, pointElement) {
   symptomsList.classList.remove('skeleton__symptoms-list--hidden')
-  symptomsList.classList.remove('out-animation')
   symptomsList.classList.add('in-animation')
   pointElement.classList.add('skeleton__point--active')
 }

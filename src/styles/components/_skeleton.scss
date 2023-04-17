@@ -232,20 +232,16 @@
             position: absolute;
             right: 0;
             top: 26%;
-            transition: all 1s;
             width: 80%;
 
             &--hidden {
-                display: none;
-                transition: all 1s;
+                animation: fadeOut 1s;
+                opacity: 0;
+                z-index: -1;
             }
 
             &.in-animation {
                 animation: fadeIn 1s
-            }
-
-            &.out-animation {
-                animation: fadeOut 1s;
             }
         }
     }
@@ -267,6 +263,7 @@
     }
 
     &--desktop {
+        background-color: $color-dark-green;
         border-radius: 36.3544rem 0 0 0;
         display: flex;
         justify-content: center;
