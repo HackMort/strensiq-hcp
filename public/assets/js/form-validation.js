@@ -2,13 +2,13 @@
 const parentClassName = 'form__control'
 const formClassName = 'form'
 /**
-     * If the parent element of the child element has the class name, return the parent
-     * element, otherwise, call the function again with the parent element as the child
-     * element.
-     * @param child {HTMLElement} - the child element that you want to find the parent of
-     * @param className {string} - The class name of the parent element you're looking for.
-     * @returns {HTMLElement} The parent element of the child element.
-     */
+ * If the parent element of the child element has the class name, return the parent
+ * element, otherwise, call the function again with the parent element as the child
+ * element.
+ * @param child {HTMLElement} - the child element that you want to find the parent of
+ * @param className {string} - The class name of the parent element you're looking for.
+ * @returns {HTMLElement} The parent element of the child element.
+ */
 const getParent = function (child, className) {
   const parent = child.parentElement
   const isControlParent = parent.classList.contains(className)
@@ -21,12 +21,38 @@ const getParent = function (child, className) {
 }
 
 /**
-     * If any of the radio buttons in the group are checked, return true.
-     * @param name {string} - The name of the radio group.
-     * @returns {boolean} A boolean value.
-     */
+
+      Disables a submit button by adding the 'disabled' attribute and the 'disabled' class to its parent element.
+      @param {Element} submit - The submit button to be disabled.
+      */
+const disableSubmitButton = (submit) => {
+  submit && submit.setAttribute('disabled', 'true')
+  if (submit.parentElement) {
+    submit.parentElement.classList.add('disabled')
+  }
+}
+
+/**
+
+          Enables a submit button by removing the 'disabled' attribute and the 'disabled' class from its parent element.
+          @param {Element} submit - The submit button to be enabled.
+          */
+const enableSubmitButton = (submit) => {
+  submit && submit.removeAttribute('disabled')
+  if (submit.parentElement) {
+    submit.parentElement.classList.remove('disabled')
+  }
+}
+
+/**
+ * If any of the radio buttons in the group are checked, return true.
+ * @param name {string} - The name of the radio group.
+ * @returns {boolean} A boolean value.
+ */
 const radioGroupIsValid = function (name) {
-  const radioGroup = document.getElementsByName(`input[type="radio"][name=${name}]`)
+  const radioGroup = document.getElementsByName(
+    `input[type="radio"][name=${name}]`
+  )
   let isValid = false
   for (let i = 0; i < radioGroup.length; i++) {
     if (radioGroup[i].checked) {
@@ -52,13 +78,13 @@ const markFormControlAsTouched = (control) => {
 }
 
 /**
-     * "Return true if every required control has been touched."
-     *
-     * The function starts by filtering the controls array to only include controls
-     * that are required. Then it uses the every method to check if every control in
-     * the array has been touched
-     * @returns A boolean value.
-     */
+ * "Return true if every required control has been touched."
+ *
+ * The function starts by filtering the controls array to only include controls
+ * that are required. Then it uses the every method to check if every control in
+ * the array has been touched
+ * @returns A boolean value.
+ */
 const formHasBeenTouched = function (form) {
   const controls = Array.from(form.querySelectorAll('.form__control'))
   return controls
@@ -67,10 +93,10 @@ const formHasBeenTouched = function (form) {
 }
 
 /**
-     * It returns true if all the controls that have the data-required attribute set to
-     * true also have the data-is-valid attribute set to true
-     * @returns {boolean} A boolean value.
-     */
+ * It returns true if all the controls that have the data-required attribute set to
+ * true also have the data-is-valid attribute set to true
+ * @returns {boolean} A boolean value.
+ */
 const checkFormValidity = function (form) {
   const controls = Array.from(form.querySelectorAll('.form__control'))
   return controls
@@ -111,6 +137,12 @@ const setValidationStatusToFormControl = (formControl, nativeControl) => {
   }
 }
 
+/**
+ * The function validates form controls and toggles the state of the submit button based on the
+ * validity of the form.
+ * @param {Event} event - The event object that triggered the function, likely an input or change event on a
+ * form control.
+ */
 function validateFormControl (event) {
   const nativeControl = event.target
   const formControl = getParent(nativeControl, parentClassName)
@@ -120,33 +152,9 @@ function validateFormControl (event) {
   markFormControlAsTouched(formControl)
 
   /**
-
-      Disables a submit button by adding the 'disabled' attribute and the 'disabled' class to its parent element.
-      @param {Element} submit - The submit button to be disabled.
-      */
-  const disableSubmitButton = (submit) => {
-    submit && submit.setAttribute('disabled', 'true')
-    if (submit.parentElement) {
-      submit.parentElement.classList.add('disabled')
-    }
-  }
-
-  /**
-
-      Enables a submit button by removing the 'disabled' attribute and the 'disabled' class from its parent element.
-      @param {Element} submit - The submit button to be enabled.
-      */
-  const enableSubmitButton = (submit) => {
-    submit && submit.removeAttribute('disabled')
-    if (submit.parentElement) {
-      submit.parentElement.classList.remove('disabled')
-    }
-  }
-
-  /**
-       * If the form is valid, remove the disabled attribute from the submit button,
-       * otherwise add the disabled attribute to the submit button
-       */
+   * If the form is valid, remove the disabled attribute from the submit button,
+   * otherwise add the disabled attribute to the submit button
+   */
   const toggleSubmitButtonState = function () {
     if (form && checkFormValidity(form)) {
       enableSubmitButton(submitButton)
@@ -175,7 +183,8 @@ function validateFormOnSubmit (event) {
 
     const controls = Array.from(form.querySelectorAll('.' + parentClassName))
     controls.forEach((formControl) => {
-      const nativeControl = formControl.querySelector('input') || formControl.querySelector('select')
+      const nativeControl = formControl.querySelector('input') ||
+        formControl.querySelector('select')
 
       setValidationStatusToFormControl(formControl, nativeControl)
     })
