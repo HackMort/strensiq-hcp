@@ -196,30 +196,116 @@ import Testimonial from "../components/Testimonial.astro";
       </section>
       <section class="design-system-section">
         <div class="section-wrapper section-wrapper--small">
-          <h1 class="title">
-            Testimonial
-          </h1>
+          <h1 class="title">Testimonial</h1>
           <Testimonial
             authorInformation="Lynn Kohlmeier, MD, Adult Endocrinologist"
             authorDescription="Alexion-sponsored speaker"
             page="home"
           >
-            <p>If we can increase awareness and reduce misdiagnosis of hypophosphatasia, we can make a big difference.</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptate aperiam, fugit quidem esse dignissimos.</p>
+            <p>
+              If we can increase awareness and reduce misdiagnosis of
+              hypophosphatasia, we can make a big difference.
+            </p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis voluptate aperiam, fugit quidem esse dignissimos.
+            </p>
           </Testimonial>
           <Testimonial
-          authorInformation="Eric Rush, MD, Clinical Geneticist"
-          authorDescription="Alexion-sponsored speaker"
-          page="hypophosphatasia"
-          shapeType="right"
+            authorInformation="Eric Rush, MD, Clinical Geneticist"
+            authorDescription="Alexion-sponsored speaker"
+            page="hypophosphatasia"
+            shapeType="right"
           >
-            <p>As we continue to learn about hypophosphatasia, we are truly understanding that it is a multisystemic disease and not just a skeletal disease.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium beatae cum inventore dolor ex vero.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium expedita id recusandae, eligendi eum nam?</p>
+            <p>
+              As we continue to learn about hypophosphatasia, we are truly
+              understanding that it is a multisystemic disease and not just a
+              skeletal disease.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Laudantium beatae cum inventore dolor ex vero.
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Praesentium expedita id recusandae, eligendi eum nam?
+            </p>
           </Testimonial>
         </div>
       </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">Tabs</h1>
+          <ul role="tablist">
+            <li role="presentation">
+              <!--active one -->
+              <a href="#panel1" role="tab" id="tab1" aria-selected="true"
+                >Tab 1</a
+              >
+            </li>
+            <li role="presentation">
+              <a href="#panel2" role="tab" id="tab2" tabindex="-1">Tab 2</a>
+            </li>
+            <li role="presentation">
+              <a href="#panel3" role="tab" id="tab3" tabindex="-1">Tab 3</a>
+            </li>
+          </ul>
+          <section
+            id="panel1"
+            role="tabpanel"
+            aria-labelledby="tab1"
+            aria-hidden="false"
+            tabindex="-1"
+          >
+            <h2>Panel 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+              nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+              placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+              ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+              aliquet metus.
+            </p>
+          </section>
+          <section
+            id="section2"
+            role="tabpanel"
+            aria-labelledby="tab2"
+            aria-hidden="true"
+            tabindex="-1"
+            hidden
+          >
+            <h2>Panel 2</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+              nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+              placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+              ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+              aliquet metus.
+            </p>
+          </section>
+          <section
+            id="section3"
+            role="tabpanel"
+            aria-labelledby="tab3"
+            aria-hidden="true"
+            tabindex="-1"
+            hidden
+          >
+            <h2>Panel 3</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+              nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+              placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+              ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+              aliquet metus.
+            </p>
+          </section>
+        </div>
+      </section>
     </main>
-    <script src="/assets/js/script.js" type="module"></script>
+    <script src="/assets/js/tabs.js" type="module"></script>
   </body>
 </html>
