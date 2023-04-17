@@ -1,0 +1,61 @@
+[role="tablist"] {
+  background-color: $color-bright-gray;
+  border-radius: 5rem;
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  // max-height: 3.875rem;
+  overflow-y: scroll;
+  padding-top: .3125rem;
+  padding-right: .9375rem;
+  padding-bottom: .3125rem;
+  padding-left: .9375rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  @include media('tablet') {
+    // min-height: 4.8125rem;
+    // padding-top: .625rem;
+    // padding-bottom: .625rem;
+  }
+}
+
+[role="tablist"] li {
+  list-style-type: none;
+  margin-right: 0.25rem;
+
+  &::marker {
+    display: none;
+  }
+}
+
+[role="tablist"] a {
+  border: 2px solid $color-bright-gray;
+  border-radius: 1.6875rem;
+  color: $color-dark-green;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.125rem;
+  min-width: 6.875rem;
+  padding-top: .9375rem;
+  padding-right: 1.25rem;
+  padding-bottom: .9375rem;
+  padding-left: 1.25rem;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+
+  @include media('tablet') {
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
+  }
+}
+
+[role="tablist"] [aria-selected] {
+  background-color: $color-white;
+  border: 2px solid $color-white;
+  font-weight: 900;
+}
+
+[role="tabpanel"] {
+  padding: 1rem;
+}
