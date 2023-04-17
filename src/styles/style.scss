@@ -272,7 +272,7 @@
             line-height: 1.0938rem;
             margin-bottom: 1.875rem;
 
-            &:last-child {
+            &.skeleton-container__footnote {
                 font-size: 12px;
                 line-height: .9rem;
             }
@@ -287,6 +287,11 @@
                 line-height: 1.6875rem;
             }
         }
+    }
+
+    &__symbol {
+        font-size: 10px;
+        top: -4px;
     }
 
     &__skeleton {
