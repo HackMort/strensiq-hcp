@@ -5,6 +5,7 @@ import References from "../components/References.astro";
 import Layout from "../layouts/Layout.astro";
 import Testimonial from "../components/Testimonial.astro";
 import InternalNavigation from "../components/InternalNavigation.astro";
+import HighlightInformation from "../components/HighlightInformation.astro";
 const internalNavLinks = [
   { href: "about", label: "About HPP", active: true },
   { href: "symptoms", label: "Symptoms" },
@@ -23,7 +24,7 @@ const internalNavLinks = [
       <InternalNavigation items={internalNavLinks} icon={false} />
     )
   }
-  <div class="wrapper">
+  <div class="wrapper hypophosphatasia-page">
     <h1>Hypophosphatasia</h1>
     <div class="section" id="about">
       <h1>About HPP</h1>
@@ -179,6 +180,76 @@ const internalNavLinks = [
       </p>
     </div>
   </div>
+  <section class="hypophosphatasia-results">
+    <section class="hypophosphatasia-results__content">
+      <h2>Hypophosphatasia (HPP) results from deficient alkaline phosphatase (ALP)</h2>
+      <p>Hypophosphatasia is an uncommon, inherited, multisystemic, metabolic disorder characterized by low alkaline phosphatase activity that may progress over time.</p>
+      <p>Patients with hypophosphatasia have a mutation on the ALPL gene causing deficient alkaline phosphatase enzyme.</p>
+      <HighlightInformation
+        title="WHAT IS LOW ALP?"
+        content="<40 U/L"
+        footnote="is considered low for adults*"
+        />
+        <HighlightInformation
+        title="IN CHILDREN, low ranges"
+        content="vary"
+        footnote="based on age and sex"
+        />
+        <ul class="hypophosphatasia-results__list">
+          <li class="hypophosphatasia-results__list-item">Clinicians should ensure that reported laboratory results for ALP reflect age- and sex-adjusted reference ranges for the specific patient</li>
+          <li class="hypophosphatasia-results__list-item">Check with your lab for their appropriate age- and sex-adjusted reference range</li>
+        </ul>
+        <p>*Limitations: An alkaline phosphatase level of below 40 U/L is not conclusive for a diagnosis of hypophosphatasia. Patient should be evaluated for other symptoms of hypophosphatasia and differential diagnoses should be ruled out.</p>
+    </section>
+    <section class="hypophosphatasia-results__charts">
+      <ul role="tablist">
+        <li role="presentation">
+          <!--active one -->
+          <a href="#female" role="tab" id="tabMale" aria-selected="true"
+            >Female</a
+          >
+        </li>
+        <li role="presentation">
+          <a href="#male" role="tab" id="tabFemale" tabindex="-1">Male</a>
+        </li>
+      </ul>
+      <section
+        id="female"
+        role="tabpanel"
+        aria-labelledby="tab1"
+        aria-hidden="false"
+        tabindex="-1"
+      >
+        <h2>Panel 1</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+          dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+          nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+          placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+          ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+          aliquet metus.
+        </p>
+      </section>
+      <section
+        id="male"
+        role="tabpanel"
+        aria-labelledby="tab2"
+        aria-hidden="true"
+        tabindex="-1"
+        hidden
+      >
+        <h2>Panel 2</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+          dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+          nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+          placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+          ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+          aliquet metus.
+        </p>
+      </section>
+    </section>
+  </section>
   <Testimonial
     authorInformation="Eric Rush, MD, Clinical Geneticist"
     authorDescription="Alexion-sponsored speaker"
