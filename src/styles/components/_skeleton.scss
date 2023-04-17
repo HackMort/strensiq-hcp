@@ -170,7 +170,7 @@
         }
 
         &[data-word="renal"] {
-            --point-before-width: 2.8894rem;
+            --point-before-width: 5.4375rem;
             --point-active-before-width: .3125rem;
             right: 35%;
             top: 54%;
@@ -328,8 +328,15 @@
 
                 &[data-word-alignment="right"] {
                     .skeleton__word {
-                        left: calc(var(--point-before-width) + 100%);
+                        left: calc(var(--point-before-width) + 25px);
                         right: unset;
+                    }
+                }
+
+                &[data-word-alignment="left"] {
+                    .skeleton__word {
+                        right: calc(var(--point-before-width) + 25px);
+                        left: unset;
                     }
                 }
 

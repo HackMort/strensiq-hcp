@@ -148,7 +148,7 @@ function calculateListPosition (symptomsList, pointElement) {
     const wordElementStyles = getComputedStyle(wordElement)
     const pointElementPosition = parseInt(pointElementStyles.getPropertyValue(horizontalPosition).slice(0, -2))
     const wordElementPosition = parseInt(wordElementStyles.getPropertyValue(horizontalPosition).slice(0, -2))
-    const symptomsListPosition = pointElementPosition + wordElementPosition
+    const symptomsListPosition = pointElementPosition + wordElementPosition + 5
     const pointElementVerticalPosition = parseInt(pointElementStyles.getPropertyValue(dataVerticalLine).slice(0, -2))
     const listVerticalPosition = pointElementVerticalPosition + distanceFromPointElement
 
