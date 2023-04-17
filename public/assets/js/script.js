@@ -27,11 +27,15 @@ document.addEventListener('DOMContentLoaded', function (e) {
   }
 
   // Menu Dropdown
-  const menuItems = document.querySelectorAll('.nav__menu_item_link')
+  const menuItems = document.querySelectorAll('.main__navigation li a')
   const mobileQuery = window.matchMedia('(max-width: 1024px)')
   menuItems.forEach((item) => {
     if (item.getAttribute('href') === window.location.pathname) {
       item.classList.add('current-page')
+      if (item.classList.contains('nav__sub_menu_item_link')) {
+        const parent = item.closest('.has__sub_menu')
+        parent.classList.add('current-page')
+      }
     }
     item.addEventListener('click', (e) => {
       if (!mobileQuery.matches) {
@@ -58,10 +62,10 @@ document.addEventListener('DOMContentLoaded', function (e) {
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
 const header = document.querySelector('.site__header')
 const headerInner = document.querySelector('.header__inner')
-const headerMainBar = document.querySelectorAll('.main_bar')
 const internalNav = document.querySelector('.internal__nav')
+// const headerMainBar = document.querySelectorAll('.main_bar')
 // NodeList to Array
-const headerMainBarArray = Array.prototype.slice.call(headerMainBar)
+// const headerMainBarArray = Array.prototype.slice.call(headerMainBar)
 
 const headerHeight = header.offsetHeight
 const headerObserverOptions = { root: null, rootMargin: '0px', threshold: 0 }

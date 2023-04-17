@@ -52,7 +52,7 @@ input {
     display: block;
     position: relative;
     padding-bottom: 0;
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
 
     transition: all 100ms ease-in-out;
 
@@ -72,9 +72,13 @@ input {
     }
 
     .form__control-error {
+        position: absolute;
         display: none;
         color: $color-red;
         font-size: 1rem;
+
+        top: 101%;
+        left: 0;
 
         @media screen and (min-width: 1024px) {
             font-size: .875rem;
@@ -187,9 +191,13 @@ input {
         align-items: center;
 
         .form__control-label {
-            font-size: .875rem;
+            font-size: 1rem;
             font-weight: 300;
             line-height: 17.5px;
+
+            @media screen and (min-width: 768px) {
+                font-size: 1.125rem;
+            }
         }
     }
 
@@ -197,7 +205,7 @@ input {
         &[data-touched="true"][data-required="true"][data-is-valid="false"] {
 
             .form__control-input,
-            .form__control-select {
+            .form__control-select-wrapper {
                 outline-color: $color-red;
             }
 
