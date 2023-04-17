@@ -1,0 +1,16 @@
+---
+    export interface Props {
+        title?: string;
+        content: string;
+        footnote: string;
+        footnoteExtra?: string;
+    }
+
+    const { title = '', content, footnote, footnoteExtra = '' } = Astro.props;
+---
+
+<article class="highlight-information">
+    {title && <h4>{title}</h4>}
+    <span>{content}</span>
+    <h5><strong>{footnote}</strong>{footnoteExtra}</h5>
+</article>
