@@ -60,7 +60,7 @@
 }
 
 .color--green {
-    color: $color-green;
+  color: $color-green;
 }
 
 .color--dark-green {
@@ -68,5 +68,44 @@
 }
 
 .color--dark-pink {
-    color: $color-dark-pink;
+  color: $color-dark-pink;
+}
+
+
+// Animations
+.animated--bg {
+  --animation-speed: 2.5s;
+  --animation-color: rgba(92, 199, 153, 0.4);
+  --animation-type: ease-out;
+  --animation-origin: 50% 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--animation-color);
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: var(--animation-origin);
+    transform-origin: var(--animation-origin);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: var(--animation-speed);
+    transition-duration: var(--animation-speed);
+    -webkit-transition-timing-function: var(--animation-type);
+    transition-timing-function: var(--animation-type);
+    z-index: -1;
+  }
+
+  &.fill-in {
+    &::before {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+    }
+  }
+
 }
