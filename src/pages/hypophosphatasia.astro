@@ -23,8 +23,18 @@ import SkeletonDesktop from "../components/SkeletonDesktop.astro";
       that it is a multisystemic disease and not just a skeletal disease.
     </p>
   </Testimonial>
-  <SkeletonMobile></SkeletonMobile>
-  <SkeletonDesktop></SkeletonDesktop>
+  <section class="skeleton-container">
+    <section class="skeleton-container__content">
+      <h2>Hypophosphatasia compromises more than good bones</h2>
+      <p>Persistently low alkaline phosphatase activity, defined as 2 or more age- and sex-adjusted ALP levels below normal range in intervals of more than 30 days within a 6-month window,† can lead to progressive and varying symptoms in several systems of the body beyond the skeletal system.</p>
+      <p>These symptoms may emerge at any time and can progress to potentially become debilitating.</p>
+      <p>†Alkaline phosphatase ranges must be age- and sex-adjusted.</p>
+    </section>
+    <section class="skeleton-container__skeleton">
+      <SkeletonMobile></SkeletonMobile>
+      <SkeletonDesktop></SkeletonDesktop>
+    </section>
+  </section>
   <CTA
     heading="Get to know the nuts and bolts of STRENSIQ"
     linkText="How it works"
