@@ -138,14 +138,6 @@ input {
             transition: transform 200ms ease-in-out;
         }
 
-        &--active,
-        &:focus-within {
-
-            &::after {
-                transform: translateY(-50%) rotate(-180deg);
-            }
-        }
-
         .form__control-select {
             // display: none;
             width: 100%;
@@ -197,6 +189,10 @@ input {
 
     &.form__control--invalid {
         &[data-touched="true"][data-required="true"][data-is-valid="false"] {
+
+            .form__control-label {
+                color: $color-red;
+            }
 
             .form__control-input,
             .form__control-select-wrapper {
