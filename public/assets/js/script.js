@@ -26,11 +26,15 @@ document.addEventListener('DOMContentLoaded', function (e) {
   }
 
   // Menu Dropdown
-  const menuItems = document.querySelectorAll('.nav__menu_item_link')
+  const menuItems = document.querySelectorAll('.main__navigation li a')
   const mobileQuery = window.matchMedia('(max-width: 1024px)')
   menuItems.forEach((item) => {
     if (item.getAttribute('href') === window.location.pathname) {
       item.classList.add('current-page')
+      if (item.classList.contains('nav__sub_menu_item_link')) {
+        const parent = item.closest('.has__sub_menu')
+        parent.classList.add('current-page')
+      }
     }
     item.addEventListener('click', (e) => {
       if (!mobileQuery.matches) {
@@ -47,8 +51,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
     })
   })
 
-
-  //Internal Navigation
+  // Internal Navigation
   window.addEventListener('scroll', () => {
     highlightActiveInternalNavOnScroll()
   })
@@ -58,10 +61,10 @@ document.addEventListener('DOMContentLoaded', function (e) {
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
 const header = document.querySelector('.site__header')
 const headerInner = document.querySelector('.header__inner')
-const headerMainBar = document.querySelectorAll('.main_bar')
 const internalNav = document.querySelector('.internal__nav')
+// const headerMainBar = document.querySelectorAll('.main_bar')
 // NodeList to Array
-const headerMainBarArray = Array.prototype.slice.call(headerMainBar)
+// const headerMainBarArray = Array.prototype.slice.call(headerMainBar)
 
 const headerHeight = header.offsetHeight
 const headerObserverOptions = { root: null, rootMargin: '0px', threshold: 0 }
@@ -109,7 +112,6 @@ window.addEventListener('scroll', () => {
   headerObserver.observe(header)
 })
 
-
 /*
   * highlightActiveInternalNavOnScroll
   * @description
@@ -130,27 +132,24 @@ function highlightActiveInternalNavOnScroll () {
   }
   const sectionObserver = new window.IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-
-      //Distance between the top of the section and the top of the viewport
+      // Distance between the top of the section and the top of the viewport
       const sectionTop = entry.boundingClientRect.top
       const internalNavWidth = internalNav.offsetWidth
       const activeLiPosition = activeLi.offsetLeft
 
-      //Validate if the section that are in viewport and is closer of the top of the viewport
-      if (entry.isIntersecting && sectionTop <=  headerHeight) {
+      // Validate if the section that are in viewport and is closer of the top of the viewport
+      if (entry.isIntersecting && sectionTop <= headerHeight) {
         const sectionId = entry.target.getAttribute('id')
         internalNavItems.forEach((item) => {
-          item.classList.remove('is--active') 
+          item.classList.remove('is--active')
         })
 
         const activeLi = document.querySelector(`.internal__nav_list_item a[href="#${sectionId}"]`).parentElement
         activeLi.classList.add('is--active')
-        
-        //Scroll the internal navigation to the active item
-        internalNav.scrollLeft = activeLiPosition - internalNavWidth / 2 
 
+        // Scroll the internal navigation to the active item
+        internalNav.scrollLeft = activeLiPosition - internalNavWidth / 2
       }
-
     })
   }
   , sectionObserverOptions)
@@ -158,7 +157,6 @@ function highlightActiveInternalNavOnScroll () {
     sectionObserver.observe(section)
   })
 }
-
 
 /*
   * setActiveIternalNavItemOnClick
@@ -170,7 +168,7 @@ function highlightActiveInternalNavOnScroll () {
 */
 function setActiveIternalNavItemOnClick () {
   const headerNavHeight = document.querySelector('.site__header')
-  const internalNav = document.querySelector('.internal__nav') 
+  const internalNav = document.querySelector('.internal__nav')
   const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
   const headerInner = document.querySelector('.site__header .header__inner')
   let marginYOff = 0
@@ -209,9 +207,7 @@ function setActiveIternalNavItemOnClick () {
 
     // Add class is--active to the clicked internal navigation item
     target.parentElement.classList.add('is--active')
-
   })
-
 }
 
 /**
