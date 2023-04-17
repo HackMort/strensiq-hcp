@@ -8,6 +8,7 @@
         --point-border-style: solid;
         --point-before-width: 5.3094rem;
         background-color: $color-green;
+        border: 2px solid transparent;
         border-radius: 50px;
         height: 1.125rem;
         position: absolute;
@@ -59,7 +60,7 @@
             --point-border-style: dashed;
             --point-active-before-width: 0px;
             --point-active-after-height: 3.125rem;
-            border: 2px solid $color-white;
+            border-color: $color-white;
             background-color: $color-dark-pink;
 
             .skeleton__word {
