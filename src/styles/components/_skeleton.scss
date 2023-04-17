@@ -236,13 +236,13 @@
             width: 80%;
 
             &--hidden {
-                animation: fadeOut 1s;
+                animation: fadeOut 0.5s;
                 opacity: 0;
                 z-index: -1;
             }
 
             &.in-animation {
-                animation: fadeIn 1s
+                animation: fadeIn 0.5s
             }
         }
     }
