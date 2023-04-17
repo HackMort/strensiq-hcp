@@ -5,6 +5,8 @@ import References from "../components/References.astro";
 import CTA from "../components/CTA.astro";
 import CookieBanner from "../components/CookieBanner.astro";
 import Testimonial from "../components/Testimonial.astro";
+import SkeletonMobile from "../components/SkeletonMobile.astro";
+import SkeletonDesktop from "../components/SkeletonDesktop.astro";
 ---
 
 <!DOCTYPE html>
@@ -303,6 +305,15 @@ import Testimonial from "../components/Testimonial.astro";
               aliquet metus.
             </p>
           </section>
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">
+            Skeleton
+          </h1>
+          <SkeletonMobile></SkeletonMobile>
+          <SkeletonDesktop></SkeletonDesktop>
         </div>
       </section>
     </main>
