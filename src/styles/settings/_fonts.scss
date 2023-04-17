@@ -35,6 +35,25 @@
   font-weight: 700, bold;
 }
 
+// Inter Font
+@font-face {
+  font-family: Inter;
+  src: url("/assets/fonts/Inter-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("/assets/fonts/Inter-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("/assets/fonts/Inter-Black.ttf");
+  font-weight: 900;
+}
+
 *,
 *::before,
 *::after {
