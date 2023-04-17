@@ -82,7 +82,9 @@ function validateFormControl (event) {
     */
   const disableSubmitButton = (submit) => {
     submit && submit.setAttribute('disabled', 'true')
-    submit.parentElement.classList.add('disabled')
+    if (submit.parentElement) {
+      submit.parentElement.classList.add('disabled')
+    }
   }
 
   /**
@@ -92,7 +94,9 @@ function validateFormControl (event) {
     */
   const enableSubmitButton = (submit) => {
     submit && submit.removeAttribute('disabled')
-    submit.parentElement.classList.remove('disabled')
+    if (submit.parentElement) {
+      submit.parentElement.classList.remove('disabled')
+    }
   }
 
   /**
