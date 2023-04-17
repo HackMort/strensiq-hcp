@@ -56,6 +56,9 @@ document.addEventListener('DOMContentLoaded', function (e) {
     highlightActiveInternalNavOnScroll()
   })
   setActiveIternalNavItemOnClick()
+
+  // Animated BG on Scroll
+  animatedBgColorOnScroll()
 })
 
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
@@ -250,4 +253,32 @@ function isiHeaderFixed () {
   if (isiSection) {
     isiObserver.observe(isiSection)
   }
+}
+
+/**
+ * animatedBgColorOnScroll
+ * @description
+ * - Add class fill-in to .animated--bg element when the element is in viewport only once
+ * It requires IntersectionObserver API
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+ * @see https://caniuse.com/#feat=intersectionobserver
+ */
+function animatedBgColorOnScroll () {
+  const animatedBg = document.querySelectorAll('.animated--bg')
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1
+  }
+  const observer = new window.IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fill-in')
+      }
+    })
+  }
+  , observerOptions)
+  animatedBg.forEach((element) => {
+    observer.observe(element)
+  })
 }
