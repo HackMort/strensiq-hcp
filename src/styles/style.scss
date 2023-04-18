@@ -381,14 +381,19 @@
 }
 
 .skeleton-container {
+    @extend .wrapper;
     background-color: rgba($color-bright-gray, 50%);
-    // background-color: $color-bright-gray;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 2rem 1.5rem;
+    padding: 2rem 0;
     position: relative;
     width: 100%;
+
+    @media (min-width: 1200px) and (max-width: 1450px) {
+        overflow: hidden;
+        max-width: 100%;
+    }
 
     @include media('desktop') {
         justify-content: space-around;
@@ -472,10 +477,21 @@
         min-width: 43.75rem;
         padding: 3.125rem 0 0;
 
+
         @media (min-width: 870px) {
             background-color: transparent;
             display: flex
         }
+
+        @media (min-width: 1200px) and (max-width: 1300px) {
+            min-width: 37.5rem;
+
+            .skeleton__word {
+                font-size: 30px;
+            }
+        }
+
+
     }
 
     .skeleton--mobile {
