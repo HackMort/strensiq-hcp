@@ -1,34 +1,115 @@
 ---
 import PageHero from "../components/PageHero.astro";
 import Layout from "../layouts/Layout.astro";
-import StepsBox from '../components/StepsBox.astro';
+import StepsBox from "../components/StepsBox.astro";
+import TipBox from "../components/TipBox.astro";
+import InternalNavigation from "../components/InternalNavigation.astro";
+
+const internalNavLinks = [
+  { href: "start", label: "Getting Started", active: true },
+  { href: "strensiq", label: "Staying on STRENSIQ" },
+  { href: "patient", label: "Patient Support" },
+];
 ---
 
 <Layout title="Toolkit">
-    <PageHero pageId="toolkit" classNames="toolkit__page-hero">
-        <h1 class="page-hero__title">
-            Tools to start treating hypophosphatasia at its source
-        </h1>
-    </PageHero>
+  <PageHero pageId="toolkit" classNames="toolkit__page-hero">
+    <h1 class="page-hero__title">
+      Tools to start treating hypophosphatasia at its source
+    </h1>
+  </PageHero>
 
+  {
+    internalNavLinks && (
+      <InternalNavigation items={internalNavLinks} icon={false} />
+    )
+  }
+  <section id="start" class="section toolkit-steps">
+    <div class="wrapper">
+      <p class="toolkit-steps__desc">
+        3 steps for starting patients on STRENSIQ
+      </p>
+      <div class="toolkit-steps__boxes">
+        <StepsBox imgSrc="clipboard-icon" stepNumber="1" imgAlt="clipboard">
+          Reach out to your local Alexion representative who will help guide you
+          through the prescription fulfillment process and connect you with your
+          support team
+          <button class="button button--primary request-a-rep__button"
+            >Request a Rep</button
+          >
+        </StepsBox>
 
-  <section class="toolkit-steps wrapper">
-    <p class="toolkit-steps__desc">3 steps for starting patients on STRENSIQ</p>
-    <div class="toolkit-steps__boxes">
+        <StepsBox
+          imgSrc="arrow-box-icon"
+          stepNumber="2"
+          imgAlt="arrow"
+          className="image-modifier"
+          classTitle="title-modifier"
+        >
+          Your Alexion team will help you identify and submit the necessary
+          forms to PANTHERx, the STRENSIQ specialty pharmacy
+        </StepsBox>
 
-      <StepsBox imgSrc="clipboard-icon" stepNumber="1" imgAlt="clipboard">
-        Reach out to your local Alexion representative who will help guide you through the prescription fulfillment process and connect you with your support team
-        <a href="#" class="button">Request a Rep</a>
-      </StepsBox> 
-      
-      <StepsBox imgSrc="arrow-box-icon" stepNumber="2" imgAlt="arrow" className="image-modifier" classTitle="title-modifier">
-        Your Alexion team will help you identify and submit the necessary forms to PANTHERx, the STRENSIQ specialty pharmacy
-      </StepsBox> 
-      
-      <StepsBox imgSrc="monitor-icon" stepNumber="3" imgAlt="monitor" className="image-modifier">
-        Work with your patient to enroll in OneSourceTM—the complimentary, personalized patient support program from Alexion
-      </StepsBox> 
+        <StepsBox
+          imgSrc="monitor-icon"
+          stepNumber="3"
+          imgAlt="monitor"
+          className="image-modifier"
+        >
+          Work with your patient to enroll in OneSourceTM—the complimentary,
+          personalized patient support program from Alexion
+        </StepsBox>
+      </div>
+    </div>
+    <TipBox classNames="toolkit__tip">
+      <strong>PRO TIP!</strong> To streamline the STRENSIQ fulfillment process, consult
+      your Alexion team for guidance on required documentation prior to submitting
+      any <button>forms</button> to the specialty pharmacy.
+    </TipBox>
+  </section>
+  <section id="strensiq" class="section toolkit__strensiq">
+    <div class="wrapper">
+      <h2 class="toolkit__strensiq_title">
+        OneSource<sup>&trade;</sup> and PANTHERx Rare provide ongoing, personalized
+        support for patients
+      </h2>
+      <div class="toolkit__strensiq_os">
+        <img src="" alt="" />
+        <h4 class="toolkit__strensiq_os_title">OneSource<sup>&trade;</sup></h4>
+        <p>Complimentary, personalized patient support offered by Alexion:</p>
+        <ul>
+          <li>
+            Insurance coverage support (benefits verification, appeals, and
+            more)
+          </li>
+          <li>Disease information</li>
+          <li>Personalized, ongoing support</li>
+          <li>Community connections</li>
+        </ul>
+        <p>
+          <a href="https://alexiononesource.com/" target="_blank"
+            >www.AlexionOneSource.com</a>
+        </p>
+        <p><strong class="phone">Phone: (888) 765-4747</strong></p>
+      </div>
     </div>
   </section>
-
+  <section id="patient" class="section toolkit__patient">
+    <div class="wrapper">
+      <h2 class="toolkit__patient_title">Patient</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem in
+        similique voluptatum accusamus quaerat, possimus deleniti, vel facilis
+        ducimus et blanditiis neque porro id laboriosam dolorum iusto
+        exercitationem, non molestiae. Quos fugiat debitis sint sunt aliquam
+        praesentium nesciunt facere eaque nemo corporis culpa labore,
+        perferendis soluta, quis veritatis! Recusandae, facere placeat sapiente
+        aliquid, velit illum ducimus ab a nihil numquam perspiciatis nobis
+        laborum debitis magni nesciunt! Iste, quia iusto, molestiae iure sunt
+        aut rem tempora, officiis ipsa fugit cupiditate voluptatibus nihil
+        voluptates odit consequatur quo qui laborum eveniet eaque! Sed
+        consectetur alias excepturi, dolore optio porro ipsa impedit ratione in.
+      </p>
+    </div>
+  </section>
 </Layout>
