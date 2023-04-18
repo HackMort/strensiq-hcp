@@ -229,8 +229,155 @@
 //-------------------------------------------------------------toolkit steps section -------------------------------------------------------------/* Hypophosphatasia Page  */
 
 /* Hypophosphatasia Page  */
-.hypophosphatasia-page {
+.hypophosphatasia-results {
+    @extend .wrapper;
+    display: flex;
+    flex-wrap: wrap;
 
+    @media(max-width: 1199px) {
+        max-width: none;
+    }
+
+    @include media ('desktop') {
+        flex-wrap: nowrap;
+        padding-bottom: 2.25rem;
+    }
+
+    &__charts {
+        @include media('desktop') {
+            padding-top: 1.5625rem;
+        }
+    }
+
+    &__content {
+        padding: 1.5625rem 1.5625rem 0;
+
+        @include media('desktop') {
+            max-width: 61ch;
+            padding-left: 0;
+        }
+    }
+
+    &__footnote {
+        font-size: 12px;
+        line-height: .9rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__list {
+        margin-bottom: .9375rem;
+        padding-left: .75rem;
+
+        &-item {
+            font-size: 14px;
+            line-height: 1.0938rem;
+            margin-bottom: .9375rem;
+
+            @include media('desktop') {
+                font-size: 18px;
+                line-height: 1.6875rem;
+            }
+        }
+    }
+
+    &__tabs {
+        justify-content: space-evenly;
+        margin: 0 auto;
+        overflow-y: hidden;
+        width: 95%;
+
+        @include media('desktop') {
+            justify-content: center;
+            margin: 0;
+        }
+
+        li a {
+            padding: .625rem 2.8125rem;
+
+            @include media('desktop') {
+                padding: .625rem 4.1875rem;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 1.5625rem;
+    }
+
+    &__panel {
+        padding: 2.4688rem 0 0;
+
+        &-title {
+            background-color: $color-dark-green;
+            border-radius: 0 0 0 30px;
+            color: $color-white;
+            font-weight: 700;
+            line-height: 1.25rem;
+            margin-bottom: 1.25rem;
+            padding: 1.5625rem;
+            position: relative;
+
+            &::after {
+                border: 3px solid $color-dark-yellow;
+                content: '';
+                margin-top: .4375rem;
+                position: relative;
+                width: 5.8125rem;
+            }
+        }
+
+        &-chart {
+            margin: 0 auto .8125rem;
+
+            &--only-mobile {
+                @media (min-width: 1200px) {
+                    display: none;
+                }
+            }
+
+            img {
+                margin: 0 auto;
+                max-width: 500px;
+
+                @include media('desktop') {
+                    margin: 0;
+                    max-width: 650px;
+                }
+            }
+        }
+
+        &-content {
+            padding: 0 1rem;
+        }
+
+        &-footnote {
+            font-size: 12px;
+            line-height: .9rem;
+        }
+    }
+
+    &__paragraph {
+        font-size: 14px;
+        line-height: 1.0938rem;
+        margin-bottom: 1.5625rem;
+
+        @include media('desktop') {
+            font-size: 18px;
+            line-height: 1.6875rem;
+
+            .text--italic {
+                font-size: 16px;
+                font-style: italic;
+                line-height: 1.5rem;
+            }
+        }
+
+    }
+
+    .highlight-information {
+        margin-bottom: 2.6875rem;
+        max-width: 21.25rem;
+    }
 }
 
 .skeleton-container {
