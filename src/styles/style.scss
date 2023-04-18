@@ -16,8 +16,9 @@
 @import './components/_tabs.scss';
 @import './components/_cta.scss';
 @import './components/_footer.scss';
-@import './components/work-box';
-@import './components/steps-box';
+@import './components/work-box.scss';
+@import './components/steps-box.scss';
+@import './components/tip-box.scss';
 @import './components/exit-modal';
 @import './components/_main-hero.scss';
 @import './components/_page-hero.scss';
@@ -184,6 +185,7 @@
 
     @include media('tablet') {
         margin-top: 3rem;
+        margin-bottom: 4rem;
     }
 
     &__desc {
@@ -221,6 +223,14 @@
 
         @media screen and (min-width:1366px) {
             line-height: 4.5rem;
+        }
+    }
+
+    .tip__box {
+        margin-top: 0rem;
+
+        @include media('tablet') {
+            margin-top: 2rem;
         }
     }
 }

@@ -8,6 +8,7 @@ import CookieBanner from "../components/CookieBanner.astro";
 import Testimonial from "../components/Testimonial.astro";
 import SkeletonMobile from "../components/SkeletonMobile.astro";
 import SkeletonDesktop from "../components/SkeletonDesktop.astro";
+import TipBox from "../components/TipBox.astro";
 ---
 
 <!DOCTYPE html>
@@ -335,6 +336,22 @@ import SkeletonDesktop from "../components/SkeletonDesktop.astro";
             Dolor fugiat, animi, ea reprehenderit, velit fuga nihil a libero
             minus voluptatem sunt.
           </h5>
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">TipBox</h1>
+          <TipBox classNames="toolkit__tip">
+            <strong>PRO TIP!</strong> To streamline the STRENSIQ fulfillment process,
+            consult your Alexion team for guidance on required documentation prior
+            to submitting any <a href="#">forms</a> to the specialty pharmacy.
+          </TipBox>
+          <TipBox classNames="toolkit__tip" align="right">
+            <strong
+              >Do not rely on serum alkaline phosphatase measurements for
+              clinical decisions related to patients currently taking STRENSIQ</strong
+            >
+          </TipBox>
         </div>
       </section>
     </main>
