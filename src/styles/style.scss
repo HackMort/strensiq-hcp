@@ -236,8 +236,16 @@
     }
     .hpp{
     
-        padding-bottom: 1.875rem!important;
-    
+        padding-bottom: 1.625rem;
+        @media screen and (min-width:1024px) {
+        padding-bottom: 3.125rem;
+        max-width: 75rem;
+        margin: auto;
+        }
+        @media screen and (min-width:1400px) {
+        max-width: unset;
+        margin: unset;
+        }
     
         &__title{
             font-style: normal;
@@ -249,8 +257,7 @@
             max-width: 33.8125rem;
 
             @media screen and (min-width:1024px) {
-            font-weight: 700;
-            font-size: 30px;
+            font-size: 1.875rem;
             line-height: 2.375rem;
             }
         }
@@ -261,15 +268,18 @@
             font-size: 1.125rem;
             line-height: 1.375rem;
             color: $color-dark-gray;
-            margin-top: 1.25rem;
-            margin-bottom: .6875rem;
+            margin-bottom: .5rem;
             max-width: 39.6875rem;
             
             @media screen and (min-width:1024px) {
-            font-weight: 500;
             font-size: 1.5rem;
             line-height: 2.25rem;
-            margin-bottom: 2rem;
+            margin-bottom: .6875rem;
+            margin-top: 1.125rem;
+            max-width: 27.6875rem;
+            }
+            @media screen and (min-width:1400px) {
+                max-width: 39.6875rem;
             }
         }
     
@@ -292,6 +302,12 @@
             line-height: 1.125rem;
             margin-bottom: .9375rem;
             max-width: 39.6875rem;
+            @media screen and (min-width:1024px) {
+            max-width: 27.6875rem;
+            }
+            @media screen and (min-width:1400px) {
+                max-width: 39.6875rem;
+            }
         }
     
         &__item{
@@ -318,6 +334,7 @@
             margin-right: 1rem;
             margin-left: 1rem;
             margin-bottom: 2rem;
+            
             @media screen and (min-width:768px) {
                 font-size: 1.125rem;
                 }
@@ -341,6 +358,12 @@
             margin-left: 2.75rem;
             margin-bottom: 1.75rem;
             max-width: 17.8125rem;
+            list-style-type: circle;
+            
+            &::marker{
+                color: $color-dark-gray;
+            }
+            /* list-style-image: url('/assets/icons/sub-item-bullet.svg'); */
 
             &.modifier{
                 margin-top: .75rem;
@@ -377,6 +400,20 @@
             }
         }
 
+        &__img-container{
+            position: relative;
+            width: 100vw;
+            left: -1rem;
+
+            @media screen and (min-width:428px) {
+                left: -1.25rem;
+            }
+            @media screen and (min-width:675px) {
+                position: unset;
+                width: unset;
+            }
+        }
+
         &__container{
             margin: auto;
             @media screen and (min-width:1024px) {
@@ -385,8 +422,8 @@
                 
                 :first-child{
                     width: 27.0625rem;
-                    margin-right: 5px;
-                    margin-top: 3px;
+                    margin-right: .3125rem;
+                    margin-top: .1875rem;
 
                     @media screen and (min-width:1400px) {
                         width: 39.6875rem;
@@ -401,9 +438,13 @@
         background: rgba(226, 231, 234, 0.5);
         overflow: hidden;
         &.custom-section{
-            margin-top: 1.875rem;
             padding-bottom: 1.875rem;
         }
+
+        .hpp{
+            padding-bottom: 0;
+        }
+
         .hpp__image{
             &.modifier{
                 @media screen and (min-width:1024px) {
@@ -424,8 +465,8 @@
                 
                 :first-child{
                     width: 27.0625rem;
-                    margin-right: 5px;
-                    margin-top: 3px;
+                    margin-right: .3125rem;
+                    margin-top: .1875rem;
                 }
             }
         }
@@ -437,6 +478,10 @@
     padding-top: 8.125rem;
     position: relative;
 
+
+    @media screen and (min-width:428px) {
+        margin-top: 5rem;
+    }
     @media screen and (min-width:650px) {
         padding-left: 10%;
     }
@@ -459,6 +504,7 @@
         line-height: 2.75rem;    
         letter-spacing: -0.03em;
         color: $color-dark-green;
+        margin-bottom: .5rem;
 
         @media screen and (min-width:900px) {
             font-size: 70px;
@@ -473,7 +519,8 @@
         font-size: .875rem;
         line-height: 1.125rem;
         color: $color-dark-gray;
-        
+        margin-bottom: .4rem;
+
         @media screen and (min-width:900px) {
         font-size: 18px;
         line-height: 1.6875rem;
@@ -488,9 +535,10 @@
         font-size: .875rem;
         line-height: 1.125rem;
         color: $color-dark-green;
+        margin-bottom: .2rem;
 
         @media screen and (min-width:900px) {
-            font-size: 18px;
+            font-size: 1.125rem;
             line-height: 1.6875rem;
         }
     }
