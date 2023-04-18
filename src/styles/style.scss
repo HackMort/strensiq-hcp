@@ -235,6 +235,57 @@
     }
 }
 
+.toolkit__strensiq {
+    background-color: $color-bright-gray;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    &_title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.5625rem;
+        color: $color-dark-green;
+        margin-bottom: 1.5rem;
+
+        @media screen and (min-width: 1200px) {}
+    }
+
+    &_os {
+        position: relative;
+        display: grid;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -2rem;
+            background-color: $color-white;
+            border-radius: 0px 368px 368px 0px;
+            min-height: 420px;
+            z-index: -1;
+            width: 100%;
+        }
+
+    }
+
+    &_os_title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.5625rem;
+        color: $color-dark-green;
+
+        @media screen and (min-width: 1200px) {}
+    }
+
+    &_os_image {
+        height: auto;
+        margin-bottom: 1rem;
+        width: 7.6269rem;
+    }
+
+
+}
+
 //-------------------------------------------------------------toolkit steps section -------------------------------------------------------------
 
 /* Hypophosphatasia Page */
