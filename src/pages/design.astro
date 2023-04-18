@@ -1,6 +1,7 @@
 ---
 import "../styles/style.scss";
 import "../styles/settings/_design.scss";
+import Header from "../components/Header.astro";
 import References from "../components/References.astro";
 import CTA from "../components/CTA.astro";
 import CookieBanner from "../components/CookieBanner.astro";
@@ -10,15 +11,24 @@ import SkeletonDesktop from "../components/SkeletonDesktop.astro";
 ---
 
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Desing system</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Design System</title>
   </head>
 
   <body>
+    <Header />
+
     <main id="content" role="main">
       <h1 class="title text--center">Design System</h1>
       <section class="design-system-section">
@@ -309,14 +319,26 @@ import SkeletonDesktop from "../components/SkeletonDesktop.astro";
       </section>
       <section class="design-system-section">
         <div class="section-wrapper section-wrapper--small">
-          <h1 class="title">
-            Skeleton
-          </h1>
-          <SkeletonMobile></SkeletonMobile>
-          <SkeletonDesktop></SkeletonDesktop>
+          <h1 class="title">Skeleton</h1>
+          <SkeletonMobile />
+          <div class="desktop--only">
+            <SkeletonDesktop />
+          </div>
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">Animated BG Color on Text</h1>
+          <h5 class="animated--bg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            sit consectetur commodi ex dolorem! Consequuntur, aliquid magni.
+            Dolor fugiat, animi, ea reprehenderit, velit fuga nihil a libero
+            minus voluptatem sunt.
+          </h5>
         </div>
       </section>
     </main>
+    <script src="/assets/js/script.js" type="module"></script>
     <script src="/assets/js/tabs.js" type="module"></script>
   </body>
 </html>
