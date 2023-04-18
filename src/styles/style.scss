@@ -13,6 +13,7 @@
 @import './components/_cookie.scss';
 @import './components/_isi.scss';
 @import './components/_references.scss';
+@import './components/_tabs.scss';
 @import './components/_cta.scss';
 @import './components/_footer.scss';
 @import './components/work-box';
@@ -23,6 +24,9 @@
 @import './components/_testimonial.scss';
 @import './components/_not-found-hero.scss';
 @import './components/_custom-section.scss';
+@import './components/_request-rep-modal.scss';
+@import './components/_form.scss';
+@import './components/_skeleton.scss';
 
 
 //-------------------------------------------------------------lets work together section-------------------------------------------------------------
@@ -80,7 +84,7 @@
     }
 }
 
-//-------------------------------------------------------------lets work together section-------------------------------------------------------------    
+//-------------------------------------------------------------lets work together section-------------------------------------------------------------
 
 
 // How it works page
@@ -173,7 +177,7 @@
 }
 
 
-//-------------------------------------------------------------toolkit steps section -------------------------------------------------------------    
+//-------------------------------------------------------------toolkit steps section -------------------------------------------------------------
 .toolkit-steps {
     margin-top: 1.5625rem;
     margin-bottom: 2rem;
@@ -558,18 +562,116 @@
             height: 290.0644rem;
             transform: rotate(41.66deg);
         }
-        /* @media screen and (min-width:1345px) {
-            width: 239.0269rem;
-            left: -10.0581rem;
-            top: 23.75rem;
-        }
-        @media screen and (min-width:1420px) {
-            width: 257.0269rem;
-            left: -13.0581rem;
-        } */
-
 
     }
 
 }
 //-------------------------------------------------------------how it works page -------------------------------------------------------------    
+
+
+/* Hypophosphatasia Page */
+.skeleton-container {
+    background-color: rgba($color-bright-gray, 50%);
+    // background-color: $color-bright-gray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    position: relative;
+    width: 100%;
+
+    @include media('desktop') {
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    h2 {
+        color: $color-dark-green;
+        font-weight: 700;
+        margin-bottom: .625rem;
+
+        @include media('desktop') {
+            margin-bottom: .9375rem;
+        }
+    }
+
+    &::after {
+        @include media('desktop') {
+            background-color: $color-dark-green;
+            border-radius: 36.3544rem 0 0 0;
+            content: '';
+            height: 100%;
+            position: absolute;
+            right: 0;
+            width: 68%;
+            z-index: 0;
+        }
+    }
+
+    &__content {
+        z-index: 1;
+
+        p {
+            font-size: 14px;
+            line-height: 1.0938rem;
+            margin-bottom: 1.875rem;
+
+            &.skeleton-container__footnote {
+                font-size: 12px;
+                line-height: .9rem;
+            }
+        }
+
+        @include media('desktop') {
+            max-width: 48ch;
+            padding: 2rem 0 0 0;
+
+            p {
+                font-size: 18px;
+                line-height: 1.6875rem;
+            }
+        }
+    }
+
+    &__symbol {
+        font-size: 10px;
+        top: -4px;
+    }
+
+    &__skeleton {
+        border-radius: 1.875rem;
+        background-color: $color-dark-green;
+        z-index: 1;
+
+        @media (min-width: 870px) {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        @include media('desktop') {
+            background-color: transparent;
+            padding-right: 2.5rem;
+            width: fit-content;
+        }
+    }
+
+    .skeleton--desktop {
+        border-radius: 0;
+        display: none;
+        min-width: 43.75rem;
+        padding: 3.125rem 0 0;
+
+        @media (min-width: 870px) {
+            background-color: transparent;
+            display: flex
+        }
+    }
+
+    .skeleton--mobile {
+
+        @media (min-width: 870px) {
+            display: none;
+        }
+    }
+}

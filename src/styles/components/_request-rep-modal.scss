@@ -1,0 +1,114 @@
+.request-a-rep__modal-form {
+    width: 100% !important;
+    height: max-content;
+    background: $color-white;
+    border-radius: 1.25rem;
+
+    max-width: 57.125rem;
+    position: relative;
+
+    margin: 0 !important;
+
+    padding: 1rem .7813rem;
+    padding-top: 0;
+
+    @media screen and (min-width: 768px) {
+        padding: 2.5rem
+    }
+
+    .request-a-rep__header {
+
+        .request-a-rep__actions {
+            text-align: end;
+
+            @media screen and (min-width: 768px) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+
+                padding: 0 2.5rem;
+            }
+        }
+
+        .request-a-rep__close-button {
+            color: $color-dark-pink;
+            font-size: 4.6875rem;
+            font-weight: 300;
+            display: inline;
+            line-height: 100%;
+            cursor: pointer;
+        }
+
+        .request-a-rep__title {
+            color: $color-dark-green;
+            font-weight: 900;
+            text-align: center;
+            font-size: 2.25rem;
+            line-height: 35.82px;
+        }
+
+        .request-a-rep__subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 25px;
+            color: $color-dark-gray;
+            margin-bottom: 2.0787rem;
+        }
+    }
+
+    .form__group-label {
+        color: $color-dark-gray;
+        font-size: .75rem;
+        line-height: 14.4px;
+        font-weight: 300;
+        margin-bottom: .5rem;
+    }
+
+    .form__control-checkbox--last {
+        align-items: flex-start !important;
+
+        .form__control-label {
+            font-size: 1.125rem !important;
+            font-weight: 300 !important;
+            line-height: 27px !important;
+        }
+    }
+
+    .request-a-rep__terms-text {
+        font-weight: 600;
+        margin-bottom: 1.3125rem;
+
+        @media screen and (min-width: 768px) {
+            text-align: center;
+        }
+    }
+
+    .button {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 2.6875rem;
+        &::after {
+            display: none;
+        }
+
+        @media screen and (min-width: 768px) {
+            max-width: 20.3125rem;
+            margin: 0 auto;
+        }
+    }
+
+    .form__controls {
+        @media screen and (min-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 1.875rem;
+
+            .form__group-label,
+            .form__control:last-of-type {
+                grid-column: span 2 / span 2;
+            }
+        }
+    }
+}
