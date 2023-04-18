@@ -1,0 +1,36 @@
+---
+type Props = {
+    data: object[{
+        text: string[];
+        classModifier?: string[];
+    }];
+};
+
+const { data } = Astro.props;
+---
+
+<tbody class="table__body">
+    {
+        data.map((item: any) => (
+            <tr
+                class={
+                    !item.classModifier
+                        ? "table__body__row"
+                        : `table__body__row--${
+                              item.classModifier &&
+                              item.classModifier.join(" table__body__row--")
+                          }`
+                }
+            >
+                {item.text.map((text: string) =>
+                    //If the item is the first one, it's a header
+                    item.text.indexOf(text) === 0 ? (
+                        <td class={`table__body__cell--head`}>{text}</td>
+                    ) : (
+                        <td class={`table__body__cell`}>{text}</td>
+                    )
+                )}
+            </tr>
+        ))
+    }
+</tbody>

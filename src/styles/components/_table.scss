@@ -1,0 +1,136 @@
+$hRowsWidth: 20%;
+
+.table {
+    &__wrapper {
+        @media screen and (max-width: 500px) {
+            overflow-x: scroll;
+            margin-left: 8em;
+            overflow-y: visible;
+            padding-bottom: 1px;
+        }
+    }
+
+    &__header {
+        background-color: $color-dark-green;
+        margin-left: $hRowsWidth;
+
+        h2 {
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        &--mh {
+            //Main header
+            color: $color-dark-green;
+            font-weight: bold;
+
+            &--nb {
+                //Without border
+                border-left: 0 !important;
+                border-right: 0 !important;
+            }
+        }
+
+        &--sh {
+            //Sub header
+            color: $color-dark-gray;
+            font-weight: bold;
+
+            &--nb {
+                //Without border
+                border-left: 0 !important;
+                border-right: 0 !important;
+            }
+
+            &--cg {
+                //Color dark-green
+                color: $color-dark-green;
+                text-align: left !important;
+            }
+        }
+
+        @include media('mobile') {
+            margin-left: 0;
+        }
+    }
+
+    &__content {
+        display: table;
+        width: 100%;
+        table-layout: auto;
+        border-spacing: 0;
+        border-top: 6px solid $color-green;
+        overflow: hidden;
+        background-color: #fff;
+
+        border-collapse: collapse;
+
+        td {
+            color: $color-dark-gray;
+            font-weight: 300;
+
+        }
+
+        td,
+        th {
+            border: 1px solid $color-bright-gray;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        tr:first-child th {
+            border-top: 0;
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        tr td:first-child,
+        tr th:first-child {
+            border-left: 0;
+            width: $hRowsWidth;
+
+            @media screen and (max-width: 500px) {
+                word-wrap: break-word;
+                position: absolute;
+                width: 8em;
+                left: 0;
+                top: auto;
+                background-color: #fff;
+                border-right: 0px none black;
+                border-top-width: 3px;
+                margin-top: -3px;
+            }
+        }
+
+        tr td:last-child,
+        tr th:last-child {
+            border-right: 0;
+        }
+
+    }
+
+    &__body {
+        &__row {
+            &--mh {
+
+                :first-child {
+                    //Main header
+                    color: $color-dark-green !important;
+                    font-weight: bold;
+                    text-align: left !important;
+                }
+
+            }
+
+            &--mb {
+                td {
+                    font-weight: bold !important;
+                }
+            }
+        }
+    }
+}

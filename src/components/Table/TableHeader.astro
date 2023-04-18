@@ -1,0 +1,75 @@
+---
+/**
+ * @name TableHeader
+ * @description
+ * Table headers (main, sub and sub-sub headers)
+ * - mainHeaders: array of objects with the information of the main headers
+ * - subHeaders: array of objects with the information of the sub headers
+ * - subSubHeaders: array of objects with the information of the sub-sub headers
+ *
+ * Each object has the following properties:
+ * Label: header text (If not specified, it is taken as an empty cell)
+ * Colspan: number of columns that the header spans (If not specified, it is taken as 1)
+ * ClassModifier: is posible assign a class modifier to apply (If not specified, it is taken as null)
+ */
+type Props = {
+    mainHeaders: object[{
+        label: string;
+        colspan: number | null;
+        classModifier: string | null;
+    }];
+    subHeaders: object[{
+        label: string;
+        colspan: number | null;
+        classModifier: string | null;
+    }];
+};
+
+const { mainHeaders = null, subHeaders = null } = Astro.props;
+---
+
+<thead>
+    {
+        //If is empty [], it is not rendered
+        mainHeaders && mainHeaders.length < 0 ? <></> : (
+            <tr class="table__header--mh">
+                {mainHeaders.map((header: any) => (
+                    <th
+                        colspan={header.colspan}
+                        class={
+                            !header.classModifier
+                                ? ""
+                                : `
+                                    table__header--mh--${header.classModifier}
+                                `
+                        }
+                    >
+                        {header.label}
+                    </th>
+                ))}
+            </tr>
+        )
+    }
+
+    {
+        //If is empty [], it is not rendered
+        subHeaders && subHeaders.length < 0 ? <></> : (
+            <tr class="table__header--sh">
+                {subHeaders.map((header: any) => (
+                    <th
+                        colspan={header.colspan}
+                        class={
+                            !header.classModifier
+                                ? ""
+                                : `
+                                    table__header--sh--${header.classModifier}
+                                `
+                        }
+                    >
+                        {header.label}
+                    </th>
+                ))}
+            </tr>
+        )
+    }
+</thead>

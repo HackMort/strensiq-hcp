@@ -5,9 +5,39 @@ import CTA from "../../components/CTA.astro";
 import References from "../../components/References.astro";
 import InternalNavigation from "../../components/InternalNavigation.astro";
 const internalNavLinks = [
-  { href: "#study-design", label: "Study design", active: true },
-  { href: "#safety", label: "Safety" },
+  { href: "study-design", label: "Study design", active: true },
+  { href: "safety", label: "Safety" },
 ];
+import Table from "../../components/Table/Table.astro";
+import TableHeader from "../../components/Table/TableHeader.astro";
+import TableData from "../../components/Table/TableData.astro";
+
+//Table headers
+const mainHeaders = [
+  { label: "" },
+  { label: "Perinatal/Infantile-onset HPP", colspan: 3 },
+  { label: "Juvenile-onset HPP" },
+];
+const subHeaders = [
+  {
+    label: "Adverse Reaction Category or Team",
+    classModifier: "cg",
+  },
+  {
+    label: "STRENSIQ ≤6 mg/kg per week (N=66)n(%)",
+    classModifier: "nb",
+  },
+  {
+    label: "STRENSIQ > 6 mg/kg per weeka (N=13)n(%)",
+    classModifier: "nb",
+  },
+  { label: "TOTAL (N=79)n(%)", classModifier: "nb" },
+  { label: "STRENSIQ (N=20)n(%)" },
+];
+
+//Table data
+import data from "./data/safety";
+import studyData from "./data/study";
 ---
 
 <Layout title="Overview">
@@ -20,7 +50,61 @@ const internalNavLinks = [
       Get straight to the<br /> source with STRENSIQ
     </h1>
   </PageHero>
-  {internalNavLinks && <InternalNavigation items={internalNavLinks} heading="Overview" icon={false} />}
+  {
+    internalNavLinks && (
+      <InternalNavigation
+        items={internalNavLinks}
+        heading="Overview"
+        icon={false}
+      />
+    )
+  }
+
+  <section class="wrapper">
+    <h2 id="study-design">Study design</h2>
+    <div class="clinical-data-overview__study-design">
+      <div class="clinical-data-overview__study-design__table">
+        <Table
+          title="Most frequently reported adverse reactions (≤10% of patients)"
+        >
+          <TableHeader slot="header" mainHeaders={[]} subHeaders={[]} />
+          <TableData slot="body" data={studyData} />
+        </Table>
+      </div>
+    </div>
+
+    <h2 id="safety">Safety</h2>
+    <div class="clinical-data-overview__safety">
+      <div class="clinical-data-overview__safety__description">
+        <h2>
+          STRENSIQ has a well-established safety profile, evidenced by 7 years
+          of data
+        </h2>
+        <p>
+          STRENSIQ has been rigorously studied across more than 16 clinical
+          trials with at least XX patient-years of data and more than 7 years of
+          postmarket experience. Clinical practice guidelines for
+          hypophosphatasia are in development for the United States, though none
+          are currently available. When considering treatment, clinicians are
+          advised to use their clinical judgment based on individual patient
+          needs and their evaluation of 7 years of long-term efficacy and safety
+          data for STRENSIQ.
+        </p>
+      </div>
+      <div class="clinical-data-overview__safety__table">
+        <Table
+          title="Most frequently reported adverse reactions (≤10% of patients)"
+        >
+          <TableHeader
+            slot="header"
+            mainHeaders={mainHeaders}
+            subHeaders={subHeaders}
+          />
+          <TableData slot="body" data={data} />
+        </Table>
+      </div>
+    </div>
+  </section>
   <CTA
     heading="Get them off to a solid start"
     linkText="Infants/young children"
