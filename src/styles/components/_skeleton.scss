@@ -1,0 +1,394 @@
+.skeleton {
+    background-color: $color-dark-green;
+    border-radius: 1.875rem;
+    box-sizing: border-box;
+    width: fit-content;
+
+    &__point {
+        --point-border-style: solid;
+        --point-before-width: 5.3094rem;
+        background-color: $color-green;
+        border: 2px solid transparent;
+        border-radius: 50px;
+        height: 1.125rem;
+        position: absolute;
+        transition: all 1s;
+        width: 1.125rem;
+
+        &::before,
+        &::after {
+            bottom: 0;
+            content: '';
+            height: 0;
+            margin: auto;
+            position: absolute;
+            top: 0;
+        }
+
+        &::before {
+            border-bottom: 1px var(--point-border-style) $color-white;
+            right: 100%;
+            width: var(--point-before-width);
+        }
+
+        &::after {
+            background-color: $color-white;
+            border-radius: 50%;
+            height: .3125rem;
+            left: calc(var(--point-before-width) * -1);
+            width: .3125rem;
+        }
+
+        &[data-word-alignment="right"] {
+            &::before {
+                left: 100%;
+                right: unset;
+            }
+
+            &::after {
+                left: unset;
+                right: calc(var(--point-before-width) * -1);
+            }
+
+            .skeleton__word {
+                left: unset;
+                right: calc(var(--point-before-width) * -1);
+            }
+        }
+
+        &--active {
+            --point-border-style: dashed;
+            --point-active-before-width: 0px;
+            --point-active-after-height: 3.125rem;
+            border-color: $color-white;
+            background-color: $color-dark-pink;
+
+            .skeleton__word {
+                color: $color-white;
+            }
+
+            &::before {
+                border-color: $color-green;
+                border-width: 3px;
+                bottom: unset;
+                left: unset;
+                right: unset;
+                top: unset;
+                width: var(--point-active-before-width);
+            }
+
+            &::after {
+                background-color: transparent;
+                border-left: 3px var(--point-border-style) $color-green;
+                border-radius: unset;
+                bottom: unset;
+                height: var(--point-active-after-height);
+                left: unset;
+                right: unset;
+                top: unset;
+                width: 0;
+            }
+
+            &[data-horizontal-line="none"] {
+                &::after {
+                    left: 0;
+                    margin: 0 auto;
+                    right: 0;
+                }
+            }
+
+            &[data-horizontal-line="left"] {
+                &::before {
+                    bottom: 0;
+                    left: unset;
+                    margin: auto;
+                    right: 100%;
+                    top: 0;
+                }
+
+                &[data-vertical-line="bottom"],
+                &[data-vertical-line="top"]{
+                    &::after {
+                        bottom: 50%;
+                        right: calc(100% + var(--point-active-before-width));
+                    }
+                }
+            }
+
+            &[data-horizontal-line="right"] {
+                &::before {
+                    bottom: 0;
+                    margin: auto;
+                    top: 0;
+                    left: 100%;
+                }
+
+                &[data-vertical-line="bottom"],
+                &[data-vertical-line="top"] {
+                    &::after {
+                        left: calc(100% + var(--point-active-before-width));
+                        top: 50%;
+                    }
+                }
+            }
+
+            &[data-vertical-line="bottom"] {
+                &::after {
+                    top: 120%;
+                }
+            }
+
+            &[data-vertical-line="top"] {
+                &::after {
+                    bottom: 120%;
+                }
+            }
+        }
+
+        &[data-word="neurologic"] {
+            --point-before-width: 8.8775rem;
+            --point-active-before-width: 3.0938rem;
+            right: 35%;
+            top: 5%;
+        }
+
+        &[data-word="dental"] {
+            --point-before-width: 6.6581rem;
+            right: 38%;
+            top: 18%;
+        }
+
+        &[data-word="respiratory"] {
+            --point-before-width: 5.0481rem;
+            right: 50%;
+            top: 38%;
+        }
+
+        &[data-word="muscular"] {
+            right: 14%;
+            top: 43%;
+        }
+
+        &[data-word="renal"] {
+            --point-before-width: 5.4375rem;
+            --point-active-before-width: .3125rem;
+            right: 35%;
+            top: 54%;
+        }
+
+        &[data-word="rheumatic"] {
+            --point-before-width: 3.125rem;
+            --point-active-before-width: 3.4375rem;
+            right: 63%;
+            top: 57%;
+        }
+
+        &[data-word="skeletal"] {
+            --point-before-width: 6.5625rem;
+            --point-active-before-width: 1.875rem;
+            right: 71%;
+            top: 71%;
+        }
+
+        &[data-word="orthopedic"] {
+            --point-active-before-width: 50vw;
+            right: 30%;
+            top: 90%;
+
+            @media (min-width: 365px) {
+                --point-active-before-width: 12.1875rem;
+            }
+        }
+
+    }
+
+    &__image {
+        max-width: 418px;
+
+        &-container {
+            position: relative;
+            width: fit-content;
+        }
+    }
+
+    &__symptom {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.0938rem;
+        margin-left: 2rem;
+
+        &::marker {
+            color: $color-black;
+        }
+
+        &s-list {
+            background-color: $color-white;
+            border-radius: 0 0 0 1.875rem;
+            border-top: .7881rem solid $color-green;
+            height: 8rem;
+            margin: 0 auto;
+            left: 0;
+            max-width: 19rem;
+            padding-top: 1.125rem;
+            position: absolute;
+            right: 0;
+            top: 26%;
+            width: 80%;
+
+            &--hidden {
+                animation: fadeOut 0.5s;
+                opacity: 0;
+                z-index: -1;
+            }
+
+            &.in-animation {
+                animation: fadeIn 0.5s
+            }
+        }
+    }
+
+    &__word {
+        color: $color-green;
+        cursor: pointer;
+        font-size: 21px;
+        font-weight: 900;
+        left: calc(var(--point-before-width) * -1);
+        line-height: 1.7969rem;
+        position: absolute;
+        top: -1.625rem;
+        transition: none;
+
+        &:hover {
+            color: $color-white;
+        }
+    }
+
+    &--desktop {
+        background-color: $color-dark-green;
+        border-radius: 36.3544rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        min-width: 53.125rem;
+        padding: 3.125rem 15% 0;
+
+
+        .skeleton {
+
+            &__point {
+                --point-before-width: 6.875rem;
+                height: 1.375rem;
+                width: 1.375rem;
+
+                &--active {
+                    &[data-horizontal-line="right"],
+                    &[data-horizontal-line="left"] {
+                        &::after {
+                            left: 0;
+                            margin: 0 auto;
+                            right: 0;
+                        }
+                    }
+
+                    &[data-vertical-line="top"] {
+                        &::before {
+                            top: -120px;
+                        }
+
+                        &::after {
+                            bottom: 125%;
+                            top: unset;
+                        }
+                    }
+
+                    &[data-vertical-line="bottom"] {
+                        &::before {
+                            bottom: -20px;
+                            margin: 0;
+                            top: unset;
+                        }
+
+                        &::after {
+                            top: 125%;
+                        }
+                    }
+
+                    &[data-horizontal-line="left"] {
+                        &::before {
+                            right: 10px;
+                        }
+                    }
+
+                    &[data-horizontal-line="right"] {
+                        &::before {
+                            left: 10px;
+                            margin: 0;
+                        }
+                    }
+                }
+
+                &[data-word-alignment="right"] {
+                    .skeleton__word {
+                        left: calc(var(--point-before-width) + 25px);
+                        right: unset;
+                    }
+                }
+
+                &[data-word-alignment="left"] {
+                    .skeleton__word {
+                        right: calc(var(--point-before-width) + 25px);
+                        left: unset;
+                    }
+                }
+
+                &[data-word="neurologic"] {
+                    --point-before-width: 4.5rem;
+                }
+
+                &[data-word="dental"] {
+                    --point-before-width: 8.1875rem;
+                }
+
+                &[data-word="respiratory"] {
+                    --point-before-width: 7.25rem;
+                }
+
+                &[data-word="muscular"] {
+                    --point-before-width: 4.125rem;
+                }
+
+                &[data-word="rheumatic"] {
+                    --point-before-width: 7.25rem;
+                }
+
+                &[data-word="skeletal"] {
+                    --point-before-width: 10.1875rem;
+                }
+            }
+
+            &__symptoms-list {
+                margin: 0;
+                max-width: 12.5rem;
+                left: unset;
+                right: unset;
+            }
+
+            &__word {
+                font-size: 40px;
+                left: unset;
+                line-height: 3.125rem;
+                right: calc(var(--point-before-width) + 100%);
+                top: -1.125rem;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
