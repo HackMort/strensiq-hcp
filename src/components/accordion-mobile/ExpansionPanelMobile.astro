@@ -1,0 +1,17 @@
+---
+type Props = {
+    accordionId: string,
+    title: string
+}
+const baseClass = 'expansion-panel-mobile'
+const { accordionId, title } = Astro.props
+---
+
+<div class={baseClass} data-accordion-id={accordionId}>
+    <button class={`button button--drawer ${baseClass}__button`} aria-expanded="false">
+        {title}
+    </button>
+    <div class={`${baseClass}__content`} aria-expanded="false">
+        <slot/>
+    </div>
+</div>

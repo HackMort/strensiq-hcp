@@ -4,6 +4,9 @@ import Layout from "../../layouts/Layout.astro";
 import CTA from "../../components/CTA.astro";
 import References from "../../components/References.astro";
 import InternalNavigation from "../../components/InternalNavigation.astro";
+import AccordionMobile from '../../components/accordion-mobile/AccordionMobile.astro';
+import ExpansionPanelMobile from '../../components/accordion-mobile/ExpansionPanelMobile.astro';
+import RadiographicImagesComparator from '../../components/RadiographicImagesComparator.astro';
 const internalNavLinks = [
   { href: "hpp-related", label: "HPP-related rickets", active: true },
   { href: "survival", label: "Survival" },
@@ -25,47 +28,120 @@ const internalNavLinks = [
   {internalNavLinks && <InternalNavigation items={internalNavLinks} heading="Infants/Young Children" icon/>}
 
   <section id="hpp-related-rickets" class="infants-young-children__hpp-related-rickets">
-    <h2 class="hpp-related-rickets__title">
-        STRENSIQ helps reverse hypomineralization
-    </h2>
-    <p class="hpp-related-rickets__description">
-        Complete or substantial healing of rickets as measured by the Radiographic Global Impression of Change (RGI-C) scale* ​
-    </p>
-    <article class="clinical-study">
-        <h3 class="clinical-study__title">After 6 months</h3>
-        <div class="clinical-study__results">
-            <div class="clinical-study__result">
-                <p class="clinical-study__percentage">90</p>
-                <div class="clinical-study__orders">
-                    <p class="clinical-study__order">STUDY 1(9/10)</p>
+    <div class="wrapper">
+        <div class="hpp-related-rickets__content">
+            <div class="hpp-related-rickets__content-left">
+                <h2 class="hpp-related-rickets__title">
+                    STRENSIQ helps reverse hypomineralization
+                </h2>
+                <p class="hpp-related-rickets__description">
+                    Complete or substantial healing of rickets as measured by the Radiographic Global Impression of Change (RGI-C) scale* ​
+                </p>
+                <div class="clinical-studies">
+                    <article class="clinical-study">
+                        <h3 class="clinical-study__title">After 6 months</h3>
+                        <div class="clinical-study__results">
+                            <div class="clinical-study__result">
+                                <p class="clinical-study__percentage">90</p>
+                                <div class="clinical-study__orders">
+                                    <p class="clinical-study__order">STUDY 1(9/10)</p>
+                                </div>
+                            </div>
+                            <div class="clinical-study__result">
+                                <p class="clinical-study__percentage">63</p>
+                                <div class="clinical-study__orders">
+                                    <p class="clinical-study__order">STUDY 2 (40/64)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="clinical-study__description">
+                            of patients achieved complete or substantial healing of HPP-related rickets
+                        </p>
+                    </article>
+                    <article class="clinical-study">
+                        <h3 class="clinical-study__title">After 7 years and 6 years, respectively</h3>
+                        <div class="clinical-study__results">
+                            <div class="clinical-study__result">
+                                <p class="clinical-study__percentage">100</p>
+                                <div class="clinical-study__orders">
+                                    <p class="clinical-study__order">Study 1 (7/7)</p>
+                                    <p class="clinical-study__order">Study 2 (2/2)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="clinical-study__description">
+                            of patients achieved complete or substantial healing of HPP-related rickets
+                        </p>
+                    </article>
+                    <p class="clinical-studies__footer-note">
+                        *The RGI-C scale quantifies change over time in mineralization and bone structure.
+                    </p>
                 </div>
             </div>
-            <div class="clinical-study__result">
-                <p class="clinical-study__percentage">63</p>
-                <div class="clinical-study__orders">
-                    <p class="clinical-study__order">STUDY 2 (40/64)</p>
+            <div class="hpp-related-rickets__content-right">
+                <div class="radiographic-images-mobile">
+                    <AccordionMobile id="infants-young-children-radiographics">
+                        <ExpansionPanelMobile accordionId="infants-young-children-radiographics" title="Patient: Hand">
+                            <RadiographicImagesComparator>
+                                <div slot="left">
+                                    <p class="title">
+                                        2.9 weeks of age (at baseline)
+                                    </p>
+                                    <picture class="image">
+                                        <source srcset="/assets/images/clinical-data/infants-young-children/hand-before-desktop.png" media="(min-width: 768px)">
+                                        <img src="/assets/images/clinical-data/infants-young-children/hand-before-mobile.png" alt="">
+                                    </picture>
+                                    <p class="footer">
+                                        No mineralization of phalanges, first metacarpal, and distal radius.
+                                    </p>
+                                </div>
+                                <div slot="right">
+                                    <p class="title">
+                                        After 24 weeks of treatment with STRENSIQ
+                                    </p>
+                                    <picture class="image">
+                                        <source srcset="/assets/images/clinical-data/infants-young-children/hand-after-desktop.png" media="(min-width: 768px)">
+                                        <img src="/assets/images/clinical-data/infants-young-children/hand-after-mobile.png" alt="">
+                                    </picture>
+                                    <p class="footer">
+                                        All phalanges obvious; metacarpals mineralized and well-formed, but still osteopenic.
+                                    </p>
+                                </div>
+                            </RadiographicImagesComparator>
+                        </ExpansionPanelMobile>
+                        <ExpansionPanelMobile accordionId="infants-young-children-radiographics" title="Patient: Ribs">
+                            <RadiographicImagesComparator>
+                                <div slot="left">
+                                    <p class="title">
+                                        2.9 weeks of age (at baseline)
+                                    </p>
+                                    <picture class="image">
+                                        <source srcset="/assets/images/clinical-data/infants-young-children/ribs-before-desktop.png" media="(min-width: 768px)">
+                                        <img src="/assets/images/clinical-data/infants-young-children/ribs-before-mobile.png" alt="">
+                                    </picture>
+                                </div>
+                                <div slot="right">
+                                    <div slot="left">
+                                        <p class="title">
+                                            After 24 weeks of treatment with STRENSIQ
+                                        </p>
+                                        <picture class="image">
+                                            <source srcset="/assets/images/clinical-data/infants-young-children/ribs-after-desktop.png" media="(min-width: 768px)">
+                                        <img src="/assets/images/clinical-data/infants-young-children/ribs-after-mobile.png" alt="">
+                                        </picture>
+                                        <p class="footer">
+                                            Remineralization of all ossified structures, including ribs, clavicles, spine, and scapulae, was striking.
+                                        </p>
+                                    </div>
+                                </div>
+                            </RadiographicImagesComparator>
+                        </ExpansionPanelMobile>
+                    </AccordionMobile>
                 </div>
+                <div class="radiographic-images-desktop"></div>
             </div>
         </div>
-        <p class="clinical-study__description">
-            of patients achieved complete or substantial healing of HPP-related rickets
-        </p>
-    </article>
-    <article class="clinical-study">
-        <h3 class="clinical-study__title">After 7 years and 6 years, respectively</h3>
-        <div class="clinical-study__results">
-            <div class="clinical-study__result">
-                <p class="clinical-study__percentage">100</p>
-                <div class="clinical-study__orders">
-                    <p class="clinical-study__order">Study 1 (7/7)</p>
-                    <p class="clinical-study__order">Study 2 (2/2)</p>
-                </div>
-            </div>
-        </div>
-        <p class="clinical-study__description">
-            of patients achieved complete or substantial healing of HPP-related rickets
-        </p>
-    </article>
+    </div>
   </section>
 
   <CTA
