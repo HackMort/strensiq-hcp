@@ -1,0 +1,56 @@
+.radiographic-comparator {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    & > div {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    [data-radiographic-title] {
+        text-align: center;
+        font-size: .875rem;
+        line-height: 17.5px;
+        font-weight: 600;
+        height: 3.125rem;
+        margin-bottom: 1.25rem;
+    }
+
+    [data-radiographic-image] {
+        width: 100%;
+        max-width: 9.4375rem;
+        margin-bottom: 1rem;
+    }
+
+    [data-radiographic-footer] {
+        font-size: .875rem;
+        font-weight: 300;
+        line-height: 17.5px;
+    }
+
+    .radiographic-comparator__left {
+        padding-left: .3125rem;
+        padding-right: 1rem;
+        [data-radiographic-title] {
+            color: $color-dark-gray;
+        }
+    }
+
+    .radiographic-comparator__right {
+        padding-right: .3125rem;
+        padding-left: 1rem;
+        background: $color-mint;
+
+        border-bottom-right-radius: 3.125rem;
+
+        [data-radiographic-title] {
+            color: $color-dark-green;
+        }
+
+        [data-radiographic-footer] {
+            font-weight: 700;
+            line-height: 16.1px;
+            color: $color-dark-green;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.accordion-mobile {
+
+    .expansion-panel-mobile {
+        &:not(:last-of-type) {
+            margin-bottom: .625rem;
+        }
+    }
+
+    .expansion-panel-mobile__button {
+        width: 100%;
+    }
+}

@@ -27,6 +27,9 @@
 @import './components/_request-rep-modal.scss';
 @import './components/_form.scss';
 @import './components/_skeleton.scss';
+@import './components/_clinical-study.scss';
+@import './components/_accordion-mobile.scss';
+@import './components/_radiographic-comparator.scss';
 
 
 //-------------------------------------------------------------lets work together section-------------------------------------------------------------
@@ -333,3 +336,37 @@
         }
     }
 }
+
+//------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
+.infants-young-children__hpp-related-rickets {
+    padding-top: 1.625rem;
+    padding-bottom: 1.8125rem;
+
+    background: $color-white;
+
+    .hpp-related-rickets__title {
+        color: $color-dark-green;
+        margin-bottom: .625rem;
+    }
+
+    .hpp-related-rickets__description {
+        font-size: .875rem;
+        line-height: 17.5px;
+        font-weight: 300;
+        margin-bottom: 1.625rem;
+    }
+
+    .clinical-studies {
+        margin-bottom: 1.1875rem;
+    }
+
+    .hpp-related-rickets__content-right {
+
+        .radiographic-images-mobile__title {
+            font-weight: 600;
+            color: $color-dark-gray;
+            margin-bottom: .8125rem;
+        }
+    }
+}
+//------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
