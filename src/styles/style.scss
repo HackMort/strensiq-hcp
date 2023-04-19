@@ -229,7 +229,7 @@
 //-------------------------------------------------------------toolkit steps section -------------------------------------------------------------/* Hypophosphatasia Page  */
 
 /* Hypophosphatasia Page  */
-.hypophosphatasia-results {
+.hypophosphatasia-container {
     @extend .wrapper;
     display: flex;
     flex-wrap: wrap;
@@ -243,7 +243,7 @@
         padding-bottom: 2.25rem;
     }
 
-    &__charts {
+    &__tabs-container {
         @include media('desktop') {
             padding-top: 1.5625rem;
         }
@@ -324,16 +324,16 @@
                 position: relative;
                 width: 5.8125rem;
             }
+
+            @include media('desktop') {
+                &::after {
+                    width: 12.5rem;
+                }
+            }
         }
 
         &-chart {
             margin: 0 auto .8125rem;
-
-            &--only-mobile {
-                @media (min-width: 1200px) {
-                    display: none;
-                }
-            }
 
             img {
                 margin: 0 auto;
@@ -341,7 +341,7 @@
 
                 @include media('desktop') {
                     margin: 0;
-                    max-width: 650px;
+                    // max-width: 650px;
                 }
             }
         }
@@ -390,8 +390,10 @@
     position: relative;
     width: 100%;
 
-    @media (min-width: 1200px) and (max-width: 1450px) {
+    @media (max-width: 1450px) {
         overflow: hidden;
+        padding-left: .625rem;
+        padding-right: .625rem;
         max-width: 100%;
     }
 
@@ -499,5 +501,11 @@
         @media (min-width: 870px) {
             display: none;
         }
+    }
+}
+
+.hypophosphatasia__testimonial-container.wrapper {
+    @media (max-width: 1450px) {
+        max-width: 100%;
     }
 }

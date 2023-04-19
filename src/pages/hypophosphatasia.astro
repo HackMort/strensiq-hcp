@@ -182,11 +182,11 @@ const internalNavLinks = [
       </p>
     </div>
   </div>
-  <section class="hypophosphatasia-results">
-      <section class="hypophosphatasia-results__content">
-        <h2 class="color--dark-green hypophosphatasia-results__title">Hypophosphatasia (HPP) results from deficient alkaline phosphatase (ALP)</h2>
-        <p class="hypophosphatasia-results__paragraph">Hypophosphatasia is an uncommon, inherited, multisystemic, metabolic disorder characterized by low alkaline phosphatase activity that may progress over time.</p>
-        <p class="hypophosphatasia-results__paragraph">Patients with hypophosphatasia have a mutation on the <span class="text--italic">ALPL</span> gene causing deficient alkaline phosphatase enzyme.</p>
+  <section class="hypophosphatasia-container hypophosphatasia-container--gender">
+      <section class="hypophosphatasia-container__content">
+        <h2 class="color--dark-green hypophosphatasia-container__title">Hypophosphatasia (HPP) results from deficient alkaline phosphatase (ALP)</h2>
+        <p class="hypophosphatasia-container__paragraph">Hypophosphatasia is an uncommon, inherited, multisystemic, metabolic disorder characterized by low alkaline phosphatase activity that may progress over time.</p>
+        <p class="hypophosphatasia-container__paragraph">Patients with hypophosphatasia have a mutation on the <span class="text--italic">ALPL</span> gene causing deficient alkaline phosphatase enzyme.</p>
         <HighlightInformation
           title="WHAT IS LOW ALP?"
           content="<40 U/L"
@@ -197,68 +197,60 @@ const internalNavLinks = [
           content="vary"
           footnote="based on age and sex"
           />
-          <ul class="hypophosphatasia-results__list">
-            <li class="hypophosphatasia-results__list-item"><p>Clinicians should ensure that reported laboratory results for ALP reflect age- and sex-adjusted reference ranges for the specific patient</p></li>
-            <li class="hypophosphatasia-results__list-item"><p>Check with your lab for their appropriate age- and sex-adjusted reference range</p></li>
+          <ul class="hypophosphatasia-container__list">
+            <li class="hypophosphatasia-container__list-item"><p>Clinicians should ensure that reported laboratory results for ALP reflect age- and sex-adjusted reference ranges for the specific patient</p></li>
+            <li class="hypophosphatasia-container__list-item"><p>Check with your lab for their appropriate age- and sex-adjusted reference range</p></li>
           </ul>
-          <p class="hypophosphatasia-results__footnote"><sup>*</sup>Limitations: An alkaline phosphatase level of below 40 U/L is not conclusive for a diagnosis of hypophosphatasia. Patient should be evaluated for other symptoms of hypophosphatasia and differential diagnoses should be ruled out.</p>
+          <p class="hypophosphatasia-container__footnote"><sup>*</sup>Limitations: An alkaline phosphatase level of below 40 U/L is not conclusive for a diagnosis of hypophosphatasia. Patient should be evaluated for other symptoms of hypophosphatasia and differential diagnoses should be ruled out.</p>
       </section>
-      <section class="hypophosphatasia-results__charts">
-        <ul role="tablist" class="hypophosphatasia-results__tabs">
+      <section class="hypophosphatasia-container__tabs-container">
+        <ul role="tablist" class="hypophosphatasia-container__tabs">
           <li role="presentation">
             <!--active one -->
-            <a href="#panel1" role="tab" id="tab1" aria-selected="true"
-              >Female</a
-            >
+            <a href="#female" role="tab" id="femaletab" aria-selected="true">Female</a>
           </li>
           <li role="presentation">
-            <a href="#panel2" role="tab" id="tab2" tabindex="-1">Male</a>
+            <a href="#male" role="tab" id="maletab" tabindex="-1">Male</a>
           </li>
         </ul>
         <section
-          id="panel1"
+          id="female"
           role="tabpanel"
-          aria-labelledby="tab1"
+          aria-labelledby="femaletab"
           aria-hidden="false"
           tabindex="-1"
-          class="hypophosphatasia-results__panel"
+          class="hypophosphatasia-container__panel"
         >
-          <h5 class="hypophosphatasia-results__panel-title">Age- and sex-adjusted ALP reference ranges for children (U/L)</h5>
-          <section class="hypophosphatasia-results__panel-content">
-            <picture class="hypophosphatasia-results__panel-chart">
-              <source media="(min-width: 1200px)" srcset="/assets/images/hypophosphatasia/chart-desktop-female-01.png">
-              <img src="/assets/images/hypophosphatasia/chart-mobile-female-01.png" alt=" ">
+          <h5 class="hypophosphatasia-container__panel-title">Age- and sex-adjusted ALP reference ranges for children (U/L)</h5>
+          <section class="hypophosphatasia-container__panel-content">
+            <picture class="hypophosphatasia-container__panel-chart">
+              <source media="(min-width: 1200px)" srcset="/assets/images/hypophosphatasia/chart-desktop-female.png">
+              <img src="/assets/images/hypophosphatasia/chart-mobile-female.png" alt=" ">
             </picture>
-            <picture class="hypophosphatasia-results__panel-chart hypophosphatasia-results__panel-chart--only-mobile">
-              <img src="/assets/images/hypophosphatasia/chart-mobile-female-02.png" alt=" ">
-            </picture>
-            <p class="hypophosphatasia-results__panel-footnote">Graph adapted from the Canadian Laboratory initiative on Pediatric Reference Intervals (CALIPER) project. CALIPER samples from 1072 male and 1116 female participants (newborn to 18 years) were used to calculate age- and sex-specific reference intervals. No variation in ALP based on ethnic differences was observed. Check with your lab for their appropriate age- and sex-adjusted reference range.</p>
+            <p class="hypophosphatasia-container__panel-footnote">Graph adapted from the Canadian Laboratory initiative on Pediatric Reference Intervals (CALIPER) project. CALIPER samples from 1072 male and 1116 female participants (newborn to 18 years) were used to calculate age- and sex-specific reference intervals. No variation in ALP based on ethnic differences was observed. Check with your lab for their appropriate age- and sex-adjusted reference range.</p>
           </section>
         </section>
         <section
-          id="panel2"
+          id="male"
           role="tabpanel"
-          aria-labelledby="tab2"
+          aria-labelledby="maletab"
           aria-hidden="true"
           tabindex="-1"
           hidden
-          class="hypophosphatasia-results__panel"
+          class="hypophosphatasia-container__panel"
         >
-          <h5 class="hypophosphatasia-results__panel-title">Age- and sex-adjusted ALP reference ranges for children (U/L)</h5>
-          <section class="hypophosphatasia-results__panel-content">
-            <picture class="hypophosphatasia-results__panel-chart">
-              <source media="(min-width: 1200px)" srcset="/assets/images/hypophosphatasia/chart-desktop-male-01.png">
-              <img src="/assets/images/hypophosphatasia/chart-mobile-male-01.png" alt=" ">
+          <h5 class="hypophosphatasia-container__panel-title">Age- and sex-adjusted ALP reference ranges for children (U/L)</h5>
+          <section class="hypophosphatasia-container__panel-content">
+            <picture class="hypophosphatasia-container__panel-chart">
+              <source media="(min-width: 1200px)" srcset="/assets/images/hypophosphatasia/chart-desktop-male.png">
+              <img src="/assets/images/hypophosphatasia/chart-mobile-male.png" alt=" ">
             </picture>
-            <picture class="hypophosphatasia-results__panel-chart hypophosphatasia-results__panel-chart--only-mobile">
-              <img src="/assets/images/hypophosphatasia/chart-mobile-male-02.png" alt=" ">
-            </picture>
-            <p class="hypophosphatasia-results__panel-footnote">Graph adapted from the Canadian Laboratory initiative on Pediatric Reference Intervals (CALIPER) project. CALIPER samples from 1072 male and 1116 female participants (newborn to 18 years) were used to calculate age- and sex-specific reference intervals. No variation in ALP based on ethnic differences was observed. Check with your lab for their appropriate age- and sex-adjusted reference range.</p>
+            <p class="hypophosphatasia-container__panel-footnote">Graph adapted from the Canadian Laboratory initiative on Pediatric Reference Intervals (CALIPER) project. CALIPER samples from 1072 male and 1116 female participants (newborn to 18 years) were used to calculate age- and sex-specific reference intervals. No variation in ALP based on ethnic differences was observed. Check with your lab for their appropriate age- and sex-adjusted reference range.</p>
           </section>
         </section>
       </section>
   </section>
-  <div class="wrapper">
+  <div class="wrapper hypophosphatasia__testimonial-container">
     <Testimonial
       authorInformation="Eric Rush, MD, Clinical Geneticist"
       authorDescription="Alexion-sponsored speaker"
@@ -281,6 +273,178 @@ const internalNavLinks = [
     <section class="skeleton-container__skeleton">
       <SkeletonMobile></SkeletonMobile>
       <SkeletonDesktop></SkeletonDesktop>
+    </section>
+  </section>
+  <section class="hypophosphatasia-container">
+    <section class="hypophosphatasia-container__content">
+      <h2 class="hypophosphatasia-container__title">Hypophosphatasia can corrode patients’ quality of life</h2>
+      <p class="hypophosphatasia-container__paragraph">Hypophosphatasia manifests across a wide spectrum of severity. Regardless of age of onset, patients can face progressive, potentially debilitating symptoms that may impair their quality of life.</p>
+      <p class="hypophosphatasia-container__paragraph">Neonates and infants with hypophosphatasia have a high risk of mortality and failure to thrive, making early and accurate diagnosis critical.</p>
+    </section>
+    <section class="information">
+      <p class="hypophosphatasia-container__paragraph hypophosphatasia-container__paragraph--highlight">In patients with hypophosphatasia, symptom presentation may not accurately represent the degree of disease progression</p>
+    </section>
+    <section class="hypophosphatasia-container__tabs-container">
+      <ul role="tablist" class="hypophosphatasia-container__tabs">
+        <li role="presentation">
+          <!--active one -->
+          <a href="#adults" role="tab" id="adultstab" aria-selected="true">Adults</a>
+        </li>
+        <li role="presentation">
+          <a href="#chidlren" role="tab" id="childrentab" tabindex="-1">Children</a>
+        </li>
+        <li role="presentation">
+          <a href="#neonates" role="tab" id="neonatestab" tabindex="-1">Neonates/Infants</a>
+        </li>
+      </ul>
+      <section
+        id="adults"
+        role="tabpanel"
+        aria-labelledby="adultstab"
+        aria-hidden="false"
+        tabindex="-1"
+        class="hypophosphatasia-container__panel hypophosphatasia-container__panel--flex"
+      >
+        <section class="hypophosphatasia-container__panel-content">
+          <h5 class="color--dark-green">A survey of patients and caregivers (N=125) found<sup>‡</sup>:</h5>
+          <ul class="hypophosphatasia-container__list">
+            <li class="hypophosphatasia-container__list-item">
+              <p>95% of patients experienced pain; 76% said pain was severe enough to limit activity</p>
+            </li>
+            <li class="hypophosphatasia-container__list-item">
+              <p>74% were unable to climb stairs and 81% could not descend stairs</p>
+            </li>
+            <li class="hypophosphatasia-container__list-item">
+              <p>78% experienced walking difficulties</p>
+            </li>
+          </ul>
+          <HighlightInformation
+          content="> 50%"
+          footnote="of patients with hypophosphatasia reported their problems led to a negative impact"
+          footnoteExtra="on their physical and mental functioning§"
+          />
+          <p class="hypophosphatasia-container__panel-footnote"><sup>‡</sup>Data collected from patients and caregivers via 2 survey instruments (web-based and phone interviews) to evaluate patient-reported symptomatology and burden of disease of hypophosphatasia (N=125). The majority of patients in this study (67%) reported pediatric onset of hypophosphatasia symptoms. Of patients reporting adult-onset hypophosphatasia (27%), 50% reported history or surgeries suggestive of pediatric onset of symptoms.</p>
+          <p class="hypophosphatasia-container__panel-footnote"><sup>§</sup>The Global HPP Registry, an observational, longitudinal, multinational, long-term study of patients ≥18 years with a confirmed diagnosis of hypophosphatasia using physician-entered medical record data from consenting patients (N=304). One-third (33%) of the study population had pediatric-onset hypophosphatasia.</p>
+        </section>
+        <section class="hypophosphatasia-container__panel-chart">
+          <h4 class="hypophosphatasia-container__panel-title">Hypophosphatasia can cause a wide range of symptoms, with impact beyond the skeletal system<sup>a</sup></h4>
+          <picture class="hypophosphatasia-container__panel-chart">
+            <source media="(min-width: 1200px)" srcset="/assets/images/hypophosphatasia/chart-desktop-adults.png">
+            <img src="/assets/images/hypophosphatasia/chart-mobile-adults.png" alt=" ">
+          </picture>
+        </section>
+        <section class="hypophosphatasia-container__panel-content">
+          <HighlightInformation
+          title="The Global HPP Registry (n=148) showed"
+          content="~12%"
+          footnote="of adult patients experienced"
+          footnoteExtra="neurologic symptoms"
+          />
+        </section>
+        <section class="hypophosphatasia-container__panel-chart">
+          <h4 class="hypophosphatasia-container__panel-title">Neurologic symptoms in adults based on a retrospective chart review<sup>b</sup></h4>
+          <picture class="hypophosphatasia-container__panel-chart">
+            <source media="(min-width: 1200px)" srcset="/assets/images/hypophosphatasia/chart-desktop-nerological.png">
+            <img src="/assets/images/hypophosphatasia/chart-mobile-nerological.png" alt=" ">
+          </picture>
+          <p class="hypophosphatasia-container__panel-footnote"><sup>a</sup>Observational, multinational, prospective Global HPP Registry study conducted in adults (n=148; ≥18 years) from January 2015 to September 2017. Approximately half (55%) of all patients were diagnosed with hypophosphatasia in childhood.</p>
+          <p class="hypophosphatasia-container__panel-footnote"><sup>b</sup>Retrospective chart review assessing prevalence of neurologic symptoms in adults with hypophosphatasia (N=82) compared with the general US population.</p>
+        </section>
+      </section>
+      <section
+        id="children"
+        role="tabpanel"
+        aria-labelledby="childrentab"
+        aria-hidden="true"
+        tabindex="-1"
+        hidden
+        class="hypophosphatasia-container__panel hypophosphatasia-container__panel--flex"
+      >
+        <section class="hypophosphatasia-container__panel-content">
+          <h5 class="color--dark-green">In children<sup>*</sup>:</h5>
+          <ul class="hypophosphatasia-container__list">
+            <li class="hypophosphatasia-container__list-item">
+              <p>50% (15/30) had clinically meaningful impairment in overall quality of life as reported by parents</p>
+            </li>
+            <li class="hypophosphatasia-container__list-item">
+              <p>57% (17/30) were classified as poor sleepers</p>
+            </li>
+            <li class="hypophosphatasia-container__list-item">
+              <p>29% (7/24) of school-aged children experienced pain that interfered with daily activity</p>
+            </li>
+          </ul>
+          <HighlightInformation
+          content="~27%"
+          footnote="of children experienced"
+          footnoteExtra="neurologic symptoms"
+          />
+          <p class="hypophosphatasia-container__panel-footnote"><sup>*</sup>Cross-sectional study reported by parents of 30 eligible children with hypophosphatasia (aged 3 to 16.6 years).</p>
+        </section>
+        <section class="hypophosphatasia-container__panel-chart">
+          <h4 class="hypophosphatasia-container__panel-title">Hypophosphatasia can cause a wide range of symptoms, with impact beyond the skeletal systema</h4>
+          <picture class="hypophosphatasia-container__panel-chart">
+            <source media="(min-width: 1200px)" srcset="/assets/images/hypophosphatasia/chart-desktop-children.png">
+            <img src="/assets/images/hypophosphatasia/chart-mobile-children.png" alt=" ">
+          </picture>
+          <p class="hypophosphatasia-container__panel-footnote"><sup>a</sup>Multinational, observational, prospective Global HPP Registry study conducted in children (N=121; ≥18 years) from January 2015 to September 2017.</p>
+        </section>
+      </section>
+      <section
+        id="neonates"
+        role="tabpanel"
+        aria-labelledby="neonatestab"
+        aria-hidden="true"
+        tabindex="-1"
+        hidden
+        class="hypophosphatasia-container__panel hypophosphatasia-container__panel--flex"
+      >
+        <section class="hypophosphatasia-container__panel-content">
+          <h5 class="color--dark-green">In neonates and infants<sup>*</sup></h5>
+          <ul class="hypophosphatasia-container__list">
+            <li class="hypophosphatasia-container__list-item">
+              <p>73% of cases of untreated neonatal and infantile hypophosphatasia were fatal before the age of 5</p>
+              <ul class="hypophosphatasia-container__sub-list">
+                <li class="hypophosphatasia-container__sub-list-item">
+                  <p>58% of cases were fatal by 1 year of age</p>
+                </li>
+              </ul>
+            </li>
+            <li class="hypophosphatasia-container__list-item">
+              <p>64% required respiratory support, most commonly invasive ventilation</p>
+              <ul class="hypophosphatasia-container__sub-list">
+                <li class="hypophosphatasia-container__sub-list-item">
+                  <p>95% of cases requiring invasive ventilation were fatal</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p class="hypophosphatasia-container__paragraph">The manifestations and complications of hypophosphatasia can place significant functional burden on neonatal and infant patients right away or later in life, such as:</p>
+          <ul class="hypophosphatasia-container__list">
+            <li class="hypophosphatasia-container__list-item">
+              <p>Missed milestones, developmental delays</p>
+            </li>
+            <li class="hypophosphatasia-container__list-item">
+              <p>Limited functionality and mobility</p>
+            </li>
+            <li class="hypophosphatasia-container__list-item">
+              <p>Severe, chronic pain</p>
+            </li>
+            <li class="hypophosphatasia-container__list-item">
+              <p>Significant disability and difficulty with activities of
+                daily living</p>
+            </li>
+          </ul>
+          <p class="hypophosphatasia-container__panel-footnote"><sup>*</sup>Data from a multinational, noninterventional, retrospective chart review study designed to understand the natural history of 48 patients ≤5 years of age with perinatal- and infantile-onset HPP.</p>
+        </section>
+        <section class="hypophosphatasia-container__panel-chart">
+          <h4 class="hypophosphatasia-container__panel-title">In neonates and infants, hypophosphatasia has a high risk of mortality</h4>
+          <picture class="hypophosphatasia-container__panel-chart">
+            <source media="(min-width: 1200px)" srcset="/assets/images/hypophosphatasia/chart-desktop-neonates.png">
+            <img src="/assets/images/hypophosphatasia/chart-mobile-neonates.png" alt=" ">
+          </picture>
+          <p class="hypophosphatasia-container__panel-footnote">Adapted from Whyte M, et al. Poster presented at: Pediatric Academic Societies and Asian Society for Pediatric Research Joint Meeting; May 3-6, 2014; Vancouver, BC, Canada.</p>
+        </section>
+      </section>
     </section>
   </section>
   <CTA
