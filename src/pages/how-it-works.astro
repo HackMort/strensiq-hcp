@@ -7,8 +7,8 @@ import Section from '../components/Section.astro';
 import InternalNavigation from "../components/InternalNavigation.astro";
 
 const internalNavLinks = [
-  { href: "HPP-MOD", label: "HPP MOD", active: true },
-  { href: "STRENSIQ-MOA", label: "STRENSIQ MOA" },
+  { href: "hpp-mod", label: "HPP MOD", active: true },
+  { href: "strensiq-moa", label: "STRENSIQ MOA" },
 ];
 ---
 <div class="hiw">
@@ -24,8 +24,8 @@ const internalNavLinks = [
     )
   }
   
-  <div id="HPP-MOD" class="section"> 
-  <Section>
+  <div> 
+  <Section id="hpp-mod" classnames="section">
     <p id="HPP-MOD" class="custom-section__title" slot="header">Hypophosphatasia mechanism of disease (MOD)</p>
     <div class="hpp">
          <h1 class="hpp__title">How low alkaline phosphatase (ALP) becomes hazardous</h1>
@@ -93,8 +93,8 @@ const internalNavLinks = [
             </Section>
           </div>
 
-  <div id="STRENSIQ-MOA" class="section">
-  <Section classnames="moa">
+  
+  <Section classnames="moa" id="strensiq-moa" class="section">
     <p class="custom-section__title" slot="header">STRENSIQ mechanism of action (MOA)</p>
       <div>
         <div class="hpp">
@@ -144,7 +144,7 @@ const internalNavLinks = [
         
             </div>
           </Section>
-        </div>
+        
 
   <CTA
     heading="Learn more about the treatment that answers the call"
