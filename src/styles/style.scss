@@ -333,7 +333,7 @@
 
     &_os.strensiq__panther {
         padding-right: 0.75rem;
-        padding-bottom: 1rem;
+        padding-bottom: 0;
 
         &::before {
             display: none;
@@ -341,6 +341,40 @@
 
         .toolkit__strensiq_os_image {
             width: 10rem;
+        }
+    }
+
+    .contact__info {
+        position: relative;
+        font-weight: 900;
+        margin-bottom: 2rem;
+        padding-top: 2rem;
+        padding-right: 0;
+        padding-bottom: 2rem;
+        padding-left: 1rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -2rem;
+            background-color: $color-white;
+            border-radius: 0px 368px 368px 0px;
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+            height: 100%;
+            width: 118%;
+            z-index: 1;
+        }
+
+        p {
+            color: $color-dark-gray;
+            font-size: .875rem;
+            font-weight: 900;
+            line-height: 1.3125rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
         }
     }
 }
