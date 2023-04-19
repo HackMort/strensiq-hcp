@@ -239,11 +239,11 @@
         padding-bottom: 1.625rem;
         @media screen and (min-width:1024px) {
         padding-bottom: 3.125rem;
-        max-width: 75rem;
+        max-width: 62rem;
         margin: auto;
         }
         @media screen and (min-width:1400px) {
-        max-width: unset;
+        max-width: 81.5625rem;
         margin: unset;
         }
     
@@ -363,7 +363,7 @@
             &::marker{
                 color: $color-dark-gray;
             }
-            /* list-style-image: url('/assets/icons/sub-item-bullet.svg'); */
+            
 
             &.modifier{
                 margin-top: .75rem;
@@ -375,8 +375,8 @@
                 max-width: unset;
             }
             @media screen and (min-width:1024px) {
-                margin-top: .25rem;
-                margin-bottom: .25rem;
+                margin-top: 1rem;
+                margin-bottom: 1.3125rem;
             }
         }
     
@@ -394,6 +394,7 @@
             margin-bottom: 1.8125rem;
 
             @media screen and (min-width:1024px) {
+            margin-top: .625rem;
             margin-bottom: 0;
             text-align: left;
             font-size: .75rem;
