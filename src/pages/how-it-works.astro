@@ -3,7 +3,7 @@ import PageHero from "../components/PageHero.astro";
 import Layout from "../layouts/Layout.astro";
 import CTA from "../components/CTA.astro";
 import References from "../components/References.astro";
-import Section from '../components/Section.astro';
+import Section from "../components/Section.astro";
 import InternalNavigation from "../components/InternalNavigation.astro";
 
 const internalNavLinks = [
@@ -11,146 +11,221 @@ const internalNavLinks = [
   { href: "STRENSIQ-MOA", label: "STRENSIQ MOA" },
 ];
 ---
+
 <div class="hiw">
-<Layout title="How It Works">
-  <PageHero pageId="how-it-works" classNames="how-it-works__page-hero">
-    <h1 class="page-hero__title">
-      Only STRENSIQ starts <br /> at the source of hypophosphatasia (HPP)
-    </h1>
-  </PageHero>
-  {
-    internalNavLinks && (
-      <InternalNavigation items={internalNavLinks} icon={false} />
-    )
-  }
-  
-  <div id="HPP-MOD" class="section"> 
-  <Section>
-    <p id="HPP-MOD" class="custom-section__title" slot="header">Hypophosphatasia mechanism of disease (MOD)</p>
-    <div class="hpp">
-         <h1 class="hpp__title">How low alkaline phosphatase (ALP) becomes hazardous</h1>
+  <Layout title="How It Works">
+    <PageHero pageId="how-it-works" classNames="how-it-works__page-hero">
+      <h1 class="page-hero__title">
+        Only STRENSIQ starts <br /> at the source of hypophosphatasia (HPP)
+      </h1>
+    </PageHero>
+    {
+      internalNavLinks && (
+        <InternalNavigation items={internalNavLinks} icon={false} />
+      )
+    }
+
+    <div id="HPP-MOD" class="section">
+      <Section id="testing">
+        <p id="HPP-MOD" class="custom-section__title" slot="header">
+          Hypophosphatasia mechanism of disease (MOD)
+        </p>
+        <div class="hpp">
+          <h1 class="hpp__title">
+            How low alkaline phosphatase (ALP) becomes hazardous
+          </h1>
 
           <h2 class="hpp__sub-title">Under normal circumstances:</h2>
-          
-           <div class="hpp__container">
-            
+
+          <div class="hpp__container">
             <div class="hpp__block">
-          <ul class="hpp__list">
-            <li class="hpp__item">Alkaline phosphatase dephosphorylates inorganic pyrophosphate (PPi) to releaseinorganic phosphate (Pi)</li>
-              <li class="hpp__sub-item">Pi then combines with calcium to form hydroxyapatite crystal, the foundation of 
-                bone formation</li>
+              <ul class="hpp__list">
+                <li class="hpp__item">
+                  Alkaline phosphatase dephosphorylates inorganic pyrophosphate
+                  (PPi) to releaseinorganic phosphate (Pi)
+                </li>
+                <li class="hpp__sub-item">
+                  Pi then combines with calcium to form hydroxyapatite crystal,
+                  the foundation of bone formation
+                </li>
               </ul><div class="hpp__img-container">
-                    <img src="/assets/images/first-hpp.svg" alt="" class="hpp__image">
-                    </div>
-                    <p class="hpp__image-disclaimer">Image created for Alexion Pharmaceuticals, Inc. for illustrative purposes.</p>
-                  </div>
-                    
-                    <div class="hpp__block">
-                      
-                      <ul class="hpp__list">
-                        <li class="hpp__item">Alkaline phosphatase also dephosphorylates pyridoxal 5’-phosphate (PLP, the active form of vitamin B6) into pyridoxal, allowing it to cross into the central nervous system (CNS)</li>
-                        <li class="hpp__sub-item">PLP is required for the metabolism of neurotransmitters</li>
-                      </ul>
-                      <div class="hpp__img-container">
-                      <img src="/assets/images/hpp-second.svg" alt="" class="hpp__image">
-                      </div>
-                    </div>
-                  </div> 
-                </div>
-                <div class="hpp">
-                    <h2 class="hpp__sub-title">In patients with hypophosphatasia, a mutation on the ALPL gene causes deficient alkaline phosphatase, resulting in low alkaline phosphatase activity.</h2>
-                    <p class="hpp__normal-text">When alkaline phosphatase activity is low, PPi, PLP, and calcium accumulate, contributing to complications throughout the body.</p>
-                    
-              <div class="hpp__container">
-              <div class="hpp__block">
-
-                <ul class="hpp__list">
-                  <li class="hpp__item">Excess PPi prevents the formation of hydroxyapatite crystal needed for bone mineralization</li>
-                  <li class="hpp__item-nosub">Excess calcium may cause various renal complications like hypercalcemia, nephrocalcinosis, and pseudogout</li>
-                    
-                    </ul>
-                    <div class="hpp__img-container">
-                            <img src="/assets/images/hpp-third.svg" alt="" class="hpp__image">
-                            </div>
-                            <p class="hpp__image-disclaimer">Image created for Alexion Pharmaceuticals, Inc. for illustrative purposes.</p>
-                  </div>
-              
-              
-                <div class="hpp__block">
-
-                <ul class="hpp__list">
-                  <li class="hpp__item">ExcExcess PLP results in deficient vitamin B6 in the CNS, which can cause neurologic symptoms like seizures (in infants), fatigue, and mood disorders</li>
-                  <li class="hpp__item-nosub modifier">Phosphoethanolamine (PEA) levels are also elevated in patients with hypophosphatasia. To date, the effects of PEA are not fully understood</li>
-                    
-                    </ul>
-                    <div class="hpp__img-container">
-                            <img src="/assets/images/hpp-fourth.svg" alt="" class="hpp__image">
-                            </div>
-                  
-                  </div>
-                </div>
+                <img
+                  src="/assets/images/first-hpp.svg"
+                  alt=""
+                  class="hpp__image"
+                />
               </div>
-            </Section>
-          </div>
+              <p class="hpp__image-disclaimer">
+                Image created for Alexion Pharmaceuticals, Inc. for illustrative
+                purposes.
+              </p>
+            </div>
 
-  <div id="STRENSIQ-MOA" class="section">
-  <Section classnames="moa">
-    <p class="custom-section__title" slot="header">STRENSIQ mechanism of action (MOA)</p>
-      <div>
-        <div class="hpp">
-        <h1 class="hpp__title">Only STRENSIQ replaces the deficient alkaline phosphatase enzyme</h1>
-        <h2 class="hpp__sub-title">Replacing alkaline phosphatase enables bone mineralization and reduces harmful levels of substrates.</h2>
-
-        <div class="hpp__container">
-        <div class="hpp__block">
-
-          <ul class="hpp__list">
-            <li class="hpp__item-nosub">STRENSIQ cleaves Pi from PPi so Pi can combine with calcium to form hydroxyapatite crystal, the foundation of strong bone</li>
-              
+            <div class="hpp__block">
+              <ul class="hpp__list">
+                <li class="hpp__item">
+                  Alkaline phosphatase also dephosphorylates pyridoxal
+                  5’-phosphate (PLP, the active form of vitamin B6) into
+                  pyridoxal, allowing it to cross into the central nervous
+                  system (CNS)
+                </li>
+                <li class="hpp__sub-item">
+                  PLP is required for the metabolism of neurotransmitters
+                </li>
               </ul>
               <div class="hpp__img-container">
-                      <img src="/assets/images/hpp-fifth.svg" alt="" class="hpp__image modifier">
-                      </div>
-                      <p class="hpp__image-disclaimer">Image created for Alexion Pharmaceuticals, Inc. for illustrative purposes.</p>
-            
+                <img
+                  src="/assets/images/hpp-second.svg"
+                  alt=""
+                  class="hpp__image"
+                />
+              </div>
             </div>
- 
+          </div>
+        </div>
+        <div class="hpp">
+          <h2 class="hpp__sub-title">
+            In patients with hypophosphatasia, a mutation on the ALPL gene
+            causes deficient alkaline phosphatase, resulting in low alkaline
+            phosphatase activity.
+          </h2>
+          <p class="hpp__normal-text">
+            When alkaline phosphatase activity is low, PPi, PLP, and calcium
+            accumulate, contributing to complications throughout the body.
+          </p>
+
+          <div class="hpp__container">
+            <div class="hpp__block">
+              <ul class="hpp__list">
+                <li class="hpp__item">
+                  Excess PPi prevents the formation of hydroxyapatite crystal
+                  needed for bone mineralization
+                </li>
+                <li class="hpp__item-nosub">
+                  Excess calcium may cause various renal complications like
+                  hypercalcemia, nephrocalcinosis, and pseudogout
+                </li>
+              </ul>
+              <div class="hpp__img-container">
+                <img
+                  src="/assets/images/hpp-third.svg"
+                  alt=""
+                  class="hpp__image"
+                />
+              </div>
+              <p class="hpp__image-disclaimer">
+                Image created for Alexion Pharmaceuticals, Inc. for illustrative
+                purposes.
+              </p>
+            </div>
 
             <div class="hpp__block">
-
               <ul class="hpp__list">
-                <li class="hpp__item">STRENSIQ reduces elevated levels of systemic PPi and PLP (the active form of vitamin B6)</li>
-                  <li class="hpp__sub-item modifier">Reductions in plasma PPi and PLP did not correlate with clinical outcomes</li>
-                  <li class="hpp__sub-item modifier">The effect of STRENSIQ on PEA was not measured in clinical trials</li>
-                  </ul>
-                  <div class="hpp__img-container">
+                <li class="hpp__item">
+                  ExcExcess PLP results in deficient vitamin B6 in the CNS,
+                  which can cause neurologic symptoms like seizures (in
+                  infants), fatigue, and mood disorders
+                </li>
+                <li class="hpp__item-nosub modifier">
+                  Phosphoethanolamine (PEA) levels are also elevated in patients
+                  with hypophosphatasia. To date, the effects of PEA are not
+                  fully understood
+                </li>
+              </ul>
+              <div class="hpp__img-container">
+                <img
+                  src="/assets/images/hpp-fourth.svg"
+                  alt=""
+                  class="hpp__image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+    </div>
 
-                    <img src="/assets/images/hpp-sisxth.svg" alt="" class="hpp__image">
-                  </div>
-                       
+    <div id="STRENSIQ-MOA" class="section">
+      <Section classnames="moa">
+        <p class="custom-section__title" slot="header">
+          STRENSIQ mechanism of action (MOA)
+        </p>
+        <div>
+          <div class="hpp">
+            <h1 class="hpp__title">
+              Only STRENSIQ replaces the deficient alkaline phosphatase enzyme
+            </h1>
+            <h2 class="hpp__sub-title">
+              Replacing alkaline phosphatase enables bone mineralization and
+              reduces harmful levels of substrates.
+            </h2>
+
+            <div class="hpp__container">
+              <div class="hpp__block">
+                <ul class="hpp__list">
+                  <li class="hpp__item-nosub">
+                    STRENSIQ cleaves Pi from PPi so Pi can combine with calcium
+                    to form hydroxyapatite crystal, the foundation of strong
+                    bone
+                  </li>
+                </ul>
+                <div class="hpp__img-container">
+                  <img
+                    src="/assets/images/hpp-fifth.svg"
+                    alt=""
+                    class="hpp__image modifier"
+                  />
+                </div>
+                <p class="hpp__image-disclaimer">
+                  Image created for Alexion Pharmaceuticals, Inc. for
+                  illustrative purposes.
+                </p>
+              </div>
+
+              <div class="hpp__block">
+                <ul class="hpp__list">
+                  <li class="hpp__item">
+                    STRENSIQ reduces elevated levels of systemic PPi and PLP
+                    (the active form of vitamin B6)
+                  </li>
+                  <li class="hpp__sub-item modifier">
+                    Reductions in plasma PPi and PLP did not correlate with
+                    clinical outcomes
+                  </li>
+                  <li class="hpp__sub-item modifier">
+                    The effect of STRENSIQ on PEA was not measured in clinical
+                    trials
+                  </li>
+                </ul>
+                <div class="hpp__img-container">
+                  <img
+                    src="/assets/images/hpp-sisxth.svg"
+                    alt=""
+                    class="hpp__image"
+                  />
                 </div>
               </div>
-              </div>
-
-
-
-              <div class="without-strensiq">
-                <h2 class="without-strensiq__title">Without STRENSIQ</h2>
-                <p class="without-strensiq__text">deficient alkaline phosphatase activity and bone mineralization</p>
-                <h6 class="without-strensiq__sub-title">will not improve</h6>
-                <div class="steps-box__content-line"></div>
-                <div class="without-strensiq__shape"></div>
-              </div>
-        
             </div>
-          </Section>
-        </div>
+          </div>
 
-  <CTA
-    heading="Learn more about the treatment that answers the call"
-    linkText="Clinical data"
-    linkUrl="/clinical-data/overview"
-  />
-  <References />
-</Layout>
+          <div class="without-strensiq">
+            <h2 class="without-strensiq__title">Without STRENSIQ</h2>
+            <p class="without-strensiq__text">
+              deficient alkaline phosphatase activity and bone mineralization
+            </p>
+            <h6 class="without-strensiq__sub-title">will not improve</h6>
+            <div class="steps-box__content-line"></div>
+            <div class="without-strensiq__shape"></div>
+          </div>
+        </div>
+      </Section>
+    </div>
+
+    <CTA
+      heading="Learn more about the treatment that answers the call"
+      linkText="Clinical data"
+      linkUrl="/clinical-data/overview"
+    />
+    <References />
+  </Layout>
 </div>
