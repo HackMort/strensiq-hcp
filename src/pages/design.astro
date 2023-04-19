@@ -320,6 +320,78 @@ import TipBox from "../components/TipBox.astro";
       </section>
       <section class="design-system-section">
         <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">Tabs</h1>
+          <ul role="tablist">
+            <li role="presentation">
+              <!--active one -->
+              <a href="#panel4" role="tab" id="tab4" aria-selected="true"
+                >Tab 4</a
+              >
+            </li>
+            <li role="presentation">
+              <a href="#panel5" role="tab" id="tab5" tabindex="-1">Tab 5</a>
+            </li>
+            <li role="presentation">
+              <a href="#panel6" role="tab" id="tab6" tabindex="-1">Tab 6</a>
+            </li>
+          </ul>
+          <section
+            id="panel4"
+            role="tabpanel"
+            aria-labelledby="tab4"
+            aria-hidden="false"
+            tabindex="-1"
+          >
+            <h2>Panel 4</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+              nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+              placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+              ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+              aliquet metus.
+            </p>
+          </section>
+          <section
+            id="section5"
+            role="tabpanel"
+            aria-labelledby="tab5"
+            aria-hidden="true"
+            tabindex="-1"
+            hidden
+          >
+            <h2>Panel 5</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+              nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+              placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+              ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+              aliquet metus.
+            </p>
+          </section>
+          <section
+            id="section6"
+            role="tabpanel"
+            aria-labelledby="tab6"
+            aria-hidden="true"
+            tabindex="-1"
+            hidden
+          >
+            <h2>Panel 6</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+              nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+              placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+              ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+              aliquet metus.
+            </p>
+          </section>
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
           <h1 class="title">Skeleton</h1>
           <SkeletonMobile />
           <div class="desktop--only">
