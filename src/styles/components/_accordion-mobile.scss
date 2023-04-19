@@ -4,6 +4,19 @@
         &:not(:last-of-type) {
             margin-bottom: .625rem;
         }
+
+        .expansion-panel-mobile__content {
+            height: 100%;
+            max-height: 0px;
+            transition: max-height 200ms ease-in-out;
+            overflow: hidden;
+        }
+
+        &[aria-expanded="true"] {
+            .expansion-panel-mobile__content {
+                max-height: 1000px;
+            }
+        }
     }
 
     .expansion-panel-mobile__button {
