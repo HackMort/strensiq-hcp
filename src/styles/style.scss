@@ -236,7 +236,9 @@
 }
 
 .toolkit__strensiq {
+    position: relative;
     background-color: $color-bright-gray;
+    overflow-x: hidden;
     padding-top: 2rem;
     padding-bottom: 2rem;
 
@@ -253,9 +255,21 @@
     &_os {
         position: relative;
         display: grid;
+        padding-top: 2.5rem;
+        padding-right: 1.5rem;
+        padding-bottom: 2.5rem;
 
         >* {
+            position: relative;
+            font-size: .875rem;
+            line-height: 1.125rem;
             z-index: 2;
+
+            @media screen and (min-width: 600px) {
+                font-size: 1rem;
+                line-height: 1.25rem;
+            }
+
         }
 
         &::before {
@@ -265,9 +279,9 @@
             left: -2rem;
             background-color: $color-white;
             border-radius: 0px 368px 368px 0px;
-            // min-height: 420px;
+            height: 100%;
+            width: 118%;
             z-index: 1;
-            width: 100%;
         }
 
     }
@@ -278,6 +292,11 @@
         line-height: 1.5625rem;
         color: $color-dark-green;
 
+        sup {
+            top: .3125rem;
+            font-size: 1.75rem;
+        }
+
         @media screen and (min-width: 1200px) {}
     }
 
@@ -285,6 +304,31 @@
         height: auto;
         margin-bottom: 1rem;
         width: 7.6269rem;
+    }
+
+    p {
+        margin-bottom: .6875rem;
+    }
+
+    ul {
+        color: $color-dark-gray;
+        margin-bottom: .3125rem;
+        margin-left: 1rem;
+    }
+
+    ul li {
+        margin-bottom: .625rem;
+        font-style: normal;
+        font-weight: 300;
+
+        &::marker {
+            display: none;
+        }
+    }
+
+    .phone {
+        color: $color-dark-gray !important;
+        font-weight: bolder;
     }
 
 
