@@ -7,6 +7,7 @@ import InternalNavigation from "../../components/InternalNavigation.astro";
 import AccordionMobile from '../../components/accordion-mobile/AccordionMobile.astro';
 import ExpansionPanelMobile from '../../components/accordion-mobile/ExpansionPanelMobile.astro';
 import RadiographicImagesComparator from '../../components/RadiographicImagesComparator.astro';
+import CustomTitle from '../../components/CustomTitle.astro';
 const internalNavLinks = [
   { href: "hpp-related", label: "HPP-related rickets", active: true },
   { href: "survival", label: "Survival" },
@@ -139,7 +140,91 @@ const internalNavLinks = [
                         </ExpansionPanelMobile>
                     </AccordionMobile>
                 </div>
-                <div class="radiographic-images-desktop"></div>
+                <div class="radiographic-images-desktop">
+                    <CustomTitle>
+                        Patient radiographs (Study 1) show substantial healing of hypophosphatasia-related rickets
+                    </CustomTitle>
+
+                    <ul role="tablist">
+                        <li role="presentation">
+                          <!--active one -->
+                          <a href="#tabpanel-hand" role="tab" id="tab-hand" aria-selected="true"
+                            >Hand</a
+                          >
+                        </li>
+                        <li role="presentation">
+                          <a href="#tabpanel-ribs" role="tab" id="tab-ribs" tabindex="-1">Ribs</a>
+                        </li>
+                      </ul>
+                      <section
+                        id="tabpanel-hand"
+                        role="tabpanel"
+                        aria-labelledby="tab-hand"
+                        aria-hidden="false"
+                        tabindex="-1"
+                      >
+                      <RadiographicImagesComparator>
+                        <div slot="before">
+                            <p data-radiographic-title>
+                                2.9 weeks of age (at baseline)
+                            </p>
+                            <picture data-radiographic-image>
+                                <source srcset="/assets/images/clinical-data/infants-young-children/hand-before-desktop.png" media="(min-width: 768px)">
+                                <img src="/assets/images/clinical-data/infants-young-children/hand-before-mobile.png" alt="">
+                            </picture>
+                            <p data-radiographic-footer>
+                                No mineralization of phalanges, first metacarpal, and distal radius.
+                            </p>
+                        </div>
+                        <div slot="after">
+                            <p data-radiographic-title>
+                                After 24 weeks of treatment with STRENSIQ
+                            </p>
+                            <picture data-radiographic-image>
+                                <source srcset="/assets/images/clinical-data/infants-young-children/hand-after-desktop.png" media="(min-width: 768px)">
+                                <img src="/assets/images/clinical-data/infants-young-children/hand-after-mobile.png" alt="">
+                            </picture>
+                            <p data-radiographic-footer>
+                                All phalanges obvious; metacarpals mineralized and well-formed, but still osteopenic.
+                            </p>
+                        </div>
+                    </RadiographicImagesComparator>
+                      </section>
+                      <section
+                        id="tabpanel-ribs"
+                        role="tabpanel"
+                        aria-labelledby="tab-ribs"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        hidden
+                      >
+                      <RadiographicImagesComparator>
+                        <div slot="before">
+                            <p data-radiographic-title>
+                                2.9 weeks of age (at baseline)
+                            </p>
+                            <picture data-radiographic-image>
+                                <source srcset="/assets/images/clinical-data/infants-young-children/ribs-before-desktop.png" media="(min-width: 768px)">
+                                <img src="/assets/images/clinical-data/infants-young-children/ribs-before-mobile.png" alt="">
+                            </picture>
+                        </div>
+                        <div slot="after">
+                            <div slot="before">
+                                <p data-radiographic-title>
+                                    After 24 weeks of treatment with STRENSIQ
+                                </p>
+                                <picture data-radiographic-image>
+                                    <source srcset="/assets/images/clinical-data/infants-young-children/ribs-after-desktop.png" media="(min-width: 768px)">
+                                <img src="/assets/images/clinical-data/infants-young-children/ribs-after-mobile.png" alt="">
+                                </picture>
+                                <p data-radiographic-footer>
+                                    Remineralization of all ossified structures, including ribs, clavicles, spine, and scapulae, was striking.
+                                </p>
+                            </div>
+                        </div>
+                    </RadiographicImagesComparator>
+                      </section>
+                </div>
             </div>
         </div>
     </div>

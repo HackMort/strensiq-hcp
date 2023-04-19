@@ -30,6 +30,7 @@
 @import './components/_clinical-study.scss';
 @import './components/_accordion-mobile.scss';
 @import './components/_radiographic-comparator.scss';
+@import './components/_custom-title.scss';
 
 
 //-------------------------------------------------------------lets work together section-------------------------------------------------------------
@@ -764,6 +765,27 @@
 
     background: $color-white;
 
+    .radiographic-images-desktop {
+        display: none;
+    }
+
+    @media screen and (min-width: 1024px) {
+        padding-top: 4.375rem;
+
+        .hpp-related-rickets__content {
+            display: grid;
+            grid-template-columns: 25rem 1fr;
+        }
+
+        .radiographic-images-mobile {
+            display: none;
+        }
+
+        .radiographic-images-desktop {
+            display: block;
+        }
+    }
+
     .hpp-related-rickets__title {
         color: $color-dark-green;
         margin-bottom: .625rem;
@@ -782,10 +804,45 @@
 
     .hpp-related-rickets__content-right {
 
+        .custom-title {
+            margin-bottom: 1.875rem;
+        }
+
+        [role=tablist] {
+            width: calc(100% - 4.125rem);
+            justify-content: center;
+        }
+
+        [role=tablist] a {
+            padding-left: 4.75rem;
+            padding-right: 4.75rem;
+        }
+
+        [role=tabpanel] {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .radiographic-comparator [data-radiographic-footer] {
+            margin-bottom: 1.625rem;
+        }
+
         .radiographic-images-mobile__title {
             font-weight: 600;
             color: $color-dark-gray;
             margin-bottom: .8125rem;
+        }
+
+        @media screen and (min-width: 1024px) {
+            position: absolute;
+            right: -2.1406rem;
+            top: 0px;
+            height: 100%;
+            width: calc(100% - 400px);
+        }
+
+        @media screen and (min-width: 1366px) {
+            right: -4.1406rem;
         }
     }
 }

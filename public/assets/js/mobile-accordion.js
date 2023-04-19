@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const closePanels = (openedPanelId) => {
       Array.from(panels).filter((panel) => panel.id !== openedPanelId)
         .forEach((panel) => {
+          const button = panel.querySelector('.expansion-panel-mobile__button')
           panel.ariaExpanded = 'false'
+          button.ariaExpanded = 'false'
         })
     }
 
