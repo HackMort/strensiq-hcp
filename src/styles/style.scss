@@ -254,6 +254,10 @@
         position: relative;
         display: grid;
 
+        >* {
+            z-index: 2;
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -261,8 +265,8 @@
             left: -2rem;
             background-color: $color-white;
             border-radius: 0px 368px 368px 0px;
-            min-height: 420px;
-            z-index: -1;
+            // min-height: 420px;
+            z-index: 1;
             width: 100%;
         }
 
