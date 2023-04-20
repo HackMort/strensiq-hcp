@@ -53,8 +53,9 @@ document.addEventListener('DOMContentLoaded', function (e) {
   })
 
   // Internal Navigation
+  const headerInnerHeight = document.querySelector('.header__inner').offsetHeight
   window.addEventListener('scroll', () => {
-    highlightActiveInternalNavOnScroll()
+    highlightActiveInternalNavOnScroll(headerInnerHeight)
   })
   setActiveIternalNavItemOnClick()
 
@@ -123,12 +124,12 @@ window.addEventListener('scroll', () => {
   * It requires IntersectionObserver API
   * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
  */
-function highlightActiveInternalNavOnScroll () {
+function highlightActiveInternalNavOnScroll (headerInnerHeight) {
   const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
   const internalNav = document.querySelector('.internal__nav_list')
   const activeLi = document.querySelector('.internal__nav_list_item.is--active') || internalNavItems[0]
   const sections = document.querySelectorAll('.section')
-  const headerHeight = header.offsetHeight
+  const headerHeight = screen.width > 768 ? headerInnerHeight + 150 : headerInnerHeight + 200
   const sectionObserverOptions = {
     root: null,
     rootMargin: '0px',
@@ -136,13 +137,16 @@ function highlightActiveInternalNavOnScroll () {
   }
   const sectionObserver = new window.IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
+      // console.log(entry.target.getAttribute('id'), 'entry.target.getAttribute(id)')
       // Distance between the top of the section and the top of the viewport
       const sectionTop = entry.boundingClientRect.top
+
+      // Get the position of the active item in the internal navigation
       const internalNavWidth = internalNav.offsetWidth
       const activeLiPosition = activeLi.offsetLeft
 
       // Validate if the section that are in viewport and is closer of the top of the viewport
-      if (entry.isIntersecting && sectionTop <= headerHeight) {
+      if (entry.isIntersecting && sectionTop <= headerHeight && sectionTop >= 0) {
         const sectionId = entry.target.getAttribute('id')
         internalNavItems.forEach((item) => {
           item.classList.remove('is--active')
@@ -162,7 +166,7 @@ function highlightActiveInternalNavOnScroll () {
   })
 }
 
-/*
+/**
   * setActiveIternalNavItemOnClick
   * @description
   * - Add class is--active to internal navigation items when the link is clicked
@@ -170,12 +174,22 @@ function highlightActiveInternalNavOnScroll () {
   * It requires IntersectionObserver API
   * * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 */
+let prevScrollpos = window.pageYOffset
+let marginYOff = 300
+
+window.addEventListener('scroll', function () {
+  const currentScrollPos = window.pageYOffset
+  if (prevScrollpos > currentScrollPos) {
+    marginYOff = screen.width > 768 ? 250 : 200
+  } else {
+    marginYOff = 300
+  }
+  prevScrollpos = currentScrollPos
+})
+
 function setActiveIternalNavItemOnClick () {
-  const headerNavHeight = document.querySelector('.site__header')
   const internalNav = document.querySelector('.internal__nav')
   const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
-  const headerInner = document.querySelector('.site__header .header__inner')
-  let marginYOff = 0
 
   internalNav &&
   internalNav.addEventListener('click', (e) => {
@@ -185,15 +199,6 @@ function setActiveIternalNavItemOnClick () {
     if (target.tagName === 'A') {
       const sectionID = target.getAttribute('href')
       const targetSection = document.querySelector(sectionID)
-
-      // Get the height of the header when the user scrolls down the page and the header is not in viewport
-      if (headerInner.classList.contains('is--sticky-down')) {
-        marginYOff = headerNavHeight.offsetHeight + 150
-      } else if (headerInner.classList.contains('is--sticky-up')) {
-        marginYOff = 0
-      } else {
-        marginYOff = headerNavHeight.offsetHeight + 150
-      }
 
       // Scroll to section
       const totalOffset = targetSection.getBoundingClientRect().top + window.pageYOffset - marginYOff
@@ -208,9 +213,6 @@ function setActiveIternalNavItemOnClick () {
     internalNavItems.forEach((item) => {
       item.classList.remove('is--active')
     })
-
-    // Add class is--active to the clicked internal navigation item
-    target.parentElement.classList.add('is--active')
   })
 }
 

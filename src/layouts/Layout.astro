@@ -8,18 +8,18 @@ import References from "../components/References.astro";
 import CTA from "../components/CTA.astro";
 import Header from "../components/Header.astro";
 import CookieBanner from "../components/CookieBanner.astro";
-import RequestARepModalForm from '../components/RequestARepModalForm.astro';
+import RequestARepModalForm from "../components/RequestARepModalForm.astro";
 export interface Props {
   title: string;
   displayReferences?: boolean;
-  displayCTA?: boolean;
   displayISI?: boolean;
+  classNames?: string;
 }
 
 const {
   title,
+  classNames,
   displayReferences = true,
-  displayCTA = true,
   displayISI = true,
 } = Astro.props;
 ---
@@ -43,20 +43,11 @@ const {
   <body>
     <Header />
     <CookieBanner />
-    <main class="main">
+    <main class={`main ${classNames ? classNames : ""}`}>
       <slot />
     </main>
-    {displayISI && <ISI />}
-    {
-      displayCTA && (
-        <CTA
-          heading="Get them off to a solid start"
-          linkText="Infants/young children"
-          linkUrl="#"
-        />
-      )
-    }
     {displayReferences && <References />}
+    {displayISI && <ISI />}
     <Footer />
     <ExitModal />
     <RequestARepModalForm />
@@ -64,5 +55,6 @@ const {
     <script src="/assets/js/tabs.js" type="module"></script>
     <script is:inline src="/assets/js/form-validation.js"></script>
     <script src="../js/modal.js"></script>
+    <slot name="scripts" />
   </body>
 </html>
