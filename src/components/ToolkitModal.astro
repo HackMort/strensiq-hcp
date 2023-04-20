@@ -1,0 +1,76 @@
+<div style="display: none;">
+  <div class="modal toolkit__modal" id="toolkit-modal">
+    <div class="toolkit__modal_wrapper" tabindex="-1">
+      <button
+        data-fancybox-close
+        class="button toolkit__modal_close"
+        data-dismiss="modal"
+        aria-label="Close modal"
+      >
+        +
+      </button>
+      <div class="toolkit__modal_content">
+        <h1 class="toolkit__modal_title">Forms</h1>
+        <ul>
+          <li>STRENSIQ Rx form</li>
+          <li>Clinical notes</li>
+          <li>Lab reports</li>
+          <li>Radiographic reports</li>
+          <li>Other exams</li>
+          <li>Statement of medical necessity</li>
+          <li>Letter of medical necessity</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /**
+   * #################################################################################################
+   * Request a rep modal form
+   * #################################################################################################
+   */
+
+  import { Fancybox } from "@fancyapps/ui";
+
+  class ToolkitModal {
+    modal: Fancybox;
+
+    constructor() {
+      this.modal = undefined;
+    }
+
+    open() {
+      this.modal = new Fancybox([{ src: "toolkit-modal" }], {
+        autoFocus: true,
+        defaultType: "inline",
+        placeFocusBack: true,
+        trapFocus: false,
+        closeButton: false,
+        height: "auto",
+      });
+    }
+
+    close() {
+      this.modal.close();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = new ToolkitModal();
+
+    const buttons = document.querySelectorAll(".toolkit-modal");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        modal.open();
+      });
+    });
+  });
+
+  /**
+   * #################################################################################################
+   * Toolkit Modal
+   * #################################################################################################
+   */
+</script>
