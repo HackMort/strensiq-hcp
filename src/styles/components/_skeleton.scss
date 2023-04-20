@@ -233,7 +233,7 @@
             position: absolute;
             right: 0;
             top: 26%;
-            width: 80%;
+            width: 85%;
 
             &--hidden {
                 animation: fadeOut 0.5s;
@@ -291,7 +291,7 @@
 
                     &[data-vertical-line="top"] {
                         &::before {
-                            top: -120px;
+                            top: -135px;
                         }
 
                         &::after {
