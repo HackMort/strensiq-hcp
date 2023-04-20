@@ -189,14 +189,16 @@ const internalNavLinks = [
         <p class="hypophosphatasia-container__paragraph">Patients with hypophosphatasia have a mutation on the <span class="text--italic">ALPL</span> gene causing deficient alkaline phosphatase enzyme.</p>
         <HighlightInformation
           title="WHAT IS LOW ALP?"
-          content="<40 U/L"
           footnote="is considered low for adults*"
-          />
+          >
+            <span slot="content">&#60;40 U/L</span>
+          </HighlightInformation>
           <HighlightInformation
           title="IN CHILDREN, low ranges"
-          content="vary"
           footnote="based on age and sex"
-          />
+          >
+            <span slot="content">vary</span>
+          </HighlightInformation>
           <ul class="hypophosphatasia-container__list">
             <li class="hypophosphatasia-container__list-item"><p>Clinicians should ensure that reported laboratory results for ALP reflect age- and sex-adjusted reference ranges for the specific patient</p></li>
             <li class="hypophosphatasia-container__list-item"><p>Check with your lab for their appropriate age- and sex-adjusted reference range</p></li>
@@ -317,12 +319,13 @@ const internalNavLinks = [
             </li>
           </ul>
           <HighlightInformation
-          content="> 50%"
-          footnote="of patients with hypophosphatasia reported their problems led to a negative impact"
-          footnoteExtra="on their physical and mental functioning§"
-          />
-          <p class="hypophosphatasia-container__panel-footnote no--margin-bottom"><sup>‡</sup>Data collected from patients and caregivers via 2 survey instruments (web-based and phone interviews) to evaluate patient-reported symptomatology and burden of disease of hypophosphatasia (N=125). The majority of patients in this study (67%) reported pediatric onset of hypophosphatasia symptoms. Of patients reporting adult-onset hypophosphatasia (27%), 50% reported history or surgeries suggestive of pediatric onset of symptoms.</p>
-          <p class="hypophosphatasia-container__panel-footnote no--margin-top"><sup>§</sup>The Global HPP Registry, an observational, longitudinal, multinational, long-term study of patients ≥18 years with a confirmed diagnosis of hypophosphatasia using physician-entered medical record data from consenting patients (N=304). One-third (33%) of the study population had pediatric-onset hypophosphatasia.</p>
+            footnote="of patients with hypophosphatasia reported their problems led to a negative impact"
+          >
+            <span slot="content">&#62;50<sub>%</sub></span>
+            <span slot="footnote">on their physical and mental functioning<sup>§</sup></span>
+          </HighlightInformation>
+          <p class="hypophosphatasia-container__panel-footnote hypophosphatasia-container__panel-footnote--only-mobile no--margin-bottom"><sup>‡</sup>Data collected from patients and caregivers via 2 survey instruments (web-based and phone interviews) to evaluate patient-reported symptomatology and burden of disease of hypophosphatasia (N=125). The majority of patients in this study (67%) reported pediatric onset of hypophosphatasia symptoms. Of patients reporting adult-onset hypophosphatasia (27%), 50% reported history or surgeries suggestive of pediatric onset of symptoms.</p>
+          <p class="hypophosphatasia-container__panel-footnote hypophosphatasia-container__panel-footnote--only-mobile no--margin-top"><sup>§</sup>The Global HPP Registry, an observational, longitudinal, multinational, long-term study of patients ≥18 years with a confirmed diagnosis of hypophosphatasia using physician-entered medical record data from consenting patients (N=304). One-third (33%) of the study population had pediatric-onset hypophosphatasia.</p>
         </section>
         <section class="hypophosphatasia-container__panel-chart">
           <h4 class="hypophosphatasia-container__panel-title">Hypophosphatasia can cause a wide range of symptoms, with impact beyond the skeletal system<sup>a</sup></h4>
@@ -333,13 +336,18 @@ const internalNavLinks = [
             </picture>
           </section>
         </section>
-        <section class="hypophosphatasia-container__panel-content">
+        <section class="hypophosphatasia-container__panel-content hypophosphatasia-container__panel-content--flex">
           <HighlightInformation
           title="The Global HPP Registry (n=148) showed"
-          content="~12%"
           footnote="of adult patients experienced"
-          footnoteExtra="neurologic symptoms"
-          />
+          >
+            <span slot="content">~12<sub>%</sub></span>
+            <span slot="footnote">neurologic symptoms</span>
+          </HighlightInformation>
+          <div class="footnotes-container">
+            <p class="hypophosphatasia-container__panel-footnote hypophosphatasia-container__panel-footnote--only-desktop no--margin-bottom"><sup>‡</sup>Data collected from patients and caregivers via 2 survey instruments (web-based and phone interviews) to evaluate patient-reported symptomatology and burden of disease of hypophosphatasia (N=125). The majority of patients in this study (67%) reported pediatric onset of hypophosphatasia symptoms. Of patients reporting adult-onset hypophosphatasia (27%), 50% reported history or surgeries suggestive of pediatric onset of symptoms.</p>
+            <p class="hypophosphatasia-container__panel-footnote hypophosphatasia-container__panel-footnote--only-desktop no--margin-top"><sup>§</sup>The Global HPP Registry, an observational, longitudinal, multinational, long-term study of patients ≥18 years with a confirmed diagnosis of hypophosphatasia using physician-entered medical record data from consenting patients (N=304). One-third (33%) of the study population had pediatric-onset hypophosphatasia.</p>
+          </div>
         </section>
         <section class="hypophosphatasia-container__panel-chart">
           <h4 class="hypophosphatasia-container__panel-title">Neurologic symptoms in adults based on a retrospective chart review<sup>b</sup></h4>
@@ -363,7 +371,7 @@ const internalNavLinks = [
         class="hypophosphatasia-container__panel hypophosphatasia-container__panel--flex"
       >
         <section class="hypophosphatasia-container__panel-content">
-          <h5 class="color--dark-green">In children<sup>*</sup>:</h5>
+          <h5 class="color--dark-green hypophosphatasia-container__title">In children<sup>*</sup>:</h5>
           <ul class="hypophosphatasia-container__list">
             <li class="hypophosphatasia-container__list-item">
               <p><span class="animated--bg">50%</span> (15/30) had clinically meaningful impairment in overall quality of life as reported by parents</p>
@@ -376,11 +384,12 @@ const internalNavLinks = [
             </li>
           </ul>
           <HighlightInformation
-          content="~27%"
           footnote="of children experienced"
-          footnoteExtra="neurologic symptoms"
-          />
-          <p class="hypophosphatasia-container__panel-footnote"><sup>*</sup>Cross-sectional study reported by parents of 30 eligible children with hypophosphatasia (aged 3 to 16.6 years).</p>
+          >
+            <span slot="content">~27<sub>%</sub></span>
+            <span slot="footnote">neurologic symptoms</span>
+          </HighlightInformation>
+          <p class="hypophosphatasia-container__panel-footnote position--bottom"><sup>*</sup>Cross-sectional study reported by parents of 30 eligible children with hypophosphatasia (aged 3 to 16.6 years).</p>
         </section>
         <section class="hypophosphatasia-container__panel-chart">
           <h4 class="hypophosphatasia-container__panel-title">Hypophosphatasia can cause a wide range of symptoms, with impact beyond the skeletal systema</h4>
@@ -403,7 +412,7 @@ const internalNavLinks = [
         class="hypophosphatasia-container__panel hypophosphatasia-container__panel--flex"
       >
         <section class="hypophosphatasia-container__panel-content">
-          <h5 class="color--dark-green">In neonates and infants<sup>*</sup></h5>
+          <h5 class="color--dark-green hypophosphatasia-container__title">In neonates and infants<sup>*</sup></h5>
           <ul class="hypophosphatasia-container__list">
             <li class="hypophosphatasia-container__list-item">
               <p><span class="animated--bg">73%</span> of cases of untreated neonatal and infantile hypophosphatasia were fatal before the age of 5</p>
@@ -438,7 +447,7 @@ const internalNavLinks = [
                 daily living</p>
             </li>
           </ul>
-          <p class="hypophosphatasia-container__panel-footnote"><sup>*</sup>Data from a multinational, noninterventional, retrospective chart review study designed to understand the natural history of 48 patients ≤5 years of age with perinatal- and infantile-onset HPP.</p>
+          <p class="hypophosphatasia-container__panel-footnote position--bottom"><sup>*</sup>Data from a multinational, noninterventional, retrospective chart review study designed to understand the natural history of 48 patients ≤5 years of age with perinatal- and infantile-onset HPP.</p>
         </section>
         <section class="hypophosphatasia-container__panel-chart">
           <h4 class="hypophosphatasia-container__panel-title">In neonates and infants, hypophosphatasia has a high risk of mortality</h4>

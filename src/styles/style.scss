@@ -1279,6 +1279,15 @@
     &__title {
         font-weight: 700;
         margin-bottom: 1.5625rem;
+
+        @include media('desktop') {
+            font-size: 18px;
+            line-height: 1.6875rem;
+        }
+
+        sup {
+            font-weight: 700;
+        }
     }
 
     &__panel {
@@ -1314,7 +1323,7 @@
 
             img {
                 margin: 0 auto;
-                max-width: 500px;
+                max-width: 675px;
 
                 @include media('desktop') {
                     margin: 0;
@@ -1324,15 +1333,44 @@
 
         &-content {
             padding: 0 1rem;
+            position: relative;
+
+            &--flex {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
         }
 
         &-footnote {
             font-size: 12px;
             line-height: .9rem;
+
+            &--only-mobile {
+                @include media('desktop') {
+                    display: none;
+                }
+            }
+
+            &--only-desktop {
+                display: none;
+
+                @include media('desktop') {
+                    display: block;
+                }
+            }
+
+            &.position--bottom {
+                @include media('desktop') {
+                    bottom: 0;
+                    position: absolute;
+                }
+            }
         }
 
         .hypophosphatasia-container__title {
             font-weight: 600;
+            margin-bottom: .625rem;
         }
     }
 
@@ -1506,7 +1544,7 @@
                 @media(min-width: 1061px) {
                     border-radius: 391.37px;
                     height: 225%;
-                    left: -55%;
+                    left: -65%;
                     top: -20%;
                     right: unset;
                     width: 1268px;
@@ -1574,6 +1612,10 @@
 
         .hypophosphatasia-container__title {
             margin-bottom: .625rem;
+
+            @include media('desktop') {
+                margin-top: 4.6875rem;
+            }
         }
 
         section.information {
@@ -1613,7 +1655,8 @@
                 }
 
                 @media (min-width: 1400px) {
-                    max-width: 54ch;
+                    max-width: 60ch;
+                    padding: 1.25rem 10.25rem;
                 }
             }
         }
