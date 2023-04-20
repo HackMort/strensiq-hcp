@@ -8,6 +8,7 @@ import AccordionMobile from '../../components/accordion-mobile/AccordionMobile.a
 import ExpansionPanelMobile from '../../components/accordion-mobile/ExpansionPanelMobile.astro';
 import RadiographicImagesComparator from '../../components/RadiographicImagesComparator.astro';
 import CustomTitle from '../../components/CustomTitle.astro';
+import TipBox from "../../components/TipBox.astro";
 const internalNavLinks = [
   { href: "hpp-related-rickets", label: "HPP-related rickets", active: true },
   { href: "survival", label: "Survival" },
@@ -36,7 +37,7 @@ const internalNavLinks = [
                     STRENSIQ helps reverse hypomineralization
                 </h2>
                 <p class="hpp-related-rickets__description">
-                    Complete or substantial healing of rickets as measured by the Radiographic Global Impression of Change (RGI-C) scale* ​
+                    Complete or substantial healing of rickets as measured by the Radiographic Global Impression of Change (RGI-C) scale<sup class="symbol-sup">*</sup>
                 </p>
                 <div class="clinical-studies">
                     <article class="clinical-study">
@@ -56,7 +57,7 @@ const internalNavLinks = [
                             </div>
                         </div>
                         <p class="clinical-study__description">
-                            of patients achieved complete or substantial healing of HPP-related rickets
+                            of patients achieved complete or<br> substantial healing of HPP-related rickets
                         </p>
                     </article>
                     <article class="clinical-study">
@@ -71,11 +72,11 @@ const internalNavLinks = [
                             </div>
                         </div>
                         <p class="clinical-study__description">
-                            of patients achieved complete or substantial healing of HPP-related rickets
+                            of patients achieved complete or<br> substantial healing of HPP-related rickets
                         </p>
                     </article>
                     <p class="clinical-studies__footer-note">
-                        *The RGI-C scale quantifies change over time in mineralization and bone structure.
+                        <sup class="symbol-sup">*</sup>The RGI-C scale quantifies change over time in mineralization and bone structure.
                     </p>
                 </div>
             </div>
@@ -231,12 +232,25 @@ const internalNavLinks = [
   </section>
 
   <section id="survival" class="infants-young-children__survival">
-    <h2 class="infants-young-children__survival">
-        STRENSIQ provided substantial healing of rachitic chest and improved respiratory function and survival
-    </h2>
-    <CustomTitle>
-        Invasive ventilation-free survival in patients treated with STRENSIQ vs untreated historical controls<sup>a</sup>
-    </CustomTitle>
+   <div class="infants-young-children__survival-content">
+    <div class="infants-young-children__survival-left">
+        <div class="wrapper">
+            <h2 class="infants-young-children__survival">
+                STRENSIQ provided substantial healing of rachitic chest and improved respiratory function and survival
+            </h2>
+        </div>
+        <TipBox classNames="toolkit__tip" align="right">
+            <strong>
+                STRENSIQ increased overall survival to 88% with follow-up for up to 7 years
+            </strong>
+          </TipBox>
+    </div>
+    <div class="infants-young-children__survival-right">
+        <CustomTitle>
+            Invasive ventilation-free survival in patients treated with STRENSIQ vs untreated historical controls<sup>a</sup>
+        </CustomTitle>
+    </div>
+   </div>
   </section>
 
   <CTA
