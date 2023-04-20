@@ -753,3 +753,584 @@
         }
     }
 }
+
+
+//-------------------------------------------------------------dosing page -------------------------------------------------------------    
+.dosing{
+        margin-top: 1.6875rem;
+
+        @media screen and (min-width:1300px) {
+            padding-top: 1.875rem;
+        }
+
+
+        &__container{
+            @media screen and (min-width:1300px) {
+                display: flex;
+                align-items: baseline;
+                justify-content: space-between;
+            }
+        }
+
+    &__first{
+        @media screen and (min-width:600px) {
+            margin: auto;
+        }
+        @media screen and (min-width:768px) {
+        max-width: 532px;
+        }
+
+        @media screen and (min-width:1300px) {
+            margin: unset;
+        }
+        &__title{
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.25rem;
+            line-height: 1.5625rem;
+            margin-bottom: 1.3125rem;
+            color: $color-dark-green;
+
+            @media screen and (min-width:1300px) {
+                font-size: 30px;
+                line-height: 2.375rem;
+            }
+    
+        }
+
+        &__text{
+            p{
+                font-style: normal;
+                font-weight: 300;
+                font-size: .875rem;
+                line-height: 1.125rem;
+                margin-bottom: 1.375rem;
+
+                @media screen and (min-width:1300px) {
+                    font-size: 18px;
+                    line-height: 1.6875rem;
+                }
+                
+            }
+        }
+    }
+
+    &__second{
+
+        &__title{
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.125rem;
+            line-height: 1.6875rem;        
+            letter-spacing: -0.0313rem;
+            color: $color-dark-gray;
+        }
+
+        &__shapes{
+            @media screen and (min-width:1300px) {
+                display: flex;
+                height: 16.0625rem;
+                }
+
+                &__container{
+                    display: flex;
+                    position: relative;
+                    align-items: center;
+
+                    .shape-heading{
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 1.25rem;
+                        line-height: 1.4375rem;
+                        margin-top: 2.9375rem;
+                        color: $color-dark-gray;
+                    }
+
+                    .shape-body{
+                        font-style: normal;
+                        font-weight: 900;
+                        font-size: 60px;
+                        line-height: 3.1875rem;
+                        letter-spacing: -0.03em;
+                        margin-bottom: .625rem;
+                        color: $color-dark-green;
+
+                        span{
+                            letter-spacing: .0375rem;
+                            font-size: .875rem
+                        }
+                    }
+
+                    .steps-box__content-line{
+                        margin-top: -1.1875rem;
+                        position: absolute;
+                        width: 100vw;
+                        margin-bottom: 4.5rem;
+                        @media screen and (min-width:1300px) {
+                            width:12vw;
+                        }
+
+                        &.modifier{
+                            background-color: $color-white;
+
+                            @media screen and (min-width:1300px) {
+                                width:12vw;
+                            }
+                        }
+                        
+                    }
+                    &::before{
+                        content: '';
+                        background-image: url('/assets/icons/injection-icon.svg');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 4.8125rem;
+                        height: 4.8125rem;
+                        margin-right: .75rem;
+                        margin-top: 2.8125rem;
+
+                    }
+                    &.modifier{
+                        &::before{
+                            background-image: none;
+
+                            @media screen and (min-width:1300px) {
+                                
+                                margin-left: 10rem;
+                            }    
+                        }
+                    }
+
+                    .dosing__second__shape--one{
+                        position: absolute;
+                        height: 149px;
+                        left: -1rem;
+                        top: 20px;
+                        background: #E2E7EA;
+                        border-radius: 581.67px 0px 0px 581.67px;
+                        z-index: -1;
+                        width: 100vw;
+                        
+                        @media screen and (min-width:1300px) {
+                            height: 16.0625rem;
+                        }
+                    }
+                    .dosing__second__shape--two{
+                        position: absolute;
+                        height: 149px;
+                        left: -1rem;
+                        top: 20px;
+                        background: $color-green;
+                        border-radius: 581.67px 0px 0px 581.67px;
+                        z-index: -1;
+                        width: 100vw;
+
+                        @media screen and (min-width:1300px) {
+                            
+                            left: 11rem;
+                            height: 16.0625rem;
+                        }
+
+                        
+                    }
+                }
+            }
+        .pdf-text{
+            margin-top: 3.125rem;
+            text-align: center;
+            font-style: normal;
+            font-weight: 300;
+            font-size: .875rem;
+            line-height: 1.125rem;
+            margin-bottom: 1.25rem;
+            @media screen and (min-width:1300px) {
+            font-size: 1.125rem;
+            line-height: 1.6875rem;
+            }
+        }
+        
+        .button{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 1.125rem;
+            margin: auto;
+            margin-bottom: 1.875rem;
+
+            &::after{
+                content: '';
+                background-image: url('/assets/icons/icon-arrow-white.svg');
+                height: 1.125rem;
+                width: 1.125rem;
+                transform: rotate(90deg);
+            }
+        }
+        
+    }
+}
+
+.injection-site{
+    background: rgba(226, 231, 234, 0.5);
+    padding-top: 2.1875rem;
+    padding-bottom: 2.1875rem;
+    overflow: hidden;
+    @media screen and (min-width:768px) {
+        padding-top: 4.6875rem;
+        padding-bottom: 4.375rem;
+    }
+
+    &__container{
+    @media screen and (min-width:768px) {
+        display: flex;
+        justify-content: space-between;
+        max-width: 79.3125rem;
+    }
+    @media screen and (min-width:1130px) {
+        align-items: end;
+    }
+    @media screen and (min-width:1300px) {
+        margin: auto;
+        align-items: unset;
+        max-width: unset;
+    }
+}
+    
+    &__first{
+
+        @media screen and (min-width:850px) {
+            max-width: 31.625rem;
+        }
+        @media screen and (min-width:850px) {
+        max-width: 30.625rem;
+        }
+        @media screen and (min-width:1340px) {
+        max-width: 30.75rem;
+        }
+        &__title{
+            text-align: center;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.25rem;
+            line-height: 1.5625rem;
+            color: $color-dark-green;
+
+            @media screen and (min-width:1024px) {
+            font-size: 1.875rem;
+            line-height: 2.375rem;
+            text-align: left;
+            }
+        }
+
+        /* &__text{
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 18px;
+        } */
+
+    }
+
+    &__second{
+        @media screen and (min-width:1300px) {
+        max-width: 43rem;
+        }
+        @media screen and (min-width:1340px) {
+            margin-top: 4rem;
+        }
+
+        &__sub-heading{
+            position:relative;
+            z-index:2;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.25rem;
+            line-height: 1.4375rem;
+            margin-top: 2.9375rem;
+            margin-bottom: .5625rem;
+            color: $color-bright-gray;
+        }
+
+        &__heading{
+            position:relative;
+            z-index:2;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 2.25rem;
+            line-height: 2.1875rem;
+            color: $color-white;
+            max-width: 17.875rem;
+
+            @media screen and (min-width:1340px) {
+                max-width: unset;
+                font-size: 4.375rem;
+                line-height: 3.9375rem;            
+                letter-spacing: -0.03em;
+            } 
+        }
+
+        &__sub-text{
+            position:relative;
+            z-index:2;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 1rem;
+            line-height: 1.5rem;        
+            letter-spacing: 0.05em;
+            margin-top: .25rem;
+            color: $color-white;
+        }
+        &__text{
+            position:relative;
+            z-index:2;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.5rem;        
+            letter-spacing: 0.05em;
+            color: $color-bright-gray;
+        }
+
+        .steps-box__content-line{
+            position:relative;
+            z-index:2;
+            margin-bottom: 0;
+            margin-top: .5rem;
+        }
+
+        &__shape{
+            position: absolute;
+            height: 428px;
+            right: -4rem;
+            bottom: -192px;
+            background: #00494F;
+            border-radius: 36.3544rem;
+            z-index: 1;
+            width: 195vw;
+
+            @media screen and (min-width:768px) {
+                right: -24rem;
+                bottom: -682px;
+                transform: rotate(-62deg);
+                width: 204vw;
+            }
+            @media screen and (min-width:775px) {
+                right: -31rem;
+                bottom: -721px;
+                transform: rotate(-73deg);
+            }
+            @media screen and (min-width:800px) {
+                right: -233px;
+                bottom: -365px;
+                width: 875.85px;
+            }
+            @media screen and (min-width:1340px) {
+                right: -203px;
+                bottom: -871px;
+                width: 1529.85px;
+                height: 64rem;
+                border-radius: 581.67px;
+                transform: rotate(-48.66deg);
+            }
+
+    }
+
+    }
+    &__list{
+        max-width: 19.5rem;
+        margin: auto;
+
+        @media screen and (min-width:517px) {
+            max-width: 28.5rem;
+        }
+        @media screen and (min-width:768px) {
+            max-width: 19.5rem;
+        }
+        @media screen and (min-width:850px) {
+            max-width: 28.5rem;
+        }
+        @media screen and (min-width:1400px) {
+            max-width: 28.75rem;
+        }
+        
+    }
+
+    &__item{
+        font-style: normal;
+        font-weight: 300;
+        font-size: .875rem;
+        line-height: 1.125rem;
+        margin-top: 1rem;
+
+        @media screen and (min-width:850px) {
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
+        
+        }
+    }
+}
+
+.alp-levels{
+
+    padding-top: 1.875rem;
+    padding-bottom: 3rem;
+    @media screen and (min-width:1350px) {
+        padding-top: 5rem;
+        }
+
+    &__container{
+        @media screen and (min-width:768px) {
+            display: flex;
+        }
+    }
+
+    &__list{
+        max-width: 19.5rem;
+        margin: auto;
+        margin-top: .75rem;
+        margin-bottom: 4.125rem;
+        @media screen and (min-width:768px) {
+            max-width: 40.5rem;
+            margin-bottom: 0;
+            }
+    }
+
+    &__item{
+        font-style: normal;
+        font-weight: 300;
+        font-size: .875rem;
+        line-height: 1.125rem;
+        margin-top: 1rem;
+        @media screen and (min-width:768px) {
+            margin-left: .9375rem;
+            }
+            @media screen and (min-width:1350px) {
+                font-size: 1.125rem;
+                line-height: 1.6875rem;
+                }
+    }
+
+    &__first{
+        @media screen and (min-width:768px) {
+        max-width: 28rem;
+        }
+
+        @media screen and (min-width:1350px) {
+            max-width: 32.75rem;
+            }
+
+        &__heading{
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.25rem;
+            line-height: 1.5625rem;
+            letter-spacing: -0.0313rem;
+            color: $color-dark-green;
+
+            @media screen and (min-width:1350px) {
+            font-size: 1.875rem;
+            line-height: 2.375rem;
+            max-width: 32.75rem;
+            }
+        }
+
+        &__text{
+            font-style: normal;
+            font-weight: 300;
+            font-size: .875rem;
+            line-height: 1.125rem;
+            margin-top: .625rem;
+
+            @media screen and (min-width:1350px) {
+            font-size: 1.125rem;
+            line-height: 1.6875rem;
+            }
+        }
+    }
+
+    &__second{
+        text-align: right;
+        display: flex;
+        justify-content: right;
+        max-width: 31.25rem;
+
+        @media screen and (min-width:500px) {
+            max-width: 36.25rem;
+        }
+
+        .shapes{
+            @media screen and (min-width:768px) {
+            position: absolute;
+            right: -158px;
+            top: 181px;
+            }
+
+            @media screen and (min-width:1350px) {
+            top: 19rem;
+            }
+        }
+        
+        &__text{
+            font-style: normal;
+            font-weight: 900;
+            font-size: 0.6875rem;
+            line-height: 0.875rem;
+            text-align: center;
+            letter-spacing: 0.05em;
+            margin-left: 1.9375rem;
+            color: white;
+            margin-top: .25rem;
+            max-width: 284px;
+
+            @media screen and (min-width:1350px) {
+            font-size: 1.25rem;
+            line-height: 1.875rem;
+            /* or 30px */
+            max-width: 43.375rem;
+            }    
+            @media screen and (min-width:1400px) {
+                max-width: 742px;
+                margin-top:10px;
+            }    
+        }
+
+        &__shape{
+            position: absolute;
+            height: 50px;
+            bottom: -4px;
+            right: -54px;
+            background: $color-blue;
+            border-radius: 581.67px 0px 0px 581.67px;
+            z-index: -1;
+            width: 21rem;
+
+            @media screen and (min-width:500px) {
+                width: 64vw;
+            }
+            @media screen and (min-width:1350px) {
+                height: 5rem;
+                right: 0;
+                
+            }
+            @media screen and (min-width:1400px) {
+                right: -35px;
+                
+            }
+
+        }
+        &__shape--secondary{
+            position: absolute;
+            height: 50px;
+            bottom: -15px;
+            right: -78px;
+            background: $color-dark-pink;
+            border-radius: 581.67px 0px 0px 581.67px;
+            z-index: -2;
+            width: 21rem;
+
+            @media screen and (min-width:500px) {
+                width: 64vw;
+            }
+        }
+    }
+}
+//-------------------------------------------------------------dosing page -------------------------------------------------------------    

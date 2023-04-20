@@ -2,6 +2,13 @@
 import PageHero from "../components/PageHero.astro";
 import Layout from "../layouts/Layout.astro";
 import CTA from "../components/CTA.astro";
+import InternalNavigation from "../components/InternalNavigation.astro";
+
+const internalNavLinks = [
+  { href: "dosing", label: "Dosing", active: true },
+  { href: "injection-site", label: "Injection-site reactions" },
+  { href: "alp-levels", label: "ALP levels" },
+];
 ---
 
 <Layout title="Dosing">
@@ -10,8 +17,127 @@ import CTA from "../components/CTA.astro";
       STRENSIQ offers<br /> at-home dosing
     </h1>
   </PageHero>
+
+  {
+    internalNavLinks && (
+      <InternalNavigation items={internalNavLinks} icon={false} />
+    )
+  }
+
+  <section id="dosing" class="section dosing wrapper">
+  
+    <div class="dosing__container">
+
+      <div class="dosing__first">
+        
+        <h2 class="dosing__first__title">Customize your patient’s dose</h2>
+        
+        <div class="dosing__first__text">
+          <p>STRENSIQ is a subcutaneous, weight-based 
+               injection that can be self-administered by patients 
+               or caregivers.</p>
+
+             <p>If patients with perinatal/infantile-onset hypophosphatasia experience lack of efficacy (no improvement in respiratory status, growth, or radiographic findings), dosage may be increased to 
+               3 mg/kg, 3 times per week.</p>
+
+               <p class="modifier">Patient’s weight should be checked regularly for optimal dosing.</p>
+            </div>  
+
+          </div>
+
+    <div class="dosing__second">
+
+      <h2 class='dosing__second__title'>The recommended dosage of STRENSIQ is 6 mg/kg of body weight per week, as either</h2>
+        
+      <div class="dosing__second__shapes">
+        <div class="dosing__second__shapes__container">
+          <div>
+            <p class="shape-heading">1 MG/KG</p>
+            <p class="shape-body">6x <span>per week</span></p>
+            <div class="steps-box__content-line"></div>
+          </div>
+          <div class="dosing__second__shape--one"></div>
+        </div>
+        
+        <div class="dosing__second__shapes__container modifier">
+          <div>
+            <p class="shape-heading">2 MG/KG</p>
+            <p class="shape-body">3x <span>per week</span></p>
+            <div class="steps-box__content-line modifier"></div>
+          </div>
+          <div class="dosing__second__shape--two"></div>
+        </div>
+        </div>
+        
+        <p class="pdf-text">To assist your patients who have been 
+          prescribed STRENSIQ</p>
+          
+          <button class="button button--tertiary">Download the Instructions for Use</button>
+          
+        </div>
+      </div>
+    </section>
+
+  <section id="injection-site" class="section  injection-site">
+    <div class="wrapper">
+      <div class="injection-site__container">
+    <div class="injection-site__first">
+      <h2 class="injection-site__first__title">Help patients minimize injection site reactions (ISRs)</h2>
+
+      <ul class="injection-site__list">
+        <li class="injection-site__item">Administer STRENSIQ 2 mg/kg, 3 times per week</li>
+        <li class="injection-site__item">Ensure patients remove STRENSIQ from the refrigerator 15 to 30 minutes prior to injection 
+          (and use within 3 hours)</li>
+        <li class="injection-site__item">Advise patients to rotate injection site</li>
+      </ul>
+      
+    </div>
+    
+    <div class="injection-site__second">
+      <p class="injection-site__second__sub-heading">Pro tip!</p>
+
+      <h2 class="injection-site__second__heading">OneSource™ case managers provide free,</h2>
+
+      <p class="injection-site__second__sub-text">personalized injection training</p>
+
+      <p class="injection-site__second__text">for enrolled patients</p>
+
+      <div class="steps-box__content-line"></div>
+      
+      <div class="injection-site__second__shape"></div>
+
+    </div>
+  </div>
+  </div>
+  </section>
+
+  <section id="alp-levels" class="section alp-levels">
+    <div class="wrapper">
+<div class="alp-levels__container">
+     <div class="alp-levels__first">
+       <h2 class="alp-levels__first__heading">When things aren’t level: alkaline phosphatase (ALP) levels can be elevated in patients taking STRENSIQ</h2>
+       <p class="alp-levels__first__text">Circulating concentrations of asfotase alfa may result in drastically elevated serum alkaline phosphatase levels.</p>
+       <ul class="alp-levels__list">
+         <li class="alp-levels__item">Alkaline phosphatase levels may increase into the thousands, with most notable changes occurring in the first 4 weeks of initiating therapy, and can remain dramatically elevated with continuous treatment</li>
+         <li class="alp-levels__item">Elevated alkaline phosphatase levels do not appear to have harmful effects in patients with hypophosphatasia</li>
+        </ul>
+      </div> 
+
+      <div class="alp-levels__second">
+        
+        <div class="shapes">
+          <div class="alp-levels__second__shape"><p class="alp-levels__second__text">Do not rely on serum alkaline phosphatase measurements for clinical decisions related to patients currently taking STRENSIQ</p></div>
+          <div class="alp-levels__second__shape--secondary"></div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+
   <CTA
-    heading="Getting started is easier  when you have the right tools"
+    heading="Getting started is easier when you have the right tools"
     linkText="Toolkit"
     linkUrl="/toolkit"
   />
