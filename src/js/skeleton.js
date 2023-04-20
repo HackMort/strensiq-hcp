@@ -173,7 +173,7 @@ function setLengthAfterElement (symptomsList, pointElement) {
   } else {
     const dataVerticalLine = pointElement.dataset.verticalLine
     if (dataVerticalLine === 'top') {
-      pointElement.style.setProperty('--point-active-after-height', '115px')
+      pointElement.style.setProperty('--point-active-after-height', '130px')
     } else {
       pointElement.style.setProperty('--point-active-after-height', '15px')
     }
