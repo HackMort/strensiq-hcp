@@ -1588,7 +1588,6 @@
 
                 .hypophosphatasia-container__paragraph {
                     left: 1.5625rem;
-                    max-width: 60ch;
                     padding: 1.125rem 6.25rem;
                     right: unset;
 
@@ -1604,6 +1603,10 @@
                 max-width: 40ch;
                 text-align: left;
                 margin-left: 1.25rem;
+
+                @media(min-width: 1061px) {
+                    max-width: 60ch;
+                }
 
                 @include media('desktop') {
                     max-width: 49ch;
