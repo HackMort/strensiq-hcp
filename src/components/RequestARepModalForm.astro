@@ -1,5 +1,5 @@
 <div id="request-a-rep-modal-form-template" style="display: none;">
-    <div class="request-a-rep__modal-form">
+    <div class="request-a-rep__modal-form" id="request-a-rep-modal-form">
         <div class="request-a-rep__wrapper">
             <div class="request-a-rep__header">
                 <div class="request-a-rep__actions">
@@ -350,22 +350,16 @@
     import { Fancybox } from "@fancyapps/ui";
 
     class RequestRepModal {
-        template: HTMLDivElement;
         modal: Fancybox;
 
         constructor() {
-            this.template = document.querySelector(
-                "#request-a-rep-modal-form-template"
-            );
-
             this.modal = undefined;
         }
 
         open() {
-            const html = this.template.cloneNode(true) as HTMLElement;
-            this.modal = new Fancybox([{ src: html.innerHTML }], {
+            this.modal = new Fancybox([{ src: 'request-a-rep-modal-form' }], {
                 autoFocus: true,
-                defaultType: "html",
+                defaultType: "inline",
                 placeFocusBack: true,
                 trapFocus: true,
                 closeButton: false,

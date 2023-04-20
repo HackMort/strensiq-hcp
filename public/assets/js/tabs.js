@@ -1,7 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const tablist = document.querySelector("ul[role='tablist']")
-  if (!tablist) return
-  const tabLinks = Array.from(tablist.querySelectorAll('a'))
+  const tablist = document.querySelectorAll("ul[role='tablist']")
+  if (!tablist || tablist.length === 0) {
+    return
+  }
+  const tabLinks = []
+  tablist.forEach((tabListItem) => {
+    const tabs = tabListItem.querySelectorAll("li[role='presentation']")
+    tabs.forEach((tabItem) => {
+      const link = tabItem.querySelector("a[role='tab']")
+      tabLinks.push(link)
+    })
+  })
+
   const panels = document.querySelectorAll("section[role='tabpanel']")
 
   const LEFT_ARROW = 'ArrowLeft'
@@ -11,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
   tabLinks.forEach(function (tab, i) {
     tab.addEventListener('click', (e) => {
       e.preventDefault()
-      const currentTab = tablist.querySelector('[aria-selected]')
+      const currentTabList = e.currentTarget.closest('ul[role="tablist"]')
+      const currentTab = currentTabList.querySelector('[aria-selected]')
       if (e.currentTarget !== currentTab) {
         switchTab(currentTab, e.currentTarget)
       }
