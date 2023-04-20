@@ -1,0 +1,11 @@
+---
+type Props = {
+    id: string;
+};
+
+const { id } = Astro.props;
+---
+
+<article id={id} class="accordion-mobile">
+    <slot />
+</article>

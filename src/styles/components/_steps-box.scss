@@ -1,27 +1,32 @@
-.steps-box{
+.steps-box {
     max-width: 21.25rem;
     margin: auto;
     margin-bottom: 1.75rem;
+
     @include media('tablet') {
         margin: .3125rem;
     }
+
     @media screen and (min-width:1300px) {
         max-width: 23.875rem;
     }
+
     @media screen and (min-width:1100px) {
         margin: 0;
     }
 
-    &__title{
+    &__title {
         font-style: normal;
         font-weight: 400;
         font-size: 3.125rem;
         line-height: 4.5rem;
         letter-spacing: -0.03em;
         color: $color-dark-green;
+
         @media screen and (min-width:768px) {
             font-size: 2.5rem;
         }
+
         @media screen and (min-width:1024px) {
             line-height: 3.5rem;
             font-size: 3rem;
@@ -32,13 +37,14 @@
         }
     }
 
-    &__heading{
+    &__heading {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding-right: 2rem;
+
         @media screen and (min-width:1024px) {
-            min-height: 4.4725rem;
+            min-height: 4.5rem;
         }
 
         @media screen and (min-width:1366px) {
@@ -46,11 +52,11 @@
         }
     }
 
-    &__image{
+    &__image {
         width: 2.5625rem;
     }
 
-    &__content-line{
+    &__content-line {
         height: .75rem;
         max-width: 21.25rem;
         background-color: $color-green;
@@ -58,7 +64,7 @@
         margin-bottom: 1.375rem;
     }
 
-    &__text{
+    &__text {
         font-style: normal;
         font-weight: 500;
         font-size: 1rem;
@@ -72,14 +78,15 @@
         }
     }
 
-    a{
+    button {
         width: 100%;
         display: flex;
         justify-content: center;
         margin-top: 2.1875rem;
         margin-bottom: 1rem;
+
         @include media('tablet') {
-            max-width: 11.9375rem;
+            max-width: 13rem;
             margin-bottom: 0;
         }
     }

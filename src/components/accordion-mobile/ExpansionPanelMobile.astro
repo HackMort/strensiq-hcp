@@ -1,0 +1,19 @@
+---
+type Props = {
+    accordionId: string,
+    title: string
+}
+const baseClass = 'expansion-panel-mobile'
+const { accordionId, title } = Astro.props
+
+const id = Math.floor((Math.random() * Date.now()) + 1).toString()
+---
+
+<div class={baseClass} data-accordion-id={accordionId} id={id} aria-expanded="false">
+    <button class={`button button--drawer ${baseClass}__button`}>
+        {title}
+    </button>
+    <div class={`${baseClass}__content`}>
+        <slot/>
+    </div>
+</div>

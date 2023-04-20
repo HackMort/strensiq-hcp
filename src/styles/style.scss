@@ -16,8 +16,9 @@
 @import './components/_tabs.scss';
 @import './components/_cta.scss';
 @import './components/_footer.scss';
-@import './components/work-box';
-@import './components/steps-box';
+@import './components/work-box.scss';
+@import './components/steps-box.scss';
+@import './components/tip-box.scss';
 @import './components/exit-modal';
 @import './components/_main-hero.scss';
 @import './components/_page-hero.scss';
@@ -27,6 +28,10 @@
 @import './components/_request-rep-modal.scss';
 @import './components/_form.scss';
 @import './components/_skeleton.scss';
+@import './components/_clinical-study.scss';
+@import './components/_accordion-mobile.scss';
+@import './components/_radiographic-comparator.scss';
+@import './components/_custom-title.scss';
 @import './components/_highlight-information.scss';
 
 
@@ -185,6 +190,7 @@
 
     @include media('tablet') {
         margin-top: 3rem;
+        margin-bottom: 4rem;
     }
 
     &__desc {
@@ -222,6 +228,534 @@
 
         @media screen and (min-width:1366px) {
             line-height: 4.5rem;
+        }
+    }
+
+    .tip__box {
+        margin-top: 0rem;
+
+        @include media('tablet') {
+            margin-top: 2rem;
+        }
+    }
+}
+
+.toolkit__strensiq {
+    position: relative;
+    background-color: $color-soft-gray;
+    overflow-x: hidden;
+    padding-top: 2rem;
+    // padding-bottom: 2rem;
+
+    .wrapper {
+        @media screen and (min-width: 1440px) {
+            overflow-x: hidden;
+        }
+    }
+
+    .toolkit__grid {
+        @media screen and (min-width: 1100px) {
+            display: grid;
+            grid-template-columns: 380px 308px 1fr;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        @media screen and (min-width: 1200px) {
+            grid-template-columns: 450px 308px 1fr;
+            gap: 4rem;
+        }
+
+        @media screen and (min-width: 1400px) {
+            grid-template-columns: 500px 308px 1fr;
+            gap: 5rem;
+        }
+    }
+
+    &_title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.5625rem;
+        color: $color-dark-green;
+        margin-bottom: 1.5rem;
+
+        br {
+            display: none;
+
+            @include media('tablet') {
+                display: block;
+            }
+        }
+
+        sup {
+            top: .3125rem;
+            font-size: 1.75rem;
+        }
+
+        @include media('tablet') {
+            font-size: 1.875rem;
+            line-height: 2.3438rem;
+            margin-top: 2rem;
+            max-width: 33.25rem;
+        }
+
+        @media screen and (min-width: 1100px) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &_os {
+        position: relative;
+        display: grid;
+        padding-top: 2.5rem;
+        padding-right: 1.5rem;
+        padding-bottom: 2.5rem;
+
+        @media screen and (min-width: 1100px) {
+            padding-top: 2rem;
+            padding-right: 3rem;
+            padding-bottom: 1rem;
+        }
+
+        @media screen and (min-width: 1440px) {
+            padding-right: 3rem;
+            padding-left: 3rem;
+        }
+
+        >* {
+            position: relative;
+            font-size: .875rem;
+            line-height: 1.125rem;
+            z-index: 2;
+
+            @media screen and (min-width: 600px) {
+                font-size: 1rem;
+                line-height: 1.25rem;
+            }
+
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -2rem;
+            background-color: $color-white;
+            border-radius: 0px 368px 368px 0px;
+            height: 100%;
+            width: 118%;
+            z-index: 1;
+
+
+            @media screen and (min-width: 1100px) {
+                left: -4rem;
+            }
+
+        }
+
+    }
+
+    &_os_title {
+        color: $color-dark-green;
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.5625rem;
+
+        sup {
+            top: .3125rem;
+            font-size: 1.75rem;
+        }
+
+        @media screen and (min-width: 1200px) {}
+    }
+
+    &_os_image {
+        height: auto;
+        margin-bottom: 1rem;
+        width: 7.6269rem;
+
+        @include media('tablet') {
+            width: 10.125rem;
+        }
+    }
+
+    p {
+        margin-bottom: .6875rem;
+
+        @media screen and (min-width: 1100px) {
+            font-size: 1.125rem;
+            line-height: 27px;
+        }
+    }
+
+    ul {
+        color: $color-dark-gray;
+        margin-bottom: .3125rem;
+        margin-left: 1rem;
+
+        @media screen and (min-width: 1100px) {
+            font-size: 1.125rem;
+            line-height: 27px;
+        }
+    }
+
+    ul li {
+        margin-bottom: .625rem;
+        font-style: normal;
+        font-weight: 300;
+
+        &::marker {
+            display: none;
+        }
+    }
+
+    .phone {
+        color: $color-dark-gray !important;
+        font-weight: bolder;
+    }
+
+    &_os.strensiq__panther {
+        padding-right: 0.75rem;
+        padding-bottom: 0;
+
+        @media screen and (min-width: 1100px) {
+            padding-top: 1rem;
+        }
+
+        @media screen and (min-width: 1365px) {
+            padding-left: 0;
+        }
+
+        &::before {
+            display: none;
+        }
+
+        .toolkit__strensiq_os_image {
+            width: 10rem;
+
+            @include media('tablet') {
+                width: 11rem;
+            }
+        }
+    }
+
+    .contact__info {
+        position: relative;
+        font-weight: 900;
+        margin-bottom: 2rem;
+        padding-top: 2rem;
+        padding-right: 0;
+        padding-bottom: 2rem;
+        padding-left: 1rem;
+
+        @include media('tablet') {
+            padding-left: 2rem;
+        }
+
+        @media screen and (min-width: 1100px) {
+            align-self: flex-end;
+            margin-bottom: 1rem;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -2rem;
+            background-color: $color-white;
+            border-radius: 0px 368px 368px 0px;
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+            height: 100%;
+            width: 118%;
+            z-index: 1;
+
+            @media screen and (min-width: 1100px) {
+                width: 300%;
+            }
+        }
+
+        p {
+            color: $color-dark-gray;
+            font-size: .875rem;
+            font-weight: 900;
+            line-height: 1.3125rem;
+
+            @include media('tablet') {
+                font-size: 1.125rem;
+                line-height: 1.6875rem;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.toolkit__patient {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    &_title {
+        color: $color-dark-green;
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.5625rem;
+        margin-bottom: 1.3125rem;
+
+        @media screen and (min-width: 1100px) {
+            font-size: 1.875rem;
+            line-height: 38px;
+        }
+    }
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    .pro__tip {
+        position: relative;
+        font-size: .875rem;
+        line-height: 1.3125rem;
+        margin-top: 1rem;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+
+        @media screen and (min-width: 1100px) {
+            padding-top: 2rem;
+            padding-bottom: 0;
+            padding-left: 5rem;
+
+            .wrapper {
+                max-width: 100%;
+            }
+
+        }
+
+        @media screen and (min-width: 1365px) {
+            padding-top: 6rem;
+            padding-left: 10rem;
+        }
+
+        @media screen and (min-width: 1440px) {
+            padding-left: 12rem;
+        }
+
+
+        >* {
+            position: relative;
+            z-index: 2;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -165%;
+            background-color: $color-dark-green;
+            border-top-right-radius: 581.67px;
+            height: 100%;
+            width: 1084.45px;
+            z-index: 1;
+
+            @media screen and (min-width: 375px) {
+                left: -145%;
+            }
+
+            @media screen and (min-width: 425px) {
+                left: -110%;
+            }
+
+            @media screen and (min-width: 480px) {
+                left: -80%;
+            }
+
+            @media screen and (min-width: 600px) {
+                left: -50%;
+            }
+
+            @media screen and (min-width: 768px) {
+                left: -30%;
+            }
+
+            @media screen and (min-width: 1100px) {
+                display: none;
+                // width: 1645.73px;
+                // height: 928.19px;
+                // transform: rotate(-61.71deg);
+                // left: auto;
+                // right: -507.5px;
+                // top: 230px;
+            }
+
+
+        }
+
+        &_text {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.4375rem;
+            text-transform: uppercase;
+        }
+
+        &_title {
+            position: relative;
+            color: $color-white;
+            font-size: 2.25rem;
+            font-weight: 900;
+            line-height: 2.1875rem;
+            margin-bottom: 2rem;
+            max-width: 17.5rem;
+
+            @media screen and (min-width: 1100px) {
+                font-size: 4.375rem;
+                letter-spacing: -0.03em;
+                line-height: 3.9375rem;
+                margin-bottom: 2.5rem;
+                max-width: 21.25rem;
+
+                span {
+                    font-size: 3rem;
+                    font-weight: 900;
+                    line-height: 2.5rem;
+                    display: block;
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -1rem;
+                left: 0;
+                background-color: $color-green;
+                height: .75rem;
+                width: 105%;
+
+                @media screen and (min-width: 375px) {
+                    width: 120%;
+                }
+
+                @media screen and (min-width: 1100px) {
+                    bottom: -1.5rem;
+                    width: 100%;
+                }
+            }
+
+        }
+
+        p,
+        ul {
+            color: $color-white;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-bottom: 1rem;
+            max-width: 400px;
+
+            @media screen and (min-width: 768px) {
+                max-width: 600px;
+            }
+
+            @media screen and (min-width: 1100px) {
+                max-width: 540px;
+            }
+        }
+
+        ul ul {
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+
+            @media screen and (min-width: 1100px) {
+                margin-left: 2.5rem;
+            }
+
+            li {
+                list-style-type: circle;
+
+                &::marker {
+                    color: $color-white;
+                }
+
+            }
+        }
+
+    }
+
+    .grid {
+        position: relative;
+
+        &__column {
+            // position: relative;
+            // z-index: 2;
+        }
+
+        @media screen and (min-width: 1100px) {
+            display: grid;
+            grid-template-columns: 500px 1fr;
+            align-items: center;
+            gap: 4rem;
+            margin-top: 2rem;
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 90rem;
+            min-height: 700px;
+            padding: 0 2.2813rem;
+            overflow: hidden;
+
+            .wrapper {
+                margin: 0;
+            }
+
+            &__left {
+                @media screen and (min-width: 1365px) {
+                    .wrapper {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 1440px) {
+            // padding: 0 4.2813rem;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+
+        &::before {
+            content: '';
+            display: none;
+            position: absolute;
+            top: 330px;
+            right: 0;
+            left: -40px;
+            background-color: $color-dark-green;
+            border-radius: 581.67px;
+            height: 928.19px;
+            transform: rotate(-61.71deg);
+            width: 1645.73px;
+
+            @media screen and (min-width: 1100px) {
+                display: block;
+            }
+
+            @media screen and (min-width: 1365px) {
+                left: 40px;
+            }
+
+            @media screen and (min-width: 1440px) {
+                left: 70px;
+            }
+        }
+    }
+
+}
+
+.toolkit__cta {
+    @media screen and (max-width: 375px) {
+        .cta__heading {
+            max-width: 100%;
         }
     }
 }
@@ -1275,3 +1809,128 @@
         max-width: 100%;
     }
 }
+
+
+//------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
+.infants-young-children__hpp-related-rickets {
+    padding-top: 1.625rem;
+    padding-bottom: 1.8125rem;
+
+    background: $color-white;
+
+    .radiographic-images-desktop {
+        display: none;
+    }
+
+    @media screen and (min-width: 1024px) {
+        padding-top: 4.375rem;
+
+        .hpp-related-rickets__content {
+            display: grid;
+            grid-template-columns: 25rem 1fr;
+        }
+
+        .radiographic-images-mobile {
+            display: none;
+        }
+
+        .radiographic-images-desktop {
+            display: block;
+        }
+    }
+
+    @media screen and (min-width: 1100px) {
+        height: 48.75rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+        height: 51.8125rem;
+    }
+
+    @media screen and (min-width: 1440px) {
+        .hpp-related-rickets__content {
+            grid-template-columns: 29.9375rem 1fr;
+        }
+
+        .radiographic-images-desktop {
+            max-width: 50.625rem;
+            margin-left: auto;
+        }
+    }
+
+    .hpp-related-rickets__title {
+        color: $color-dark-green;
+        margin-bottom: .625rem;
+    }
+
+    .hpp-related-rickets__description {
+        font-size: .875rem;
+        line-height: 17.5px;
+        font-weight: 300;
+        margin-bottom: 1.625rem;
+
+        @media screen and (min-width: 1440px) {
+            font-size: 1.125rem;
+        }
+    }
+
+    .clinical-studies {
+        margin-bottom: 1.1875rem;
+    }
+
+    .clinical-studies__footer-note {
+        font-size: .75rem;
+        font-weight: 14.4px;
+        font-weight: 300;
+    }
+
+    .hpp-related-rickets__content-right {
+
+        .custom-title {
+            margin-bottom: 1.875rem;
+        }
+
+        [role=tablist] {
+            width: calc(100% - 4.125rem);
+            justify-content: center;
+        }
+
+        [role=tablist] a {
+            padding-left: 4.75rem;
+            padding-right: 4.75rem;
+        }
+
+        [role=tabpanel] {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+
+            max-width: fit-content;
+            margin-left: auto;
+        }
+
+        .radiographic-comparator [data-radiographic-footer] {
+            margin-bottom: 1.625rem;
+        }
+
+        .radiographic-images-mobile__title {
+            font-weight: 600;
+            color: $color-dark-gray;
+            margin-bottom: .8125rem;
+        }
+
+        @media screen and (min-width: 1024px) {
+            position: absolute;
+            right: -2.1406rem;
+            top: 0px;
+            height: 100%;
+            width: calc(100% - 400px);
+        }
+
+        @media screen and (min-width: 1366px) {
+            right: -4.1406rem;
+        }
+    }
+}
+
+//------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
