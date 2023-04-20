@@ -493,6 +493,11 @@
         font-weight: 700;
         line-height: 1.5625rem;
         margin-bottom: 1.3125rem;
+
+        @media screen and (min-width: 1100px) {
+            font-size: 1.875rem;
+            line-height: 38px;
+        }
     }
 
     p {
@@ -506,6 +511,18 @@
         margin-top: 1rem;
         padding-top: 2rem;
         padding-bottom: 1rem;
+
+        @media screen and (min-width: 1100px) {
+            padding-top: 2rem;
+            padding-bottom: 0;
+            padding-left: 5rem;
+
+
+            .wrapper {
+                max-width: 100%;
+            }
+
+        }
 
         >* {
             position: relative;
@@ -544,12 +561,13 @@
             }
 
             @media screen and (min-width: 1100px) {
-                width: 1645.73px;
-                height: 928.19px;
-                transform: rotate(-61.71deg);
-                left: auto;
-                right: -507.5px;
-                top: 230px;
+                display: none;
+                // width: 1645.73px;
+                // height: 928.19px;
+                // transform: rotate(-61.71deg);
+                // left: auto;
+                // right: -507.5px;
+                // top: 230px;
             }
 
 
@@ -619,17 +637,46 @@
     }
 
     .grid {
+        position: relative;
+
         &__column {
-            position: relative;
-            z-index: 2;
+            // position: relative;
+            // z-index: 2;
         }
 
         @media screen and (min-width: 1100px) {
             display: grid;
             grid-template-columns: 500px 1fr;
             align-items: center;
-            min-height: 600px;
-            overflow-y: hidden;
+            margin-top: 2rem;
+            margin-right: auto;
+            margin-left: auto;
+            min-height: 700px;
+            padding: 0 2.2813rem;
+            overflow: hidden;
+
+            .wrapper {
+                margin: 0;
+            }
+
+        }
+
+        &::before {
+            content: '';
+            display: none;
+            position: absolute;
+            top: 330px;
+            right: 0;
+            left: -40px;
+            background-color: $color-dark-green;
+            border-radius: 581.67px;
+            height: 928.19px;
+            transform: rotate(-61.71deg);
+            width: 1645.73px;
+
+            @media screen and (min-width: 1100px) {
+                display: block;
+            }
         }
     }
 
