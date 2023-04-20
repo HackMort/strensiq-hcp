@@ -1,0 +1,99 @@
+.tip__wrapper {
+  display: block;
+  margin: 0 auto;
+  max-width: 90.625rem;
+  overflow-x: hidden;
+}
+
+.tip__box {
+  position: relative;
+  background-color: $color-bright-gray;
+  border-radius: 0px 581.67px 581.67px 0px;
+  color: $color-dark-green;
+  font-size: .875rem;
+  font-weight: 300;
+  line-height: 1.0625rem;
+  padding-top: .8125rem;
+  padding-right: 1rem;
+  padding-bottom: .8125rem;
+  padding-left: 1rem;
+  margin-top: 2rem;
+  margin-right: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 30rem;
+
+  @include media('tablet') {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    padding-top: 1.5rem;
+    padding-right: 2rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2rem;
+    max-width: 42.5rem;
+  }
+
+  @media screen and (min-width: 1366px) {
+    max-width: 44.6875rem;
+  }
+
+  @media screen and (min-width: 1600px) {
+    max-width: 44.6875rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: .625rem;
+    left: -1.875rem;
+    width: 100%;
+    height: 100%;
+    background-color: $color-green;
+    border-radius: 0px 581.67px 581.67px 0px;
+    z-index: -1;
+
+    @include media('tablet') {
+      top: 1rem;
+      left: -3.75rem;
+    }
+  }
+
+  a,
+  button {
+    display: inline-block;
+    color: $color-dark-pink;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  &.align-right {
+    background: $color-blue;
+    color: $color-white;
+    border-radius: 95.5px 0px 0px 95.5px;
+    margin-left: 1.5rem;
+    margin-right: 0;
+    text-align: center;
+
+    @media screen and (min-width: 500px) {
+      margin-left: auto;
+    }
+
+    @include media('tablet') {
+      text-align: left;
+      max-width: 43.75rem
+    }
+
+    &::before {
+      left: auto;
+      right: -1.875rem;
+      background-color: $color-dark-pink;
+      border-radius: 581.67px 0px 0px 581.67px;
+
+      @include media('tablet') {
+        right: -3.75rem;
+      }
+    }
+
+  }
+
+
+}
