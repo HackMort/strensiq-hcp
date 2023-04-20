@@ -5,6 +5,7 @@ import StepsBox from "../components/StepsBox.astro";
 import TipBox from "../components/TipBox.astro";
 import InternalNavigation from "../components/InternalNavigation.astro";
 import CTA from "../components/CTA.astro";
+import ToolkitModal from "../components/ToolkitModal.astro";
 
 const internalNavLinks = [
   { href: "start", label: "Getting Started", active: true },
@@ -65,7 +66,7 @@ const internalNavLinks = [
     <TipBox classNames="toolkit__tip">
       <strong>PRO TIP!</strong> To streamline the STRENSIQ fulfillment process, consult
       your Alexion team for guidance on required documentation prior to submitting
-      any <button>forms</button> to the specialty pharmacy.
+      any <button class="toolkit-modal">forms</button> to the specialty pharmacy.
     </TipBox>
   </section>
   <section id="strensiq" class="section toolkit__strensiq">
@@ -213,3 +214,4 @@ const internalNavLinks = [
     linkTarget="_blank"
   />
 </Layout>
+<ToolkitModal />
