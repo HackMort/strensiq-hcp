@@ -129,7 +129,7 @@ function highlightActiveInternalNavOnScroll (headerInnerHeight) {
   const internalNav = document.querySelector('.internal__nav_list')
   const activeLi = document.querySelector('.internal__nav_list_item.is--active') || internalNavItems[0]
   const sections = document.querySelectorAll('.section')
-  const headerHeight = screen.width > 768 ? headerInnerHeight + 150 : headerInnerHeight + 200;
+  const headerHeight = screen.width > 768 ? headerInnerHeight + 150 : headerInnerHeight + 200
   const sectionObserverOptions = {
     root: null,
     rootMargin: '0px',
@@ -137,7 +137,7 @@ function highlightActiveInternalNavOnScroll (headerInnerHeight) {
   }
   const sectionObserver = new window.IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      console.log(entry.target.getAttribute('id'), 'entry.target.getAttribute(id)')
+      // console.log(entry.target.getAttribute('id'), 'entry.target.getAttribute(id)')
       // Distance between the top of the section and the top of the viewport
       const sectionTop = entry.boundingClientRect.top
 
@@ -174,23 +174,22 @@ function highlightActiveInternalNavOnScroll (headerInnerHeight) {
   * It requires IntersectionObserver API
   * * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 */
-let prevScrollpos = window.pageYOffset;
-let marginYOff = 300;
+let prevScrollpos = window.pageYOffset
+let marginYOff = 300
 
-window.addEventListener('scroll', function() {
-  let currentScrollPos = window.pageYOffset;
+window.addEventListener('scroll', function () {
+  const currentScrollPos = window.pageYOffset
   if (prevScrollpos > currentScrollPos) {
-    marginYOff = screen.width > 768 ? 250 : 200;
+    marginYOff = screen.width > 768 ? 250 : 200
   } else {
-    marginYOff = 300;
+    marginYOff = 300
   }
-  prevScrollpos = currentScrollPos;
+  prevScrollpos = currentScrollPos
 })
 
 function setActiveIternalNavItemOnClick () {
   const internalNav = document.querySelector('.internal__nav')
   const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
-  
 
   internalNav &&
   internalNav.addEventListener('click', (e) => {
@@ -208,14 +207,12 @@ function setActiveIternalNavItemOnClick () {
         top: totalOffset,
         behavior: 'smooth'
       })
-
     }
 
     // Remove class is--active from all internal navigation items
     internalNavItems.forEach((item) => {
       item.classList.remove('is--active')
     })
-
   })
 }
 
