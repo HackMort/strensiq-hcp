@@ -297,6 +297,10 @@
             margin-top: 2rem;
             max-width: 33.25rem;
         }
+
+        @media screen and (min-width: 1100px) {
+            margin-bottom: 2rem;
+        }
     }
 
     &_os {
@@ -417,8 +421,8 @@
             padding-top: 1rem;
         }
 
-        @media screen and (min-width: 1200px) {
-            // padding-left: 1rem;
+        @media screen and (min-width: 1365px) {
+            padding-left: 0;
         }
 
         &::before {
@@ -497,6 +501,11 @@
         font-weight: 700;
         line-height: 1.5625rem;
         margin-bottom: 1.3125rem;
+
+        @media screen and (min-width: 1100px) {
+            font-size: 1.875rem;
+            line-height: 38px;
+        }
     }
 
     p {
@@ -510,6 +519,27 @@
         margin-top: 1rem;
         padding-top: 2rem;
         padding-bottom: 1rem;
+
+        @media screen and (min-width: 1100px) {
+            padding-top: 2rem;
+            padding-bottom: 0;
+            padding-left: 5rem;
+
+            .wrapper {
+                max-width: 100%;
+            }
+
+        }
+
+        @media screen and (min-width: 1365px) {
+            padding-top: 6rem;
+            padding-left: 10rem;
+        }
+
+        @media screen and (min-width: 1440px) {
+            padding-left: 12rem;
+        }
+
 
         >* {
             position: relative;
@@ -548,12 +578,13 @@
             }
 
             @media screen and (min-width: 1100px) {
-                width: 1645.73px;
-                height: 928.19px;
-                transform: rotate(-61.71deg);
-                left: auto;
-                right: -507.5px;
-                top: 230px;
+                display: none;
+                // width: 1645.73px;
+                // height: 928.19px;
+                // transform: rotate(-61.71deg);
+                // left: auto;
+                // right: -507.5px;
+                // top: 230px;
             }
 
 
@@ -573,7 +604,22 @@
             font-weight: 900;
             line-height: 2.1875rem;
             margin-bottom: 2rem;
-            max-width: 280px;
+            max-width: 17.5rem;
+
+            @media screen and (min-width: 1100px) {
+                font-size: 4.375rem;
+                letter-spacing: -0.03em;
+                line-height: 3.9375rem;
+                margin-bottom: 2.5rem;
+                max-width: 21.25rem;
+
+                span {
+                    font-size: 3rem;
+                    font-weight: 900;
+                    line-height: 2.5rem;
+                    display: block;
+                }
+            }
 
             &::before {
                 content: '';
@@ -586,6 +632,11 @@
 
                 @media screen and (min-width: 375px) {
                     width: 120%;
+                }
+
+                @media screen and (min-width: 1100px) {
+                    bottom: -1.5rem;
+                    width: 100%;
                 }
             }
 
@@ -604,11 +655,19 @@
             @media screen and (min-width: 768px) {
                 max-width: 600px;
             }
+
+            @media screen and (min-width: 1100px) {
+                max-width: 540px;
+            }
         }
 
         ul ul {
             margin-top: 0.5rem;
             margin-bottom: 0;
+
+            @media screen and (min-width: 1100px) {
+                margin-left: 2.5rem;
+            }
 
             li {
                 list-style-type: circle;
@@ -623,17 +682,70 @@
     }
 
     .grid {
+        position: relative;
+
         &__column {
-            position: relative;
-            z-index: 2;
+            // position: relative;
+            // z-index: 2;
         }
 
         @media screen and (min-width: 1100px) {
             display: grid;
             grid-template-columns: 500px 1fr;
             align-items: center;
-            min-height: 600px;
-            overflow-y: hidden;
+            gap: 4rem;
+            margin-top: 2rem;
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 90rem;
+            min-height: 700px;
+            padding: 0 2.2813rem;
+            overflow: hidden;
+
+            .wrapper {
+                margin: 0;
+            }
+
+            &__left {
+                @media screen and (min-width: 1365px) {
+                    .wrapper {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 1440px) {
+            // padding: 0 4.2813rem;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+
+        &::before {
+            content: '';
+            display: none;
+            position: absolute;
+            top: 330px;
+            right: 0;
+            left: -40px;
+            background-color: $color-dark-green;
+            border-radius: 581.67px;
+            height: 928.19px;
+            transform: rotate(-61.71deg);
+            width: 1645.73px;
+
+            @media screen and (min-width: 1100px) {
+                display: block;
+            }
+
+            @media screen and (min-width: 1365px) {
+                left: 40px;
+            }
+
+            @media screen and (min-width: 1440px) {
+                left: 70px;
+            }
         }
     }
 
@@ -1297,4 +1409,5 @@
         }
     }
 }
+
 //------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
