@@ -1,0 +1,44 @@
+<div class="clinical-data-modal" id="clinical-data-modal" style="display: none;">
+
+</div>
+
+<script>
+
+    import { Fancybox } from "@fancyapps/ui";
+
+    class ClinicalDataModal {
+        modal: Fancybox;
+
+        constructor() {
+            this.modal = undefined;
+        }
+
+        open() {
+            this.modal = new Fancybox([{ src: 'clinical-data-modal' }], {
+                autoFocus: true,
+                defaultType: "inline",
+                placeFocusBack: true,
+                trapFocus: true,
+                closeButton: false,
+                height: "auto",
+            });
+        }
+
+        close() {
+            this.modal.close();
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const requestRepModal = new ClinicalDataModal();
+
+        const buttons = document.querySelectorAll(
+            "button.button--pich-to-zoom"
+        );
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                requestRepModal.open();
+            });
+        });
+    });
+</script>
