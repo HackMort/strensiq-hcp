@@ -134,5 +134,28 @@
     }
   }
 
+  &--pich-to-zoom {
+    width: 2.375rem;
+    height: 2.375rem;
+    background: $color-bright-gray;
+    padding: 0;
 
+    &::after {
+        content: url("/assets/icons/icon-arrows-expand-pink.svg");
+        background-image: none;
+        border-radius: inherit;
+        margin: 0;
+        height: initial;
+        width: 100%;
+      }
+
+    &:hover,
+    &:focus {
+      background: $color-bright-gray;
+
+      &::after {
+        background-image: none;
+      }
+    }
+  }
 }

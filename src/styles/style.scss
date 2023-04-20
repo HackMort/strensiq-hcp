@@ -2008,6 +2008,13 @@
         margin-bottom: 1.875rem;
         max-width: 46.125rem;
         margin-left: auto;
+        position: relative;
+
+        .button--pich-to-zoom {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
 
         @media screen and (min-width: 1024px) {
             margin-bottom: 0;

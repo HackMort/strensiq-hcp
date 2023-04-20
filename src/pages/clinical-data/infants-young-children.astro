@@ -9,6 +9,7 @@ import ExpansionPanelMobile from '../../components/accordion-mobile/ExpansionPan
 import RadiographicImagesComparator from '../../components/RadiographicImagesComparator.astro';
 import CustomTitle from '../../components/CustomTitle.astro';
 import TipBox from "../../components/TipBox.astro";
+import ClinicalDataModal from '../../components/clinical-data/ClinicalDataModal.astro';
 const internalNavLinks = [
   { href: "hpp-related-rickets", label: "HPP-related rickets", active: true },
   { href: "survival", label: "Survival" },
@@ -252,6 +253,7 @@ const internalNavLinks = [
         <div class="infants-young-children__survival-chart">
             <div class="wrapper wrapper--only-left">
                 <div class="infants-young-children__survival-chart-wrapper">
+                    <button class="button button--pich-to-zoom"></button>
                     <picture>
                         <img src="/assets/images/clinical-data/infants-young-children/Invasive_Ventilation_free_survival_Desktop.png" alt="">
                     </picture>
@@ -275,5 +277,6 @@ const internalNavLinks = [
     linkUrl="/clinical-data/children"
   />
   <References />
+  <ClinicalDataModal></ClinicalDataModal>
   <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"></script>
 </Layout>
