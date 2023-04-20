@@ -91,3 +91,9 @@ main {
     color: $color-green;
   }
 }
+
+sup.symbol-sup {
+    font-size: inherit;
+    line-height: 0;
+    top: initial;
+}
