@@ -1,16 +1,20 @@
 ---
 type Props = {
   heading: string;
+  text?: string;
   linkText: string;
   linkUrl: string;
   linkTarget?: string;
+  classNames?: string;
 };
 
-const { heading, linkText, linkUrl, linkTarget } = Astro.props;
+const { heading, text, classNames, linkText, linkUrl, linkTarget } =
+  Astro.props;
 ---
 
-<div class="cta">
+<div class={`cta ${classNames ? classNames : ""}`}>
   <h3 class="cta__heading" set:html={heading} />
+  {text && <p class="cta__text" set:html={text} />}
   <a
     class="button button--white cta__link"
     href={linkUrl}
