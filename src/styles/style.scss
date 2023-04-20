@@ -28,6 +28,10 @@
 @import './components/_request-rep-modal.scss';
 @import './components/_form.scss';
 @import './components/_skeleton.scss';
+@import './components/_clinical-study.scss';
+@import './components/_accordion-mobile.scss';
+@import './components/_radiographic-comparator.scss';
+@import './components/_custom-title.scss';
 
 
 //-------------------------------------------------------------lets work together section-------------------------------------------------------------
@@ -1171,3 +1175,126 @@
         }
     }
 }
+
+//------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
+.infants-young-children__hpp-related-rickets {
+    padding-top: 1.625rem;
+    padding-bottom: 1.8125rem;
+
+    background: $color-white;
+
+    .radiographic-images-desktop {
+        display: none;
+    }
+
+    @media screen and (min-width: 1024px) {
+        padding-top: 4.375rem;
+
+        .hpp-related-rickets__content {
+            display: grid;
+            grid-template-columns: 25rem 1fr;
+        }
+
+        .radiographic-images-mobile {
+            display: none;
+        }
+
+        .radiographic-images-desktop {
+            display: block;
+        }
+    }
+
+    @media screen and (min-width: 1100px) {
+        height: 48.75rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+        height: 51.8125rem;
+    }
+
+    @media screen and (min-width: 1440px) {
+        .hpp-related-rickets__content {
+            grid-template-columns: 29.9375rem 1fr;
+        }
+
+        .radiographic-images-desktop {
+            max-width: 50.625rem;
+            margin-left: auto;
+        }
+    }
+
+    .hpp-related-rickets__title {
+        color: $color-dark-green;
+        margin-bottom: .625rem;
+    }
+
+    .hpp-related-rickets__description {
+        font-size: .875rem;
+        line-height: 17.5px;
+        font-weight: 300;
+        margin-bottom: 1.625rem;
+
+        @media screen and (min-width: 1440px) {
+            font-size: 1.125rem;
+        }
+    }
+
+    .clinical-studies {
+        margin-bottom: 1.1875rem;
+    }
+
+    .clinical-studies__footer-note {
+        font-size: .75rem;
+        font-weight: 14.4px;
+        font-weight: 300;
+    }
+
+    .hpp-related-rickets__content-right {
+
+        .custom-title {
+            margin-bottom: 1.875rem;
+        }
+
+        [role=tablist] {
+            width: calc(100% - 4.125rem);
+            justify-content: center;
+        }
+
+        [role=tablist] a {
+            padding-left: 4.75rem;
+            padding-right: 4.75rem;
+        }
+
+        [role=tabpanel] {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+
+            max-width: fit-content;
+            margin-left: auto;
+        }
+
+        .radiographic-comparator [data-radiographic-footer] {
+            margin-bottom: 1.625rem;
+        }
+
+        .radiographic-images-mobile__title {
+            font-weight: 600;
+            color: $color-dark-gray;
+            margin-bottom: .8125rem;
+        }
+
+        @media screen and (min-width: 1024px) {
+            position: absolute;
+            right: -2.1406rem;
+            top: 0px;
+            height: 100%;
+            width: calc(100% - 400px);
+        }
+
+        @media screen and (min-width: 1366px) {
+            right: -4.1406rem;
+        }
+    }
+}
+//------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
