@@ -1963,7 +1963,7 @@
     .infants-young-children__survival-content {
         @media screen and (min-width: 1024px) {
             display: grid;
-            grid-template-columns: 1fr 540px;
+            grid-template-columns: 1fr 490px;
         }
 
         @media screen and (min-width: 1200px) {
@@ -1977,11 +1977,11 @@
 
     .infants-young-children__survival-left {
         @media screen and (min-width: 1024px) {
-            padding-right: 1rem;
+            padding-right: 2rem;
         }
 
         @media screen and (min-width: 1300px) {
-            padding-right: 2.25rem;
+            padding-right: 4.25rem;
         }
     }
 
