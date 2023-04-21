@@ -64,11 +64,43 @@ import studyData from "./data/study";
     <h2 id="study-design">Study design</h2>
     <div class="clinical-data-overview__study-design">
       <div class="clinical-data-overview__study-design__table">
-        <Table
-          title="Most frequently reported adverse reactions (≤10% of patients)"
-        >
-          <TableHeader slot="header" mainHeaders={[]} subHeaders={[]} />
+        <Table>
+          <div slot="title" class="table__title">
+            <div class="table__title--sections">
+              <div class="table__title--section">
+                <h3>Study 1</h3>
+                <p>ENB-002-08/ENB-003-08</p>
+              </div>
+
+              <div class="table__title--section">
+                <h3>Study 2</h3>
+                <p>ENB-010-10</p>
+              </div>
+
+              <div class="table__title--section">
+                <h3>Study 3</h3>
+                <p>ENB-006-09/ENB-008-10</p>
+              </div>
+
+              <div class="table__title--section">
+                <h3>Study 4</h3>
+              </div>
+            </div>
+          </div>
+          <TableHeader slot="header" />
           <TableData slot="body" data={studyData} />
+          <div slot="footer" class="table__footer">
+            <span
+              ><sup>a</sup> Study 4 is not included in the current STRENSIQ label.</span
+            >
+            <span
+              ><sup>b</sup> Adolescents in the study were aged 13 to 17 years.</span
+            >
+            <span
+              ><sup>c</sup> Adults in the study were aged ≥18 years and 12 of 13
+              had pediatric-onset HPP.</span
+            >
+          </div>
         </Table>
       </div>
     </div>
@@ -92,9 +124,10 @@ import studyData from "./data/study";
         </p>
       </div>
       <div class="clinical-data-overview__safety__table">
-        <Table
-          title="Most frequently reported adverse reactions (≤10% of patients)"
-        >
+        <Table>
+          <div slot="title" class="table__title">
+            Most frequently reported adverse reactions (≥10% patients)
+          </div>
           <TableHeader
             slot="header"
             mainHeaders={mainHeaders}

@@ -13,63 +13,66 @@
  * ClassModifier: is posible assign a class modifier to apply (If not specified, it is taken as null)
  */
 type Props = {
-    mainHeaders: object[{
-        label: string;
-        colspan: number | null;
-        classModifier: string | null;
-    }];
-    subHeaders: object[{
-        label: string;
-        colspan: number | null;
-        classModifier: string | null;
-    }];
+    mainHeaders:
+        | object[{
+              label: string;
+              colspan: number | null;
+              classModifier: string | null;
+          }]
+        | [];
+
+    subHeaders:
+        | object[{
+              label: string;
+              colspan: number | null;
+              classModifier: string | null;
+          }]
+        | [];
 };
 
-const { mainHeaders = null, subHeaders = null } = Astro.props;
+const { mainHeaders = [], subHeaders = [] } = Astro.props;
 ---
 
-<thead>
-    {
-        //If is empty [], it is not rendered
-        mainHeaders && mainHeaders.length < 0 ? <></> : (
-            <tr class="table__header--mh">
-                {mainHeaders.map((header: any) => (
-                    <th
-                        colspan={header.colspan}
-                        class={
-                            !header.classModifier
-                                ? ""
-                                : `
-                                    table__header--mh--${header.classModifier}
-                                `
-                        }
-                    >
-                        {header.label}
-                    </th>
-                ))}
-            </tr>
-        )
-    }
+{
+    mainHeaders && subHeaders ? (
+        <thead>
+            {mainHeaders && (
+                <tr class="table__header--mh">
+                    {mainHeaders.map((header: any) => (
+                        <th
+                            colspan={header.colspan}
+                            class={
+                                !header.classModifier
+                                    ? ""
+                                    : `
+                                        table__header--mh--${header.classModifier}
+                                    `
+                            }
+                        >
+                            {header.label}
+                        </th>
+                    ))}
+                </tr>
+            )}
 
-    {
-        //If is empty [], it is not rendered
-        subHeaders && subHeaders.length < 0 ? <></> : (
-            <tr class="table__header--sh">
-                {subHeaders.map((header: any) => (
-                    <th
-                        colspan={header.colspan}
-                        class={
-                            !header.classModifier
-                                ? ""
-                                : `
-                                    table__header--sh--${header.classModifier}
-                                `
-                        }
-                    >
-                        {header.label}
-                    </th>
-                ))}
-            </tr>
-        )
-    }
-</thead>
+            {subHeaders && (
+                <tr class="table__header--sh">
+                    {subHeaders.map((header: any) => (
+                        <th
+                            colspan={header.colspan}
+                            class={
+                                !header.classModifier
+                                    ? ""
+                                    : `
+                                        table__header--sh--${header.classModifier}
+                                    `
+                            }
+                        >
+                            {header.label}
+                        </th>
+                    ))}
+                </tr>
+            )}
+        </thead>
+    ) : null
+}
