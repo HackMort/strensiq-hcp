@@ -2035,6 +2035,11 @@
             margin: auto;
             margin-bottom: 1.875rem;
 
+            
+            &:focus {
+                background-color: $color-blue;
+                color: $color-white;
+            }
             &::after{
                 content: '';
                 background-image: url('/assets/icons/icon-arrow-white.svg');
