@@ -1,0 +1,31 @@
+.pinch-to-zoom {
+    height: 100%;
+    margin: 0 !important;
+    width: 100% !important;
+
+    padding: .5rem 1rem;
+
+    // .f-button {
+    //     background: $color-dark-pink;
+
+    //     &:active,
+    //     &:hover,
+    //     &:focus {
+    //         background: $color-dark-pink;
+    //     }
+
+    //     svg {
+    //         stroke: $color-white;
+    //     }
+    // }
+
+    .pinch-to-zoom__close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 3.125rem;
+        line-height: 40%;
+        font-weight: 300;
+        color: $color-dark-pink;
+    }
+}

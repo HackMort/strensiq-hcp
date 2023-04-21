@@ -1,24 +1,30 @@
 ---
 type Props = {
-    classnames?: string;
-}
+  classnames?: string;
+  id?: string;
+};
 
-let { classnames = '' } = Astro.props;
-classnames ? classnames = `custom-section ${classnames}` : classnames = 'custom-section'
+let { classnames = "", id } = Astro.props;
+classnames
+  ? (classnames = `custom-section ${classnames}`)
+  : (classnames = "custom-section");
+// 2 digit random number 1-99
+const randomNumber = Math.floor(Math.random() * 99) + 1;
+id ? id : `custom-section-${randomNumber}`;
 ---
 
-<section class={classnames}>
-    <div class="custom-section__header">
-        <div class="custom-section__header-wrapper">
-            <div class="custom-section__header-content">
-                <slot name="header" />
-                <div class="custom-section__header-line-shape"></div>
-            </div>
-        </div>
+<section id={id} class={classnames}>
+  <div class="custom-section__header">
+    <div class="custom-section__header-wrapper">
+      <div class="custom-section__header-content">
+        <slot name="header" />
+        <div class="custom-section__header-line-shape"></div>
+      </div>
     </div>
-    <div class="custom-section__content">
-        <div class="wrapper">
-            <slot />
-        </div>
+  </div>
+  <div class="custom-section__content">
+    <div class="wrapper">
+      <slot />
     </div>
+  </div>
 </section>

@@ -2,20 +2,31 @@
 type Props = {
   imgSrc: string;
   stepNumber: string;
-  path: string;
+  path?: string;
   imgAlt?: string;
   className?: string;
   classTitle?: string;
 };
 
-const { imgSrc, path="/assets/icons/"+imgSrc+".png", stepNumber,className, imgAlt, classTitle} = Astro.props;
+const {
+  imgSrc,
+  path = "/assets/icons/" + imgSrc + ".png",
+  stepNumber,
+  className,
+  imgAlt,
+  classTitle,
+} = Astro.props;
 ---
 
 <div class="steps-box">
-    <div class="steps-box__heading">
-        <h1 class={`steps-box__title ${classTitle}`}>Step {stepNumber}</h1>
-        <img src={path} alt={imgAlt ? imgAlt : ' '} class={`steps-box__image ${className}`} >
-    </div>
-    <div class="steps-box__content-line"></div>
-    <p class="steps-box__text"> <slot /> </p>
+  <div class="steps-box__heading">
+    <h1 class={`steps-box__title ${classTitle}`}>Step {stepNumber}</h1>
+    <img
+      src={path}
+      alt={imgAlt ? imgAlt : " "}
+      class={`steps-box__image ${className}`}
+    />
+  </div>
+  <div class="steps-box__content-line"></div>
+  <p class="steps-box__text"><slot /></p>
 </div>

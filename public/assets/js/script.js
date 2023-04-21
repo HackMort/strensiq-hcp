@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 document.addEventListener('DOMContentLoaded', function (e) {
   // console.log('DOM fully loaded and parsed')
   isiHeaderFixed()
@@ -26,11 +27,15 @@ document.addEventListener('DOMContentLoaded', function (e) {
   }
 
   // Menu Dropdown
-  const menuItems = document.querySelectorAll('.nav__menu_item_link')
+  const menuItems = document.querySelectorAll('.main__navigation li a')
   const mobileQuery = window.matchMedia('(max-width: 1024px)')
   menuItems.forEach((item) => {
     if (item.getAttribute('href') === window.location.pathname) {
       item.classList.add('current-page')
+      if (item.classList.contains('nav__sub_menu_item_link')) {
+        const parent = item.closest('.has__sub_menu')
+        parent.classList.add('current-page')
+      }
     }
     item.addEventListener('click', (e) => {
       if (!mobileQuery.matches) {
@@ -47,21 +52,24 @@ document.addEventListener('DOMContentLoaded', function (e) {
     })
   })
 
-
-  //Internal Navigation
+  // Internal Navigation
+  const headerInnerHeight = document.querySelector('.header__inner').offsetHeight
   window.addEventListener('scroll', () => {
-    highlightActiveInternalNavOnScroll()
+    highlightActiveInternalNavOnScroll(headerInnerHeight)
   })
   setActiveIternalNavItemOnClick()
+
+  // Animated BG on Scroll
+  animatedBgColorOnScroll()
 })
 
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
 const header = document.querySelector('.site__header')
 const headerInner = document.querySelector('.header__inner')
-const headerMainBar = document.querySelectorAll('.main_bar')
 const internalNav = document.querySelector('.internal__nav')
+// const headerMainBar = document.querySelectorAll('.main_bar')
 // NodeList to Array
-const headerMainBarArray = Array.prototype.slice.call(headerMainBar)
+// const headerMainBarArray = Array.prototype.slice.call(headerMainBar)
 
 const headerHeight = header.offsetHeight
 const headerObserverOptions = { root: null, rootMargin: '0px', threshold: 0 }
@@ -109,7 +117,6 @@ window.addEventListener('scroll', () => {
   headerObserver.observe(header)
 })
 
-
 /*
   * highlightActiveInternalNavOnScroll
   * @description
@@ -117,12 +124,12 @@ window.addEventListener('scroll', () => {
   * It requires IntersectionObserver API
   * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
  */
-function highlightActiveInternalNavOnScroll () {
+function highlightActiveInternalNavOnScroll (headerInnerHeight) {
   const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
   const internalNav = document.querySelector('.internal__nav_list')
   const activeLi = document.querySelector('.internal__nav_list_item.is--active') || internalNavItems[0]
   const sections = document.querySelectorAll('.section')
-  const headerHeight = header.offsetHeight
+  const headerHeight = screen.width > 768 ? headerInnerHeight + 150 : headerInnerHeight + 200
   const sectionObserverOptions = {
     root: null,
     rootMargin: '0px',
@@ -130,27 +137,27 @@ function highlightActiveInternalNavOnScroll () {
   }
   const sectionObserver = new window.IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-
-      //Distance between the top of the section and the top of the viewport
+      // console.log(entry.target.getAttribute('id'), 'entry.target.getAttribute(id)')
+      // Distance between the top of the section and the top of the viewport
       const sectionTop = entry.boundingClientRect.top
+
+      // Get the position of the active item in the internal navigation
       const internalNavWidth = internalNav.offsetWidth
       const activeLiPosition = activeLi.offsetLeft
 
-      //Validate if the section that are in viewport and is closer of the top of the viewport
-      if (entry.isIntersecting && sectionTop <=  headerHeight) {
+      // Validate if the section that are in viewport and is closer of the top of the viewport
+      if (entry.isIntersecting && sectionTop <= headerHeight && sectionTop >= 0) {
         const sectionId = entry.target.getAttribute('id')
         internalNavItems.forEach((item) => {
-          item.classList.remove('is--active') 
+          item.classList.remove('is--active')
         })
 
         const activeLi = document.querySelector(`.internal__nav_list_item a[href="#${sectionId}"]`).parentElement
         activeLi.classList.add('is--active')
-        
-        //Scroll the internal navigation to the active item
-        internalNav.scrollLeft = activeLiPosition - internalNavWidth / 2 
 
+        // Scroll the internal navigation to the active item
+        internalNav.scrollLeft = activeLiPosition - internalNavWidth / 2
       }
-
     })
   }
   , sectionObserverOptions)
@@ -159,8 +166,7 @@ function highlightActiveInternalNavOnScroll () {
   })
 }
 
-
-/*
+/**
   * setActiveIternalNavItemOnClick
   * @description
   * - Add class is--active to internal navigation items when the link is clicked
@@ -168,12 +174,22 @@ function highlightActiveInternalNavOnScroll () {
   * It requires IntersectionObserver API
   * * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 */
+let prevScrollpos = window.pageYOffset
+let marginYOff = 300
+
+window.addEventListener('scroll', function () {
+  const currentScrollPos = window.pageYOffset
+  if (prevScrollpos > currentScrollPos) {
+    marginYOff = screen.width > 768 ? 250 : 200
+  } else {
+    marginYOff = 300
+  }
+  prevScrollpos = currentScrollPos
+})
+
 function setActiveIternalNavItemOnClick () {
-  const headerNavHeight = document.querySelector('.site__header')
-  const internalNav = document.querySelector('.internal__nav') 
+  const internalNav = document.querySelector('.internal__nav')
   const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
-  const headerInner = document.querySelector('.site__header .header__inner')
-  let marginYOff = 0
 
   internalNav &&
   internalNav.addEventListener('click', (e) => {
@@ -183,15 +199,6 @@ function setActiveIternalNavItemOnClick () {
     if (target.tagName === 'A') {
       const sectionID = target.getAttribute('href')
       const targetSection = document.querySelector(sectionID)
-
-      // Get the height of the header when the user scrolls down the page and the header is not in viewport
-      if (headerInner.classList.contains('is--sticky-down')) {
-        marginYOff = headerNavHeight.offsetHeight + 150
-      } else if (headerInner.classList.contains('is--sticky-up')) {
-        marginYOff = 0
-      } else {
-        marginYOff = headerNavHeight.offsetHeight + 150
-      }
 
       // Scroll to section
       const totalOffset = targetSection.getBoundingClientRect().top + window.pageYOffset - marginYOff
@@ -206,12 +213,7 @@ function setActiveIternalNavItemOnClick () {
     internalNavItems.forEach((item) => {
       item.classList.remove('is--active')
     })
-
-    // Add class is--active to the clicked internal navigation item
-    target.parentElement.classList.add('is--active')
-
   })
-
 }
 
 /**
@@ -254,4 +256,32 @@ function isiHeaderFixed () {
   if (isiSection) {
     isiObserver.observe(isiSection)
   }
+}
+
+/**
+ * animatedBgColorOnScroll
+ * @description
+ * - Add class fill-in to .animated--bg element when the element is in viewport only once
+ * It requires IntersectionObserver API
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+ * @see https://caniuse.com/#feat=intersectionobserver
+ */
+function animatedBgColorOnScroll () {
+  const animatedBg = document.querySelectorAll('.animated--bg')
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1
+  }
+  const observer = new window.IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fill-in')
+      }
+    })
+  }
+  , observerOptions)
+  animatedBg.forEach((element) => {
+    observer.observe(element)
+  })
 }

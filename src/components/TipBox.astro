@@ -1,0 +1,17 @@
+---
+type Props = {
+  classNames?: string;
+  align?: "left" | "right";
+};
+
+const { classNames, align } = Astro.props;
+const alignment = align ? `align-${align}` : "align-left";
+---
+
+<div class="tip__wrapper">
+  <div class={`tip__box ${alignment} ${classNames}`}>
+    <div class="tip__box_content">
+      <slot />
+    </div>
+  </div>
+</div>

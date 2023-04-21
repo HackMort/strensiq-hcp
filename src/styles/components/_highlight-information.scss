@@ -1,0 +1,33 @@
+.highlight-information {
+    border-bottom: 12px solid $color-green;
+
+    &__title {
+        color: $color-dark-gray;
+    }
+
+    &__content {
+        color: $color-dark-green;
+        font-size: 60px;
+        font-weight: 900;
+        line-height: 4.6875rem;
+
+        @include media('desktop') {
+            font-size: 70px;
+            line-height: 5.4688rem;
+        }
+    }
+
+    &__footnote {
+        color: $color-dark-green;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.0938rem;
+        max-width: 40ch;
+
+        strong {
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 1.5rem;
+        }
+    }
+}

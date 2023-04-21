@@ -1,22 +1,35 @@
 ---
 import "../styles/style.scss";
 import "../styles/settings/_design.scss";
+import Header from "../components/Header.astro";
 import References from "../components/References.astro";
 import CTA from "../components/CTA.astro";
 import CookieBanner from "../components/CookieBanner.astro";
 import Testimonial from "../components/Testimonial.astro";
+import SkeletonMobile from "../components/SkeletonMobile.astro";
+import SkeletonDesktop from "../components/SkeletonDesktop.astro";
+import TipBox from "../components/TipBox.astro";
 ---
 
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Desing system</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Design System</title>
   </head>
 
   <body>
+    <Header />
+
     <main id="content" role="main">
       <h1 class="title text--center">Design System</h1>
       <section class="design-system-section">
@@ -196,30 +209,225 @@ import Testimonial from "../components/Testimonial.astro";
       </section>
       <section class="design-system-section">
         <div class="section-wrapper section-wrapper--small">
-          <h1 class="title">
-            Testimonial
-          </h1>
+          <h1 class="title">Testimonial</h1>
           <Testimonial
             authorInformation="Lynn Kohlmeier, MD, Adult Endocrinologist"
             authorDescription="Alexion-sponsored speaker"
             page="home"
           >
-            <p>If we can increase awareness and reduce misdiagnosis of hypophosphatasia, we can make a big difference.</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptate aperiam, fugit quidem esse dignissimos.</p>
+            <p>
+              If we can increase awareness and reduce misdiagnosis of
+              hypophosphatasia, we can make a big difference.
+            </p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis voluptate aperiam, fugit quidem esse dignissimos.
+            </p>
           </Testimonial>
           <Testimonial
-          authorInformation="Eric Rush, MD, Clinical Geneticist"
-          authorDescription="Alexion-sponsored speaker"
-          page="hypophosphatasia"
-          shapeType="right"
+            authorInformation="Eric Rush, MD, Clinical Geneticist"
+            authorDescription="Alexion-sponsored speaker"
+            page="hypophosphatasia"
+            shapeType="right"
           >
-            <p>As we continue to learn about hypophosphatasia, we are truly understanding that it is a multisystemic disease and not just a skeletal disease.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium beatae cum inventore dolor ex vero.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium expedita id recusandae, eligendi eum nam?</p>
+            <p>
+              As we continue to learn about hypophosphatasia, we are truly
+              understanding that it is a multisystemic disease and not just a
+              skeletal disease.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Laudantium beatae cum inventore dolor ex vero.
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Praesentium expedita id recusandae, eligendi eum nam?
+            </p>
           </Testimonial>
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">Tabs</h1>
+          <ul role="tablist">
+            <li role="presentation">
+              <!--active one -->
+              <a href="#panel1" role="tab" id="tab1" aria-selected="true"
+                >Tab 1</a
+              >
+            </li>
+            <li role="presentation">
+              <a href="#panel2" role="tab" id="tab2" tabindex="-1">Tab 2</a>
+            </li>
+            <li role="presentation">
+              <a href="#panel3" role="tab" id="tab3" tabindex="-1">Tab 3</a>
+            </li>
+          </ul>
+          <section
+            id="panel1"
+            role="tabpanel"
+            aria-labelledby="tab1"
+            aria-hidden="false"
+            tabindex="-1"
+          >
+            <h2>Panel 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+              nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+              placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+              ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+              aliquet metus.
+            </p>
+          </section>
+          <section
+            id="section2"
+            role="tabpanel"
+            aria-labelledby="tab2"
+            aria-hidden="true"
+            tabindex="-1"
+            hidden
+          >
+            <h2>Panel 2</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+              nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+              placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+              ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+              aliquet metus.
+            </p>
+          </section>
+          <section
+            id="section3"
+            role="tabpanel"
+            aria-labelledby="tab3"
+            aria-hidden="true"
+            tabindex="-1"
+            hidden
+          >
+            <h2>Panel 3</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+              nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+              placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+              ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+              aliquet metus.
+            </p>
+          </section>
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">Tabs</h1>
+          <ul role="tablist">
+            <li role="presentation">
+              <!--active one -->
+              <a href="#panel4" role="tab" id="tab4" aria-selected="true"
+                >Tab 4</a
+              >
+            </li>
+            <li role="presentation">
+              <a href="#panel5" role="tab" id="tab5" tabindex="-1">Tab 5</a>
+            </li>
+            <li role="presentation">
+              <a href="#panel6" role="tab" id="tab6" tabindex="-1">Tab 6</a>
+            </li>
+          </ul>
+          <section
+            id="panel4"
+            role="tabpanel"
+            aria-labelledby="tab4"
+            aria-hidden="false"
+            tabindex="-1"
+          >
+            <h2>Panel 4</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+              nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+              placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+              ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+              aliquet metus.
+            </p>
+          </section>
+          <section
+            id="section5"
+            role="tabpanel"
+            aria-labelledby="tab5"
+            aria-hidden="true"
+            tabindex="-1"
+            hidden
+          >
+            <h2>Panel 5</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+              nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+              placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+              ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+              aliquet metus.
+            </p>
+          </section>
+          <section
+            id="section6"
+            role="tabpanel"
+            aria-labelledby="tab6"
+            aria-hidden="true"
+            tabindex="-1"
+            hidden
+          >
+            <h2>Panel 6</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              dui nibh, fermentum ac gravida quis, <a href="#">tempus sit</a> amet
+              nulla. Fusce dignissim dolor sit amet sapien auctor, eu vehicula elit
+              placerat. Aliquam vehicula luctus enim, at ullamcorper risus. Aliquam
+              ut tincidunt ipsum. Vivamus dui mi, suscipit vitae libero id, interdum
+              aliquet metus.
+            </p>
+          </section>
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">Skeleton</h1>
+          <SkeletonMobile />
+          <div class="desktop--only">
+            <SkeletonDesktop />
+          </div>
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">Animated BG Color on Text</h1>
+          <h5 class="animated--bg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            sit consectetur commodi ex dolorem! Consequuntur, aliquid magni.
+            Dolor fugiat, animi, ea reprehenderit, velit fuga nihil a libero
+            minus voluptatem sunt.
+          </h5>
+        </div>
+      </section>
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">TipBox</h1>
+          <TipBox classNames="toolkit__tip">
+            <strong>PRO TIP!</strong> To streamline the STRENSIQ fulfillment process,
+            consult your Alexion team for guidance on required documentation prior
+            to submitting any <a href="#">forms</a> to the specialty pharmacy.
+          </TipBox>
+          <TipBox classNames="toolkit__tip" align="right">
+            <strong
+              >Do not rely on serum alkaline phosphatase measurements for
+              clinical decisions related to patients currently taking STRENSIQ</strong
+            >
+          </TipBox>
         </div>
       </section>
     </main>
     <script src="/assets/js/script.js" type="module"></script>
+    <script src="/assets/js/tabs.js" type="module"></script>
   </body>
 </html>

@@ -62,6 +62,13 @@ p {
   line-height: 1.3181rem;
 }
 
+label a,
+p a {
+    color: $color-dark-pink;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 small {
   font-size: 0.75rem;
   line-height: .8788rem;
@@ -83,4 +90,10 @@ main {
   ul li::marker {
     color: $color-green;
   }
+}
+
+sup.symbol-sup {
+    font-size: inherit;
+    line-height: 0;
+    top: initial;
 }
