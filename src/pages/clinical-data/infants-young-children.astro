@@ -17,7 +17,7 @@ const internalNavLinks = [
 ];
 ---
 
-<Layout title="Infants">
+<Layout title="Infants" displayReferences={true}>
   <PageHero
     pageId="clinical-data"
     classNames="clinical-data-infants-young-children__page-hero"
@@ -279,7 +279,6 @@ const internalNavLinks = [
     linkText="Children"
     linkUrl="/clinical-data/children"
   />
-  <References />
   <ClinicalDataModal></ClinicalDataModal>
   <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"></script>
 </Layout>
