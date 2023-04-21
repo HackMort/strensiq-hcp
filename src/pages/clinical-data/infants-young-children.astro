@@ -8,13 +8,16 @@ import AccordionMobile from '../../components/accordion-mobile/AccordionMobile.a
 import ExpansionPanelMobile from '../../components/accordion-mobile/ExpansionPanelMobile.astro';
 import RadiographicImagesComparator from '../../components/RadiographicImagesComparator.astro';
 import CustomTitle from '../../components/CustomTitle.astro';
+import TipBox from "../../components/TipBox.astro";
+import ClinicalDataModal from '../../components/clinical-data/ClinicalDataModal.astro';
+import PinchToZoom from '../../components/PinchToZoom.astro';
 const internalNavLinks = [
   { href: "hpp-related-rickets", label: "HPP-related rickets", active: true },
   { href: "survival", label: "Survival" },
 ];
 ---
 
-<Layout title="Infants">
+<Layout title="Infants" displayReferences={true}>
   <PageHero
     pageId="clinical-data"
     classNames="clinical-data-infants-young-children__page-hero"
@@ -28,7 +31,7 @@ const internalNavLinks = [
   </PageHero>
   {internalNavLinks && <InternalNavigation items={internalNavLinks} heading="Infants/Young Children" icon/>}
 
-  <section id="hpp-related-rickets" class="infants-young-children__hpp-related-rickets">
+  <section id="hpp-related-rickets" class="infants-young-children__hpp-related-rickets section">
     <div class="wrapper">
         <div class="hpp-related-rickets__content">
             <div class="hpp-related-rickets__content-left">
@@ -230,11 +233,52 @@ const internalNavLinks = [
     </div>
   </section>
 
+  <section id="survival" class="infants-young-children__survival section">
+   <div class="infants-young-children__survival-content">
+    <div class="infants-young-children__survival-left">
+        <div class="wrapper wrapper--only-left">
+            <h2 class="infants-young-children__survival-title">
+                STRENSIQ provided substantial healing of rachitic chest and improved respiratory function and survival
+            </h2>
+        </div>
+        <TipBox classNames="toolkit__tip infants-young-children__survival-tip" align="right">
+            <strong>
+                STRENSIQ increased overall survival to 88% with follow-up for up to 7 years
+            </strong>
+          </TipBox>
+    </div>
+    <div class="infants-young-children__survival-right">
+        <CustomTitle>
+            Invasive ventilation-free survival in patients treated with STRENSIQ vs untreated historical controls<sup>a</sup>
+        </CustomTitle>
+        <div class="infants-young-children__survival-chart">
+            <div class="wrapper wrapper--only-left">
+                <div class="infants-young-children__survival-chart-wrapper">
+
+                    <PinchToZoom id="invasive-ventilation-chart">
+                        <picture>
+                            <img src="/assets/images/clinical-data/infants-young-children/Invasive_Ventilation_free_survival_Desktop.png" alt="">
+                        </picture>
+                    </PinchToZoom>
+                </div>
+                <div class="infants-young-children__survival-chart-foot-wrapper">
+                    <div class="wrapper wrapper--only-right">
+                        <p class="infants-young-children__survival-chart-foot">
+                            <sup>a</sup>Alive and not initiating invasive ventilation after start of STRENSIQ treatment. STRENSIQ-treated patients on invasive ventilation at baseline were excluded from this analysis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+  </section>
+
   <CTA
     heading="Help them build from the inside out"
     linkText="Children"
     linkUrl="/clinical-data/children"
   />
-  <References />
+  <ClinicalDataModal></ClinicalDataModal>
   <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"></script>
 </Layout>

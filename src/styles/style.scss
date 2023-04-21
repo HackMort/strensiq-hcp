@@ -19,7 +19,8 @@
 @import './components/work-box.scss';
 @import './components/steps-box.scss';
 @import './components/tip-box.scss';
-@import './components/exit-modal';
+@import './components/exit-modal.scss';
+@import './components/toolkit-modal.scss';
 @import './components/_main-hero.scss';
 @import './components/_page-hero.scss';
 @import './components/_testimonial.scss';
@@ -33,6 +34,7 @@
 @import './components/_radiographic-comparator.scss';
 @import './components/_custom-title.scss';
 @import './components/_highlight-information.scss';
+@import './components/_pinch-to-zoom.scss';
 
 
 //-------------------------------------------------------------lets work together section-------------------------------------------------------------
@@ -1183,6 +1185,7 @@
     }
 
 }
+
 //-------------------------------------------------------------how it works page -------------------------------------------------------------
 
 //------------------------------------- Hypophosphatasia Page ------------------------  */
@@ -1447,12 +1450,12 @@
                         justify-content: space-between;
                         width: 100%;
 
-                        & > .hypophosphatasia-container__panel-chart {
+                        &>.hypophosphatasia-container__panel-chart {
                             margin: 0;
                             width: 55%;
                         }
 
-                        & > .hypophosphatasia-container__panel-content {
+                        &>.hypophosphatasia-container__panel-content {
                             width: 40%;
                         }
                     }
@@ -1730,7 +1733,7 @@
             max-width: 60ch;
             padding: .625rem 1.25rem;
             position: relative;
-            right:-15px ;
+            right: -15px;
             text-align: center;
 
             &::after {
@@ -1919,6 +1922,7 @@
 
     @media screen and (min-width: 1024px) {
         padding-top: 4.375rem;
+        padding-bottom: 0;
 
         .hpp-related-rickets__content {
             display: grid;
@@ -1940,6 +1944,14 @@
 
     @media screen and (min-width: 1200px) {
         height: 51.8125rem;
+    }
+
+    @media screen and (min-width: 1400px) {
+        height: 47.8125rem;
+    }
+
+    @media screen and (min-width: 1440px) {
+        height: 49.4rem;
     }
 
     @media screen and (min-width: 1440px) {
@@ -2006,6 +2018,11 @@
 
         .radiographic-comparator [data-radiographic-footer] {
             margin-bottom: 1.625rem;
+
+            @media screen and (min-width: 1400px) {
+                margin-bottom: 0;
+                height: 5.5rem;
+            }
         }
 
         .radiographic-images-mobile__title {
@@ -2028,4 +2045,139 @@
     }
 }
 
+.infants-young-children__survival {
+    background: $color-athens-gray;
+    padding-top: 1.6875rem;
+    padding-bottom: 1.6269rem;
+
+    @media screen and (min-width: 1024px) {
+        padding-top: 4.375rem;
+    }
+
+    .infants-young-children__survival-content {
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-columns: 1fr 490px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            grid-template-columns: 1fr 600px;
+        }
+
+        @media screen and (min-width: 1400px) {
+            grid-template-columns: 1fr 810px;
+        }
+    }
+
+    .infants-young-children__survival-left {
+        @media screen and (min-width: 1024px) {
+            padding-right: 2rem;
+        }
+
+        @media screen and (min-width: 1300px) {
+            padding-right: 4.25rem;
+        }
+    }
+
+    .infants-young-children__survival-title {
+        color: $color-dark-green;
+
+        @media screen and (min-width: 1400px) {
+            margin-bottom: 8.5156rem;
+        }
+    }
+
+    .infants-young-children__survival-chart {
+        margin-top: 1.4375rem;
+
+        .wrapper--only-left {
+            @media screen and (min-width: 1024px) {
+                margin-left: 0;
+                margin-right: auto;
+            }
+        }
+    }
+
+    .infants-young-children__survival-chart-wrapper {
+        background: $color-white;
+        margin-bottom: 1.875rem;
+        max-width: 46.125rem;
+        margin-left: auto;
+        position: relative;
+
+        .button--pich-to-zoom {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1;
+        }
+
+        @media screen and (min-width: 1024px) {
+            margin-bottom: 0;
+            .button--pich-to-zoom {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 1400px) {
+            margin-left: initial;
+        }
+    }
+
+    .infants-young-children__survival-chart-foot-wrapper {
+        @media screen and (min-width: 1024px) {
+            background: $color-white;
+            padding-bottom: 1.375rem;
+
+            .wrapper--only-right {
+                max-width: fit-content;
+                margin-left: 4.2813rem;
+                margin-right: 1.2813rem;
+            }
+        }
+
+        @media screen and (min-width: 1400px) {
+            max-width: 46.125rem;
+        }
+    }
+
+    .infants-young-children__survival-chart-foot {
+        font-size: .75rem;
+        line-height: 14.4px;
+        font-weight: 300;
+    }
+
+    .infants-young-children__survival-tip {
+
+        @media screen and (min-width: 1024px) {
+            min-height: 5rem;
+            border-radius: 0px 95.5px 95.5px 0px;
+
+            .tip__box_content {
+                text-align: center;
+            }
+
+            &::before {
+                left: -3.75rem;
+                right: auto;
+                border-radius: 0px 581.67px 581.67px 0px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            margin-left: 0;
+            margin-right: auto;
+            width: 100%;
+            max-width: initial;
+        }
+
+        @media screen and (min-width: 1400px) {
+            .tip__box_content {
+                max-width: 26.6875rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}
 //------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------

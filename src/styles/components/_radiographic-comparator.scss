@@ -41,6 +41,14 @@
             margin-right: initial;
             margin-bottom: 1.3125rem;
         }
+
+        @media screen and (min-width: 1440px) {
+            height: 20.4375rem;
+
+            img {
+                height: 100%;
+            }
+        }
     }
 
     [data-radiographic-footer] {

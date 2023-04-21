@@ -3,6 +3,7 @@
   margin: 0 auto;
   max-width: 90.625rem;
   overflow-x: hidden;
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
 .tip__box {
@@ -59,6 +60,7 @@
 
   a,
   button {
+    cursor: pointer;
     display: inline-block;
     color: $color-dark-pink;
     font-weight: 700;
