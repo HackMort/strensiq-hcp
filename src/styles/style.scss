@@ -1268,6 +1268,7 @@
         }
 
         li a {
+            font-weight: 700;
             padding: .625rem 2.1875rem;
 
             @include media('desktop') {
@@ -1281,8 +1282,10 @@
         margin-bottom: 1.5625rem;
 
         @include media('desktop') {
-            font-size: 18px;
-            line-height: 1.6875rem;
+            /* font-size: 18px;
+            line-height: 1.6875rem; */
+            font-size: 30px;
+            line-height: 2.3438rem;
         }
 
         sup {
@@ -1312,6 +1315,9 @@
             }
 
             @include media('desktop') {
+                font-size: 20px;
+                line-height: 1.5625rem;
+
                 &::after {
                     width: 12.5rem;
                 }
@@ -1371,6 +1377,18 @@
         .hypophosphatasia-container__title {
             font-weight: 600;
             margin-bottom: .625rem;
+
+            @include media('desktop') {
+                font-size: 18px;
+                line-height: 1.6875rem;
+            }
+        }
+
+        .hypophosphatasia-container__list-item {
+            @include media('desktop') {
+                font-size: 18px;
+                line-height: 1.6875rem;
+            }
         }
     }
 
@@ -1511,18 +1529,27 @@
         overflow: hidden;
         position: relative;
 
+        @media(min-width: 1081px) {
+            justify-content: space-around;
+            padding-top: 3.125rem;
+        }
+
         @include media('desktop') {
-            justify-content: space-between;
-            padding-left: .625rem;
+            justify-content: space-around;
+        }
+
+        .hypophosphatasia-container__content {
+            padding-right: 0;
         }
 
         .hypophosphatasia-container__content--treatments {
             color: $color-white;
-            padding-bottom: 90px;
+            padding-bottom: 5.625rem;
+            padding-top: 2.5rem;
             position: relative;
             width: fit-content;
 
-            @media(min-width: 1061px) {
+            @media(min-width: 1081px) {
                 padding-bottom: 0;
             }
 
@@ -1541,21 +1568,16 @@
                     right: -65vw;
                 }
 
-                @media(min-width: 1061px) {
+                @media(min-width: 1081px) {
                     border-radius: 391.37px;
                     height: 225%;
-                    left: -65%;
-                    top: -20%;
+                    left: -50%;
+                    top: -25%;
                     right: unset;
                     width: 1268px;
                     transform: rotate(-47.77deg);
                 }
-
-                @include media('desktop') {
-                    left: -75%;
-                }
             }
-
 
             .hypophosphatasia-container {
                 &__paragraph {
@@ -1564,6 +1586,16 @@
                     font-weight: 600;
                     line-height: 1.33rem;
                     max-width: 35ch;
+
+                    @include media('tablet') {
+                        padding: 0 .9375rem;
+                        max-width: 46ch;
+                    }
+
+                    @include media('desktop') {
+                        font-size: 18px;
+                        line-height: 1.6875rem;
+                    }
                 }
 
                 &__list-item {
@@ -1606,23 +1638,21 @@
             max-width: 70ch;
 
             .hypophosphatasia-container__paragraph {
-                max-width: 50ch;
+                @media (min-width: 1021px){
+                    max-width: 50ch;
+                }
             }
         }
 
         .hypophosphatasia-container__title {
             margin-bottom: .625rem;
-
-            @include media('desktop') {
-                margin-top: 4.6875rem;
-            }
         }
 
         section.information {
             bottom: 0;
             position: absolute;
 
-            @media(min-width: 1061px) {
+            @media(min-width: 1081px) {
                 bottom: 20%;
                 left: -2.8125rem;
                 width: fit-content;
@@ -1646,7 +1676,7 @@
                 text-align: left;
                 margin-left: 1.25rem;
 
-                @media(min-width: 1061px) {
+                @media(min-width: 1081px) {
                     max-width: 60ch;
                 }
 
@@ -1721,8 +1751,13 @@
         color: $color-dark-green;
         font-size: 17px;
         font-weight: 900;
-        line-height: 1.3281rem;
+        line-height: 1.5938rem;
         padding: 0 .125rem;
+
+        @include media('desktop') {
+            font-size: 23px;
+            line-height: 2.1563rem;
+        }
     }
 }
 
