@@ -2179,6 +2179,9 @@
             margin-top: 2.9375rem;
             margin-bottom: .5625rem;
             color: $color-bright-gray;
+            @media screen and (min-width:1420px) {
+                margin-top: 1.9375rem;
+            }
         }
 
         &__heading{
@@ -2196,6 +2199,7 @@
                 font-size: 4.375rem;
                 line-height: 3.9375rem;            
                 letter-spacing: -0.03em;
+                margin-bottom: .9375rem;
             } 
         }
 
@@ -2226,6 +2230,10 @@
             z-index:2;
             margin-bottom: 0;
             margin-top: .5rem;
+
+            @media screen and (min-width:1340px) {
+            max-width: 416px;
+            }
         }
 
         &__shape{
@@ -2260,11 +2268,14 @@
             }
             @media screen and (min-width:1340px) {
                 right: -12.6875rem;
-                bottom: -54.4375rem;
+                bottom: -53.4375rem;
                 width: 95.6156rem;
                 height: 64rem;
                 border-radius: 36.3544rem;
                 transform: rotate(-48.66deg);
+            }
+            @media screen and (min-width:1420px) {
+                bottom: -52.4375rem;
             }
 
     }
