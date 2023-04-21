@@ -33,6 +33,7 @@
 @import './components/_radiographic-comparator.scss';
 @import './components/_custom-title.scss';
 @import './components/_highlight-information.scss';
+@import './components/_pinch-to-zoom.scss';
 
 
 //-------------------------------------------------------------lets work together section-------------------------------------------------------------
@@ -2014,10 +2015,14 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
+            z-index: 1;
         }
 
         @media screen and (min-width: 1024px) {
             margin-bottom: 0;
+            .button--pich-to-zoom {
+                display: none;
+            }
         }
 
         @media screen and (min-width: 1400px) {
