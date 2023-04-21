@@ -2179,9 +2179,13 @@
             margin-top: 2.9375rem;
             margin-bottom: .5625rem;
             color: $color-bright-gray;
+            @media screen and (min-width:1340px) {
+                text-transform: uppercase;
+            }
             @media screen and (min-width:1420px) {
                 margin-top: 1.9375rem;
             }
+            
         }
 
         &__heading{
@@ -2201,6 +2205,22 @@
                 letter-spacing: -0.03em;
                 margin-bottom: .9375rem;
             } 
+            @media screen and (min-width:1440px) {
+                font-size: 4.375rem!important;
+            }
+
+            br{
+                display: none;
+                @media screen and (min-width:1440px) {
+                    display: block;
+                }
+            }
+
+            span{
+                @media screen and (min-width:1440px) {
+                    font-size: 3.625rem;
+                }
+            }
         }
 
         &__sub-text{
@@ -2276,6 +2296,7 @@
             }
             @media screen and (min-width:1420px) {
                 bottom: -52.4375rem;
+                right: -13.6875rem;
             }
 
     }
