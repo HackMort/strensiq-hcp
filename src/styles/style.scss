@@ -760,7 +760,7 @@
     }
 }
 
-//-------------------------------------------------------------toolkit steps section -------------------------------------------------------------    /* Hypophosphatasia Page  */
+//-------------------------------------------------------------toolkit steps section -------------------------------------------------------------
 
 
 //-------------------------------------------------------------how it works page -------------------------------------------------------------
@@ -1187,7 +1187,6 @@
 
 //------------------------------------- Hypophosphatasia Page ------------------------  */
 .hypophosphatasia-container {
-    @extend .wrapper;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -1198,6 +1197,7 @@
 
     @include media ('desktop') {
         padding-bottom: 2.25rem;
+        padding-left: 4.0625rem;
     }
 
     &__tabs-container {
@@ -1467,11 +1467,17 @@
 
         }
 
-        .information {
+        section.information {
             @include media('desktop') {
                 align-self: center;
                 justify-self: flex-end;
                 max-width: 50%;
+            }
+
+            @media (min-width: 1369px) {
+                max-width: none;
+                padding: 0 0 0 25px;
+                width: fit-content;
             }
         }
 
@@ -1530,12 +1536,14 @@
         position: relative;
 
         @media(min-width: 1081px) {
+            flex-wrap: nowrap;
             justify-content: space-around;
             padding-top: 3.125rem;
         }
 
         @include media('desktop') {
-            justify-content: space-around;
+            justify-content: flex-start;
+            @include flex-gap(calc(100vw - 1115px));
         }
 
         .hypophosphatasia-container__content {
@@ -1551,6 +1559,7 @@
 
             @media(min-width: 1081px) {
                 padding-bottom: 0;
+                width: 35%;
             }
 
             &::after {
@@ -1635,12 +1644,18 @@
         }
 
         .hypophosphatasia-container__content:first-child {
-            max-width: 70ch;
+            .hypophosphatasia-container__title {
+                max-width: 70ch;
+            }
 
             .hypophosphatasia-container__paragraph {
                 @media (min-width: 1021px){
                     max-width: 50ch;
                 }
+            }
+
+            @media(min-width: 1081px) {
+                width: 65%;
             }
         }
 
@@ -1731,7 +1746,7 @@
 
             @media (min-width: 530px) {
                 border-radius: 2rem;
-                padding: .625rem;
+                padding: .625rem 1.875rem;
                 right: 25px;
 
                 &::after {
@@ -1743,6 +1758,11 @@
                 border-radius: 5.9688rem;
                 font-size: 20px;
                 line-height: 1.875rem;
+                right: 0;
+            }
+
+            @media (min-width: 1369px) {
+                right: 25px;
             }
         }
     }
@@ -1762,7 +1782,6 @@
 }
 
 .skeleton-container {
-    @extend .wrapper;
     background-color: $color-soft-gray;
     display: flex;
     flex-wrap: wrap;
@@ -1779,8 +1798,9 @@
     }
 
     @include media('desktop') {
-        justify-content: space-around;
+        justify-content: space-between;
         padding: 0;
+        padding-left: 4.0625rem;
     }
 
     h2 {
@@ -1801,7 +1821,7 @@
             height: 100%;
             position: absolute;
             right: 0;
-            width: 68%;
+            width: 65%;
             z-index: 0;
         }
     }
@@ -1849,7 +1869,7 @@
 
         @include media('desktop') {
             background-color: transparent;
-            padding-right: 2.5rem;
+            padding-right: 4.5rem;
             width: fit-content;
         }
     }
@@ -1882,12 +1902,6 @@
         @media (min-width: 870px) {
             display: none;
         }
-    }
-}
-
-.hypophosphatasia__testimonial-container.wrapper {
-    @media (max-width: 1450px) {
-        max-width: 100%;
     }
 }
 
