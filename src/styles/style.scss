@@ -2493,6 +2493,10 @@
                 right: -2.1875rem;
                 
             }
+            @media screen and (min-width:1600px) {
+                width: 100vw;
+                left: -937px;
+            }
 
         }
         &__shape--secondary{
@@ -2507,6 +2511,10 @@
 
             @media screen and (min-width:500px) {
                 width: 64vw;
+            }
+            @media screen and (min-width:1600px) {
+                width: 100vw;
+                left: -877px;
             }
         }
     }
