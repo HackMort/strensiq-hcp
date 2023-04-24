@@ -1812,38 +1812,41 @@
 
 
 //-------------------------------------------------------------dosing page -------------------------------------------------------------    
-.dosing{
-        margin-top: 1.6875rem;
+.dosing {
+    margin-top: 1.6875rem;
 
-        @media screen and (min-width:1300px) {
-            padding-top: 1.875rem;
+    @media screen and (min-width:1300px) {
+        padding-top: 1.875rem;
+    }
+
+
+    &__container {
+        @media screen and (min-width:1000px) {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
         }
+    }
 
-
-        &__container{
-            @media screen and (min-width:1000px) {
-                display: flex;
-                align-items: baseline;
-                justify-content: space-between;
-            }
-        }
-
-    &__first{
+    &__first {
         @media screen and (min-width:600px) {
             margin: auto;
         }
+
         @media screen and (min-width:768px) {
-        max-width: 33.25rem;
+            max-width: 33.25rem;
         }
+
         @media screen and (min-width:1000px) {
-        margin-top: 1rem;
-        margin-right: 2.5rem;
+            margin-top: 1rem;
+            margin-right: 2.5rem;
         }
 
         @media screen and (min-width:1300px) {
             margin: unset;
         }
-        &__title{
+
+        &__title {
             font-style: normal;
             font-weight: 700;
             font-size: 1.25rem;
@@ -1855,11 +1858,11 @@
                 font-size: 1.875rem;
                 line-height: 2.375rem;
             }
-    
+
         }
 
-        &__text{
-            p{
+        &__text {
+            p {
                 font-style: normal;
                 font-weight: 300;
                 font-size: .875rem;
@@ -1870,189 +1873,203 @@
                     font-size: 1.125rem;
                     line-height: 1.6875rem;
                 }
-                
+
             }
         }
     }
 
-    &__second{
+    &__second {
         @media screen and (min-width:1200px) {
-        margin-left: 5rem;
+            margin-left: 5rem;
         }
 
-        &__title{
+        &__title {
             font-style: normal;
             font-weight: 600;
             font-size: 1.125rem;
-            line-height: 1.6875rem;        
+            line-height: 1.6875rem;
             letter-spacing: -0.0313rem;
             color: $color-dark-gray;
+
             @media screen and (min-width:1300px) {
                 margin-left: 4rem;
             }
         }
 
-        &__shapes{
+        &__shapes {
             @media screen and (min-width:1200px) {
                 display: flex;
                 height: 16.0625rem;
+            }
+
+            &__container {
+                display: flex;
+                position: relative;
+                align-items: center;
+
+                @media screen and (min-width:1400px) {
+                    margin-left: 4rem;
                 }
 
-                &__container{
-                    display: flex;
-                    position: relative;
-                    align-items: center;
 
-                    @media screen and (min-width:1400px) {
-                        margin-left: 4rem;
-                    }
+                .shape-heading {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 1.25rem;
+                    line-height: 1.4375rem;
+                    margin-top: 2.9375rem;
+                    color: $color-dark-gray;
 
-
-                    .shape-heading{
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 1.25rem;
-                        line-height: 1.4375rem;
-                        margin-top: 2.9375rem;
-                        color: $color-dark-gray;
-                        @media screen and (min-width:1300px) {
+                    @media screen and (min-width:1300px) {
                         margin-top: 0.9375rem;
-                        }
                     }
+                }
 
-                    .shape-body{
-                        font-style: normal;
-                        font-weight: 900;
-                        font-size: 3.75rem;
-                        line-height: 3.1875rem;
-                        letter-spacing: -0.03em;
-                        margin-bottom: .625rem;
-                        color: $color-dark-green;
+                .shape-body {
+                    font-style: normal;
+                    font-weight: 900;
+                    font-size: 3.75rem;
+                    line-height: 3.1875rem;
+                    letter-spacing: -0.03em;
+                    margin-bottom: .625rem;
+                    color: $color-dark-green;
 
-                        @media screen and (min-width:1300px) {
+                    @media screen and (min-width:1300px) {
                         width: 10rem;
                         font-size: 4.375rem;
                         letter-spacing: -0.03em;
                         margin-top: 1rem;
-                        }
-                        span{
-                            letter-spacing: .0375rem;
-                            font-size: .875rem;
-                            
-
-                        }
                     }
 
-                    .steps-box__content-line{
-                        margin-top: -1.1875rem;
-                        position: absolute;
-                        width: 100vw;
-                        margin-bottom: 4.5rem;
-                        @media screen and (min-width:1200px) {
+                    span {
+                        letter-spacing: .0375rem;
+                        font-size: .875rem;
+
+
+                    }
+                }
+
+                .steps-box__content-line {
+                    margin-top: -1.1875rem;
+                    position: absolute;
+                    width: 100vw;
+                    margin-bottom: 4.5rem;
+
+                    @media screen and (min-width:1200px) {
                         width: 12vw;
-                        }
+                    }
+
+                    @media screen and (min-width:1300px) {
+                        margin-top: -0.625rem;
+                        width: 10.5625rem;
+                    }
+
+                    @media screen and (min-width:1400px) {
+                        width: 13.625rem;
+                    }
+
+                    &.modifier {
+                        background-color: $color-white;
+
                         @media screen and (min-width:1300px) {
-                            margin-top: -0.625rem;
-                            width: 10.5625rem;
+                            width: 12vw;
                         }
+
                         @media screen and (min-width:1400px) {
                             width: 13.625rem;
                         }
-
-                        &.modifier{ 
-                            background-color: $color-white;
-
-                            @media screen and (min-width:1300px) {
-                                width:12vw;
-                            }
-                            @media screen and (min-width:1400px) {
-                                width: 13.625rem;
-                            }
-                        }
-                        
                     }
-                    &::before{
-                        content: '';
-                        background-image: url('/assets/icons/injection-icon.svg');
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        width: 4.8125rem;
-                        height: 4.8125rem;
-                        margin-right: 0.75rem;
-                        margin-top: 1.8125rem;
-                        margin-left: .625rem;
 
-                        @media screen and (min-width:1300px) {
+                }
+
+                &::before {
+                    content: '';
+                    background-image: url('/assets/icons/injection-icon.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 4.8125rem;
+                    height: 4.8125rem;
+                    margin-right: 0.75rem;
+                    margin-top: 1.8125rem;
+                    margin-left: .625rem;
+
+                    @media screen and (min-width:1300px) {
                         background-size: cover;
                         width: 7.9375rem;
                         height: 7.9375rem;
                         margin-right: 0.75rem;
                         margin-top: 1.625rem;
                         margin-left: 1.4375rem;
-                        }
-                        @media screen and (min-width:1400px)
-                         {
-                            margin-left: .75rem;
-                            margin-right: 1.5rem;
-                        }
-
-                    }
-                    &.modifier{
-                        &::before{
-                            background-image: none;
-
-                            @media screen and (min-width:1300px) {
-                                
-                                margin-left: -1rem;
-                            }    
-                        }
                     }
 
-                    .dosing__second__shape--one{
-                        position: absolute;
-                        height: 9.3125rem;
-                        left: -1rem;
-                        top: 1.25rem;
-                        background: #E2E7EA;
-                        border-radius: 36.3544rem 0rem 0rem 36.3544rem;
-                        z-index: -1;
-                        width: 100vw;
-                        
-                        @media screen and (min-width:1200px) {
-                        height: 16.0625rem;
-                        }
+                    @media screen and (min-width:1400px) {
+                        margin-left: .75rem;
+                        margin-right: 1.5rem;
+                    }
+
+                }
+
+                &.modifier {
+                    &::before {
+                        background-image: none;
+
                         @media screen and (min-width:1300px) {
-                            height: 16.0625rem;
-                            left: 0;
-                        }
-                        @media screen and (min-width:1400px) {
-                            left: -2rem;
-                        }
-                    }
-                    .dosing__second__shape--two{
-                        position: absolute;
-                        height: 9.3125rem;
-                        left: -1rem;
-                        top: 1.25rem;
-                        background: $color-green;
-                        border-radius: 36.3544rem 0rem 0rem 36.3544rem;
-                        z-index: -1;
-                        width: 100vw;
 
-                        @media screen and (min-width:1200px) {
-                        left: 2rem;
-                        height: 16.0625rem;
+                            margin-left: -1rem;
                         }
-                        @media screen and (min-width:1300px) {
-                            
-                            left: 1rem;
-                        }
-                        
-                        
                     }
                 }
+
+                .dosing__second__shape--one {
+                    position: absolute;
+                    height: 9.3125rem;
+                    left: -1rem;
+                    top: 1.25rem;
+                    background: #E2E7EA;
+                    border-radius: 36.3544rem 0rem 0rem 36.3544rem;
+                    z-index: -1;
+                    width: 100vw;
+
+                    @media screen and (min-width:1200px) {
+                        height: 16.0625rem;
+                    }
+
+                    @media screen and (min-width:1300px) {
+                        height: 16.0625rem;
+                        left: 0;
+                    }
+
+                    @media screen and (min-width:1400px) {
+                        left: -2rem;
+                    }
+                }
+
+                .dosing__second__shape--two {
+                    position: absolute;
+                    height: 9.3125rem;
+                    left: -1rem;
+                    top: 1.25rem;
+                    background: $color-green;
+                    border-radius: 36.3544rem 0rem 0rem 36.3544rem;
+                    z-index: -1;
+                    width: 100vw;
+
+                    @media screen and (min-width:1200px) {
+                        left: 2rem;
+                        height: 16.0625rem;
+                    }
+
+                    @media screen and (min-width:1300px) {
+
+                        left: 1rem;
+                    }
+
+
+                }
             }
-        .pdf-text{
+        }
+
+        .pdf-text {
             margin-top: 3.125rem;
             text-align: center;
             font-style: normal;
@@ -2060,16 +2077,18 @@
             font-size: .875rem;
             line-height: 1.125rem;
             margin-bottom: 1.25rem;
+
             @media screen and (min-width:1300px) {
                 font-size: 1.125rem;
                 line-height: 1.6875rem;
             }
+
             @media screen and (min-width:1300px) {
                 margin-left: 4rem;
             }
         }
-        
-        .button{
+
+        .button {
             font-style: normal;
             font-weight: 500;
             font-size: 1rem;
@@ -2082,65 +2101,75 @@
                 background-color: $color-blue;
                 color: $color-white;
             }
-            &::after{
+
+            &::after {
                 content: '';
                 background-image: url('/assets/icons/icon-arrow-white.svg');
                 height: 1.125rem;
                 width: 1.125rem;
                 transform: rotate(90deg);
             }
+
             @media screen and (min-width:768px) {
-            font-size: 1.25rem;
-            line-height: 1.4375rem;
+                font-size: 1.25rem;
+                line-height: 1.4375rem;
             }
+
             @media screen and (min-width:1300px) {
                 margin-left: 13rem;
             }
         }
-        
+
     }
 }
 
-.injection-site{
+.injection-site {
     background: rgba(226, 231, 234, 0.5);
     padding-top: 2.1875rem;
     padding-bottom: 2.1875rem;
     overflow: hidden;
+
     @media screen and (min-width:768px) {
         padding-top: 4.6875rem;
         padding-bottom: 4.375rem;
     }
 
-    &__container{
-    @media screen and (min-width:768px) {
-        display: flex;
-        justify-content: space-between;
-        max-width: 79.3125rem;
+    &__container {
+        @media screen and (min-width:768px) {
+            display: flex;
+            justify-content: space-between;
+            max-width: 79.3125rem;
+        }
+
+        @media screen and (min-width:1040px) {
+            align-items: end;
+        }
+
+        @media screen and (min-width:1300px) {
+            margin: auto;
+            max-width: unset;
+        }
+
+        @media screen and (min-width:1340px) {
+            align-items: unset;
+        }
     }
-    @media screen and (min-width:1040px) {
-        align-items: end;
-    }
-    @media screen and (min-width:1300px) {
-        margin: auto;
-        max-width: unset;
-    }
-    @media screen and (min-width:1340px) {
-        align-items: unset;
-    }
-}
-    
-    &__first{
+
+    &__first {
 
         @media screen and (min-width:850px) {
             max-width: 31.625rem;
         }
+
         @media screen and (min-width:850px) {
-        max-width: 30.625rem;
+            max-width: 30.625rem;
         }
+
         @media screen and (min-width:1340px) {
-        max-width: 30.75rem;
+            max-width: 30.75rem;
         }
-        &__title{
+
+        &__title {
             text-align: center;
             font-style: normal;
             font-weight: 700;
@@ -2149,9 +2178,9 @@
             color: $color-dark-green;
 
             @media screen and (min-width:1024px) {
-            font-size: 1.875rem;
-            line-height: 2.375rem;
-            text-align: left;
+                font-size: 1.875rem;
+                line-height: 2.375rem;
+                text-align: left;
             }
         }
 
@@ -2164,17 +2193,18 @@
 
     }
 
-    &__second{
+    &__second {
         @media screen and (min-width:1300px) {
-        max-width: 43rem;
+            max-width: 43rem;
         }
+
         @media screen and (min-width:1340px) {
             margin-top: 4rem;
         }
 
-        &__sub-heading{
-            position:relative;
-            z-index:2;
+        &__sub-heading {
+            position: relative;
+            z-index: 2;
             font-style: normal;
             font-weight: 500;
             font-size: 1.25rem;
@@ -2183,16 +2213,16 @@
             margin-bottom: .5625rem;
             color: $color-bright-gray;
             text-transform: uppercase;
-            
+
             @media screen and (min-width:1420px) {
                 margin-top: 1.9375rem;
             }
-            
+
         }
 
-        &__heading{
-            position:relative;
-            z-index:2;
+        &__heading {
+            position: relative;
+            z-index: 2;
             font-style: normal;
             font-weight: 900;
             font-size: 2.25rem;
@@ -2202,67 +2232,71 @@
 
             @media screen and (min-width:1040px) {
                 max-width: 23.875rem;
-                line-height: 2.4375rem;            
-            } 
-            @media screen and (min-width:1340px) {
-                max-width: unset;
-                font-size: 4.375rem;          
-                letter-spacing: -0.03em;
-                line-height: 2.75rem;            
-                margin-bottom: .9375rem;
-            } 
-            @media screen and (min-width:1440px) {
-                font-size: 4.375rem!important;
+                line-height: 2.4375rem;
             }
 
-            br{
+            @media screen and (min-width:1340px) {
+                max-width: unset;
+                font-size: 4.375rem;
+                letter-spacing: -0.03em;
+                line-height: 3.5rem;
+                margin-bottom: .9375rem;
+            }
+
+            @media screen and (min-width:1440px) {
+                font-size: 4.375rem !important;
+            }
+
+            br {
                 display: none;
+
                 @media screen and (min-width:1440px) {
                     display: block;
                 }
             }
 
-            span{
+            span {
                 @media screen and (min-width:1440px) {
                     font-size: 3.625rem;
                 }
             }
         }
 
-        &__sub-text{
-            position:relative;
-            z-index:2;
+        &__sub-text {
+            position: relative;
+            z-index: 2;
             font-style: normal;
             font-weight: 900;
             font-size: 1rem;
-            line-height: 1.5rem;        
+            line-height: 1.5rem;
             letter-spacing: 0.05em;
             margin-top: .25rem;
             color: $color-white;
         }
-        &__text{
-            position:relative;
-            z-index:2;
+
+        &__text {
+            position: relative;
+            z-index: 2;
             font-style: normal;
             font-weight: 300;
             font-size: 1rem;
-            line-height: 1.5rem;        
+            line-height: 1.5rem;
             letter-spacing: 0.05em;
             color: $color-bright-gray;
         }
 
-        .steps-box__content-line{
-            position:relative;
-            z-index:2;
+        .steps-box__content-line {
+            position: relative;
+            z-index: 2;
             margin-bottom: 0;
             margin-top: .5rem;
 
             @media screen and (min-width:1340px) {
-            max-width: 416px;
+                max-width: 416px;
             }
         }
 
-        &__shape{
+        &__shape {
             position: absolute;
             height: 26.75rem;
             right: -4rem;
@@ -2278,20 +2312,24 @@
                 transform: rotate(-62deg);
                 width: 204vw;
             }
+
             @media screen and (min-width:775px) {
                 right: -31rem;
                 bottom: -45.0625rem;
                 transform: rotate(-73deg);
             }
+
             @media screen and (min-width:800px) {
                 right: -14.5625rem;
                 bottom: -22.8125rem;
                 width: 54.7406rem;
             }
+
             @media screen and (min-width:890px) {
                 right: -13.6875rem;
                 width: 54.2406rem;
             }
+
             @media screen and (min-width:1040px) {
                 right: -10.6875rem;
                 width: 60.2406rem;
@@ -2299,6 +2337,7 @@
                 height: 34.75rem;
                 transform: rotate(-55deg);
             }
+
             @media screen and (min-width:1340px) {
                 right: -12.6875rem;
                 bottom: -53.4375rem;
@@ -2307,34 +2346,39 @@
                 border-radius: 36.3544rem;
                 transform: rotate(-48.66deg);
             }
+
             @media screen and (min-width:1420px) {
                 bottom: -52.4375rem;
                 right: -13.6875rem;
             }
 
-    }
+        }
 
     }
-    &__list{
+
+    &__list {
         max-width: 19.5rem;
         margin: auto;
 
         @media screen and (min-width:517px) {
             max-width: 28.5rem;
         }
+
         @media screen and (min-width:768px) {
             max-width: 19.5rem;
         }
+
         @media screen and (min-width:850px) {
             max-width: 28.5rem;
         }
+
         @media screen and (min-width:1400px) {
             max-width: 28.75rem;
         }
-        
+
     }
 
-    &__item{
+    &__item {
         font-style: normal;
         font-weight: 300;
         font-size: .875rem;
@@ -2342,61 +2386,66 @@
         margin-top: 1rem;
 
         @media screen and (min-width:850px) {
-        font-size: 1.125rem;
-        line-height: 1.6875rem;
+            font-size: 1.125rem;
+            line-height: 1.6875rem;
         }
     }
 }
-.alp-levels{
+
+.alp-levels {
 
     padding-top: 1.875rem;
     padding-bottom: 3rem;
+
     @media screen and (min-width:1350px) {
         padding-top: 5rem;
-        }
+    }
 
-    &__container{
+    &__container {
         @media screen and (min-width:768px) {
             display: flex;
         }
     }
 
-    &__list{
+    &__list {
         max-width: 19.5rem;
         margin: auto;
         margin-top: .75rem;
         margin-bottom: 4.125rem;
+
         @media screen and (min-width:768px) {
             max-width: 40.5rem;
             margin-bottom: 0;
-            }
+        }
     }
 
-    &__item{
+    &__item {
         font-style: normal;
         font-weight: 300;
         font-size: .875rem;
         line-height: 1.125rem;
         margin-top: 1rem;
+
         @media screen and (min-width:768px) {
             margin-left: .9375rem;
-            }
-            @media screen and (min-width:1000px) {
-                font-size: 1.125rem;
-                line-height: 1.6875rem;
-                }
+        }
+
+        @media screen and (min-width:1000px) {
+            font-size: 1.125rem;
+            line-height: 1.6875rem;
+        }
     }
 
-    &__first{
+    &__first {
         @media screen and (min-width:768px) {
-        max-width: 28rem;
+            max-width: 28rem;
         }
 
         @media screen and (min-width:1350px) {
             max-width: 32.75rem;
-            }
+        }
 
-        &__heading{
+        &__heading {
             font-style: normal;
             font-weight: 700;
             font-size: 1.25rem;
@@ -2405,13 +2454,13 @@
             color: $color-dark-green;
 
             @media screen and (min-width:1000px) {
-            font-size: 1.875rem;
-            line-height: 2.375rem;
-            max-width: 32.75rem;
+                font-size: 1.875rem;
+                line-height: 2.375rem;
+                max-width: 32.75rem;
             }
         }
 
-        &__text{
+        &__text {
             font-style: normal;
             font-weight: 300;
             font-size: .875rem;
@@ -2419,13 +2468,13 @@
             margin-top: .625rem;
 
             @media screen and (min-width:1000px) {
-            font-size: 1.125rem;
-            line-height: 1.6875rem;
+                font-size: 1.125rem;
+                line-height: 1.6875rem;
             }
         }
     }
 
-    &__second{
+    &__second {
         text-align: right;
         display: flex;
         justify-content: right;
@@ -2435,21 +2484,23 @@
             max-width: 36.25rem;
         }
 
-        .shapes{
+        .shapes {
             @media screen and (min-width:768px) {
-            position: absolute;
-            right: -9.875rem;
-            top: 11.3125rem;
+                position: absolute;
+                right: -9.875rem;
+                top: 11.3125rem;
             }
+
             @media screen and (min-width:1000px) {
-            top: 20.3125rem;
+                top: 20.3125rem;
             }
+
             @media screen and (min-width:1350px) {
-            top: 19rem;
+                top: 19rem;
             }
         }
-        
-        &__text{
+
+        &__text {
             font-style: normal;
             font-weight: 900;
             font-size: 0.6875rem;
@@ -2468,20 +2519,22 @@
                 line-height: 1.5rem;
                 margin-left: 2rem;
             }
+
             @media screen and (min-width:1350px) {
-            font-size: 1.25rem;
-            line-height: 1.875rem;
-            max-width: 43.375rem;
-            margin-left: 2.1875rem;
-            margin-top: .625rem;
-            }    
+                font-size: 1.25rem;
+                line-height: 1.875rem;
+                max-width: 43.375rem;
+                margin-left: 2.1875rem;
+                margin-top: .625rem;
+            }
+
             @media screen and (min-width:1400px) {
                 max-width: 46.375rem;
-                margin-top:.625rem;
-            }    
+                margin-top: .625rem;
+            }
         }
 
-        &__shape{
+        &__shape {
             position: absolute;
             height: 3.125rem;
             bottom: -0.25rem;
@@ -2494,25 +2547,30 @@
             @media screen and (min-width:500px) {
                 width: 64vw;
             }
+
             @media screen and (min-width:1000px) {
                 height: 5.125rem;
             }
+
             @media screen and (min-width:1350px) {
                 height: 5rem;
                 right: 0;
-                
+
             }
+
             @media screen and (min-width:1400px) {
                 right: -2.1875rem;
-                
+
             }
+
             @media screen and (min-width:1600px) {
                 width: 100vw;
                 left: -937px;
             }
 
         }
-        &__shape--secondary{
+
+        &__shape--secondary {
             position: absolute;
             height: 3.125rem;
             bottom: -0.9375rem;
@@ -2525,6 +2583,7 @@
             @media screen and (min-width:500px) {
                 width: 64vw;
             }
+
             @media screen and (min-width:1600px) {
                 width: 100vw;
                 left: -877px;
@@ -2532,6 +2591,7 @@
         }
     }
 }
+
 //-------------------------------------------------------------dosing page -------------------------------------------------------------    
 
 .hypophosphatasia__testimonial-container.wrapper {
@@ -2676,6 +2736,7 @@
         }
     }
 }
+
 //------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
 
 .infants-young-children__survival {
@@ -2747,6 +2808,7 @@
 
         @media screen and (min-width: 1024px) {
             margin-bottom: 0;
+
             .button--pich-to-zoom {
                 display: none;
             }
@@ -2813,4 +2875,5 @@
         }
     }
 }
+
 //------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
