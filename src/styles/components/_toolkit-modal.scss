@@ -1,168 +1,164 @@
 .toolkit__modal {
-  --modal-bg-color: #E2E7EA;
-  display: none;
-  background-color: var(--modal-bg-color) !important;
-  border-radius: 1.25rem;
-  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
-  border-radius: 25px;
-  font-size: .875rem;
-  font-weight: 300;
-  line-height: 1.0938rem;
-  padding-top: 52px !important;
-  padding-bottom: 31px !important;
-  min-height: 29.75rem;
-  max-width: 57.125rem;
-  overflow: hidden;
-
-  @include media('tablet') {
-    font-size: 1.125rem;
-    line-height: 1.6875rem;
-  }
-
-  &::before {
+    --modal-bg-color: #E2E7EA;
     display: none;
-  }
-
-  &_wrapper {
-    position: relative;
-    height: 100%;
-    padding-top: 2rem;
-    padding-left: 1rem;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -10%;
-      background-color: $color-white;
-      border-radius: 0px 368px 368px 0px;
-      height: 100%;
-      width: 120%;
-      z-index: -1;
-
-      @include media('tablet') {
-        width: 90%;
-      }
-    }
-
-  }
-
-  &_close:focus,
-  &_close:hover,
-  &_close {
-    position: absolute;
-    top: -2.5rem;
-    right: -1.5rem;
-    background-color: var(--modal-bg-color);
-    color: $color-dark-pink;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-style: normal;
+    background-color: var(--modal-bg-color) !important;
+    border-radius: 1.25rem;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    font-size: .875rem;
     font-weight: 300;
-    font-size: 4.6875rem;
-    line-height: 125%;
-    letter-spacing: -0.03em;
-    transform: rotate(45deg);
-    width: 5rem;
-  }
+    line-height: 1.0938rem;
+    padding-top: 52px !important;
+    padding-bottom: 31px !important;
+    min-height: 29.75rem;
+    max-width: 57.125rem;
+    overflow: hidden;
 
-  &_title {
-    color: $color-dark-green;
-    font-size: 1.125rem;
-    font-weight: 900;
-    line-height: 1.6875rem;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.25rem;
-    text-align: left;
-  }
+    &.fancybox__content {
+        width: 57.125rem;
+        height: 0;
+        position: relative;
+        margin-left: 5rem !important;
+        margin-right: 5rem !important;
 
-  ul {
-    // margin-left: 1.5rem;
-  }
-
-  ul li {
-    position: relative;
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    margin-bottom: 0.5rem;
-
+        &>.f-button.is-close-btn {
+            display: none;
+        }
+    }
     @include media('tablet') {
-      margin-bottom: .625rem;
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
     }
 
     &::before {
-      content: '';
-      background-color: $color-green;
-      border-radius: 50%;
-      display: block;
-      margin-right: 4px;
-      height: 6px;
-      width: 6px;
+        display: none;
     }
-  }
+
+    &_wrapper {
+        position: relative;
+        height: 100%;
+        padding-top: 2rem;
+        padding-left: 1rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10%;
+            background-color: $color-white;
+            border-radius: 0px 368px 368px 0px;
+            height: 100%;
+            width: 120%;
+            z-index: -1;
+
+            @media screen and (min-width: 769px) {
+                width: 90%;
+            }
+        }
+
+    }
+
+    &_close:focus,
+    &_close:hover,
+    &_close {
+        position: absolute;
+        top: -2.5rem;
+        right: -1.5rem;
+        background-color: var(--modal-bg-color);
+        color: $color-dark-pink;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 4.6875rem;
+        line-height: 125%;
+        letter-spacing: -0.03em;
+        transform: rotate(45deg);
+        width: 5rem;
+    }
+
+    &_title {
+        color: $color-dark-green;
+        font-size: 1.125rem;
+        font-weight: 900;
+        line-height: 1.6875rem;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.25rem;
+        text-align: left;
+    }
+
+    ul {
+        // margin-left: 1.5rem;
+    }
+
+    ul li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        margin-bottom: 0.5rem;
+
+        @include media('tablet') {
+            margin-bottom: .625rem;
+        }
+
+        &::before {
+            content: '';
+            background-color: $color-green;
+            border-radius: 50%;
+            display: block;
+            margin-right: 4px;
+            height: 6px;
+            width: 6px;
+        }
+    }
 
 }
 
 @media screen and (max-width:1260px) {
-  .modal {
-    width: 59.375rem;
-  }
+    .toolkit__modal {
+        width: 59.375rem;
+    }
 }
 
 @media screen and (max-width:990px) {
-  .modal {
-    max-width: 48rem;
-    padding-top: unset;
-    padding-right: unset;
-    padding-bottom: unset;
-    padding-left: unset;
-  }
+    .toolkit__modal {
+        max-width: 46rem;
+        padding-top: unset;
+        padding-right: unset;
+        padding-bottom: unset;
+        padding-left: unset;
+    }
 
-  .modal {
-    padding-top: 1.25rem;
-    padding-right: 1.25rem;
-    padding-bottom: 1.25rem;
-    padding-left: 1.25rem;
-  }
+    .toolkit__modal {
+        padding-top: 1.25rem;
+        padding-right: 1.25rem;
+        padding-bottom: 1.25rem;
+        padding-left: 1.25rem;
+    }
 }
 
 @media screen and (max-width:768px) {
-  .modal {
-    max-width: 23.4375rem;
-  }
+    .toolkit__modal {
+        max-width: 23.4375rem;
+    }
 }
 
 //aqui
 @media screen and (max-width:400px) {
-  .modal {
-    max-width: 20rem;
-    height: auto !important;
-  }
+    .toolkit__modal {
+        max-width: 20rem;
+        height: auto !important;
+    }
 }
 
 .fancybox__backdrop {
-  background-color: rgba(0, 0, 0, 0.4) !important;
-  position: absolute;
-  height: 110%;
-}
-
-.fancybox__content {
-  width: 57.125rem !important;
-  height: 0;
-  // background-color: $color-white !important;
-  /* padding-left: 0!important;
-  padding-right: 0!important; */
-  position: relative;
-  margin-left: 5rem !important;
-  margin-right: 5rem !important;
-}
-
-.fancybox__content>.f-button.is-close-btn {
-  display: none;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    position: absolute;
+    height: 110%;
 }
 
 html.with-fancybox {
-  overflow: hidden;
+    overflow: hidden;
 }
