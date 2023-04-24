@@ -1,15 +1,24 @@
 ---
+type Props = {
+    title?: string;
+};
+
+const { title }: Props = Astro.props;
 ---
 
 <section class="table">
-    <div class="table__header">
-        <slot name="title" />
-    </div>
+    {
+        title && (
+            <div class="table__header">
+                <div class="table__title">{title}</div>
+            </div>
+        )
+    }
     <div class="table__wrapper">
         <table class="table__content">
             <slot name="header" />
             <slot name="body" />
         </table>
-        <slot name="footer" />
     </div>
+    <slot name="footer" />
 </section>

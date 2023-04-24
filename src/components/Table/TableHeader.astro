@@ -16,6 +16,7 @@ type Props = {
     mainHeaders:
         | object[{
               label: string;
+              subLabel: string;
               colspan: number | null;
               classModifier: string | null;
           }]
@@ -28,9 +29,17 @@ type Props = {
               classModifier: string | null;
           }]
         | [];
+
+    subSubHeaders:
+        | object[{
+              label: string;
+              colspan: number | null;
+              classModifier: string | null;
+          }]
+        | [];
 };
 
-const { mainHeaders = [], subHeaders = [] } = Astro.props;
+const { mainHeaders = [], subHeaders = [], subSubHeaders = [] } = Astro.props;
 ---
 
 {
@@ -42,10 +51,32 @@ const { mainHeaders = [], subHeaders = [] } = Astro.props;
                         <th
                             colspan={header.colspan}
                             class={
+                                header.label === ""
+                                    ? `table__header--mh-cell table__header--mh--empty`
+                                    : `
+                                        table__header--mh--cell table__header--mh--${header.classModifier}
+                                    `
+                            }
+                        >
+                            <p class="table__header--mh--paragraph">
+                                {header.label}
+                                <span>{header.subLabel}</span>
+                            </p>
+                        </th>
+                    ))}
+                </tr>
+            )}
+
+            {subHeaders.length > 0 && (
+                <tr class="table__header--sh">
+                    {subHeaders.map((header: any) => (
+                        <th
+                            colspan={header.colspan}
+                            class={
                                 !header.classModifier
                                     ? ""
                                     : `
-                                        table__header--mh--${header.classModifier}
+                                        table__header--sh--${header.classModifier}
                                     `
                             }
                         >
@@ -55,9 +86,9 @@ const { mainHeaders = [], subHeaders = [] } = Astro.props;
                 </tr>
             )}
 
-            {subHeaders && (
-                <tr class="table__header--sh">
-                    {subHeaders.map((header: any) => (
+            {subSubHeaders.length > 0 && (
+                <tr class="table__header--ssh">
+                    {subSubHeaders.map((header: any) => (
                         <th
                             colspan={header.colspan}
                             class={
