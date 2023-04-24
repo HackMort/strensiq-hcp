@@ -5,19 +5,21 @@
 
     padding: .5rem 1rem;
 
-    // .f-button {
-    //     background: $color-dark-pink;
+    .pinch-to-zoom__button-container {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1;
 
-    //     &:active,
-    //     &:hover,
-    //     &:focus {
-    //         background: $color-dark-pink;
-    //     }
+        &--right-bottom {
+            top: auto;
+            bottom: 1rem;
+        }
 
-    //     svg {
-    //         stroke: $color-white;
-    //     }
-    // }
+        @media screen and (min-width: 1024px) {
+            display: none;
+        }
+    }
 
     .pinch-to-zoom__close-modal {
         position: absolute;

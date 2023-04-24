@@ -47,7 +47,7 @@ const internalNavLinks = [
                             </div>
                         </div>
                         <p class="clinical-study__description">
-                            <strong>of patients experienced complete or substantial healing of hypophosphatasia-related rickets</strong> as measured by the Radiographic Global Impression of Change (RGI-C)<sup class="symbol-sup">*</sup>
+                            <strong>of patients experienced complete or<br> substantial healing of hypophosphatasia<br>-related rickets</strong> as measured by the Radiographic<br> Global Impression of Change (RGI-C)<sup class="symbol-sup">*</sup>
                         </p>
                     </article>
                     <article class="clinical-study">
@@ -64,7 +64,7 @@ const internalNavLinks = [
                             <strong>responder rate</strong>
                         </p>
                     </article>
-                    <p>Efficacy results reflect data for 9 individuals who reached adolescence (aged 13 to 17 years) during the course of the study.</p>
+                    <p class="clinical-studies__clarification">Efficacy results reflect data for 9 individuals who reached adolescence (aged 13 to 17 years) during the course of the study.</p>
                     <p class="clinical-studies__footer-note">
                         <sup class="symbol-sup">*</sup>The RGI-C scale quantifies change over time in mineralization and bone structure.
                     </p>
@@ -72,14 +72,19 @@ const internalNavLinks = [
             </div>
             <div class="hpp-related-rickets__content-right">
                 <div class="hpp-related-rickets__chart-wrapper">
-                    <PinchToZoom id="median-rgi-c-score">
-                        <picture>
-                            <source srcset="/assets/images/clinical-data/adolescents/median-rgi-c-score-desktop.png" media="(min-width: 768px)">
-                            <img src="/assets/images/clinical-data/adolescents/median-rgi-c-score-mobile.png" alt="">
-                        </picture>
-                    </PinchToZoom>
-                    <p><sup>a</sup>Values are statistically significant based on P&lt;0.01.</p>
-                    <p><sup>b</sup>Value is statistically significant based on P&lt;0.05</p>
+                    <div>
+                        <PinchToZoom id="median-rgi-c-score" top="58%" left="80%">
+                            <picture>
+                                <source srcset="/assets/images/clinical-data/adolescents/median-rgi-c-score-desktop.png" media="(min-width: 768px)">
+                                <img src="/assets/images/clinical-data/adolescents/median-rgi-c-score-mobile.png" alt="">
+                            </picture>
+                        </PinchToZoom>
+
+                    </div>
+                    <div class="hpp-related-rickets__chart-footnote">
+                        <p><sup>a</sup>Values are statistically significant based on P&lt;0.01.</p>
+                        <p><sup>b</sup>Value is statistically significant based on P&lt;0.05</p>
+                    </div>
                 </div>
                 <div class="hpp-related-rickets__radiographics-wrapper">
                     <div class="radiographic-images-mobile">
@@ -112,7 +117,31 @@ const internalNavLinks = [
                             </ExpansionPanelMobile>
                         </AccordionMobile>
                     </div>
-                    <div class="radiographic-images-desktop"></div>
+                    <div class="radiographic-images-desktop">
+                        <RadiographicImagesComparator>
+                            <div slot="before">
+                                <p data-radiographic-title>
+                                    12 years of age (at baseline)
+                                </p>
+                                <picture data-radiographic-image>
+                                    <source srcset="/assets/images/clinical-data/adolescents/adolescent-knee-before-desktop.png" media="(min-width: 768px)">
+                                    <img src="/assets/images/clinical-data/adolescents/adolescent-knee-before-mobile.png" alt="">
+                                </picture>
+                            </div>
+                            <div slot="after">
+                                <p data-radiographic-title>
+                                    17 years of age (at 5 years)
+                                </p>
+                                <picture data-radiographic-image>
+                                    <source srcset="/assets/images/clinical-data/adolescents/adolescent-knee-after-desktop.png" media="(min-width: 768px)">
+                                    <img src="/assets/images/clinical-data/adolescents/adolescent-knee-after-mobile.png" alt="">
+                                </picture>
+                                <p data-radiographic-footer>
+                                    After 5 years of STRENSIQ treatment, Patient 1 had an <strong>RGI-C score of +2.67</strong>.
+                                </p>
+                            </div>
+                        </RadiographicImagesComparator>
+                    </div>
                 </div>
             </div>
         </div>

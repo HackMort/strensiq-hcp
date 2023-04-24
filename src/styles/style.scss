@@ -2943,19 +2943,8 @@
         margin-left: auto;
         position: relative;
 
-        .button--pich-to-zoom {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            z-index: 1;
-        }
-
         @media screen and (min-width: 1024px) {
             margin-bottom: 0;
-
-            .button--pich-to-zoom {
-                display: none;
-            }
         }
 
         @media screen and (min-width: 1400px) {
@@ -3023,7 +3012,72 @@
 //------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
 
 .adolescents__hpp-related-rickets {
+    padding-top: 1.625rem;
+    padding-bottom: 1.8125rem;
 
+    background: $color-white;
+
+    .hpp-related-rickets__title {
+        color: $color-dark-green;
+        margin-bottom: .625rem;
+    }
+
+    .clinical-studies__clarification {
+        margin-bottom: 1.5rem;
+    }
+
+    .hpp-related-rickets__chart-footnote {
+        margin-bottom: .75rem;
+
+        p {
+            font-size: .75rem;
+            line-height: 1.15;
+        }
+    }
+
+    .hpp-related-rickets__radiographics-title {
+        font-weight: 600;
+        color: $color-dark-gray;
+        margin-bottom: 0.8125rem;
+    }
+
+    .hpp-related-rickets__content {
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-columns: 25rem 1fr;
+        }
+    }
+
+    .clinical-studies__footer-note {
+        font-size: 0.75rem;
+        font-weight: 14.4px;
+        font-weight: 300;
+    }
+
+    .hpp-related-rickets__content-right {
+        .radiographic-images-desktop {
+            display: none;
+        }
+
+        @media screen and (min-width: 1024px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            .hpp-related-rickets__chart-wrapper {
+                order: 2;
+            }
+
+            .radiographic-images-mobile {
+                display: none;
+            }
+
+            .radiographic-images-desktop {
+                display: block;
+                height: 32.6044rem;
+            }
+        }
+    }
 }
 
 //------------------------------------------------------------- Clinical data - Adolescents -------------------------------------------------------------
