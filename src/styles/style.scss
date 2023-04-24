@@ -1192,6 +1192,8 @@
 .hypophosphatasia-container {
     display: flex;
     flex-wrap: wrap;
+    max-width: 100%;
+    overflow: hidden;
     width: 100%;
 
     @media(max-width: 1199px) {
@@ -1200,7 +1202,6 @@
 
     @include media ('desktop') {
         padding-bottom: 2.25rem;
-        padding-left: 4.0625rem;
     }
 
     &__tabs-container {
@@ -1210,7 +1211,7 @@
     }
 
     &__content {
-        padding: 1.5625rem 1.5625rem 0;
+        padding: 1.5625rem 0 0;
 
         @include media('desktop') {
             max-width: 61ch;
@@ -1257,9 +1258,9 @@
 
     &__tabs {
         justify-content: space-evenly;
-        margin: 0 auto;
+        // margin: 0 auto;
         overflow-y: hidden;
-        width: 95%;
+        // width: 100;
 
         @include media('desktop') {
             justify-content: center;
@@ -1272,7 +1273,7 @@
 
         li a {
             font-weight: 700;
-            padding: .625rem 2.1875rem;
+            padding: .625rem 1.5625rem;
 
             @include media('desktop') {
                 padding: .625rem 4.1875rem;
@@ -1285,8 +1286,6 @@
         margin-bottom: 1.5625rem;
 
         @include media('desktop') {
-            /* font-size: 18px;
-            line-height: 1.6875rem; */
             font-size: 30px;
             line-height: 2.3438rem;
         }
@@ -1300,8 +1299,6 @@
         padding: 2.4688rem 0 0;
 
         &-title {
-            background-color: $color-dark-green;
-            border-radius: 0 0 0 30px;
             color: $color-white;
             font-weight: 700;
             line-height: 1.25rem;
@@ -1317,12 +1314,36 @@
                 width: 5.8125rem;
             }
 
+            &::before {
+                background-color: $color-dark-green;
+                border-radius: 0 0 0 30px;
+                content: '';
+                height: 100%;
+                left: -1rem;
+                position: absolute;
+                top: 0;
+                width: 150%;
+                z-index: -1;
+
+                @media (min-width: 428px) {
+                    left: -1.5rem;
+                }
+
+                @include media('tablet') {
+                    left: -2rem;
+                }
+            }
+
             @include media('desktop') {
                 font-size: 20px;
                 line-height: 1.5625rem;
 
                 &::after {
                     width: 12.5rem;
+                }
+
+                &::before {
+                    left: 0;
                 }
             }
         }
@@ -1341,7 +1362,7 @@
         }
 
         &-content {
-            padding: 0 1rem;
+            padding: 0;
             position: relative;
 
             &--flex {
@@ -1413,10 +1434,6 @@
     }
 
     &--ages {
-        @include media('desktop') {
-            display: flex;
-            justify-content: space-between;
-        }
 
         .hypophosphatasia-container {
             &__content {
@@ -1427,7 +1444,7 @@
                 overflow-x: scroll;
 
                 li:first-child {
-                    margin-left: calc(200px - (100vw - 320px));
+                    margin-left: calc(160px - (100vw - 320px));
                 }
 
                 @media (min-width: 530px) {
@@ -1450,12 +1467,12 @@
                         justify-content: space-between;
                         width: 100%;
 
-                        &>.hypophosphatasia-container__panel-chart {
+                        & > .hypophosphatasia-container__panel-chart {
                             margin: 0;
                             width: 55%;
                         }
 
-                        &>.hypophosphatasia-container__panel-content {
+                        & > .hypophosphatasia-container__panel-content {
                             width: 40%;
                         }
                     }
@@ -1470,17 +1487,19 @@
 
         }
 
-        section.information {
+        .information {
             @include media('desktop') {
                 align-self: center;
                 justify-self: flex-end;
                 max-width: 50%;
             }
+        }
 
-            @media (min-width: 1369px) {
-                max-width: none;
-                padding: 0 0 0 25px;
-                width: fit-content;
+        .wrapper {
+            @include media('desktop') {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
             }
         }
 
@@ -1522,8 +1541,11 @@
     }
 
     &--children {
-        @include media ('desktop') {
-            flex-wrap: nowrap;
+        .wrapper{
+            @include media ('desktop') {
+                display: flex;
+                flex-wrap: nowrap;
+            }
         }
     }
 
@@ -1533,36 +1555,27 @@
     }
 
     &--diagnosis {
-        display: flex;
-        justify-content: flex-start;
         overflow: hidden;
-        position: relative;
 
         @media(min-width: 1081px) {
-            flex-wrap: nowrap;
-            justify-content: space-around;
             padding-top: 3.125rem;
-        }
-
-        @include media('desktop') {
-            justify-content: flex-start;
-            @include flex-gap(calc(100vw - 1115px));
         }
 
         .hypophosphatasia-container__content {
             padding-right: 0;
+            padding-left: 0;
         }
 
         .hypophosphatasia-container__content--treatments {
             color: $color-white;
             padding-bottom: 5.625rem;
             padding-top: 2.5rem;
+            padding-left: 0;
             position: relative;
             width: fit-content;
 
             @media(min-width: 1081px) {
                 padding-bottom: 0;
-                width: 35%;
             }
 
             &::after {
@@ -1647,23 +1660,34 @@
         }
 
         .hypophosphatasia-container__content:first-child {
-            .hypophosphatasia-container__title {
-                max-width: 70ch;
-            }
+            max-width: 70ch;
 
             .hypophosphatasia-container__paragraph {
                 @media (min-width: 1021px){
                     max-width: 50ch;
                 }
             }
-
-            @media(min-width: 1081px) {
-                width: 65%;
-            }
         }
 
         .hypophosphatasia-container__title {
             margin-bottom: .625rem;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            position: relative;
+            z-index: 0;
+
+            @media(min-width: 1081px) {
+                flex-wrap: nowrap;
+                justify-content: space-around;
+            }
+
+            @include media('desktop') {
+                justify-content: space-around;
+            }
         }
 
         section.information {
@@ -1672,19 +1696,23 @@
 
             @media(min-width: 1081px) {
                 bottom: 20%;
-                left: -2.8125rem;
+                left: 0;
                 width: fit-content;
                 padding: 0 1.5625rem;
 
                 .hypophosphatasia-container__paragraph {
-                    left: 1.5625rem;
                     padding: 1.125rem 6.25rem;
-                    right: unset;
 
                     &::after {
                         border-radius: 0 5.9688rem 5.9688rem 0;
                         left: unset;
                         right: 1.5625rem;
+                    }
+
+                    &::before {
+                        right: 0;
+                        left: unset;
+                        width: 110%;
                     }
                 }
             }
@@ -1710,6 +1738,17 @@
         }
     }
 
+    &--testimonial {
+        .testimonial {
+            overflow: unset;
+        }
+    }
+
+    &--skeleton {
+        background-color: $color-soft-gray;
+        padding-bottom: 0;
+    }
+
     .highlight-information {
         margin-bottom: 2.6875rem;
         max-width: 21.25rem;
@@ -1718,22 +1757,19 @@
     .information {
         display: flex;
         justify-content: flex-end;
-        overflow: hidden;
+        margin-bottom: 1.875rem;
         position: relative;
         width: 100%;
 
         .hypophosphatasia-container__paragraph--highlight {
-            background-color: $color-blue;
-            border-radius: 2rem 0 0 2rem;
             color: $color-white;
             font-size: 14px;
             font-weight: 900;
             line-height: 1.0063rem;
-            margin-bottom: 1.875rem;
+            margin-bottom: 0;
             max-width: 60ch;
             padding: .625rem 1.25rem;
             position: relative;
-            right: -15px;
             text-align: center;
 
             &::after {
@@ -1741,31 +1777,46 @@
                 border-radius: 5.9688rem 0 0 5.9688rem;
                 bottom: -10px;
                 content: '';
-                height: 3.125rem;
+                height: 75%;
                 position: absolute;
-                width: 100%;
+                width: 150%;
+                z-index: -2;
+            }
+
+            &::before {
+                background-color: $color-blue;
+                border-radius: 2rem 0 0 2rem;
+                content: '';
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 150%;
                 z-index: -1;
             }
 
             @media (min-width: 530px) {
-                border-radius: 2rem;
-                padding: .625rem 1.875rem;
-                right: 25px;
+                padding: .625rem;
 
                 &::after {
                     left: 25px;
                 }
+
+                &::before {
+                    border-radius: 2rem;
+                    left: -25px;
+                }
             }
 
             @include media('desktop') {
-                border-radius: 5.9688rem;
                 font-size: 20px;
                 line-height: 1.875rem;
-                right: 0;
-            }
 
-            @media (min-width: 1369px) {
-                right: 25px;
+                &::before {
+                    border-radius: 5.9688rem;
+                    left: -1.5625rem;
+                    width: 110%;
+                }
             }
         }
     }
@@ -1785,7 +1836,6 @@
 }
 
 .skeleton-container {
-    background-color: $color-soft-gray;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1801,9 +1851,8 @@
     }
 
     @include media('desktop') {
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 0;
-        padding-left: 4.0625rem;
     }
 
     h2 {
@@ -1823,8 +1872,8 @@
             content: '';
             height: 100%;
             position: absolute;
-            right: 0;
-            width: 65%;
+            left: calc(85vw - 50%);
+            width: 100%;
             z-index: 0;
         }
     }
@@ -1872,7 +1921,7 @@
 
         @include media('desktop') {
             background-color: transparent;
-            padding-right: 4.5rem;
+            padding-right: 2.5rem;
             width: fit-content;
         }
     }
@@ -1896,8 +1945,6 @@
                 font-size: 30px;
             }
         }
-
-
     }
 
     .skeleton--mobile {
@@ -1907,7 +1954,6 @@
         }
     }
 }
-
 
 //------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
 .infants-young-children__hpp-related-rickets {
