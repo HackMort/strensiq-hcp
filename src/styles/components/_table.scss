@@ -95,6 +95,9 @@ $headRowsWidth: 20%;
                 }
             }
 
+            &--cell {
+                border: 0 !important;
+            }
         }
 
         &--sh {
@@ -186,7 +189,6 @@ $headRowsWidth: 20%;
     &__body {
         &__row {
             &--mh {
-
                 :first-child {
                     //Main header
                     color: $color-dark-green !important;

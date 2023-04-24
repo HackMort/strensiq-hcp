@@ -1,4 +1,16 @@
 ---
+/**
+ * @name TableData
+ * @description
+ * Table data
+ * All the data of the table is passed through the data property as an array of objects.
+ * Each object has the following properties (Each object represents a row of the table):
+ * Text: is an array, each element of the array represents a cell of the table
+ * ClassModifier: is posible assign a class modifier to apply diferent styles to the row
+ * - mh: main header row (color dark green, bold text, left aligned, (only the first child of the array))
+ * - mb: Main bold (color black, bold text, (each cell))
+ */
+
 type Props = {
     data: object[{
         text: string[];

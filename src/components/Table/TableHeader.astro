@@ -11,6 +11,13 @@
  * Label: header text (If not specified, it is taken as an empty cell)
  * Colspan: number of columns that the header spans (If not specified, it is taken as 1)
  * ClassModifier: is posible assign a class modifier to apply (If not specified, it is taken as null)
+ * - mh: main header (Background dark green, white text, bold, border bottom green)
+ * - mh, empty: main header vacio (Background white)
+ * - mh, nb: main header sin bordes
+ * - sh: sub header (Background white, color dark green, bold)
+ * - sh, nb: sub header sin bordes
+ * - ssh: sub sub header (Background white, color dark gray, bold)
+ * - ssh, cg: sub sub header color green (Background white, color green, bold)
  */
 type Props = {
     mainHeaders:
@@ -95,7 +102,7 @@ const { mainHeaders = [], subHeaders = [], subSubHeaders = [] } = Astro.props;
                                 !header.classModifier
                                     ? ""
                                     : `
-                                        table__header--sh--${header.classModifier}
+                                        table__header--ssh--${header.classModifier}
                                     `
                             }
                         >

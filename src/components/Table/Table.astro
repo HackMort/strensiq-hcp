@@ -1,6 +1,15 @@
 ---
+/**
+ * @name Table
+ * @description
+ * Table Component
+ * This component is used to wrap the headers, body and footer of a table
+ * title prop: is a string that will be used as the table title (optional)
+ * Slots: header, body and footer: is posible to add different structures to the slots
+ */
+
 type Props = {
-    title?: string;
+    title?: string; // Table title (optional)
 };
 
 const { title }: Props = Astro.props;
