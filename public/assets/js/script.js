@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
   })
   window.addEventListener('resize', () => {
     isiHeaderFixed()
+    setNavTopPosition()
   })
   const toggleIsiSection = document.querySelector('.isi__section_toggle')
   if (toggleIsiSection) {
@@ -90,15 +91,15 @@ window.addEventListener('scroll', () => {
         if (currentScrollPosition > lastScrollPosition) {
           headerInner.classList.contains('is--sticky-up') && headerInner.classList.remove('is--sticky-up')
           headerInner.classList.add('is--sticky-down')
+          internalNav && internalNav.classList.add('is--fixed')
 
-          internalNav && internalNav.classList.contains('is--fixed') && internalNav.classList.remove('is--fixed')
+          // internalNav && internalNav.classList.contains('is--fixed') && internalNav.classList.remove('is--fixed')
 
           // Save the current scroll position
           lastScrollPosition = currentScrollPosition
         } else if (!entry.isIntersecting && window.scrollY >= headerHeight && currentScrollPosition < lastScrollPosition) {
           headerInner.classList.contains('is--sticky-down') && headerInner.classList.remove('is--sticky-down')
           headerInner.classList.add('is--sticky-up')
-          internalNav && internalNav.classList.add('is--fixed')
 
           // Save the current scroll position
           lastScrollPosition = currentScrollPosition
@@ -112,6 +113,8 @@ window.addEventListener('scroll', () => {
           internalNav && internalNav.classList.remove('is--fixed')
         }
       }
+
+      setNavTopPosition()
     })
   }, headerObserverOptions)
   headerObserver.observe(header)
@@ -133,7 +136,7 @@ function highlightActiveInternalNavOnScroll (headerInnerHeight) {
   const sectionObserverOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.25
+    threshold: 0.15
   }
   const sectionObserver = new window.IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -174,19 +177,6 @@ function highlightActiveInternalNavOnScroll (headerInnerHeight) {
   * It requires IntersectionObserver API
   * * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 */
-let prevScrollpos = window.pageYOffset
-let marginYOff = 300
-
-window.addEventListener('scroll', function () {
-  const currentScrollPos = window.pageYOffset
-  if (prevScrollpos > currentScrollPos) {
-    marginYOff = screen.width > 768 ? 250 : 200
-  } else {
-    marginYOff = 300
-  }
-  prevScrollpos = currentScrollPos
-})
-
 function setActiveIternalNavItemOnClick () {
   const internalNav = document.querySelector('.internal__nav')
   const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
@@ -200,8 +190,24 @@ function setActiveIternalNavItemOnClick () {
       const sectionID = target.getAttribute('href')
       const targetSection = document.querySelector(sectionID)
 
+      const internalNav = document.querySelector('.internal__nav')
+      const headerInner = document.querySelector('.header__inner')
+      const headerInnerStyles = getComputedStyle(headerInner)
+      const internalNavStyles = getComputedStyle(internalNav)
+      const headerInnerHeight = parseInt(headerInnerStyles.getPropertyValue('height').slice(0, -2))
+      const internalNavHeight = parseInt(internalNavStyles.getPropertyValue('height').slice(0, -2))
+      let openedMenuExtraHeight = screen.width < 1200 ? 77 : 119
+      if (window.pageYOffset === 0) {
+        openedMenuExtraHeight -= 160
+      }
+      /* console.log(targetSection.getBoundingClientRect().top)
+      console.log(window.pageYOffset) */
+      if (targetSection.getBoundingClientRect().top > 0) {
+        openedMenuExtraHeight *= -1
+      }
+      // const openedMenuExtraHeight = screen.width < 1200 ? 118.469 : 167.4
       // Scroll to section
-      const totalOffset = targetSection.getBoundingClientRect().top + window.pageYOffset - marginYOff
+      const totalOffset = targetSection.getBoundingClientRect().top + window.pageYOffset - (headerInnerHeight + internalNavHeight + openedMenuExtraHeight)
 
       window.scrollTo({
         top: totalOffset,
@@ -213,7 +219,21 @@ function setActiveIternalNavItemOnClick () {
     internalNavItems.forEach((item) => {
       item.classList.remove('is--active')
     })
+
+    if (!internalNav.classList.contains('is--fixed')) {
+      internalNav.classList.add('is--fixed')
+    }
   })
+}
+
+/* Change CSS variable for top position of the
+navigation container when has the class is--fixed */
+function setNavTopPosition () {
+  const internalNav = document.querySelector('.internal__nav')
+  const headerInner = document.querySelector('.header__inner')
+  const headerInnerStyles = getComputedStyle(headerInner)
+  const headerInnerHeight = headerInnerStyles.getPropertyValue('height')
+  internalNav.style.setProperty('--nav-top-position', headerInnerHeight)
 }
 
 /**
