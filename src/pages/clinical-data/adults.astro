@@ -3,6 +3,21 @@ import PageHero from "../../components/PageHero.astro";
 import Layout from "../../layouts/Layout.astro";
 import CTA from "../../components/CTA.astro";
 import References from "../../components/References.astro";
+import InternalNavigation from "../../components/InternalNavigation.astro";
+
+const internalNavLinks = [
+  {
+    href: "#adults-changes-in-substractes",
+    label: "Changes in substrates",
+    active: true,
+  },
+  { href: "#adults-mobility", label: "Mobility" },
+  {
+    href: "#adults-time-to-bone-mineralization",
+    label: "Time to bone mineralization",
+  },
+  { href: "#adults-real-world-outcomes", label: "Real-world outcomes" },
+];
 ---
 
 <Layout title="Adults">
@@ -12,6 +27,87 @@ import References from "../../components/References.astro";
     </h2>
     <h1 class="page-hero__title">See STRENSIQ results</h1>
   </PageHero>
+  <InternalNavigation heading="Adults" items={internalNavLinks} icon={true} />
+  <div class="wrapper">
+    <section
+      id="adults-changes-in-substractes"
+      class="section clinical-data-adults--changes-in-substractes"
+    >
+      <div class="clinical-data-adults--col">
+        <h2 class="clinical-data-adults--title">
+          Change in inorganic pyrophosphate (PPi), a known inhibitor of bone
+          mineralization
+        </h2>
+
+        <div class="clinical-data-adults--content">
+          <p>Limitations:</p>
+          <ul class="clinical-data-adults--list">
+            <li>
+              One of the coprimary endpoints of this study, change in PPi at 6
+              months, did not reach statistical significance when comparing the
+              control group to the treatment group. For the total cohort,
+              within-subject changes in both pyridoxal 5’-phosphate (PLP) and
+              PPi were observed after 6 months and over 5 years of treatment
+            </li>
+            <li>
+              The control group began treatment 6 months after the treated
+              group, with baseline considered the last assessment before first
+              dose
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="clinical-data-adults--col">
+        <img
+          class="clinical-data-adults--img"
+          src="/assets/images/clinical-data/adults/PPi_Adults.png"
+          alt="PPI Adults"
+        />
+      </div>
+
+      <div class="clinical-data-adults--col">
+        <h2 class="clinical-data-adults--title">
+          Change in pyridoxal 5’-phosphate (PLP), the active form of vitamin B6
+        </h2>
+        <div class="clinical-data-adults--content">
+          <ul class="clinical-data-adults--list">
+            <li>
+              Change in PPi and PLP data are from the open-label extension phase
+              of the study, which included 19 adult and adolescent patients
+              <ul>
+                <li>
+                  Of the 13 adult patients, 12 had pediatric-onset
+                  hypophosphatasia
+                </li>
+                <li>
+                  Three adults were part of the untreated group during the
+                  primary phase
+                </li>
+              </ul>
+            </li>
+            <li>
+              Over the initial duration, the study used lower doses of STRENSIQ
+              than those in the current FDA-approved label
+            </li>
+            <li>
+              The most common adverse events reported in the adult population of
+              Study 4 were injection site reactions, similar to what was
+              observed in clinical trials
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="clinical-data-adults--col">
+        <img
+          class="clinical-data-adults--img"
+          src="/assets/images/clinical-data/adults/Median_PLP_Adults.png"
+          alt="PLP Adults"
+        />
+      </div>
+    </section>
+  </div>
   <CTA
     heading="Get the blueprint for STRENSIQ dosing"
     linkText="Dosing"

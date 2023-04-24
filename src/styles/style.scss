@@ -169,6 +169,20 @@
     }
 }
 
+//Clinical data - adults page
+.clinical-data-adults {
+    &--changes-in-substractes {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &--col {
+        width: 50%;
+    }
+}
+
+
 //Dosing page
 .dosing__page-hero {
     .page-hero__title {
