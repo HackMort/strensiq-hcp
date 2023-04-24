@@ -2116,13 +2116,15 @@
         justify-content: space-between;
         max-width: 79.3125rem;
     }
-    @media screen and (min-width:1130px) {
+    @media screen and (min-width:1040px) {
         align-items: end;
     }
     @media screen and (min-width:1300px) {
         margin: auto;
-        align-items: unset;
         max-width: unset;
+    }
+    @media screen and (min-width:1340px) {
+        align-items: unset;
     }
 }
     
@@ -2198,6 +2200,9 @@
             color: $color-white;
             max-width: 16.875rem;
 
+            @media screen and (min-width:1040px) {
+                max-width: 23.875rem;
+            } 
             @media screen and (min-width:1340px) {
                 max-width: unset;
                 font-size: 4.375rem;
@@ -2285,6 +2290,13 @@
             @media screen and (min-width:890px) {
                 right: -13.6875rem;
                 width: 54.2406rem;
+            }
+            @media screen and (min-width:1040px) {
+                right: -10.6875rem;
+                width: 60.2406rem;
+                bottom: -26.8125rem;
+                height: 34.75rem;
+                transform: rotate(-55deg);
             }
             @media screen and (min-width:1340px) {
                 right: -12.6875rem;
