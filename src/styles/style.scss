@@ -1467,12 +1467,12 @@
                         justify-content: space-between;
                         width: 100%;
 
-                        & > .hypophosphatasia-container__panel-chart {
+                        &>.hypophosphatasia-container__panel-chart {
                             margin: 0;
                             width: 55%;
                         }
 
-                        & > .hypophosphatasia-container__panel-content {
+                        &>.hypophosphatasia-container__panel-content {
                             width: 40%;
                         }
                     }
@@ -1541,7 +1541,7 @@
     }
 
     &--children {
-        .wrapper{
+        .wrapper {
             @include media ('desktop') {
                 display: flex;
                 flex-wrap: nowrap;
@@ -1663,7 +1663,7 @@
             max-width: 70ch;
 
             .hypophosphatasia-container__paragraph {
-                @media (min-width: 1021px){
+                @media (min-width: 1021px) {
                     max-width: 50ch;
                 }
             }
@@ -1763,7 +1763,7 @@
 
         .hypophosphatasia-container__paragraph--highlight {
             color: $color-white;
-            font-size: 14px;
+            font-size: .875rem;
             font-weight: 900;
             line-height: 1.0063rem;
             margin-bottom: 0;
@@ -1809,7 +1809,7 @@
             }
 
             @include media('desktop') {
-                font-size: 20px;
+                font-size: 1.25rem;
                 line-height: 1.875rem;
 
                 &::before {
@@ -1823,13 +1823,13 @@
 
     .animated--bg {
         color: $color-dark-green;
-        font-size: 17px;
+        font-size: 1.0625rem;
         font-weight: 900;
         line-height: 1.5938rem;
         padding: 0 .125rem;
 
         @include media('desktop') {
-            font-size: 23px;
+            font-size: 1.4375rem;
             line-height: 2.1563rem;
         }
     }
@@ -1882,12 +1882,12 @@
         z-index: 1;
 
         p {
-            font-size: 14px;
+            font-size: .875rem;
             line-height: 1.0938rem;
             margin-bottom: 1.875rem;
 
             &.skeleton-container__footnote {
-                font-size: 12px;
+                font-size: .75rem;
                 line-height: .9rem;
             }
         }
@@ -1897,14 +1897,14 @@
             padding: 2rem 0 0 0;
 
             p {
-                font-size: 18px;
+                font-size: 1.125rem;
                 line-height: 1.6875rem;
             }
         }
     }
 
     &__symbol {
-        font-size: 10px;
+        font-size: .625rem;
         top: -4px;
     }
 
@@ -1942,7 +1942,7 @@
             min-width: 37.5rem;
 
             .skeleton__word {
-                font-size: 30px;
+                font-size: 1.875rem;
             }
         }
     }
