@@ -2,10 +2,20 @@
 import PageHero from "../../components/PageHero.astro";
 import Layout from "../../layouts/Layout.astro";
 import CTA from "../../components/CTA.astro";
-import References from "../../components/References.astro";
+import InternalNavigation from '../../components/InternalNavigation.astro';
+import ClinicalDataModal from '../../components/clinical-data/ClinicalDataModal.astro';
+import PinchToZoom from '../../components/PinchToZoom.astro';
+import AccordionMobile from '../../components/accordion-mobile/AccordionMobile.astro';
+import ExpansionPanelMobile from '../../components/accordion-mobile/ExpansionPanelMobile.astro';
+import RadiographicImagesComparator from '../../components/RadiographicImagesComparator.astro';
+
+const internalNavLinks = [
+  { href: "hpp-related-rickets", label: "HPP-related rickets", active: true },
+  { href: "mobility", label: "Mobility" },
+];
 ---
 
-<Layout title="Adolescents">
+<Layout title="Adolescents" displayReferences={true}>
   <PageHero
     pageId="clinical-data"
     classNames="clinical-data-adolescents__page-hero"
@@ -15,10 +25,110 @@ import References from "../../components/References.astro";
       STRENSIQ provides structural<br /> strength and mobility
     </h1>
   </PageHero>
+
+  {internalNavLinks && <InternalNavigation items={internalNavLinks} heading="Adolescents" icon/>}
+
+  <section class="section adolescents__hpp-related-rickets" id="hpp-related-rickets">
+    <div class="wrapper">
+        <div class="hpp-related-rickets__content">
+            <div class="hpp-related-rickets__content-left">
+                <h2 class="hpp-related-rickets__title">
+                    STRENSIQ strengthens bones
+                </h2>
+                <div class="clinical-studies">
+                    <article class="clinical-study">
+                        <h3 class="clinical-study__title">After 6 months</h3>
+                        <div class="clinical-study__results">
+                            <div class="clinical-study__result">
+                                <p class="clinical-study__percentage">67</p>
+                                <div class="clinical-study__orders">
+                                    <p class="clinical-study__order">(6/9)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="clinical-study__description">
+                            <strong>of patients experienced complete or substantial healing of hypophosphatasia-related rickets</strong> as measured by the Radiographic Global Impression of Change (RGI-C)<sup class="symbol-sup">*</sup>
+                        </p>
+                    </article>
+                    <article class="clinical-study">
+                        <h3 class="clinical-study__title">After 7 years </h3>
+                        <div class="clinical-study__results">
+                            <div class="clinical-study__result">
+                                <p class="clinical-study__percentage">100</p>
+                                <div class="clinical-study__orders">
+                                    <p class="clinical-study__order">(9/9)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="clinical-study__description">
+                            <strong>responder rate</strong>
+                        </p>
+                    </article>
+                    <p>Efficacy results reflect data for 9 individuals who reached adolescence (aged 13 to 17 years) during the course of the study.</p>
+                    <p class="clinical-studies__footer-note">
+                        <sup class="symbol-sup">*</sup>The RGI-C scale quantifies change over time in mineralization and bone structure.
+                    </p>
+                </div>
+            </div>
+            <div class="hpp-related-rickets__content-right">
+                <div class="hpp-related-rickets__chart-wrapper">
+                    <PinchToZoom id="median-rgi-c-score">
+                        <picture>
+                            <source srcset="/assets/images/clinical-data/adolescents/median-rgi-c-score-desktop.png" media="(min-width: 768px)">
+                            <img src="/assets/images/clinical-data/adolescents/median-rgi-c-score-mobile.png" alt="">
+                        </picture>
+                    </PinchToZoom>
+                    <p><sup>a</sup>Values are statistically significant based on P&lt;0.01.</p>
+                    <p><sup>b</sup>Value is statistically significant based on P&lt;0.05</p>
+                </div>
+                <div class="hpp-related-rickets__radiographics-wrapper">
+                    <div class="radiographic-images-mobile">
+                        <p class="hpp-related-rickets__radiographics-title">Radiographic image</p>
+                        <AccordionMobile id="infants-young-children-radiographics">
+                            <ExpansionPanelMobile accordionId="infants-young-children-radiographics" title="Patient: Knee">
+                                <RadiographicImagesComparator>
+                                    <div slot="before">
+                                        <p data-radiographic-title>
+                                            12 years of age (at baseline)
+                                        </p>
+                                        <picture data-radiographic-image>
+                                            <source srcset="/assets/images/clinical-data/adolescents/adolescent-knee-before-desktop.png" media="(min-width: 768px)">
+                                            <img src="/assets/images/clinical-data/adolescents/adolescent-knee-before-mobile.png" alt="">
+                                        </picture>
+                                    </div>
+                                    <div slot="after">
+                                        <p data-radiographic-title>
+                                            17 years of age (at 5 years)
+                                        </p>
+                                        <picture data-radiographic-image>
+                                            <source srcset="/assets/images/clinical-data/adolescents/adolescent-knee-after-desktop.png" media="(min-width: 768px)">
+                                            <img src="/assets/images/clinical-data/adolescents/adolescent-knee-after-mobile.png" alt="">
+                                        </picture>
+                                        <p data-radiographic-footer>
+                                            After 5 years of STRENSIQ treatment, Patient 1 had an <strong>RGI-C score of +2.67</strong>.
+                                        </p>
+                                    </div>
+                                </RadiographicImagesComparator>
+                            </ExpansionPanelMobile>
+                        </AccordionMobile>
+                    </div>
+                    <div class="radiographic-images-desktop"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
   <CTA
     heading="Dig into STRENSIQ for adults, including real-world outcomes"
     linkText="Adults"
     linkUrl="/clinical-data/adults"
   />
-  <References />
+  <ClinicalDataModal>
+    <picture>
+        <source srcset="/assets/images/clinical-data/modal/temp-study-1-desktop.png" media="(min-width: 768px)">
+        <img src="/assets/images/clinical-data/modal/temp-study-1-mobile.png" alt="">
+    </picture>
+  </ClinicalDataModal>
+  <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"></script>
 </Layout>
