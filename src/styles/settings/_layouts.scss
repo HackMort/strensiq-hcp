@@ -1,9 +1,5 @@
-.wrapper {
+:root {
     --margin: 2rem;
-    position: relative;
-    margin: 0 auto;
-    width: 100%;
-    max-width: calc(100% - var(--margin));
 
     @media screen and (min-width: 428px) {
         --margin: 2.5rem;
@@ -24,6 +20,13 @@
     @media screen and (min-width: 1366px) {
         --margin: 8.2813rem;
     }
+}
+
+.wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: calc(100% - var(--margin));
 
     &--only-left {
         max-width: calc(100% - (var(--margin) / 2));

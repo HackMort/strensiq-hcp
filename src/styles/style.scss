@@ -3011,13 +3011,15 @@
 
 //------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
 
-.adolescents__hpp-related-rickets {
+.adolescents__hpp-related-rickets,
+.adolescents__mobility {
     padding-top: 1.625rem;
     padding-bottom: 1.8125rem;
 
     background: $color-white;
 
-    .hpp-related-rickets__title {
+    .hpp-related-rickets__title,
+    .adolescents__title {
         color: $color-dark-green;
         margin-bottom: .625rem;
     }
@@ -3026,12 +3028,18 @@
         margin-bottom: 1.5rem;
     }
 
-    .hpp-related-rickets__chart-footnote {
+    .hpp-related-rickets__chart-footnote,
+    .mobility__chart-footnote {
         margin-bottom: .75rem;
 
         p {
             font-size: .75rem;
             line-height: 1.15;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
     }
 
@@ -3042,6 +3050,18 @@
     }
 
     .hpp-related-rickets__content {
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-columns: 25rem 1fr;
+        }
+
+        @media screen and (min-width: 1440px) {
+            display: grid;
+            grid-template-columns: 35rem 1fr;
+        }
+    }
+
+    .adolescents__content {
         @media screen and (min-width: 1024px) {
             display: grid;
             grid-template-columns: 25rem 1fr;
@@ -3066,6 +3086,16 @@
 
             .hpp-related-rickets__chart-wrapper {
                 order: 2;
+
+                picture {
+                    max-width: 46.125rem;
+                }
+
+                .wrapper {
+                    max-width: calc(100% - (var(--margin) / 2));
+                    margin-left: 0;
+                    margin-right: auto;
+                }
             }
 
             .radiographic-images-mobile {
@@ -3074,9 +3104,144 @@
 
             .radiographic-images-desktop {
                 display: block;
-                height: 32.6044rem;
+                // height: 32.6044rem;
             }
         }
+    }
+}
+
+.hpp-related-rickets__chart-wrapper {
+    @media screen and (min-width: 1024px) {
+        max-width: fit-content;
+        margin-left: auto;
+
+        &>div:not(.wrapper) {
+            max-width: fit-content;
+            margin-left: auto;
+        }
+
+        .pinch-to-zoom {
+            width: fit-content !important;
+            margin-right: 0 !important;
+            margin-left: auto !important;
+        }
+    }
+}
+
+.adolescents__hpp-related-rickets {
+    .pinch-to-zoom {
+        @media screen and (min-width: 1024px) {
+            padding-right: 0;
+
+            .pinch-to-zoom__container {
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
+    }
+
+    .hpp-related-rickets__content-left {
+        .wrapper {
+            @media screen and (min-width: 1024px) {
+                max-width: calc(100% - (var(--margin) / 2));
+                margin-left: auto;
+                margin-right: 0;
+            }
+
+            @media screen and (min-width: 1600px) {
+                max-width: calc(100% - ((100vw - 90rem) / 2));
+            }
+        }
+    }
+
+    .radiographic-comparator {
+        @media screen and (min-width: 1440px) {
+            max-width: fit-content;
+            margin-left: auto;
+        }
+    }
+}
+
+.adolescents__mobility {
+    background: $color-bright-gray;
+    padding-bottom: 0;
+
+    .mobility__chart-wrapper {
+        background: $color-white;
+        padding-bottom: 1.1219rem;
+
+        @media screen and (min-width: 1024px) {
+            max-width: 46.125rem;
+            margin-left: auto;
+        }
+    }
+
+    .adolescents__content {
+        @media screen and (min-width: 1440px) {
+            grid-template-columns: 40rem 1fr;
+        }
+    }
+
+    .adolescents__content-right {
+
+        .tip__wrapper {
+            @media screen and (min-width: 1440px) {
+                max-width: calc(100% - (var(--margin) / 2));
+                margin-left: 0;
+                margin-right: auto;
+                overflow: initial;
+
+                .adolescents__mobility-tip {
+                    padding-top: .5rem;
+                    padding-bottom: .5rem;
+                    max-width: max-content;
+                    border-radius: 95.5px;
+                    text-align: center;
+                    width: 100%;
+
+                    &::before {
+                        border-radius: 95.5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .adolescents__content-left {
+        .wrapper {
+            @media screen and (min-width: 1024px) {
+                max-width: calc(100% - (var(--margin) / 2));
+                margin-right: 0;
+                margin-left: auto;
+            }
+
+            @media screen and (min-width: 1600px) {
+                max-width: calc(100% - ((100vw - 90rem) / 2));
+            }
+        }
+    }
+
+    .adolescents__content-right {
+        @media screen and (min-width: 1024px) {
+            max-width: fit-content;
+            margin-left: auto;
+        }
+
+        .wrapper {
+            @media screen and (min-width: 1024px) {
+                max-width: calc(100% - (var(--margin) / 2));
+                margin-left: 0;
+                margin-right: auto;
+            }
+
+            @media screen and (min-width: 1600px) {
+                max-width: calc(100% - ((100vw - 90rem) / 2));
+            }
+        }
+    }
+
+    .mobility__chart-footnote {
+        // padding: 0 1.2656rem;
     }
 }
 
