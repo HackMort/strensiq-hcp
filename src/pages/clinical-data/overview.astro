@@ -12,13 +12,22 @@ import Table from "../../components/Table/Table.astro";
 import TableHeader from "../../components/Table/TableHeader.astro";
 import TableData from "../../components/Table/TableData.astro";
 
-//Table headers
+//Table headers - Study design
 const mainHeaders = [
+  { label: "" },
+  { label: "Study 1", subLabel: "ENB-002-08/ENB-003-08" },
+  { label: "Study 2", subLabel: "ENB-010-10" },
+  { label: "Study 3", subLabel: "ENB-006-09/ENB-008-10" },
+  { label: "Study 4" },
+];
+
+//Table headers - Adverse reactions
+const subHeaders = [
   { label: "" },
   { label: "Perinatal/Infantile-onset HPP", colspan: 3 },
   { label: "Juvenile-onset HPP" },
 ];
-const subHeaders = [
+const subSubHeaders = [
   {
     label: "Adverse Reaction Category or Team",
     classModifier: "cg",
@@ -60,35 +69,43 @@ import studyData from "./data/study";
     )
   }
 
+  <div class="clinical-data-overview__study-design__head">
+    <div class="wrapper">
+      <h2 class="clinical-data-overview__study-design--title">
+        STRENSIQ is the only treatment proven safe and effective for adults and
+        children with pediatric-onset hypophosphatasia
+      </h2>
+    </div>
+
+    <div class="clinical-data-overview__study-design--square">
+      <p class="clinical-data-overview__paragraph wrapper--only-left">
+        7 years of long-term safety and efficacy in adults, children, and
+        infants
+        <span class="clinical-data-overview__white-line"></span>
+      </p>
+    </div>
+  </div>
+
   <section class="wrapper">
-    <h2 id="study-design">Study design</h2>
-    <div class="clinical-data-overview__study-design">
+    <div class="desktop--only">
+      <div class="clinical-data-overview__submenu">
+        <a href="/clinical-data/infants-young-children" class="button">
+          Infants / young children</a
+        >
+        <a href="/clinical-data/children" class="button"> Children</a>
+        <a href="/clinical-data/adolescents" class="button"> Adolescents</a>
+        <a href="/clinical-data/adults" class="button"> Adults</a>
+      </div>
+    </div>
+
+    <div id="study-design" class="section clinical-data-overview__study-design">
       <div class="clinical-data-overview__study-design__table">
         <Table>
-          <div slot="title" class="table__title">
-            <div class="table__title--sections">
-              <div class="table__title--section">
-                <h3>Study 1</h3>
-                <p>ENB-002-08/ENB-003-08</p>
-              </div>
-
-              <div class="table__title--section">
-                <h3>Study 2</h3>
-                <p>ENB-010-10</p>
-              </div>
-
-              <div class="table__title--section">
-                <h3>Study 3</h3>
-                <p>ENB-006-09/ENB-008-10</p>
-              </div>
-
-              <div class="table__title--section">
-                <h3>Study 4</h3>
-              </div>
-            </div>
-          </div>
-          <TableHeader slot="header" />
+          <!--Table headers -->
+          <TableHeader slot="header" mainHeaders={mainHeaders} />
+          <!--Table data -->
           <TableData slot="body" data={studyData} />
+
           <div slot="footer" class="table__footer">
             <span
               ><sup>a</sup> Study 4 is not included in the current STRENSIQ label.</span
@@ -105,36 +122,90 @@ import studyData from "./data/study";
       </div>
     </div>
 
-    <h2 id="safety">Safety</h2>
-    <div class="clinical-data-overview__safety">
+    <div id="safety" class="section clinical-data-overview__safety">
       <div class="clinical-data-overview__safety__description">
-        <h2>
+        <h2 class="clinical-data-overview__safety__description--title">
           STRENSIQ has a well-established safety profile, evidenced by 7 years
           of data
         </h2>
-        <p>
-          STRENSIQ has been rigorously studied across more than 16 clinical
-          trials with at least XX patient-years of data and more than 7 years of
-          postmarket experience. Clinical practice guidelines for
-          hypophosphatasia are in development for the United States, though none
-          are currently available. When considering treatment, clinicians are
-          advised to use their clinical judgment based on individual patient
-          needs and their evaluation of 7 years of long-term efficacy and safety
-          data for STRENSIQ.
+        <p class="clinical-data-overview__safety__description--paragraph1">
+          STRENSIQ has been rigorously studied across more than <span>16</span> clinical
+          trials with at least <span>XX</span> patient-years of data and more than
+          7 years of postmarket experience.
         </p>
+        <p
+          class="clinical-data-overview__safety__description--paragraph2 desktop--only"
+        >
+          Clinical practice guidelines for hypophosphatasia are in development
+          for the United States, though none are currently available. When
+          considering treatment, clinicians are advised to use their clinical
+          judgment based on individual patient needs and their evaluation of 7
+          years of long-term efficacy and safety data for STRENSIQ.
+        </p>
+
+        <div
+          class="clinical-data-overview__safety__anotations--desktop desktop--only"
+        >
+          <p>
+            <sup>a</sup>Adverse reactions are from the combined period of 6
+            mg/kg and above (ie, total drug exposure regardless of starting dose
+            and intermediary doses as long as the patient reached doses &gt 6
+            mg/kg).
+          </p>
+          <p>
+            <sup>b</sup>Other injection site reactions include injection-site
+            rash, inflammation, papule, hemorrhage, hematoma, urticaria, warmth,
+            calcification, mass, scar, and cellulitis.
+          </p>
+          <p><sup>c</sup>Other lipodystrophy includes lipohypertrophy.</p>
+          <p>
+            <sup>d</sup>Other hypersensitivity reactions include
+            erythema/redness, pyrexia/fever, irritability, nausea, pain,
+            rigor/chills, oral hypoesthesia, headache, flushing, and
+            anaphylaxis.
+          </p>
+        </div>
       </div>
       <div class="clinical-data-overview__safety__table">
-        <Table>
-          <div slot="title" class="table__title">
-            Most frequently reported adverse reactions (≥10% patients)
-          </div>
+        <h4 class="clinical-data-overview-container__panel-title">
+          Proven safe and well-tolerated
+        </h4>
+        <Table
+          title="Most frequently reported adverse reactions (≥10% patients)"
+        >
           <TableHeader
             slot="header"
-            mainHeaders={mainHeaders}
             subHeaders={subHeaders}
+            subSubHeaders={subSubHeaders}
           />
           <TableData slot="body" data={data} />
         </Table>
+      </div>
+
+      <div class="clinical-data-overview__safety__anotations mobile--only">
+        <p>
+          <sup>a</sup>Adverse reactions are from the combined period of 6 mg/kg
+          and above (ie, total drug exposure regardless of starting dose and
+          intermediary doses as long as the patient reached doses &gt 6 mg/kg).
+        </p>
+        <p>
+          <sup>b</sup>Other injection site reactions include injection-site
+          rash, inflammation, papule, hemorrhage, hematoma, urticaria, warmth,
+          calcification, mass, scar, and cellulitis.
+        </p>
+        <p><sup>c</sup>Other lipodystrophy includes lipohypertrophy.</p>
+        <p>
+          <sup>d</sup>Other hypersensitivity reactions include erythema/redness,
+          pyrexia/fever, irritability, nausea, pain, rigor/chills, oral
+          hypoesthesia, headache, flushing, and anaphylaxis.
+        </p>
+        <p class="clinical-data-overview__safety__anotations--disclaimer">
+          Clinical practice guidelines for hypophosphatasia are in development
+          for the United States, though none are currently available. When
+          considering treatment, clinicians are advised to use their clinical
+          judgment based on individual patient needs and their evaluation of 7
+          years of long-term efficacy and safety data for STRENSIQ.
+        </p>
       </div>
     </div>
   </section>
