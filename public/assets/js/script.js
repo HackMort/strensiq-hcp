@@ -30,8 +30,9 @@ document.addEventListener('DOMContentLoaded', function (e) {
   // Menu Dropdown
   const menuItems = document.querySelectorAll('.main__navigation li a')
   const mobileQuery = window.matchMedia('(max-width: 1024px)')
+  const currentPage = window.location.pathname.replace(/\/+$/, '') // Remove trailing slash if any, this is needed in order to work in the Dev Server.
   menuItems.forEach((item) => {
-    if (item.getAttribute('href') === window.location.pathname) {
+    if (item.getAttribute('href') === currentPage) {
       item.classList.add('current-page')
       if (item.classList.contains('nav__sub_menu_item_link')) {
         const parent = item.closest('.has__sub_menu')
