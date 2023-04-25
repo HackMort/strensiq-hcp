@@ -3,6 +3,7 @@
 
     &__title {
         color: $color-dark-gray;
+        text-transform: uppercase;
     }
 
     &__content {
@@ -15,14 +16,25 @@
             font-size: 70px;
             line-height: 5.4688rem;
         }
+
+        sub {
+            bottom: 0;
+            font-size: 35px;
+            font-weight: 900;
+            line-height: 2.7344rem;
+        }
     }
 
     &__footnote {
         color: $color-dark-green;
-        font-size: 14px;
+        font-size: 18px;
         font-weight: 300;
-        line-height: 1.0938rem;
+        line-height: 1.6875rem;
         max-width: 40ch;
+
+        @include media('desktop') {
+            max-width: 25ch;
+        }
 
         strong {
             font-size: 16px;
