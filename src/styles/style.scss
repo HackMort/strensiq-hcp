@@ -3016,16 +3016,24 @@
     padding-top: 1.625rem;
     padding-bottom: 1.8125rem;
 
+    @media screen and (min-width: 1024px) {
+        padding-top: 4.375rem;
+        padding-bottom: 4.375rem;
+    }
+
     background: $color-white;
 
-    .hpp-related-rickets__title,
-    .adolescents__title {
+    .hpp-related-rickets__title {
         color: $color-dark-green;
-        margin-bottom: .625rem;
+        margin-bottom: 1rem;
     }
 
     .clinical-studies__clarification {
         margin-bottom: 1.5rem;
+        @media screen and (min-width: 1024px) {
+            font-size: 1.125rem;
+            line-height: 27px;
+        }
     }
 
     .hpp-related-rickets__chart-footnote,
@@ -3052,11 +3060,10 @@
     .hpp-related-rickets__content {
         @media screen and (min-width: 1024px) {
             display: grid;
-            grid-template-columns: 25rem 1fr;
+            grid-template-columns: 28rem 1fr;
         }
 
         @media screen and (min-width: 1440px) {
-            display: grid;
             grid-template-columns: 35rem 1fr;
         }
     }
@@ -3064,7 +3071,11 @@
     .adolescents__content {
         @media screen and (min-width: 1024px) {
             display: grid;
-            grid-template-columns: 25rem 1fr;
+            grid-template-columns: 28rem 1fr;
+        }
+
+        @media screen and (min-width: 1440px) {
+            grid-template-columns: 35rem 1fr;
         }
     }
 
@@ -3084,11 +3095,16 @@
             flex-direction: column;
             justify-content: flex-start;
 
+            .hpp-related-rickets__radiographics-wrapper {
+                margin-bottom: 2rem;
+            }
+
             .hpp-related-rickets__chart-wrapper {
                 order: 2;
 
                 picture {
                     max-width: 46.125rem;
+                    margin-bottom: 1rem;
                 }
 
                 .wrapper {
@@ -3166,6 +3182,27 @@
     background: $color-bright-gray;
     padding-bottom: 0;
 
+    @media screen and (min-width: 1024px) {
+        padding-bottom: 4.375rem;
+    }
+
+    .clinical-studies__clarification {
+        @media screen and (min-width: 1024px) {
+            margin-bottom: 0;
+        }
+    }
+
+    .adolescents__title {
+        margin-bottom: 1rem;
+        color: $color-dark-green;
+
+        @media screen and (min-width: 426px) {
+            br {
+                display: none;
+            }
+        }
+    }
+
     .mobility__chart-wrapper {
         background: $color-white;
         padding-bottom: 1.1219rem;
@@ -3177,6 +3214,9 @@
     }
 
     .adolescents__content {
+        @media screen and (min-width: 1300px) {
+            grid-template-columns: 34rem 1fr;
+        }
         @media screen and (min-width: 1440px) {
             grid-template-columns: 40rem 1fr;
         }
