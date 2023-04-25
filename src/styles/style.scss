@@ -210,8 +210,12 @@
                 color: $color-dark-gray !important;
             }
         }
+    }
 
-
+    &--time-to-bone-mineralization {
+        .clinical-data-adults--title {
+            margin-bottom: 1rem;
+        }
     }
 }
 
