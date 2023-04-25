@@ -226,7 +226,7 @@ $headRowsWidth: 20%;
                     color: $color-dark-green !important;
                     font-weight: bold;
                     text-align: left !important;
-                    padding: 0 15px 0 10px !important;
+                    padding: 10px 15px 10px 10px !important;
                 }
 
             }
@@ -241,7 +241,7 @@ $headRowsWidth: 20%;
         &__cell {
             &--head {
                 text-align: left !important;
-                padding: 0 10px 0 2rem !important;
+                padding: 10px 10px 10px 2rem !important;
 
                 @media screen and (max-width: 768px) {
                     padding: 0 1rem 0 2rem !important
