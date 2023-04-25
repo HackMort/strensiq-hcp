@@ -35,10 +35,15 @@
 
         //To apply the margin left only in mobile
         &--mobile-only {
+
             @media screen and (min-width: 768px) {
                 max-width: calc(100% - var(--margin));
                 margin-left: auto;
                 margin-right: auto;
+            }
+
+            @media screen and (min-width: 1600px) {
+                max-width: 90rem !important;
             }
         }
     }

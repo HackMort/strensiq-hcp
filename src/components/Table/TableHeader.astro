@@ -61,7 +61,12 @@ const { mainHeaders = [], subHeaders = [], subSubHeaders = [] } = Astro.props;
                                 header.label === ""
                                     ? `table__header--mh-cell table__header--mh--empty`
                                     : `
-                                        table__header--mh--cell table__header--mh--${header.classModifier}
+                                        table__header--mh--cell ${
+                                            header.classModifier
+                                                ? "table__header--mh--" +
+                                                  header.classModifier
+                                                : ""
+                                        }
                                     `
                             }
                         >

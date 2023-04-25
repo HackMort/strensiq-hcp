@@ -96,13 +96,21 @@ $headRowsWidth: 20%;
                 display: flex;
                 flex-direction: column;
                 color: $color-white !important;
-                font-size: 1.1rem;
+                font-size: .9375rem;
                 font-weight: 700;
 
+                @media screen and (max-width: 768px) {
+                    font-size: 1.1rem;
+                }
+
                 span {
-                    font-size: 0.7rem;
+                    font-size: .625rem;
                     font-weight: 300;
                     line-height: 0.8rem;
+
+                    @media screen and (max-width: 768px) {
+                        font-size: 0.7rem;
+                    }
                 }
             }
 
@@ -157,6 +165,14 @@ $headRowsWidth: 20%;
 
         border-collapse: collapse;
 
+        @media screen and (min-width: 1200px) {
+            table-layout: fixed;
+        }
+
+        @media screen and (max-width: 768px) {
+            min-width: 900px;
+        }
+
         td {
             color: $color-dark-gray;
             font-weight: 300;
@@ -172,6 +188,7 @@ $headRowsWidth: 20%;
         th {
             border: 1px solid $color-bright-gray;
             text-align: center;
+            word-break: break-word;
         }
 
         tr:first-child th {
@@ -209,7 +226,7 @@ $headRowsWidth: 20%;
                     color: $color-dark-green !important;
                     font-weight: bold;
                     text-align: left !important;
-                    padding: 0 0 0 10px !important;
+                    padding: 0 15px 0 10px !important;
                 }
 
             }
@@ -224,10 +241,10 @@ $headRowsWidth: 20%;
         &__cell {
             &--head {
                 text-align: left !important;
-                padding: 0 10px 0 3rem !important;
+                padding: 0 10px 0 2rem !important;
 
                 @media screen and (max-width: 768px) {
-                    padding: 0 10px 0 20px !important;
+                    padding: 0 1rem 0 2rem !important
                 }
             }
         }
@@ -246,5 +263,4 @@ $headRowsWidth: 20%;
             top: -0.3em;
         }
     }
-
 }

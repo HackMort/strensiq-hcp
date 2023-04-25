@@ -8,7 +8,7 @@ const data = [
         text: ["Erythema", "29(44)", "3(23)", "23(41)", "15(75)"],
     },
     {
-        text: ["Discoloration/hypopigmentation", "11(17)", "1(8)", "12(15)", "8(40)"],
+        text: ["Discoloration/ hypopigmentation", "11(17)", "1(8)", "12(15)", "8(40)"],
     },
     {
         text: ["Pain/tenderness", "10(15)", "1(8)", "11(14)", "8(40)"],
