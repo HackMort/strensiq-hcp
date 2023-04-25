@@ -7,6 +7,21 @@
     border-radius: 1.25rem;
     overflow: hidden;
 
+
+
+    &.fancybox__content {
+        width: 57.125rem;
+        height: 0;
+        background-color: $color-white !important;
+        position: relative;
+        margin-left: 5rem !important;
+        margin-right: 5rem !important;
+    }
+
+    &.fancybox__content>.f-button.is-close-btn {
+        display: none;
+    }
+
     &::before {
 
         --width-shape: 96.25rem;
@@ -219,7 +234,7 @@
     }
 }
 
-//aqui
+
 @media screen and (max-width:400px) {
     .modal {
         max-width: 20rem;
@@ -231,21 +246,6 @@
     background-color: rgba(0, 0, 0, 0.4) !important;
     position: absolute;
     height: 110%;
-}
-
-.fancybox__content {
-    width: 57.125rem !important;
-    height: 0;
-    background-color: $color-white !important;
-    /* padding-left: 0!important;
-    padding-right: 0!important; */
-    position: relative;
-    margin-left: 5rem !important;
-    margin-right: 5rem !important;
-}
-
-.fancybox__content>.f-button.is-close-btn {
-    display: none;
 }
 
 html.with-fancybox {
