@@ -11,6 +11,7 @@
         font-size: 60px;
         font-weight: 900;
         line-height: 4.6875rem;
+        position: relative;
 
         @include media('desktop') {
             font-size: 70px;
@@ -41,5 +42,15 @@
             font-weight: 900;
             line-height: 1.5rem;
         }
+    }
+
+    &__sub-content {
+        color: $color-dark-gray;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5rem;
+        position: absolute;
+        left: 0;
+        bottom: -5px;
     }
 }
