@@ -3030,6 +3030,7 @@
 
     .clinical-studies__clarification {
         margin-bottom: 1.5rem;
+
         @media screen and (min-width: 1024px) {
             font-size: 1.125rem;
             line-height: 27px;
@@ -3066,12 +3067,9 @@
         @media screen and (min-width: 1440px) {
             grid-template-columns: 35rem 1fr;
         }
-    }
 
-    .adolescents__content {
-        @media screen and (min-width: 1024px) {
-            display: grid;
-            grid-template-columns: 28rem 1fr;
+        @media screen and (min-width: 1750px) {
+            grid-template-columns: 1fr 1fr;
         }
 
         @media screen and (min-width: 1440px) {
@@ -3214,11 +3212,21 @@
     }
 
     .adolescents__content {
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-columns: 28rem 1fr;
+        }
+
         @media screen and (min-width: 1300px) {
             grid-template-columns: 34rem 1fr;
         }
+
         @media screen and (min-width: 1440px) {
-            grid-template-columns: 40rem 1fr;
+            grid-template-columns: 35rem 1fr;
+        }
+
+        @media screen and (min-width: 1750px) {
+            grid-template-columns: 1fr 1fr;
         }
     }
 
@@ -3234,15 +3242,25 @@
                 .adolescents__mobility-tip {
                     padding-top: .5rem;
                     padding-bottom: .5rem;
-                    max-width: max-content;
+                    max-width: 46.125rem;
                     border-radius: 95.5px;
                     text-align: center;
                     width: 100%;
 
                     &::before {
-                        border-radius: 95.5px;
+                        left: 3rem;
+                        // right: calc((100vw - ((46.125rem) + (calc(100% - var(--margin) / 2)))));
+                        width: calc(100vw - (46.125rem));
                     }
                 }
+            }
+
+            @media screen and (min-width: 1600px) {
+                max-width: calc(100% - ((100vw - 90rem) / 2));
+            }
+
+            @media screen and (min-width: 1750px) {
+                max-width: calc(100% - var(--margin) / 2);
             }
         }
     }
@@ -3276,6 +3294,10 @@
 
             @media screen and (min-width: 1600px) {
                 max-width: calc(100% - ((100vw - 90rem) / 2));
+            }
+
+            @media screen and (min-width: 1750px) {
+                max-width: calc(100% - var(--margin) / 2);
             }
         }
     }
