@@ -132,6 +132,11 @@
 
     &__study-design {
         margin-bottom: 1rem;
+        width: 100%;
+
+        &__table {
+            width: 100%;
+        }
 
         &__head {
             margin: 3rem 0;
@@ -177,29 +182,25 @@
         @include flex-gap(1rem);
         position: relative;
         margin-bottom: 3rem;
-        margin-right: 1rem;
 
         &__description {
-            max-width: 40%;
             display: flex;
             flex-direction: column;
 
+            @media screen and (min-width: 1201px) {
+                max-width: 40%;
+            }
+
             &--title {
                 margin: 10px 0;
-                font-size: 2rem;
                 color: $color-dark-green;
-
-                @include media('mobile') {
-                    line-height: 35px;
-                }
             }
 
             &--paragraph1 {
                 margin: 10px 0;
-                font-size: 1.5rem;
+                font-size: 1.125rem;
                 font-weight: 500;
                 color: $color-dark-gray;
-                line-height: 25px;
 
                 span {
                     color: $color-red-dark;
@@ -219,29 +220,28 @@
         }
 
         &__table {
-            max-width: 60%;
+            @media screen and (min-width: 1201px) {
+                max-width: 60%;
+            }
         }
 
         @media screen and (max-width: 1200px) {
             flex-direction: column;
-
-            &__description {
-                max-width: 100%;
-            }
-
-            &__table {
-                max-width: 100%;
-            }
         }
 
         &__anotations {
-            margin: 10px 0;
-
             p {
+                font-size: .8125rem;
                 margin: 0;
+
+                sup {
+                    font-size: .60rem;
+                    top: -0.3em;
+                }
             }
 
             &--disclaimer {
+                font-size: 1rem !important;
                 margin-top: 1rem !important;
             }
 
@@ -275,30 +275,6 @@
         display: flex;
         flex-direction: column;
 
-        //Positioning of the paragraph
-        --margin: 2rem;
-        width: calc(100% - var(--margin) / 2);
-
-        @media screen and (min-width: 428px) {
-            --margin: 2.5rem;
-        }
-
-        @media screen and (min-width: 768px) {
-            --margin: 4rem;
-        }
-
-        @media screen and (min-width: 1024px) {
-            --margin: 4.2813rem;
-        }
-
-        @media screen and (min-width: 1366px) {
-            --margin: 5.2813rem;
-        }
-
-        @media screen and (min-width: 1366px) {
-            --margin: 8.2813rem;
-        }
-
         @media screen and (max-width: 768px) {
             margin: 20px auto 0 4% !important;
         }
@@ -320,11 +296,12 @@
                 position: relative;
 
                 &::after {
-                    border: 3px solid $color-dark-yellow;
+                    border: 2px solid $color-dark-yellow;
                     content: '';
-                    margin-top: .4375rem;
+                    margin-top: 1.3125rem;
                     position: relative;
                     width: 5.8125rem;
+                    border-radius: .625rem;
                 }
 
                 @include media('desktop') {

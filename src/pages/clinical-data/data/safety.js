@@ -8,13 +8,13 @@ const data = [
         text: ["Erythema", "29(44)", "3(23)", "23(41)", "15(75)"],
     },
     {
-        text: ["Discoloration/hypopigmentation", "11(17)", "1(8)", "8(13)", "5(25)"],
+        text: ["Discoloration/hypopigmentation", "11(17)", "1(8)", "12(15)", "8(40)"],
     },
     {
-        text: ["Pain/tenderness", "11(17)", "1(8)", "11(14)", "8(40)"],
+        text: ["Pain/tenderness", "10(15)", "1(8)", "11(14)", "8(40)"],
     },
     {
-        text: ["Puritus/itching", "10(15)", "0(0)", "10(13)", "7(35)"],
+        text: ["Pruritus/Itching", "10(15)", "0(0)", "10(13)", "7(35)"],
     },
     {
         text: ["Swelling", "8(12)", "0(0)", "8(10)", "6(30)"],
@@ -29,13 +29,13 @@ const data = [
         text: ["Reaction, not otherwise specified", "6(9)", "1(8)", "7(9)", "4(20)"],
     },
     {
-        text: ["Bruising", "8(9)", "0(0)", "6(8)", "4(20)"],
+        text: ["Bruising", "6(9)", "0(0)", "6(8)", "4(20)"],
     },
     {
-        text: ["Nodule", "2(3)", "0(0)", "6(8)", "4(20)"],
+        text: ["Nodule", "2(3)", "0(0)", "2(3)", "2(10)"],
     },
     {
-        text: ["Other injection site reactions", "10(15)", "3(23)", "13(17)", "4(20)"],
+        text: ["Other injection site reactionsb", "10(15)", "3(23)", "13(17)", "4(20)"],
     },
     {
         text: ["Ectopic calcifications", "3(5)", "0(0)", "13(17)", "4(20)"],
@@ -52,17 +52,17 @@ const data = [
         text: ["Injection site hypertrophy", "5(8)", "0(0)", "5(6)", "6(30)"],
     },
     {
-        text: ["Other lipodystrophy", "4(6)", "0(0)", "4(5)", "1(5)"],
+        text: ["Other lipodystrophyc", "4(6)", "0(0)", "4(5)", "1(5)"],
     },
     {
-        text: ["Hypersensitivy reactions", "7(11)", "2(23)", "10(13)", "2(10)"],
+        text: ["Hypersensitivity reactions", "7(11)", "3(23)", "10(13)", "2(10)"],
         classModifier: ["mh"],
     },
     {
         text: ["Vomiting/emisis", "2(3)", "2(15)", "4(5)", "2(10)"],
     },
     {
-        text: ["Other hypersensitivity reactions", "6(9)", "2(15)", "8(10)", "2(10)"],
+        text: ["Other hypersensitivity reactionsd", "6(9)", "2(15)", "8(10)", "2(10)"],
     },
 ];
 

@@ -16,12 +16,13 @@ type Props = {
         text: string[];
         classModifier?: string[];
     }];
+    className?: string;
 };
 
-const { data } = Astro.props;
+const { data, className } = Astro.props;
 ---
 
-<tbody class="table__body">
+<tbody class={className ? `table__body ${className}` : "table__body"}>
     {
         data.map((item: any) => (
             <tr

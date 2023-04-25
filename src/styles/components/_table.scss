@@ -1,6 +1,8 @@
 $headRowsWidth: 20%;
 
 .table {
+    width: 100%;
+
     &__title {
         display: flex;
         flex-direction: row;
@@ -49,6 +51,14 @@ $headRowsWidth: 20%;
             overflow-x: auto;
             padding-bottom: 1px;
         }
+
+        .table__body.no-padding {
+            tr {
+                td {
+                    padding: 10px;
+                }
+            }
+        }
     }
 
     &__header {
@@ -90,8 +100,9 @@ $headRowsWidth: 20%;
                 font-weight: 700;
 
                 span {
-                    font-size: 0.8rem;
+                    font-size: 0.7rem;
                     font-weight: 300;
+                    line-height: 0.8rem;
                 }
             }
 
@@ -149,14 +160,18 @@ $headRowsWidth: 20%;
         td {
             color: $color-dark-gray;
             font-weight: 300;
-            width: 20%;
+            vertical-align: middle;
+            padding: 2rem 1rem;
+        }
+
+        th {
+            padding: 0.5rem;
         }
 
         td,
         th {
             border: 1px solid $color-bright-gray;
             text-align: center;
-            padding: 0.5rem;
         }
 
         tr:first-child th {
@@ -194,6 +209,7 @@ $headRowsWidth: 20%;
                     color: $color-dark-green !important;
                     font-weight: bold;
                     text-align: left !important;
+                    padding: 0 0 0 10px !important;
                 }
 
             }
@@ -204,14 +220,31 @@ $headRowsWidth: 20%;
                 }
             }
         }
+
+        &__cell {
+            &--head {
+                text-align: left !important;
+                padding: 0 10px 0 3rem !important;
+
+                @media screen and (max-width: 768px) {
+                    padding: 0 10px 0 20px !important;
+                }
+            }
+        }
     }
 
     &__footer {
         display: flex;
         flex-direction: column;
         color: $color-dark-gray;
-        font-size: 0.8rem;
+        font-size: .75rem;
         font-weight: 300;
         padding: 10px 0px;
+
+        sup {
+            font-size: .60rem;
+            top: -0.3em;
+        }
     }
+
 }

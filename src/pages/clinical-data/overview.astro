@@ -2,7 +2,6 @@
 import PageHero from "../../components/PageHero.astro";
 import Layout from "../../layouts/Layout.astro";
 import CTA from "../../components/CTA.astro";
-import References from "../../components/References.astro";
 import InternalNavigation from "../../components/InternalNavigation.astro";
 const internalNavLinks = [
   { href: "study-design", label: "Study design", active: true },
@@ -30,7 +29,7 @@ const subHeaders = [
 ];
 const subSubHeaders = [
   {
-    label: "Adverse Reaction Category or Team",
+    label: "Adverse Reaction Category or Term",
     classModifier: "cg",
   },
   {
@@ -47,7 +46,7 @@ const subSubHeaders = [
 import data from "./data/safety";
 ---
 
-<Layout title="Overview">
+<Layout title="Overview" displayReferences={false}>
   <PageHero
     pageId="clinical-data"
     classNames="clinical-data-overview__page-hero"
@@ -76,7 +75,7 @@ import data from "./data/safety";
     </div>
 
     <div class="clinical-data-overview__study-design--square">
-      <p class="clinical-data-overview__paragraph wrapper--only-left">
+      <p class="clinical-data-overview__paragraph wrapper wrapper--only-left">
         7 years of long-term safety and efficacy in adults, children, and
         infants
         <span class="clinical-data-overview__white-line"></span>
@@ -95,92 +94,62 @@ import data from "./data/safety";
         <a href="/clinical-data/adults" class="button"> Adults</a>
       </div>
     </div>
+  </section>
 
-    <div id="study-design" class="section clinical-data-overview__study-design">
-      <div class="clinical-data-overview__study-design__table">
-        <Table>
-          <!--Table headers -->
-          <TableHeader slot="header" mainHeaders={mainHeaders} />
-          <!--Table data -->
-          <TableData slot="body" data={studyData} />
+  <div
+    id="study-design"
+    class="wrapper wrapper--only-left wrapper--only-left--mobile-only section clinical-data-overview__study-design"
+  >
+    <div class="clinical-data-overview__study-design__table">
+      <Table>
+        <!--Table headers -->
+        <TableHeader slot="header" mainHeaders={mainHeaders} />
+        <!--Table data -->
+        <TableData slot="body" data={studyData} />
 
-          <div slot="footer" class="table__footer">
-            <span
-              ><sup>a</sup> Study 4 is not included in the current STRENSIQ label.</span
-            >
-            <span
-              ><sup>b</sup> Adolescents in the study were aged 13 to 17 years.</span
-            >
-            <span
-              ><sup>c</sup> Adults in the study were aged ≥18 years and 12 of 13
-              had pediatric-onset HPP.</span
-            >
-          </div>
-        </Table>
-      </div>
-    </div>
-
-    <div id="safety" class="section clinical-data-overview__safety">
-      <div class="clinical-data-overview__safety__description">
-        <h2 class="clinical-data-overview__safety__description--title">
-          STRENSIQ has a well-established safety profile, evidenced by 7 years
-          of data
-        </h2>
-        <p class="clinical-data-overview__safety__description--paragraph1">
-          STRENSIQ has been rigorously studied across more than <span>16</span> clinical
-          trials with at least <span>XX</span> patient-years of data and more than
-          7 years of postmarket experience.
-        </p>
-        <p
-          class="clinical-data-overview__safety__description--paragraph2 desktop--only"
-        >
-          Clinical practice guidelines for hypophosphatasia are in development
-          for the United States, though none are currently available. When
-          considering treatment, clinicians are advised to use their clinical
-          judgment based on individual patient needs and their evaluation of 7
-          years of long-term efficacy and safety data for STRENSIQ.
-        </p>
-
-        <div
-          class="clinical-data-overview__safety__anotations--desktop desktop--only"
-        >
-          <p>
-            <sup>a</sup>Adverse reactions are from the combined period of 6
-            mg/kg and above (ie, total drug exposure regardless of starting dose
-            and intermediary doses as long as the patient reached doses &gt 6
-            mg/kg).
-          </p>
-          <p>
-            <sup>b</sup>Other injection site reactions include injection-site
-            rash, inflammation, papule, hemorrhage, hematoma, urticaria, warmth,
-            calcification, mass, scar, and cellulitis.
-          </p>
-          <p><sup>c</sup>Other lipodystrophy includes lipohypertrophy.</p>
-          <p>
-            <sup>d</sup>Other hypersensitivity reactions include
-            erythema/redness, pyrexia/fever, irritability, nausea, pain,
-            rigor/chills, oral hypoesthesia, headache, flushing, and
-            anaphylaxis.
-          </p>
+        <div slot="footer" class="table__footer">
+          <span
+            ><sup>a</sup> Study 4 is not included in the current STRENSIQ label.</span
+          >
+          <span
+            ><sup>b</sup> Adolescents in the study were aged 13 to 17 years.</span
+          >
+          <span
+            ><sup>c</sup> Adults in the study were aged ≥18 years and 12 of 13 had
+            pediatric-onset HPP.</span
+          >
         </div>
-      </div>
-      <div class="clinical-data-overview__safety__table">
-        <h4 class="clinical-data-overview-container__panel-title">
-          Proven safe and well-tolerated
-        </h4>
-        <Table
-          title="Most frequently reported adverse reactions (≥10% patients)"
-        >
-          <TableHeader
-            slot="header"
-            subHeaders={subHeaders}
-            subSubHeaders={subSubHeaders}
-          />
-          <TableData slot="body" data={data} />
-        </Table>
-      </div>
+      </Table>
+    </div>
+  </div>
 
-      <div class="clinical-data-overview__safety__anotations mobile--only">
+  <div
+    id="safety"
+    class="wrapper wrapper--desktop-only section clinical-data-overview__safety"
+  >
+    <div class="wrapper clinical-data-overview__safety__description">
+      <h2 class="clinical-data-overview__safety__description--title">
+        STRENSIQ has a well-established safety profile, evidenced by 7 years of
+        data
+      </h2>
+      <p class="clinical-data-overview__safety__description--paragraph1">
+        STRENSIQ has been rigorously studied across more than <span>16</span> clinical
+        trials with at least <span>XX</span> patient-years of data and more than
+        7 years of postmarket experience.
+      </p>
+      <p
+        class="clinical-data-overview__safety__description--paragraph2 desktop--only"
+      >
+        Clinical practice guidelines for hypophosphatasia are in development for
+        the United States, though none are currently available. When considering
+        treatment, clinicians are advised to use their clinical judgment based
+        on individual patient needs and their evaluation of 7 years of long-term
+        efficacy and safety data for STRENSIQ.
+      </p>
+
+      <div
+        class="clinical-data-overview__safety__anotations clinical-data-overview__safety__anotations--desktop desktop--only"
+      >
         <p>
           <sup>a</sup>Adverse reactions are from the combined period of 6 mg/kg
           and above (ie, total drug exposure regardless of starting dose and
@@ -197,20 +166,61 @@ import data from "./data/safety";
           pyrexia/fever, irritability, nausea, pain, rigor/chills, oral
           hypoesthesia, headache, flushing, and anaphylaxis.
         </p>
-        <p class="clinical-data-overview__safety__anotations--disclaimer">
-          Clinical practice guidelines for hypophosphatasia are in development
-          for the United States, though none are currently available. When
-          considering treatment, clinicians are advised to use their clinical
-          judgment based on individual patient needs and their evaluation of 7
-          years of long-term efficacy and safety data for STRENSIQ.
-        </p>
       </div>
     </div>
-  </section>
+
+    <h4 class="clinical-data-overview-container__panel-title mobile--only">
+      Proven safe and well-tolerated
+    </h4>
+
+    <div
+      class="wrapper wrapper--only-left wrapper--only-left--only-mobile clinical-data-overview__safety__table"
+    >
+      <h4 class="clinical-data-overview-container__panel-title desktop--only">
+        Proven safe and well-tolerated
+      </h4>
+      <Table title="Most frequently reported adverse reactions (≥10% patients)">
+        <TableHeader
+          slot="header"
+          subHeaders={subHeaders}
+          subSubHeaders={subSubHeaders}
+        />
+        <TableData slot="body" data={data} className="no-padding" />
+      </Table>
+    </div>
+
+    <div
+      class="wrapper clinical-data-overview__safety__anotations mobile--only"
+    >
+      <p>
+        <sup>a</sup>Adverse reactions are from the combined period of 6 mg/kg
+        and above (ie, total drug exposure regardless of starting dose and
+        intermediary doses as long as the patient reached doses &gt 6 mg/kg).
+      </p>
+      <p>
+        <sup>b</sup>Other injection site reactions include injection-site rash,
+        inflammation, papule, hemorrhage, hematoma, urticaria, warmth,
+        calcification, mass, scar, and cellulitis.
+      </p>
+      <p><sup>c</sup>Other lipodystrophy includes lipohypertrophy.</p>
+      <p>
+        <sup>d</sup>Other hypersensitivity reactions include erythema/redness,
+        pyrexia/fever, irritability, nausea, pain, rigor/chills, oral
+        hypoesthesia, headache, flushing, and anaphylaxis.
+      </p>
+      <p class="clinical-data-overview__safety__anotations--disclaimer">
+        Clinical practice guidelines for hypophosphatasia are in development for
+        the United States, though none are currently available. When considering
+        treatment, clinicians are advised to use their clinical judgment based
+        on individual patient needs and their evaluation of 7 years of long-term
+        efficacy and safety data for STRENSIQ.
+      </p>
+    </div>
+  </div>
+
   <CTA
     heading="Get them off to a solid start"
     linkText="Infants/young children"
     linkUrl="/clinical-data/infants-young-children"
   />
-  <References />
 </Layout>
