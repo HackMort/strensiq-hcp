@@ -173,12 +173,44 @@
 .clinical-data-adults {
     &--changes-in-substractes {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
     }
 
-    &--col {
-        width: 50%;
+    &--title {
+        color: $color-dark-green;
+        margin: 1.25rem auto 0 auto;
+    }
+
+    &--subtitle {
+        color: $color-dark-gray;
+        font-size: .875rem;
+        font-weight: 300;
+    }
+
+    &--list {
+        color: $color-dark-gray;
+        font-size: .875rem;
+        font-weight: 300;
+
+        li {
+            margin-bottom: .5rem;
+        }
+    }
+
+    &--sublist {
+        margin-top: 8px;
+        margin-left: 1rem;
+
+        li {
+            list-style-type: circle !important;
+
+            &::marker {
+                color: $color-dark-gray !important;
+            }
+        }
+
+
     }
 }
 
