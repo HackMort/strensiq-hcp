@@ -2,8 +2,8 @@
 import PageHero from "../../components/PageHero.astro";
 import Layout from "../../layouts/Layout.astro";
 import CTA from "../../components/CTA.astro";
-import References from "../../components/References.astro";
 import InternalNavigation from "../../components/InternalNavigation.astro";
+import HighlightInformation from "../../components/HighlightInformation.astro";
 
 const internalNavLinks = [
   {
@@ -172,7 +172,67 @@ const internalNavLinks = [
         </ul>
       </div>
     </section>
+  </div>
 
+  <section id="adults-mobility" class="section clinical-data-adults-mobility">
+    <div class="clinical-data-adults__content">
+      <div class="wrapper">
+        <h2 class="clinical-data-adults--title">
+          Mobility: 6-minute walk test (6MWT)
+        </h2>
+
+        <div class="clinical-data-adults__content--highlightinformation">
+          <HighlightInformation
+            title="PATIENTS WALKED A MEDIAN (MIN, MAX) OF"
+            footnote="(13,540 at baseline (n=12)"
+          >
+            <span slot="content">
+              324.5
+              <span
+                class="clinical-data-adults__content--highlightinformation-span"
+                >meters</span
+              >
+            </span>
+          </HighlightInformation>
+
+          <div
+            class="clinical-data-adults__content--highlightinformation-no-border"
+          >
+            <HighlightInformation footnote="(13,540) at 5 years (n=10)">
+              <span slot="content"
+                >429.5 <span
+                  class="clinical-data-adults__content--highlightinformation-span"
+                  >meters</span
+                ></span
+              >
+            </HighlightInformation>
+          </div>
+        </div>
+
+        <p class="clinical-data-adults__content--paragraph">
+          For adult patients with hypophosphatasia, the minimal clinically
+          important difference (MCID) is estimated at 23 meters and31 meters
+          based on 2 distribution-based methods.
+        </p>
+      </div>
+
+      <h5 class="hypophosphatasia-container__panel-title">
+        Age- and sex-adjusted ALP reference ranges for children (U/L)
+      </h5>
+    </div>
+  </section>
+
+  <div class="clinical-data-adults__video">
+    <h3 class="clinical-data-adults__video--title">
+      See 6-minute walk test outcomes
+    </h3>
+    <img
+      src="/assets/images/clinical-data/adults/video-player-fpo.svg"
+      alt="Video player FPO"
+    />
+  </div>
+
+  <div class="wrapper">
     <section
       id="adults-time-to-bone-mineralization"
       class="section clinical-data-adults--time-to-bone-mineralization"
@@ -213,16 +273,17 @@ const internalNavLinks = [
           />
           <img
             class="clinical-data-adults--img"
-            src="/assets/images/clinical-data/adults/Bone_Mineralization_Adults_Mobile.png"
+            src="/assets/images/clinical-data/adults/Bone_Mineralization_Adults_Mobile.svg"
             alt="Mineralization Lag Time Adults"
           />
         </picture>
       </div>
     </section>
   </div>
-  <CTA
-    heading="Get the blueprint for STRENSIQ dosing"
-    linkText="Dosing"
-    linkUrl="/dosing"
-  />
 </Layout>
+
+<CTA
+  heading="Get the blueprint for STRENSIQ dosing"
+  linkText="Dosing"
+  linkUrl="/dosing"
+/>

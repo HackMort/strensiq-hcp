@@ -187,7 +187,8 @@
         width: 100%;
 
         @media screen and (min-width: 1000px) {
-            width: 50%;
+            width: 48%;
+            margin: 0 auto;
         }
     }
 
@@ -243,6 +244,43 @@
 
         &--content {
             margin: 0;
+        }
+    }
+
+    &__content {
+        background-color: $color-bright-gray;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+
+        &--highlightinformation {
+            margin-top: 2rem;
+
+            &-no-border {
+                .highlight-information {
+                    border-bottom: 0px !important;
+                }
+            }
+
+            &-span {
+                font-size: 2.5rem;
+            }
+        }
+
+        &--paragraph {
+            margin-top: 1rem;
+        }
+    }
+
+    &__video {
+        background-color: $color-blue;
+        padding: 1rem;
+
+        &--title {
+            color: $color-white;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            padding-bottom: 0.8rem;
         }
     }
 }
