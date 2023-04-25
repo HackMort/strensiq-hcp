@@ -176,11 +176,28 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+
+        @media screen and (min-width: 1000px) {
+            flex-direction: row;
+            margin-top: 1rem;
+        }
+    }
+
+    &--col {
+        width: 100%;
+
+        @media screen and (min-width: 1000px) {
+            width: 50%;
+        }
     }
 
     &--title {
         color: $color-dark-green;
         margin: 1.25rem auto 0 auto;
+
+        @media screen and (min-width: 1000px) {
+            margin: 3rem 0 0 0;
+        }
     }
 
     &--subtitle {
@@ -213,8 +230,19 @@
     }
 
     &--time-to-bone-mineralization {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 1000px) {
+            flex-direction: row;
+        }
+
         .clinical-data-adults--title {
             margin-bottom: 1rem;
+        }
+
+        &--content {
+            margin: 0;
         }
     }
 }
