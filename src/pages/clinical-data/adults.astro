@@ -4,6 +4,10 @@ import Layout from "../../layouts/Layout.astro";
 import CTA from "../../components/CTA.astro";
 import InternalNavigation from "../../components/InternalNavigation.astro";
 import HighlightInformation from "../../components/HighlightInformation.astro";
+import CustomTitle from "../../components/CustomTitle.astro";
+import Table from "../../components/Table/Table.astro";
+import TableHeader from "../../components/Table/TableHeader.astro";
+import TableData from "../../components/Table/TableData.astro";
 
 const internalNavLinks = [
   {
@@ -18,6 +22,14 @@ const internalNavLinks = [
   },
   { href: "#adults-real-world-outcomes", label: "Real-world outcomes" },
 ];
+
+//Table headers - Real-world outcomes
+const mainHeaders = [
+  { label: "" },
+  { label: "EmPATHYa", subLabel: "ENB-002-08/ ENB-003-08" },
+];
+
+import Data from "./data/realWorld.js";
 ---
 
 <Layout title="Adults" displayReferences={false}>
@@ -175,62 +187,129 @@ const internalNavLinks = [
   </div>
 
   <section id="adults-mobility" class="section clinical-data-adults-mobility">
-    <div class="clinical-data-adults__content">
-      <div class="wrapper">
-        <h2 class="clinical-data-adults--title">
-          Mobility: 6-minute walk test (6MWT)
-        </h2>
+    <div class="wrapper--desktop-only clinical-data-adults__content">
+      <div class="clinical-data-adults--col">
+        <!-- Title, Highlight Info, Paragraph -->
+        <div class="wrapper">
+          <h2 class="clinical-data-adults--title">
+            Mobility: 6-minute walk test (6MWT)
+          </h2>
 
-        <div class="clinical-data-adults__content--highlightinformation">
-          <HighlightInformation
-            title="PATIENTS WALKED A MEDIAN (MIN, MAX) OF"
-            footnote="(13,540 at baseline (n=12)"
-          >
-            <span slot="content">
-              324.5
-              <span
-                class="clinical-data-adults__content--highlightinformation-span"
-                >meters</span
-              >
-            </span>
-          </HighlightInformation>
-
-          <div
-            class="clinical-data-adults__content--highlightinformation-no-border"
-          >
-            <HighlightInformation footnote="(13,540) at 5 years (n=10)">
-              <span slot="content"
-                >429.5 <span
+          <div class="clinical-data-adults__content--highlightinformation">
+            <HighlightInformation
+              title="PATIENTS WALKED A MEDIAN (MIN, MAX) OF"
+              footnote="(13,540 at baseline (n=12)"
+            >
+              <span slot="content">
+                324.5
+                <span
                   class="clinical-data-adults__content--highlightinformation-span"
                   >meters</span
-                ></span
-              >
+                >
+              </span>
             </HighlightInformation>
-          </div>
-        </div>
 
-        <p class="clinical-data-adults__content--paragraph">
-          For adult patients with hypophosphatasia, the minimal clinically
-          important difference (MCID) is estimated at 23 meters and31 meters
-          based on 2 distribution-based methods.
-        </p>
+            <div
+              class="clinical-data-adults__content--highlightinformation-no-border"
+            >
+              <HighlightInformation footnote="(13,540) at 5 years (n=10)">
+                <span slot="content"
+                  >429.5 <span
+                    class="clinical-data-adults__content--highlightinformation-span"
+                    >meters</span
+                  ></span
+                >
+              </HighlightInformation>
+            </div>
+          </div>
+
+          <p class="clinical-data-adults__content--paragraph">
+            For adult patients with hypophosphatasia, the minimal clinically
+            important difference (MCID) is estimated at 23 meters and31 meters
+            based on 2 distribution-based methods.
+          </p>
+        </div>
       </div>
 
-      <h5 class="hypophosphatasia-container__panel-title">
-        Age- and sex-adjusted ALP reference ranges for children (U/L)
-      </h5>
+      <div class="clinical-data-adults--col">
+        <!-- <img
+          src="/assets/images/clinical-data/adults/Subtract.svg"
+          alt="Rect"
+        /> -->
+        <!-- Video FPO -->
+        <div class="clinical-data-adults__video">
+          <h3 class="clinical-data-adults__video--title">
+            See 6-minute walk test outcomes
+          </h3>
+
+          <picture>
+            <source
+              srcset="/assets/images/clinical-data/adults/video-player-fpo.svg"
+              media="(min-width: 700px)"
+            />
+            <img
+              class="clinical-data-adults--img clinical-data-adults--img-video"
+              src="/assets/images/clinical-data/adults/video-player-fpo_mobile.svg"
+              alt="Video player"
+            />
+          </picture>
+        </div>
+      </div>
+
+      <div class="clinical-data-adults--col clinical-data-adults--col-mobility">
+        <ul
+          class="wrapper clinical-data-adults--list clinical-data-adults--list-mobility desktop--only"
+        >
+          <li>
+            These results represent adults with pediatric-onset hypophosphatasia
+            with available 6MWT data. Inferences regarding clinical benefit
+            should not be made
+          </li>
+          <li>
+            One of the coprimary endpoints of this study, change in PPi at 6
+            months for the entire study population, did not reach statistical
+            significance
+          </li>
+        </ul>
+      </div>
+
+      <div class="clinical-data-adults--col clinical-data-adults--col-mobility">
+        <!-- Title -->
+        <CustomTitle>
+          Age- and sex-adjusted ALP reference ranges for children (U/L)
+        </CustomTitle>
+        <!-- Graph -->
+        <div class="wrapper">
+          <picture>
+            <source
+              srcset="/assets/images/clinical-data/adults/6MWT_Adults.svg"
+              media="(min-width: 700px)"
+            />
+            <img
+              class="clinical-data-adults--img clinical-data-adults--img-6MWT"
+              src="/assets/images/clinical-data/adults/6MWT_Adults_Mobile.svg"
+              alt="PLP Adults"
+            />
+          </picture>
+
+          <ul
+            class="clinical-data-adults--list clinical-data-adults--list-mobility mobile--only"
+          >
+            <li>
+              These results represent adults with pediatric-onset
+              hypophosphatasia with available 6MWT data. Inferences regarding
+              clinical benefit should not be made
+            </li>
+            <li>
+              One of the coprimary endpoints of this study, change in PPi at 6
+              months for the entire study population, did not reach statistical
+              significance
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
-
-  <div class="clinical-data-adults__video">
-    <h3 class="clinical-data-adults__video--title">
-      See 6-minute walk test outcomes
-    </h3>
-    <img
-      src="/assets/images/clinical-data/adults/video-player-fpo.svg"
-      alt="Video player FPO"
-    />
-  </div>
 
   <div class="wrapper">
     <section
@@ -280,10 +359,24 @@ const internalNavLinks = [
       </div>
     </section>
   </div>
-</Layout>
 
-<CTA
-  heading="Get the blueprint for STRENSIQ dosing"
-  linkText="Dosing"
-  linkUrl="/dosing"
-/>
+  <section
+    id="adults-real-world-outcomes"
+    class="wrapper section clinical-data-adults--real-world-outcomes"
+  >
+    <h2 class="clinical-data-adults--title">
+      Real-world outcomes in adults with pediatric-onset hypophosphatasia
+    </h2>
+
+    <Table>
+      <TableHeader slot="header" mainHeaders={mainHeaders} />
+      <TableData slot="body" data={Data} />
+    </Table>
+  </section>
+
+  <CTA
+    heading="Get the blueprint for STRENSIQ dosing"
+    linkText="Dosing"
+    linkUrl="/dosing"
+  />
+</Layout>

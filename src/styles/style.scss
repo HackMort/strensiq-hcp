@@ -394,7 +394,7 @@
         width: 100%;
 
         @media screen and (min-width: 1000px) {
-            width: 48%;
+            width: 50%;
             margin: 0 auto;
         }
     }
@@ -421,6 +421,19 @@
 
         li {
             margin-bottom: .5rem;
+        }
+
+        &-mobility {
+            margin-top: 1rem;
+
+            @media screen and (max-width: 768px) {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+
+            @media screen and (min-width: 1000px) {
+                margin-top: 8rem;
+            }
         }
     }
 
@@ -476,11 +489,24 @@
         &--paragraph {
             margin-top: 1rem;
         }
+
+        @media screen and (min-width: 1001px) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            background-image: url('/assets/images/clinical-data/adults/Subtract.svg');
+            background-position: right top;
+            background-repeat: no-repeat;
+            background-size: 50%;
+        }
     }
 
     &__video {
         background-color: $color-blue;
         padding: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
 
         &--title {
             color: $color-white;
@@ -489,6 +515,32 @@
             font-weight: 700;
             padding-bottom: 0.8rem;
         }
+
+        @media screen and (min-width: 1000px) {
+            background-color: transparent;
+            padding: 0;
+            margin: 5rem auto 0 auto;
+        }
+    }
+
+    &--img-6MWT {
+        background-color: $color-white;
+        margin-top: 2rem;
+    }
+
+    &--img-video {
+
+        @media screen and (min-width: 1000px) {
+            max-width: 80%;
+            margin: 0 1rem 0 auto;
+        }
+    }
+
+    &--col-mobility {
+        @media screen and (min-width: 1000px) {
+            margin-top: 6rem;
+        }
+
     }
 }
 
