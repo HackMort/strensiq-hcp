@@ -3023,3 +3023,627 @@
 }
 
 //------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
+
+/* Clinical Data - Children Page */
+.cdchildren-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+
+    @include media('desktop') {
+        padding-top: 3.125rem;
+        padding-bottom: 2.5rem;
+    }
+
+    &__content {
+        padding: 1.75rem 0 0;
+        width: 100%;
+
+        @include media('desktop') {
+            padding-top: 0;
+
+            &--left {
+                width: 45%;
+            }
+
+            &--right {
+                width: 55%;
+            }
+        }
+
+        &--full-width {
+            width: 100%;
+
+            .cdchildren-container__title {
+                @include media('desktop') {
+                    max-width: 40ch;
+                }
+            }
+        }
+    }
+
+    &__footnote {
+        font-size: 12px;
+        line-height: .9rem;
+
+        &:last-child {
+            margin-bottom: 1.3125rem;
+
+            @include media('desktop') {
+                margin-bottom: 0;
+            }
+        }
+
+        i {
+            font-style: italic;
+        }
+    }
+
+    &__list {
+        padding-left: 0.75rem;
+
+        &-item {
+            margin-bottom: .75rem;
+
+            p {
+                font-size: 14px;
+                line-height: 1.0938rem;
+
+                @include media('desktop') {
+                    font-size: 18px;
+                    line-height: 1.6875rem;
+                }
+            }
+        }
+    }
+
+    &__paragraph {
+        font-size: 14px;
+        line-height: 1.0938rem;
+        margin-bottom: 1rem;
+
+        @include media('desktop') {
+            font-size: 18px;
+            line-height: 1.6875rem;
+            max-width: 49ch;
+        }
+    }
+
+    &__subtitle {
+        color: $color-dark-gray;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.05rem;
+        max-width: 30ch;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        font-weight: 700;
+        margin-bottom: 1.3125rem;
+
+        @include media('desktop') {
+            font-size: 30px;
+            line-height: 2.3438rem;
+            max-width: 24ch;
+        }
+    }
+
+    &__video {
+        background-color: #c4c4c4;
+        height: 100%;
+        padding-top: 3.125rem;
+        position: relative;
+
+        &-container {
+            position: relative;
+            padding: .625rem 0 1.25rem;
+
+            &:before {
+                background-color: $color-blue;
+                content: '';
+                height: 100%;
+                left: -10%;
+                position: absolute;
+                top: 0;
+                width: 150%;
+                z-index: -1;
+
+                @include media('desktop') {
+                    border-radius: 22.625rem 0 0 22.75rem;
+                    bottom: 30px;
+                    height: 45.5175rem;
+                    left: -35px;
+                    top: unset;
+                    transform: rotate(-21deg);
+                    width: 69.295rem;
+                }
+            }
+
+            @include media('desktop') {
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        &-title {
+            color: $color-white;
+            font-weight: 700;
+            line-height: 1.25rem;
+            margin-bottom: .625rem;
+            text-align: center;
+
+            @include media('desktop') {
+                font-size: 1.875rem;
+                line-height: 2.3438rem;
+            }
+        }
+    }
+
+    .accordion-mobile {
+        .button {
+            font-size: 16px;
+        }
+    }
+
+    .animated--bg {
+        color: $color-dark-green;
+        font-weight: 900;
+    }
+
+    .cdchildren-container__merged-highlight {
+        border-bottom: 12px solid $color-green;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-bottom: 1.875rem;
+        max-width: 25rem;
+
+        &__content {
+            display: flex;
+            @include flex-gap(.625rem);
+            position: relative;
+        }
+
+        .highlight-information {
+            border: none;
+            margin-bottom: 0;
+            width: 140px;
+
+            &__title {
+                width: 100%;
+            }
+
+            &__separator {
+                color: $color-blue;
+                font-size: 100px;
+                font-weight: 400;
+                left: 30%;
+                line-height: 7.8125rem;
+                position: absolute;
+                top: -25px;
+                width: fit-content;
+            }
+
+            &__sub-content {
+                color: $color-dark-green;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 1.0938rem;
+                margin: 0 auto;
+                right: 0;
+
+                @include media('desktop') {
+                    font-size: 24px;
+                    line-height: 1.875rem;
+                    bottom: -15px;
+                }
+            }
+
+            &__footnote {
+                margin-top: .625rem;
+
+                @include media('desktop') {
+                    margin-top: 1.25rem;
+                }
+            }
+
+            &.content {
+                &--align-center {
+                    .highlight-information__content {
+                        text-align: center;
+                    }
+                }
+            }
+
+            &.subcontent {
+                &--content-center {
+                    .highlight-information__sub-content {
+                        padding-left: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .chart-wrapper {
+        .pinch-to-zoom  {
+            padding-top: 35px;
+
+            @include media('desktop') {
+                padding-top: 0;
+
+                .pinch-to-zoom__container {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .button--pich-to-zoom {
+            position: absolute;
+            top: .625rem;
+            right: 1rem;
+            z-index: 1;
+
+            @include media('desktop') {
+                display: none;
+            }
+        }
+
+        &--height-z {
+            .pinch-to-zoom {
+                padding-top: 3.75rem;
+
+                @include media('desktop') {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .highlight-information {
+        margin-bottom: 1.875rem;
+        max-width: 21.25rem;
+        padding-bottom: .3125rem;
+
+        &__footnote {
+            font-size: 14px;
+            line-height: 1.0938rem;
+            margin-top: .3125rem;
+            max-width: 39ch;
+        }
+
+        i {
+            font-style: italic;
+        }
+    }
+
+    .only--desktop {
+        display: none;
+
+        @include media('desktop') {
+            display: block;
+        }
+    }
+
+    .only--mobile {
+
+        @include media('desktop') {
+            display: none;
+        }
+    }
+
+    .radiographic-images {
+        &-desktop {
+            display: none;
+
+            @include media('desktop') {
+                display: block;
+
+                .radiographic-comparator [data-radiographic-footer] {
+                    text-align: center;
+                }
+            }
+        }
+
+        &-mobile {
+            &__title {
+                font-weight: 600;
+                line-height: 1.5rem;
+                margin-bottom: .8125rem;
+            }
+
+            @include media('desktop') {
+                display: none;
+            }
+        }
+    }
+
+    .rgi-scale {
+        padding-bottom: 1.25rem;
+        position: relative;
+
+        &__image {
+            margin: 0 auto;
+            max-width: 11.3125rem;
+            width: 50%;
+        }
+
+        &__title {
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+
+            @include media('desktop') {
+                text-align: center;
+            }
+        }
+
+        &::before {
+            background-color: $color-soft-gray;
+            border-radius: 11.1875rem;
+            content: '';
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: -70px;
+            width: 200%;
+            z-index: -1;
+
+            @include media('desktop') {
+                border-radius: 36.36rem;
+                right: 0;
+                width: 200%;
+            }
+        }
+
+        @include media('desktop') {
+            padding-top: 3.125rem;
+            padding-bottom: 3.125rem;
+            padding-right: 3.125rem;
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include media('desktop') {
+            justify-content: space-between;
+        }
+    }
+
+    &--bg-soft-gray {
+        background-color: $color-soft-gray;
+        z-index: -1;
+    }
+
+    &--rickets {
+        .cdchildren-container__content {
+            &:last-child {
+                padding-top: 0;
+            }
+        }
+
+
+    }
+
+    &--rgi {
+        @include media('desktop') {
+            padding-top: 0;
+
+            .cdchildren-container__content:last-child .cdchildren-container__footnote:last-child {
+                width: 85%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &--mobility {
+        .cdchildren-container__content:last-child {
+            padding-top: 0;
+        }
+
+        @include media('desktop') {
+            .highlight-information:nth-of-type(2) {
+                .highlight-information__footnote {
+                    max-width: 29ch;
+                }
+            }
+
+            .cdchildren-container__footnote {
+                padding-left: 75px;
+            }
+        }
+    }
+
+    &--disability {
+        .cdchildren-container__content {
+            &:first-child {
+                .cdchildren-container__title {
+                    margin-top: .625rem;
+                    margin-bottom: 1.25rem;
+                }
+            }
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                padding-top: .625rem;
+
+                @include media('desktop') {
+                    padding-top: 0;
+                }
+            }
+        }
+
+        .cdchildren-container__paragraph {
+            &:first-child {
+                margin-bottom: 1.0625rem;
+            }
+
+            &:last-child {
+                margin-top: 1.875rem;
+                max-width: 100%;
+            }
+        }
+
+        .cdchildren-container__separator {
+            display: none;
+        }
+
+        @include media('desktop') {
+            .wrapper {
+                justify-content: space-evenly;
+            }
+
+            .cdchildren-container__content--right,
+            .cdchildren-container__content--left {
+                width: 45%;
+                width: fit-content;
+            }
+
+            .cdchildren-container__content--right {
+                .cdchildren-container__paragraph {
+                    margin-bottom: 2.8125rem;
+                    max-width: 51ch;
+                }
+
+                .highlight-information:nth-of-type(1) {
+                    .highlight-information__sub-content {
+                        padding-left: 0;
+                    }
+
+                    .highlight-information__content {
+                        padding-left: 1.25rem;
+                    }
+                }
+
+                .highlight-information:nth-of-type(2) {
+                    padding-left: 1.25rem;
+
+                    .highlight-information__sub-content {
+                        text-align: left;
+                        padding-left: 1.5625rem;
+                    }
+                }
+            }
+
+            .cdchildren-container__content--left {
+                .highlight-information:nth-of-type(1) {
+                    .highlight-information__sub-content {
+                        padding-left: 0;
+                    }
+                }
+
+                .highlight-information:nth-of-type(2) {
+                    padding-left: 1.25rem;
+
+                    .highlight-information__content {
+                        text-align: left;
+                        padding-left: .625rem;
+                    }
+                }
+
+                .highlight-information__separator {
+                    left: 35%;
+                }
+            }
+
+            .cdchildren-container__separator {
+                display: block;
+                border: 3px solid $color-white;
+            }
+
+            .cdchildren-container__title {
+                max-width: 45ch;
+                padding-bottom: 2.5rem;
+            }
+        }
+    }
+
+    &--agility {
+        .cdchildren-container__content {
+            &:nth-child(2) {
+                padding-top: .625rem;
+
+                @include media('desktop') {
+                    padding-top: 0;
+                }
+            }
+
+            &:nth-child(3) {
+                padding-top: 0;
+
+                @include media('desktop') {
+                    padding-top: 0;
+                }
+            }
+        }
+
+        @include media('desktop') {
+            .cdchildren-container__title {
+                max-width: 30ch;
+            }
+
+            .cdchildren-container__content {
+                &--left {
+                    width: 46%;
+                }
+
+                &--right {
+                    width: 54%;
+                }
+            }
+
+            .only--desktop {
+                font-size: 18px;
+                line-height: 1.6875rem;
+                margin-top: 1.5625rem;
+                max-width: 49ch;
+            }
+
+            .cdchildren-container__list-item {
+                max-width: 55ch;
+            }
+        }
+    }
+
+    &--height-z {
+        .cdchildren-container {
+            &__content:last-child {
+                padding-top: 0;
+            }
+
+            &__footnote {
+                background-color: $color-white;
+                padding: 0 .9375rem;
+
+                &:first-child {
+                    padding-top: 1.25rem;
+
+                    @include media('desktop') {
+                        padding-top: 0;
+                    }
+                }
+
+                &:last-child {
+                    padding-bottom: 1.25rem;
+                }
+            }
+        }
+
+        @include media('desktop') {
+            .cdchildren-container {
+                &__title {
+                    max-width: 35ch;
+                }
+
+                &__footnote {
+                    padding-left: 4.375rem;
+                }
+
+                &__list-item {
+                    max-width: 50ch;
+                }
+            }
+        }
+    }
+}
