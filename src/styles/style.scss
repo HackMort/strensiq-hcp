@@ -180,7 +180,7 @@
     &__safety {
         display: flex;
         flex-direction: row;
-        @include flex-gap(1rem);
+        @include flex-gap(4rem);
         position: relative;
         margin-bottom: 3rem;
 
@@ -312,6 +312,14 @@
                 }
             }
         }
+    }
+}
+
+.safety-table {
+
+    .table__content tr td:first-child,
+    .table__content tr th:first-child {
+        width: 28% !important;
     }
 }
 

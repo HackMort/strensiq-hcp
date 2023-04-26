@@ -10,12 +10,13 @@
 
 type Props = {
     title?: string; // Table title (optional)
+    className?: string; // Class name (optional)
 };
 
-const { title }: Props = Astro.props;
+const { title, className }: Props = Astro.props;
 ---
 
-<section class="table">
+<section class={className ? `table ${className}` : "table"}>
     {
         title && (
             <div class="table__header">

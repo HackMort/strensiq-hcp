@@ -14,9 +14,9 @@ import TableData from "../../components/Table/TableData.astro";
 //Table headers - Study design
 const mainHeaders = [
   { label: "" },
-  { label: "Study 1", subLabel: "ENB-002-08/ENB-003-08" },
+  { label: "Study 1", subLabel: "ENB-002-08/ ENB-003-08" },
   { label: "Study 2", subLabel: "ENB-010-10" },
-  { label: "Study 3", subLabel: "ENB-006-09/ENB-008-10" },
+  { label: "Study 3", subLabel: "ENB-006-09/ ENB-008-10" },
   { label: "Study 4" },
 ];
 import studyData from "./data/study";
@@ -179,7 +179,10 @@ import data from "./data/safety";
       <h4 class="clinical-data-overview-container__panel-title desktop--only">
         Proven safe and well-tolerated
       </h4>
-      <Table title="Most frequently reported adverse reactions (≥10% patients)">
+      <Table
+        title="Most frequently reported adverse reactions (≥10% patients)"
+        className="safety-table"
+      >
         <TableHeader
           slot="header"
           subHeaders={subHeaders}
