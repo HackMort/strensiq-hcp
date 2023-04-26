@@ -184,6 +184,10 @@
         position: relative;
         margin-bottom: 3rem;
 
+        @media screen and (min-width: 1201px) {
+            padding-top: 5rem;
+        }
+
         &__description {
             display: flex;
             flex-direction: column;
