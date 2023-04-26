@@ -1,0 +1,34 @@
+---
+/**
+ * @name Table
+ * @description
+ * Table Component
+ * This component is used to wrap the headers, body and footer of a table
+ * title prop: is a string that will be used as the table title (optional)
+ * Slots: header, body and footer: is posible to add different structures to the slots
+ */
+
+type Props = {
+    title?: string; // Table title (optional)
+    className?: string; // Class name (optional)
+};
+
+const { title, className }: Props = Astro.props;
+---
+
+<section class={className ? `table ${className}` : "table"}>
+    {
+        title && (
+            <div class="table__header">
+                <div class="table__title">{title}</div>
+            </div>
+        )
+    }
+    <div class="table__wrapper">
+        <table class="table__content">
+            <slot name="header" />
+            <slot name="body" />
+        </table>
+    </div>
+    <slot name="footer" />
+</section>

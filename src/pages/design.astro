@@ -9,6 +9,21 @@ import Testimonial from "../components/Testimonial.astro";
 import SkeletonMobile from "../components/SkeletonMobile.astro";
 import SkeletonDesktop from "../components/SkeletonDesktop.astro";
 import TipBox from "../components/TipBox.astro";
+
+//Table
+import Table from "../components/Table/Table.astro";
+import TableHeader from "../components/Table/TableHeader.astro";
+import TableData from "../components/Table/TableData.astro";
+//Table header data
+const mainHeaders = [
+  { label: "" },
+  { label: "Study 1", subLabel: "ENB-002-08/ENB-003-08" },
+  { label: "Study 2", subLabel: "ENB-010-10" },
+  { label: "Study 3", subLabel: "ENB-006-09/ENB-008-10" },
+  { label: "Study 4" },
+];
+//Table data
+import studyData from "./clinical-data/data/study.js";
 ---
 
 <!DOCTYPE html>
@@ -424,6 +439,31 @@ import TipBox from "../components/TipBox.astro";
               clinical decisions related to patients currently taking STRENSIQ</strong
             >
           </TipBox>
+        </div>
+      </section>
+
+      <section class="design-system-section">
+        <div class="section-wrapper section-wrapper--small">
+          <h1 class="title">Table</h1>
+          <Table>
+            <!--Table headers -->
+            <TableHeader slot="header" mainHeaders={mainHeaders} />
+            <!--Table data -->
+            <TableData slot="body" data={studyData} />
+            <!-- Footer -->
+            <div slot="footer" class="table__footer">
+              <span
+                ><sup>a</sup> Study 4 is not included in the current STRENSIQ label.</span
+              >
+              <span
+                ><sup>b</sup> Adolescents in the study were aged 13 to 17 years.</span
+              >
+              <span
+                ><sup>c</sup> Adults in the study were aged ≥18 years and 12 of 13
+                had pediatric-onset HPP.</span
+              >
+            </div>
+          </Table>
         </div>
       </section>
     </main>

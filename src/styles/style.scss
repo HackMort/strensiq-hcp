@@ -26,6 +26,7 @@
 @import './components/_testimonial.scss';
 @import './components/_not-found-hero.scss';
 @import './components/_custom-section.scss';
+@import './components/_table.scss';
 @import './components/_request-rep-modal.scss';
 @import './components/_form.scss';
 @import './components/_skeleton.scss';
@@ -106,17 +107,223 @@
 }
 
 // Clinical data page - Overview
-.clinical-data-overview__page-hero {
-    .page-hero__title {
-        @media screen and (min-width: 500px) {
-            br {
-                display: none;
+.clinical-data-overview {
+    &__page-hero {
+        .page-hero__title {
+            @media screen and (min-width: 500px) {
+                br {
+                    display: none;
+                }
+            }
+
+            @media screen and (min-width: 768px) {
+                max-width: 28.75rem;
+            }
+        }
+    }
+
+    &__submenu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+
+        @include flex-gap(1rem);
+    }
+
+    &__study-design {
+        margin-bottom: 1rem;
+        width: 100%;
+
+        &__table {
+            width: 100%;
+        }
+
+        &__head {
+            margin: 3rem 0;
+            width: 100%;
+
+            @media screen and (max-width: 768px) {
+                margin: 1.5rem 0;
             }
         }
 
-        @media screen and (min-width: 768px) {
-            max-width: 28.75rem;
+        &--title {
+            color: $color-dark-green;
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+            margin-bottom: 2rem;
         }
+
+        &--square {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 85px;
+            color: $color-dark-green;
+            background-color: $color-green;
+            border-radius: 0 0 30px 0;
+            max-width: 50%;
+
+            @media screen and (max-width: 768px) {
+                height: auto;
+                border-radius: 0 0 0 30px;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+    }
+
+
+    &__safety {
+        display: flex;
+        flex-direction: row;
+        @include flex-gap(4rem);
+        position: relative;
+        margin-bottom: 3rem;
+
+        @media screen and (min-width: 1201px) {
+            padding-top: 5rem;
+        }
+
+        &__description {
+            display: flex;
+            flex-direction: column;
+
+            @media screen and (min-width: 1201px) {
+                max-width: 40%;
+            }
+
+            &--title {
+                margin: 10px 0;
+                color: $color-dark-green;
+            }
+
+            &--paragraph1 {
+                margin: 10px 0;
+                font-size: 1.125rem;
+                font-weight: 500;
+                color: $color-dark-gray;
+
+                span {
+                    color: $color-red-dark;
+                }
+            }
+
+            &--paragraph2 {
+                margin: 10px 0;
+            }
+
+            &--paragraph3 {
+                font-size: 0.8rem;
+                margin: 10px 0;
+                justify-self: flex-end;
+                align-self: flex-end;
+            }
+        }
+
+        &__table {
+            @media screen and (min-width: 1201px) {
+                max-width: 60%;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            flex-direction: column;
+        }
+
+        &__anotations {
+            p {
+                font-size: .8125rem;
+                margin: 0;
+
+                sup {
+                    font-size: .60rem;
+                    top: -0.3em;
+                }
+            }
+
+            &--disclaimer {
+                font-size: 1rem !important;
+                margin-top: 1rem !important;
+            }
+
+            &--desktop {
+                margin: auto 0 0 0 !important;
+
+                >p {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+
+    }
+
+    &__white-line {
+        width: 5.7869rem;
+        border: 2px solid $color-white;
+        margin: 0;
+        border-radius: 10px;
+        margin-top: 0.8rem;
+
+        @include media('mobile') {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__paragraph {
+        color: $color-dark-green;
+        font-size: 1rem;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: 768px) {
+            margin: 20px auto 0 4% !important;
+        }
+
+    }
+
+    &-container {
+        &__panel {
+            padding: 2.4688rem 0 0;
+
+            &-title {
+                background-color: $color-dark-green;
+                border-radius: 0 0 0 30px;
+                color: $color-white;
+                font-weight: 700;
+                line-height: 1.25rem;
+                margin-bottom: 1.25rem;
+                padding: 1.5625rem;
+                position: relative;
+
+                &::after {
+                    border: 2px solid $color-dark-yellow;
+                    content: '';
+                    margin-top: 1.3125rem;
+                    position: relative;
+                    width: 5.8125rem;
+                    border-radius: .625rem;
+                }
+
+                @include media('desktop') {
+                    &::after {
+                        width: 12.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.safety-table {
+
+    .table__content tr td:first-child,
+    .table__content tr th:first-child {
+        width: 28% !important;
     }
 }
 

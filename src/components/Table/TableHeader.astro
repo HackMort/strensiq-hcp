@@ -1,0 +1,121 @@
+---
+/**
+ * @name TableHeader
+ * @description
+ * Table headers (main, sub and sub-sub headers)
+ * - mainHeaders: array of objects with the information of the main headers
+ * - subHeaders: array of objects with the information of the sub headers
+ * - subSubHeaders: array of objects with the information of the sub-sub headers
+ *
+ * Each object has the following properties:
+ * Label: header text (If not specified, it is taken as an empty cell)
+ * Colspan: number of columns that the header spans (If not specified, it is taken as 1)
+ * ClassModifier: is posible assign a class modifier to apply (If not specified, it is taken as null)
+ * - mh: main header (Background dark green, white text, bold, border bottom green)
+ * - mh, empty: main header vacio (Background white)
+ * - mh, nb: main header sin bordes
+ * - sh: sub header (Background white, color dark green, bold)
+ * - sh, nb: sub header sin bordes
+ * - ssh: sub sub header (Background white, color dark gray, bold)
+ * - ssh, cg: sub sub header color green (Background white, color green, bold)
+ */
+type Props = {
+    mainHeaders:
+        | object[{
+              label: string;
+              subLabel: string;
+              colspan: number | null;
+              classModifier: string | null;
+          }]
+        | [];
+
+    subHeaders:
+        | object[{
+              label: string;
+              colspan: number | null;
+              classModifier: string | null;
+          }]
+        | [];
+
+    subSubHeaders:
+        | object[{
+              label: string;
+              colspan: number | null;
+              classModifier: string | null;
+          }]
+        | [];
+};
+
+const { mainHeaders = [], subHeaders = [], subSubHeaders = [] } = Astro.props;
+---
+
+{
+    mainHeaders && subHeaders ? (
+        <thead>
+            {mainHeaders && (
+                <tr class="table__header--mh">
+                    {mainHeaders.map((header: any) => (
+                        <th
+                            colspan={header.colspan}
+                            class={
+                                header.label === ""
+                                    ? `table__header--mh-cell table__header--mh--empty`
+                                    : `
+                                        table__header--mh--cell ${
+                                            header.classModifier
+                                                ? "table__header--mh--" +
+                                                  header.classModifier
+                                                : ""
+                                        }
+                                    `
+                            }
+                        >
+                            <p class="table__header--mh--paragraph">
+                                {header.label}
+                                <span>{header.subLabel}</span>
+                            </p>
+                        </th>
+                    ))}
+                </tr>
+            )}
+
+            {subHeaders.length > 0 && (
+                <tr class="table__header--sh">
+                    {subHeaders.map((header: any) => (
+                        <th
+                            colspan={header.colspan}
+                            class={
+                                !header.classModifier
+                                    ? ""
+                                    : `
+                                        table__header--sh--${header.classModifier}
+                                    `
+                            }
+                        >
+                            {header.label}
+                        </th>
+                    ))}
+                </tr>
+            )}
+
+            {subSubHeaders.length > 0 && (
+                <tr class="table__header--ssh">
+                    {subSubHeaders.map((header: any) => (
+                        <th
+                            colspan={header.colspan}
+                            class={
+                                !header.classModifier
+                                    ? ""
+                                    : `
+                                        table__header--ssh--${header.classModifier}
+                                    `
+                            }
+                        >
+                            {header.label}
+                        </th>
+                    ))}
+                </tr>
+            )}
+        </thead>
+    ) : null
+}

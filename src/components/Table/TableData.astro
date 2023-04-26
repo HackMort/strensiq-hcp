@@ -1,0 +1,49 @@
+---
+/**
+ * @name TableData
+ * @description
+ * Table data
+ * All the data of the table is passed through the data property as an array of objects.
+ * Each object has the following properties (Each object represents a row of the table):
+ * Text: is an array, each element of the array represents a cell of the table
+ * ClassModifier: is posible assign a class modifier to apply diferent styles to the row
+ * - mh: main header row (color dark green, bold text, left aligned, (only the first child of the array))
+ * - mb: Main bold (color black, bold text, (each cell))
+ */
+
+type Props = {
+    data: object[{
+        text: string[];
+        classModifier?: string[];
+    }];
+    className?: string;
+};
+
+const { data, className } = Astro.props;
+---
+
+<tbody class={className ? `table__body ${className}` : "table__body"}>
+    {
+        data.map((item: any) => (
+            <tr
+                class={
+                    !item.classModifier
+                        ? "table__body__row"
+                        : `table__body__row--${
+                              item.classModifier &&
+                              item.classModifier.join(" table__body__row--")
+                          }`
+                }
+            >
+                {item.text.map((text: string) =>
+                    //If the item is the first one, it's a header
+                    item.text.indexOf(text) === 0 ? (
+                        <td class={`table__body__cell--head`}>{text}</td>
+                    ) : (
+                        <td class={`table__body__cell`}>{text}</td>
+                    )
+                )}
+            </tr>
+        ))
+    }
+</tbody>
