@@ -45,12 +45,12 @@
     }
 
     &__sub-content {
+        bottom: -5px;
         color: $color-dark-gray;
         font-size: 16px;
         font-weight: 500;
+        left: 0;
         line-height: 1.5rem;
         position: absolute;
-        left: 0;
-        bottom: -5px;
     }
 }
