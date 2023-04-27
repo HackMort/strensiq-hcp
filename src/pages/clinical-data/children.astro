@@ -10,6 +10,7 @@ import RadiographicImagesComparator from '../../components/RadiographicImagesCom
 import PinchToZoom from "../../components/PinchToZoom.astro";
 import InternalNavigation from "../../components/InternalNavigation.astro";
 import ClinicalDataModal from "../../components/clinical-data/ClinicalDataModal.astro";
+import DisabilityIndexModal from "../../components/clinical-data/DisabilityIndexModal.astro";
 
 const internalNavLinks = [
   { href: "hpp-related-rickets", label: "HPP-related rickets", active: true },
@@ -458,7 +459,7 @@ const internalNavLinks = [
               </HighlightInformation>
             </section>
           </section>
-          <button class="button button--tertiary">View CHAQ disability index</button>
+          <button class="button button--tertiary button--disability-index">View CHAQ disability index</button>
         </section>
         <p class="cdchildren-container__paragraph">CHAQ is patient/caregiver-reported assessment not validated specifically for hypophosphatasia so inferences of clinical benefit should not be made. CHAQ was developed to assess health status for children with arthritis. Interpretation of these findings is limited due to the lack of control group and potential bias introduced by use of parent-reported data for patients. Minimal clinically important difference (MCID) has not been established for the hypophosphatasia population.</p>
       </div>
@@ -499,6 +500,8 @@ const internalNavLinks = [
         <img src="/assets/images/clinical-data/modal/temp-study-1-mobile.png" alt="">
     </picture>
   </ClinicalDataModal>
+  <DisabilityIndexModal>
+  </DisabilityIndexModal>
   <References />
   <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"></script>
 </Layout>

@@ -37,6 +37,7 @@
 @import './components/_highlight-information.scss';
 @import './components/_pinch-to-zoom.scss';
 @import './components/_clinical-data-modal.scss';
+@import './components/_disability-index-modal.scss';
 
 
 //-------------------------------------------------------------lets work together section-------------------------------------------------------------
@@ -3909,9 +3910,41 @@
             &:last-child {
                 padding-top: 0;
             }
+
+            @include media('desktop') {
+                &--left {
+                    width: 35%;
+                }
+
+                &--right {
+                    width: 60%;
+                }
+            }
         }
 
+        .cdchildren-container__title {
+            @include media('desktop') {
+                max-width: 23ch;
+            }
+        }
 
+        [role=tablist] {
+            @include media('desktop') {
+                justify-content: center;
+
+                a {
+                    font-size: 1rem;
+                }
+            }
+
+            @media (min-width: 1400px) {
+                justify-content: flex-start;
+
+                a {
+                    font-size: 1.25rem;
+                }
+            }
+        }
     }
 
     &--rgi {
