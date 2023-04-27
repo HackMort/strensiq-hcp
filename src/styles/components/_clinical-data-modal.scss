@@ -15,7 +15,7 @@
 
     @media screen and (min-width: 768px) {
         max-width: 95%;
-        height: 31.875rem;
+        // height: 31.875rem;
     }
 
     @media screen and (min-width: 1024px) {
@@ -82,6 +82,8 @@
     .clinical-data-modal__wrapper {
         height: auto;
         margin-bottom: 1.9231rem;
+        overflow-y: scroll;
+        z-index: -1;
 
         @media screen and (min-width: 1024px) {
             display: flex;
@@ -95,7 +97,7 @@
         z-index: 1;
         margin: 0 1.25rem;
         margin-top: 4.8937rem;
-    
+
         .clinical-data-modal__title {
             font-size: 1.875rem;
             font-weight: 700;
@@ -111,6 +113,7 @@
         margin-left: 1.25rem;
         // margin-right: 1.25rem;
         overflow-x: visible;
+        overflow-y: scroll;
 
         @media screen and (min-width: 1024px) {
             margin-right: 2.0769rem;
@@ -120,5 +123,22 @@
         @media screen and (min-width: 1366px) {
             margin-right: 4.0769rem;
         }
+    }
+
+    .table__content th, .table__content td {
+        text-align: left;
+    }
+
+    .table__content span {
+        padding: 0  ;
+    }
+
+    .table__header--mh--cell {
+        padding: .625rem 1rem;
+
+    }
+
+    .table__header--mh--empty {
+        border-top: 0;
     }
 }
