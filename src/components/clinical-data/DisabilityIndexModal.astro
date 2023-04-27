@@ -1,0 +1,62 @@
+
+<div class="disability-index-modal" id="disability-index-modal" style="display:none;">
+    <div class="disability-index-modal__head">
+        <button class="disability-index-modal--close-modal" data-fancybox-close>×</button>
+        <div class="disability-index-modal__header">
+            <!-- <h2 class="disability-index-modal__title">Study design</h2> -->
+        </div>
+    </div>
+    <div class="disability-index-modal__wrapper">
+        <div class="disability-index-modal__content">
+            <div class="disability-index-modal__words-container">
+                <h3 class="disability-index-modal__main-word">Disability index</h3>
+                <span class="disability-index-modal__word" data-word='hygiene'>Hygiene</span>
+                <span class="disability-index-modal__word" data-word='dressing-and-grooming'>Dressing and grooming</span>
+                <span class="disability-index-modal__word" data-word='walking'>Walking</span>
+                <span class="disability-index-modal__word" data-word='grip'>Grip</span>
+                <span class="disability-index-modal__word" data-word='arising'>Arising</span>
+                <span class="disability-index-modal__word" data-word='reach'>Reach</span>
+                <span class="disability-index-modal__word" data-word='eating'>Eating</span>
+                <span class="disability-index-modal__word" data-word='activities'>Activities</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    import { Fancybox } from "@fancyapps/ui";
+
+    class DisabilityIndexModal {
+        modal: Fancybox
+
+        constructor() {
+            this.modal = undefined
+        }
+
+        open() {
+            this.modal = new Fancybox([{ src: 'disability-index-modal' }],
+            {
+                autoFocus: true,
+                defaultType: 'inline',
+                placeFocusBack: true,
+                trapFocus: true,
+                closeButton: false,
+                defaultDisplay: 'flex'
+            })
+        }
+
+        close() {
+            this.modal.close()
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const disabilityIndexModal = new DisabilityIndexModal()
+
+        const button = document.querySelector('.button--disability-index');
+        button.addEventListener('click', event => {
+            event.preventDefault();
+            disabilityIndexModal.open();
+        })
+    })
+</script>

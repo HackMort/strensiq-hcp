@@ -1,0 +1,388 @@
+.disability-index-modal {
+    background-color: $color-dark-green;
+    border-radius: 1.875rem;
+    color: $color-white;
+    height: 100%;
+    margin: 0 auto;
+    max-height: 42.3125rem;
+    max-width: 20.5rem;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+
+    @media screen and (min-width: 425px) {
+        max-width: 23.5rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        max-width: 95%;
+        height: 31.875rem;
+    }
+
+    @media screen and (min-width: 1366px) {
+        width: 90rem !important;
+    }
+
+    &--close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 3.125rem;
+        line-height: 40%;
+        font-weight: 300;
+        color: $color-white;
+        z-index: 2;
+        cursor: pointer;
+
+        @media screen and (min-width: 1366px) {
+            font-size: 4.6875rem;
+        }
+    }
+
+    &__wrapper {
+        height: 100%;
+    }
+
+    &__content {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+    }
+
+    &__words-container {
+        height: 19.875rem;
+        position: relative;
+        width: 100%;
+
+        @include media('tablet') {
+            max-width: 32.8125rem;
+            width: 70%;
+        }
+
+        @include media('desktop') {
+            max-width: 45.625rem;
+        }
+    }
+
+    &__main-word {
+        bottom: 0;
+        color: $color-green;
+        font-size: 25px;
+        font-weight: 900;
+        height: fit-content;
+        line-height: 1.43rem;
+        margin: auto 0;
+        padding-left: 1.25rem;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+
+        @include media('tablet') {
+            padding-left: 0;
+        }
+
+        @include media('desktop') {
+            font-size: 46px;
+            line-height: 2.6306rem;
+        }
+    }
+
+    &__word {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: .915rem;
+        height: fit-content;
+        max-width: 11ch;
+        position: absolute;
+        text-align: center;
+        z-index: 1;
+
+        &::before {
+            --width-line: .9375rem;
+            --position-line: calc(var(--width-line) * -1);
+            border-top: .1875rem dashed $color-green;
+            content: '';
+            height: .1875rem;
+            position: absolute;
+            z-index: -1;
+            width: var(--width-line);
+        }
+
+        &[data-word="grip"] {
+            bottom: 0;
+            right: .3125rem;
+            margin: auto 0;
+            top: 0;
+
+            &::before {
+                --width-line: 2.1875rem;
+                bottom: 0;
+                margin: auto 0;
+                top: 0;
+                left: var(--position-line);
+
+                @media (min-width: 425px) {
+                    --width-line: 3.75rem;
+                }
+            }
+        }
+
+        &[data-word="activities"] {
+            bottom: 0;
+            left: .3125rem;
+            margin: auto 0;
+            top: 0;
+
+            &::before {
+                bottom: 0;
+                margin: auto 0;
+                top: 0;
+                right: var(--position-line);
+
+                @media (min-width: 425px) {
+                    --width-line: 2.8125rem;
+                }
+            }
+        }
+
+        &[data-word="hygiene"] {
+            left: 10%;
+            top: 20%;
+
+            &::before {
+                --width-line: 6.25rem;
+                border-top: unset;
+                border-left: .1875rem dashed $color-green;
+                bottom: calc(var(--position-line) + .625rem);
+                height: var(--width-line);
+                right: -0.9375rem;
+                transform: rotate(-45deg);
+                width: .1875rem;
+            }
+        }
+
+        &[data-word="dressing-and-grooming"] {
+            left: 0;
+            margin: 0 auto;
+            right: 0;
+            top: 10%;
+
+            &::before {
+                --width-line: 6.25rem;
+                border-top: unset;
+                border-left: .1875rem dashed $color-green;
+                bottom: var(--position-line);
+                height: var(--width-line);
+                left: 0;
+                margin: 0 auto;
+                right: 0;
+                width: .1875rem;
+            }
+        }
+
+        &[data-word="walking"] {
+            top: 20%;
+            right: 10%;
+
+            &::before {
+                --width-line: 5.3125rem;
+                border-top: unset;
+                border-left: .1875rem dashed $color-green;
+                bottom: calc(var(--position-line) + .625rem);
+                height: var(--width-line);
+                left: -0.625rem;
+                transform: rotate(30deg);
+                width: .1875rem;
+            }
+        }
+
+        &[data-word="eating"] {
+            bottom: 20%;
+            left: 10%;
+
+            &::before {
+                --width-line: 5.625rem;
+                border-top: unset;
+                border-left: .1875rem dashed $color-green;
+                height: var(--width-line);
+                top: calc(var(--position-line) + .625rem);
+                transform: rotate(40deg);
+                right: -1.5625rem;
+                width: .1875rem;
+            }
+        }
+
+        &[data-word="reach"] {
+            bottom: 10%;
+            left: 0;
+            margin: 0 auto;
+            right: 0;
+
+            &::before {
+                --width-line: 6.25rem;
+                border-top: unset;
+                border-left: .1875rem dashed $color-green;
+                height: var(--width-line);
+                left: 0;
+                margin: 0 auto;
+                top: var(--position-line);
+                right: 0;
+                width: .1875rem;
+            }
+        }
+
+        &[data-word="arising"] {
+            bottom: 20%;
+            right: 10%;
+
+            &::before {
+                --width-line: 5.625rem;
+                border-top: unset;
+                border-left: .1875rem dashed $color-green;
+                height: var(--width-line);
+                left: -0.3125rem;
+                top: calc(var(--position-line) + .625rem);
+                transform: rotate(-35deg);
+                width: .1875rem;
+            }
+        }
+
+        @include media('tablet') {
+
+            &[data-word="grip"] {
+
+                &::before {
+                    --width-line: 7.8125rem;
+                    --position-line: calc((var(--width-line) * -1) - .3125rem)
+                }
+            }
+
+            &[data-word="activities"] {
+                &::before {
+                    --width-line: 5.625rem;
+                    --position-line: calc((var(--width-line) * -1) - .3125rem)
+                }
+            }
+
+            &[data-word="hygiene"] {
+                top: 15%;
+                left: 15%;
+
+                &::before {
+                    --width-line: 5.625rem;
+                    bottom: calc(var(--position-line) + .3125rem);
+                    right: -1.25rem;
+                }
+            }
+
+            &[data-word="dressing-and-grooming"] {
+                top: 0;
+
+                &::before {
+                    --width-line: 6.875rem;
+                }
+            }
+
+            &[data-word="walking"] {
+                top: 15%;
+                right: 15%;
+
+                &::before {
+                    --width-line: 6.25rem;
+                    left: -2.1875rem;
+                    transform: rotate(35deg);
+                }
+            }
+
+            &[data-word="eating"] {
+                bottom: 15%;
+                left: 15%;
+
+                &::before {
+                    --width-line: 6.25rem;
+                    right: -1.875rem;
+                }
+            }
+
+            &[data-word="reach"] {
+                bottom: 0;
+
+                &::before {
+                    --width-line: 7.8125rem;
+                }
+            }
+
+            &[data-word="arising"] {
+                bottom: 15%;
+                right: 15%;
+
+                &::before {
+                    --width-line: 6.25rem;
+                    top: calc(var(--position-line) + .3125rem);
+                    left: -1.875rem;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        @include media('desktop') {
+            font-size: 26px;
+            line-height: 1.4869rem;
+
+            &[data-word="grip"] {
+                &::before {
+                    --width-line: 9.0625rem;
+                }
+            }
+
+            &[data-word="activities"] {
+                &::before {
+                    --width-line: 5.3125rem;
+                }
+            }
+
+            &[data-word="hygiene"] {
+                &::before {
+                    --width-line: 5.3125rem;
+                    bottom: calc(var(--position-line) + .625rem);
+                    right: -0.625rem;
+                }
+            }
+
+            &[data-word="dressing-and-grooming"] {
+                &::before {
+                    --width-line: 5.625rem;
+                }
+            }
+
+            &[data-word="walking"] {
+                &::before {
+                    --width-line: 5.3125rem;
+                    left: -1.875rem;
+                    bottom: calc(var(--position-line) + .9375rem);
+                }
+            }
+
+            &[data-word="eating"] {
+                &::before {
+                    --width-line: 5.3125rem;
+                }
+            }
+
+            &[data-word="reach"] {
+                &::before {
+                    --width-line: 6.875rem;
+                }
+            }
+
+            &[data-word="arising"] {
+                &::before {
+                    --width-line: 5.3125rem;
+                }
+            }
+        }
+    }
+}
