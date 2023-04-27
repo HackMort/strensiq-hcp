@@ -379,7 +379,7 @@
 
 //Clinical data - adults page
 .clinical-data-adults {
-    &--changes-in-substractes {
+    &__changes-in-substractes {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -390,16 +390,22 @@
         }
     }
 
-    &--col {
+    &__col {
         width: 100%;
 
         @media screen and (min-width: 1000px) {
-            width: 50%;
+            width: 48%;
             margin: 0 auto;
+        }
+        &--mobility {
+            @media screen and (min-width: 1000px) {
+                margin-top: 6rem;
+            }
+    
         }
     }
 
-    &--title {
+    &__title {
         color: $color-dark-green;
         margin: 1.25rem auto 0 auto;
 
@@ -408,13 +414,13 @@
         }
     }
 
-    &--subtitle {
+    &__subtitle {
         color: $color-dark-gray;
         font-size: .875rem;
         font-weight: 300;
     }
 
-    &--list {
+    &__list {
         color: $color-dark-gray;
         font-size: .875rem;
         font-weight: 300;
@@ -432,12 +438,16 @@
             }
 
             @media screen and (min-width: 1000px) {
-                margin-top: 8rem;
+                margin-left: 1rem;
             }
+        }
+
+        @media screen and (min-width: 1000px) {
+            margin-left: 2rem;
         }
     }
 
-    &--sublist {
+    &__sublist {
         margin-top: 8px;
         margin-left: 1rem;
 
@@ -450,7 +460,7 @@
         }
     }
 
-    &--time-to-bone-mineralization {
+    &__time-to-bone-mineralization {
         display: flex;
         flex-direction: column;
 
@@ -458,7 +468,7 @@
             flex-direction: row;
         }
 
-        .clinical-data-adults--title {
+        .clinical-data-adults__title {
             margin-bottom: 1rem;
         }
 
@@ -467,13 +477,37 @@
         }
     }
 
+    &--tabs {
+        [role=tablist] {
+            max-width: fit-content;
+        }
+
+    }
+
+    &--content1, &__list-mobility1 {
+        @media screen and (max-width: 999px) {
+            display: none;
+        }
+    }
+
+    &--content2, &__list-mobility2 {
+        @media screen and (min-width: 1000px) {
+            display: none;
+        }    
+    }
+    &--content2 {
+        margin-bottom: 2rem;
+    }
+    &__mobility {
+        background-color: $color-soft-gray;
+    }
     &__content {
-        background-color: $color-bright-gray;
         padding-top: 0.5rem;
         padding-bottom: 1rem;
 
         &--highlightinformation {
             margin-top: 2rem;
+            width: fit-content;
 
             &-no-border {
                 .highlight-information {
@@ -484,13 +518,17 @@
             &-span {
                 font-size: 2.5rem;
             }
+
+            .highlight-information__content {
+                letter-spacing: -2px;
+            }
         }
 
         &--paragraph {
             margin-top: 1rem;
         }
 
-        @media screen and (min-width: 1001px) {
+        @media screen and (min-width: 1000px) {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -523,6 +561,7 @@
         }
     }
 
+
     &--img-6MWT {
         background-color: $color-white;
         margin-top: 2rem;
@@ -536,14 +575,120 @@
         }
     }
 
-    &--col-mobility {
+    &--real-world-outcomes {
+        background-color: $color-soft-gray;
+        padding-top: 0.5rem;
+
+        &-table {
+            max-width: 1000px;
+            margin: 2rem auto;
+    
+            td, th {
+                text-align: left;
+            }
+    
+            @media only screen and (min-width: 500px) and (max-width: 1090px)  {
+                max-width: 800px;
+            }
+        }
+        
+        &-content {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 2rem;
+
+            @media screen and (min-width: 1000px) {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+    }
+    
+    &__tabs-title {
+        margin-bottom: 2rem;
+    }
+
+    &__6MWT {
+        display: flex;
+        flex-direction: column;
+
         @media screen and (min-width: 1000px) {
-            margin-top: 6rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        &--list {
+            margin-top: 1rem;
+        }
+
+        &--graph {
+            background-color: $color-white;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            &-paragraph {
+                margin-top: 1rem;
+                text-align: center;
+            }
+        }
+        &--highlight {
+            @media screen and (min-width: 1000px) {
+                max-width: 50%;
+                .highlight-information__footnote {
+                    max-width: 100%;
+                }
+                .highlight-information__footnote {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }   
+        }
+
+        .clinical-data-adults__title {
+            margin: 0.8rem 0 0 0;
+        }
+
+        &--img {
+            margin: 1rem auto;
+            max-width: 50%;
+        }
+
+        &--button {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+    
+    &--clinical-data-table {
+        margin: 2rem 2rem;
+        height: 380px;
+        .table__content td {
+            padding: 1rem 1rem !important;
+        }
+    }
+
+    &--lefs-info-table {
+        max-width: 1000px;
+        margin-top: 1rem;
+        .table__content tr td:first-child, .table__content tr th:first-child {
+            width: 35% !important;
         }
 
     }
 }
 
+.clinical-data-info-modal {
+    .clinical-data-modal--close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 3.125rem;
+        line-height: 40%;
+        font-weight: 300;
+        color: #B41E8C;
+        z-index: 2;
+        cursor: pointer;
+    }
+}
 
 //Dosing page
 .dosing__page-hero {

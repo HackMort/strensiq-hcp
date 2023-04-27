@@ -20,7 +20,7 @@
  * - ssh, cg: sub sub header color green (Background white, color green, bold)
  */
 type Props = {
-    mainHeaders:
+    mainHeaders?:
         | object[{
               label: string;
               subLabel: string;
@@ -29,7 +29,7 @@ type Props = {
           }]
         | [];
 
-    subHeaders:
+    subHeaders?:
         | object[{
               label: string;
               colspan: number | null;
@@ -37,7 +37,7 @@ type Props = {
           }]
         | [];
 
-    subSubHeaders:
+    subSubHeaders?:
         | object[{
               label: string;
               colspan: number | null;
