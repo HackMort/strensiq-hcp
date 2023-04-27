@@ -14,16 +14,16 @@ import InfoModal from "../../components/InfoModal.astro";
 
 const internalNavLinks = [
   {
-    href: "#adults-changes-in-substractes",
+    href: "adults-changes-in-substractes",
     label: "Changes in substrates",
     active: true,
   },
-  { href: "#adults-mobility", label: "Mobility" },
+  { href: "adults-mobility", label: "Mobility" },
   {
-    href: "#adults-time-to-bone-mineralization",
+    href: "adults-time-to-bone-mineralization",
     label: "Time to bone mineralization",
   },
-  { href: "#adults-real-world-outcomes", label: "Real-world outcomes" },
+  { href: "adults-real-world-outcomes", label: "Real-world outcomes" },
 ];
 
 //Table - Real-world outcomes
@@ -50,7 +50,7 @@ const mainHeadersLefs = [
 
 const subHeadersLefs = [
   { label: "Activities"},
-  { label: "Xtreme difficulty or unable to perform activity"},
+  { label: "Extreme difficulty or unable to perform activity"},
   { label: "Quite a bit of difficulty"},
   { label: "Modarate difficulty"},
   { label: "A little bit of difficulty"},
@@ -80,7 +80,7 @@ import LefsData from "./data/lefsData.js";
         </h2>
 
         <div
-          class="wrapper clinical-data-adults--content clinical-data-adults--content1"
+          class="clinical-data-adults--content clinical-data-adults--content1"
         >
           <h3 class="clinical-data-adults__subtitle">Limitations:</h3>
           <ul class="clinical-data-adults__list">
@@ -116,10 +116,10 @@ import LefsData from "./data/lefsData.js";
 
       <div class="clinical-data-adults__col">
         <h2 class="clinical-data-adults__title clinical-data-adults--title2">
-          Change in pyridoxal 5’-phosphate (PLP), the active form of vitamin B6
+          Change in pyridoxal 5’-phosphate (PLP), the active form of vitamin B<sub>6</sub>
         </h2>
         <div
-          class="wrapper clinical-data-adults--content clinical-data-adults--content1"
+          class="clinical-data-adults--content clinical-data-adults--content1"
         >
           <ul class="clinical-data-adults__list">
             <li>
@@ -344,7 +344,7 @@ import LefsData from "./data/lefsData.js";
         class="clinical-data-adults__col clinical-data-adults__time-to-bone-mineralization--content"
       >
         <h2 class="clinical-data-adults__title">Time to bone mineralization</h2>
-        <div class="wrapper clinical-data-adults--content">
+        <div class="clinical-data-adults--content">
           <ul class="clinical-data-adults__list">
             <li>
               Reductions in mineralization lag time indicate improvedbone
@@ -390,7 +390,7 @@ import LefsData from "./data/lefsData.js";
   >
    
     <div class="wrapper">
-      <h2 class="clinical-data-adults__title">
+      <h2 class="clinical-data-adults__title clinical-data-adults__title--real-world-outcomes">
         Real-world outcomes in adults with pediatric-onset hypophosphatasia
       </h2>
     </div>

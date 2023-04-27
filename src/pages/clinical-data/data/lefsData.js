@@ -52,7 +52,7 @@ const LefsData = [
     },
     {
         text: [
-            "f.squatting",
+            "f.Squatting",
             "0",
             "1",
             "2",
