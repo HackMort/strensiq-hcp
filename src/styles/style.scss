@@ -3797,7 +3797,7 @@
         &__footnote {
             font-size: 14px;
             line-height: 1.0938rem;
-            margin-top: .3125rem;
+            margin-bottom: .625rem;
             max-width: 39ch;
         }
 
@@ -4166,5 +4166,10 @@
                 }
             }
         }
+    }
+
+    sup {
+        font-size: 70%;
+        top: -0.5em;
     }
 }
