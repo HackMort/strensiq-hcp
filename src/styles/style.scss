@@ -3689,8 +3689,9 @@
 
         &__content {
             display: flex;
-            @include flex-gap(.625rem);
+            @include flex-gap(1.25rem);
             position: relative;
+            width: 100%;
         }
 
         .highlight-information {
@@ -3703,14 +3704,18 @@
             }
 
             &__separator {
-                color: $color-blue;
-                font-size: 100px;
-                font-weight: 400;
-                left: 30%;
-                line-height: 7.8125rem;
+                left: 100px;
                 position: absolute;
-                top: -25px;
-                width: fit-content;
+                top: .9375rem;
+                width: 2.5rem;
+
+                &--second {
+                    left: 5.625rem;
+                }
+
+                @include media('tablet') {
+                    width: 3.125rem;
+                }
             }
 
             &__sub-content {
@@ -3751,6 +3756,16 @@
                     }
                 }
             }
+        }
+
+        @media (min-width: 768px) and (max-width: 1200px) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include media('desktop') {
+            margin-left: 0;
+            margin-right: 0;
         }
     }
 
@@ -3803,6 +3818,18 @@
 
         i {
             font-style: italic;
+        }
+
+        &--single {
+            @media (min-width: 768px) and (max-width: 1200px) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            @include media('desktop') {
+                margin-left: 0;
+                margin-right: 0;
+            }
         }
     }
 
@@ -4038,7 +4065,6 @@
                 }
 
                 .highlight-information:nth-of-type(2) {
-                    padding-left: 1.25rem;
 
                     .highlight-information__sub-content {
                         text-align: left;
@@ -4055,7 +4081,6 @@
                 }
 
                 .highlight-information:nth-of-type(2) {
-                    padding-left: 1.25rem;
 
                     .highlight-information__content {
                         text-align: left;
