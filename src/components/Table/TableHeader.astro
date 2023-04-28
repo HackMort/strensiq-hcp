@@ -71,8 +71,8 @@ const { mainHeaders = [], subHeaders = [], subSubHeaders = [] } = Astro.props;
                             }
                         >
                             <p class="table__header--mh--paragraph">
-                                {header.label}
-                                <span>{header.subLabel}</span>
+                                <span set:html={header.label} />
+                                <span set:html={header.subLabel} />
                             </p>
                         </th>
                     ))}

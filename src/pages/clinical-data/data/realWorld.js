@@ -13,7 +13,7 @@ const Data = [
         classModifier: ["mh"],
     },
     {
-        text: ["Endpoints", "Primary: 6-minute walk test (6MWT), timed up-and-go (TUG) test, repeated chair-rise test Secondary: The Lower Extremity Functional Scale (LEFS)"],
+        text: ["Endpoints", "<b>Primary:</b> 6-minute walk test (6MWT), timed up-and-go (TUG) test, repeated chair-rise test <br> <b>Secondary:</b> The Lower Extremity Functional Scale (LEFS)"],
         classModifier: ["mh"],
     },
 ];

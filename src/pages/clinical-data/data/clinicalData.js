@@ -13,7 +13,7 @@ const ClinicalData = [
         classModifier: ["mh"],
     },
     {
-        text: ["Age at inclusion", "13 - 65 years (13 adults,b 6 adolescentsc)"],
+        text: ["Age at inclusion", "13 - 65 years (13 adults,<sup>b</sup> 6 adolescents<sup>c</sup>)"],
         classModifier: ["mh"],
     },
     {

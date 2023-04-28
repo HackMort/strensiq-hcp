@@ -611,6 +611,17 @@
                 flex-wrap: wrap;
             }
         }
+
+        &-table {
+            .table__body__cell {
+                b {
+                    color: $color-dark-gray !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    font-weight: 700 !important;
+                }
+            }
+        }
     }
     
     &__tabs-title {
@@ -677,6 +688,14 @@
         height: 380px;
         .table__content td {
             padding: 1rem 1rem !important;
+        }
+        .table__body__cell {
+            sup {
+                padding: 0 !important;
+                margin: 0 !important;
+                color: $color-dark-gray !important;
+                font-weight: 300 !important;
+            }
         }
     }
 
