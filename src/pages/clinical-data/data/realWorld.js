@@ -13,6 +13,10 @@ const Data = [
         classModifier: ["mh"],
     },
     {
+        text: ["Age at inclusion", "≥18years"],
+        classModifier: ["mh"],
+    },
+    {
         text: ["Endpoints", "<b>Primary:</b> 6-minute walk test (6MWT), timed up-and-go (TUG) test, repeated chair-rise test <br> <b>Secondary:</b> The Lower Extremity Functional Scale (LEFS)"],
         classModifier: ["mh"],
     },

@@ -446,6 +446,10 @@
             }
         }
 
+        &--time-to-bone {
+            margin-left: 1rem;
+        }
+
         @media screen and (min-width: 1000px) {
             margin-left: 2rem;
         }
@@ -490,6 +494,9 @@
             max-width: fit-content;
         }
 
+        [role=tablist] a {
+            width: 9rem;
+        }
     }
 
     &--content1, &__list-mobility1 {
@@ -504,7 +511,9 @@
         }    
     }
     &--content2 {
-        margin-bottom: 2rem;
+        @media screen and (min-width: 1000px) {
+            margin-bottom: 2rem;
+        }
     }
     &__mobility {
         background-color: $color-soft-gray;
@@ -517,6 +526,18 @@
             margin-top: 2rem;
             width: fit-content;
 
+            .highlight-information {
+                @media screen and (max-width: 1000px) {
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .highlight-information__footnote {
+                span:nth-child(2) {
+                    font-size: 0.8rem;
+                }
+            }
+
             &-no-border {
                 .highlight-information {
                     border-bottom: 0px !important;
@@ -524,12 +545,28 @@
             }
 
             &-span {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                margin-left: -6px;
             }
 
             .highlight-information__content {
                 letter-spacing: -2px;
                 line-height: 3.4688rem !important;
+
+                @media screen and (max-width: 1000px) {
+                    margin: 0 0 -14px 0;
+                }
+
+                @media screen and (min-width: 1000px) {
+                    margin: 1rem 0 0 0;
+                }
+                
+            }
+
+            .highlight-information__title {
+                @media screen and (min-width: 1000px) {
+                    margin-bottom: 0.5rem;
+                }
             }
         }
 
@@ -590,7 +627,7 @@
 
         &-table {
             max-width: 1000px;
-            margin: 2rem auto;
+            margin: 1.5rem auto 0 auto;
     
             td, th {
                 text-align: left;
@@ -599,16 +636,26 @@
             @media only screen and (min-width: 500px) and (max-width: 1090px)  {
                 max-width: 800px;
             }
+
+            th {
+                padding: 1.5rem;
+            }
+
+            @media screen and (min-width: 1000px) {
+                max-width: 100%;
+                margin: 2rem auto;
+            }
         }
         
         &-content {
             display: flex;
             flex-direction: column;
-            padding-bottom: 2rem;
+            padding-bottom: 0;
 
             @media screen and (min-width: 1000px) {
                 flex-direction: row;
                 flex-wrap: wrap;
+                padding-bottom: 2rem;
             }
         }
 
@@ -621,6 +668,9 @@
                     font-weight: 700 !important;
                 }
             }
+        }
+        &-paragraph {
+            margin-bottom: 1rem;
         }
     }
     
@@ -638,7 +688,11 @@
         }
 
         &--list {
-            margin-top: 1rem;
+            margin: 1rem 0 1rem 0;
+
+            @media screen and (min-width: 1000px) {
+                margin: 1rem 0 2rem 0;
+            }
         }
 
         &--graph {
@@ -649,14 +703,19 @@
                 margin-top: 1rem;
                 text-align: center;
             }
+
+            .pinch-to-zoom .pinch-to-zoom__button-container {
+                top: 0 !important;
+            }
         }
         &--highlight {
             @media screen and (min-width: 1000px) {
                 max-width: 50%;
+                margin-top: 1rem;
                 .highlight-information__footnote {
                     max-width: 100%;
-                }
-                .highlight-information__footnote {
+                    margin-top: 1rem;
+                    margin-bottom: 0.8rem;
                     display: flex;
                     flex-direction: column;
                 }
@@ -707,6 +766,18 @@
             @media screen and (max-width: 768px) {
                 width: 25% !important;
             }
+        }
+
+        td {
+            padding: 0.7rem !important;
+        }
+
+        th.table__header--mh--cell  {
+            padding: 1.5rem !important;
+        }
+
+        .table__header--sh th:first-child {
+            text-align: left !important;
         }
 
     }

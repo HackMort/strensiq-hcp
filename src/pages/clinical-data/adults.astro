@@ -60,7 +60,7 @@ const subHeadersLefs = [
 import LefsData from "./data/lefsData.js";
 ---
 
-<Layout title="Adults" displayReferences={false}>
+<Layout title="Adults" displayReferences={true}>
   <PageHero pageId="clinical-data" classNames="clinical-data-adults__page-hero">
     <h2 class="page-hero__subtitle">
       for adults with pediatric-onset hypophosphatasia
@@ -300,7 +300,7 @@ import LefsData from "./data/lefsData.js";
       <div class="clinical-data-adults__col clinical-data-adults__col--mobility">
         <!-- Title -->
         <CustomTitle>
-          Age- and sex-adjusted ALP reference ranges for children (U/L)
+          Change in 6MWT was observed by 6 months and again at 5 years
         </CustomTitle>
         <!-- Graph -->
         <div class="wrapper">
@@ -345,7 +345,7 @@ import LefsData from "./data/lefsData.js";
       >
         <h2 class="clinical-data-adults__title">Time to bone mineralization</h2>
         <div class="clinical-data-adults--content">
-          <ul class="clinical-data-adults__list">
+          <ul class="clinical-data-adults__list clinical-data-adults__list--time-to-bone">
             <li>
               Reductions in mineralization lag time indicate improvedbone
               mineralization
@@ -355,6 +355,9 @@ import LefsData from "./data/lefsData.js";
                   baseline and at 1 year in patients receiving STRENSIQ
                 </li>
               </ul>
+            </li>
+            <li>
+              These results reflect data for 6 patients who had values at baseline and 7 patients who had values at 1 year
             </li>
           </ul>
           <p class="clinical-data-adults--paragraph">
@@ -409,7 +412,7 @@ import LefsData from "./data/lefsData.js";
 
     <div class="wrapper clinical-data-adults--real-world-outcomes-content">
       <div class="clinical-data-adults__col">
-        <p>A similar frequency of adverse events and safety events were reported in EmPATHY as observed in clinical trials. Patients noted reddening and/or tenderness at injection sites with variable intensity and duration sometime during the first 3 months of treatment. No new safety signals emerged from this study.</p>
+        <p class="clinical-data-adults--real-world-outcomes-paragraph">A similar frequency of adverse events and safety events were reported in EmPATHY as observed in clinical trials. Patients noted reddening and/or tenderness at injection sites with variable intensity and duration sometime during the first 3 months of treatment. No new safety signals emerged from this study.</p>
       </div>
       <div class="clinical-data-adults__col">
         <p><strong>Limitations:</strong> This small, single-center study may have limited generalizability to a broader adult patient population with hypophosphatasia. This study lacks a comparator arm; however, due to the rare and debilitating nature of hypophosphatasia, the inclusion of an untreated population would be medically unethical and not in line with the descriptive nature of this study. Real-world data collected during routine clinical practice have inherent limitations, such as bias, due to missing data. All patients had a history of ≥1 fracture as part of the enrollment criteria.</p>
@@ -420,8 +423,13 @@ import LefsData from "./data/lefsData.js";
       <h2 class="clinical-data-adults__title clinical-data-adults__tabs-title">
         Mobility measures
       </h2>
+      
+    </div>
 
-      <div class="clinical-data-adults--tabs">
+    <div class="clinical-data-adults--tabs">
+      
+
+      <div class="wrapper wrapper--only-left">
         <ul role="tablist">
           <li role="presentation">
             <!--active one -->
@@ -439,205 +447,206 @@ import LefsData from "./data/lefsData.js";
             <a href="#panel4" role="tab" id="tab4" tabindex="-1">LEFS</a>
           </li>
         </ul>
+      </div>
 
-        <section
-            id="panel1"
-            role="tabpanel"
-            aria-labelledby="tab1"
-            aria-hidden="false"
-            tabindex="-1"
-          >
-          <div class="clinical-data-adults__6MWT">
-            <div class="clinical-data-adults__col">
-              <h2 class="clinical-data-adults__title">Median distance walked in 6-minute walk test (6MWT)</h2>
+      <section
+          id="panel1"
+          role="tabpanel"
+          aria-labelledby="tab1"
+          aria-hidden="false"
+          tabindex="-1"
+        >
+        <div class="wrapper clinical-data-adults__6MWT">
+          <div class="clinical-data-adults__col">
+            <h2 class="clinical-data-adults__title">Median distance walked in 6-minute walk test (6MWT)</h2>
 
-              <ul class="clinical-data-adults__list clinical-data-adults__6MWT--list">
-                <li>
-                  The minimal clinically important difference (MCID) for hypophosphatasia (~31 meters) from baseline was observed at 6, 12, and 24 months
-                </li>
-              </ul>
+            <ul class="clinical-data-adults__list clinical-data-adults__6MWT--list">
+              <li>
+                The minimal clinically important difference (MCID) for hypophosphatasia (~31 meters) from baseline was observed at 6, 12, and 24 months
+              </li>
+            </ul>
 
-              <div class="clinical-data-adults__6MWT--highlight">
-                <HighlightInformation footnote="Patients walk an indoor, flat, 30-meter walkway with cones at the beginning and end to indicate turns">
-                  <span slot="content">6MWT</span>
-                  <span slot="footnote"
-                    >At the end of 6 minutes, the total distance is recorded.</span
-                  >
-                </HighlightInformation>
-                <img class="clinical-data-adults__6MWT--img" src="/assets/images/clinical-data/adults/6MWT_info_icon.png" alt="6MWT Info">
-              </div>
-              
-        
+            <div class="clinical-data-adults__6MWT--highlight">
+              <HighlightInformation footnote="Patients walk an indoor, flat, 30-meter walkway with cones at the beginning and end to indicate turns">
+                <span slot="content">6MWT</span>
+                <span slot="footnote"
+                  >At the end of 6 minutes, the total distance is recorded.</span
+                >
+              </HighlightInformation>
+              <img class="clinical-data-adults__6MWT--img" src="/assets/images/clinical-data/adults/6MWT_info_icon.png" alt="6MWT Info">
             </div>
-            <div class="clinical-data-adults__col">
-              <div class="clinical-data-adults__6MWT--graph">
-                <PinchToZoom id="6MWT_test-chart">
-                  <picture>
-                    <source
-                      srcset="/assets/images/clinical-data/adults/6MWT_median_Adults_Desktop.png"
-                      media="(min-width: 700px)"
-                    />
-                    <img class="clinical-data-adults__6MWT--graph-graph" src="/assets/images/clinical-data/adults/6MWT_median_Adults_Mobile.png" alt="6MWT test chart">
-                  </picture>
-                </PinchToZoom>
-                <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=13).</p>
-              </div>
+            
+      
+          </div>
+          <div class="clinical-data-adults__col">
+            <div class="clinical-data-adults__6MWT--graph">
+              <PinchToZoom id="6MWT_test-chart">
+                <picture>
+                  <source
+                    srcset="/assets/images/clinical-data/adults/6MWT_median_Adults_Desktop.png"
+                    media="(min-width: 700px)"
+                  />
+                  <img class="clinical-data-adults__6MWT--graph-graph" src="/assets/images/clinical-data/adults/6MWT_median_Adults_Mobile.png" alt="6MWT test chart">
+                </picture>
+              </PinchToZoom>
+              <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=13).</p>
             </div>
           </div>
-            
-        </section>
+        </div>
           
-        <section
-          id="section2"
-          role="tabpanel"
-          aria-labelledby="tab2"
-          aria-hidden="true"
-          tabindex="-1"
-          hidden
-        >
-          <div class="clinical-data-adults__6MWT">
-            <div class="clinical-data-adults__col">
-              <h2 class="clinical-data-adults__title">Time to complete timed up-and-go (TUG) test</h2>
+      </section>
+        
+      <section
+        id="section2"
+        role="tabpanel"
+        aria-labelledby="tab2"
+        aria-hidden="true"
+        tabindex="-1"
+        hidden
+      >
+        <div class="wrapper clinical-data-adults__6MWT">
+          <div class="clinical-data-adults__col">
+            <h2 class="clinical-data-adults__title">Time to complete timed up-and-go (TUG) test</h2>
 
-              <ul class="clinical-data-adults__list clinical-data-adults__6MWT--list">
-                <li>
-                  Differences in median duration time to complete TUG test compared to baseline were observed at 
+            <ul class="clinical-data-adults__list clinical-data-adults__6MWT--list">
+              <li>
+                Differences in median duration time to complete TUG test compared to baseline were observed at 
 6, 12, and 24 months
-                </li>
-              </ul>
+              </li>
+            </ul>
 
-              <div class="clinical-data-adults__6MWT--highlight">
-                <HighlightInformation footnote="The time to stand up from a chair, walk to a line 3 meters away, return to the chair, and sit down is recorded">
-                  <span slot="content">TUG test</span>
-                  <span slot="footnote"
-                    >Patients may use assistive devices, if needed.</span
-                  >
-                </HighlightInformation>
-                <img class="clinical-data-adults__6MWT--img" src="/assets/images/clinical-data/adults/TUG_info_icon.png" alt="TUG Info">
-              </div>
+            <div class="clinical-data-adults__6MWT--highlight">
+              <HighlightInformation footnote="The time to stand up from a chair, walk to a line 3 meters away, return to the chair, and sit down is recorded">
+                <span slot="content">TUG test</span>
+                <span slot="footnote"
+                  >Patients may use assistive devices, if needed.</span
+                >
+              </HighlightInformation>
+              <img class="clinical-data-adults__6MWT--img" src="/assets/images/clinical-data/adults/TUG_info_icon.png" alt="TUG Info">
+            </div>
+            
+      
+          </div>
+          <div class="clinical-data-adults__col">
+            <div class="clinical-data-adults__6MWT--graph">
+
+              <PinchToZoom id="TUG_test-chart">
+                <picture>
+                  <source
+                    srcset="/assets/images/clinical-data/adults/TUG_test_Adults_Desktop.png"
+                    media="(min-width: 700px)"
+                  />
+                  <img class="clinical-data-adults__6MWT--graph-graph" src="/assets/images/clinical-data/adults/TUG_test_Adults_Mobile.png" alt="TUG test chart">
+                </picture>
+              </PinchToZoom>
+
               
-        
+              <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=7).</p>
             </div>
-            <div class="clinical-data-adults__col">
-              <div class="clinical-data-adults__6MWT--graph">
-
-                <PinchToZoom id="TUG_test-chart">
-                  <picture>
-                    <source
-                      srcset="/assets/images/clinical-data/adults/TUG_test_Adults_Desktop.png"
-                      media="(min-width: 700px)"
-                    />
-                    <img class="clinical-data-adults__6MWT--graph-graph" src="/assets/images/clinical-data/adults/TUG_test_Adults_Mobile.png" alt="TUG test chart">
-                  </picture>
-                </PinchToZoom>
-
-                
-                <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=7).</p>
-              </div>
-            </div>
-          </div>  
-        </section>
-          
+          </div>
+        </div>  
+      </section>
         
-        <section
-          id="section3"
-          role="tabpanel"
-          aria-labelledby="tab3"
-          aria-hidden="true"
-          tabindex="-1"
-          hidden
-        >
-          <div class="clinical-data-adults__6MWT">
-            <div class="clinical-data-adults__col">
-              <h2 class="clinical-data-adults__title">Time to complete chair rise test</h2>
+      
+      <section
+        id="section3"
+        role="tabpanel"
+        aria-labelledby="tab3"
+        aria-hidden="true"
+        tabindex="-1"
+        hidden
+      >
+        <div class="wrapper clinical-data-adults__6MWT">
+          <div class="clinical-data-adults__col">
+            <h2 class="clinical-data-adults__title">Time to complete chair rise test</h2>
 
-              <ul class="clinical-data-adults__list clinical-data-adults__6MWT--list">
-                <li>
-                  Differences in median duration time to complete chair-rise test compared to baseline were observed at 6, 12, and 24 months
-                </li>
-              </ul>
+            <ul class="clinical-data-adults__list clinical-data-adults__6MWT--list">
+              <li>
+                Differences in median duration time to complete chair-rise test compared to baseline were observed at 6, 12, and 24 months
+              </li>
+            </ul>
 
-              <div class="clinical-data-adults__6MWT--highlight">
-                <HighlightInformation footnote="Measures the time required to complete 5 repetitions of rising from a chair and sitting down">
-                  <span slot="content">Chair rise test</span>
-                  <span slot="footnote"
-                    >Patients may not use their arms to assist themselves.</span
-                  >
-                </HighlightInformation>
-                <img class="clinical-data-adults__6MWT--img" src="/assets/images/clinical-data/adults/Chair_rise_test_info_icon.png" alt="Chair rise test Info">
-              </div>
+            <div class="clinical-data-adults__6MWT--highlight">
+              <HighlightInformation footnote="Measures the time required to complete 5 repetitions of rising from a chair and sitting down">
+                <span slot="content">Chair rise test</span>
+                <span slot="footnote"
+                  >Patients may not use their arms to assist themselves.</span
+                >
+              </HighlightInformation>
+              <img class="clinical-data-adults__6MWT--img" src="/assets/images/clinical-data/adults/Chair_rise_test_info_icon.png" alt="Chair rise test Info">
+            </div>
+            
+      
+          </div>
+          <div class="clinical-data-adults__col">
+            <div class="clinical-data-adults__6MWT--graph">
+              <PinchToZoom id="chair_rise_test-chart">
+                <picture>
+                  <source
+                    srcset="/assets/images/clinical-data/adults/Chair_rise_test_Adults_Desktop.png"
+                    media="(min-width: 700px)"
+                  />
+                  <img class="clinical-data-adults__6MWT--graph-graph" src="/assets/images/clinical-data/adults/Chair_rise_test_Adults_Mobile.png" alt="Chair rise test Chart">
+                </picture>
+              </PinchToZoom>
+
               
-        
+              <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=8).</p>
             </div>
-            <div class="clinical-data-adults__col">
-              <div class="clinical-data-adults__6MWT--graph">
-                <PinchToZoom id="chair_rise_test-chart">
-                  <picture>
-                    <source
-                      srcset="/assets/images/clinical-data/adults/Chair_rise_test_Adults_Desktop.png"
-                      media="(min-width: 700px)"
-                    />
-                    <img class="clinical-data-adults__6MWT--graph-graph" src="/assets/images/clinical-data/adults/Chair_rise_test_Adults_Mobile.png" alt="Chair rise test Chart">
-                  </picture>
-                </PinchToZoom>
+          </div>
+        </div> 
+      </section>
+      <section
+        id="section4"
+        role="tabpanel"
+        aria-labelledby="tab4"
+        aria-hidden="true"
+        tabindex="-1"
+        hidden
+      >
+        <div class="wrapper clinical-data-adults__6MWT">
+          <div class="clinical-data-adults__col">
+            <h2 class="clinical-data-adults__title">Lower-extremity functional scale (LEFS)</h2>
 
-                
-                <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=8).</p>
-              </div>
+            <ul class="clinical-data-adults__list clinical-data-adults__6MWT--list">
+              <li>
+                Differences in median LEFS score compared to baseline were observed at 6, 12, and 24 months
+              </li>
+            </ul>
+
+            <div class="clinical-data-adults__6MWT--highlight">
+              <HighlightInformation footnote="A patient-rated outcome measure of lower extremity function in a wide variety of disorders and treatments">
+                <span slot="content">LEFS</span>
+                <span slot="footnote"
+                  >Score consists of 20 questions evaluating ability to complete activities with increasing physical demands.</span
+                >
+              </HighlightInformation>
+              <button class="button button--tertiary clinical-data-adults__6MWT--button" id="clinical-data-adults__LEFS">View the LEFS questionnaire</button>
             </div>
-          </div> 
-        </section>
-        <section
-          id="section4"
-          role="tabpanel"
-          aria-labelledby="tab4"
-          aria-hidden="true"
-          tabindex="-1"
-          hidden
-        >
-          <div class="clinical-data-adults__6MWT">
-            <div class="clinical-data-adults__col">
-              <h2 class="clinical-data-adults__title">Lower-extremity functional scale (LEFS)</h2>
+            
+          </div>
+          <div class="clinical-data-adults__col">
+            <div class="clinical-data-adults__6MWT--graph">
 
-              <ul class="clinical-data-adults__list clinical-data-adults__6MWT--list">
-                <li>
-                  Differences in median LEFS score compared to baseline were observed at 6, 12, and 24 months
-                </li>
-              </ul>
+              <PinchToZoom id="LEFS_test-chart">
+                <picture>
+                  <source
+                    srcset="/assets/images/clinical-data/adults/LEFS_test_Adults_Desktop.png"
+                    media="(min-width: 700px)"
+                  />
+                  <img class="clinical-data-adults__6MWT--graph-graph" src="/assets/images/clinical-data/adults/LEFS_test_Adults_Mobile.png" alt="LEFS test chart">
+                </picture>
+              </PinchToZoom>
 
-              <div class="clinical-data-adults__6MWT--highlight">
-                <HighlightInformation footnote="A patient-rated outcome measure of lower extremity function in a wide variety of disorders and treatments">
-                  <span slot="content">LEFS</span>
-                  <span slot="footnote"
-                    >Score consists of 20 questions evaluating ability to complete activities with increasing physical demands.</span
-                  >
-                </HighlightInformation>
-                <button class="button button--tertiary clinical-data-adults__6MWT--button" id="clinical-data-adults__LEFS">View the LEFS questionnaire</button>
-              </div>
               
+              <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=10).</p>
             </div>
-            <div class="clinical-data-adults__col">
-              <div class="clinical-data-adults__6MWT--graph">
+          </div>
+        </div> 
+      </section>
 
-                <PinchToZoom id="LEFS_test-chart">
-                  <picture>
-                    <source
-                      srcset="/assets/images/clinical-data/adults/LEFS_test_Adults_Desktop.png"
-                      media="(min-width: 700px)"
-                    />
-                    <img class="clinical-data-adults__6MWT--graph-graph" src="/assets/images/clinical-data/adults/LEFS_test_Adults_Mobile.png" alt="LEFS test chart">
-                  </picture>
-                </PinchToZoom>
-
-                
-                <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=10).</p>
-              </div>
-            </div>
-          </div> 
-        </section>
-
-      </div>
     </div>
+    
   </section>
 
   <CTA

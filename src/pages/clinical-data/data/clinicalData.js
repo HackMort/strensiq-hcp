@@ -17,7 +17,7 @@ const ClinicalData = [
         classModifier: ["mh"],
     },
     {
-        text: ["Endpoints", "Primary: Changes in tissue-nonspecific alkaline phosphatase (TNSALP) substrate levels (inorganic pyrophosphate[PPi] and pyridoxal 5'-phosphate [PLP]d,e) Secondary: Bone mineralization, mobilityd"],
+        text: ["Endpoints", "Primary: Changes in tissue-nonspecific alkaline phosphatase (TNSALP) substrate levels (inorganic pyrophosphate[PPi] and pyridoxal 5'-phosphate [PLP]<sup>d,e</sup>) Secondary: Bone mineralization, mobility<sup>d</sup>"],
         classModifier: ["mh"],
     },
 ];
