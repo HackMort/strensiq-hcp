@@ -3625,6 +3625,7 @@
     &__video {
         background-color: #c4c4c4;
         height: 100%;
+        max-width: 43.75rem;
         padding-top: 3.125rem;
         position: relative;
 
@@ -3642,7 +3643,7 @@
                 width: 150%;
                 z-index: -1;
 
-                @include media('desktop') {
+                @media (min-width: 1024px) {
                     border-radius: 22.625rem 0 0 22.75rem;
                     bottom: 30px;
                     height: 45.5175rem;
@@ -3658,6 +3659,7 @@
             }
         }
 
+
         &-title {
             color: $color-white;
             font-weight: 700;
@@ -3669,6 +3671,10 @@
                 font-size: 1.875rem;
                 line-height: 2.3438rem;
             }
+        }
+
+        @include media('tablet') {
+            margin: 0 auto;
         }
     }
 
@@ -3973,6 +3979,20 @@
     }
 
     &--rgi {
+        @media (min-width: 1024px) {
+            .cdchildren-container__content--left {
+                width: 55%;
+            }
+
+            .cdchildren-container__content--right {
+                width: 45%;
+            }
+
+            .rgi-scale::before {
+                right: 15px;
+            }
+        }
+
         @include media('desktop') {
             padding-top: 0;
 
@@ -4004,7 +4024,23 @@
             }
         }
 
+        @media (min-width: 1024px) {
+            .cdchildren-container__content--right {
+                display: flex;
+                flex-direction: row-reverse;
+                @include flex-gap(1rem);
+                overflow: hidden;
+                padding-bottom: 3.75rem;
+            }
+        }
+
         @include media('desktop') {
+            .cdchildren-container__content--right {
+                display: block;
+                padding-bottom: inherit;
+                overflow: unset;
+            }
+
             .highlight-information:nth-of-type(2) {
                 .highlight-information__footnote {
                     max-width: 29ch;
@@ -4156,7 +4192,7 @@
             }
         }
 
-        @include media('desktop') {
+        @media (min-width: 1024px) {
             .cdchildren-container__title {
                 max-width: 30ch;
             }
@@ -4208,7 +4244,17 @@
             }
         }
 
-        @include media('desktop') {
+        @media (min-width: 1024px) {
+            padding-top: 1rem;
+
+            .cdchildren-container__content--left {
+                width: 45%;
+            }
+
+            .cdchildren-container__content--right {
+                width: 55%;
+            }
+
             .cdchildren-container {
                 &__title {
                     max-width: 35ch;
