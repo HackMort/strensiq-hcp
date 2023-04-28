@@ -164,10 +164,10 @@ import LefsData from "./data/lefsData.js";
       </div>
 
       <div
-        class="wrapper clinical-data-adults--content clinical-data-adults--content2"
+        class="clinical-data-adults--content clinical-data-adults--content2"
       >
         <h3 class="clinical-data-adults__subtitle">Limitations:</h3>
-        <ul class="clinical-data-adults__list">
+        <ul class="clinical-data-adults__list clinical-data-adults__list--limitations">
           <li>
             One of the coprimary endpoints of this study, change in PPi at 6
             months, did not reach statistical significance when comparing the
@@ -430,23 +430,26 @@ import LefsData from "./data/lefsData.js";
       
 
       <div class="wrapper wrapper--only-left">
-        <ul role="tablist">
-          <li role="presentation">
-            <!--active one -->
-            <a href="#panel1" role="tab" id="tab1" aria-selected="true"
-              >6MWT</a
-            >
-          </li>
-          <li role="presentation">
-            <a href="#panel2" role="tab" id="tab2" tabindex="-1">TUG</a>
-          </li>
-          <li role="presentation">
-            <a href="#panel3" role="tab" id="tab3" tabindex="-1">Chair rise</a>
-          </li>
-          <li role="presentation">
-            <a href="#panel4" role="tab" id="tab4" tabindex="-1">LEFS</a>
-          </li>
-        </ul>
+        <div class="clinical-data-adults--tabs-menu"> 
+          <ul role="tablist">
+            <li role="presentation">
+              <!--active one -->
+              <a href="#panel1" role="tab" id="tab1" aria-selected="true"
+                >6MWT</a
+              >
+            </li>
+            <li role="presentation">
+              <a href="#panel2" role="tab" id="tab2" tabindex="-1">TUG</a>
+            </li>
+            <li role="presentation">
+              <a href="#panel3" role="tab" id="tab3" tabindex="-1">Chair rise</a>
+            </li>
+            <li role="presentation">
+              <a href="#panel4" role="tab" id="tab4" tabindex="-1">LEFS</a>
+            </li>
+          </ul>
+        </div>
+        
       </div>
 
       <section
