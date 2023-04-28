@@ -3767,7 +3767,7 @@
         .pinch-to-zoom  {
             padding-top: 3.125rem;
 
-            @include media('desktop') {
+            @include media('tablet') {
                 padding-top: 0;
 
                 .pinch-to-zoom__container {
@@ -3791,7 +3791,7 @@
             .pinch-to-zoom {
                 padding-top: 4.6875rem;
 
-                @include media('desktop') {
+                @include media('tablet') {
                     padding: 0;
                 }
             }
