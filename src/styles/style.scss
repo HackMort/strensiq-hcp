@@ -3756,7 +3756,7 @@
 
     .chart-wrapper {
         .pinch-to-zoom  {
-            padding-top: 35px;
+            padding-top: 3.125rem;
 
             @include media('desktop') {
                 padding-top: 0;
@@ -3769,8 +3769,8 @@
 
         .button--pich-to-zoom {
             position: absolute;
-            top: .625rem;
-            right: 1rem;
+            top: 0;
+            right: 0;
             z-index: 1;
 
             @include media('desktop') {
@@ -3780,7 +3780,7 @@
 
         &--height-z {
             .pinch-to-zoom {
-                padding-top: 3.75rem;
+                padding-top: 4.6875rem;
 
                 @include media('desktop') {
                     padding: 0;
