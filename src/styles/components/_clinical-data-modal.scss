@@ -90,6 +90,10 @@
             flex-direction: column;
             justify-content: flex-end;
         }
+
+        @media screen and (min-width: 1366px) {
+            justify-content: center;
+        }
     }
 
     .clinical-data-modal__header {
@@ -150,7 +154,7 @@
             }
 
             &__row--mh {
-                height: 4.375rem;
+                height: 4.4375rem;
             }
         }
 
@@ -161,16 +165,16 @@
                 padding-top: 0 !important;
                 padding-bottom: 0 !important;
 
-                &.limit-width {
-                    max-width: 48ch;
-                }
-
                 &:last-child {
                     max-width: 50ch;
 
                     @include media('tablet') {
                         max-width: none;
                     }
+                }
+
+                &.limit-width {
+                    max-width: 48ch;
                 }
             }
 
@@ -212,10 +216,11 @@
 
             &--mh--paragraph {
                 span:last-child {
-                    font-size: 90%;
+                    font-size: 70%;
                     max-width: 13ch;
 
                     @include media('tablet') {
+                        font-size: 90%;
                         max-width: none;
                     }
                 }
