@@ -11,6 +11,7 @@
         font-size: 60px;
         font-weight: 900;
         line-height: 4.6875rem;
+        position: relative;
 
         @include media('desktop') {
             font-size: 70px;
@@ -40,6 +41,22 @@
             font-size: 16px;
             font-weight: 900;
             line-height: 1.5rem;
+        }
+    }
+
+    &__sub-content {
+        bottom: -10px;
+        color: $color-dark-gray;
+        font-size: 16px;
+        font-weight: 500;
+        left: 0;
+        line-height: 1.5rem;
+        position: absolute;
+    }
+
+    &--contains-subcontent {
+        .highlight-information__footnote {
+            margin-top: .9375rem;
         }
     }
 }
