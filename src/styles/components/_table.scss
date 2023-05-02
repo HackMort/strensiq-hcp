@@ -95,12 +95,15 @@ $headRowsWidth: 16%;
             &--paragraph {
                 display: flex;
                 flex-direction: column;
-                color: $color-white !important;
-                font-size: .9375rem;
-                font-weight: 700;
 
                 @media screen and (max-width: 768px) {
                     font-size: 1.1rem;
+                }
+
+                span:first-child {
+                    color: $color-white !important;
+                    font-size: .9375rem;
+                    font-weight: 700;
                 }
 
                 span {
@@ -108,6 +111,7 @@ $headRowsWidth: 16%;
                     font-weight: 300;
                     line-height: 0.8rem;
                     padding: 0 1rem;
+                    color: $color-white !important;
 
                     @media screen and (max-width: 768px) {
                         font-size: 0.7rem;
