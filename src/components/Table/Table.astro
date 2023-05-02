@@ -32,3 +32,24 @@ const { title, className }: Props = Astro.props;
     </div>
     <slot name="footer" />
 </section>
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', event => {
+        const headerColumns =  document.querySelectorAll('.table__header--mh--cell')
+        const maxColumns = headerColumns.length
+
+        const joinRows = document.querySelectorAll('.table__body__row--join')
+        if(joinRows) {
+            joinRows.forEach(joinRow => {
+                const joinCells = joinRow.querySelectorAll('.table__body__cell')
+                const joinCellsSize = joinCells.length
+
+                if(joinCellsSize < maxColumns) {
+                    const lastCell = joinCells[joinCellsSize - 1]
+                    lastCell.colSpan = 1 + (maxColumns - joinCellsSize)
+                }
+            })
+        }
+    })
+</script>
