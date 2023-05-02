@@ -38,9 +38,9 @@ const { data, className } = Astro.props;
                 {item.text.map((text: string) =>
                     //If the item is the first one, it's a header
                     item.text.indexOf(text) === 0 ? (
-                        <td class={`table__body__cell--head`}>{text}</td>
+                        <td class={`table__body__cell--head`} set:html={text} />
                     ) : (
-                        <td class={`table__body__cell`}>{text}</td>
+                        <td class={`table__body__cell`} set:html={text} />
                     )
                 )}
             </tr>

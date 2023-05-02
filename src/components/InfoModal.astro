@@ -1,0 +1,55 @@
+<div class="clinical-data-info-modal" id="clinical-data-info-modal" style="display: none;">
+    <div class="clinical-data-modal__head">
+        <button class="clinical-data-modal--close-modal" data-fancybox-close>×</button>
+    </div>
+    <div class="clinical-data-info-modal__wrapper">
+        
+        <div class="clinical-data-info-modal__content">
+
+            <slot />
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+    import { Fancybox } from "@fancyapps/ui";
+
+    class ClinicalDataModal {
+        modal: Fancybox;
+
+        constructor() {
+            this.modal = undefined;
+        }
+
+        open() {
+            this.modal = new Fancybox([{ src: 'clinical-data-info-modal' }], {
+                autoFocus: true,
+                defaultType: "inline",
+                placeFocusBack: true,
+                trapFocus: true,
+                closeButton: false,
+                defaultDisplay: 'flex',
+                dragToClose: false,
+            });
+        }
+
+        close() {
+            this.modal.close();
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const clinicalDataModal = new ClinicalDataModal();
+
+        const button = document.querySelector(
+            "#clinical-data-adults__LEFS"
+        );
+
+        button.addEventListener("click", (e) => {
+            e.preventDefault()
+            clinicalDataModal.open();
+        });
+    });
+</script>

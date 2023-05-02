@@ -20,7 +20,7 @@
  * - ssh, cg: sub sub header color green (Background white, color green, bold)
  */
 type Props = {
-    mainHeaders:
+    mainHeaders?:
         | object[{
               label: string;
               subLabel: string;
@@ -29,7 +29,7 @@ type Props = {
           }]
         | [];
 
-    subHeaders:
+    subHeaders?:
         | object[{
               label: string;
               colspan: number | null;
@@ -37,7 +37,7 @@ type Props = {
           }]
         | [];
 
-    subSubHeaders:
+    subSubHeaders?:
         | object[{
               label: string;
               colspan: number | null;
@@ -71,8 +71,8 @@ const { mainHeaders = [], subHeaders = [], subSubHeaders = [] } = Astro.props;
                             }
                         >
                             <p class="table__header--mh--paragraph">
-                                {header.label}
-                                <span>{header.subLabel}</span>
+                                <span set:html={header.label} />
+                                <span set:html={header.subLabel} />
                             </p>
                         </th>
                     ))}
