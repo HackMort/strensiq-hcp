@@ -2,7 +2,6 @@
 import PageHero from "../../components/PageHero.astro";
 import Layout from "../../layouts/Layout.astro";
 import CTA from "../../components/CTA.astro";
-import References from "../../components/References.astro";
 import HighlightInformation from "../../components/HighlightInformation.astro";
 import AccordionMobile from '../../components/accordion-mobile/AccordionMobile.astro';
 import ExpansionPanelMobile from '../../components/accordion-mobile/ExpansionPanelMobile.astro';
@@ -11,12 +10,21 @@ import PinchToZoom from "../../components/PinchToZoom.astro";
 import InternalNavigation from "../../components/InternalNavigation.astro";
 import ClinicalDataModal from "../../components/clinical-data/ClinicalDataModal.astro";
 import DisabilityIndexModal from "../../components/clinical-data/DisabilityIndexModal.astro";
+import Table from "../../components/Table/Table.astro";
+import TableHeader from "../../components/Table/TableHeader.astro";
+import TableData from "../../components/Table/TableData.astro";
+import studyData from "../clinical-data/data/clinical-data-children.js";
 
 const internalNavLinks = [
   { href: "hpp-related-rickets", label: "HPP-related rickets", active: true },
   { href: "mobility", label: "Mobility" },
   { href: "pain-disability", label: "Pain/disability" },
   { href: "strength-agility", label: "Strength/agility" }
+];
+
+const mainHeaders = [
+  { label: "", sublabel: "" },
+  { label: "Study 3", subLabel: "ENB-006-09/ ENB-008-10" }
 ];
 ---
 
@@ -501,10 +509,17 @@ const internalNavLinks = [
     linkUrl="/clinical-data/adolescents"
   />
   <ClinicalDataModal>
-    <picture>
-        <source srcset="/assets/images/clinical-data/modal/temp-study-3-desktop.png" media="(min-width: 768px)">
-        <img src="/assets/images/clinical-data/modal/temp-study-3-mobile.png" alt="">
-    </picture>
+    <Table>
+      <!--Table headers -->
+      <TableHeader slot="header" mainHeaders={mainHeaders} />
+      <!--Table data -->
+      <TableData slot="body" data={studyData} />
+
+      <div slot="footer" class="table__footer">
+          <p><sup>a</sup>Adolescents in the study were aged 13 to 17 years.</p>
+          <p><sup>b</sup>Consistent with FDA label.</p>
+      </div>
+  </Table>
   </ClinicalDataModal>
   <DisabilityIndexModal>
   </DisabilityIndexModal>

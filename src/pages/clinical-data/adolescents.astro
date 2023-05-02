@@ -227,7 +227,7 @@ const mainHeaders = [
   <ClinicalDataModal>
     <Table>
         <!--Table headers -->
-        <TableHeader slot="header" mainHeaders={mainHeaders} />
+            <TableHeader slot="header" mainHeaders={mainHeaders} />
         <!--Table data -->
         <TableData slot="body" data={studyData} />
 
@@ -236,10 +236,6 @@ const mainHeaders = [
             <p><sup>b</sup>Consistent with FDA label.</p>
         </div>
     </Table>
-    <!-- <picture>
-        <source srcset="/assets/images/clinical-data/modal/temp-study-1-desktop.png" media="(min-width: 768px)">
-        <img src="/assets/images/clinical-data/modal/temp-study-1-mobile.png" alt="">
-    </picture> -->
   </ClinicalDataModal>
   <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"></script>
 </Layout>

@@ -11,9 +11,20 @@ import CustomTitle from '../../components/CustomTitle.astro';
 import TipBox from "../../components/TipBox.astro";
 import ClinicalDataModal from '../../components/clinical-data/ClinicalDataModal.astro';
 import PinchToZoom from '../../components/PinchToZoom.astro';
+import Table from "../../components/Table/Table.astro";
+import TableHeader from "../../components/Table/TableHeader.astro";
+import TableData from "../../components/Table/TableData.astro";
+import studyData from "../clinical-data/data/clinical-data-infants.js";
+
 const internalNavLinks = [
   { href: "hpp-related-rickets", label: "HPP-related rickets", active: true },
   { href: "survival", label: "Survival" },
+];
+
+const mainHeaders = [
+  { label: "", sublabel: "" },
+  { label: "Study 1", subLabel: "ENB-002-08/ ENB-003-08" },
+  { label: "Study 2", subLabel: "ENB-010-10" }
 ];
 ---
 
@@ -255,7 +266,7 @@ const internalNavLinks = [
             <div class="wrapper wrapper--only-left">
                 <div class="infants-young-children__survival-chart-wrapper">
 
-                    
+
                         <picture>
                             <img src="/assets/images/clinical-data/infants-young-children/Invasive_Ventilation_free_survival_Desktop.png" alt="">
                         </picture>
@@ -280,10 +291,12 @@ const internalNavLinks = [
     linkUrl="/clinical-data/children"
   />
   <ClinicalDataModal>
-    <picture>
-        <source srcset="/assets/images/clinical-data/modal/temp-study-1-desktop.png" media="(min-width: 768px)">
-        <img src="/assets/images/clinical-data/modal/temp-study-1-mobile.png" alt="">
-    </picture>
+    <Table>
+        <!--Table headers -->
+        <TableHeader slot="header" mainHeaders={mainHeaders} />
+        <!--Table data -->
+        <TableData slot="body" data={studyData} />
+    </Table>
   </ClinicalDataModal>
   <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"></script>
 </Layout>
