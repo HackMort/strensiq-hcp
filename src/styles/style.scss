@@ -564,10 +564,13 @@
     }
     &__mobility {
         background-color: $color-soft-gray;
+        z-index: -1;
+        position: relative;
     }
     &__content {
         padding-top: 0.5rem;
         padding-bottom: 1rem;
+        overflow-y: clip;
 
         &--highlightinformation {
             margin-top: 2rem;
@@ -629,10 +632,10 @@
             flex-direction: row;
             flex-wrap: wrap;
 
-            background-image: url('/assets/images/clinical-data/adults/Subtract.svg');
+            /* background-image: url('/assets/images/clinical-data/adults/Subtract.svg');
             background-position: right top;
             background-repeat: no-repeat;
-            background-size: 50%;
+            background-size: 50%; */
         }
     }
 
@@ -641,6 +644,7 @@
         padding: 1rem;
         margin-top: 1rem;
         margin-bottom: 2rem;
+        position: relative;
 
         &--title {
             color: $color-white;
@@ -648,6 +652,21 @@
             font-size: 1.25rem;
             font-weight: 700;
             padding-bottom: 0.8rem;
+        }
+
+        &::before {
+            @media screen and (min-width: 1024px) {
+                content: '';
+                background-color: $color-blue;
+                position: absolute;
+                z-index: -1;
+                height: 45.5175rem;
+                width: 69.295rem;
+                border-radius: 22.7588rem 0px 0px 22.7588rem;
+                transform: rotate(-21deg);
+                left: -30px;
+                bottom: 35px;
+            }
         }
 
         @media screen and (min-width: 1000px) {
