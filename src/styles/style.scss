@@ -3519,6 +3519,11 @@
     max-width: 100%;
     overflow: hidden;
 
+    @media (min-width: 1024px) {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
     @include media('desktop') {
         padding-top: 3.125rem;
         padding-bottom: 2.5rem;
@@ -3528,9 +3533,11 @@
         padding: 1.75rem 0 0;
         width: 100%;
 
-        @include media('desktop') {
+        @media (min-width: 1024px) {
             padding-top: 0;
+        }
 
+        @include media('desktop') {
             &--left {
                 width: 45%;
             }
@@ -3910,7 +3917,7 @@
         display: flex;
         flex-wrap: wrap;
 
-        @include media('desktop') {
+        @media (min-width: 1024px) {
             justify-content: space-between;
         }
     }
@@ -3935,7 +3942,19 @@
 
                 .radiographic-images-mobile {
                     margin: 0 auto;
-                    width: 500px;
+                    max-width: 500px;
+                }
+            }
+
+            @media (min-width: 1024px) {
+
+                &--left {
+                    display: block;
+                    width: 50%;
+                }
+
+                &--right {
+                    width: 45%;
                 }
             }
 
@@ -3976,11 +3995,18 @@
                 }
             }
         }
+
+        /* @media (min-width: 1024px) {
+            .wrapper {
+                justify-content: space-evenly;
+            }
+        } */
     }
 
     &--rgi {
         @media (min-width: 1024px) {
             .cdchildren-container__content--left {
+                padding-top: 1.5625rem;
                 width: 55%;
             }
 
@@ -4028,8 +4054,9 @@
             .cdchildren-container__content--right {
                 display: flex;
                 flex-direction: row-reverse;
-                @include flex-gap(1rem);
-                overflow: hidden;
+                @include flex-gap(2.5rem);
+                justify-content: space-between;
+                overflow-y: clip;
                 padding-bottom: 3.75rem;
             }
         }
@@ -4252,7 +4279,11 @@
             }
 
             .cdchildren-container__content--right {
-                width: 55%;
+                width: 50%;
+
+                .cdchildren-container__footnote:first-of-type {
+                    padding-top: 1.5625rem;
+                }
             }
 
             .cdchildren-container {
