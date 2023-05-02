@@ -189,31 +189,33 @@ function setActiveIternalNavItemOnClick () {
 
     if (target.tagName === 'A') {
       const sectionID = target.getAttribute('href')
-      const targetSection = document.querySelector(sectionID)
+      if (sectionID !== '#') {
+        const targetSection = document.querySelector(sectionID)
 
-      const internalNav = document.querySelector('.internal__nav')
-      const headerInner = document.querySelector('.header__inner')
-      const headerInnerStyles = getComputedStyle(headerInner)
-      const internalNavStyles = getComputedStyle(internalNav)
-      const headerInnerHeight = parseInt(headerInnerStyles.getPropertyValue('height').slice(0, -2))
-      const internalNavHeight = parseInt(internalNavStyles.getPropertyValue('height').slice(0, -2))
-      let openedMenuExtraHeight = screen.width < 1200 ? 77 : 119
-      if (window.pageYOffset === 0) {
-        openedMenuExtraHeight -= 160
-      }
-      /* console.log(targetSection.getBoundingClientRect().top)
-      console.log(window.pageYOffset) */
-      if (targetSection.getBoundingClientRect().top > 0) {
-        openedMenuExtraHeight *= -1
-      }
-      // const openedMenuExtraHeight = screen.width < 1200 ? 118.469 : 167.4
-      // Scroll to section
-      const totalOffset = targetSection.getBoundingClientRect().top + window.pageYOffset - (headerInnerHeight + internalNavHeight + openedMenuExtraHeight)
+        const internalNav = document.querySelector('.internal__nav')
+        const headerInner = document.querySelector('.header__inner')
+        const headerInnerStyles = getComputedStyle(headerInner)
+        const internalNavStyles = getComputedStyle(internalNav)
+        const headerInnerHeight = parseInt(headerInnerStyles.getPropertyValue('height').slice(0, -2))
+        const internalNavHeight = parseInt(internalNavStyles.getPropertyValue('height').slice(0, -2))
+        let openedMenuExtraHeight = screen.width < 1200 ? 77 : 119
+        if (window.pageYOffset === 0) {
+          openedMenuExtraHeight -= 160
+        }
+        /* console.log(targetSection.getBoundingClientRect().top)
+        console.log(window.pageYOffset) */
+        if (targetSection.getBoundingClientRect().top > 0) {
+          openedMenuExtraHeight *= -1
+        }
+        // const openedMenuExtraHeight = screen.width < 1200 ? 118.469 : 167.4
+        // Scroll to section
+        const totalOffset = targetSection.getBoundingClientRect().top + window.pageYOffset - (headerInnerHeight + internalNavHeight + openedMenuExtraHeight)
 
-      window.scrollTo({
-        top: totalOffset,
-        behavior: 'smooth'
-      })
+        window.scrollTo({
+          top: totalOffset,
+          behavior: 'smooth'
+        })
+      }
     }
 
     // Remove class is--active from all internal navigation items
@@ -231,10 +233,12 @@ function setActiveIternalNavItemOnClick () {
 navigation container when has the class is--fixed */
 function setNavTopPosition () {
   const internalNav = document.querySelector('.internal__nav')
-  const headerInner = document.querySelector('.header__inner')
-  const headerInnerStyles = getComputedStyle(headerInner)
-  const headerInnerHeight = headerInnerStyles.getPropertyValue('height')
-  internalNav.style.setProperty('--nav-top-position', headerInnerHeight)
+  if (internalNav) {
+    const headerInner = document.querySelector('.header__inner')
+    const headerInnerStyles = getComputedStyle(headerInner)
+    const headerInnerHeight = headerInnerStyles.getPropertyValue('height')
+    internalNav.style.setProperty('--nav-top-position', headerInnerHeight)
+  }
 }
 
 /**
