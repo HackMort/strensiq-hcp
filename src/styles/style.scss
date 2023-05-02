@@ -397,11 +397,12 @@
             width: 48%;
             margin: 0 auto;
         }
+
         &--mobility {
             @media screen and (min-width: 1000px) {
                 margin-top: 6rem;
             }
-    
+
             .custom-title {
                 padding: 1.1rem;
             }
@@ -420,7 +421,7 @@
             @media screen and (min-width: 1000px) {
                 width: 50%;
                 word-wrap: break-word;
-                hyphens: auto; 
+                hyphens: auto;
             }
         }
     }
@@ -501,7 +502,8 @@
         }
     }
 
-    &--title1, &--title2 {
+    &--title1,
+    &--title2 {
         margin-bottom: 1rem;
     }
 
@@ -511,6 +513,7 @@
             background-color: transparent;
             padding: 0;
             border-radius: 0;
+
             li {
                 background-color: $color-bright-gray;
                 margin: 0;
@@ -519,9 +522,11 @@
                 padding-bottom: 0.3125rem;
                 padding-left: 0.9375rem;
                 height: 3rem;
+
                 &:first-child {
                     border-radius: 5rem 0 0 5rem;
                 }
+
                 &:last-child {
                     border-radius: 0 5rem 5rem 0;
                     margin-right: 1rem;
@@ -529,11 +534,12 @@
             }
         }
 
-        
+
 
         [role=tablist] a {
             width: 9rem;
         }
+
         &-menu {
             width: 100%;
             background-color: transparent;
@@ -541,32 +547,38 @@
         }
     }
 
-    &--content1, &__list-mobility1 {
+    &--content1,
+    &__list-mobility1 {
         @media screen and (max-width: 999px) {
             display: none;
         }
     }
 
-    &--content2, &__list-mobility2 {
+    &--content2,
+    &__list-mobility2 {
         @media screen and (min-width: 1000px) {
             display: none;
-        }    
+        }
     }
+
     &--content2 {
         @media screen and (min-width: 1000px) {
             margin-bottom: 2rem;
         }
     }
+
     &__list-mobility {
         @media screen and (min-width: 1000px) {
             margin-top: 3rem;
         }
     }
+
     &__mobility {
-        background-color: $color-soft-gray;
-        z-index: -1;
         position: relative;
+        background-color: $color-soft-gray;
+        z-index: 2;
     }
+
     &__content {
         padding-top: 0.5rem;
         padding-bottom: 1rem;
@@ -610,7 +622,7 @@
                 @media screen and (min-width: 1000px) {
                     margin: 1rem 0 0 0;
                 }
-                
+
             }
 
             .highlight-information__title {
@@ -622,6 +634,7 @@
 
         &--paragraph {
             margin-top: 1rem;
+
             @media screen and (min-width: 1024px) {
                 font-size: 1.125rem;
             }
@@ -659,7 +672,7 @@
                 content: '';
                 background-color: $color-blue;
                 position: absolute;
-                z-index: -1;
+                z-index: 1;
                 height: 45.5175rem;
                 width: 69.295rem;
                 border-radius: 22.7588rem 0px 0px 22.7588rem;
@@ -680,9 +693,16 @@
     &--img-6MWT {
         background-color: $color-white;
         margin-top: 2rem;
+
+        @media screen and (min-width: 1024px) {
+            margin-bottom: 2rem;
+        }
+
     }
 
     &--img-video {
+        position: relative;
+        z-index: 2;
 
         @media screen and (min-width: 1000px) {
             max-width: 80%;
@@ -697,12 +717,13 @@
         &-table {
             max-width: 1000px;
             margin: 1.5rem auto 0 auto;
-    
-            td, th {
+
+            td,
+            th {
                 text-align: left;
             }
-    
-            @media only screen and (min-width: 500px) and (max-width: 1090px)  {
+
+            @media only screen and (min-width: 500px) and (max-width: 1090px) {
                 max-width: 800px;
             }
 
@@ -715,7 +736,7 @@
                 margin: 2rem auto;
             }
         }
-        
+
         &-content {
             display: flex;
             flex-direction: column;
@@ -738,11 +759,12 @@
                 }
             }
         }
+
         &-paragraph {
             margin-bottom: 1rem;
         }
     }
-    
+
     &__tabs-title {
         margin-bottom: 2rem;
     }
@@ -768,6 +790,7 @@
             background-color: $color-white;
             padding-top: 1rem;
             padding-bottom: 1rem;
+
             &-paragraph {
                 margin-top: 1rem;
                 text-align: center;
@@ -777,10 +800,12 @@
                 top: 0 !important;
             }
         }
+
         &--highlight {
             @media screen and (min-width: 1000px) {
                 max-width: 50%;
                 margin-top: 1rem;
+
                 .highlight-information__footnote {
                     max-width: 100%;
                     margin-top: 1rem;
@@ -793,7 +818,7 @@
                     letter-spacing: -2px;
                     line-height: 3.4688rem !important;
                 }
-            }   
+            }
         }
 
         .clinical-data-adults__title {
@@ -814,13 +839,15 @@
     &__CHAIR-RISE--highlight {
         max-width: 80% !important;
     }
-    
+
     &--clinical-data-table {
         margin: 2rem 2rem;
         height: 380px;
+
         .table__content td {
             padding: 1rem 1rem !important;
         }
+
         .table__body__cell {
             sup {
                 padding: 0 !important;
@@ -834,8 +861,11 @@
     &--lefs-info-table {
         max-width: 1000px;
         margin-top: 1rem;
-        .table__content tr td:first-child, .table__content tr th:first-child {
+
+        .table__content tr td:first-child,
+        .table__content tr th:first-child {
             width: 35% !important;
+
             @media screen and (max-width: 768px) {
                 width: 25% !important;
             }
@@ -845,7 +875,7 @@
             padding: 0.7rem !important;
         }
 
-        th.table__header--mh--cell  {
+        th.table__header--mh--cell {
             padding: 1.5rem !important;
         }
 
