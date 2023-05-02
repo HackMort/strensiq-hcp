@@ -429,6 +429,10 @@
         color: $color-dark-gray;
         font-size: .875rem;
         font-weight: 300;
+
+        @media screen and (min-width: 1024px) {
+            font-size: 1.125rem;
+        }
     }
 
     &__list {
@@ -453,18 +457,23 @@
             margin-left: 1rem;
         }
 
+        &--limitations {
+            margin-left: 1rem;
+        }
+
         @media screen and (min-width: 1000px) {
             margin-left: 2rem;
         }
 
-        &--limitations {
-            margin-left: 1rem;
+        @media screen and (min-width: 1024px) {
+            font-size: 1.125rem;
         }
+
     }
 
     &__sublist {
         margin-top: 8px;
-        margin-left: 1rem;
+        margin-left: 2rem;
 
         li {
             list-style-type: circle !important;
@@ -548,6 +557,11 @@
             margin-bottom: 2rem;
         }
     }
+    &__list-mobility {
+        @media screen and (min-width: 1000px) {
+            margin-top: 3rem;
+        }
+    }
     &__mobility {
         background-color: $color-soft-gray;
     }
@@ -605,6 +619,9 @@
 
         &--paragraph {
             margin-top: 1rem;
+            @media screen and (min-width: 1024px) {
+                font-size: 1.125rem;
+            }
         }
 
         @media screen and (min-width: 1000px) {
@@ -675,7 +692,7 @@
             }
 
             @media screen and (min-width: 1000px) {
-                max-width: 100%;
+                max-width: 80%;
                 margin: 2rem auto;
             }
         }
@@ -774,6 +791,10 @@
             margin-bottom: 2rem;
         }
     }
+
+    &__CHAIR-RISE--highlight {
+        max-width: 80% !important;
+    }
     
     &--clinical-data-table {
         margin: 2rem 2rem;
@@ -813,6 +834,12 @@
             text-align: left !important;
         }
 
+    }
+
+    &--paragraph {
+        @media screen and (min-width: 1024px) {
+            font-size: 1.125rem;
+        }
     }
 }
 
