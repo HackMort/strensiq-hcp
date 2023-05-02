@@ -16,7 +16,7 @@ const studyData = [
     classModifier: ['mh']
   },
   {
-    text: ['Endpoints', '<p><strong>Primary:</strong> Hypophosphatasia-related rickets vs historical controls.</p><p><strong>Secondary:</strong> Growth vs historical controls, mobility, strength and agility,b activities of daily living and pain<sup>b</sup></p>'],
+    text: ['Endpoints', '<p><strong>Primary:</strong> Hypophosphatasia-related rickets vs historical controls.</p><p><strong>Secondary:</strong> Growth vs historical controls, mobility, strength and agility,<sup>b</sup> activities of daily living and pain<sup>b</sup></p>'],
     classModifier: ['mh']
   }
 ]
