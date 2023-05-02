@@ -4055,7 +4055,7 @@
 
     @include media('desktop') {
         padding-top: 3.125rem;
-        padding-bottom: 2.5rem;
+        padding-bottom: 3rem;
     }
 
     &__content {
@@ -4306,7 +4306,7 @@
     }
 
     .chart-wrapper {
-        .pinch-to-zoom  {
+        .pinch-to-zoom {
             padding-top: 3.125rem;
 
             @include media('tablet') {
@@ -4671,6 +4671,7 @@
         }
 
         @include media('desktop') {
+
             .cdchildren-container__content--right,
             .cdchildren-container__content--left {
                 width: 45%;
@@ -4801,7 +4802,7 @@
         }
 
         @media (min-width: 1024px) {
-            padding-top: 1rem;
+            padding-top: 3rem;
 
             .cdchildren-container__content--left {
                 width: 45%;
