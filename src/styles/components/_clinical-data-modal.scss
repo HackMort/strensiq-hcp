@@ -15,7 +15,7 @@
 
     @media screen and (min-width: 768px) {
         max-width: 95%;
-        height: 31.875rem;
+        max-height: 45.3125rem;
     }
 
     @media screen and (min-width: 1024px) {
@@ -82,11 +82,17 @@
     .clinical-data-modal__wrapper {
         height: auto;
         margin-bottom: 1.9231rem;
+        overflow-y: scroll;
+        z-index: -1;
 
         @media screen and (min-width: 1024px) {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+        }
+
+        @media screen and (min-width: 1366px) {
+            justify-content: center;
         }
     }
 
@@ -95,7 +101,7 @@
         z-index: 1;
         margin: 0 1.25rem;
         margin-top: 4.8937rem;
-    
+
         .clinical-data-modal__title {
             font-size: 1.875rem;
             font-weight: 700;
@@ -111,6 +117,7 @@
         margin-left: 1.25rem;
         // margin-right: 1.25rem;
         overflow-x: visible;
+        overflow-y: scroll;
 
         @media screen and (min-width: 1024px) {
             margin-right: 2.0769rem;
@@ -119,6 +126,112 @@
 
         @media screen and (min-width: 1366px) {
             margin-right: 4.0769rem;
+        }
+    }
+
+    .table {
+        &__body {
+            &__cell {
+                padding: 0 0 0 1.25rem;
+
+                :first-child {
+                    color: $color-dark-gray!important;
+                    font-weight: 300;
+                    padding-left: 0!important;
+                }
+
+                &--head {
+                    padding: 0 0 0 1.25rem !important;
+                }
+
+                sup {
+                    padding: 0!important;
+                }
+
+                @include media('tablet') {
+                    padding: 0 0 0 1.875rem;
+                }
+            }
+
+            &__row--mh {
+                height: 4.4375rem;
+            }
+        }
+
+        &__content {
+            p{
+                font-size: inherit;
+                line-height: inherit;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+
+                &:last-child {
+                    max-width: 50ch;
+
+                    @include media('tablet') {
+                        max-width: none;
+                    }
+                }
+
+                &.limit-width {
+                    max-width: 48ch;
+                }
+            }
+
+            span {
+                padding: 0;
+            }
+
+            strong {
+                font-weight: bold!important;
+                padding: 0 !important;
+            }
+
+            td {
+                text-align: left;
+            }
+
+            th {
+                text-align: left;
+            }
+
+        }
+
+        &__header {
+            &--mb--cell {
+                color: $color-dark-gray;
+            }
+
+            &--mh--cell {
+                padding: .625rem 1rem;
+
+                @include media('tablet') {
+                    padding: .625rem 1.875rem;
+                }
+            }
+
+            &--mh--empty {
+                border-top: 0;
+            }
+
+            &--mh--paragraph {
+                span:last-child {
+                    font-size: 70%;
+                    max-width: 13ch;
+
+                    @include media('tablet') {
+                        font-size: 90%;
+                        max-width: none;
+                    }
+                }
+            }
+        }
+
+        &__footer {
+            p {
+                font-size: 12px;
+                line-height: .9rem;
+            }
         }
     }
 }
