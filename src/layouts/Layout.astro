@@ -4,14 +4,12 @@ import "../styles/style.scss";
 import ExitModal from "../components/ExitModal.astro";
 import ISI from "../components/ISI.astro";
 import Footer from "../components/Footer.astro";
-import References from "../components/References.astro";
 import CTA from "../components/CTA.astro";
 import Header from "../components/Header.astro";
 import CookieBanner from "../components/CookieBanner.astro";
 import RequestARepModalForm from "../components/RequestARepModalForm.astro";
 export interface Props {
   title: string;
-  displayReferences?: boolean;
   displayISI?: boolean;
   classNames?: string;
 }
@@ -19,7 +17,7 @@ export interface Props {
 const {
   title,
   classNames,
-  displayReferences = true,
+  // displayReferences = true,
   displayISI = true,
 } = Astro.props;
 ---
@@ -46,7 +44,8 @@ const {
     <main class={`main ${classNames ? classNames : ""}`}>
       <slot />
     </main>
-    {displayReferences && <References />}
+    <slot name='references'>
+    </slot>
     {displayISI && <ISI />}
     <Footer />
     <ExitModal />
