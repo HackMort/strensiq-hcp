@@ -9,7 +9,7 @@ export interface Props {
 ---
 
 <article class={`highlight-information ${className}`}>
-    {title && <h4 class="highlight-information__title">{title}</h4>}
+    {title && <h4 class="highlight-information__title" set:html={title}></h4>}
     <section class="highlight-information__content">
         <slot name='content'></slot>
     </section>

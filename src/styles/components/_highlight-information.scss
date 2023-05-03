@@ -4,6 +4,10 @@
     &__title {
         color: $color-dark-gray;
         text-transform: uppercase;
+
+        sup {
+            text-transform: none;
+        }
     }
 
     &__content {
