@@ -2128,7 +2128,15 @@
                 }
             }
 
-            &.position--bottom {
+            &-container.position--bottom {
+                .hypophosphatasia-container__panel-footnote {
+                    margin: 0;
+
+                    &:last-child {
+                        margin-bottom: 1.3125rem;
+                    }
+                }
+
                 @include media('desktop') {
                     bottom: 0;
                     position: absolute;
