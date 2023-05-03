@@ -2,12 +2,12 @@
     export interface Props {
         mainImageAlt?: string;
         authorInformation: string;
-        authorDescription: string;
+        authorDescription?: string;
         page:string;
         shapeType?: string;
     }
 
-    const { mainImageAlt = " ", authorInformation, authorDescription, page, shapeType = "top"} = Astro.props;
+    const { mainImageAlt = " ", authorInformation, authorDescription = '', page, shapeType = "top"} = Astro.props;
 ---
 
 <section class={`testimonial testimonial--${page} testimonial--shape-${shapeType}`}>
