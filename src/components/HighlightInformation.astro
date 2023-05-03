@@ -14,7 +14,7 @@ export interface Props {
         <slot name='content'></slot>
     </section>
     <h5 class="highlight-information__footnote">
-        <strong>{footnote}</strong>
+        <strong set:html={footnote}></strong>
         <slot name='footnote'></slot>
     </h5>
 </article>
