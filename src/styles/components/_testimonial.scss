@@ -11,7 +11,7 @@
     @media (min-width: 1024px) {
         @include flex-gap(4rem);
         padding-top: 8.125rem;
-        padding-bottom: 8.125rem;
+        padding-bottom: 10.9375rem;
     }
 
     &__author {
@@ -42,9 +42,9 @@
                 width: 14.0625rem;
             }
 
-            @media (min-width: 1024px) {
-                width: 19.375rem;
-            }
+            /* @media (min-width: 1024px) {
+                width: 310px;
+            } */
         }
     }
 
@@ -172,7 +172,6 @@
     }
 
     &--shape {
-
         &-top {
             &::before {
                 @media(min-width: 1024px) {
