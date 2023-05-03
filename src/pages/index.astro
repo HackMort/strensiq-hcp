@@ -3,9 +3,10 @@ import MainHero from "../components/MainHero.astro";
 import Testimonial from "../components/Testimonial.astro";
 import Layout from "../layouts/Layout.astro";
 import WorkBox from "../components/WorkBox.astro";
+import References from "../components/References.astro";
 ---
 
-<Layout title="STRENSIQ | HCP" displayReferences={false}>
+<Layout title="STRENSIQ | HCP">
   <MainHero />
   <Testimonial
     authorInformation="Lynn Kohlmeier, MD, Adult Endocrinologist"
@@ -38,4 +39,7 @@ import WorkBox from "../components/WorkBox.astro";
       </WorkBox>
     </div>
   </section>
+  <div slot="references">
+    <References></References>
+  </div>
 </Layout>
