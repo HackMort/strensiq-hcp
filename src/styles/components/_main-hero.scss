@@ -97,38 +97,27 @@
         .main-hero__title {
             color: $color-white;
             position: relative;
-            margin-bottom: 1.5rem;
-
-            &::before {
-                content: '“';
-                display: inline-block;
-                color: $color-green;
-                position: absolute;
-                right: 100.5%;
-            }
+            margin-bottom: .625rem;
 
             @media screen and (min-width: 1366px) {
-                max-width: 25rem;
+                max-width: 20ch;
             }
         }
 
         .main-hero__info {
             color: $color-white;
-            font-size: .875rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
             letter-spacing: -0.01em;
+            line-height: 1.5rem;
 
             br {
                 display: none;
             }
 
-            @media screen and (min-width: 768px) {
-                font-size: 1rem;
-                line-height: 24px;
-            }
-
             @media screen and (min-width: 1366px) {
                 width: 31.0625rem;
+                padding: 0 2.1875rem 0 0;
                 position: relative;
 
                 &:last-of-type br {
@@ -240,6 +229,24 @@
             @media screen and (min-width: 768px) {
                 margin: initial;
             }
+        }
+    }
+
+    &__footnote {
+        color: $color-white;
+        font-size: .75rem;
+        line-height: .9rem;
+        margin-bottom: 1.875rem;
+    }
+
+    &__subtitle {
+        line-height: 1.875rem;
+        margin-bottom: 1rem;
+
+        @include media('tablet') {
+            font-size: 1.5625rem;
+            font-weight: 700;
+            line-height: 1.9531rem;
         }
     }
 }
