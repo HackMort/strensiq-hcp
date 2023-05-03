@@ -41,10 +41,6 @@
                 max-width: 19.375rem;
                 width: 14.0625rem;
             }
-
-            /* @media (min-width: 1024px) {
-                width: 310px;
-            } */
         }
     }
 
@@ -97,6 +93,7 @@
 
         p {
             font-weight: 700;
+            line-height: 1.05rem;
             margin: 0 auto;
             max-width: 33ch;
             position: relative;
@@ -133,15 +130,20 @@
 
     p {
         color: $color-dark-green;
-        font-size: 14px;
-        line-height: 1.0938rem;
         margin-bottom: .375rem;
         text-align: center;
 
-        @media (min-width: 700px) {
-            font-size: 20px;
-            line-height: 1.5625rem;
+        &.testimonial__author,
+        &.testimonial__author-description {
+            font-size: 14px;
+            line-height: 1.0938rem;
+
+            @media (min-width: 700px) {
+                font-size: 20px;
+                line-height: 1.5625rem;
+            }
         }
+
     }
 
     &--hypophosphatasia {
