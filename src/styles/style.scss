@@ -4223,6 +4223,10 @@
     .animated--bg {
         color: $color-dark-green;
         font-weight: 900;
+
+        &--inline-block {
+            display: inline-block;
+        }
     }
 
     .cdchildren-container__merged-highlight {
