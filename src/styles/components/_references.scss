@@ -17,7 +17,15 @@
     margin-bottom: 3.25rem;
   }
 
+  a {
+    color: $color-dark-gray;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.6875rem;
+  }
+
   strong {
     color: $color-dark-green;
   }
+
 }
