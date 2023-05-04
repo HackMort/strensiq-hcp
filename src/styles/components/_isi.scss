@@ -27,16 +27,22 @@
     margin-bottom: .5rem;
   }
 
-  // strong {
-  //   font-weight: 900;
-  // }
+  strong {
+    font-weight: 900;
+    line-height: 1.05rem;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 1.125rem;
+      line-height: 1.35rem;
+    }
+  }
 
   .isi__section.grid {
     display: grid;
     padding-top: .9375rem;
-    padding-right: 1.5rem;
+    // padding-right: 1.5rem;
     padding-bottom: .9375rem;
-    padding-left: 1.5rem;
+    // padding-left: 1.5rem;
 
     @media screen and (min-width: 1024px) {
       grid-template-columns: 1fr 26.75rem;
@@ -51,12 +57,14 @@
     align-items: center;
     min-height: 3.25rem;
     padding-top: .4375rem;
-    padding-right: 1.375rem;
+    // padding-right: 1.375rem;
     padding-bottom: .4375rem;
-    padding-left: 1.375rem;
+    // padding-left: 1.375rem;
   }
 
   .wrapper__inner {
+    padding-right: 3.125rem;
+
     .isi__section.grid:first-of-type {
       display: none;
     }
@@ -81,10 +89,19 @@
 
   &__section_subheading {
     color: $color-dark-green;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 600;
-    line-height: 1.6875rem;
+    line-height: 1.5rem;
     margin-bottom: 0.25rem;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 1.125rem;
+      line-height: 1.6875rem;
+    }
+
+    &--no-margin-bottom {
+      margin-bottom: 0;
+    }
   }
 
   &__section_list {
@@ -107,7 +124,7 @@
     background-color: $color-white;
 
     .wrapper__inner {
-      max-width: 100%;
+      // max-width: 100%;
 
       .isi__section_content,
       .isi__section_footer {
@@ -135,10 +152,10 @@
 
     .wrapper__inner {
       position: relative;
-      max-width: calc(100% - 2.5rem);
+      // max-width: calc(100% - 2.5rem);
 
       @media screen and (min-width: 1440px) {
-        max-width: 90rem;
+        // max-width: 90rem;
       }
 
 
@@ -188,4 +205,38 @@
     top: 40%;
   }
 
+  &__section_content {
+    .wrapper {
+      padding-right: 3.125rem;
+    }
+  }
+
+  &__footnote {
+    &--left {
+      display: none;
+      margin-left: 1rem;
+    }
+
+    &--right {
+      margin-top: .75rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      &--left {
+        display: block;
+      }
+
+      &--right {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    display: inline;
+
+    @media screen and (min-width: 1024px) {
+      text-decoration: underline;
+    }
+  }
 }
