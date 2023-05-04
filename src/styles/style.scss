@@ -4855,10 +4855,13 @@
         margin-top: 0;
         margin-bottom: 0;
         padding: 0 0 1.375rem;
-        word-wrap: break-word;
 
-        @media screen and (min-width: 420px) {
-            word-wrap: normal;
+        a {
+            word-wrap: break-word;
+
+            @media screen and (min-width: 500px) {
+                word-wrap: normal;
+            }
         }
     }
 
