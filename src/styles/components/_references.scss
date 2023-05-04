@@ -1,14 +1,9 @@
 .references {
   font-size: .875rem;
-  line-height: 1.0625rem;
+  line-height: 1.0938rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-
-  @media (max-width: 375px) {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 20.5rem;
-  }
+  width: 100%;
 
   @include media('tablet') {
     font-size: 1.125rem;
@@ -19,9 +14,27 @@
 
   a {
     color: $color-dark-gray;
-    font-size: 1.125rem;
+    font-size: .875rem;
     font-weight: 300;
-    line-height: 1.6875rem;
+    line-height: 1.0938rem;
+    text-decoration: none;
+
+    @include media('tablet') {
+      font-size: 1.125rem;
+      line-height: 1.6875rem;
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    font-size: .875rem;
+    font-weight: 300;
+    line-height: 1.0938rem;
+
+    @include media('tablet') {
+      font-size: 1.125rem;
+      line-height: 1.6875rem;
+    }
   }
 
   strong {
