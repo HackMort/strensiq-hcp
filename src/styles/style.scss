@@ -43,7 +43,7 @@
 //-------------------------------------------------------------lets work together section-------------------------------------------------------------
 .lets-work {
     padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding-bottom: 1.25rem;
 
     &__title {
         color: $color-dark-green;
@@ -92,6 +92,10 @@
             max-width: 13.375rem;
 
         }
+    }
+
+    @media screen and (min-width:970px) {
+        padding-bottom: 5.625rem;
     }
 }
 
@@ -4839,5 +4843,19 @@
     sup {
         font-size: 70%;
         top: -0.5em;
+    }
+}
+
+/* Home */
+.home {
+    & + .references {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0 0 1.375rem;
+        word-wrap: break-word;
+
+        @media screen and (min-width: 420px) {
+            word-wrap: normal;
+        }
     }
 }

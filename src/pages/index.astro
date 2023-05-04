@@ -6,7 +6,7 @@ import WorkBox from "../components/WorkBox.astro";
 import References from "../components/References.astro";
 ---
 
-<Layout title="STRENSIQ | HCP">
+<Layout title="STRENSIQ | HCP" classNames="home">
   <MainHero />
   <Testimonial
     authorInformation="Lynn Kohlmeier, MD, Adult Endocrinologist"
@@ -39,7 +39,7 @@ import References from "../components/References.astro";
       </WorkBox>
     </div>
   </section>
-  <div slot="references">
-    <References></References>
-  </div>
+  <!-- <div slot="references"> -->
+    <References slot="references"></References>
+  <!-- </div> -->
 </Layout>
