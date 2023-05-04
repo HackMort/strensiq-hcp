@@ -4861,4 +4861,16 @@
             word-wrap: normal;
         }
     }
+
+    .testimonial {
+        @media screen and (min-width: 1465px) {
+            padding-bottom: 19rem;
+
+            &::before {
+                --width-shape: 218.75rem;
+                --height-shape: 122.5rem;
+                bottom: 75%;
+            }
+        }
+    }
 }
