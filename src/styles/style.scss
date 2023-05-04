@@ -42,7 +42,6 @@
 
 //-------------------------------------------------------------lets work together section-------------------------------------------------------------
 .lets-work {
-    padding-top: 2rem;
     padding-bottom: 1.25rem;
 
     &__title {
@@ -92,6 +91,10 @@
             max-width: 13.375rem;
 
         }
+    }
+
+    @include media('tablet') {
+        padding-top: 3.125rem;
     }
 
     @media screen and (min-width:970px) {
