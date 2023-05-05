@@ -55,7 +55,7 @@ const symptomsData = [
     ]
   },
   {
-    mainWord: 'orthopedic',
+    mainWord: 'growth',
     symptoms: [
       'Procedures',
       'Therapies'
@@ -129,11 +129,7 @@ function calculateListPosition (symptomsList, pointElement) {
   const listPosition = pointElement.dataset.listPosition
 
   if (isSkeletonMobile(pointElement)) {
-    if (listPosition === 'mobile-top') {
-      pointElement = document.querySelector('.skeleton__point[data-word="dental"]')
-    } else if (listPosition === 'mobile-bottom') {
-      pointElement = document.querySelector('.skeleton__point[data-word="muscular"]')
-    }
+    pointElement = document.querySelector(`.skeleton__point[data-word="${listPosition}"]`)
 
     const pointElementStyles = getComputedStyle(pointElement)
     const pointElementTop = parseInt(pointElementStyles.getPropertyValue('top').slice(0, -2))
