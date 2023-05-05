@@ -109,7 +109,6 @@
                 &[data-vertical-line="bottom"],
                 &[data-vertical-line="top"] {
                     &::after {
-                        // bottom: 50%;
                         right: calc(100% + var(--point-active-before-width));
                     }
                 }
@@ -127,7 +126,6 @@
                 &[data-vertical-line="top"] {
                     &::after {
                         left: calc(100% + var(--point-active-before-width));
-                        // top: 50%;
                     }
                 }
             }
@@ -236,10 +234,10 @@
             background-color: $color-white;
             border-radius: 0 0 0 1.875rem;
             border-top: .7881rem solid $color-green;
-            height: 8rem;
             margin: 0 auto;
             left: 0;
             max-width: 19rem;
+            padding-bottom: 1.25rem;
             padding-top: 1.125rem;
             position: absolute;
             right: 0;
@@ -323,7 +321,7 @@
 
                     &[data-vertical-line="bottom"] {
                         &::before {
-                            bottom: -20px;
+                            bottom: calc((var(--point-active-after-height) * -1) - 5px);
                             margin: 0;
                             top: unset;
                         }
@@ -386,7 +384,7 @@
 
                     .skeleton__word {
                         right: 58px;
-                        top: -25px;
+                        top: -40px;
                     }
                 }
 
@@ -416,6 +414,12 @@
                     left: 0;
                     bottom: -1.25rem;
                 }
+            }
+
+            &__footnote {
+                left: unset;
+                right: -9.375rem;
+                bottom: 1.25rem;
             }
         }
     }

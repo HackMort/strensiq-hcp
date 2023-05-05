@@ -5,7 +5,7 @@ const symptomsData = [
     symptoms: [
       'Seizures (in infants)',
       'Headaches',
-      'Mood disorders'
+      'Mood (anxiety, depression)'
     ]
   },
   {
@@ -18,8 +18,8 @@ const symptomsData = [
   {
     mainWord: 'respiratory',
     symptoms: [
-      'Failure (in infants)',
-      'Pneumonia'
+      'Respiratory failure (in infants)',
+      'Pneumonia (in infants)'
     ]
   },
   {
@@ -40,8 +40,7 @@ const symptomsData = [
   {
     mainWord: 'rheumatic',
     symptoms: [
-      'Fibromyalgia ',
-      'Pain ',
+      'Pain',
       'Pseudogout'
     ]
   },
@@ -49,16 +48,14 @@ const symptomsData = [
     mainWord: 'skeletal',
     symptoms: [
       'Fractures (slow to heal)',
-      'Weak bones',
-      'Failure to thrive (in children)',
-      'Rickets (soft bones)'
+      'Rickets (weak/soft bones)'
     ]
   },
   {
     mainWord: 'growth',
     symptoms: [
-      'Procedures',
-      'Therapies'
+      'Failure to thrive',
+      'Missed motor milestones'
     ]
   }
 ]
@@ -137,16 +134,25 @@ function calculateListPosition (symptomsList, pointElement) {
     symptomsList.style.setProperty('top', listTopPosition + 'px')
   } else {
     distanceFromPointElement = 35
+    console.log(listPosition)
     const horizontalPosition = 'left'
     const dataVerticalLine = pointElement.dataset.verticalLine === 'top' ? 'bottom' : 'top'
     const pointElementStyles = getComputedStyle(pointElement)
+    const dataWord = pointElement.dataset.word
     const wordElement = pointElement.querySelector('.skeleton__word')
     const wordElementStyles = getComputedStyle(wordElement)
+    const wordElementHeight = parseInt(wordElementStyles.getPropertyValue('height').slice(0, -2))
     const pointElementPosition = parseInt(pointElementStyles.getPropertyValue(horizontalPosition).slice(0, -2))
     const wordElementPosition = parseInt(wordElementStyles.getPropertyValue(horizontalPosition).slice(0, -2))
     const symptomsListPosition = pointElementPosition + wordElementPosition + 5
     const pointElementVerticalPosition = parseInt(pointElementStyles.getPropertyValue(dataVerticalLine).slice(0, -2))
-    const listVerticalPosition = pointElementVerticalPosition + distanceFromPointElement
+    let listVerticalPosition = pointElementVerticalPosition + distanceFromPointElement
+
+    if (dataWord === 'skeletal') {
+      listVerticalPosition = pointElementVerticalPosition + wordElementHeight - 35
+    } else if (dataWord === 'growth') {
+      listVerticalPosition = pointElementVerticalPosition + wordElementHeight - 15
+    }
 
     symptomsList.style.setProperty('right', 'unset')
     symptomsList.style.setProperty('left', 'unset')
@@ -167,11 +173,13 @@ function setLengthAfterElement (symptomsList, pointElement) {
     const wordParentAfterLength = Math.abs(symptomsListTop - wordParentTop)
     pointElement.style.setProperty('--point-active-after-height', wordParentAfterLength + 'px')
   } else {
-    const dataVerticalLine = pointElement.dataset.verticalLine
-    if (dataVerticalLine === 'top') {
-      pointElement.style.setProperty('--point-active-after-height', '130px')
-    } else {
-      pointElement.style.setProperty('--point-active-after-height', '15px')
+    const dataWord = pointElement.dataset.word
+    pointElement.style.setProperty('--point-active-after-height', '15px')
+
+    if (dataWord === 'skeletal') {
+      pointElement.style.setProperty('--point-active-after-height', '45px')
+    } else if (dataWord === 'growth') {
+      pointElement.style.setProperty('--point-active-after-height', '65px')
     }
   }
 }

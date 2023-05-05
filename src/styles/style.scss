@@ -2625,9 +2625,13 @@
             content: '';
             height: 100%;
             position: absolute;
-            left: 35%;
-            width: 100%;
+            left: 33%;
+            width: 110%;
             z-index: 0;
+        }
+
+        @media screen and (min-width: 1400px) {
+            left: 31%;
         }
     }
 
@@ -2691,7 +2695,7 @@
             display: flex
         }
 
-        @media (min-width: 1200px) and (max-width: 1300px) {
+        @media (min-width: 1200px) and (max-width: 1400px) {
             min-width: 37.5rem;
 
             .skeleton__word {
