@@ -5,13 +5,13 @@
     @include flex-gap(1rem);
     justify-content: center;
     overflow: hidden;
-    padding: 1.875rem .625rem 3.125rem;
+    padding: 1.875rem .625rem 4.375rem;
     position: relative;
 
     @media (min-width: 1024px) {
         @include flex-gap(4rem);
         padding-top: 8.125rem;
-        padding-bottom: 8.125rem;
+        padding-bottom: 10.9375rem;
     }
 
     &__author {
@@ -41,16 +41,12 @@
                 max-width: 19.375rem;
                 width: 14.0625rem;
             }
-
-            @media (min-width: 1024px) {
-                width: 19.375rem;
-            }
         }
     }
 
     &__quote {
         margin: 0 auto;
-        padding: 1.875rem 2.1875rem 1.25rem;
+        padding: 1.875rem 1.8rem 1.25rem;
         position: relative;
         width: fit-content;
 
@@ -97,6 +93,7 @@
 
         p {
             font-weight: 700;
+            line-height: 1.05rem;
             margin: 0 auto;
             max-width: 33ch;
             position: relative;
@@ -133,15 +130,20 @@
 
     p {
         color: $color-dark-green;
-        font-size: 14px;
-        line-height: 1.0938rem;
         margin-bottom: .375rem;
         text-align: center;
 
-        @media (min-width: 700px) {
-            font-size: 20px;
-            line-height: 1.5625rem;
+        &.testimonial__author,
+        &.testimonial__author-description {
+            font-size: 14px;
+            line-height: 1.0938rem;
+
+            @media (min-width: 700px) {
+                font-size: 20px;
+                line-height: 1.5625rem;
+            }
         }
+
     }
 
     &--hypophosphatasia {
@@ -172,7 +174,6 @@
     }
 
     &--shape {
-
         &-top {
             &::before {
                 @media(min-width: 1024px) {
