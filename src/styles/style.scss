@@ -2095,9 +2095,7 @@
 
     &__tabs {
         justify-content: space-evenly;
-        // margin: 0 auto;
         overflow-y: hidden;
-        // width: 100;
 
         @include media('desktop') {
             justify-content: center;
@@ -2110,11 +2108,7 @@
 
         li a {
             font-weight: 700;
-            padding: .625rem 1.5625rem;
-
-            @include media('desktop') {
-                padding: .625rem 4.1875rem;
-            }
+            padding: .625rem ;
         }
     }
 
@@ -2139,8 +2133,7 @@
             color: $color-white;
             font-weight: 700;
             line-height: 1.25rem;
-            margin-bottom: 1.25rem;
-            padding: 1.5625rem;
+            padding: 1.5625rem 0;
             position: relative;
 
             &::after {
@@ -2159,7 +2152,7 @@
                 left: -1rem;
                 position: absolute;
                 top: 0;
-                width: 150%;
+                width: 200%;
                 z-index: -1;
 
                 @media (min-width: 428px) {
@@ -2174,6 +2167,7 @@
             @include media('desktop') {
                 font-size: 20px;
                 line-height: 1.5625rem;
+                padding-left: 1.25rem;
 
                 &::after {
                     width: 12.5rem;
@@ -2186,7 +2180,7 @@
         }
 
         &-chart {
-            margin: 0 auto .8125rem;
+            margin: 0 auto;
 
             img {
                 margin: 0 auto;
@@ -2214,7 +2208,7 @@
             line-height: .9rem;
 
             &--only-mobile {
-                @include media('desktop') {
+                @media (min-width: 1024px) {
                     display: none;
                 }
             }
@@ -2222,13 +2216,21 @@
             &--only-desktop {
                 display: none;
 
-                @include media('desktop') {
+                @media (min-width: 1024px) {
                     display: block;
                 }
             }
 
-            &.position--bottom {
-                @include media('desktop') {
+            &-container.position--bottom {
+                .hypophosphatasia-container__panel-footnote {
+                    margin: 0;
+
+                    &:last-child {
+                        margin-bottom: 1.3125rem;
+                    }
+                }
+
+                @media (min-width: 1024px) {
                     bottom: 0;
                     position: absolute;
                 }
@@ -2256,7 +2258,7 @@
     &__paragraph {
         font-size: 14px;
         line-height: 1.0938rem;
-        margin-bottom: 1.5625rem;
+        margin-bottom: 1.5rem;
 
         @include media('desktop') {
             font-size: 18px;
@@ -2279,9 +2281,16 @@
 
             &__tabs {
                 overflow-x: scroll;
+                width: 115%;
 
                 li:first-child {
-                    margin-left: calc(160px - (100vw - 320px));
+                    margin-left: calc(130px - (100vw - 320px));
+                }
+
+                @media (min-width: 480px) {
+                    li:first-child {
+                        margin-left: calc(0 - (100vw - 480px)) ;
+                    }
                 }
 
                 @media (min-width: 530px) {
@@ -2298,7 +2307,7 @@
                 padding-top: 1.25rem;
 
                 &--flex {
-                    @include media('desktop') {
+                    @media (min-width: 1024px) {
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-between;
@@ -2341,12 +2350,42 @@
         }
 
         #adults {
-            .hypophosphatasia-container__title {
-                margin-bottom: .125rem;
+            .hypophosphatasia-container {
+                &__title {
+                    margin-bottom: .125rem;
+                }
+
+                &__list {
+                    margin-bottom: 2.5rem;
+                }
+
+                &__list-item {
+                    margin-bottom: .625rem;
+                }
+
             }
 
-            .hypophosphatasia-container__list-item {
-                margin-bottom: .625rem;
+            .footnotes-container {
+                .hypophosphatasia-container__panel-footnote {
+                    margin: 0;
+
+                    &:first-child {
+                        margin-bottom: .9375rem;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 4.375rem;
+                    }
+                }
+            }
+
+            .highlight-information {
+                margin-bottom: 1.875rem;
+
+                &__footnote {
+                    font-size: .875rem;
+                    line-height: 1.0938rem;
+                }
             }
 
             .hypophosphatasia-container__panel-footnote {
@@ -2358,30 +2397,203 @@
                     margin-top: 0;
                 }
             }
+
+            @media (min-width: 1024px) {
+                .hypophosphatasia-container__panel-footnotes-main {
+                    padding-top: 1.25rem;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 100%;
+                }
+
+                .footnotes-container {
+                    width: 48%;
+                }
+            }
         }
 
         #children {
-            .hypophosphatasia-container__list-item {
-                margin-bottom: .625rem;
+            .hypophosphatasia-container {
+                &__title {
+                    margin-bottom: .3125rem;
+                }
+
+                &__list-item {
+                    margin-bottom: .625rem;
+                }
+
+                &__panel-footnote {
+                    margin-bottom: 3.75rem;
+                }
+
+                &__panel-chart {
+                    .hypophosphatasia-container__panel-footnote {
+                        margin-top: 0;
+                        margin-bottom: 5rem;
+                    }
+                }
+            }
+
+            .highlight-information {
+                &__footnote {
+                    font-size: .875rem;
+                    line-height: 1.0938rem;
+                    max-width: 23ch;
+
+                    strong {
+                        font-size: 1rem;
+                        line-height: 1.5rem;
+                    }
+
+                }
+            }
+
+            @media (min-width:  1024px) {
+                .hypophosphatasia-container__list {
+                    margin-bottom: 2.5rem;
+                }
             }
         }
 
         #neonates {
-            .hypophosphatasia-container__paragraph {
-                margin-bottom: .625rem;
+            .hypophosphatasia-container {
+                &__title {
+                    margin-bottom: .3125rem;
+                }
+
+                &__list {
+                    margin-bottom: .1875rem;
+
+                    &:first-of-type {
+                        margin-bottom: .625rem;
+                    }
+                }
+
+                &__paragraph {
+                    margin-bottom: 1.75rem;
+                }
+
+                &__list-item {
+                    margin-bottom: .3125rem;
+                }
             }
 
-            .hypophosphatasia-container__list-item {
-                margin-bottom: .3125rem;
+            @media (min-width: 1024px) {
+                .hypophosphatasia-container {
+                    &__list:first-of-type {
+                        margin-bottom: 2.8125rem;
+                    }
+
+                    &__paragraph {
+                        margin-bottom: .375rem;
+                    }
+
+                }
+
+                & > .hypophosphatasia-container__panel-chart {
+                    width: 50%;
+                }
+                & > .hypophosphatasia-container__panel-content {
+                    padding-bottom: 6.25rem;
+                    width: 45%;
+                }
+            }
+        }
+
+        @media (min-width: 1024px) {
+            padding-bottom: 0;
+
+            .hypophosphatasia-container {
+                &__title {
+                    margin-bottom: .9375rem;
+                }
+
+                &__content {
+                    padding-top: 4.375rem;
+                }
             }
         }
     }
 
     &--children {
         .wrapper {
-            @include media ('desktop') {
+            @media (min-width: 1024px) {
                 display: flex;
                 flex-wrap: nowrap;
+                justify-content: space-between;
+            }
+        }
+
+        .hypophosphatasia-container__content {
+            @media (min-width: 1024px) {
+                padding-top: 0;
+            }
+        }
+
+        .hypophosphatasia-container__paragraph.mbottom--50 {
+            margin-bottom: 3.125rem;
+        }
+
+        .hypophosphatasia-container__list {
+            margin-top: .9375rem;
+            margin-bottom: 2.1875rem;
+        }
+
+        @media (min-width: 1024px) {
+            padding-bottom: 0;
+
+            .hypophosphatasia-container {
+                &__paragraph {
+                    max-width: 53ch;
+                    margin-bottom: 1.875rem;
+
+                    &.mbottom--50 {
+                        margin-bottom: 1.875rem;
+                    }
+                }
+
+                &__list-item {
+                    max-width: 53ch;
+                }
+
+                &__content {
+                    padding-top: 0;
+                    width: 50%;
+                }
+
+                &__tabs-container {
+                    padding-top: 0;
+                    width: 45%;
+                }
+
+                &__title {
+                    margin-bottom: .4375rem;
+                }
+
+                &__panel {
+                    padding-top: 1.9375rem;
+                    height: 100%;
+
+                    &-footnote {
+                        margin-top: 70px;
+                    }
+                }
+            }
+
+            .wrapper {
+                padding-top: 4.375rem;
+            }
+        }
+
+        @include media('desktop') {
+            .hypophosphatasia-container {
+                &__content {
+                    width: 100%;
+                }
+
+                &__tabs-container {
+                    width: 100%;
+                }
             }
         }
     }
@@ -2419,25 +2631,40 @@
                 background-color: $color-dark-green;
                 border-radius: 0 581.76px 0 0;
                 content: '';
-                height: 150%;
-                right: -100%;
+                height: 38.2269rem;
+                right: -120%;
                 position: absolute;
-                top: -10px;
-                width: 1250px;
+                top: 0;
+                width: 67.7781rem;
                 z-index: -2;
 
                 @media (min-width: 800px) {
                     right: -65vw;
                 }
 
+                @media (min-width: 970px) {
+                    width: 93.75rem;
+                }
+
                 @media(min-width: 1081px) {
                     border-radius: 391.37px;
                     height: 225%;
-                    left: -50%;
+                    left: -90%;
                     top: -25%;
                     right: unset;
-                    width: 1268px;
+                    width: 79.25rem;
                     transform: rotate(-47.77deg);
+                }
+
+                @media (min-width: 1200px) {
+                    left: -60%;
+                }
+
+                @media (min-width: 1500px) {
+                    left: -90%;
+                    width: 156.25rem;
+                    height: 300%;
+                    top: -150%;
                 }
             }
 
@@ -2447,7 +2674,8 @@
                     font-size: 16px;
                     font-weight: 600;
                     line-height: 1.33rem;
-                    max-width: 35ch;
+                    margin-bottom: 0;
+                    max-width: 32ch;
 
                     @include media('tablet') {
                         padding: 0 .9375rem;
@@ -2470,7 +2698,7 @@
                         content: '×';
                         display: inline-block;
                         font-size: 60px;
-                        line-height: normal;
+                        line-height: 1;
                         vertical-align: middle;
                     }
 
@@ -2555,11 +2783,15 @@
             }
 
             .hypophosphatasia-container__paragraph {
-                max-width: 40ch;
+                max-width: 33ch;
                 text-align: left;
                 margin-left: 1.25rem;
 
-                @media(min-width: 1081px) {
+                @media (min-width: 530px) {
+                    max-width: 31ch;
+                }
+
+                @media (min-width: 1081px) {
                     max-width: 60ch;
                 }
 
@@ -2578,6 +2810,44 @@
     &--testimonial {
         .testimonial {
             overflow: unset;
+
+            @media (min-width: 1024px) {
+                padding-top: 10.625rem;
+                padding-bottom: 2.5rem;
+            }
+
+            &__image-container {
+                border-radius: 2.5rem;
+                height: 12.125rem;
+                max-width: 10.5rem;
+                overflow: hidden;
+
+                @media (min-width: 1024px) {
+                    height: 100%;
+                }
+            }
+
+            &--shape-right {
+                &::before {
+                    left: -15px;
+
+                    @media (min-width: 500px) {
+                        left: 0;
+                    }
+
+                    @media(min-width: 1024px) {
+                        --width-shape: 150.0625rem;
+                        --height-shape: calc(var(--width-shape) * 0.4);
+                        border-radius: 36.36rem;
+                        left: unset;
+                        margin-left: calc(var(--width-shape) * 0.55);
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 1024px) {
+            padding-bottom: 0;
         }
     }
 
@@ -2587,7 +2857,7 @@
     }
 
     .highlight-information {
-        margin-bottom: 2.6875rem;
+        margin-bottom: .625rem;
         max-width: 21.25rem;
     }
 
@@ -2616,7 +2886,7 @@
                 content: '';
                 height: 75%;
                 position: absolute;
-                width: 150%;
+                width: 200%;
                 z-index: -2;
             }
 
@@ -2676,19 +2946,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 2rem 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     position: relative;
     width: 100%;
 
-    @media (max-width: 1450px) {
-        overflow: hidden;
-        padding-left: .625rem;
-        padding-right: .625rem;
-        max-width: 100%;
-    }
-
     @include media('desktop') {
-        justify-content: space-around;
+        justify-content: space-between;
         padding: 0;
     }
 
@@ -2709,9 +2973,13 @@
             content: '';
             height: 100%;
             position: absolute;
-            left: 35%;
-            width: 100%;
+            left: 33%;
+            width: 110%;
             z-index: 0;
+        }
+
+        @media screen and (min-width: 1400px) {
+            left: 31%;
         }
     }
 
@@ -2775,7 +3043,7 @@
             display: flex
         }
 
-        @media (min-width: 1200px) and (max-width: 1300px) {
+        @media (min-width: 1200px) and (max-width: 1400px) {
             min-width: 37.5rem;
 
             .skeleton__word {
@@ -4947,14 +5215,6 @@
         margin-top: 0;
         margin-bottom: 0;
         padding: 0 0 1.375rem;
-
-        a {
-            word-wrap: break-word;
-
-            @media screen and (min-width: 500px) {
-                word-wrap: normal;
-            }
-        }
     }
 
     .testimonial {

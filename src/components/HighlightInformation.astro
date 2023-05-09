@@ -1,20 +1,22 @@
 ---
 export interface Props {
-  title?: string;
-  footnote?: string;
-  className?: string;
+    title?: string;
+    footnote?: string;
+    className?: string;
+    subtitle?: string;
 }
 
-    const { title = '', footnote, className = '' } = Astro.props;
+    const { title = '', footnote, className = '', subtitle = '' } = Astro.props;
 ---
 
 <article class={`highlight-information ${className}`}>
-    {title && <h4 class="highlight-information__title">{title}</h4>}
+    {title && <h4 class="highlight-information__title" set:html={title}></h4>}
+    {subtitle && <h5 class="highlight-information__subtitle" set:html={subtitle}></h4>}
     <section class="highlight-information__content">
         <slot name='content'></slot>
     </section>
     <h5 class="highlight-information__footnote">
-        <strong>{footnote}</strong>
+        <strong set:html={footnote}></strong>
         <slot name='footnote'></slot>
     </h5>
 </article>
