@@ -1,7 +1,7 @@
 .page-hero {
     background: $color-white;
     position: relative;
-    height: 12.5rem;
+    // height: 12.5rem;
     overflow: hidden;
 
     @media screen and (min-width: 1024px) {
@@ -17,7 +17,7 @@
 
         @media screen and (min-width: 768px) {
             justify-content: center;
-            padding: 0;
+            // padding: 0;
         }
     }
 
@@ -62,6 +62,10 @@
         line-height: 16.8px;
         font-weight: 500;
         text-transform: uppercase;
+    }
+
+    .page-hero__title {
+        margin-bottom: 4.5rem;
     }
 
     /*
@@ -120,15 +124,17 @@
     &#how-it-works-page-hero {
         .page-hero__title {
             color: $color-dark-green;
+            max-width: 22ch;
 
             @media screen and (min-width: 768px) {
-                max-width: 40.625rem;
+                // max-width: 40.625rem;
                 margin-bottom: 2.5rem;
+                max-width: 34ch;
             }
 
-            @media screen and (min-width: 1024px) {
+            /* @media screen and (min-width: 1024px) {
                 margin-bottom: 0;
-            }
+            } */
         }
 
         .shape--primary {
@@ -141,34 +147,42 @@
 
         .shape--secondary {
             z-index: 2;
-            right: -92px;
+            right: -165px;
             bottom: -365px;
             width: 1182.11px;
             height: 792.68px;
             border-radius: 416.484px;
             transform: rotate(34deg);
 
+            @media (min-width: 321px) {
+                right: -130px;
+            }
+
+            @media (min-width: 377px) {
+                right: -90px;
+            }
+
+            @include media('tablet') {
+                right: -50px;
+            }
+
             @media screen and (min-width: 1024px) {
-                right: auto;
-                left: -200px;
+                right: unset;
+                left: calc(85% - 100vw);
                 bottom: -413px;
                 transform: rotate(28deg);
             }
 
-            @media screen and (min-width: 1770px) {
-                left: -369px;
-                bottom: -336px;
-                width: 1761px;
+            @media (min-width: 1366px) {
+                bottom: -880px;
+                height: 1463.26px;
+                left: calc(25% - 100vw);
+                width: 2182.11px;
             }
 
-            @media screen and (min-width: 2220px) {
-                left: -200px;
-            }
-
-            @media screen and (min-width: 2715px) {
-                width: 2047px;
-                height: 872.68px;
-                bottom: -396px;
+            @media (min-width: 1520px) {
+                left: unset;
+                right: calc(100vw - 70%);
             }
         }
 

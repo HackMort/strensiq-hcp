@@ -5,13 +5,11 @@
     .custom-section__header {
         height: 5.5625rem;
         width: 100%;
-        background: $color-green;
-        border-bottom-right-radius: 1.875rem;
         display: flex;
         align-items: center;
+        position: relative;
 
         @media screen and (min-width: 1024px) {
-            max-width: max-content;
             min-width: 50.3125rem;
         }
 
@@ -19,15 +17,6 @@
             position: relative;
             margin: 0 auto;
             width: 100%;
-            max-width: calc(100% - 2rem);
-
-            @media screen and (min-width: 768px) {
-                max-width: calc(100% - 7.235rem);
-            }
-
-            @media screen and (min-width: 1440px) {
-                max-width: calc(100% - 11.235rem);
-            }
         }
 
         .custom-section__title {
@@ -49,6 +38,19 @@
             height: .1875rem;
             background: $color-white;
             border-radius: .1875rem;
+        }
+
+        &::before {
+            background: $color-green;
+            border-bottom-right-radius: 1.875rem;
+            content: '';
+            height: 100%;
+            position: absolute;
+            width: 100%;
+
+            @media (min-width: 1024px) {
+                width: 50%;
+            }
         }
     }
 
