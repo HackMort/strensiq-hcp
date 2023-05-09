@@ -2116,7 +2116,7 @@
             line-height: .9rem;
 
             &--only-mobile {
-                @include media('desktop') {
+                @media (min-width: 1024px) {
                     display: none;
                 }
             }
@@ -2124,7 +2124,7 @@
             &--only-desktop {
                 display: none;
 
-                @include media('desktop') {
+                @media (min-width: 1024px) {
                     display: block;
                 }
             }
@@ -2138,7 +2138,7 @@
                     }
                 }
 
-                @include media('desktop') {
+                @media (min-width: 1024px) {
                     bottom: 0;
                     position: absolute;
                 }
@@ -2215,7 +2215,7 @@
                 padding-top: 1.25rem;
 
                 &--flex {
-                    @include media('desktop') {
+                    @media (min-width: 1024px) {
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-between;
@@ -2306,7 +2306,7 @@
                 }
             }
 
-            @media (min-width: 1200px) {
+            @media (min-width: 1024px) {
                 .hypophosphatasia-container__panel-footnotes-main {
                     padding-top: 1.25rem;
                     flex-direction: row;
@@ -2356,7 +2356,7 @@
                 }
             }
 
-            @media (min-width:  1200px) {
+            @media (min-width:  1024px) {
                 .hypophosphatasia-container__list {
                     margin-bottom: 2.5rem;
                 }
@@ -2386,7 +2386,7 @@
                 }
             }
 
-            @media (min-width: 1200px) {
+            @media (min-width: 1024px) {
                 .hypophosphatasia-container {
                     &__list:first-of-type {
                         margin-bottom: 2.8125rem;
@@ -2408,7 +2408,7 @@
             }
         }
 
-        @media (min-width: 1200px) {
+        @media (min-width: 1024px) {
             padding-bottom: 0;
 
             .hypophosphatasia-container {
@@ -2425,14 +2425,15 @@
 
     &--children {
         .wrapper {
-            @include media ('desktop') {
+            @media (min-width: 1024px) {
                 display: flex;
                 flex-wrap: nowrap;
+                justify-content: space-between;
             }
         }
 
         .hypophosphatasia-container__content {
-            @include media('desktop') {
+            @media (min-width: 1024px) {
                 padding-top: 0;
             }
         }
@@ -2446,8 +2447,7 @@
             margin-bottom: 2.1875rem;
         }
 
-
-        @media (min-width: 1200px) {
+        @media (min-width: 1024px) {
             padding-bottom: 0;
 
             .hypophosphatasia-container {
@@ -2466,10 +2466,12 @@
 
                 &__content {
                     padding-top: 0;
+                    width: 50%;
                 }
 
                 &__tabs-container {
                     padding-top: 0;
+                    width: 45%;
                 }
 
                 &__title {
@@ -2489,7 +2491,18 @@
             .wrapper {
                 padding-top: 4.375rem;
             }
+        }
 
+        @include media('desktop') {
+            .hypophosphatasia-container {
+                &__content {
+                    width: 100%;
+                }
+
+                &__tabs-container {
+                    width: 100%;
+                }
+            }
         }
     }
 
@@ -2841,19 +2854,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 2rem 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     position: relative;
     width: 100%;
 
-    @media (max-width: 1450px) {
-        overflow: hidden;
-        padding-left: .625rem;
-        padding-right: .625rem;
-        max-width: 100%;
-    }
-
     @include media('desktop') {
-        justify-content: space-around;
+        justify-content: space-between;
         padding: 0;
     }
 
@@ -2874,7 +2881,7 @@
             content: '';
             height: 100%;
             position: absolute;
-            left: 34%;
+            left: 33%;
             width: 110%;
             z-index: 0;
         }
