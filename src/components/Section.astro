@@ -15,10 +15,12 @@ id ? id : `custom-section-${randomNumber}`;
 
 <section id={id} class={classnames}>
   <div class="custom-section__header">
-    <div class="custom-section__header-wrapper">
-      <div class="custom-section__header-content">
-        <slot name="header" />
-        <div class="custom-section__header-line-shape"></div>
+    <div class="wrapper">
+      <div class="custom-section__header-wrapper">
+        <div class="custom-section__header-content">
+          <slot name="header" />
+          <div class="custom-section__header-line-shape"></div>
+        </div>
       </div>
     </div>
   </div>
