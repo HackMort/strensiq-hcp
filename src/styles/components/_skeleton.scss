@@ -95,6 +95,18 @@
                     margin: 0 auto;
                     right: 0;
                 }
+
+                &[data-vertical-line="bottom"] {
+                    &:after {
+                        top: 100%;
+                    }
+                }
+
+                &[data-vertical-line="top"] {
+                    &:after {
+                        bottom: 100%;
+                    }
+                }
             }
 
             &[data-horizontal-line="left"] {
@@ -197,10 +209,6 @@
             --point-active-before-width: 0;
             right: 30%;
             top: 25%;
-
-            @media (min-width: 365px) {
-                --point-active-before-width: 12.1875rem;
-            }
 
             .skeleton__word {
                 left: calc(var(--point-before-width) * -2);
