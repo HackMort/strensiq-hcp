@@ -16,7 +16,7 @@ const internalNavLinks = [
 ];
 ---
 
-<Layout title="Hypophosphatasia" displayReferences={true}>
+<Layout title="Hypophosphatasia">
   <PageHero pageId="hypophosphatasia">
     <h1 class="page-hero__title">Hypophosphatasia can be damaging<sup>1-4</sup></h1>
   </PageHero>
@@ -44,7 +44,7 @@ const internalNavLinks = [
         >
           <span slot="content">&#60;40 U/L</span>
         </HighlightInformation>
-        <p class="hypophosphatasia-container__paragraph"><sup>*</sup>Limitations: An alkaline phosphatase level of below 40 U/L is not conclusive for a diagnosis of hypophosphatasia. Patient should be evaluated for other symptoms of hypophosphatasia and differential diagnoses should be ruled out.</p>
+        <p class="hypophosphatasia-container__paragraph mbottom--50"><sup>*</sup>Limitations: An alkaline phosphatase level of below 40 U/L is not conclusive for a diagnosis of hypophosphatasia. Patient should be evaluated for other symptoms of hypophosphatasia and differential diagnoses should be ruled out.</p>
         <HighlightInformation
           title="IN CHILDREN, low ranges"
           footnote="based on age and sex<sup>1,12,13</sup>"
@@ -63,12 +63,6 @@ const internalNavLinks = [
             </p>
           </li>
         </ul>
-        <p class="hypophosphatasia-container__footnote">
-          <sup>*</sup>Limitations: An alkaline phosphatase level of below 40 U/L
-          is not conclusive for a diagnosis of hypophosphatasia. Patient should
-          be evaluated for other symptoms of hypophosphatasia and differential
-          diagnoses should be ruled out.
-        </p>
       </section>
       <section class="hypophosphatasia-container__tabs-container">
         <ul role="tablist" class="hypophosphatasia-container__tabs">
@@ -95,7 +89,7 @@ const internalNavLinks = [
           <section class="hypophosphatasia-container__panel-content">
             <picture class="hypophosphatasia-container__panel-chart">
               <source
-                media="(min-width: 1200px)"
+                media="(min-width: 768px)"
                 srcset="/assets/images/hypophosphatasia/chart-desktop-female.png"
               />
               <img
@@ -123,7 +117,7 @@ const internalNavLinks = [
           <section class="hypophosphatasia-container__panel-content">
             <picture class="hypophosphatasia-container__panel-chart">
               <source
-                media="(min-width: 1200px)"
+                media="(min-width: 768px)"
                 srcset="/assets/images/hypophosphatasia/chart-desktop-male.png"
               />
               <img
@@ -145,6 +139,7 @@ const internalNavLinks = [
     <div class="wrapper">
       <Testimonial
         authorInformation="Eric Rush, MD, Clinical Geneticist"
+        authorDescription="Alexion-sponsored speaker"
         page="hypophosphatasia"
         shapeType="right"
       >
@@ -278,7 +273,7 @@ const internalNavLinks = [
             <section class="hypophosphatasia-container__panel-content">
               <picture class="hypophosphatasia-container__panel-chart">
                 <source
-                  media="(min-width: 1200px)"
+                  media="(min-width: 768px)"
                   srcset="/assets/images/hypophosphatasia/chart-desktop-neonates.png"
                 />
                 <img
@@ -342,7 +337,7 @@ const internalNavLinks = [
             <section class="hypophosphatasia-container__panel-content">
               <picture class="hypophosphatasia-container__panel-chart">
                 <source
-                  media="(min-width: 1200px)"
+                  media="(min-width: 768px)"
                   srcset="/assets/images/hypophosphatasia/chart-desktop-children.png"
                 />
                 <img
@@ -378,18 +373,12 @@ const internalNavLinks = [
             </ul>
             <HighlightInformation
               title="According to the global HPP registry (N=148),<sup>2§</sup>"
-              footnote="adults with reported HPP manifestations <18 years experienced"
+              subtitle="adults with reported HPP manifestations &lt;18 years experienced"
             >
               <span slot="content">24.5<sub> years</sub></span>
               <span slot="footnote">median diagnostic delay</span
               >
             </HighlightInformation>
-            <p class="hypophosphatasia-container__panel-footnote hypophosphatasia-container__panel-footnote--only-desktop no--margin-bottom">
-              <sup>‡</sup>Data collected from patients and caregivers via 2 survey instruments (web-based and phone interviews) to evaluate patient-reported symptomatology and burden of disease of hypophosphatasia (N=125). The majority of patients in this study (67%) reported pediatric onset of hypophosphatasia symptoms. Of patients reporting adult-onset hypophosphatasia (27%), 50% (17/34) reported history or surgeries suggestive of pediatric onset of symptoms.<sup>4</sup>
-            </p>
-            <p class="hypophosphatasia-container__panel-footnote hypophosphatasia-container__panel-footnote--only-desktop no--margin-top">
-              <sup>§</sup>Observational, multinational, prospective Global HPP Registry study conducted in adults (n=148; ≥18 years) from January 2015–September 2017.<sup>2</sup>
-            </p>
           </section>
           <section class="hypophosphatasia-container__panel-chart">
             <h5 class="hypophosphatasia-container__panel-title">
@@ -398,7 +387,7 @@ const internalNavLinks = [
             <section class="hypophosphatasia-container__panel-content">
               <picture class="hypophosphatasia-container__panel-chart">
                 <source
-                  media="(min-width: 1200px)"
+                  media="(min-width: 768px)"
                   srcset="/assets/images/hypophosphatasia/chart-desktop-adults.png"
                 />
                 <img
@@ -409,10 +398,19 @@ const internalNavLinks = [
             </section>
           </section>
           <section
-            class="hypophosphatasia-container__panel-content hypophosphatasia-container__panel-content--flex"
+            class="hypophosphatasia-container__panel-content
+            hypophosphatasia-container__panel-footnotes-main hypophosphatasia-container__panel-content--flex"
           >
-            <div class="footnotes-container">
-              <p class="hypophosphatasia-container__panel-footnote hypophosphatasia-container__panel-footnote--only-mobile">
+            <div class="footnotes-container footnotes-container--left">
+              <p class="hypophosphatasia-container__panel-footnote hypophosphatasia-container__panel-footnote--only-desktop no--margin-bottom">
+                <sup>‡</sup>Data collected from patients and caregivers via 2 survey instruments (web-based and phone interviews) to evaluate patient-reported symptomatology and burden of disease of hypophosphatasia (N=125). The majority of patients in this study (67%) reported pediatric onset of hypophosphatasia symptoms. Of patients reporting adult-onset hypophosphatasia (27%), 50% (17/34) reported history or surgeries suggestive of pediatric onset of symptoms.<sup>4</sup>
+              </p>
+              <p class="hypophosphatasia-container__panel-footnote hypophosphatasia-container__panel-footnote--only-desktop no--margin-top">
+                <sup>§</sup>Observational, multinational, prospective Global HPP Registry study conducted in adults (n=148; ≥18 years) from January 2015–September 2017.<sup>2</sup>
+              </p>
+            </div>
+            <div class="footnotes-container footnotes-container--right">
+              <p class="hypophosphatasia-container__panel-footnote">
                 <sup>b</sup>Seven patients did not provide age at onset.
               </p>
               <p class="hypophosphatasia-container__panel-footnote hypophosphatasia-container__panel-footnote--only-mobile no--margin-bottom">
@@ -444,8 +442,7 @@ const internalNavLinks = [
         class="hypophosphatasia-container__content hypophosphatasia-container__content--treatments"
       >
         <p class="hypophosphatasia-container__paragraph">
-          Treatments used for other more common diseases can be harmful to
-          patients with hypophosphatasia:
+          Treatments used for other more common diseases can be harmful to patients with hypophosphatasia<sup>4,32,34</sup>:
         </p>
         <ul class="hypophosphatasia-container__list">
           <li class="hypophosphatasia-container__list-item">
@@ -476,4 +473,9 @@ const internalNavLinks = [
     linkText="How it works"
     linkUrl="/how-it-works"
   />
+  <References slot="references">
+    <p>
+      <strong>References: 1.</strong> Rockman-Greenberg C. Hypophosphatasia. <i>Pediatr Endocrinol Rev.</i> 2013;10(suppl 2):380-388. <strong>2.</strong> Hӧgler W, Langman C, Gomes da Silva H, et al. Diagnostic delay is common among patients with hypophosphatasia: initial findings from a longitudinal, prospective, global registry. <i>BMC Musculoskelet Disord.</i> 2019;20(1):80. <strong>3.</strong> Seefried L, Dahir K, Petryk A, et al. Burden of illness in adults with hypophosphatasia: data from the Global Hypophosphatasia Patient Registry. <i>J Bone Miner Res.</i> 2020;35(11):2171-2178. <strong>4.</strong> Weber TJ, Sawyer EK, Moseley S, Odrljin T, Kishnani PS. Burden of disease in adult patients with hypophosphatasia: results from two patient-reported surveys. <i>Metabolism.</i> 2016;65(10):1522-1530. <strong>5.</strong> Bianchi ML, Bishop NJ, Guañabens N, et al; Rare Bone Disease Action Group of the European Calcified Tissue Society Hypophosphatasia in adolescents and adults: overview of diagnosis and treatment. <i>Osteoporos Int.</i> 2020;31(8):1445–1460. <strong>6.</strong> McKiernan FE, Berg RL, Fuehrer J. Clinical and radiographic findings in adults with persistent hypophosphatasemia. <i>J Bone Miner Res.</i> 2014;29(7):1651–1660. <strong>7.</strong> Adeli K, Higgins V, Nieuwesteeg M, et al. Biochemical marker reference values across pediatric, adult, and geriatric ages: establishment of robust pediatric and adult reference intervals on the basis of the Canadian Health Measures Survey. <i>Clin Chem.</i> 2015;61(8):1049-1062. <strong>8.</strong> Schumann G, Klauke R, Canalias F, et al. IFCC primary reference procedures for the measurement of catalytic activity concentrations of enzymes at 37°C. Part 9: reference procedure for the measurement of catalytic concentration of alkaline phosphatase. <i>Clin Chem Lab Med.</i> 2011;49(9):1439-1446. <strong>9.</strong> Quest Diagnostics. Alkaline phosphatase. Accessed April 3, 2023. <a href="https://testdirectory.questdiagnostics.com/test/test-detail/234/alkaline-phosphatase?p=r&q=Alkaline%20Phosphatase&cc=MASTER" target="_blank">https://testdirectory.questdiagnostics.com/test/test-detail/234/alkaline-phosphatase?p=r&q=Alkaline%20Phosphatase&cc=MASTER</a> <strong>10.</strong> LabCorp. Alkaline phosphatase. Accessed April 3, 2023. <a href="https://www.labcorp.com/tests/001107/alkaline-phosphatase" target="_blank">https://www.labcorp.com/tests/001107/alkaline-phosphatase</a> <strong>11.</strong> ARUP Laboratories. Alkaline phosphatase isoenzymes, serum or plasma. Accessed April 3, 2023. <a href="https://ltd.aruplab.com/Tests/Pub/0021020" target="_blank">https://ltd.aruplab.com/Tests/Pub/0021020</a> <strong>12.</strong> Colantonio DA, Kyriakopoulou L, Chan MK, et al. Closing the gaps in pediatric laboratory reference intervals: a CALIPER database of 40 biochemical markers in a healthy and multiethnic population of children. <i>Clin Chem.</i> 2012;58(5):854–868. <strong>13.</strong> Bishop N, Munns CF, Ozono K. Transformative therapy in hypophosphatasia. <i>Arch Dis Child.</i> 2016;101(6):514–515. <strong>14.</strong> Vieira LHR, Peixoto KC, Flósi CL, de Farias MLF, Madeira M. Active search of adult patients with persistently low serum alkaline phosphatase levels for the diagnosis of hypophosphatasia. <i>Arch Endocrinol Metab.</i> 2021;65(3):289-294. <strong>15.</strong> Rush ET, Moseley S, Petryk A. Burden of disease in pediatric patients with hypophosphatasia: results from the HPP Impact Patient Survey and the HPP Outcomes Study Telephone interview. <i>Orphanet J Rare Dis.</i> 2019;14(1):201. <strong>16.</strong> Pierpont EI, Simmons JH, Spurlock KJ, et al. Impact of pediatric hypophosphatasia on behavioral health and quality of life. <i>Orphanet J Rare Dis.</i> 2021;16(1):80. <strong>17.</strong> Kishnani PS, Rush ET, Arudne P, et al. Monitoring guidance for patients with hypophosphatasia treated with asfotase alfa. <i>Mol Genet Metab.</i> 2017;122(1-2):4-17. <strong>18.</strong> Colazo JM, Hu JR, Dahir KM, et al. Neurological symptoms in hypophosphatasia. <i>Osteoporos Int.</i> 2019;30(2):469-480. <strong>19.</strong> Fallon MD, Teitelbaum SL, Weinstein R, et al. Hypophosphatasia: clinicopathologic comparison of the infantile, childhood, and adult forms. <i>Medicine (Baltimore).</i> 1984;63(1):12–24. <strong>20.</strong> Whyte MP, Leung E, Wilcox W, et al. Natural history of perinatal and infantile hypophosphatasia: a retrospective study. <i>J Pediatr.</i> 2019;209:116–124.e4. <strong>21.</strong> NORD. Hypophosphatasia. Rare Disease. 2022. Accessed March 30, 2023. <a href="https://rarediseases.org/rare-diseases/hypophosphatasia/" target="_blank">https://rarediseases.org/rare-diseases/hypophosphatasia/</a> <strong>22.</strong> Mornet E, Nunes ME. Hypophosphatasia. In: Adam MP, Ardinger HH, Pagon RA, et al, eds. <i>GeneReviews®.</i> University of Washington; 2007. Accessed March 30, 2023. <a href="https://www.ncbi.nlm.nih.gov/books/NBK1150/" target="_blank">https://www.ncbi.nlm.nih.gov/books/NBK1150/</a> <strong>23.</strong> Whyte MP. Hypophosphatasia: nature’s window on alkaline phosphatase function in humans. In: Bilzikian JP, ed. <i>Principles of Bone Biology.</i> 3rd ed. Academic Press; 2008:1573–1598. <strong>24.</strong> Baumgartner-Sigl S, Haberlandt E, Mumm S, et al. Pyridoxine-responsive seizures as the first symptom of infantile hypophosphatasia caused by two novel missense mutations (c.677T&gt;C, p.M226T; c.1112C&gt;T, p.T371I) of the tissue-nonspecific alkaline phosphatase gene. Bone. 2007;40(6):1655–1661. <strong>25.</strong> Eade AW, Swannell AJ, Williamson N. Pyrophosphate arthropathy in hypophosphatasia. <i>Ann Rheum Dis.</i> 1981;40(2):164–170. <strong>26.</strong> Braunstein NA. Multiple fractures, pain, and severe disability in a patient with adult-onset hypophosphatasia. <i>Bone Rep.</i> 2015;4:1-4. <strong>27.</strong> Salles JP. Hypophosphatasia: biological and clinical aspects, avenues for therapy. <i>Clin Biochem Rev.</i> 2020;41(1):13–27. <strong>28.</strong> Conti F, Ciullini L, Pugliese G. Hypophosphatasia: clinical manifestation and burden of disease in adult patients. <i>Clin Cases Miner Bone Metab.</i> 2017;14(2):230–234. <strong>29.</strong> Whyte M, Leung E, Wilcox W, et al. Hypophosphatasia: a retrospective natural history study of the severe perinatal and infantile forms. Poster presented at: Pediatric Academic Societies and Asian Society for Pediatric Research Joint Meeting; May 3-6, 2014; Vancouver, BC, Canada. <strong>30.</strong> Mornet E, Nunes ME. Hypophosphatasia. In: Adam MP, Ardinger HH, Pagon RA, et al, eds. <i>GeneReviews®.</i> University of Washington; 2007. Accessed March 30, 2023. <a href="http://www.ncbi.nlm.nih.gov/books/NBK1150/" target="_blank">http://www.ncbi.nlm.nih.gov/books/NBK1150/</a> <strong>31.</strong> Mohn A, De Leonibus C, de Giorgis T, Mornet E, Chiarelli F. Hypophosphatasia in a child with widened anterior fontanelle: lessons learned from late diagnosis and incorrect treatment. <i>Acta Paediatr.</i> 2011 Jul;100(7):e43-e46. <strong>32.</strong> Sutton RA, Mumm S, Coburn SP, Ericson KL, Whyte MP. “Atypical femoral fractures” during bisphosphonate exposure in adult hypophosphatasia. <i>J Bone Miner Res.</i> 2012;27(5):987–994. <strong>33.</strong> Szabo SM, Tomazos IC, Petryk A, Powell LC, et al. Frequency and age at occurrence of clinical manifestations of disease in patients with hypophosphatasia: a systematic literature review. Orphanet <i>J Rare Dis.</i> 2019;14(1):85. <strong>34.</strong> Shapiro JR, Lewiecki EM. Hypophosphatasia in adults: clinical assessment and treatment considerations. <i>J Bone Miner Res.</i> 2017;32(10):1977–1980.
+    </p>
+  </References>
 </Layout>
