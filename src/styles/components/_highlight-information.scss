@@ -4,6 +4,10 @@
     &__title {
         color: $color-dark-gray;
         text-transform: uppercase;
+
+        sup {
+            text-transform: none;
+        }
     }
 
     &__content {
@@ -52,6 +56,14 @@
         left: 0;
         line-height: 1.5rem;
         position: absolute;
+    }
+
+    &__subtitle {
+        color: $color-dark-green;
+        font-size: 1rem;
+        font-weight: 900;
+        line-height: 1.5rem;
+        max-width: 35ch;
     }
 
     &--contains-subcontent {

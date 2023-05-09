@@ -95,6 +95,18 @@
                     margin: 0 auto;
                     right: 0;
                 }
+
+                &[data-vertical-line="bottom"] {
+                    &:after {
+                        top: 100%;
+                    }
+                }
+
+                &[data-vertical-line="top"] {
+                    &:after {
+                        bottom: 100%;
+                    }
+                }
             }
 
             &[data-horizontal-line="left"] {
@@ -107,9 +119,8 @@
                 }
 
                 &[data-vertical-line="bottom"],
-                &[data-vertical-line="top"]{
+                &[data-vertical-line="top"] {
                     &::after {
-                        bottom: 50%;
                         right: calc(100% + var(--point-active-before-width));
                     }
                 }
@@ -127,27 +138,26 @@
                 &[data-vertical-line="top"] {
                     &::after {
                         left: calc(100% + var(--point-active-before-width));
-                        top: 50%;
                     }
                 }
             }
 
             &[data-vertical-line="bottom"] {
                 &::after {
-                    top: 120%;
+                    top: 45%;
                 }
             }
 
             &[data-vertical-line="top"] {
                 &::after {
-                    bottom: 120%;
+                    bottom: 45%;
                 }
             }
         }
 
         &[data-word="neurologic"] {
             --point-before-width: 8.8775rem;
-            --point-active-before-width: 3.0938rem;
+            --point-active-before-width: 1.25rem;
             right: 35%;
             top: 5%;
         }
@@ -170,8 +180,8 @@
         }
 
         &[data-word="renal"] {
-            --point-before-width: 5.4375rem;
-            --point-active-before-width: .3125rem;
+            --point-before-width: 5rem;
+            --point-active-before-width: 5rem;
             right: 35%;
             top: 54%;
         }
@@ -185,18 +195,25 @@
 
         &[data-word="skeletal"] {
             --point-before-width: 6.5625rem;
-            --point-active-before-width: 1.875rem;
+            --point-active-before-width: 7.1875rem;
             right: 71%;
             top: 71%;
+
+            .skeleton__word {
+                top: -2.8125rem;
+                width: 13ch;
+            }
         }
 
-        &[data-word="orthopedic"] {
-            --point-active-before-width: 50vw;
+        &[data-word="growth"] {
+            --point-active-before-width: 0;
             right: 30%;
-            top: 90%;
+            top: 25%;
 
-            @media (min-width: 365px) {
-                --point-active-before-width: 12.1875rem;
+            .skeleton__word {
+                left: calc(var(--point-before-width) * -2);
+                max-width: 13ch;
+                top: -2.5rem;
             }
         }
 
@@ -225,10 +242,10 @@
             background-color: $color-white;
             border-radius: 0 0 0 1.875rem;
             border-top: .7881rem solid $color-green;
-            height: 8rem;
             margin: 0 auto;
             left: 0;
             max-width: 19rem;
+            padding-bottom: 1.25rem;
             padding-top: 1.125rem;
             position: absolute;
             right: 0;
@@ -250,17 +267,27 @@
     &__word {
         color: $color-green;
         cursor: pointer;
-        font-size: 21px;
+        font-size: 20px;
         font-weight: 900;
         left: calc(var(--point-before-width) * -1);
-        line-height: 1.7969rem;
+        line-height: 1.4375rem;
         position: absolute;
-        top: -1.625rem;
+        top: -1.5625rem;
         transition: none;
 
         &:hover {
             color: $color-white;
         }
+    }
+
+    &__footnote {
+        color: $color-white;
+        font-size: .75rem;
+        font-weight: 300;
+        line-height: .9rem;
+        position: absolute;
+        bottom: .625rem;
+        left: 1.25rem;
     }
 
     &--desktop {
@@ -302,7 +329,7 @@
 
                     &[data-vertical-line="bottom"] {
                         &::before {
-                            bottom: -20px;
+                            bottom: calc((var(--point-active-after-height) * -1) - 5px);
                             margin: 0;
                             top: unset;
                         }
@@ -345,11 +372,11 @@
                 }
 
                 &[data-word="dental"] {
-                    --point-before-width: 8.1875rem;
+                    --point-before-width: 6.4375rem;
                 }
 
                 &[data-word="respiratory"] {
-                    --point-before-width: 7.25rem;
+                    --point-before-width: 5.3125rem;
                 }
 
                 &[data-word="muscular"] {
@@ -362,6 +389,15 @@
 
                 &[data-word="skeletal"] {
                     --point-before-width: 10.1875rem;
+
+                    .skeleton__word {
+                        right: 58px;
+                        top: -40px;
+                    }
+                }
+
+                &[data-word="growth"] {
+                    --point-before-width: 4.125rem;
                 }
             }
 
@@ -378,6 +414,20 @@
                 line-height: 3.125rem;
                 right: calc(var(--point-before-width) + 100%);
                 top: -1.125rem;
+
+                .smaller {
+                    font-size: 1.25rem;
+                    line-height: 1.5625rem;
+                    position: absolute;
+                    left: 0;
+                    bottom: -1.25rem;
+                }
+            }
+
+            &__footnote {
+                left: unset;
+                right: -9.375rem;
+                bottom: 1.25rem;
             }
         }
     }
