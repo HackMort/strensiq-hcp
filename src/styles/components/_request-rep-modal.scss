@@ -89,6 +89,7 @@
         width: 100%;
         justify-content: center;
         margin-bottom: 2.6875rem;
+
         &::after {
             display: none;
         }
@@ -110,5 +111,26 @@
                 grid-column: span 2 / span 2;
             }
         }
+    }
+}
+
+.request-a-rep__content .form {
+    &.hidden {
+        display: none;
+    }
+}
+
+.thank__you {
+    display: flex;
+    justify-content: center;
+    min-height: 300px;
+    flex-direction: column;
+
+    &.hidden {
+        display: none;
+    }
+
+    .request-a-rep__title {
+        margin-bottom: 2rem;
     }
 }
