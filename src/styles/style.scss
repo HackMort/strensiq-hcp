@@ -1512,9 +1512,20 @@
 
 //-------------------------------------------------------------how it works page -------------------------------------------------------------
 .hiw {
+
+    .hiw-cta {
+        .cta__heading {
+            max-width: 550px;
+        }
+    }
+
     .custom-section {
 
         padding-top: 1.875rem;
+
+        @media screen and (min-width: 1200px) {
+            padding-top: 3.875rem;
+        }
 
     }
 
@@ -1753,7 +1764,7 @@
                 }
 
                 @media screen and (min-width:1400px) {
-                    margin-top: 6.125rem;
+                    margin-top: 5.05rem;
                 }
             }
         }
@@ -1814,7 +1825,7 @@
 
                 .hpp__sub-title {
                     margin-bottom: .375rem;
-                    max-width: 41ch;
+                    max-width: 42ch;
                 }
 
                 .hpp__normal-text {
@@ -1826,6 +1837,14 @@
 
     #strensiq-moa {
         padding-bottom: 0;
+
+        @media screen and (min-width: 1200px) {
+            margin-top: 3rem;
+        }
+
+        .custom-section__title {
+            margin-bottom: 0.6rem;
+        }
 
         .hpp--third {
             .hpp__title {
@@ -1839,7 +1858,7 @@
             }
 
             .hpp__block--right {
-                .hpp__item  {
+                .hpp__item {
                     margin-bottom: .4375rem;
                 }
 
@@ -2108,7 +2127,7 @@
 
         li a {
             font-weight: 700;
-            padding: .625rem ;
+            padding: .625rem;
         }
     }
 
@@ -2289,7 +2308,7 @@
 
                 @media (min-width: 480px) {
                     li:first-child {
-                        margin-left: calc(0 - (100vw - 480px)) ;
+                        margin-left: calc(0 - (100vw - 480px));
                     }
                 }
 
@@ -2448,7 +2467,7 @@
                 }
             }
 
-            @media (min-width:  1024px) {
+            @media (min-width: 1024px) {
                 .hypophosphatasia-container__list {
                     margin-bottom: 2.5rem;
                 }
@@ -2490,10 +2509,11 @@
 
                 }
 
-                & > .hypophosphatasia-container__panel-chart {
+                &>.hypophosphatasia-container__panel-chart {
                     width: 50%;
                 }
-                & > .hypophosphatasia-container__panel-content {
+
+                &>.hypophosphatasia-container__panel-content {
                     padding-bottom: 6.25rem;
                     width: 45%;
                 }
@@ -5211,7 +5231,7 @@
 
 /* Home */
 .home {
-    & + .references {
+    &+.references {
         margin-top: 0;
         margin-bottom: 0;
         padding: 0 0 1.375rem;
