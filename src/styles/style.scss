@@ -1077,7 +1077,7 @@
             font-size: 1.875rem;
             line-height: 2.3438rem;
             margin-top: 2rem;
-            max-width: 33.25rem;
+            max-width: 35ch;
         }
 
         @media screen and (min-width: 1100px) {
@@ -1306,9 +1306,9 @@
         padding-bottom: 1rem;
 
         @media screen and (min-width: 1100px) {
-            padding-top: 2rem;
+            padding-top: 4rem;
             padding-bottom: 0;
-            padding-left: 5rem;
+            padding-left: 7rem;
 
             .wrapper {
                 max-width: 100%;
@@ -1500,6 +1500,10 @@
             } */
         }
 
+        @media screen and (min-width: 1366px) {
+            grid-template-columns: 555px 1fr;
+        }
+
         @media screen and (min-width: 1440px) {
             // padding: 0 4.2813rem;
             margin-right: auto;
@@ -1522,6 +1526,8 @@
 
             @media screen and (min-width: 1100px) {
                 display: block;
+                top: 285px;
+                left: 40px;
             }
 
             @media screen and (min-width: 1365px) {
@@ -1541,6 +1547,17 @@
 }
 
 .toolkit__cta {
+
+    .cta__text {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 34ch;
+
+        @include media('tablet') {
+            max-width: 100%;
+        }
+    }
+
     @media screen and (max-width: 375px) {
         .cta__heading {
             max-width: 100%;
