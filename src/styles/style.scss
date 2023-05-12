@@ -917,9 +917,9 @@
 //Dosing page
 .dosing__page-hero {
     .page-hero__title {
-        br {
-            display: none;
-        }
+        // br {
+        //     display: none;
+        // }
 
         @media screen and (min-width: 1024px) {
             br {
@@ -3347,6 +3347,14 @@
             font-size: .875rem;
             line-height: 1.125rem;
             margin-bottom: 1.25rem;
+            max-width: 300px;
+            margin-right: auto;
+            margin-left: auto;
+
+            @media screen and (min-width: 600px) {
+                max-width: 100%;
+
+            }
 
             @media screen and (min-width: 1300px) {
                 font-size: 1.125rem;
@@ -3411,7 +3419,7 @@
             max-width: 79.3125rem;
         }
 
-        @media screen and (min-width: 1040px) {
+        @media screen and (min-width: 1024px) {
             align-items: end;
         }
 
@@ -3421,11 +3429,13 @@
         }
 
         @media screen and (min-width: 1340px) {
-            align-items: unset;
+            // align-items: unset;
         }
     }
 
     &__first {
+        position: relative;
+        z-index: 2;
 
         @media screen and (min-width: 850px) {
             max-width: 31.625rem;
@@ -3440,7 +3450,7 @@
         }
 
         &__title {
-            text-align: center;
+            // text-align: center;
             font-style: normal;
             font-weight: 700;
             font-size: 1.25rem;
@@ -3505,7 +3515,7 @@
                 line-height: 2.4375rem;
             }
 
-            @media screen and (min-width: 1340px) {
+            @media screen and (min-width: 1400px) {
                 max-width: unset;
                 font-size: 4.375rem;
                 letter-spacing: -0.03em;
@@ -3590,9 +3600,11 @@
             }
 
             @media screen and (min-width: 800px) {
-                right: -14.5625rem;
+                right: -17.5625rem;
                 bottom: -22.8125rem;
                 width: 54.7406rem;
+                height: 35rem;
+                z-index: 1;
             }
 
             @media screen and (min-width: 890px) {
@@ -3608,7 +3620,7 @@
                 transform: rotate(-55deg);
             }
 
-            @media screen and (min-width: 1340px) {
+            @media screen and (min-width: 1400px) {
                 right: -12.6875rem;
                 bottom: -53.4375rem;
                 width: 95.6156rem;
@@ -3628,7 +3640,8 @@
 
     &__list {
         max-width: 19.5rem;
-        margin: auto;
+        margin-left: 1rem;
+        margin-bottom: 0.5rem;
 
         @media screen and (min-width: 517px) {
             max-width: 28.5rem;
@@ -3662,6 +3675,33 @@
     }
 }
 
+.dosing__cta {
+    .cta__heading {
+        max-width: 100%;
+
+        br:not(.mobile) {
+            display: block;
+
+            @media screen and (min-width: 768px) {
+                display: none;
+            }
+
+            &.mobile {
+
+                @media screen and (min-width: 768px) {
+                    display: block;
+                }
+            }
+
+
+        }
+
+
+
+
+    }
+}
+
 .alp-levels {
 
     padding-top: 1.875rem;
@@ -3679,7 +3719,7 @@
 
     &__list {
         max-width: 19.5rem;
-        margin: auto;
+        margin-left: 1rem;
         margin-top: .75rem;
         margin-bottom: 4.125rem;
 
