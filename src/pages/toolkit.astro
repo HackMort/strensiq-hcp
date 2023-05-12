@@ -14,10 +14,14 @@ const internalNavLinks = [
 ];
 ---
 <Layout title="Toolkit">
-  <PageHero pageId="toolkit" classNames="toolkit__page-hero">
+  <PageHero pageId="toolkit" classNames="toolkit__page-hero" shapePrimary={false} shapeSecondary={false}>
     <h1 class="page-hero__title">
       Tools to start treating hypophosphatasia at its source
     </h1>
+    <picture class="page-hero__image-container">
+      <source media="(min-width: 700px)" srcset="/assets/images/toolkit/hero/image-desktop.png">
+      <img class="page-hero__image" src="/assets/images/toolkit/hero/image-mobile.png" alt="">
+    </picture>
   </PageHero>
 
   {

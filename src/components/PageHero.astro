@@ -2,9 +2,11 @@
 type Props = {
     pageId: string;
     classNames?: string;
+    shapePrimary?: boolean;
+    shapeSecondary?: boolean;
 }
 
-const { pageId, classNames = '' } = Astro.props;
+const { pageId, classNames = '', shapePrimary = true , shapeSecondary = true} = Astro.props;
 let classes = 'page-hero'
 
 if (classNames) {
@@ -19,7 +21,7 @@ if (classNames) {
         </div>
     </div>
 
-    <div class="shape shape--primary"></div>
-    <div class="shape shape--secondary"></div>
+    {shapePrimary && <div class="shape shape--primary"></div>}
+    {shapeSecondary && <div class="shape shape--secondary"></div>}
     <div class="shape shape--tertiary"></div>
 </section>
