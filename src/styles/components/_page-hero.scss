@@ -122,7 +122,25 @@
     }
 
     &#how-it-works-page-hero {
+        --custom-margin: 1.75rem;
+
+        .wrapper {
+            max-width: calc(100% - var(--custom-margin));
+
+            @media screen and (min-width: 450px) {
+                max-width: calc(100% - var(--margin));
+            }
+
+            @media screen and (min-width: 450px) and (max-width: 1023px) {
+                min-height: 200px;
+            }
+        }
+
         .page-hero__title {
+            br {
+                display: none;
+            }
+
             color: $color-dark-green;
             max-width: 22ch;
 
@@ -130,6 +148,10 @@
                 // max-width: 40.625rem;
                 margin-bottom: 2.5rem;
                 max-width: 34ch;
+
+                br {
+                    display: block;
+                }
             }
 
             /* @media screen and (min-width: 1024px) {
