@@ -39,6 +39,24 @@
         }
     }
 
+    @media screen and (min-width: 1920px) {
+        &::after {
+            top: -32px;
+        }
+    }
+
+    @media screen and (min-width: 2300px) {
+        &::after {
+            top: -50px;
+        }
+    }
+
+    @media screen and (min-width: 2450px) {
+        &::after {
+            top: -75px;
+        }
+    }
+
     .wrapper {
         @include media('tablet') {
             display: grid;
