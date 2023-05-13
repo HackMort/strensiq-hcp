@@ -4122,7 +4122,7 @@
             margin-bottom: .8125rem;
         }
 
-        .radiographic-comparator__left  {
+        .radiographic-comparator__left {
             position: relative;
         }
 
@@ -4249,7 +4249,7 @@
 
     .infants-young-children__survival-chart-wrapper {
         background: $color-white;
-        margin-bottom: 1.875rem;
+        margin-bottom: 1rem;
         max-width: 46.125rem;
         margin-left: auto;
         position: relative;
@@ -4264,6 +4264,14 @@
     }
 
     .infants-young-children__survival-chart-foot-wrapper {
+        .wrapper {
+            max-width: 100%;
+
+            @media screen and (min-width: 1024px) {
+                max-width: calc(100% - var(--margin));
+            }
+        }
+
         @media screen and (min-width: 1024px) {
             background: $color-white;
             padding-bottom: 1.375rem;
@@ -4318,6 +4326,12 @@
                 margin-right: auto;
             }
         }
+    }
+}
+
+.infants-young-children__cta {
+    .cta__heading {
+        max-width: 100%;
     }
 }
 
