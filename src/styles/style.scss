@@ -4026,8 +4026,10 @@
         padding-bottom: 0;
 
         .hpp-related-rickets__content {
-            display: grid;
-            grid-template-columns: 25rem 1fr;
+            /* display: grid;
+            grid-template-columns: 25rem 1fr; */
+            display: flex;
+            justify-content: space-between;
         }
 
         .radiographic-images-mobile {
@@ -4037,22 +4039,6 @@
         .radiographic-images-desktop {
             display: block;
         }
-    }
-
-    @media screen and (min-width: 1100px) {
-        height: 48.75rem;
-    }
-
-    @media screen and (min-width: 1200px) {
-        height: 51.8125rem;
-    }
-
-    @media screen and (min-width: 1400px) {
-        height: 47.8125rem;
-    }
-
-    @media screen and (min-width: 1440px) {
-        height: 49.4rem;
     }
 
     @media screen and (min-width: 1440px) {
@@ -4076,6 +4062,10 @@
         line-height: 17.5px;
         font-weight: 300;
         margin-bottom: 1.625rem;
+
+        @media screen and (min-width: 1024px) {
+            max-width: 49ch;
+        }
 
         @media screen and (min-width: 1440px) {
             font-size: 1.125rem;
@@ -4132,16 +4122,77 @@
             margin-bottom: .8125rem;
         }
 
-        @media screen and (min-width: 1024px) {
-            position: absolute;
-            right: -2.1406rem;
-            top: 0px;
-            height: 100%;
-            width: calc(100% - 400px);
+        .radiographic-comparator__left {
+            position: relative;
         }
 
-        @media screen and (min-width: 1366px) {
-            right: -4.1406rem;
+        .radiographic__footnote {
+            max-width: 90%;
+
+            &--mobile {
+                font-size: .625rem;
+                line-height: .6875rem;
+            }
+
+            &--desktop {
+                font-size: .75rem;
+                line-height: .9rem;
+            }
+
+            &--bottom {
+                position: absolute;
+                bottom: 15px;
+            }
+
+            &--right {
+                max-width: 85%;
+
+                @media screen and (min-width: 799px) {
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .hpp-related-rickets__content-right {
+            width: 56%;
+        }
+
+        .hpp-related-rickets__content-left {
+            width: 44%;
+        }
+    }
+
+    .custom-title {
+        @media screen and (min-width: 1024px) {
+            width: 100vw;
+
+            &__text {
+                max-width: 45ch;
+            }
+        }
+
+        @media screen and (min-width: 1350px) {
+            &__text {
+                max-width: 61ch;
+            }
+        }
+    }
+
+    .wrapper {
+        &--desktop {
+            @media screen and (max-width: 1023px) {
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+
+        &--mobile {
+            @media screen and (min-width: 1023px) {
+                margin: 0;
+                max-width: 100%;
+            }
         }
     }
 }
@@ -4191,17 +4242,14 @@
     .infants-young-children__survival-chart {
         margin-top: 1.4375rem;
 
-        .wrapper--only-left {
-            @media screen and (min-width: 1024px) {
-                margin-left: 0;
-                margin-right: auto;
-            }
+        @media screen and (min-width: 1024px) {
+            background-color: $color-white;
         }
     }
 
     .infants-young-children__survival-chart-wrapper {
         background: $color-white;
-        margin-bottom: 1.875rem;
+        margin-bottom: 1rem;
         max-width: 46.125rem;
         margin-left: auto;
         position: relative;
@@ -4216,9 +4264,18 @@
     }
 
     .infants-young-children__survival-chart-foot-wrapper {
+        .wrapper {
+            max-width: 100%;
+
+            @media screen and (min-width: 1024px) {
+                max-width: calc(100% - var(--margin));
+            }
+        }
+
         @media screen and (min-width: 1024px) {
             background: $color-white;
             padding-bottom: 1.375rem;
+            padding-left: 10%;
 
             .wrapper--only-right {
                 max-width: fit-content;
@@ -4269,6 +4326,12 @@
                 margin-right: auto;
             }
         }
+    }
+}
+
+.infants-young-children__cta {
+    .cta__heading {
+        max-width: 100%;
     }
 }
 

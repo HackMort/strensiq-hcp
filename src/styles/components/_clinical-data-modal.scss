@@ -153,7 +153,8 @@
                 }
             }
 
-            &__row--mh {
+            &__row--mh,
+            &__row--normal {
                 height: 4.4375rem;
             }
         }
@@ -215,6 +216,10 @@
             }
 
             &--mh--paragraph {
+                span:first-child {
+                    margin-bottom: .3125rem;
+                }
+
                 span:last-child {
                     font-size: 70%;
                     max-width: 13ch;
