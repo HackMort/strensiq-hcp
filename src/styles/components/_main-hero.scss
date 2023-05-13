@@ -179,12 +179,85 @@
         }
 
         .main-hero__title {
-            color: $color-white;
-            position: relative;
-            margin-bottom: .625rem;
 
-            @media screen and (min-width: 1366px) {
-                max-width: 20ch;
+            margin-top: 2rem;
+
+            @media screen and (min-width: 1000px) {
+                margin-top: 0;
+            }
+
+            h1 {
+                text-transform: uppercase;
+                font-weight: 600;
+                color: $color-white;
+                position: relative;
+                margin-bottom: .625rem;
+                line-height: 24px;
+
+                font-size: 1.5rem;
+
+                .good-text {
+                    font-size: 3rem;
+                    line-height: 50px;
+                    position: relative;
+
+                    letter-spacing: -1px;
+
+                    .positioned {
+                        position: absolute;
+                        left: -15px;
+
+                        @media screen and (min-width: 375px) {
+                            left: -18px;
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        background-image: url("/assets/images/home/main-hero/home-title-asset.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        position: absolute;
+                        top: 50%;
+
+                        transform: translateY(-50%);
+                        left: 93%;
+
+                        width: 9.625rem;
+                        height: 3.6875rem;
+                    }
+                }
+
+                @media screen and (min-width: 375px) {
+                    font-size: 1.8125rem;
+                    line-height: 29px;
+
+                    .good-text {
+                        font-size: 3.625rem;
+
+                        &::after {
+                            width: 12rem;
+                            height: 4rem;
+
+                            transform: translateY(-55%);
+                        }
+                    }
+                }
+
+                @media screen and (min-width: 1366px) {
+                    font-size: 32px;
+                    line-height: 32px;
+
+                    .good-text {
+                        font-size: 65px;
+
+                        &::after {
+                            width: 14rem;
+                            height: 6rem;
+                            transform: translateY(-45%);
+                        }
+                    }
+                }
             }
         }
 
