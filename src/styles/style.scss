@@ -3716,11 +3716,11 @@
 
         @media screen and (min-width: 768px) {
             &:nth-child(3) {
-                max-width: 35ch;
+                max-width: 85%;
             }
 
             &:last-child {
-                max-width: 30ch;
+                max-width: 70%;
             }
         }
 
@@ -3733,16 +3733,16 @@
             }
 
             &:nth-child(3) {
-                max-width: 30ch;
+                max-width: 70%;
             }
 
             &:last-child {
-                max-width: 22ch;
+                max-width: 20ch;
             }
         }
 
 
-        @media screen and (min-width: 1000px) {
+        @media screen and (min-width: 950px) {
             &:nth-child(2) {
                 max-width: unset;
             }
@@ -3752,17 +3752,15 @@
             }
 
             &:last-child {
-                max-width: 33ch;
+                max-width: 30ch;
             }
         }
 
-        @media screen and (min-width: 1100px) {
+        @media screen and (min-width: 1050px) {
             &:nth-child(3) {
                 max-width: unset;
             }
-        }
 
-        @media screen and (min-width: 1400px) {
             &:last-child {
                 max-width: 35ch;
             }
