@@ -3616,7 +3616,8 @@
             }
 
             @media screen and (min-width: 2000px) {
-                top: calc(var(--width-dosing-shape) * 0.17);
+                top: calc(var(--width-dosing-shape) * 0.2);
+                left: calc((100vw - 1250px) / 2 * -1);
             }
         }
 
