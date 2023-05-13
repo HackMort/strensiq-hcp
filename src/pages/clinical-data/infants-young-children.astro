@@ -23,81 +23,177 @@ const internalNavLinks = [
 
 const mainHeaders = [
   { label: "", sublabel: "" },
-  { label: "Study 1", subLabel: "ENB-002-08/ ENB-003-08" },
-  { label: "Study 2", subLabel: "ENB-010-10" }
+  { label: "Study 1<sup>1,3,4</sup>", subLabel: "ENB-002-08/ ENB-003-08" },
+  { label: "Study 2<sup>4,5</sup>", subLabel: "ENB-010-10" }
 ];
 ---
 
-<Layout title="Infants" displayReferences={true}>
+<Layout title="Infants">
   <PageHero
     pageId="clinical-data"
     classNames="clinical-data-infants-young-children__page-hero"
   >
     <h2 class="page-hero__subtitle">
-      For infants and young children with hypophosphatasia
+        For infants and young children with hypophosphatasia
     </h2>
     <h1 class="page-hero__title">
-      STRENSIQ helps build<br /> a strong foundation
+        STRENSIQ helps build a strong foundation<sup>1-5</sup>
     </h1>
   </PageHero>
   {internalNavLinks && <InternalNavigation items={internalNavLinks} heading="Infants/Young Children" icon/>}
 
-  <section id="hpp-related-rickets" class="infants-young-children__hpp-related-rickets section">
-    <div class="wrapper">
-        <div class="hpp-related-rickets__content">
-            <div class="hpp-related-rickets__content-left">
-                <h2 class="hpp-related-rickets__title">
-                    STRENSIQ helps reverse hypomineralization
-                </h2>
-                <p class="hpp-related-rickets__description">
-                    Complete or substantial healing of rickets as measured by the Radiographic Global Impression of Change (RGI-C) scale<sup class="symbol-sup">*</sup>
-                </p>
-                <div class="clinical-studies">
-                    <article class="clinical-study">
-                        <h3 class="clinical-study__title">After 6 months</h3>
-                        <div class="clinical-study__results">
-                            <div class="clinical-study__result">
-                                <p class="clinical-study__percentage">90</p>
-                                <div class="clinical-study__orders">
-                                    <p class="clinical-study__order">STUDY 1(9/10)</p>
-                                </div>
-                            </div>
-                            <div class="clinical-study__result">
-                                <p class="clinical-study__percentage">63</p>
-                                <div class="clinical-study__orders">
-                                    <p class="clinical-study__order">STUDY 2 (40/64)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="clinical-study__description">
-                            <strong>of patients achieved complete or<br> substantial healing of HPP-related rickets</strong>
-                        </p>
-                    </article>
-                    <article class="clinical-study">
-                        <h3 class="clinical-study__title">After 7 years and 6 years, respectively</h3>
-                        <div class="clinical-study__results">
-                            <div class="clinical-study__result clinical-study__result--flex">
-                                <p class="clinical-study__percentage">100</p>
-                                <div class="clinical-study__orders">
-                                    <p class="clinical-study__order">Study 1 (7/7)</p>
-                                    <p class="clinical-study__order">Study 2 (2/2)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="clinical-study__description">
-                            <strong>of patients achieved complete or<br> substantial healing of HPP-related rickets</strong>
-                        </p>
-                    </article>
-                    <p class="clinical-studies__footer-note">
-                        <sup class="symbol-sup">*</sup>The RGI-C scale quantifies change over time in mineralization and bone structure.
+    <section id="hpp-related-rickets" class="infants-young-children__hpp-related-rickets section">
+        <div class="wrapper">
+            <div class="hpp-related-rickets__content">
+                <div class="hpp-related-rickets__content-left">
+                    <h2 class="hpp-related-rickets__title">
+                        STRENSIQ helps reverse hypomineralization<sup>1,3,5</sup>
+                    </h2>
+                    <p class="hpp-related-rickets__description">
+                        Complete or substantial healing of rickets as measured by the Radiographic Global Impression of Change (RGI-C) scale<sup class="symbol-sup">*</sup>
                     </p>
+                    <div class="clinical-studies">
+                        <article class="clinical-study">
+                            <h3 class="clinical-study__title">After 6 MONTHS<sup>1,5,6</sup></h3>
+                            <div class="clinical-study__results">
+                                <div class="clinical-study__result">
+                                    <p class="clinical-study__percentage">90</p>
+                                    <div class="clinical-study__orders">
+                                        <p class="clinical-study__order">STUDY 1(9/10)</p>
+                                    </div>
+                                </div>
+                                <div class="clinical-study__result">
+                                    <p class="clinical-study__percentage">63</p>
+                                    <div class="clinical-study__orders">
+                                        <p class="clinical-study__order">STUDY 2 (40/64)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="clinical-study__description">
+                                <strong>of patients achieved complete or substantial healing of HPP-related rickets</strong>
+                            </p>
+                        </article>
+                        <article class="clinical-study">
+                            <h3 class="clinical-study__title">After 7 Years and 6 years, respectively<sup>3,5,6</sup></h3>
+                            <div class="clinical-study__results">
+                                <div class="clinical-study__result clinical-study__result--flex">
+                                    <p class="clinical-study__percentage">100</p>
+                                    <div class="clinical-study__orders">
+                                        <p class="clinical-study__order">Study 1 (7/7)</p>
+                                        <p class="clinical-study__order">Study 2 (2/2)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="clinical-study__description">
+                                <strong>of patients achieved complete or substantial healing of HPP-related rickets</strong>
+                            </p>
+                        </article>
+                        <p class="clinical-studies__footer-note">
+                            <sup class="symbol-sup">*</sup>The RGI-C scale quantifies change over time in mineralization and bone structure.
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="hpp-related-rickets__content-right">
-                <div class="radiographic-images-mobile">
-                    <p class="radiographic-images-mobile__title">Radiographic images</p>
-                    <AccordionMobile id="infants-young-children-radiographics">
-                        <ExpansionPanelMobile accordionId="infants-young-children-radiographics" title="Patient: Hand">
+                <div class="hpp-related-rickets__content-right">
+                    <CustomTitle>
+                        Patient radiographs (Study 1) show substantial healing of hypophosphatasia-related rickets<sup>1</sup>
+                    </CustomTitle>
+                    <div class="radiographic-images-mobile">
+                        <p class="radiographic-images-mobile__title">Radiographic images</p>
+                        <AccordionMobile id="infants-young-children-radiographics">
+                            <ExpansionPanelMobile accordionId="infants-young-children-radiographics" title="Patient: Hand">
+                                <RadiographicImagesComparator>
+                                    <div slot="before">
+                                        <p data-radiographic-title>
+                                            2.9 weeks of age (at baseline)
+                                        </p>
+                                        <picture data-radiographic-image>
+                                            <source srcset="/assets/images/clinical-data/infants-young-children/hand-before-desktop.png" media="(min-width: 768px)">
+                                            <img src="/assets/images/clinical-data/infants-young-children/hand-before-mobile.png" alt="">
+                                        </picture>
+                                        <p data-radiographic-footer>
+                                            No mineralization of phalanges, first metacarpal, and distal radius.
+                                        </p>
+                                        <p class="data-radiographic__footnote">
+                                            Reproduced from Whyte MP, Greenberg CR, Salman NJ, et al. Enzyme-replacement therapy in life-threatening hypophosphatasia. <i>N Engl J Med.</i> 2012;366(10):904-913.
+                                        </p>
+                                    </div>
+                                    <div slot="after">
+                                        <p data-radiographic-title>
+                                            After 24 weeks of treatment with STRENSIQ
+                                        </p>
+                                        <picture data-radiographic-image>
+                                            <source srcset="/assets/images/clinical-data/infants-young-children/hand-after-desktop.png" media="(min-width: 768px)">
+                                            <img src="/assets/images/clinical-data/infants-young-children/hand-after-mobile.png" alt="">
+                                        </picture>
+                                        <p data-radiographic-footer>
+                                            <strong>
+                                                All phalanges obvious; metacarpals mineralized and well-formed, but still osteopenic.
+                                            </strong>
+                                        </p>
+                                        <p class="data-radiographic__footnote">
+                                            Representations of efficacy are consistent with results seen from typical patients in the study. Individual results may vary.
+                                        </p>
+                                    </div>
+                                </RadiographicImagesComparator>
+                            </ExpansionPanelMobile>
+                            <ExpansionPanelMobile accordionId="infants-young-children-radiographics" title="Patient: Ribs">
+                                <RadiographicImagesComparator>
+                                    <div slot="before">
+                                        <p data-radiographic-title>
+                                            2.9 weeks of age (at baseline)
+                                        </p>
+                                        <picture data-radiographic-image>
+                                            <source srcset="/assets/images/clinical-data/infants-young-children/ribs-before-desktop.png" media="(min-width: 768px)">
+                                            <img src="/assets/images/clinical-data/infants-young-children/ribs-before-mobile.png" alt="">
+                                        </picture>
+                                        <p class="data-radiographic__footnote">
+                                            Reproduced from Whyte MP, Greenberg CR, Salman NJ, et al. Enzyme-replacement therapy in life-threatening hypophosphatasia. <i>N Engl J Med.</i> 2012;366(10):904-913.
+                                        </p>
+                                    </div>
+                                    <div slot="after">
+                                        <div slot="before">
+                                            <p data-radiographic-title>
+                                                After 24 weeks of treatment with STRENSIQ
+                                            </p>
+                                            <picture data-radiographic-image>
+                                                <source srcset="/assets/images/clinical-data/infants-young-children/ribs-after-desktop.png" media="(min-width: 768px)">
+                                                <img src="/assets/images/clinical-data/infants-young-children/ribs-after-mobile.png" alt="">
+                                            </picture>
+                                            <p data-radiographic-footer>
+                                                <strong>
+                                                    Remineralization of all ossified structures, including ribs, clavicles, spine, and scapulae, was striking.
+                                                </strong>
+                                            </p>
+                                            <p class="data-radiographic__footnote">
+                                                Representations of efficacy are consistent with results seen from typical patients in the study. Individual results
+                                                may vary.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </RadiographicImagesComparator>
+                            </ExpansionPanelMobile>
+                        </AccordionMobile>
+                    </div>
+                    <div class="radiographic-images-desktop">
+                        <!-- <CustomTitle>
+                            Patient radiographs (Study 1) show substantial healing of hypophosphatasia-related rickets
+                        </CustomTitle> -->
+                        <ul role="tablist">
+                            <li role="presentation">
+                                <!--active one -->
+                                <a href="#tabpanel-hand" role="tab" id="tab-hand" aria-selected="true">Hand</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabpanel-ribs" role="tab" id="tab-ribs" tabindex="-1">Ribs</a>
+                            </li>
+                        </ul>
+                        <section
+                            id="tabpanel-hand"
+                            role="tabpanel"
+                            aria-labelledby="tab-hand"
+                            aria-hidden="false"
+                            tabindex="-1"
+                        >
                             <RadiographicImagesComparator>
                                 <div slot="before">
                                     <p data-radiographic-title>
@@ -110,6 +206,9 @@ const mainHeaders = [
                                     <p data-radiographic-footer>
                                         No mineralization of phalanges, first metacarpal, and distal radius.
                                     </p>
+                                    <p class="data-radiographic__footnote">
+                                        Reproduced from Whyte MP, Greenberg CR, Salman NJ, et al. Enzyme-replacement therapy in life-threatening hypophosphatasia. <i>N Engl J Med.</i> 2012;366(10):904-913.
+                                    </p>
                                 </div>
                                 <div slot="after">
                                     <p data-radiographic-title>
@@ -120,12 +219,22 @@ const mainHeaders = [
                                         <img src="/assets/images/clinical-data/infants-young-children/hand-after-mobile.png" alt="">
                                     </picture>
                                     <p data-radiographic-footer>
-                                        <strong>All phalanges obvious; metacarpals mineralized and well-formed, but still osteopenic.</strong>
+                                        All phalanges obvious; metacarpals mineralized and well-formed, but still osteopenic.
+                                    </p>
+                                    <p class="data-radiographic__footnote">
+                                        Representations of efficacy are consistent with results seen from typical patients in the study. Individual results may vary.
                                     </p>
                                 </div>
                             </RadiographicImagesComparator>
-                        </ExpansionPanelMobile>
-                        <ExpansionPanelMobile accordionId="infants-young-children-radiographics" title="Patient: Ribs">
+                        </section>
+                        <section
+                            id="tabpanel-ribs"
+                            role="tabpanel"
+                            aria-labelledby="tab-ribs"
+                            aria-hidden="true"
+                            tabindex="-1"
+                            hidden
+                        >
                             <RadiographicImagesComparator>
                                 <div slot="before">
                                     <p data-radiographic-title>
@@ -135,6 +244,9 @@ const mainHeaders = [
                                         <source srcset="/assets/images/clinical-data/infants-young-children/ribs-before-desktop.png" media="(min-width: 768px)">
                                         <img src="/assets/images/clinical-data/infants-young-children/ribs-before-mobile.png" alt="">
                                     </picture>
+                                    <p class="data-radiographic__footnote">
+                                        Reproduced from Whyte MP, Greenberg CR, Salman NJ, et al. Enzyme-replacement therapy in life-threatening hypophosphatasia. <i>N Engl J Med.</i> 2012;366(10):904-913.
+                                    </p>
                                 </div>
                                 <div slot="after">
                                     <div slot="before">
@@ -146,157 +258,81 @@ const mainHeaders = [
                                         <img src="/assets/images/clinical-data/infants-young-children/ribs-after-mobile.png" alt="">
                                         </picture>
                                         <p data-radiographic-footer>
-                                            <strong>Remineralization of all ossified structures, including ribs, clavicles, spine, and scapulae, was striking.</strong>
+                                            Remineralization of all ossified structures, including ribs, clavicles, spine, and scapulae, was striking.
+                                        </p>
+                                        <p class="data-radiographic__footnote">
+                                            Representations of efficacy are consistent with results seen from typical patients in the study. Individual results may vary.
                                         </p>
                                     </div>
                                 </div>
                             </RadiographicImagesComparator>
-                        </ExpansionPanelMobile>
-                    </AccordionMobile>
-                </div>
-                <div class="radiographic-images-desktop">
-                    <CustomTitle>
-                        Patient radiographs (Study 1) show substantial healing of hypophosphatasia-related rickets
-                    </CustomTitle>
-
-                    <ul role="tablist">
-                        <li role="presentation">
-                          <!--active one -->
-                          <a href="#tabpanel-hand" role="tab" id="tab-hand" aria-selected="true"
-                            >Hand</a
-                          >
-                        </li>
-                        <li role="presentation">
-                          <a href="#tabpanel-ribs" role="tab" id="tab-ribs" tabindex="-1">Ribs</a>
-                        </li>
-                      </ul>
-                      <section
-                        id="tabpanel-hand"
-                        role="tabpanel"
-                        aria-labelledby="tab-hand"
-                        aria-hidden="false"
-                        tabindex="-1"
-                      >
-                      <RadiographicImagesComparator>
-                        <div slot="before">
-                            <p data-radiographic-title>
-                                2.9 weeks of age (at baseline)
-                            </p>
-                            <picture data-radiographic-image>
-                                <source srcset="/assets/images/clinical-data/infants-young-children/hand-before-desktop.png" media="(min-width: 768px)">
-                                <img src="/assets/images/clinical-data/infants-young-children/hand-before-mobile.png" alt="">
-                            </picture>
-                            <p data-radiographic-footer>
-                                No mineralization of phalanges, first metacarpal, and distal radius.
-                            </p>
-                        </div>
-                        <div slot="after">
-                            <p data-radiographic-title>
-                                After 24 weeks of treatment with STRENSIQ
-                            </p>
-                            <picture data-radiographic-image>
-                                <source srcset="/assets/images/clinical-data/infants-young-children/hand-after-desktop.png" media="(min-width: 768px)">
-                                <img src="/assets/images/clinical-data/infants-young-children/hand-after-mobile.png" alt="">
-                            </picture>
-                            <p data-radiographic-footer>
-                                All phalanges obvious; metacarpals mineralized and well-formed, but still osteopenic.
-                            </p>
-                        </div>
-                    </RadiographicImagesComparator>
-                      </section>
-                      <section
-                        id="tabpanel-ribs"
-                        role="tabpanel"
-                        aria-labelledby="tab-ribs"
-                        aria-hidden="true"
-                        tabindex="-1"
-                        hidden
-                      >
-                      <RadiographicImagesComparator>
-                        <div slot="before">
-                            <p data-radiographic-title>
-                                2.9 weeks of age (at baseline)
-                            </p>
-                            <picture data-radiographic-image>
-                                <source srcset="/assets/images/clinical-data/infants-young-children/ribs-before-desktop.png" media="(min-width: 768px)">
-                                <img src="/assets/images/clinical-data/infants-young-children/ribs-before-mobile.png" alt="">
-                            </picture>
-                        </div>
-                        <div slot="after">
-                            <div slot="before">
-                                <p data-radiographic-title>
-                                    After 24 weeks of treatment with STRENSIQ
-                                </p>
-                                <picture data-radiographic-image>
-                                    <source srcset="/assets/images/clinical-data/infants-young-children/ribs-after-desktop.png" media="(min-width: 768px)">
-                                <img src="/assets/images/clinical-data/infants-young-children/ribs-after-mobile.png" alt="">
-                                </picture>
-                                <p data-radiographic-footer>
-                                    Remineralization of all ossified structures, including ribs, clavicles, spine, and scapulae, was striking.
-                                </p>
-                            </div>
-                        </div>
-                    </RadiographicImagesComparator>
-                      </section>
-                </div>
-            </div>
-        </div>
-    </div>
-  </section>
-
-  <section id="survival" class="infants-young-children__survival section">
-   <div class="infants-young-children__survival-content">
-    <div class="infants-young-children__survival-left">
-        <div class="wrapper wrapper--only-left">
-            <h2 class="infants-young-children__survival-title">
-                STRENSIQ provided substantial healing of rachitic chest and improved respiratory function and survival
-            </h2>
-        </div>
-        <TipBox classNames="toolkit__tip infants-young-children__survival-tip" align="right">
-            <strong>
-                STRENSIQ increased overall survival to 88% with follow-up for up to 7 years
-            </strong>
-          </TipBox>
-    </div>
-    <div class="infants-young-children__survival-right">
-        <CustomTitle>
-            Invasive ventilation-free survival in patients treated with STRENSIQ vs untreated historical controls<sup>a</sup>
-        </CustomTitle>
-        <div class="infants-young-children__survival-chart">
-            <div class="wrapper wrapper--only-left">
-                <div class="infants-young-children__survival-chart-wrapper">
-
-
-                        <picture>
-                            <img src="/assets/images/clinical-data/infants-young-children/Invasive_Ventilation_free_survival_Desktop.png" alt="">
-                        </picture>
-                    </PinchToZoom>
-                </div>
-                <div class="infants-young-children__survival-chart-foot-wrapper">
-                    <div class="wrapper wrapper--only-right">
-                        <p class="infants-young-children__survival-chart-foot">
-                            <sup>a</sup>Alive and not initiating invasive ventilation after start of STRENSIQ treatment. STRENSIQ-treated patients on invasive ventilation at baseline were excluded from this analysis.
-                        </p>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-   </div>
-  </section>
+    </section>
 
-  <CTA
-    heading="Help them build from the inside out"
-    linkText="Children"
-    linkUrl="/clinical-data/children"
-  />
-  <ClinicalDataModal>
-    <Table>
-        <!--Table headers -->
-        <TableHeader slot="header" mainHeaders={mainHeaders} />
-        <!--Table data -->
-        <TableData slot="body" data={studyData} />
-    </Table>
-  </ClinicalDataModal>
-  <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"></script>
+    <section id="survival" class="infants-young-children__survival section">
+        <div class="infants-young-children__survival-content">
+            <div class="infants-young-children__survival-left">
+                <div class="wrapper wrapper--only-left">
+                    <h2 class="infants-young-children__survival-title">
+                        STRENSIQ improved respiratory function and survival<sup>2,3,5</sup>
+                    </h2>
+                </div>
+                <TipBox classNames="toolkit__tip infants-young-children__survival-tip" align="right">
+                    <strong>
+                        STRENSIQ increased overall survival to 88% (69/78) with follow-up for up to 7 years<sup>4</sup>
+                    </strong>
+                </TipBox>
+            </div>
+            <div class="infants-young-children__survival-right">
+                <CustomTitle>
+                    Invasive ventilation–free survival in patients treated with STRENSIQ vs untreated historical controls<sup>7,8,a</sup>
+                </CustomTitle>
+                <div class="infants-young-children__survival-chart">
+                    <div class="wrapper wrapper--only-left">
+                        <div class="infants-young-children__survival-chart-wrapper">
+
+
+                                <picture>
+                                    <img src="/assets/images/clinical-data/infants-young-children/Invasive_Ventilation_free_survival_Desktop.png" alt="">
+                                </picture>
+                            </PinchToZoom>
+                        </div>
+                        <div class="infants-young-children__survival-chart-foot-wrapper">
+                            <div class="wrapper wrapper--only-right">
+                                <p class="infants-young-children__survival-chart-foot">
+                                    <sup>a</sup>Alive and not initiating invasive ventilation after start of STRENSIQ treatment. STRENSIQ-treated patients on invasive ventilation at baseline were excluded from this analysis.
+                                </p>
+                                <p class="infants-young-children__survival-chart-foot">
+                                    <sup>b</sup>Untreated historical controls from a retrospective natural history study of 48 patients with a perinatal and infantile hypophosphatasia born between 1970 and 2011.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <CTA
+        heading="Help them build a more solid structure"
+        linkText="Children"
+        linkUrl="/clinical-data/children"
+    />
+    <ClinicalDataModal>
+        <Table>
+            <!--Table headers -->
+            <TableHeader slot="header" mainHeaders={mainHeaders} />
+            <!--Table data -->
+            <TableData slot="body" data={studyData} />
+        </Table>
+    </ClinicalDataModal>
+    <References slot="references">
+        <p>
+            <strong>References: 1.</strong> Whyte MP, Greenberg CR, Salman NJ, et al. Enzyme-replacement therapy in life-threatening hypophosphatasia. <i>N Engl J Med.</i> 2012;366(10):904-913. <strong>2.</strong> Whyte MP, Rockman-Greenberg C, Ozono K, et al. Asfotase alfa treatment improves survival for perinatal and infantile hypophosphatasia. <i>J Clin Endocrinol Metab.</i> 2016;101(1):334-342. <strong>3.</strong> Whyte MP, Simmons JH, Moseley S, et al. Asfotase alfa for infants and young children with hypophosphatasia: 7 year outcomes of a single-arm, open-label, phase 2 extension trial. <i>Lancet Diabetes Endocrinol.</i> 2019;7(2):93-105. <strong>4.</strong> STRENSIQ. Package insert. Alexion Pharmaceuticals, Inc. <strong>5.</strong> Hofmann CE, Harmatz P, Vockley J, et al. Efficacy and safety of asfotase alfa in infants and young children with hypophosphatasia: a phase 2 open-label study. <i>J Clin Endocrinol Metab.</i> 2019;104(7):2735-2747. <strong>6.</strong> Data on file. Alexion Pharmaceuticals, Inc. <strong>7.</strong> Data on file. Alexion Pharmaceuticals, Inc. <strong>8.</strong> Whyte MP, Leung E, Wilcox WR, et al. Natural history of perinatal and infantile hypophosphatasia: a retrospective study. <i>J Pediatr.</i> 2019;209:116-124.e4.
+        </p>
+    </References>
+    <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"></script>
 </Layout>
