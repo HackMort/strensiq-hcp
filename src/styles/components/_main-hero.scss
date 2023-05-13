@@ -431,14 +431,14 @@ $time-total: (
 // animation
 @for $i from 1 through $image-count {
     @keyframes bg-crossfade-#{$i} {
-        $delay-rate: percentage($time-delay / $time-total);
-        $duration-rate: percentage($time-duration / $time-total);
-        $case-1: ($delay-rate * ($i - 1) - $duration-rate / 2);
-        $case-2: ($delay-rate * ($i - 1) + $duration-rate / 2);
-        $case-3: ($delay-rate * ($i) - $duration-rate / 2);
-        $case-4: ($delay-rate * ($i) + $duration-rate / 2);
-        $case-5: (100% - $duration-rate / 2);
-        $case-6: (($case-4 - $case-1) * 100% / $case-5);
+        $delay-rate: percentage(calc($time-delay / $time-total));
+        $duration-rate: percentage(calc($time-duration / $time-total));
+        $case-1: ($delay-rate * ($i - 1) - calc($duration-rate / 2));
+        $case-2: ($delay-rate * ($i - 1) + calc($duration-rate / 2));
+        $case-3: ($delay-rate * ($i) - calc($duration-rate / 2));
+        $case-4: ($delay-rate * ($i) + calc($duration-rate / 2));
+        $case-5: (100% - calc($duration-rate / 2));
+        $case-6: (calc(($case-4 - $case-1) * 100% / $case-5));
 
         @if ($case-1 < 0%) {
             $case-1: 0%;
