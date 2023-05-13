@@ -1,11 +1,4 @@
----
----
-
 <div class="modal" id="modal" style="display: none;">
-  <!-- <picture class="testimonial__shape-container">
-        <source media="(min-width: 1024px)" srcset={`/assets/images/testimonial-shapes/top/testimonial-shape-desktop.svg`}>
-        <img class="testimonial__shape" src={`/assets/images/testimonial-shapes/top/testimonial-shape-mobile.svg`} alt=" ">
-    </picture> -->
   <div class="modal__wrapper" tabindex="-1">
     <button
       class="button modal__close"
@@ -29,9 +22,10 @@
       <div class="modal__text">
         <p>
           You are now leaving strensiq-hcp.com, a website provided by Alexion
-          Pharmaceuticals, Inc. <a class="modal__text-link">This link</a> will take
-          you to a different site that is owned and operated by an independent third
-          party to which this Privacy Notice does not apply.
+          Pharmaceuticals, Inc. This link will take you to a different site that
+          is owned and operated by an independent third party to which this <br
+          />
+          <a class="modal__text-link">Privacy Notice</a> does not apply.
         </p>
       </div>
     </div>
@@ -92,6 +86,8 @@
           placeFocusBack: true,
           trapFocus: true,
           closeButton: false,
+          mainClass: "exit__modal_main",
+          dragToClose: false,
           on: {
             close: () => {
               continueButton.setAttribute("href", "");
