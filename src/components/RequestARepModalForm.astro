@@ -108,7 +108,9 @@
                 onblur="validateFormControl(event)"
                 onchange="validateFormControl(event)"
               />
-              <p class="form__control-error">Please enter email address</p>
+              <p class="form__control-error">
+                Please enter a valid email address
+              </p>
             </div>
             <div
               class="form__control"
@@ -246,7 +248,7 @@
             <div
               class="form__control"
               data-touched="false"
-              data-required="true"
+              data-required="false"
               data-is-valid="false"
             >
               <div class="form__control-checkbox form__control-checkbox--last">
@@ -254,8 +256,7 @@
                   id="terms-and-conditions"
                   type="checkbox"
                   name="terms-and-conditions"
-                  required
-                  aria-required="true"
+                  aria-required="false"
                   onblur="validateFormControl(event)"
                   onchange="validateFormControl(event)"
                 />
@@ -263,13 +264,11 @@
                   By checking this box and submitting this form, I give <a
                     href="https://alexion.com/Legal#privacynotice%5D"
                     target="_blank">Alexion</a
-                  > permission to contact me for commercial purposes or otherwise
-                  provide me with information about Alexion's products, services,
-                  programs, market research, or other topics of interest that Alexion
-                  thinks may interest me.
+                  > permission to provide promotional information to me or otherwise
+                  contact me about Alexion products, services, programs, or other
+                  topics that Alexion thinks may interest me.
                 </label>
               </div>
-              <p class="form__control-error">Please confirm</p>
             </div>
           </div>
 

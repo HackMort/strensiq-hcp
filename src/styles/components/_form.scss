@@ -1,6 +1,6 @@
 input {
     width: 100%;
-    
+
     &[type="submit"] {
         cursor: pointer;
     }
@@ -77,9 +77,9 @@ input {
         position: absolute;
         display: none;
         color: $color-red;
-        font-size: 1rem;
-
-        top: 101%;
+        font-size: .75rem;
+        font-weight: 500;
+        top: 102%;
         left: 0;
 
         @media screen and (min-width: 1024px) {
@@ -198,6 +198,7 @@ input {
             .form__control-input,
             .form__control-select-wrapper {
                 outline-color: $color-red;
+                outline-width: 3px;
             }
 
             .form__control-error {
