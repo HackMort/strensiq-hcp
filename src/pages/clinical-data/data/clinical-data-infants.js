@@ -9,11 +9,11 @@ const studyData = [
   },
   {
     text: ['Primary treatment phase', '6 months', '1-6 years'],
-    classModifier: []
+    classModifier: ['normal']
   },
   {
     text: ['Extension', '6.5 years', '1-6 years'],
-    classModifier: []
+    classModifier: ['normal']
   },
   {
     text: ['N', '11', '69'],
