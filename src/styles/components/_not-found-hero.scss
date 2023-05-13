@@ -1,4 +1,5 @@
 .not-found-hero {
+    background-color: $color-dark-green;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -19,10 +20,12 @@
     }
 
     .not-found-hero__title {
+        color: $color-dark-green;
         font-size: 1.5rem;
         font-weight: 900;
-        max-width: 45%;
-        color: $color-dark-green;
+        line-height: 1.75rem;
+        margin-bottom: 1rem;
+        max-width: 75%;
 
         @media screen and (min-width: 515px) {
             max-width: 13.3125rem;
@@ -35,18 +38,21 @@
 
         @media screen and (min-width: 768px) {
             font-size: 2.5rem;
+            line-height: 48px;
             max-width: 21.3125rem;
         }
 
         @media screen and (min-width: 885px) {
             font-size: 3.125rem;
+            margin-bottom: 1rem;
             max-width: 27.3125rem;
         }
 
-        @media screen and (min-width: 885px) {
-            font-size: 3.75rem;
-            max-width: 32.3125rem;
-            line-height: 62.8px;
+        @media screen and (min-width: 1200px) {
+            font-size: 4.25rem;
+            line-height: 4.6875rem;
+            margin-bottom: 3rem;
+            max-width: 37rem;
         }
     }
 
@@ -62,7 +68,7 @@
         transform: rotate(-24.25deg);
 
         bottom: -8rem;
-        right: 50%;
+        right: 30%;
 
         @media screen and (min-width: 515px) {
             width: 722.33px;
