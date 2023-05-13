@@ -917,9 +917,9 @@
 //Dosing page
 .dosing__page-hero {
     .page-hero__title {
-        br {
-            display: none;
-        }
+        // br {
+        //     display: none;
+        // }
 
         @media screen and (min-width: 1024px) {
             br {
@@ -3408,6 +3408,14 @@
             font-size: .875rem;
             line-height: 1.125rem;
             margin-bottom: 1.25rem;
+            max-width: 300px;
+            margin-right: auto;
+            margin-left: auto;
+
+            @media screen and (min-width: 600px) {
+                max-width: 100%;
+
+            }
 
             @media screen and (min-width: 1300px) {
                 font-size: 1.125rem;
@@ -3462,7 +3470,7 @@
 
     @media screen and (min-width: 768px) {
         padding-top: 4.6875rem;
-        padding-bottom: 4.375rem;
+        padding-bottom: 2.625rem;
     }
 
     &__container {
@@ -3472,7 +3480,7 @@
             max-width: 79.3125rem;
         }
 
-        @media screen and (min-width: 1040px) {
+        @media screen and (min-width: 1024px) {
             align-items: end;
         }
 
@@ -3482,11 +3490,13 @@
         }
 
         @media screen and (min-width: 1340px) {
-            align-items: unset;
+            // align-items: unset;
         }
     }
 
     &__first {
+        position: relative;
+        z-index: 2;
 
         @media screen and (min-width: 850px) {
             max-width: 31.625rem;
@@ -3501,7 +3511,7 @@
         }
 
         &__title {
-            text-align: center;
+            // text-align: center;
             font-style: normal;
             font-weight: 700;
             font-size: 1.25rem;
@@ -3545,6 +3555,10 @@
             color: $color-bright-gray;
             text-transform: uppercase;
 
+            @media screen and (min-width: 1024px) {
+                margin-top: 0;
+            }
+
             @media screen and (min-width: 1420px) {
                 margin-top: 1.9375rem;
             }
@@ -3559,14 +3573,14 @@
             font-size: 2.25rem;
             line-height: 2.1875rem;
             color: $color-white;
-            max-width: 16.875rem;
+            max-width: 13ch;
 
-            @media screen and (min-width: 1040px) {
-                max-width: 23.875rem;
+            @media screen and (min-width: 1024px) {
+                max-width: 19ch;
                 line-height: 2.4375rem;
             }
 
-            @media screen and (min-width: 1340px) {
+            @media screen and (min-width: 1400px) {
                 max-width: unset;
                 font-size: 4.375rem;
                 letter-spacing: -0.03em;
@@ -3638,58 +3652,42 @@
             width: 195vw;
 
             @media screen and (min-width: 768px) {
-                right: -24.4375rem;
-                bottom: -42.625rem;
-                transform: rotate(-62deg);
-                width: 204vw;
+                --width-dosing-shape: calc(100vw * 1.11);
+                --height-dosing-shape: calc(var(--width-dosing-shape) * 0.564);
+                right: calc(var(--height-dosing-shape) * -0.426);
+                top: calc(var(--width-dosing-shape) * 0.135);
+                height: var(--height-dosing-shape);
+                transform: rotate(-50deg);
+                width: var(--width-dosing-shape);
             }
 
-            @media screen and (min-width: 775px) {
-                right: -31rem;
-                bottom: -45.0625rem;
-                transform: rotate(-73deg);
+            @media screen and (min-width: 1024px) {
+                right: calc(var(--height-dosing-shape) * -0.35);
+                top: calc(var(--width-dosing-shape) * 0.25);
             }
 
-            @media screen and (min-width: 800px) {
-                right: -14.5625rem;
-                bottom: -22.8125rem;
-                width: 54.7406rem;
+            @media screen and (min-width: 1400px) {
+                left: calc((100vw - 95%) / 2 * -1);
+                top: calc(var(--width-dosing-shape) * 0.18);
+                right: unset;
             }
 
-            @media screen and (min-width: 890px) {
-                right: -13.6875rem;
-                width: 54.2406rem;
+            @media screen and (min-width: 1525px) {
+                left: calc((100vw - 1440px) / 2 * -1);
             }
 
-            @media screen and (min-width: 1040px) {
-                right: -10.6875rem;
-                width: 60.2406rem;
-                bottom: -26.8125rem;
-                height: 34.75rem;
-                transform: rotate(-55deg);
+            @media screen and (min-width: 2000px) {
+                top: calc(var(--width-dosing-shape) * 0.2);
+                left: calc((100vw - 1250px) / 2 * -1);
             }
-
-            @media screen and (min-width: 1340px) {
-                right: -12.6875rem;
-                bottom: -53.4375rem;
-                width: 95.6156rem;
-                height: 64rem;
-                border-radius: 36.3544rem;
-                transform: rotate(-48.66deg);
-            }
-
-            @media screen and (min-width: 1420px) {
-                bottom: -52.4375rem;
-                right: -13.6875rem;
-            }
-
         }
 
     }
 
     &__list {
         max-width: 19.5rem;
-        margin: auto;
+        margin-left: 1rem;
+        margin-bottom: 0.5rem;
 
         @media screen and (min-width: 517px) {
             max-width: 28.5rem;
@@ -3703,10 +3701,10 @@
             max-width: 28.5rem;
         }
 
+
         @media screen and (min-width: 1400px) {
             max-width: 28.75rem;
         }
-
     }
 
     &__item {
@@ -3716,10 +3714,90 @@
         line-height: 1.125rem;
         margin-top: 1rem;
 
+        @media screen and (min-width: 768px) {
+            &:nth-child(3) {
+                max-width: 85%;
+            }
+
+            &:last-child {
+                max-width: 70%;
+            }
+        }
+
         @media screen and (min-width: 850px) {
             font-size: 1.125rem;
             line-height: 1.6875rem;
+
+            &:nth-child(2) {
+                max-width: 38ch;
+            }
+
+            &:nth-child(3) {
+                max-width: 70%;
+            }
+
+            &:last-child {
+                max-width: 20ch;
+            }
         }
+
+
+        @media screen and (min-width: 950px) {
+            &:nth-child(2) {
+                max-width: unset;
+            }
+
+            &:nth-child(3) {
+                max-width: 37ch;
+            }
+
+            &:last-child {
+                max-width: 30ch;
+            }
+        }
+
+        @media screen and (min-width: 1050px) {
+            &:nth-child(3) {
+                max-width: unset;
+            }
+
+            &:last-child {
+                max-width: 35ch;
+            }
+        }
+
+        @media screen and (min-width: 1550px) {
+            &:last-child {
+                max-width: unset;
+            }
+        }
+    }
+}
+
+.dosing__cta {
+    .cta__heading {
+        max-width: 100%;
+
+        br:not(.mobile) {
+            display: block;
+
+            @media screen and (min-width: 768px) {
+                display: none;
+            }
+
+            &.mobile {
+
+                @media screen and (min-width: 768px) {
+                    display: block;
+                }
+            }
+
+
+        }
+
+
+
+
     }
 }
 
@@ -3740,7 +3818,7 @@
 
     &__list {
         max-width: 19.5rem;
-        margin: auto;
+        margin-left: 1rem;
         margin-top: .75rem;
         margin-bottom: 4.125rem;
 
@@ -3948,8 +4026,10 @@
         padding-bottom: 0;
 
         .hpp-related-rickets__content {
-            display: grid;
-            grid-template-columns: 25rem 1fr;
+            /* display: grid;
+            grid-template-columns: 25rem 1fr; */
+            display: flex;
+            justify-content: space-between;
         }
 
         .radiographic-images-mobile {
@@ -3959,22 +4039,6 @@
         .radiographic-images-desktop {
             display: block;
         }
-    }
-
-    @media screen and (min-width: 1100px) {
-        height: 48.75rem;
-    }
-
-    @media screen and (min-width: 1200px) {
-        height: 51.8125rem;
-    }
-
-    @media screen and (min-width: 1400px) {
-        height: 47.8125rem;
-    }
-
-    @media screen and (min-width: 1440px) {
-        height: 49.4rem;
     }
 
     @media screen and (min-width: 1440px) {
@@ -3998,6 +4062,10 @@
         line-height: 17.5px;
         font-weight: 300;
         margin-bottom: 1.625rem;
+
+        @media screen and (min-width: 1024px) {
+            max-width: 49ch;
+        }
 
         @media screen and (min-width: 1440px) {
             font-size: 1.125rem;
@@ -4054,16 +4122,77 @@
             margin-bottom: .8125rem;
         }
 
-        @media screen and (min-width: 1024px) {
-            position: absolute;
-            right: -2.1406rem;
-            top: 0px;
-            height: 100%;
-            width: calc(100% - 400px);
+        .radiographic-comparator__left {
+            position: relative;
         }
 
-        @media screen and (min-width: 1366px) {
-            right: -4.1406rem;
+        .radiographic__footnote {
+            max-width: 90%;
+
+            &--mobile {
+                font-size: .625rem;
+                line-height: .6875rem;
+            }
+
+            &--desktop {
+                font-size: .75rem;
+                line-height: .9rem;
+            }
+
+            &--bottom {
+                position: absolute;
+                bottom: 15px;
+            }
+
+            &--right {
+                max-width: 85%;
+
+                @media screen and (min-width: 799px) {
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .hpp-related-rickets__content-right {
+            width: 56%;
+        }
+
+        .hpp-related-rickets__content-left {
+            width: 44%;
+        }
+    }
+
+    .custom-title {
+        @media screen and (min-width: 1024px) {
+            width: 100vw;
+
+            &__text {
+                max-width: 45ch;
+            }
+        }
+
+        @media screen and (min-width: 1350px) {
+            &__text {
+                max-width: 61ch;
+            }
+        }
+    }
+
+    .wrapper {
+        &--desktop {
+            @media screen and (max-width: 1023px) {
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+
+        &--mobile {
+            @media screen and (min-width: 1023px) {
+                margin: 0;
+                max-width: 100%;
+            }
         }
     }
 }
@@ -4113,17 +4242,14 @@
     .infants-young-children__survival-chart {
         margin-top: 1.4375rem;
 
-        .wrapper--only-left {
-            @media screen and (min-width: 1024px) {
-                margin-left: 0;
-                margin-right: auto;
-            }
+        @media screen and (min-width: 1024px) {
+            background-color: $color-white;
         }
     }
 
     .infants-young-children__survival-chart-wrapper {
         background: $color-white;
-        margin-bottom: 1.875rem;
+        margin-bottom: 1rem;
         max-width: 46.125rem;
         margin-left: auto;
         position: relative;
@@ -4138,9 +4264,18 @@
     }
 
     .infants-young-children__survival-chart-foot-wrapper {
+        .wrapper {
+            max-width: 100%;
+
+            @media screen and (min-width: 1024px) {
+                max-width: calc(100% - var(--margin));
+            }
+        }
+
         @media screen and (min-width: 1024px) {
             background: $color-white;
             padding-bottom: 1.375rem;
+            padding-left: 10%;
 
             .wrapper--only-right {
                 max-width: fit-content;
@@ -4191,6 +4326,12 @@
                 margin-right: auto;
             }
         }
+    }
+}
+
+.infants-young-children__cta {
+    .cta__heading {
+        max-width: 100%;
     }
 }
 

@@ -6,7 +6,7 @@
         grid-template-columns: repeat(2, minmax(0, 27.4375rem));
     }
 
-    & > div {
+    &>div {
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
@@ -111,8 +111,9 @@
         }
 
         [data-radiographic-footer] {
-            line-height: 16.1px;
             color: $color-dark-green;
+            font-weight: 700;
+            line-height: 16.1px;
 
             @media screen and (min-width: 768px) {
                 line-height: 20.7px;
