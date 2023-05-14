@@ -329,6 +329,7 @@
         on: {
           close: () => {
             setTimeout(() => {
+              this.cleanUpFields();
               this.toggleThankYouMessage();
             }, 500);
           },
@@ -341,12 +342,26 @@
     }
 
     toggleThankYouMessage() {
-      const form = document.querySelector("#request-a-rep-form");
+      const form = document.querySelector(
+        "#request-a-rep-form"
+      ) as HTMLFormElement;
       const thankYou = document.querySelector(
         ".request-a-rep__header.thank__you"
       );
-      form.classList.toggle("hidden");
-      thankYou.classList.toggle("hidden");
+      form.classList.remove("hidden");
+      thankYou.classList.add("hidden");
+    }
+
+    cleanUpFields() {
+      const form = document.querySelector(
+        "#request-a-rep-form"
+      ) as HTMLFormElement;
+      const fields = form.querySelectorAll(".form__control");
+      fields.forEach((field) => {
+        field.setAttribute("data-touched", "false");
+        field.setAttribute("data-is-valid", "true");
+        field.classList.remove("form__control--invalid");
+      });
     }
   }
 
@@ -362,9 +377,13 @@
 
     // Thank you message code after form submission
     const form = document.querySelector("#request-a-rep-form");
+    const thankYou = document.querySelector(
+      ".request-a-rep__header.thank__you"
+    );
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      requestRepModal.toggleThankYouMessage();
+      form.classList.add("hidden");
+      thankYou.classList.remove("hidden");
     });
   });
 
