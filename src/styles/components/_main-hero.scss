@@ -234,6 +234,10 @@
                     display: block;
                 }
             }
+
+            @media screen and (min-width: 1920px) {
+                width: 100%;
+            }
         }
 
         .main-hero__callout-wrapper {
