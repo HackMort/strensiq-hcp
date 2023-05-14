@@ -15,7 +15,6 @@ export default defineConfig({
       minify: false,
       rollupOptions: {
         output: {
-          format: 'esm',
           assetFileNames: 'assets/css/style[extname]'
         }
       }
