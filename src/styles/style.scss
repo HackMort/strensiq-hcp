@@ -4365,6 +4365,7 @@
 
     .hpp-related-rickets__chart-footnote,
     .mobility__chart-footnote {
+        margin-top: .5rem;
         margin-bottom: .75rem;
 
         p {
@@ -4373,6 +4374,7 @@
         }
 
         @media screen and (min-width: 1024px) {
+            margin-top: unset;
             padding-left: 2rem;
             padding-right: 2rem;
         }
