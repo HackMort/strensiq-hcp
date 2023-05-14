@@ -16,6 +16,7 @@
 
     .main-hero__image-wrapper {
         position: relative;
+        overflow: hidden;
 
         @media screen and (min-width: 1000px) {
             order: 2;
@@ -27,14 +28,31 @@
         }
 
         .main-hero__image {
+            position: relative;
+
             @media screen and (min-width: 1000px) {
                 height: 100%;
+            }
+
+            figcaption {
+                position: absolute;
+                bottom: .25rem;
+                right: .5rem;
+
+                font-size: .625rem;
+                font-weight: 300;
+
+                @media screen and (min-width: 768px) {
+                    font-size: .875rem;
+                    right: 3rem;
+                    bottom: .5rem;
+                }
             }
 
             img {
                 @media screen and (min-width: 1000px) {
                     height: 100%;
-                    object-position: center;
+                    object-position: -179px;
                 }
 
                 @media screen and (min-width: 1200px) {
@@ -65,53 +83,6 @@
 
                 @media screen and (min-width: 2200px) {
                     // width: 50%;
-                }
-            }
-        }
-
-        &.include-footnote {
-
-            &::after {
-                bottom: 0;
-                content: 'Images feature hypothetical patients.';
-                color: $color-white;
-                display: block;
-                font-size: .625rem;
-                font-weight: 400;
-                line-height: .9375rem;
-                position: absolute;
-                right: 1.25rem;
-
-                @include media('tablet') {
-                    font-size: .875rem;
-                    line-height: 1.3125rem;
-                }
-            }
-
-            &--gray {
-                overflow: hidden;
-
-                &::after {
-                    background-color: rgba(217, 217, 217, 0.7);
-                    color: $color-dark-gray;
-                    box-shadow: 0px 0px 10px 10px rgba(217, 217, 217, 0.7);
-                    -webkit-box-shadow: 0px 0px 10px 10px rgba(217, 217, 217, 0.7);
-                    -moz-box-shadow: 0px 0px 10px 10px rgba(217, 217, 217, 0.7);
-                }
-
-                @media screen and (min-width: 1000px) {
-                    overflow: unset;
-
-                    &::after {
-                        box-shadow: none;
-                        background-color: unset;
-                    }
-                }
-
-                @media screen and (min-width: 1600px) {
-                    &::after {
-                        right: calc(100% - 59vw);
-                    }
                 }
             }
         }
@@ -154,18 +125,92 @@
             @media screen and (min-width: 1400px) {
                 padding-top: 5rem;
             }
+
             @media screen and (min-width: 1600px) {
                 padding-left: 0;
             }
         }
 
         .main-hero__title {
-            color: $color-white;
-            position: relative;
-            margin-bottom: .625rem;
 
-            @media screen and (min-width: 1366px) {
-                max-width: 20ch;
+            margin-top: 2rem;
+
+            @media screen and (min-width: 1000px) {
+                margin-top: 0;
+            }
+
+            h1 {
+                text-transform: uppercase;
+                font-weight: 600;
+                color: $color-white;
+                position: relative;
+                margin-bottom: .625rem;
+                line-height: 24px;
+
+                font-size: 1.5rem;
+
+                .good-text {
+                    font-size: 3rem;
+                    line-height: 50px;
+                    position: relative;
+
+                    letter-spacing: -1px;
+
+                    .positioned {
+                        position: absolute;
+                        left: -15px;
+
+                        @media screen and (min-width: 375px) {
+                            left: -18px;
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        background-image: url("/assets/images/home/main-hero/home-title-asset.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        position: absolute;
+                        top: 50%;
+
+                        transform: translateY(-50%);
+                        left: 93%;
+
+                        width: 9.625rem;
+                        height: 3.6875rem;
+                    }
+                }
+
+                @media screen and (min-width: 375px) {
+                    font-size: 1.8125rem;
+                    line-height: 29px;
+
+                    .good-text {
+                        font-size: 3.625rem;
+
+                        &::after {
+                            width: 12rem;
+                            height: 4rem;
+
+                            transform: translateY(-55%);
+                        }
+                    }
+                }
+
+                @media screen and (min-width: 1366px) {
+                    font-size: 32px;
+                    line-height: 32px;
+
+                    .good-text {
+                        font-size: 65px;
+
+                        &::after {
+                            width: 14rem;
+                            height: 6rem;
+                            transform: translateY(-45%);
+                        }
+                    }
+                }
             }
         }
 
@@ -188,6 +233,10 @@
                 &:last-of-type br {
                     display: block;
                 }
+            }
+
+            @media screen and (min-width: 1920px) {
+                width: 100%;
             }
         }
 
@@ -312,6 +361,177 @@
             font-size: 1.5625rem;
             font-weight: 700;
             line-height: 1.9531rem;
+        }
+    }
+}
+
+
+
+// variable
+$image-count: 3;
+$time-delay: 30s;
+$time-duration: 1s;
+$time-total: (
+    $time-delay * $image-count
+);
+
+// mixin
+@mixin animation-config {
+    animation-name: bg-crossfade;
+    animation-duration: $time-total;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+// animation
+@for $i from 1 through $image-count {
+    @keyframes bg-crossfade-#{$i} {
+        $delay-rate: percentage(calc($time-delay / $time-total));
+        $duration-rate: percentage(calc($time-duration / $time-total));
+        $case-1: ($delay-rate * ($i - 1) - calc($duration-rate / 2));
+        $case-2: ($delay-rate * ($i - 1) + calc($duration-rate / 2));
+        $case-3: ($delay-rate * ($i) - calc($duration-rate / 2));
+        $case-4: ($delay-rate * ($i) + calc($duration-rate / 2));
+        $case-5: (100% - calc($duration-rate / 2));
+        $case-6: (calc(($case-4 - $case-1) * 100% / $case-5));
+
+        @if ($case-1 < 0%) {
+            $case-1: 0%;
+        }
+
+        @if ($case-2 < 0%) {
+            $case-2: 0%;
+        }
+
+        @if ($case-3 > 100%) {
+            $case-3: 100%;
+        }
+
+        @if ($case-4 > 100%) {
+            $case-4: 100%;
+        }
+
+        #{$case-1} {
+            opacity: 1;
+        }
+
+        #{$case-2} {
+            opacity: 1;
+        }
+
+        #{$case-3} {
+            opacity: 1;
+        }
+
+        #{$case-4} {
+            opacity: 0;
+        }
+
+        @if ($i !=$image-count) {
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @if ($i ==1) {
+            #{$case-5} {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.main-hero {
+
+    .main-hero__wrapper {
+
+        @media screen and (min-width: 1600px) {
+            max-width: calc((100% - ((100% - 90rem) / 2)));
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .main-hero__image-wrapper {
+            position: relative;
+            height: calc(213px + ((568 - 213) * ((100vw - 320px) / (999 - 320))));
+
+            @media screen and (min-width: 1000px) {
+                width: 100%;
+                height: auto;
+            }
+
+            @media screen and (min-width: 1600px) {
+                width: auto;
+            }
+
+            .main-hero__image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: auto;
+                    max-width: max-content;
+                    height: 100%;
+
+                    @media screen and (min-width: 1000px) {
+                        max-width: 100%;
+                    }
+
+                    @media screen and (min-width: 1200px) {
+                        width: 100%;
+                    }
+                }
+
+                &.image-1 {
+
+                    figcaption {
+                        color: $color-dark-gray;
+
+                        background-color: rgb(255, 255, 255, 0.6);
+                        box-shadow: 0px 0px 26px 10px rgb(255, 255, 255);
+                        -webkit-box-shadow: 0px 0px 26px 10px rgb(255, 255, 255);
+                        -moz-box-shadow: 0px 0px 26px 10px rgb(255, 255, 255);
+                    }
+                }
+
+                &.image-2 {
+
+                    figcaption {
+                        color: $color-white;
+                    }
+                }
+
+                &.image-3 {
+                    figcaption {
+                        color: $color-white;
+                    }
+
+                    img {
+                        @media screen and (min-width: 1000px) {
+                            max-width: 100%;
+                        }
+                    }
+                }
+
+
+                @include animation-config;
+
+                @for $i from 1 through $image-count {
+                    &:nth-child(#{$i}) {
+                        animation-name: bg-crossfade-#{$i};
+                        z-index: ($image-count - $i);
+                    }
+                }
+            }
         }
     }
 }
