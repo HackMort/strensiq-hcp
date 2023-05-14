@@ -218,17 +218,45 @@
     }
 
     &#clinical-data-page-hero {
+        .page-hero__subtitle {
+            font-size: .75rem;
+
+            @media screen and (min-width: 375px) {
+                font-size: 0.875rem;
+            }
+        }
+
         .page-hero__title {
             color: $color-white;
+            font-size: 1.5625rem;
+            line-height: 1.75rem;
+            max-width: 12.5rem;
+
+            br {
+                display: none;
+            }
+
+            @media screen and (min-width: 375px) {
+                font-size: 1.875rem;
+                line-height: 2.1563rem;
+
+                max-width: max-content;
+
+                br {
+                    display: block;
+                }
+            }
         }
 
         .shape--primary {
             top: 0;
-            right: -2rem;
+            right: auto;
+            left: 0;
             bottom: 0;
-            width: calc(100% + 2rem);
+            width: calc(100% - 5rem);
+            max-width: 18.4375rem;
 
-            border-radius: 0rem 0rem 10.875rem 0rem;
+            border-radius: 0rem 8.9375rem 8.9375rem 0rem;
 
             @media screen and (min-width: 1024px) {
                 right: initial;
@@ -247,6 +275,11 @@
             height: 100%;
             width: 100%;
 
+            background-image: url("/assets/images/clinical-data/overview/safety-helmet-desktop.png");
+            background-repeat: no-repeat;
+            background-position: -101%;
+            background-size: cover;
+
             @media screen and (min-width: 1024px) {
                 height: 36.1875rem;
                 top: 50%;
@@ -259,6 +292,8 @@
         }
 
         .shape--tertiary {
+            width: calc(100% - 3.9375rem);
+
             @media screen and (min-width: 1440px) {
                 max-width: 32.375rem;
             }
