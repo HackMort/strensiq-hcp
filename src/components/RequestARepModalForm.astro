@@ -313,9 +313,20 @@
 
   class RequestRepModal {
     modal: Fancybox;
-
+    form: HTMLFormElement;
+    formFields: NodeListOf<HTMLInputElement | HTMLSelectElement>;
+    thankYouMessage: HTMLDivElement;
     constructor() {
       this.modal = undefined;
+      this.form = document.querySelector(
+        "#request-a-rep-form"
+      ) as HTMLFormElement;
+      this.thankYouMessage = document.querySelector(
+        ".request-a-rep__header.thank__you"
+      ) as HTMLDivElement;
+      this.formFields = this.form.querySelectorAll(
+        ".form__control"
+      ) as NodeListOf<HTMLInputElement | HTMLSelectElement>;
     }
 
     open() {
@@ -328,9 +339,7 @@
         height: "auto",
         on: {
           close: () => {
-            setTimeout(() => {
-              this.toggleThankYouMessage();
-            }, 500);
+            this.close();
           },
         },
       });
@@ -338,21 +347,32 @@
 
     close() {
       this.modal.destroy();
+      this.cleanUpFields();
+      this.toggleForm();
     }
 
     toggleThankYouMessage() {
-      const form = document.querySelector("#request-a-rep-form");
-      const thankYou = document.querySelector(
-        ".request-a-rep__header.thank__you"
-      );
-      form.classList.toggle("hidden");
-      thankYou.classList.toggle("hidden");
+      this.thankYouMessage.classList.remove("hidden");
+      this.form.classList.add("hidden");
+    }
+
+    toggleForm() {
+      this.form.classList.remove("hidden");
+      this.thankYouMessage.classList.add("hidden");
+    }
+
+    cleanUpFields() {
+      this.formFields.forEach((field) => {
+        field.setAttribute("data-touched", "false");
+        field.setAttribute("data-is-valid", "false");
+        field.classList.remove("form__control--valid");
+      });
+      this.form.reset();
     }
   }
 
   document.addEventListener("DOMContentLoaded", () => {
     const requestRepModal = new RequestRepModal();
-
     const buttons = document.querySelectorAll("button.request-a-rep__button");
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
@@ -360,11 +380,15 @@
       });
     });
 
-    // Thank you message code after form submission
-    const form = document.querySelector("#request-a-rep-form");
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      requestRepModal.toggleThankYouMessage();
+    const form = document.querySelector(
+      "#request-a-rep-form"
+    ) as HTMLFormElement;
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (form.checkValidity()) {
+        requestRepModal.toggleThankYouMessage();
+        requestRepModal.cleanUpFields();
+      }
     });
   });
 
