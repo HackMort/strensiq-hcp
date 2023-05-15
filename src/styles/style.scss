@@ -4091,6 +4091,7 @@
         [role=tablist] {
             width: calc(100% - 4.125rem);
             justify-content: center;
+            overflow-y: unset;
         }
 
         [role=tablist] a {
@@ -4195,6 +4196,8 @@
             }
         }
     }
+
+
 }
 
 .infants-young-children__survival {
