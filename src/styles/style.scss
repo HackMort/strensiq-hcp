@@ -137,6 +137,12 @@
         margin-bottom: 1rem;
 
         @include flex-gap(1rem);
+
+        .button--adults {
+            background-color: #C183B1;
+            justify-content: center;
+            min-width: 276px;
+        }
     }
 
     &__study-design {
@@ -145,6 +151,10 @@
 
         &__table {
             width: 100%;
+
+            .table__header--mh--study-4 {
+                background-color: #6D868E;
+            }
         }
 
         &__head {
