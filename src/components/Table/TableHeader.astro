@@ -92,7 +92,7 @@ const { mainHeaders = [], subHeaders = [], subSubHeaders = [] } = Astro.props;
                                     `
                             }
                         >
-                            {header.label}
+                            <span set:html={header.label}></span>
                         </th>
                     ))}
                 </tr>
@@ -111,7 +111,7 @@ const { mainHeaders = [], subHeaders = [], subSubHeaders = [] } = Astro.props;
                                     `
                             }
                         >
-                            {header.label}
+                        <span set:html={header.label}></span>
                         </th>
                     ))}
                 </tr>

@@ -14,10 +14,19 @@ import TableData from "../../components/Table/TableData.astro";
 //Table headers - Study design
 const mainHeaders = [
     { label: "" },
-    { label: "Study 1", subLabel: "ENB-002-08/ ENB-003-08" },
-    { label: "Study 2", subLabel: "ENB-010-10" },
-    { label: "Study 3", subLabel: "ENB-006-09/ ENB-008-10" },
-    { label: "Study 4" },
+    {
+        label: "<span>Study 1<sup>1,2,8</sup></span>",
+        subLabel: "ENB-002-08/ ENB-003-08",
+    },
+    { label: "<span>Study 2<sup>1,6</sup></span>", subLabel: "ENB-010-10" },
+    {
+        label: "<span>Study 3<sup>1,3,10</sup></span>",
+        subLabel: "ENB-006-09/ ENB-008-10",
+    },
+    {
+        label: "<span>Study 4<sup>7</sup></span>",
+        subLabel: "ENB-009-10 Not included in the current STRENSIQ label",
+    },
 ];
 import studyData from "./data/study";
 
@@ -37,7 +46,7 @@ const subSubHeaders = [
         classModifier: "nb",
     },
     {
-        label: "STRENSIQ > 6 mg/kg per weeka (N=13)n(%)",
+        label: "STRENSIQ > 6 mg/kg per week<sup>b</sup> (N=13)n(%)",
         classModifier: "nb",
     },
     { label: "TOTAL (N=79)n(%)", classModifier: "nb" },
@@ -57,9 +66,18 @@ import data from "./data/safety";
             Get straight to<br /> the source with STRENSIQ<sup>1</sup>
         </h1>
         <picture class="page-hero__image-container" slot="hero-image">
-            <source media="(min-width: 1024px)" srcset="/assets/images/clinical-data/overview/safety-helmet-desktop.png">
-            <source media="(min-width: 425px)" srcset="/assets/images/clinical-data/overview/safety-helmet-tablet.png">
-            <img src="/assets/images/clinical-data/overview/safety-helmet-mobile.png" alt="">
+            <source
+                media="(min-width: 1024px)"
+                srcset="/assets/images/clinical-data/overview/safety-helmet-desktop.png"
+            />
+            <source
+                media="(min-width: 425px)"
+                srcset="/assets/images/clinical-data/overview/safety-helmet-tablet.png"
+            />
+            <img
+                src="/assets/images/clinical-data/overview/safety-helmet-mobile.png"
+                alt=""
+            />
         </picture>
     </PageHero>
     {
@@ -83,14 +101,16 @@ import data from "./data/safety";
         </div>
 
         <div class="clinical-data-overview__study-design--square">
-            <p
-                class="clinical-data-overview__paragraph wrapper wrapper--only-left"
+            <div class="wrapper">
+                <p
+                class="clinical-data-overview__paragraph"
             >
-                7 years of demonstrated long-term safety and efficacy data<sup
-                    >1-8</sup
-                >
-                <span class="clinical-data-overview__white-line"></span>
+                    7 years of demonstrated long-term safety and efficacy data<sup
+                        >1-8</sup
+                    >
+                <!-- <span class="clinical-data-overview__white-line"></span> -->
             </p>
+            </div>
         </div>
     </div>
 
@@ -134,58 +154,77 @@ import data from "./data/safety";
         </div>
     </div>
 
-    <div
-        id="safety"
-        class="wrapper wrapper--desktop-only section clinical-data-overview__safety"
-    >
-        <div class="wrapper clinical-data-overview__safety__description">
-            <h2 class="clinical-data-overview__safety__description--title">
-                STRENSIQ has a well-established safety profile, evidenced by 7
-                years of data<sup>11</sup>
-            </h2>
-            <p class="clinical-data-overview__safety__description--paragraph1">
-                STRENSIQ has been rigorously studied across 8 clinical trials,
-                with over 1,500 patient-years of registry data, and more than 7
-                years of postmarket experience.<sup>12-14</sup>
-            </p>
-            <p
-                class="clinical-data-overview__safety__description--paragraph2 desktop--only"
-            >
-                Clinical practice guidelines for hypophosphatasia are in
-                development for the United States, though none are currently
-                available. When considering treatment, clinicians are advised to
-                use their clinical judgment based on individual patient needs
-                and their evaluation of 7 years of long-term efficacy and safety
-                data for STRENSIQ.
-            </p>
+    <section id="safety" class="section clinical-data-overview__safety">
+        <div class="clinical-data-overview__safety__description">
+            <div class="wrapper">
+                <div>
+                    <h2
+                        class="clinical-data-overview__safety__description--title"
+                    >
+                        STRENSIQ has a well-established safety profile,
+                        evidenced by 7 years of data<sup>11</sup>
+                    </h2>
+                    <p
+                        class="clinical-data-overview__safety__description--paragraph1"
+                    >
+                        STRENSIQ has been rigorously studied across 8 clinical
+                        trials, with over 1,500 patient-years of registry data,
+                        and more than 7 years of postmarket experience.<sup
+                            >12-14</sup
+                        >
+                    </p>
+                    <p
+                        class="clinical-data-overview__safety__description--paragraph2 desktop--only"
+                    >
+                        Clinical practice guidelines for hypophosphatasia are
+                        not currently available in the United States. When
+                        considering treatment, healthcare providers should use
+                        their clinical judgment based on individual patient
+                        needs.<sup>15,16</sup>
+                    </p>
+                </div>
 
-            <div
-                class="clinical-data-overview__safety__anotations clinical-data-overview__safety__anotations--desktop desktop--only"
-            >
-                <p>
-                    <sup>a</sup>Adverse reactions are from the combined period
-                    of 6 mg/kg and above (ie, total drug exposure regardless of
-                    starting dose and intermediary doses as long as the patient
-                    reached doses &gt 6 mg/kg).
-                </p>
-                <p>
-                    <sup>b</sup>Other injection site reactions include
-                    injection-site rash, inflammation, papule, hemorrhage,
-                    hematoma, urticaria, warmth, calcification, mass, scar, and
-                    cellulitis.
-                </p>
-                <p><sup>c</sup>Other lipodystrophy includes lipohypertrophy.</p>
-                <p>
-                    <sup>d</sup>Other hypersensitivity reactions include
-                    erythema/redness, pyrexia/fever, irritability, nausea, pain,
-                    rigor/chills, oral hypoesthesia, headache, flushing, and
-                    anaphylaxis.
-                </p>
+                <div
+                    class="clinical-data-overview__safety__anotations clinical-data-overview__safety__anotations--desktop desktop--only"
+                >
+                    <p>
+                        <sup>a</sup>These data reflect exposure to STRENSIQ in
+                        99 patients with perinatal/infantile- or juvenile-onset
+                        HPP (age 1 day to 58 years) treated with STRENSIQ, most
+                        for more than 2 years (range 1 day to 312 weeks [78
+                        months]): 51 patients received at least 96 weeks (24
+                        months) of treatment and 39 patients received 168 weeks
+                        (42 months) or more of treatment.
+                    </p>
+                    <p>
+                        <sup>b</sup>Adverse reactions are from the combined
+                        period of 6 mg/kg and above (ie, total drug exposure
+                        regardless of starting dose and intermediary doses as
+                        long as the patient reached doses &#62;6 mg/kg).
+                    </p>
+                    <p>
+                        <sup>c</sup>Other injection site reactions include
+                        injection site rash, inflammation, papule, hemorrhage,
+                        hematoma, urticaria, warmth, calcification, mass, scar,
+                        and cellulitis.
+                    </p>
+                    <p>
+                        <sup>d</sup>Other lipodystrophy includes
+                        lipohypertrophy.
+                    </p>
+                    <p>
+                        <sup>e</sup>Other hypersensitivity reactions include
+                        erythema/redness, pyrexia/fever, irritability, nausea,
+                        pain, rigor/chills, oral hypoesthesia, headache,
+                        flushing, and anaphylaxis.
+                    </p>
+                </div>
             </div>
         </div>
 
         <h4 class="clinical-data-overview-container__panel-title mobile--only">
-            Proven safe and well-tolerated
+            Most frequently reported adverse reactions (≥10% of patients) from
+            STRENSIQ Prescribing Information<sup>1,a</sup>
         </h4>
 
         <div
@@ -194,13 +233,11 @@ import data from "./data/safety";
             <h4
                 class="clinical-data-overview-container__panel-title desktop--only"
             >
-                Proven safe and well-tolerated
+                Most frequently reported adverse reactions (≥10% of patients)
+                from STRENSIQ Prescribing Information<sup>1,a</sup>
             </h4>
             <!-- TODO: Is necesary to refactor title prop in Table component to be able to send html -->
-            <Table
-                title="Most frequently reported adverse reactions (≥10% of patients) from STRENSIQ Prescribing Information<sup>1,a</sup>"
-                className="safety-table"
-            >
+            <Table className="safety-table">
                 <TableHeader
                     slot="header"
                     subHeaders={subHeaders}
@@ -214,35 +251,41 @@ import data from "./data/safety";
             class="wrapper clinical-data-overview__safety__anotations mobile--only"
         >
             <p>
-                <sup>a</sup>These data reflect exposure to STRENSIQ in 99 patients with
-                perinatal/infantile- or juvenile-onset HPP (age 1 day to 58 years)
-                treated with STRENSIQ, most for more than 2 years (range 1 day to
-                312 weeks [78 months]): 51 patients received at least 96 weeks (24
-                months) of treatment and 39 patients received 168 weeks (42 months)
-                or more of treatment.
+                <sup>a</sup>These data reflect exposure to STRENSIQ in 99
+                patients with perinatal/infantile- or juvenile-onset HPP (age 1
+                day to 58 years) treated with STRENSIQ, most for more than 2
+                years (range 1 day to 312 weeks [78 months]): 51 patients
+                received at least 96 weeks (24 months) of treatment and 39
+                patients received 168 weeks (42 months) or more of treatment.
             </p>
             <p>
-                <sup>b</sup>Adverse reactions are from the combined
-                period of 6 mg/kg and above (ie, total drug exposure regardless of
-                starting dose and intermediary doses as long as the patient reached
-                doses &#62;6 mg/kg).
+                <sup>b</sup>Adverse reactions are from the combined period of 6
+                mg/kg and above (ie, total drug exposure regardless of starting
+                dose and intermediary doses as long as the patient reached doses
+                &#62;6 mg/kg).
             </p>
-            <p><sup>c</sup>Other injection site reactions include injection
-                site rash, inflammation, papule, hemorrhage, hematoma, urticaria,
-                warmth, calcification, mass, scar, and cellulitis.</p>
+            <p>
+                <sup>c</sup>Other injection site reactions include injection
+                site rash, inflammation, papule, hemorrhage, hematoma,
+                urticaria, warmth, calcification, mass, scar, and cellulitis.
+            </p>
             <p>
                 <sup>d</sup>Other lipodystrophy includes lipohypertrophy.
             </p>
             <p>
-                <sup>e</sup>Other hypersensitivity reactions include erythema/redness, pyrexia/fever, irritability,
-                nausea, pain, rigor/chills, oral hypoesthesia, headache, flushing,
-                and anaphylaxis.
+                <sup>e</sup>Other hypersensitivity reactions include
+                erythema/redness, pyrexia/fever, irritability, nausea, pain,
+                rigor/chills, oral hypoesthesia, headache, flushing, and
+                anaphylaxis.
             </p>
             <p class="clinical-data-overview__safety__anotations--disclaimer">
-                Clinical practice guidelines for hypophosphatasia are not currently available in the United States. When considering treatment, healthcare providers should use their clinical judgment based on individual patient needs.<sup>15,16</sup>
+                Clinical practice guidelines for hypophosphatasia are not
+                currently available in the United States. When considering
+                treatment, healthcare providers should use their clinical
+                judgment based on individual patient needs.<sup>15,16</sup>
             </p>
         </div>
-    </div>
+    </section>
 
     <CTA
         heading="Get them off to a solid start"
