@@ -313,9 +313,20 @@
 
   class RequestRepModal {
     modal: Fancybox;
-
+    form: HTMLFormElement;
+    formFields: NodeListOf<HTMLInputElement | HTMLSelectElement>;
+    thankYouMessage: HTMLDivElement;
     constructor() {
       this.modal = undefined;
+      this.form = document.querySelector(
+        "#request-a-rep-form"
+      ) as HTMLFormElement;
+      this.thankYouMessage = document.querySelector(
+        ".request-a-rep__header.thank__you"
+      ) as HTMLDivElement;
+      this.formFields = this.form.querySelectorAll(
+        ".form__control"
+      ) as NodeListOf<HTMLInputElement | HTMLSelectElement>;
     }
 
     open() {
@@ -328,10 +339,7 @@
         height: "auto",
         on: {
           close: () => {
-            setTimeout(() => {
-              this.cleanUpFields();
-              this.toggleThankYouMessage();
-            }, 500);
+            this.close();
           },
         },
       });
@@ -339,35 +347,31 @@
 
     close() {
       this.modal.destroy();
+      this.cleanUpFields();
+      this.toggleForm();
     }
 
     toggleThankYouMessage() {
-      const form = document.querySelector(
-        "#request-a-rep-form"
-      ) as HTMLFormElement;
-      const thankYou = document.querySelector(
-        ".request-a-rep__header.thank__you"
-      );
-      form.classList.remove("hidden");
-      thankYou.classList.add("hidden");
+      this.thankYouMessage.classList.remove("hidden");
+      this.form.classList.add("hidden");
+    }
+
+    toggleForm() {
+      this.form.classList.remove("hidden");
+      this.thankYouMessage.classList.add("hidden");
     }
 
     cleanUpFields() {
-      const form = document.querySelector(
-        "#request-a-rep-form"
-      ) as HTMLFormElement;
-      const fields = form.querySelectorAll(".form__control");
-      fields.forEach((field) => {
+      this.formFields.forEach((field) => {
         field.setAttribute("data-touched", "false");
-        field.setAttribute("data-is-valid", "true");
-        field.classList.remove("form__control--invalid");
+        field.setAttribute("data-is-valid", "false");
+        field.classList.remove("form__control--valid");
       });
     }
   }
 
   document.addEventListener("DOMContentLoaded", () => {
     const requestRepModal = new RequestRepModal();
-
     const buttons = document.querySelectorAll("button.request-a-rep__button");
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
@@ -375,15 +379,14 @@
       });
     });
 
-    // Thank you message code after form submission
-    const form = document.querySelector("#request-a-rep-form");
-    const thankYou = document.querySelector(
-      ".request-a-rep__header.thank__you"
-    );
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      form.classList.add("hidden");
-      thankYou.classList.remove("hidden");
+    const form = document.querySelector(
+      "#request-a-rep-form"
+    ) as HTMLFormElement;
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (form.checkValidity()) {
+        requestRepModal.toggleThankYouMessage();
+      }
     });
   });
 
