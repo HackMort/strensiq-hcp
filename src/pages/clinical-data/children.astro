@@ -3,9 +3,9 @@ import PageHero from "../../components/PageHero.astro";
 import Layout from "../../layouts/Layout.astro";
 import CTA from "../../components/CTA.astro";
 import HighlightInformation from "../../components/HighlightInformation.astro";
-import AccordionMobile from '../../components/accordion-mobile/AccordionMobile.astro';
-import ExpansionPanelMobile from '../../components/accordion-mobile/ExpansionPanelMobile.astro';
-import RadiographicImagesComparator from '../../components/RadiographicImagesComparator.astro';
+import AccordionMobile from "../../components/accordion-mobile/AccordionMobile.astro";
+import ExpansionPanelMobile from "../../components/accordion-mobile/ExpansionPanelMobile.astro";
+import RadiographicImagesComparator from "../../components/RadiographicImagesComparator.astro";
 import PinchToZoom from "../../components/PinchToZoom.astro";
 import InternalNavigation from "../../components/InternalNavigation.astro";
 import ClinicalDataModal from "../../components/clinical-data/ClinicalDataModal.astro";
@@ -14,17 +14,18 @@ import Table from "../../components/Table/Table.astro";
 import TableHeader from "../../components/Table/TableHeader.astro";
 import TableData from "../../components/Table/TableData.astro";
 import studyData from "../clinical-data/data/clinical-data-children.js";
+import References from "../../components/References.astro";
 
 const internalNavLinks = [
   { href: "hpp-related-rickets", label: "HPP-related rickets", active: true },
   { href: "mobility", label: "Mobility" },
   { href: "pain-disability", label: "Pain/disability" },
-  { href: "strength-agility", label: "Strength/agility" }
+  { href: "strength-agility", label: "Strength/agility" },
 ];
 
 const mainHeaders = [
   { label: "", sublabel: "" },
-  { label: "Study 3", subLabel: "ENB-006-09/ ENB-008-10" }
+  { label: "Study 3<sup>1,2,7,14</sup>", subLabel: "ENB-006-09/ ENB-008-10" },
 ];
 ---
 
@@ -33,214 +34,137 @@ const mainHeaders = [
     pageId="clinical-data"
     classNames="clinical-data-children__page-hero"
   >
-    <h2 class="page-hero__subtitle">in children with hypophosphatasia</h2>
+    <h2 class="page-hero__subtitle">
+      in children with hypophosphatasia
+    </h2>
     <h1 class="page-hero__title">
-      STRENSIQ helps build<br /> their framework and<br /> gets them moving
+      STRENSIQ helps build their framework and gets them moving<sup>1</sup>
     </h1>
   </PageHero>
-  {internalNavLinks && <InternalNavigation items={internalNavLinks} heading="Children" icon/>}
+  {
+    internalNavLinks && (
+      <InternalNavigation items={internalNavLinks} heading="Children" icon />
+    )
+  }
   <div class="clinical-data-children">
-    <section id="hpp-related-rickets" class="section cdchildren-container cdchildren-container--rickets">
+    <section
+      id="hpp-related-rickets"
+      class="section cdchildren-container cdchildren-container--rickets"
+    >
       <div class="wrapper">
-        <section class="cdchildren-container__content cdchildren-container__content--left">
-          <h2 class="color--dark-green cdchildren-container__title">STRENSIQ showed complete or substantial healing of HPP-related rickets</h2>
+        <section
+          class="cdchildren-container__content cdchildren-container__content--left"
+        >
+          <h2 class="color--dark-green cdchildren-container__title">
+            STRENSIQ showed complete or substantial healing of HPP-related
+            rickets<sup>1,2</sup>
+          </h2>
           <HighlightInformation
-            title="After 6 MONTHS"
+            title="After 6 months<sup>2</sup>"
             footnote="of patients achieved complete or substantial healing of HPP-related rickets"
             className="highlight-information--contains-subcontent highlight-information--single"
           >
             <span slot="content">69<sub>%</sub></span>
-            <span class="highlight-information__sub-content" slot="content">(9/13)</span>
-            <span slot="footnote">as measured by the RGI-C scale<sup>*</sup></span>
+            <span class="highlight-information__sub-content" slot="content"
+              >(9/13)</span
+            >
+            <span slot="footnote"
+              >as measured by the RGI-C scale<sup>*</sup></span
+            >
           </HighlightInformation>
           <HighlightInformation
-            title="After 7 Years"
+            title="After 7 years<sup>1</sup>"
             footnote="of patients achieved complete or substantial healing of HPP-related rickets"
             className="highlight-information--contains-subcontent highlight-information--single"
           >
             <span slot="content">100<sub>%</sub></span>
-            <span class="highlight-information__sub-content" slot="content">(12/12)<sup>†</sup></span>
-            <span slot="footnote">as measured by the RGI-C scale<sup>*</sup></span>
+            <span class="highlight-information__sub-content" slot="content"
+              >(12/12)<sup>†</sup></span
+            >
+            <span slot="footnote"
+              >as measured by the RGI-C scale<sup>*</sup></span
+            >
           </HighlightInformation>
-          <p class="cdchildren-container__footnote"><sup>*</sup>The RGI-C scale quantifies change over time in mineralization and bone structure.</p>
-          <p class="cdchildren-container__footnote"><sup>†</sup>12 patients entered the long-term extension of the trial.</p>
+          <p class="cdchildren-container__footnote">
+            <sup>*</sup>The RGI-C scale quantifies change over time in
+            mineralization and bone structure.
+          </p>
+          <p class="cdchildren-container__footnote">
+            <sup>†</sup>12 patients entered the long-term extension of the
+            trial.<sup>3</sup>
+          </p>
         </section>
-        <section class="cdchildren-container__content cdchildren-container__content--right">
+        <section
+          class="cdchildren-container__content cdchildren-container__content--right"
+        >
           <div class="radiographic-images-mobile">
-            <p class="radiographic-images-mobile__title">Radiographic images</p>
+            <p class="radiographic-images-mobile__title">
+              Radiographic images
+            </p>
             <AccordionMobile id="children-radiographics">
-              <ExpansionPanelMobile accordionId="children-radiographics" title="Patient 1: Wrist">
-                <RadiographicImagesComparator>
-                  <div slot="before">
-                    <p data-radiographic-title>
-                      6 years of age (at baseline)
-                    </p>
-                    <picture data-radiographic-image>
-                      <source srcset="/assets/images/clinical-data/children/patient1-wrist-before-desktop.png" media="(min-width: 768px)">
-                      <img src="/assets/images/clinical-data/children/patient1-wrist-before-mobile.png" alt="">
-                    </picture>
-                    </div>
-                    <div slot="after">
-                      <p data-radiographic-title>
-                        11 years of age (at 5 years)
-                      </p>
-                      <picture data-radiographic-image>
-                        <source srcset="/assets/images/clinical-data/children/patient1-wrist-after-desktop.png" media="(min-width: 768px)">
-                        <img src="/assets/images/clinical-data/children/patient1-wrist-after-mobile.png" alt="">
-                      </picture>
-                      <p data-radiographic-footer>
-                        RGI-C score: +2.67
-                      </p>
-                    </div>
-                  </RadiographicImagesComparator>
-                </ExpansionPanelMobile>
-                <ExpansionPanelMobile accordionId="children-radiographics" title="Patient 1: Knee">
-                  <RadiographicImagesComparator>
-                    <div slot="before">
-                      <p data-radiographic-title>
-                        6 years of age (at baseline)
-                      </p>
-                      <picture data-radiographic-image>
-                        <source srcset="/assets/images/clinical-data/children/patient1-knee-before-desktop.png" media="(min-width: 768px)">
-                        <img src="/assets/images/clinical-data/children/patient1-knee-before-mobile.png" alt="">
-                      </picture>
-                    </div>
-                    <div slot="after">
-                      <div slot="before">
-                        <p data-radiographic-title>
-                          11 years of age (at 5 years)
-                        </p>
-                        <picture data-radiographic-image>
-                          <source srcset="/assets/images/clinical-data/children/patient1-knee-after-desktop.png" media="(min-width: 768px)">
-                        <img src="/assets/images/clinical-data/children/patient1-knee-after-mobile.png" alt="">
-                        </picture>
-                        <p data-radiographic-footer>
-                          RGI-C score: +2.67
-                        </p>
-                      </div>
-                    </div>
-                  </RadiographicImagesComparator>
-                </ExpansionPanelMobile>
-                <ExpansionPanelMobile accordionId="children-radiographics" title="Patient 2: Wrist">
-                  <RadiographicImagesComparator>
-                    <div slot="before">
-                      <p data-radiographic-title>
-                        6 years of age (at baseline)
-                      </p>
-                      <picture data-radiographic-image>
-                        <source srcset="/assets/images/clinical-data/children/patient2-wrist-before-desktop.png" media="(min-width: 768px)">
-                        <img src="/assets/images/clinical-data/children/patient2-wrist-before-mobile.png" alt="">
-                      </picture>
-                    </div>
-                    <div slot="after">
-                      <div slot="before">
-                          <p data-radiographic-title>
-                            11 years of age (at 5 years)
-                          </p>
-                          <picture data-radiographic-image>
-                            <source srcset="/assets/images/clinical-data/children/patient2-wrist-after-desktop.png" media="(min-width: 768px)">
-                          <img src="/assets/images/clinical-data/children/patient2-wrist-after-mobile.png" alt="">
-                          </picture>
-                          <p data-radiographic-footer>
-                            RGI-C score: +2.00
-                          </p>
-                      </div>
-                    </div>
-                  </RadiographicImagesComparator>
-                </ExpansionPanelMobile>
-                <ExpansionPanelMobile accordionId="children-radiographics" title="Patient 2: Knee">
-                  <RadiographicImagesComparator>
-                    <div slot="before">
-                      <p data-radiographic-title>
-                        6 years of age (at baseline)
-                      </p>
-                      <picture data-radiographic-image>
-                        <source srcset="/assets/images/clinical-data/children/patient2-knee-before-desktop.png" media="(min-width: 768px)">
-                        <img src="/assets/images/clinical-data/children/patient2-knee-before-mobile.png" alt="">
-                      </picture>
-                    </div>
-                    <div slot="after">
-                      <div slot="before">
-                          <p data-radiographic-title>
-                            11 years of age (at 5 years)
-                          </p>
-                          <picture data-radiographic-image>
-                            <source srcset="/assets/images/clinical-data/children/patient2-knee-after-desktop.png" media="(min-width: 768px)">
-                          <img src="/assets/images/clinical-data/children/patient2-knee-after-mobile.png" alt="">
-                          </picture>
-                          <p data-radiographic-footer>
-                            RGI-C score: +2.00
-                          </p>
-                      </div>
-                    </div>
-                  </RadiographicImagesComparator>
-                </ExpansionPanelMobile>
-              </AccordionMobile>
-            </div>
-            <div class="radiographic-images-desktop">
-              <ul role="tablist">
-                <li role="presentation">
-                  <!--active one -->
-                  <a href="#tabpanel-wrist1" role="tab" id="tab-wrist1" aria-selected="true">Patient 1: Wrist</a>
-                </li>
-                <li role="presentation">
-                  <a href="#tabpanel-knee1" role="tab" id="tab-knee1" tabindex="-1">Patient 1: Knee</a>
-                </li>
-                <li role="presentation">
-                  <a href="#tabpanel-wrist2" role="tab" id="tab-wrist2">Patient 2: Wrist</a>
-                </li>
-                <li role="presentation">
-                  <a href="#tabpanel-knee2" role="tab" id="tab-knee2" tabindex="-1">Patient 2: Knee</a>
-                </li>
-              </ul>
-              <section
-                id="tabpanel-wrist1"
-                role="tabpanel"
-                aria-labelledby="tab-wrist1"
-                aria-hidden="false"
-                tabindex="-1"
+              <ExpansionPanelMobile
+                accordionId="children-radiographics"
+                title="Patient 1: Wrist"
               >
                 <RadiographicImagesComparator>
                   <div slot="before">
-                    <p data-radiographic-title>
-                      6 years of age (at baseline)
-                    </p>
+                    <p data-radiographic-title>6 years of age (at baseline)</p>
                     <picture data-radiographic-image>
-                      <source srcset="/assets/images/clinical-data/children/patient1-wrist-before-desktop.png" media="(min-width: 768px)">
-                      <img src="/assets/images/clinical-data/children/patient1-wrist-before-mobile.png" alt="">
+                      <source
+                        srcset="/assets/images/clinical-data/children/patient1-wrist-before-desktop.png"
+                        media="(min-width: 768px)"
+                      />
+                      <img
+                        src="/assets/images/clinical-data/children/patient1-wrist-before-mobile.png"
+                        alt=""
+                      />
                     </picture>
+                    <p class="radiographic__footnote radiographic__footnote--mobile">
+                      Reproduced from Whyte MP, et al. [supplementary appendix]. <i>JCI Insight.</i> 2016;1(9):e85971.
+                    </p>
                   </div>
                   <div slot="after">
-                    <p data-radiographic-title>
-                      11 years of age (at 5 years)
-                    </p>
+                    <p data-radiographic-title>11 years of age (at 5 years)</p>
                     <picture data-radiographic-image>
-                      <source srcset="/assets/images/clinical-data/children/patient1-wrist-after-desktop.png" media="(min-width: 768px)">
-                      <img src="/assets/images/clinical-data/children/patient1-wrist-after-mobile.png" alt="">
+                      <source
+                        srcset="/assets/images/clinical-data/children/patient1-wrist-after-desktop.png"
+                        media="(min-width: 768px)"
+                      />
+                      <img
+                        src="/assets/images/clinical-data/children/patient1-wrist-after-mobile.png"
+                        alt=""
+                      />
                     </picture>
                     <p data-radiographic-footer>
-                      RGI-C score: +2.67
+                      <strong>RGI-C score: +2.67</strong>
+                    </p>
+                    <p class="radiographic__footnote">
+                      Representations of efficacy are consistent with results seen from typical patients in the study. Individual results
+                      may vary.
                     </p>
                   </div>
                 </RadiographicImagesComparator>
-              </section>
-              <section
-                id="tabpanel-knee1"
-                role="tabpanel"
-                aria-labelledby="tab-knee1"
-                aria-hidden="true"
-                tabindex="-1"
-                hidden
+              </ExpansionPanelMobile>
+              <ExpansionPanelMobile
+                accordionId="children-radiographics"
+                title="Patient 1: Knee"
               >
                 <RadiographicImagesComparator>
                   <div slot="before">
-                    <p data-radiographic-title>
-                      6 years of age (at baseline)
-                    </p>
+                    <p data-radiographic-title>6 years of age (at baseline)</p>
                     <picture data-radiographic-image>
-                      <source srcset="/assets/images/clinical-data/children/patient1-knee-before-desktop.png" media="(min-width: 768px)">
-                      <img src="/assets/images/clinical-data/children/patient1-knee-before-mobile.png" alt="">
+                      <source
+                        srcset="/assets/images/clinical-data/children/patient1-knee-before-desktop.png"
+                        media="(min-width: 768px)"
+                      />
+                      <img
+                        src="/assets/images/clinical-data/children/patient1-knee-before-mobile.png"
+                        alt=""
+                      />
                     </picture>
+                    <p class="radiographic__footnote radiographic__footnote--bottom">
+                      Reproduced from Whyte MP, et al. [supplementary appendix]. <i>JCI Insight.</i> 2016;1(9):e85971.
+                    </p>
                   </div>
                   <div slot="after">
                     <div slot="before">
@@ -248,80 +172,339 @@ const mainHeaders = [
                         11 years of age (at 5 years)
                       </p>
                       <picture data-radiographic-image>
-                        <source srcset="/assets/images/clinical-data/children/patient1-knee-after-desktop.png" media="(min-width: 768px)">
-                      <img src="/assets/images/clinical-data/children/patient1-knee-after-mobile.png" alt="">
+                        <source
+                          srcset="/assets/images/clinical-data/children/patient1-knee-after-desktop.png"
+                          media="(min-width: 768px)"
+                        />
+                        <img
+                          src="/assets/images/clinical-data/children/patient1-knee-after-mobile.png"
+                          alt=""
+                        />
                       </picture>
                       <p data-radiographic-footer>
-                        RGI-C score: +2.67
+                        <strong>RGI-C score: +2.67</strong>
+                      </p>
+                      <p class="radiographic__footnote">
+                        Representations of efficacy are consistent with results seen from typical patients in the study. Individual results
+                        may vary.
                       </p>
                     </div>
                   </div>
+                </RadiographicImagesComparator>
+              </ExpansionPanelMobile>
+              <ExpansionPanelMobile
+                accordionId="children-radiographics"
+                title="Patient 2: Wrist"
+              >
+                <RadiographicImagesComparator>
+                  <div slot="before">
+                    <p data-radiographic-title>6 years of age (at baseline)</p>
+                    <picture data-radiographic-image>
+                      <source
+                        srcset="/assets/images/clinical-data/children/patient2-wrist-before-desktop.png"
+                        media="(min-width: 768px)"
+                      />
+                      <img
+                        src="/assets/images/clinical-data/children/patient2-wrist-before-mobile.png"
+                        alt=""
+                      />
+                    </picture>
+                    <p class="radiographic__footnote radiographic__footnote--bottom">
+                      Reproduced from Whyte MP, et al. [supplementary appendix]. <i>JCI Insight.</i> 2016;1(9):e85971.
+                    </p>
+                  </div>
+                  <div slot="after">
+                    <div slot="before">
+                      <p data-radiographic-title>
+                        11 years of age (at 5 years)
+                      </p>
+                      <picture data-radiographic-image>
+                        <source
+                          srcset="/assets/images/clinical-data/children/patient2-wrist-after-desktop.png"
+                          media="(min-width: 768px)"
+                        />
+                        <img
+                          src="/assets/images/clinical-data/children/patient2-wrist-after-mobile.png"
+                          alt=""
+                        />
+                      </picture>
+                      <p data-radiographic-footer>
+                        <strong>RGI-C score: +2.00</strong>
+                      </p>
+                      <p class="radiographic__footnote">
+                        Representations of efficacy are consistent with results seen from typical patients in the study. Individual results may vary.
+                      </p>
+                    </div>
+                  </div>
+                </RadiographicImagesComparator>
+              </ExpansionPanelMobile>
+              <ExpansionPanelMobile
+                accordionId="children-radiographics"
+                title="Patient 2: Knee"
+              >
+                <RadiographicImagesComparator>
+                  <div slot="before">
+                    <p data-radiographic-title>6 years of age (at baseline)</p>
+                    <picture data-radiographic-image>
+                      <source
+                        srcset="/assets/images/clinical-data/children/patient2-knee-before-desktop.png"
+                        media="(min-width: 768px)"
+                      />
+                      <img
+                        src="/assets/images/clinical-data/children/patient2-knee-before-mobile.png"
+                        alt=""
+                      />
+                    </picture>
+                    <p class="radiographic__footnote radiographic__footnote--bottom">
+                      Reproduced from Whyte MP, et al. [supplementary appendix]. <i>JCI Insight.</i> 2016;1(9):e85971.
+                    </p>
+                  </div>
+                  <div slot="after">
+                    <div slot="before">
+                      <p data-radiographic-title>
+                        11 years of age (at 5 years)
+                      </p>
+                      <picture data-radiographic-image>
+                        <source
+                          srcset="/assets/images/clinical-data/children/patient2-knee-after-desktop.png"
+                          media="(min-width: 768px)"
+                        />
+                        <img
+                          src="/assets/images/clinical-data/children/patient2-knee-after-mobile.png"
+                          alt=""
+                        />
+                      </picture>
+                      <p data-radiographic-footer>
+                        <strong>RGI-C score: +2.00</strong>
+                      </p>
+                      <p class="radiographic__footnote">
+                        Representations of efficacy are consistent with results seen from typical patients in the study. Individual results
+                        may vary.
+                      </p>
+                    </div>
+                  </div>
+                </RadiographicImagesComparator>
+              </ExpansionPanelMobile>
+            </AccordionMobile>
+          </div>
+          <div class="radiographic-images-desktop">
+            <ul role="tablist">
+              <li role="presentation">
+                <!--active one -->
+                <a
+                  href="#tabpanel-wrist1"
+                  role="tab"
+                  id="tab-wrist1"
+                  aria-selected="true">Patient 1: Wrist</a
+                >
+              </li>
+              <li role="presentation">
+                <a
+                  href="#tabpanel-knee1"
+                  role="tab"
+                  id="tab-knee1"
+                  tabindex="-1">Patient 1: Knee</a
+                >
+              </li>
+              <li role="presentation">
+                <a href="#tabpanel-wrist2" role="tab" id="tab-wrist2"
+                  >Patient 2: Wrist</a
+                >
+              </li>
+              <li role="presentation">
+                <a
+                  href="#tabpanel-knee2"
+                  role="tab"
+                  id="tab-knee2"
+                  tabindex="-1">Patient 2: Knee</a
+                >
+              </li>
+            </ul>
+            <section
+              id="tabpanel-wrist1"
+              role="tabpanel"
+              aria-labelledby="tab-wrist1"
+              aria-hidden="false"
+              tabindex="-1"
+            >
+              <RadiographicImagesComparator>
+                <div slot="before">
+                  <p data-radiographic-title>6 years of age (at baseline)</p>
+                  <picture data-radiographic-image>
+                    <source
+                      srcset="/assets/images/clinical-data/children/patient1-wrist-before-desktop.png"
+                      media="(min-width: 768px)"
+                    />
+                    <img
+                      src="/assets/images/clinical-data/children/patient1-wrist-before-mobile.png"
+                      alt=""
+                    />
+                  </picture>
+                  <p class="radiographic__footnote radiographic__footnote--bottom">
+                    Reproduced from Whyte MP, et al. [supplementary appendix]. JCI Insight. 2016;1(9):e85971.
+                  </p>
+                </div>
+                <div slot="after">
+                  <p data-radiographic-title>11 years of age (at 5 years)</p>
+                  <picture data-radiographic-image>
+                    <source
+                      srcset="/assets/images/clinical-data/children/patient1-wrist-after-desktop.png"
+                      media="(min-width: 768px)"
+                    />
+                    <img
+                      src="/assets/images/clinical-data/children/patient1-wrist-after-mobile.png"
+                      alt=""
+                    />
+                  </picture>
+                  <p data-radiographic-footer>
+                    <strong>RGI-C score: +2.67</strong>
+                  </p>
+                  <p class="radiographic__footnote">
+                    Representations of efficacy are consistent with results seen from typical patients in the study. Individual results may vary.
+                  </p>
+                </div>
               </RadiographicImagesComparator>
             </section>
             <section
-                id="tabpanel-wrist2"
-                role="tabpanel"
-                aria-labelledby="tab-wrist2"
-                aria-hidden="true"
-                tabindex="-1"
-                hidden
-              >
-                <RadiographicImagesComparator>
+              id="tabpanel-knee1"
+              role="tabpanel"
+              aria-labelledby="tab-knee1"
+              aria-hidden="true"
+              tabindex="-1"
+              hidden
+            >
+              <RadiographicImagesComparator>
+                <div slot="before">
+                  <p data-radiographic-title>6 years of age (at baseline)</p>
+                  <picture data-radiographic-image>
+                    <source
+                      srcset="/assets/images/clinical-data/children/patient1-knee-before-desktop.png"
+                      media="(min-width: 768px)"
+                    />
+                    <img
+                      src="/assets/images/clinical-data/children/patient1-knee-before-mobile.png"
+                      alt=""
+                    />
+                  </picture>
+                  <p class="radiographic__footnote radiographic__footnote--bottom">
+                    Reproduced from Whyte MP, et al. [supplementary appendix]. JCI Insight. 2016;1(9):e85971.
+                  </p>
+                </div>
+                <div slot="after">
                   <div slot="before">
-                      <p data-radiographic-title>
-                        6 years of age (at baseline)
-                      </p>
-                      <picture data-radiographic-image>
-                          <source srcset="/assets/images/clinical-data/children/patient2-wrist-before-desktop.png" media="(min-width: 768px)">
-                          <img src="/assets/images/clinical-data/children/patient2-wrist-before-mobile.png" alt="">
-                      </picture>
-                  </div>
-                  <div slot="after">
-                      <p data-radiographic-title>
-                        11 years of age (at 5 years)
-                      </p>
-                      <picture data-radiographic-image>
-                          <source srcset="/assets/images/clinical-data/children/patient2-wrist-after-desktop.png" media="(min-width: 768px)">
-                          <img src="/assets/images/clinical-data/children/patient2-wrist-after-mobile.png" alt="">
-                      </picture>
-                      <p data-radiographic-footer>
-                        RGI-C score: +2.00
-                      </p>
-                  </div>
-                </RadiographicImagesComparator>
-              </section>
-              <section
-                id="tabpanel-knee2"
-                role="tabpanel"
-                aria-labelledby="tab-knee2"
-                aria-hidden="true"
-                tabindex="-1"
-                hidden
-              >
-                <RadiographicImagesComparator>
-                  <div slot="before">
-                    <p data-radiographic-title>
-                      6 years of age (at baseline)
-                    </p>
+                    <p data-radiographic-title>11 years of age (at 5 years)</p>
                     <picture data-radiographic-image>
-                      <source srcset="/assets/images/clinical-data/children/patient2-knee-before-desktop.png" media="(min-width: 768px)">
-                      <img src="/assets/images/clinical-data/children/patient2-knee-before-mobile.png" alt="">
+                      <source
+                        srcset="/assets/images/clinical-data/children/patient1-knee-after-desktop.png"
+                        media="(min-width: 768px)"
+                      />
+                      <img
+                        src="/assets/images/clinical-data/children/patient1-knee-after-mobile.png"
+                        alt=""
+                      />
                     </picture>
+                    <p data-radiographic-footer>
+                      <strong>RGI-C score: +2.67</strong>
+                    </p>
+                    <p class="radiographic__footnote">
+                      Representations of efficacy are consistent with results seen from typical patients in the study. Individual results may vary.
+                    </p>
                   </div>
-                  <div slot="after">
-                    <div slot="before">
-                      <p data-radiographic-title>
-                        11 years of age (at 5 years)
-                      </p>
-                      <picture data-radiographic-image>
-                        <source srcset="/assets/images/clinical-data/children/patient2-knee-after-desktop.png" media="(min-width: 768px)">
-                      <img src="/assets/images/clinical-data/children/patient2-knee-after-mobile.png" alt="">
-                      </picture>
-                      <p data-radiographic-footer>
-                        RGI-C score: +2.00
-                      </p>
-                    </div>
+                </div>
+              </RadiographicImagesComparator>
+            </section>
+            <section
+              id="tabpanel-wrist2"
+              role="tabpanel"
+              aria-labelledby="tab-wrist2"
+              aria-hidden="true"
+              tabindex="-1"
+              hidden
+            >
+              <RadiographicImagesComparator>
+                <div slot="before">
+                  <p data-radiographic-title>6 years of age (at baseline)</p>
+                  <picture data-radiographic-image>
+                    <source
+                      srcset="/assets/images/clinical-data/children/patient2-wrist-before-desktop.png"
+                      media="(min-width: 768px)"
+                    />
+                    <img
+                      src="/assets/images/clinical-data/children/patient2-wrist-before-mobile.png"
+                      alt=""
+                    />
+                  </picture>
+                  <p class="radiographic__footnote radiographic__footnote--bottom">
+                    Reproduced from Whyte MP, et al. [supplementary appendix]. JCI Insight. 2016;1(9):e85971.
+                  </p>
+                </div>
+                <div slot="after">
+                  <p data-radiographic-title>11 years of age (at 5 years)</p>
+                  <picture data-radiographic-image>
+                    <source
+                      srcset="/assets/images/clinical-data/children/patient2-wrist-after-desktop.png"
+                      media="(min-width: 768px)"
+                    />
+                    <img
+                      src="/assets/images/clinical-data/children/patient2-wrist-after-mobile.png"
+                      alt=""
+                    />
+                  </picture>
+                  <p data-radiographic-footer>
+                    <strong>RGI-C score: +2.00</strong>
+                  </p>
+                  <p class="radiographic__footnote">
+                    Representations of efficacy are consistent with results seen from typical patients in the study. Individual results may vary.
+                  </p>
+                </div>
+              </RadiographicImagesComparator>
+            </section>
+            <section
+              id="tabpanel-knee2"
+              role="tabpanel"
+              aria-labelledby="tab-knee2"
+              aria-hidden="true"
+              tabindex="-1"
+              hidden
+            >
+              <RadiographicImagesComparator>
+                <div slot="before">
+                  <p data-radiographic-title>6 years of age (at baseline)</p>
+                  <picture data-radiographic-image>
+                    <source
+                      srcset="/assets/images/clinical-data/children/patient2-knee-before-desktop.png"
+                      media="(min-width: 768px)"
+                    />
+                    <img
+                      src="/assets/images/clinical-data/children/patient2-knee-before-mobile.png"
+                      alt=""
+                    />
+                  </picture>
+                  <p class="radiographic__footnote radiographic__footnote--bottom">
+                    Reproduced from Whyte MP, et al. [supplementary appendix]. JCI Insight. 2016;1(9):e85971.
+                  </p>
+                </div>
+                <div slot="after">
+                  <div slot="before">
+                    <p data-radiographic-title>11 years of age (at 5 years)</p>
+                    <picture data-radiographic-image>
+                      <source
+                        srcset="/assets/images/clinical-data/children/patient2-knee-after-desktop.png"
+                        media="(min-width: 768px)"
+                      />
+                      <img
+                        src="/assets/images/clinical-data/children/patient2-knee-after-mobile.png"
+                        alt=""
+                      />
+                    </picture>
+                    <p data-radiographic-footer>
+                      <strong>RGI-C score: +2.00</strong>
+                    </p>
+                    <p class="radiographic__footnote">
+                      Representations of efficacy are consistent with results seen from typical patients in the study. Individual results may vary.
+                    </p>
                   </div>
+                </div>
               </RadiographicImagesComparator>
             </section>
           </div>
@@ -330,175 +513,325 @@ const mainHeaders = [
     </section>
     <section class="cdchildren-container cdchildren-container--rgi">
       <div class="wrapper">
-        <section class="cdchildren-container__content cdchildren-container__content--full-width">
-          <h2 class="color--dark-green cdchildren-container__title">STRENSIQ significantly improved and sustained bone mineralization over 7 years</h2>
+        <section
+          class="cdchildren-container__content cdchildren-container__content--full-width"
+        >
+          <h2 class="color--dark-green cdchildren-container__title">
+            STRENSIQ significantly improved and sustained bone mineralization over 7 years<sup>4,5</sup>
+          </h2>
         </section>
-        <section class="cdchildren-container__content cdchildren-container__content--left rgi-scale">
-          <h5 class="color--dark-green rgi-scale__title">Radiographic Global Impression of Change (RGI-C) scale</h5>
-          <img class="rgi-scale__image" src="/assets/images/clinical-data/children/rgi-scale.png" alt="">
+        <section
+          class="cdchildren-container__content cdchildren-container__content--left rgi-scale"
+        >
+          <h5 class="color--dark-green rgi-scale__title">
+            Radiographic Global Impression of Change (RGI-C) scale<sup>3</sup>
+          </h5>
+          <img
+            class="rgi-scale__image"
+            src="/assets/images/clinical-data/children/rgi-scale.png"
+            alt=""
+          />
         </section>
-        <section class="cdchildren-container__content cdchildren-container__content--right">
+        <section
+          class="cdchildren-container__content cdchildren-container__content--right"
+        >
           <div class="chart-wrapper chart-wrapper--rgi">
             <PinchToZoom id="rgi-score-chart">
               <picture>
-                <source media="(min-width: 768px)" srcset="/assets/images/clinical-data/children/median-rgi-score-desktop.png">
-                <img src="/assets/images/clinical-data/children/median-rgi-score-mobile.png" alt="">
+                <source
+                  media="(min-width: 768px)"
+                  srcset="/assets/images/clinical-data/children/median-rgi-score-desktop.png"
+                />
+                <img
+                  src="/assets/images/clinical-data/children/median-rgi-score-mobile.png"
+                  alt=""
+                />
               </picture>
             </PinchToZoom>
           </div>
-          <p class="cdchildren-container__footnote"><sup>a</sup>Values are statistically significant based on <i>P</i>&lt;0.01.</p>
+          <p class="cdchildren-container__footnote">
+            <sup>a</sup>Values are statistically significant based on <i>P</i>&lt;0.01.
+          </p>
         </section>
       </div>
     </section>
-    <section class="cdchildren-container cdchildren-container--height-z cdchildren-container--bg-soft-gray">
+    <section
+      class="cdchildren-container cdchildren-container--height-z cdchildren-container--bg-soft-gray"
+    >
       <div class="wrapper">
-        <section class="cdchildren-container__content cdchildren-container__content--left">
-          <h2 class="color--dark-green cdchildren-container__title">STRENSIQ showed early and sustained catch-up growth</h2>
-          <p class="cdchildren-container__paragraph">A retrospective chart review of the natural history of hypophosphatasia in 32 <span class="animated--bg animated--bg--inline-block">untreated&nbsp</span><span class="animated--bg animated--bg--inline-block">children</span> with juvenile-onset hypophosphatasia and similar characteristics showed <span class="animated--bg animated--bg--inline-block">no&nbsp</span><span class="animated--bg animated--bg--inline-block">improvement&nbsp</span><span class="animated--bg animated--bg--inline-block">in&nbsp</span><span class="animated--bg animated--bg--inline-block">height z&nbsp</span><span class="animated--bg animated--bg--inline-block">scores&nbsp</span>from baseline to last assessment (61 months).</p>
+        <section
+          class="cdchildren-container__content cdchildren-container__content--left"
+        >
+          <h2 class="color--dark-green cdchildren-container__title">
+            STRENSIQ showed early and sustained catch-up growth<sup>2,4-7</sup>
+          </h2>
+          <p class="cdchildren-container__paragraph">
+            A retrospective chart review of the natural history of hypophosphatasia in 32 <span class="animated--bg animated--bg--inline-block">untreated&nbsp</span><span class="animated--bg animated--bg--inline-block">children&nbsp</span>with juvenile-onset hypophosphatasia and similar characteristics showed <span class="animated--bg animated--bg--inline-block">no&nbsp</span><span class="animated--bg animated--bg--inline-block">improvement&nbsp</span><span class="animated--bg animated--bg--inline-block">in&nbsp</span><span class="animated--bg animated--bg--inline-block">height&nbsp</span><span class="animated--bg animated--bg--inline-block">z&nbsp</span><span class="animated--bg animated--bg--inline-block">scores&nbsp</span> from baseline to last assessment (61 months).<sup>6</sup>
+          </p>
           <ul class="cdchildren-container__list">
             <li class="cdchildren-container__list-item">
-              <p>Mean (min, max) height z score at baseline: -1.1 (-4.9, 2.6)</p>
+              <p>
+                Mean (min, max) height z score at baseline: -1.1 (-4.9, 2.6)<sup>7</sup>
+              </p>
             </li>
             <li class="cdchildren-container__list-item">
-              <p>Mean (min, max) height z score at last assessment: -1.1 (-4.9, 1.8)</p>
+              <p>
+                Mean (min, max) height z score at last assessment: -1.1 (-4.9, 1.8)<sup>7</sup>
+              </p>
             </li>
           </ul>
         </section>
-        <section class="cdchildren-container__content cdchildren-container__content--right">
+        <section
+          class="cdchildren-container__content cdchildren-container__content--right"
+        >
           <div class="chart-wrapper chart-wrapper--height-z">
             <PinchToZoom id="height-z-score-chart">
               <picture class="cdchildren-container__image-container">
-                <source media="(min-width: 768px)" srcset="/assets/images/clinical-data/children/median-height-z-score-desktop.png">
-                <img src="/assets/images/clinical-data/children/median-height-z-score-mobile.png" alt="">
+                <source
+                  media="(min-width: 768px)"
+                  srcset="/assets/images/clinical-data/children/median-height-z-score-desktop.png"
+                />
+                <img
+                  src="/assets/images/clinical-data/children/median-height-z-score-mobile.png"
+                  alt=""
+                />
               </picture>
             </PinchToZoom>
           </div>
-          <p class="cdchildren-container__footnote"><sup>b</sup>Values are statistically significant based on <i>P</i>&lt;0.01 vs baseline.</p>
-          <p class="cdchildren-container__footnote">The normal range of height is ±2 standard deviations of the age-adjusted mean for healthy children.</p>
+          <p class="cdchildren-container__footnote">
+            <sup>b</sup>Values are statistically significant based on <i>P</i>&lt;0.01 vs baseline.
+          </p>
+          <p class="cdchildren-container__footnote">
+            The normal range of height is ±2 standard deviations of the age-adjusted mean for healthy children.<sup>5</sup>
+          </p>
         </section>
       </div>
     </section>
-    <section id="mobility" class="section cdchildren-container cdchildren-container--mobility">
+    <section
+      id="mobility"
+      class="section cdchildren-container cdchildren-container--mobility"
+    >
       <div class="wrapper">
-        <section class="cdchildren-container__content cdchildren-container__content--left">
-          <h2 class="color--dark-green cdchildren-container__title">STRENSIQ showed significant and sustained improvement in 6-minute walk test (6MWT)</h2>
+        <section
+          class="cdchildren-container__content cdchildren-container__content--left"
+        >
+          <h2 class="color--dark-green cdchildren-container__title">
+            STRENSIQ showed clinically significant and sustained improvement in 6-minute walk test (6MWT)<sup>2,4,5</sup>
+          </h2>
           <HighlightInformation
-          title="After 6 months"
-          footnote="median change from baseline at 6 months in distance walked"
-          className="highlight-information--contains-subcontent highlight-information--single">
+            title="After 6 MONTHS<sup>8</sup>"
+            footnote="median change from baseline at 6 months in distance walked"
+            className="highlight-information--contains-subcontent highlight-information--single"
+          >
             <span slot="content">29<sub>%</sub></span>
-            <span slot="footnote">(482 meters vs 350 meters) (<i>P</i>&#61;0.001)</span>
+            <span slot="footnote">
+              (482 meters vs 350 meters) (<i>P</i>&#61;0.001)
+            </span>
           </HighlightInformation>
           <HighlightInformation
-          title="After 7 years"
-          footnote="median change from baseline at 7 years in distance walked"
-          className="highlight-information--contains-subcontent highlight-information--single">
+            title="After 7 Years<sup>8</sup>"
+            footnote="median change from baseline at 7 years in distance walked"
+            className="highlight-information--contains-subcontent highlight-information--single"
+          >
             <span slot="content">68<sub>%</sub></span>
             <span slot="footnote">(588 meters vs 350 meters) (<i>P</i>&#61;0.001)</span>
           </HighlightInformation>
-          <p class="cdchildren-container__paragraph">For children with hypophosphatasia, the minimal clinically important difference (MCID) is estimated at 21 meters and 31 meters based on 2 distribution-based methods.</p>
-          <p class="cdchildren-container__paragraph"><span class="animated--bg"><strong>6MWT:</strong></span> Patients walk an indoor, flat, 30-meter walkway with cones at the beginning and end to indicate turns. At the end of 6 minutes, the total distance is recorded.</p>
+          <p class="cdchildren-container__paragraph">
+            For children with hypophosphatasia, the minimal clinically important difference (MCID) is estimated at 21 meters and 31 meters based on 2 distribution-based methods.<sup>9</sup>
+          </p>
+          <p class="cdchildren-container__paragraph">
+            <span class="animated--bg"><strong>6MWT:</strong></span> Patients walk an indoor, flat, 30-meter walkway with cones at the beginning and end to indicate turns. At the end of 6 minutes, the total distance is recorded.<sup>10</sup>
+          </p>
         </section>
-        <section class="cdchildren-container__content cdchildren-container__content--right">
+        <section
+          class="cdchildren-container__content cdchildren-container__content--right"
+        >
           <article class="cdchildren-container__video-container">
-            <h5 class="cdchildren-container__video-title">See 6-minute walk test outcomes</h5>
+            <h5 class="cdchildren-container__video-title">
+              See 6-minute walk test outcomes
+            </h5>
             <picture class="cdchildren-container__video">
-              <img src="/assets/images/clinical-data/children/video-ui.png" alt="">
+              <img
+                src="/assets/images/clinical-data/children/video-ui.png"
+                alt=""
+              />
             </picture>
+            <p class="cdchildren-container__video-footnote">
+              Representations of efficacy are consistent with results seen from typical patients in the study. Individual results may vary.
+            </p>
           </article>
           <section>
             <picture class="cdchildren-container__image-container">
-              <source media="(min-width: 768px)" srcset="/assets/images/clinical-data/children/median-percent-predicted-desktop.png">
-              <img src="/assets/images/clinical-data/children/median-percent-predicted-mobile.png" alt="">
+              <source
+                media="(min-width: 768px)"
+                srcset="/assets/images/clinical-data/children/median-percent-predicted-desktop.png"
+              />
+              <img
+                src="/assets/images/clinical-data/children/median-percent-predicted-mobile.png"
+                alt=""
+              />
             </picture>
-            <p class="cdchildren-container__footnote"><sup>c</sup>Values are statistically significant based on <i>P</i>&le;0.001 vs baseline.</p>
-            <p class="cdchildren-container__footnote"><sup>d</sup>Scores were normalized to percent-predicted values for age-, height-, and sex-matched healthy peers.</p>
+            <p class="cdchildren-container__footnote">
+              <sup>c</sup>Scores were normalized to percent-predicted values for age-, height-, and sex-matched healthy peers.
+            </p>
+            <p class="cdchildren-container__footnote">
+              <sup>d</sup>Values are statistically significant based on <i>P</i>&le;0.001 vs baseline.
+            </p>
           </section>
         </section>
       </div>
     </section>
-    <section id="pain-disability" class="section cdchildren-container cdchildren-container--disability cdchildren-container--bg-soft-gray">
+    <section
+      id="pain-disability"
+      class="section cdchildren-container cdchildren-container--disability cdchildren-container--bg-soft-gray"
+    >
       <div class="wrapper">
-        <section class="cdchildren-container__content cdchildren-container__content--full-width">
-          <p class="cdchildren-container__subtitle">STRENSIQ open-label extension: pain and disability</p>
-          <h2 class="color--dark-green cdchildren-container__title">Pain and disability as measured by the Childhood Health Assessment Questionnaire (CHAQ)</h2>
+        <section
+          class="cdchildren-container__content cdchildren-container__content--full-width"
+        >
+          <p class="cdchildren-container__subtitle">
+            STRENSIQ open-label extension: pain and disability
+          </p>
+          <h2 class="color--dark-green cdchildren-container__title">
+            Pain and disability as measured by the Childhood Health Assessment Questionnaire (CHAQ)
+          </h2>
         </section>
-        <section class="cdchildren-container__content cdchildren-container__content--left">
-          <p class="cdchildren-container__paragraph"><span class="animated--bg">CHAQ discomfort index</span> measured hypophosphatasia-related pain (eg, bone, joint, and muscle pain) and is determined by visual analog scale of pain (0=no pain, 100=very severe pain).</p>
+        <section
+          class="cdchildren-container__content cdchildren-container__content--left"
+        >
+          <p class="cdchildren-container__paragraph">
+            <span class="animated--bg">CHAQ discomfort index</span> measured hypophosphatasia-related pain (eg, bone, joint, and muscle pain) and is determined by visual analog scale of pain (0=no pain, 100=very severe pain).<sup>2,4,11</sup>
+          </p>
           <section class="cdchildren-container__merged-highlight">
-            <h4 class="highlight-information__title">median discomfort index score (pain)</h4>
+            <h4 class="highlight-information__title">
+              median discomfort index score (pain)<sup>1,2</sup>
+            </h4>
             <section class="cdchildren-container__merged-highlight__content">
               <HighlightInformation
-              footnote="Baseline"
-              className="content--align-left subcontent--content-center highlight-information--contains-subcontent"
+                footnote="Baseline"
+                className="content--align-left subcontent--content-center highlight-information--contains-subcontent"
               >
                 <span slot="content">20</span>
-                <span class="highlight-information__sub-content" slot="content">(0,72)</span>
+                <span class="highlight-information__sub-content" slot="content"
+                  >(0,72)</span
+                >
                 <span slot="footnote">(n=13)</span>
               </HighlightInformation>
-              <img src="/assets/images/clinical-data/children/angle_separator.png" alt="" class="highlight-information__separator highlight-information__separator--first">
+              <img
+                src="/assets/images/clinical-data/children/angle_separator.png"
+                alt=""
+                class="highlight-information__separator highlight-information__separator--first"
+              />
               <HighlightInformation
-              footnote="By 6 months"
-              className="content--align-center highlight-information--contains-subcontent"
+                footnote="By 6 months"
+                className="content--align-center highlight-information--contains-subcontent"
               >
                 <span slot="content">0</span>
-                <span class="highlight-information__sub-content" slot="content">(0,26)</span>
-                <span slot="footnote">(n=11) through 7 years (n=12)</span>
+                <span class="highlight-information__sub-content" slot="content"
+                  >(0,26)</span
+                >
+                <span slot="footnote">(n=11)<sup>*</sup> through 7 years (n=12)</span>
               </HighlightInformation>
             </section>
           </section>
+          <p><sup>*</sup>Not statistically significant.</p>
         </section>
         <div class="cdchildren-container__separator"></div>
-        <section class="cdchildren-container__content cdchildren-container__content--right">
-          <p class="cdchildren-container__paragraph"><span class="animated--bg">CHAQ disability index</span> measures activities of daily living. Scores range from 0-3, with lower scores indicating less disability.</p>
+        <section
+          class="cdchildren-container__content cdchildren-container__content--right"
+        >
+          <p class="cdchildren-container__paragraph">
+            <span class="animated--bg">CHAQ disability index</span> measures activities of daily living. Scores range from 0-3, with lower scores indicating less disability.<sup>2,4,11</sup>
+          </p>
           <section class="cdchildren-container__merged-highlight">
-            <h4 class="highlight-information__title">median disability index score (pain)</h4>
+            <h4 class="highlight-information__title">
+              median disability index score (pain)<sup>2,4</sup>
+            </h4>
             <section class="cdchildren-container__merged-highlight__content">
               <HighlightInformation
-              footnote="Baseline"
-              className="content--align-left highlight-information--contains-subcontent"
+                footnote="Baseline"
+                className="content--align-left highlight-information--contains-subcontent"
               >
                 <span slot="content">1</span>
-                <span class="highlight-information__sub-content" slot="content">(0, 2.25)</span>
+                <span class="highlight-information__sub-content" slot="content"
+                  >(0, 2.25)</span
+                >
                 <span slot="footnote">(n=13)</span>
               </HighlightInformation>
-              <img src="/assets/images/clinical-data/children/angle_separator.png" alt="" class="highlight-information__separator highlight-information__separator--second">
+              <img
+                src="/assets/images/clinical-data/children/angle_separator.png"
+                alt=""
+                class="highlight-information__separator highlight-information__separator--second"
+              />
               <HighlightInformation
-              footnote="By 6 months"
-              className="content--align-center highlight-information--contains-subcontent"
+                footnote="By 6 months"
+                className="content--align-center highlight-information--contains-subcontent"
               >
                 <span slot="content">0.25</span>
-                <span class="highlight-information__sub-content" slot="content">(0, 0.50)</span>
+                <span class="highlight-information__sub-content" slot="content"
+                  >(0, 0.50)</span
+                >
                 <span slot="footnote">(n=11) through 7 years (n=12)</span>
               </HighlightInformation>
             </section>
           </section>
-          <button class="button button--tertiary button--disability-index">View CHAQ disability index</button>
+          <button class="button button--tertiary button--disability-index"
+            >View CHAQ disability index</button
+          >
         </section>
-        <p class="cdchildren-container__paragraph">CHAQ is patient/caregiver-reported assessment not validated specifically for hypophosphatasia so inferences of clinical benefit should not be made. CHAQ was developed to assess health status for children with arthritis. Interpretation of these findings is limited due to the lack of control group and potential bias introduced by use of parent-reported data for patients. Minimal clinically important difference (MCID) has not been established for the hypophosphatasia population.</p>
+        <p class="cdchildren-container__paragraph">
+          CHAQ is a patient/caregiver-reported assessment not validated specifically for hypophosphatasia so inferences of clinical benefit should not be made. CHAQ was developed to assess health status for children with arthritis. Interpretation of these findings is limited due to the lack of control group and potential bias introduced by use of parent-reported data for patients. Minimal clinically important difference (MCID) has not been established for the hypophosphatasia population.<sup>12,14</sup>
+        </p>
       </div>
     </section>
-    <section id="strength-agility" class="section cdchildren-container cdchildren-container--agility">
+    <section
+      id="strength-agility"
+      class="section cdchildren-container cdchildren-container--agility"
+    >
       <div class="wrapper">
-        <section class="cdchildren-container__content cdchildren-container__content--full-width">
-          <p class="cdchildren-container__subtitle">STRENSIQ open-label extension: strength and agility</p>
+        <section
+          class="cdchildren-container__content cdchildren-container__content--full-width"
+        >
+          <p class="cdchildren-container__subtitle">
+            STRENSIQ open-label extension: strength and agility
+          </p>
         </section>
-        <section class="cdchildren-container__content cdchildren-container__content--left">
-          <h2 class="color--dark-green cdchildren-container__title">Strength and agility as measured by the Bruininks-Oseretsky Test of Motor Proficiency Second Edition (BOT-2)</h2>
-          <p class="cdchildren-container__paragraph">Changes in strength and agility scores were observed up to 6 months from baseline through 7 years.</p>
+        <section
+          class="cdchildren-container__content cdchildren-container__content--left"
+        >
+          <h2 class="color--dark-green cdchildren-container__title">
+            Strength and agility as measured by the Bruininks-Oseretsky Test of Motor Proficiency Second Edition (BOT-2)<sup>2,4,5</sup>
+          </h2>
+          <p class="cdchildren-container__paragraph">
+            Changes in strength and agility scores were observed up to 6 months from baseline through 7 years.
+          </p>
           <ul class="cdchildren-container__list">
             <li class="cdchildren-container__list-item">
-              <p>At baseline, patients showed lower strength and agility scores than healthy age-matched peers</p>
+              <p>
+                At baseline, patients showed lower strength and agility scores than healthy age-matched peers
+              </p>
             </li>
           </ul>
-          <p class="cdchildren-container__footnote only--desktop">BOT-2 measures hand and arm coordination, balance, mobility, and strength relative to healthy same-aged peers. BOT-2 is not validated specifically for hypophosphatasia so inferences of clinical benefit should not be made. It has been validated in pediatric populations (aged 4 to 21 years) with mild to moderate motor impairment.</p>
+          <p class="cdchildren-container__footnote only--desktop">
+            BOT-2 measures hand and arm coordination, balance, mobility, and strength relative to healthy same-aged peers. BOT-2 is not validated specifically for hypophosphatasia so inferences of clinical benefit should not be made. It has been validated in pediatric populations (aged 4 to 21 years) with mild to moderate motor impairment.<sup>2,4,5,15,16</sup>
+          </p>
         </section>
-        <section class="cdchildren-container__content cdchildren-container__content--right">
+        <section
+          class="cdchildren-container__content cdchildren-container__content--right"
+        >
           <picture class="cdchildren-container__image-container">
-            <source media="(min-width: 768px)" srcset="/assets/images/clinical-data/children/median-strength-agility-desktop.png">
-            <img src="/assets/images/clinical-data/children/median-strength-agility-mobile.png" alt="">
+            <source
+              media="(min-width: 768px)"
+              srcset="/assets/images/clinical-data/children/median-strength-agility-desktop.png"
+            />
+            <img
+              src="/assets/images/clinical-data/children/median-strength-agility-mobile.png"
+              alt=""
+            />
           </picture>
-          <p class="cdchildren-container__footnote only--mobile">BOT-2 measures hand and arm coordination, balance, mobility, and strength relative to healthy same-aged peers. BOT-2 is not validated specifically for hypophosphatasia so inferences of clinical benefit should not be made. It has been validated in pediatric populations (aged 4 to 21 years) with mild to moderate motor impairment.</p>
+          <p class="cdchildren-container__footnote only--mobile">
+            BOT-2 measures hand and arm coordination, balance, mobility, and strength relative to healthy same-aged peers. BOT-2 is not validated specifically for hypophosphatasia so inferences of clinical benefit should not be made. It has been validated in pediatric populations (aged 4 to 21 years) with mild to moderate motor impairment.<sup>2,4,5,15,16</sup>
+          </p>
         </section>
       </div>
     </section>
@@ -508,6 +841,11 @@ const mainHeaders = [
     linkText="Adolescents"
     linkUrl="/clinical-data/adolescents"
   />
+  <References slot="references">
+    <p>
+      <strong>References: 1.</strong> Data on file. Alexion Pharmaceuticals, Inc. <strong>2.</strong> Whyte MP, Madson KL, Phillips D, et al. Asfotase alfa therapy for children with hypophosphatasia. <i>JCI Insight.</i> 2016;1(9):e85971. <strong>3.</strong> Whyte MP, Fujita KP, Moseley S, Thompson DD, McAlister WH. Validation of a novel scoring system for changes in skeletal manifestations of hypophosphatasia in newborns, infants, and children: the radiographic global impression of change scale. <i>J Bone Miner Res.</i> 2018;33(5):868-874. <strong>4.</strong> Whyte MP, Rockman-Greenberg C. Moseley S, Denker AE, McAlister WH. Sustained radiographic and functional improvements with asfotase alfa treatment for up to 7 years in children with hypophosphatasia. Oral presentation at: 8th Biennial International Conference on Children’s Bone Health (ICCBH); June 10-13, 2017; Würzburg, Germany. <strong>5.</strong> Whyte MP, et al. Abstract presented at: 8th Biennial International Conference on Children’s Bone Health (ICCBH); June 10-13, 2017; Würzburg, Germany. <strong>6.</strong> Whyte MP, Madson KL, Munns CF, et al. A retrospective, multi-national, non-interventional, natural history study of the childhood form of hypophosphatasia. Presented at: Endocrine Society’s 97th Annual Meeting and Expo; March 15, 2015; San Diego, CA. <strong>7.</strong> STRENSIQ. Package insert. Alexion Pharmaceuticals, Inc. <strong>8.</strong> Data on file. Alexion Pharmaceuticals, Inc. <strong>9.</strong> Phillips D, Tomazos IC, Moseley S, et al. Reliability and validity of the 6-minute walk test in hypophosphatasia. <i>JBMR Plus.</i> 2019;3(6):e10131. <strong>10.</strong> ATS Committee on Proficiency Standards for Clinical Pulmonary Function Laboratories. ATS statement: guidelines for the six-minute walk test. <i>Am J Respir Crit Care Med.</i> 2002;166(1):111-117. <strong>11.</strong> Dempster H, Porepa M, Young N, Feldman BM. The clinical meaning of functional outcome scores in children with juvenile arthritis. <i>Arthritis Rheum.</i> 2001;44(8):1768-1774. <strong>12.</strong> Klepper SE. Measures of pediatric function. <i>Arthritis Rheum.</i> 2003;49(suppl 5):S5-S14. <strong>13.</strong> Klepper SE. Measures of pediatric function. <i>Arthritis Care Res.</i> 2011;63(suppl 11):S371-S382. <strong>14.</strong> Whyte MP, Rockman-Greenberg C, Moseley S, Denker AE, Watsky E, McAlister WH. Sustained radiographic and functional improvements with asfotase alfa treatment for up to 7 years in children with hypophosphatasia. Poster presented at: International Congress of Inborn Errors of Metabolism (ICIEM); Sept 5–8, 2017; Rio de Janeiro, Brazil. <strong>15.</strong> Bruininks RH, Bruininks BD. Pearson. Updated October 22, 2013. Accessed April 4, 2023.  <a href="http://images.pearsonclinical.com/images/Assets/BOT-2/ BOT-2_Complete_Form_Sample_Report.pdf" target="_blank" class="document-link">http://images.pearsonclinical.com/images/Assets/BOT-2/ BOT-2_Complete_Form_Sample_Report.pdf</a> <strong>16.</strong> Bruininks RH, Bruininks BD. Pearson website. Accessed April 4, 2023. <a href="https://www.pearsonassessments.com/store/usassessments/en/Store/Professional-Assessments/Motor-Sensory/Bruininks-Oseretsky-Test-of-Motor-Proficiency-%7C-Second-Edition/p/100000648.html?tab=product-details" target="_blank">https://www.pearsonassessments.com/store/usassessments/en/Store/Professional-Assessments/Motor-Sensory/Bruininks-Oseretsky-Test-of-Motor-Proficiency-%7C-Second-Edition/p/100000648.html?tab=product-details</a>
+    </p>
+  </References>
   <ClinicalDataModal>
     <Table>
       <!--Table headers -->
@@ -516,12 +854,12 @@ const mainHeaders = [
       <TableData slot="body" data={studyData} />
 
       <div slot="footer" class="table__footer">
-          <p><sup>a</sup>Adolescents in the study were aged 13 to 17 years.</p>
-          <p><sup>b</sup>Consistent with FDA label.</p>
+        <p><sup>a</sup>Adolescents in the study were aged 13 to 17 years.</p>
+        <p><sup>b</sup>Consistent with FDA label.</p>
       </div>
-  </Table>
+    </Table>
   </ClinicalDataModal>
-  <DisabilityIndexModal>
-  </DisabilityIndexModal>
-  <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"></script>
+  <DisabilityIndexModal />
+  <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"
+  ></script>
 </Layout>
