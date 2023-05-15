@@ -12,6 +12,7 @@ import Table from "../../components/Table/Table.astro";
 import TableHeader from "../../components/Table/TableHeader.astro";
 import TableData from "../../components/Table/TableData.astro";
 import studyData from "../clinical-data/data/clinical-data-adolescents.js";
+import References from "../../components/References.astro";
 
 const internalNavLinks = [
   { href: "hpp-related-rickets", label: "HPP-related rickets", active: true },
@@ -337,6 +338,13 @@ const mainHeaders = [
       </div>
     </Table>
   </ClinicalDataModal>
+  <References><p><strong>References:</strong> 
+  <strong>1.</strong> Data on file. Alexion Pharmaceuticals, Inc. 
+<strong>2.</strong> Whyte MP, Fujita KP, Moseley S, Thompson DD, McAlister WH. Validation of a novel scoring system for changes in skeletal manifestations of hypophosphatasia in newborns, infants, and children: The Radiographic Global Impression of Change Scale. J Bone Miner Res. 2018;33(5):868-874. 
+<strong>3.</strong> Phillips D, Tomazos I, Moseley S, et al. Reliability and validity of the 6-minute walk test in hypophosphatasia. JBMR Plus. 2019;3(6):e10131.
+<strong>4.</strong> Whyte MP, Madson KL, Phillips D, et al. Asfotase alfa therapy for children with hypophosphatasia. JCI Insight. 2016;1(9):e85971.
+<strong>5.</strong> STRENSIQ. Package insert. Alexion Pharmaceuticals, Inc. 
+<strong>6.</strong> Whyte MP, Rockman-Greenberg C, Moseley S, Denker AE, Watsky E, McAlister WH. Sustained radiographic and functional improvements with asfotase alfa treatment for up to 7 years in children with hypophosphatasia. Poster presented at: International Congress of Inborn Errors of Metabolism (ICIEM); Sept 5–8, 2017; Rio de Janeiro, Brazil.</p></References>
   <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"
   ></script>
 </Layout>
