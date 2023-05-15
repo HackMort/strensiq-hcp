@@ -11,6 +11,7 @@ import TableData from "../../components/Table/TableData.astro";
 import PinchToZoom from "../../components/PinchToZoom.astro";
 import ClinicalDataModal from "../../components/clinical-data/ClinicalDataModal.astro";
 import InfoModal from "../../components/InfoModal.astro";
+import References from "../../components/References.astro";
 
 const internalNavLinks = [
   {
@@ -68,7 +69,7 @@ import LefsData from "./data/lefsData.js";
     <h1 class="page-hero__title">See STRENSIQ results</h1>
   </PageHero>
   <InternalNavigation heading="Adults" items={internalNavLinks} icon={true} />
-  <div class="wrapper">
+  <div>
     <section
       id="adults-changes-in-substractes"
       class="section clinical-data-adults__changes-in-substractes"
@@ -111,7 +112,7 @@ import LefsData from "./data/lefsData.js";
       <div class="clinical-data-adults__col">
         <div class="wrapper wrapper--only-right">
           <div class="clinical-data-adults--tabs-menu"> 
-            <ul role="tablist">
+            <ul role="tablist" class="modifier">
               <li role="presentation">
                 <!--active one -->
                 <a href="#panel1" role="tab" id="tab1" aria-selected="true"
@@ -125,8 +126,16 @@ import LefsData from "./data/lefsData.js";
           </div>
           
         </div>
+
+        <section
+        id="section1"
+        role="tabpanel"
+        aria-labelledby="tab1"
+        aria-hidden="false"
+        tabindex="-1"
+      >
         <CustomTitle>
-          Change in pyridoxal 5’-phosphate (PLP), the active form of vitamin B<sub>6</sub><sup>1,4</sup>
+          Change in inorganic pyrophosphate (PPi), a known inhibitor of bone mineralization<sup>1,3</sup>
         </CustomTitle>
         <picture>
           <source
@@ -139,44 +148,19 @@ import LefsData from "./data/lefsData.js";
             alt="PPI Adults"
           />
         </picture>
-      </div>
-
-      <div class="clinical-data-adults__col">
-        <h2 class="clinical-data-adults__title clinical-data-adults--title2">
-          Change in pyridoxal 5’-phosphate (PLP), the active form of vitamin B<sub>6</sub>
-        </h2>
-        <div
-          class="clinical-data-adults--content clinical-data-adults--content1"
-        >
-          <ul class="clinical-data-adults__list">
-            <li>
-              Change in PPi and PLP data are from the open-label extension phase
-              of the study, which included 19 adult and adolescent patients
-              <ul class="clinical-data-adults__sublist">
-                <li>
-                  Of the 13 adult patients, 12 had pediatric-onset
-                  hypophosphatasia
-                </li>
-                <li>
-                  Three adults were part of the untreated group during the
-                  primary phase
-                </li>
-              </ul>
-            </li>
-            <li>
-              Over the initial duration, the study used lower doses of STRENSIQ
-              than those in the current FDA-approved label
-            </li>
-            <li>
-              The most common adverse events reported in the adult population of
-              Study 4 were injection site reactions, similar to what was
-              observed in clinical trials
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="clinical-data-adults__col">
+      </section>
+      
+      <section
+      id="section2"
+      role="tabpanel"
+      aria-labelledby="tab2"
+      aria-hidden="true"
+      tabindex="-1"
+      hidden
+    >
+        <CustomTitle>
+          Change in pyridoxal 5’-phosphate (PLP), the active form of vitamin B<sub>6</sub><sup>1,4</sup>
+        </CustomTitle>
         <picture>
           <source
             srcset="/assets/images/clinical-data/adults/Median_PLP_Adults.png"
@@ -188,65 +172,22 @@ import LefsData from "./data/lefsData.js";
             alt="PLP Adults"
           />
         </picture>
+      </section>
+
       </div>
 
-      <div
-        class="clinical-data-adults--content clinical-data-adults--content2"
-      >
-        <h3 class="clinical-data-adults__subtitle">Limitations:</h3>
-        <ul class="clinical-data-adults__list clinical-data-adults__list--limitations">
-          <li>
-            One of the coprimary endpoints of this study, change in PPi at 6
-            months, did not reach statistical significance when comparing the
-            control group to the treatment group. For the total cohort,
-            within-subject changes in both pyridoxal 5’-phosphate (PLP) and PPi
-            were observed after 6 months and over 5 years of treatment
-          </li>
-          <li>
-            The control group began treatment 6 months after the treated group,
-            with baseline considered the last assessment before first dose
-          </li>
-        </ul>
-      </div>
 
-      <div
-        class="wrapper clinical-data-adults--content clinical-data-adults--content2"
-      >
-        <ul class="clinical-data-adults__list">
-          <li>
-            Change in PPi and PLP data are from the open-label extension phase
-            of the study, which included 19 adult and adolescent patients
-            <ul class="clinical-data-adults__sublist">
-              <li>
-                Of the 13 adult patients, 12 had pediatric-onset
-                hypophosphatasia
-              </li>
-              <li>
-                Three adults were part of the untreated group during the primary
-                phase
-              </li>
-            </ul>
-          </li>
-          <li>
-            Over the initial duration, the study used lower doses of STRENSIQ
-            than those in the current FDA-approved label
-          </li>
-          <li>
-            The most common adverse events reported in the adult population of
-            Study 4 were injection site reactions, similar to what was observed
-            in clinical trials
-          </li>
-        </ul>
-      </div>
-    </section>
-  </div>
+      </section>
+
+      
+</section>
 
   <section id="adults-mobility" class="section clinical-data-adults__mobility">
     <div class="wrapper wrapper--desktop-only clinical-data-adults__content">
       <div class="wrapper clinical-data-adults__col">
         <!-- Title, Highlight Info, Paragraph -->
         <h2 class="clinical-data-adults__title">
-          Mobility: 6-minute walk test (6MWT)
+          Mobility: 6-minute walk test (6MWT)<sup>5</sup>
         </h2>
 
         <div class="clinical-data-adults__content--highlightinformation">
@@ -261,7 +202,7 @@ import LefsData from "./data/lefsData.js";
                 >meters</span
               >
             </span>
-            <span slot="footnote">(n=12)</span>
+            <span slot="footnote">(n=12)<sup>5</sup></span>
           </HighlightInformation>
 
           <div
@@ -274,7 +215,7 @@ import LefsData from "./data/lefsData.js";
                   >meters</span
                 ></span
               >
-              <span slot="footnote">(n=10)</span>
+              <span slot="footnote">(n=10)<sup>5</sup></span>
             </HighlightInformation>
           </div>
         </div>
@@ -282,7 +223,7 @@ import LefsData from "./data/lefsData.js";
         <p class="clinical-data-adults__content--paragraph">
           For adult patients with hypophosphatasia, the minimal clinically
           important difference (MCID) is estimated at 23 meters and31 meters
-          based on 2 distribution-based methods.
+          based on 2 distribution-based methods<sup>6</sup>.
         </p>
         
       </div>
@@ -307,31 +248,16 @@ import LefsData from "./data/lefsData.js";
         </div>
       </div>
 
-      <div class="clinical-data-adults__col clinical-data-adults__col--mobility">
-        <ul
-          class="wrapper clinical-data-adults__list clinical-data-adults__list-mobility clinical-data-adults__list-mobility1"
-        >
-          <li>
-            These results represent adults with pediatric-onset hypophosphatasia
-            with available 6MWT data. Inferences regarding clinical benefit
-            should not be made
-          </li>
-          <li>
-            One of the coprimary endpoints of this study, change in PPi at 6
-            months for the entire study population, did not reach statistical
-            significance
-          </li>
-        </ul>
-      </div>
 
       <div class="clinical-data-adults__col clinical-data-adults__col--mobility">
         <!-- Title -->
-        <CustomTitle>
-          Change in 6MWT was observed by 6 months and again at 5 years
-        </CustomTitle>
         <!-- Graph -->
-        <div class="wrapper">
+        
+          <div class="mwt-block">
           <picture>
+            <CustomTitle>
+              Change in 6MWT was observed by 6 months and again at 5 years
+            </CustomTitle>
             <source
               srcset="/assets/images/clinical-data/adults/6MWT_Adults_Mobile.png"
               media="(min-width: 700px)"
@@ -351,11 +277,6 @@ import LefsData from "./data/lefsData.js";
               hypophosphatasia with available 6MWT data. Inferences regarding
               clinical benefit should not be made
             </li>
-            <li>
-              One of the coprimary endpoints of this study, change in PPi at 6
-              months for the entire study population, did not reach statistical
-              significance
-            </li>
           </ul>
         </div>
       </div>
@@ -370,21 +291,21 @@ import LefsData from "./data/lefsData.js";
       <div
         class="clinical-data-adults__col clinical-data-adults__time-to-bone-mineralization--content"
       >
-        <h2 class="clinical-data-adults__title">Time to bone mineralization</h2>
+        <h2 class="clinical-data-adults__title">Time to bone mineralization<sup>1,5</sup></h2>
         <div class="clinical-data-adults--content">
           <ul class="clinical-data-adults__list clinical-data-adults__list--time-to-bone">
             <li>
               Reductions in mineralization lag time indicate improvedbone
-              mineralization
+              mineralization<sup>8</sup>
               <ul class="clinical-data-adults__sublist">
                 <li>
                   Mineralization lag time was assessed by bone biopsy at
-                  baseline and at 1 year in patients receiving STRENSIQ
+                  baseline and at 1 year in patients receiving STRENSIQ<sup>1</sup>
                 </li>
               </ul>
             </li>
             <li>
-              These results reflect data for 6 patients who had values at baseline and 7 patients who had values at 1 year
+              These results reflect data for 6 patients who had values at baseline and 7 patients who had values at 1 year<sup>5</sup>
             </li>
           </ul>
           <p class="clinical-data-adults--paragraph">
@@ -393,7 +314,7 @@ import LefsData from "./data/lefsData.js";
             Of the 13 adult patients, 12 had pediatric-onset hypophosphatasia.
             Three adults were part of the untreated group during the primary
             phase. Over the initial duration, the study used lower doses of
-            STRENSIQ than those in the current FDA-approved label.
+            STRENSIQ than those in the current FDA-approved label.<sup>1,2</sup>
           </p>
         </div>
       </div>
@@ -419,19 +340,19 @@ import LefsData from "./data/lefsData.js";
     class="section clinical-data-adults--real-world-outcomes"
   >
    
-    <div class="wrapper">
-      <h2 class="clinical-data-adults__title clinical-data-adults__title--real-world-outcomes">
-        Real-world outcomes in adults with pediatric-onset hypophosphatasia
-      </h2>
-    </div>
-    
-    <div class="wrapper wrapper--only-left wrapper--only-left--mobile-only">
+  
+  <div class="wrapper">
+    <h2 style="margin-left: 20px;">
+      Real-world outcomes in adults with pediatric-onset hypophosphatasia<sup>10,11</sup>
+    </h2>
+  </div>
+  <div class="wrapper wrapper--only-left wrapper--only-left--mobile-only">
       <Table className="clinical-data-adults--real-world-outcomes-table">
         <TableHeader slot="header" mainHeaders={mainHeaders} />
         <TableData slot="body" data={Data} />
         <div slot="footer" class="table__footer">
           <span
-            ><sup>a</sup> EmPATHY: Evaluate and Monitor Physical Performance of Adults Treated with Asfotase Alfa for Hypophosphatasia.</span
+            ><sup>a</sup> EmPATHY: Evaluate and Monitor Physical Performance of Adults Treated with Asfotase Alfa for Hypophosphatasia.<sup>10</sup></span
           >
         </div>
       </Table>
@@ -439,15 +360,16 @@ import LefsData from "./data/lefsData.js";
 
     <div class="wrapper clinical-data-adults--real-world-outcomes-content">
       <div class="clinical-data-adults__col">
-        <p class="clinical-data-adults--real-world-outcomes-paragraph">A similar frequency of adverse events and safety events were reported in EmPATHY as observed in clinical trials. Patients noted reddening and/or tenderness at injection sites with variable intensity and duration sometime during the first 3 months of treatment. No new safety signals emerged from this study.</p>
+        <p><strong>Safety</strong></p>
+        <p class="clinical-data-adults--real-world-outcomes-paragraph">A similar frequency of adverse events and safety events were reported in EmPATHY as observed in clinical trials. Patients noted reddening and/or tenderness at injection sites with variable intensity and duration sometime during the first 3 months of treatment. No new safety signals emerged from this study.<sup>10,11</sup></p>
       </div>
       <div class="clinical-data-adults__col">
-        <p><strong>Limitations:</strong> This small, single-center study may have limited generalizability to a broader adult patient population with hypophosphatasia. This study lacks a comparator arm; however, due to the rare and debilitating nature of hypophosphatasia, the inclusion of an untreated population would be medically unethical and not in line with the descriptive nature of this study. Real-world data collected during routine clinical practice have inherent limitations, such as bias, due to missing data. All patients had a history of ≥1 fracture as part of the enrollment criteria.</p>
+        <p><strong>Limitations:</strong> This small, single-center study may have limited generalizability to a broader adult patient population with hypophosphatasia. This study lacks a comparator arm; however, due to the rare and debilitating nature of hypophosphatasia, the inclusion of an untreated population would be medically unethical and not in line with the descriptive nature of this study. Real-world data collected during routine clinical practice have inherent limitations, such as bias, due to missing data. All patients had a history of ≥1 fracture as part of the enrollment criteria.<sup>10,11</sup></p>
       </div>
     </div>
 
     <div class="wrapper">
-      <h2 class="clinical-data-adults__title clinical-data-adults__tabs-title">
+      <h2 class="clinical-data-adults__title clinical-data-adults__tabs-title" style="margin-left: 20px;">
         Mobility measures
       </h2>
       
@@ -456,8 +378,8 @@ import LefsData from "./data/lefsData.js";
     <div class="clinical-data-adults--tabs">
       
 
-      <div class="wrapper wrapper--only-left">
-        <div class="clinical-data-adults--tabs-menu"> 
+      <div class="wrapper">
+        <div class="clinical-data-adults--tabs-menu"style="margin-left: 20px;"> 
           <ul role="tablist">
             <li role="presentation">
               <!--active one -->
@@ -488,11 +410,11 @@ import LefsData from "./data/lefsData.js";
         >
         <div class="wrapper clinical-data-adults__6MWT">
           <div class="clinical-data-adults__col">
-            <h2 class="clinical-data-adults__title">Median distance walked in 6-minute walk test (6MWT)</h2>
+            <h2 class="clinical-data-adults__title">Median distance walked in 6-minute walk test (6MWT)<sup>10,11</sup></h2>
 
             <ul class="clinical-data-adults__list clinical-data-adults__6MWT--list">
               <li>
-                The minimal clinically important difference (MCID) for hypophosphatasia (~31 meters) from baseline was observed at 6, 12, and 24 months
+                The minimal clinically important difference (MCID) for hypophosphatasia (~31 meters) from baseline was observed at 6, 12, and 24 months<sup>6,10,11</sup>
               </li>
             </ul>
 
@@ -500,7 +422,7 @@ import LefsData from "./data/lefsData.js";
               <HighlightInformation footnote="Patients walk an indoor, flat, 30-meter walkway with cones at the beginning and end to indicate turns">
                 <span slot="content">6MWT</span>
                 <span slot="footnote"
-                  >At the end of 6 minutes, the total distance is recorded.</span
+                  >At the end of 6 minutes, the total distance is recorded.<sup>12</sup></span
                 >
               </HighlightInformation>
               <img class="clinical-data-adults__6MWT--img" src="/assets/images/clinical-data/adults/6MWT_info_icon.png" alt="6MWT Info">
@@ -519,7 +441,7 @@ import LefsData from "./data/lefsData.js";
                   <img class="clinical-data-adults__6MWT--graph-graph" src="/assets/images/clinical-data/adults/6MWT_median_Adults_Mobile.png" alt="6MWT test chart">
                 </picture>
               </PinchToZoom>
-              <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=13).</p>
+              <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=13).<sup>11</sup></p>
             </div>
           </div>
         </div>
@@ -536,7 +458,7 @@ import LefsData from "./data/lefsData.js";
       >
         <div class="wrapper clinical-data-adults__6MWT">
           <div class="clinical-data-adults__col">
-            <h2 class="clinical-data-adults__title">Time to complete timed up-and-go (TUG) test</h2>
+            <h2 class="clinical-data-adults__title">Time to complete timed up-and-go (TUG) test<sup>10,11</sup></h2>
 
             <ul class="clinical-data-adults__list clinical-data-adults__6MWT--list">
               <li>
@@ -549,7 +471,7 @@ import LefsData from "./data/lefsData.js";
               <HighlightInformation footnote="The time to stand up from a chair, walk to a line 3 meters away, return to the chair, and sit down is recorded">
                 <span slot="content">TUG test</span>
                 <span slot="footnote"
-                  >Patients may use assistive devices, if needed.</span
+                  >Patients may use assistive devices, if needed.<sup>14</sup></span
                 >
               </HighlightInformation>
               <img class="clinical-data-adults__6MWT--img" src="/assets/images/clinical-data/adults/TUG_info_icon.png" alt="TUG Info">
@@ -571,7 +493,7 @@ import LefsData from "./data/lefsData.js";
               </PinchToZoom>
 
               
-              <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=7).</p>
+              <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=7)<sup>11</sup></p>
             </div>
           </div>
         </div>  
@@ -588,7 +510,7 @@ import LefsData from "./data/lefsData.js";
       >
         <div class="wrapper clinical-data-adults__6MWT">
           <div class="clinical-data-adults__col">
-            <h2 class="clinical-data-adults__title">Time to complete chair rise test</h2>
+            <h2 class="clinical-data-adults__title">Time to complete chair rise test<sup>10,11</sup></h2>
 
             <ul class="clinical-data-adults__list clinical-data-adults__6MWT--list">
               <li>
@@ -600,7 +522,7 @@ import LefsData from "./data/lefsData.js";
               <HighlightInformation footnote="Measures the time required to complete 5 repetitions of rising from a chair and sitting down">
                 <span slot="content">Chair rise test</span>
                 <span slot="footnote"
-                  >Patients may not use their arms to assist themselves.</span
+                  >Patients may not use their arms to assist themselves.<sup>15</sup></span
                 >
               </HighlightInformation>
               <img class="clinical-data-adults__6MWT--img" src="/assets/images/clinical-data/adults/Chair_rise_test_info_icon.png" alt="Chair rise test Info">
@@ -621,7 +543,7 @@ import LefsData from "./data/lefsData.js";
               </PinchToZoom>
 
               
-              <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=8).</p>
+              <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=8).<sup>11</sup></p>
             </div>
           </div>
         </div> 
@@ -636,7 +558,7 @@ import LefsData from "./data/lefsData.js";
       >
         <div class="wrapper clinical-data-adults__6MWT">
           <div class="clinical-data-adults__col">
-            <h2 class="clinical-data-adults__title">Lower-extremity functional scale (LEFS)</h2>
+            <h2 class="clinical-data-adults__title">Lower-extremity functional scale (LEFS)<sup>10,11</sup></h2>
 
             <ul class="clinical-data-adults__list clinical-data-adults__6MWT--list">
               <li>
@@ -644,14 +566,14 @@ import LefsData from "./data/lefsData.js";
               </li>
             </ul>
 
-            <div class="clinical-data-adults__6MWT--highlight">
+            <div class="clinical-data-adults__6MWT--highlight" id="lefs-info">
               <HighlightInformation footnote="A patient-rated outcome measure of lower extremity function in a wide variety of disorders and treatments">
                 <span slot="content">LEFS</span>
                 <span slot="footnote"
-                  >Score consists of 20 questions evaluating ability to complete activities with increasing physical demands.</span
+                  >Score consists of 20 questions evaluating ability to complete activities with increasing physical demands.<sup>16,17</sup></span
                 >
               </HighlightInformation>
-              <button class="button button--tertiary clinical-data-adults__6MWT--button" id="clinical-data-adults__LEFS">View the LEFS questionnaire</button>
+              <!-- <button class="button button--tertiary clinical-data-adults__6MWT--button" id="clinical-data-adults__LEFS">View the LEFS questionnaire</button> -->
             </div>
             
           </div>
@@ -669,7 +591,7 @@ import LefsData from "./data/lefsData.js";
               </PinchToZoom>
 
               
-              <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=10).</p>
+              <p class="clinical-data-adults__6MWT--graph-paragraph"><sup>b</sup>Data from an analysis of study population at 24 months (n=10).<sup>11</sup></p>
             </div>
           </div>
         </div> 
@@ -716,4 +638,23 @@ import LefsData from "./data/lefsData.js";
     </Table>
   </InfoModal>
 
+  
+<References><p><strong>References:</strong> <strong>1.</strong> Kishnani PS, Rockman-Greenberg C, Rauch F, et al. Five-year efficacy and safety of asfotase alfa therapy for adults and adolescents with hypophosphatasia. Bone. 2019;121:149-162. 
+  <strong>2.</strong> STRENSIQ. Package insert. Alexion Pharmaceuticals, Inc. 
+  <strong>3.</strong> Data on file. Alexion Pharmaceuticals, Inc. 
+  <strong>4.</strong> Data on file. Alexion Pharmaceuticals, Inc. 
+  <strong>5.</strong> Data on file. Alexion Pharmaceuticals, Inc. 
+  <strong>6.</strong> Phillips D, Tomazos I, Moseley S, et al. Reliability and validity of the 6-minute walk test in hypophosphatasia. JBMR Plus. 2019;3(6):e10131. 
+  <strong>7.</strong> Whyte MP, Madson KL, Phillips D, et al. Asfotase alfa therapy for children with hypophosphatasia. JCI Insight. 2016;1(9):e85971. 
+  <strong>8.</strong> Ott SM. Histomorphometric measurements of bone turnover, mineralization, and volume. Clin J Am Soc Nephrol. 2008;3(suppl 3):S151-S156. 
+<strong>9.</strong> Recker RR, Kimmel DB, Parfitt AM, et al. Static and tetracycline-based bone histomorphometric data from 34 normal postmenopausal females. J Bone Miner Res. 1988;3(2):133-144. 
+<strong>10.</strong> Genest F, Rak D, Petryk A, Seefried L. Physical functional and health-related quality of life in adults treated with asfotase alfa for pediatric-onset hypophosphatasia. JBMR Plus. 2020;4(9):e10395. 
+<strong>11.</strong> Seefried L, Rak D, Petryk A, Genest F. Long-term effectiveness of asfotase alfa treatment in adults with pediatric-onset hypophosphatasia in routine clinical practice: Poster presented at: 22nd European Congress of Endocrinology; September 5-9, 2020; Virtual. 
+<strong>12.</strong> ATS Committee on Proficiency Standards for Clinical Pulmonary Function Laboratories. ATS statement: guidelines for the six-minute walk test. Am J Respir Crit Care Med. 2002;166(1):111-117.
+ <strong>13.</strong> Data on file. Alexion Pharmaceuticals, Inc. 
+ <strong>14.</strong> Centers for Disease Control and Prevention. Timed up and go (TUG). Accessed April 3, 2023. https://www.cdc.gov/steadi/pdf/STEADI-Assessment-TUG-508.pdf 
+ <strong>15.</strong> Hinrichs T, Moschny A, Brach M, et al. Effects of an exercise programme for chronically ill and mobility-restricted elderly with structured support by the general practitioner’s practice (HOMEfit) – study protocol of a randomised controlled trial. Trials. 2011;12:263.
+<strong>16.</strong> Binkley JM, Stratford PW, Lott SA, et al. The lower extremity functional scale (LEFS): scale development, measurement properties, and clinical application. Phys Ther. 1999;79(4):371-383. 
+<strong>17.</strong> Dingemans SA, Kleipool SC, Mulders MAM, et al. Normative data for the lower extremity functional scale (LEFS). Acta Orthop. 2017;88(4):422-426. 
+<strong>18.</strong> Data on file. Alexion Pharmaceuticals, Inc.</p></References>
 </Layout>

@@ -386,6 +386,36 @@
 }
 
 //Clinical data - adults page
+.clinical-data-adults--tabs-menu {
+    .modifier{
+        height: 3.125rem;
+        width: 100%;
+        justify-content: center;
+        margin-top: 23px;
+        @media screen and (min-width: 1000px) {
+            margin-top: 48px;
+        }
+    }
+}
+.mwt-block{
+    @media screen and (min-width: 1000px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    }
+    ul{
+        @media screen and (min-width: 1000px) {
+        display: block;
+        max-width: 506px;
+        }  
+
+        li{
+            @media screen and (min-width: 1000px) {
+            margin-top: 3rem;
+            }
+        }
+    }
+}
 .clinical-data-adults {
     &__changes-in-substractes {
         display: flex;
@@ -408,6 +438,7 @@
 
         &--mobility {
             @media screen and (min-width: 1000px) {
+                width: 100%;
                 margin-top: 6rem;
             }
 
@@ -448,6 +479,9 @@
         color: $color-dark-gray;
         font-size: .875rem;
         font-weight: 300;
+        @media screen and (min-width: 1000px) {
+            margin-bottom: 81px;
+        }
 
         li {
             margin-bottom: .5rem;
@@ -516,6 +550,7 @@
     }
 
     &--tabs {
+        
         [role=tablist] {
             max-width: fit-content;
             background-color: transparent;
@@ -558,7 +593,10 @@
     &--content1,
     &__list-mobility1 {
         @media screen and (max-width: 999px) {
-            display: none;
+            display: block;
+            @media screen and (min-width: 1000px) {
+                margin-bottom: 2rem;
+            }
         }
     }
 
@@ -591,6 +629,7 @@
         padding-top: 0.5rem;
         padding-bottom: 1rem;
         overflow-y: clip;
+        overflow: hidden;
 
         &--highlightinformation {
             margin-top: 2rem;
@@ -643,6 +682,7 @@
         &--paragraph {
             margin-top: 1rem;
 
+            
             @media screen and (min-width: 1024px) {
                 font-size: 1.125rem;
             }
@@ -810,6 +850,7 @@
         }
 
         &--highlight {
+            margin-bottom: 2rem;
             @media screen and (min-width: 1000px) {
                 max-width: 50%;
                 margin-top: 1rem;
@@ -827,11 +868,14 @@
                     line-height: 3.4688rem !important;
                 }
             }
+            
+            
         }
 
         .clinical-data-adults__title {
             margin: 0.8rem 0 0 0;
         }
+        
 
         &--img {
             margin: 1rem auto;
@@ -894,11 +938,16 @@
     }
 
     &--paragraph {
+        @media screen and (min-width: 1000px) {
+            margin-bottom: 2rem;
+        }
         @media screen and (min-width: 1024px) {
             font-size: 1.125rem;
         }
     }
+
 }
+
 
 .clinical-data-info-modal {
     .clinical-data-modal--close-modal {
@@ -4634,6 +4683,15 @@
 //------------------------------------------------------------- Clinical data - Adolescents -------------------------------------------------------------
 
 /* Clinical Data - Children Page */
+.adolescents__cta{
+    h3{
+
+        max-width: 486px;
+    }
+    .sub{
+        color: $color-white;
+    }
+}
 .cdchildren-container {
     width: 100%;
     max-width: 100%;
