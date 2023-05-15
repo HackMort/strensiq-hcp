@@ -50,11 +50,17 @@ import data from "./data/safety";
     <PageHero
         pageId="clinical-data"
         classNames="clinical-data-overview__page-hero"
+        shapeSecondary={false}
     >
         <h2 class="page-hero__subtitle">To treat hypophosphatasia</h2>
         <h1 class="page-hero__title">
-            Get straight to<br /> the source with STRENSIQ
+            Get straight to<br /> the source with STRENSIQ<sup>1</sup>
         </h1>
+        <picture class="page-hero__image-container">
+            <source media="(min-width: 1024px)" srcset="/assets/images/clinical-data/overview/safety-helmet-desktop.png">
+            <source media="(min-width: 700px)" srcset="/assets/images/clinical-data/overview/safety-helmet-tablet.png">
+            <img src="/assets/images/clinical-data/overview/safety-helmet-mobile.png" alt="">
+        </picture>
     </PageHero>
     {
         internalNavLinks && (

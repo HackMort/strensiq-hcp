@@ -218,6 +218,10 @@
     }
 
     &#clinical-data-page-hero {
+        .page-hero__image-container {
+            position: absolute;
+        }
+
         .page-hero__subtitle {
             font-size: .75rem;
 
