@@ -20,7 +20,7 @@ const { title, className }: Props = Astro.props;
     {
         title && (
             <div class="table__header">
-                <div class="table__title">{title}</div>
+                <div class="table__title" set:html={title}></div>
             </div>
         )
     }
