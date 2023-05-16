@@ -4,9 +4,10 @@ export interface Props {
     footnote?: string;
     className?: string;
     subtitle?: string;
+    breakLineAfterFootnote?: boolean;
 }
 
-    const { title = '', footnote, className = '', subtitle = '' } = Astro.props;
+    const { title = '', footnote, className = '', subtitle = '', breakLineAfterFootnote = false } = Astro.props;
 ---
 
 <article class={`highlight-information ${className}`}>
@@ -17,6 +18,7 @@ export interface Props {
     </section>
     <h5 class="highlight-information__footnote">
         <strong set:html={footnote}></strong>
+        {breakLineAfterFootnote && <br>}
         <slot name='footnote'></slot>
     </h5>
 </article>
