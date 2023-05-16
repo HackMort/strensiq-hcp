@@ -89,6 +89,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            overflow-y: unset;
         }
 
         @media screen and (min-width: 1366px) {
@@ -122,6 +123,7 @@
         @media screen and (min-width: 1024px) {
             margin-right: 2.0769rem;
             margin-left: 0;
+            overflow-y: unset;
         }
 
         @media screen and (min-width: 1366px) {
