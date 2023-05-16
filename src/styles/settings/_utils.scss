@@ -88,6 +88,10 @@
   --animation-origin: 50% 0;
   position: relative;
 
+  &--gray {
+    --animation-color: rgba(98,100,105,0.4);
+  }
+
   &::before {
     content: "";
     position: absolute;
