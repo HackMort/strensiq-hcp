@@ -4709,7 +4709,7 @@
 
 #clinical-data-page-hero.clinical-data-children__page-hero {
     .page-hero__title {
-        max-width:  19ch;
+        max-width: 19ch;
 
         @media screen and (min-width: 768px) {
             margin-bottom: 1.5rem;
@@ -4881,7 +4881,7 @@
                     border-radius: 22.625rem 0 0 22.75rem;
                     bottom: 120px;
                     height: 45.5175rem;
-                    left: -75px;
+                    left: -50px;
                     top: unset;
                     transform: rotate(-21deg);
                     width: 69.295rem;
@@ -5342,7 +5342,7 @@
         }
 
         .cdchildren-container__content--right {
-            .cdchildren-container__image-container + .cdchildren-container__footnote {
+            .cdchildren-container__image-container+.cdchildren-container__footnote {
                 margin-bottom: .3125rem;
             }
         }
@@ -5372,7 +5372,7 @@
                 overflow-y: clip;
                 padding-bottom: 3.75rem;
 
-                & > section {
+                &>section {
                     width: 45%;
                 }
 
@@ -5388,7 +5388,7 @@
                 padding-bottom: inherit;
                 overflow: unset;
 
-                & > section,
+                &>section,
                 .cdchildren-container__video-container {
                     width: 100%;
                 }
