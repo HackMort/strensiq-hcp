@@ -1,5 +1,5 @@
 .disability-index-modal {
-    background-color: $color-dark-green;
+    background-color: $color-slate-gray;
     border-radius: 1.875rem;
     color: $color-white;
     height: 100%;
@@ -52,7 +52,7 @@
     }
 
     &__words-container {
-        height: 19.875rem;
+        height: 18.75rem;
         position: relative;
         width: 100%;
 
@@ -68,25 +68,43 @@
 
     &__main-word {
         bottom: 0;
-        color: $color-green;
-        font-size: 25px;
+        color: $color-white;
+        font-size: 22px;
         font-weight: 900;
         height: fit-content;
-        line-height: 1.43rem;
+        line-height: 1.2581rem;
         margin: auto 0;
-        padding-left: 1.25rem;
+        padding-left: 4.0625rem;
         position: absolute;
         text-align: center;
         top: 0;
         width: 100%;
+
+        @media (min-width: 425px) {
+            padding-left: 3.125rem;
+        }
 
         @include media('tablet') {
             padding-left: 0;
         }
 
         @include media('desktop') {
-            font-size: 46px;
-            line-height: 2.6306rem;
+            font-size: 44px;
+            line-height: 2.5162rem;
+        }
+
+        sup {
+            font-size: .75rem;
+            line-height: .6863rem;
+            right: .3125rem;
+            top: -1rem;
+
+            @media (min-width: 1200px) {
+                font-size: 1.875rem;
+                line-height: 1.7156rem;
+                right: 0;
+                top: -1.5rem;
+            }
         }
     }
 
@@ -103,7 +121,7 @@
         &::before {
             --width-line: .9375rem;
             --position-line: calc(var(--width-line) * -1);
-            border-top: .1875rem dashed $color-green;
+            border-top: 3px dashed $color-white;
             content: '';
             height: .1875rem;
             position: absolute;
@@ -118,7 +136,7 @@
             top: 0;
 
             &::before {
-                --width-line: 2.1875rem;
+                --width-line: 1rem;
                 bottom: 0;
                 margin: auto 0;
                 top: 0;
@@ -149,17 +167,17 @@
         }
 
         &[data-word="hygiene"] {
-            left: 10%;
-            top: 20%;
+            left: 15%;
+            top: 25%;
 
             &::before {
-                --width-line: 6.25rem;
+                --width-line: 4rem;
                 border-top: unset;
-                border-left: .1875rem dashed $color-green;
-                bottom: calc(var(--position-line) + .625rem);
+                border-left: .1875rem dashed $color-white;
+                bottom: calc(var(--position-line) + 0.5rem);
                 height: var(--width-line);
-                right: -0.9375rem;
-                transform: rotate(-45deg);
+                right: -0.5rem;
+                transform: rotate(-50deg);
                 width: .1875rem;
             }
         }
@@ -171,46 +189,48 @@
             top: 10%;
 
             &::before {
-                --width-line: 6.25rem;
+                --width-line: 4.5rem;
                 border-top: unset;
-                border-left: .1875rem dashed $color-green;
+                border-left: .1875rem dashed $color-white;
                 bottom: var(--position-line);
                 height: var(--width-line);
                 left: 0;
                 margin: 0 auto;
+                top: 120%;
                 right: 0;
                 width: .1875rem;
             }
         }
 
         &[data-word="walking"] {
-            top: 20%;
-            right: 10%;
+            top: 25%;
+            right: 15%;
 
             &::before {
-                --width-line: 5.3125rem;
+                --width-line: 3rem;
                 border-top: unset;
-                border-left: .1875rem dashed $color-green;
+                border-left: .1875rem dashed $color-white;
                 bottom: calc(var(--position-line) + .625rem);
                 height: var(--width-line);
-                left: -0.625rem;
+                left: 0;
+                top: 100%;
                 transform: rotate(30deg);
                 width: .1875rem;
             }
         }
 
         &[data-word="eating"] {
-            bottom: 20%;
-            left: 10%;
+            bottom: 25%;
+            left: 15%;
 
             &::before {
-                --width-line: 5.625rem;
+                --width-line: 3.8rem;
                 border-top: unset;
-                border-left: .1875rem dashed $color-green;
+                border-left: .1875rem dashed $color-white;
                 height: var(--width-line);
-                top: calc(var(--position-line) + .625rem);
+                top: calc(var(--position-line) + .4rem);
                 transform: rotate(40deg);
-                right: -1.5625rem;
+                right: -0.625rem;
                 width: .1875rem;
             }
         }
@@ -222,9 +242,9 @@
             right: 0;
 
             &::before {
-                --width-line: 6.25rem;
+                --width-line: 5.5rem;
                 border-top: unset;
-                border-left: .1875rem dashed $color-green;
+                border-left: .1875rem dashed $color-white;
                 height: var(--width-line);
                 left: 0;
                 margin: 0 auto;
@@ -235,16 +255,16 @@
         }
 
         &[data-word="arising"] {
-            bottom: 20%;
-            right: 10%;
+            bottom: 25%;
+            right: 15%;
 
             &::before {
-                --width-line: 5.625rem;
+                --width-line: 3.5rem;
                 border-top: unset;
-                border-left: .1875rem dashed $color-green;
+                border-left: .1875rem dashed $color-white;
                 height: var(--width-line);
-                left: -0.3125rem;
-                top: calc(var(--position-line) + .625rem);
+                left: 0;
+                top: calc(var(--position-line) + .2rem);
                 transform: rotate(-35deg);
                 width: .1875rem;
             }
@@ -262,18 +282,18 @@
 
             &[data-word="activities"] {
                 &::before {
-                    --width-line: 5.625rem;
+                    --width-line: 5rem;
                     --position-line: calc((var(--width-line) * -1) - .3125rem)
                 }
             }
 
             &[data-word="hygiene"] {
-                top: 15%;
-                left: 15%;
+                top: 20%;
+                left: 20%;
 
                 &::before {
-                    --width-line: 5.625rem;
-                    bottom: calc(var(--position-line) + .3125rem);
+                    --width-line: 5.25rem;
+                    bottom: calc(var(--position-line) + 0.6rem);
                     right: -1.25rem;
                 }
             }
@@ -282,27 +302,29 @@
                 top: 0;
 
                 &::before {
-                    --width-line: 6.875rem;
+                    --width-line: 6rem;
                 }
             }
 
             &[data-word="walking"] {
-                top: 15%;
-                right: 15%;
+                top: 20%;
+                right: 20%;
 
                 &::before {
-                    --width-line: 6.25rem;
-                    left: -2.1875rem;
-                    transform: rotate(35deg);
+                    --width-line: 5.5rem;
+                    bottom: calc(var(--position-line) + 0.8rem);
+                    left: -1.5rem;
+                    top: unset;
+                    transform: rotate(50deg);
                 }
             }
 
             &[data-word="eating"] {
-                bottom: 15%;
-                left: 15%;
+                bottom: 20%;
+                left: 20%;
 
                 &::before {
-                    --width-line: 6.25rem;
+                    --width-line: 4.75rem;
                     right: -1.875rem;
                 }
             }
@@ -311,17 +333,17 @@
                 bottom: 0;
 
                 &::before {
-                    --width-line: 7.8125rem;
+                    --width-line: 7.25rem;
                 }
             }
 
             &[data-word="arising"] {
-                bottom: 15%;
-                right: 15%;
+                bottom: 20%;
+                right: 20%;
 
                 &::before {
-                    --width-line: 6.25rem;
-                    top: calc(var(--position-line) + .3125rem);
+                    --width-line: 5rem;
+                    top: calc(var(--position-line) + .5rem);
                     left: -1.875rem;
                     transform: rotate(-45deg);
                 }
@@ -334,17 +356,20 @@
 
             &[data-word="grip"] {
                 &::before {
-                    --width-line: 9.0625rem;
+                    --width-line: 7rem;
                 }
             }
 
             &[data-word="activities"] {
                 &::before {
-                    --width-line: 5.3125rem;
+                    --width-line: 3rem;
                 }
             }
 
             &[data-word="hygiene"] {
+                top: 15%;
+                left: 15%;
+
                 &::before {
                     --width-line: 5.3125rem;
                     bottom: calc(var(--position-line) + .625rem);
@@ -354,33 +379,42 @@
 
             &[data-word="dressing-and-grooming"] {
                 &::before {
-                    --width-line: 5.625rem;
+                    --width-line: 4rem;
                 }
             }
 
             &[data-word="walking"] {
+                top: 15%;
+                right: 15%;
+
                 &::before {
-                    --width-line: 5.3125rem;
+                    --width-line: 4.5rem;
                     left: -1.875rem;
                     bottom: calc(var(--position-line) + .9375rem);
                 }
             }
 
             &[data-word="eating"] {
+                bottom: 15%;
+                left: 15%;
+
                 &::before {
-                    --width-line: 5.3125rem;
+                    --width-line: 4.5rem;
                 }
             }
 
             &[data-word="reach"] {
                 &::before {
-                    --width-line: 6.875rem;
+                    --width-line: 5.5rem;
                 }
             }
 
             &[data-word="arising"] {
+                bottom: 15%;
+                right: 15%;
+
                 &::before {
-                    --width-line: 5.3125rem;
+                    --width-line: 4.5rem;
                 }
             }
         }
