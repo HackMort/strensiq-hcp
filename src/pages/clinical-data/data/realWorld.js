@@ -1,7 +1,7 @@
 //Table data
 const Data = [
     {
-      text: ["Description", "Single-center, observational study of adults with confirmed diagnosis of pediatric-onset hypophosphatasia who received STRENSIQ for >24 months."],
+      text: ["Description", "Single-center, observational study of adults with confirmed diagnosis of pediatric-onset hypophosphatasia who received STRENSIQ for ≤ 24 months."],
       classModifier: ["mh"],
     },
     {
@@ -17,7 +17,7 @@ const Data = [
         classModifier: ["mh"],
     },
     {
-        text: ["Endpoints", "<b>Primary:</b> 6-minute walk test (6MWT), timed up-and-go (TUG) test, repeated chair-rise test <br> <b>Secondary:</b> The Lower Extremity Functional Scale (LEFS)"],
+        text: ["Endpoints", "<b>Key primary:</b> 6-minute walk test (6MWT), timed up-and-go (TUG) test, repeated chair-rise test <br> <b>Key secondary:</b> The Lower Extremity Functional Scale (LEFS)"],
         classModifier: ["mh"],
     },
 ];

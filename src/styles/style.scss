@@ -525,6 +525,15 @@
         }
     }
 
+    &--img1, &--img2{
+        max-width: 65%;
+        margin: auto;
+        @media screen and (min-width: 1000px) {
+        max-width: 100%;
+        }
+
+    }
+
     &__title {
         color: #3D5F66;
         margin: 1.25rem auto 0 auto;
@@ -833,9 +842,12 @@
 
     &--img-6MWT {
         background-color: $color-white;
+        max-width: 65%;
+        margin: auto;
         margin-top: 2rem;
 
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 700px) {
+            max-width: 100%;
             margin-bottom: 2rem;
         }
 
@@ -855,6 +867,10 @@
         background-color: $color-soft-gray;
         padding-top: 0.5rem;
 
+        .table__header--mh--cell{
+            background-color: #6D868E;
+        }
+
         &-table {
             max-width: 1000px;
             margin: 1.5rem auto 0 auto;
@@ -862,6 +878,7 @@
             td,
             th {
                 text-align: left;
+                font-weight: 500;
             }
 
             @media only screen and (min-width: 500px) and (max-width: 1090px) {
@@ -1040,7 +1057,13 @@
     }
 
 }
-
+#picture-bone{
+    max-width: 65%;
+    margin: auto;
+    @media screen and (min-width: 700px) {
+    max-width: 100%;
+    }
+}
 
 .clinical-data-info-modal {
     .clinical-data-modal--close-modal {
