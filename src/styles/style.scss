@@ -417,6 +417,12 @@
     }
 }
 .clinical-data-adults__page-hero{
+    .shape--primary{
+        background-color: #6D868E;
+    }
+    .shape--secondary{
+        background-color: #48D597;
+    }
     .shape--tertiary{
         background-color: white;
     }
@@ -436,6 +442,10 @@
     &__col {
         width: 100%;
 
+        .custom-title{
+            background-color: #3D5F66;
+        }
+
         @media screen and (min-width: 1000px) {
             width: 47%;
             margin: 0 auto;
@@ -454,7 +464,7 @@
     }
 
     &__title {
-        color: $color-dark-green;
+        color: #3D5F66;
         margin: 1.25rem auto 0 auto;
 
         @media screen and (min-width: 1000px) {
@@ -551,6 +561,7 @@
 
     &--title1,
     &--title2 {
+        color: #3D5F66;
         margin-bottom: 1rem;
     }
 
