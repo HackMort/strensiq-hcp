@@ -71,4 +71,28 @@
             margin-top: .9375rem;
         }
     }
+
+    &--gray {
+        .highlight-information {
+            &__title {
+                color: $color-slate-gray;
+            }
+
+            &__content {
+                color: $color-slate-gray;
+            }
+
+            &__footnote {
+                color: $color-dark-gray;
+
+                strong  {
+                    color: $color-blue;
+                }
+            }
+
+            &__sub-content {
+                color: $color-dark-gray;
+            }
+        }
+    }
 }
