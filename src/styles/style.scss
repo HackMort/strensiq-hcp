@@ -4855,7 +4855,7 @@
         @include media('desktop') {
             font-size: 30px;
             line-height: 2.3438rem;
-            max-width: 24ch;
+            max-width: 31ch;
         }
     }
 
@@ -5566,7 +5566,7 @@
 
         @media (min-width: 1024px) {
             .cdchildren-container__title {
-                max-width: 30ch;
+                max-width: 31ch;
             }
 
             .cdchildren-container__content {
