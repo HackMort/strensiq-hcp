@@ -196,7 +196,7 @@
 
             @media screen and (min-width: 1600px) {
                 max-width: 60%;
-                
+
                 .wrapper {
                     max-width: fit-content;
                     margin-left: calc((100vw - 90rem) / 2);
@@ -469,7 +469,7 @@
         @media screen and (min-width: 1000px) {
         display: block;
         max-width: 506px;
-        }  
+        }
 
         li{
             @media screen and (min-width: 1000px) {
@@ -636,7 +636,7 @@
     }
 
     &--tabs {
-        
+
         [role=tablist] {
             max-width: fit-content;
             background-color: transparent;
@@ -768,7 +768,7 @@
         &--paragraph {
             margin-top: 1rem;
 
-            
+
             @media screen and (min-width: 1024px) {
                 font-size: 1.125rem;
             }
@@ -961,14 +961,14 @@
                     line-height: 3.4688rem !important;
                 }
             }
-            
-            
+
+
         }
 
         .clinical-data-adults__title {
             margin: 0.8rem 0 0 0;
         }
-        
+
 
         &--img {
             margin: 1rem auto;
@@ -2248,6 +2248,16 @@
 //-------------------------------------------------------------how it works page -------------------------------------------------------------
 
 //------------------------------------- Hypophosphatasia Page ------------------------  */
+.cta-hypophosphatasia {
+    .cta__heading {
+        max-width: 18ch;
+
+        @media screen and (min-width: 768px) {
+            max-width: 100%;
+        }
+    }
+}
+
 .hypophosphatasia-container {
     display: flex;
     flex-wrap: wrap;
@@ -2330,7 +2340,7 @@
 
         li a {
             font-weight: 700;
-            padding: .625rem;
+            padding: .625rem 2.5rem;
         }
     }
 
@@ -2664,13 +2674,23 @@
                 &__footnote {
                     font-size: .875rem;
                     line-height: 1.0938rem;
-                    max-width: 23ch;
+                    max-width: 35ch;
 
                     strong {
                         font-size: 1rem;
                         line-height: 1.5rem;
                     }
 
+                }
+
+                &:nth-of-type(1) {
+                    margin-bottom: 2.875rem;
+                }
+
+                &:nth-of-type(2) {
+                    .highlight-information__title {
+                        max-width: 29ch;
+                    }
                 }
             }
 
@@ -2688,7 +2708,7 @@
                 }
 
                 &__list {
-                    margin-bottom: .1875rem;
+                    margin-bottom: 1.5625rem;
 
                     &:first-of-type {
                         margin-bottom: .625rem;
@@ -2696,7 +2716,7 @@
                 }
 
                 &__paragraph {
-                    margin-bottom: 1.75rem;
+                    margin-bottom: .8125rem;
                 }
 
                 &__list-item {
@@ -2764,6 +2784,10 @@
         .hypophosphatasia-container__list {
             margin-top: .9375rem;
             margin-bottom: 2.1875rem;
+        }
+
+        .hypophosphatasia-container__paragraph:nth-of-type(2) {
+            margin-bottom: 2.5rem;
         }
 
         @media (min-width: 1024px) {
@@ -3069,6 +3093,10 @@
                         left: unset;
                         margin-left: calc(var(--width-shape) * 0.55);
                     }
+
+                    @media(min-width: 1400px) {
+                        margin-left: calc(var(--width-shape) * 0.45);
+                    }
                 }
             }
         }
@@ -3086,6 +3114,14 @@
     .highlight-information {
         margin-bottom: .625rem;
         max-width: 21.25rem;
+
+        &__footnote {
+            color: $color-dark-gray;
+
+            strong {
+                color: $color-dark-green;
+            }
+        }
     }
 
     .information {
