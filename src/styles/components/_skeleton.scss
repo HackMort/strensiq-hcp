@@ -160,28 +160,41 @@
             --point-active-before-width: 1.25rem;
             right: 35%;
             top: 5%;
+
+            .skeleton__word {
+                top: -1.25rem;
+            }
         }
 
         &[data-word="dental"] {
             --point-before-width: 6.6581rem;
             right: 38%;
             top: 18%;
+
+            .skeleton__word {
+                top: -1.25rem;
+            }
         }
 
         &[data-word="respiratory"] {
             --point-before-width: 5.0481rem;
-            right: 50%;
+            right: 55%;
             top: 38%;
+
+            .skeleton__word {
+                top: -2.1875rem;
+            }
         }
 
         &[data-word="muscular"] {
-            right: 14%;
+            --point-before-width: 3.4375rem;
+            right: 20%;
             top: 43%;
         }
 
         &[data-word="renal"] {
             --point-before-width: 5rem;
-            --point-active-before-width: 5rem;
+            --point-active-before-width: 1rem;
             right: 35%;
             top: 54%;
         }
@@ -189,15 +202,15 @@
         &[data-word="rheumatic"] {
             --point-before-width: 3.125rem;
             --point-active-before-width: 3.4375rem;
-            right: 63%;
-            top: 57%;
+            right: 65%;
+            top: 55%;
         }
 
         &[data-word="skeletal"] {
-            --point-before-width: 6.5625rem;
+            --point-before-width: 2.1875rem;
             --point-active-before-width: 7.1875rem;
-            right: 71%;
-            top: 71%;
+            right: 74%;
+            top: 72%;
 
             .skeleton__word {
                 top: -2.8125rem;
@@ -207,12 +220,12 @@
 
         &[data-word="growth"] {
             --point-active-before-width: 0;
-            right: 30%;
-            top: 25%;
+            right: 33%;
+            top: 26%;
 
             .skeleton__word {
                 left: calc(var(--point-before-width) * -2);
-                max-width: 13ch;
+                max-width: 11ch;
                 top: -2.5rem;
             }
         }
@@ -281,13 +294,15 @@
     }
 
     &__footnote {
+        bottom: .625rem;
         color: $color-white;
         font-size: .75rem;
         font-weight: 300;
         line-height: .9rem;
         position: absolute;
-        bottom: .625rem;
-        left: 1.25rem;
+        text-align: center;
+        width: 100%;
+        // left: 1.25rem;
     }
 
     &--desktop {
@@ -426,7 +441,7 @@
 
             &__footnote {
                 left: unset;
-                right: -9.375rem;
+                right: -16.5625rem;
                 bottom: 1.25rem;
             }
         }
