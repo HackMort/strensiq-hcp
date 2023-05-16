@@ -416,6 +416,11 @@
         }
     }
 }
+.clinical-data-adults__page-hero{
+    .shape--tertiary{
+        background-color: white;
+    }
+}
 .clinical-data-adults {
     &__changes-in-substractes {
         display: flex;
@@ -432,7 +437,7 @@
         width: 100%;
 
         @media screen and (min-width: 1000px) {
-            width: 48%;
+            width: 47%;
             margin: 0 auto;
         }
 
@@ -547,6 +552,14 @@
     &--title1,
     &--title2 {
         margin-bottom: 1rem;
+    }
+
+    &--title1{
+        @media screen and (min-width: 1000px) {
+        font-size: 20px;
+        line-height: 23px;
+        text-transform: uppercase;
+        }
     }
 
     &--tabs {
@@ -708,11 +721,18 @@
         position: relative;
 
         &--title {
+            position: relative;
+            z-index: 3;
             color: $color-white;
             text-align: center;
             font-size: 1.25rem;
             font-weight: 700;
             padding-bottom: 0.8rem;
+            @media screen and (min-width: 1024px) {
+            font-size: 30px;
+            line-height: 125%;
+            margin-left: 74px;
+            }
         }
 
         &::before {
@@ -2553,6 +2573,10 @@
 
                 &__panel-footnote {
                     margin-bottom: 3.75rem;
+                    @media (min-width: 1000px) {
+                        margin-bottom: 4.95rem;
+                    }
+
                 }
 
                 &__panel-chart {
