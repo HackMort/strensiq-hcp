@@ -196,7 +196,7 @@
 
             @media screen and (min-width: 1600px) {
                 max-width: 60%;
-                
+
                 .wrapper {
                     max-width: fit-content;
                     margin-left: calc((100vw - 90rem) / 2);
@@ -4153,6 +4153,7 @@
         [role=tablist] {
             width: calc(100% - 4.125rem);
             justify-content: center;
+            overflow-y: unset;
         }
 
         [role=tablist] a {
@@ -4257,6 +4258,8 @@
             }
         }
     }
+
+
 }
 
 .infants-young-children__survival {
@@ -4694,6 +4697,47 @@
 //------------------------------------------------------------- Clinical data - Adolescents -------------------------------------------------------------
 
 /* Clinical Data - Children Page */
+.cdchildren-cta {
+    .cta__heading {
+        max-width: 15ch;
+
+        @media screen and (min-width: 1024px) {
+            max-width: 100%;
+        }
+    }
+}
+
+#clinical-data-page-hero.clinical-data-children__page-hero {
+    .page-hero__title {
+        max-width: 19ch;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 1.5rem;
+            max-width: 31ch;
+        }
+    }
+
+    .shape--primary {
+        max-width: 100%;
+        top: -9.375rem;
+        width: 100%;
+
+        @media screen and (min-width: 768px) {
+            max-width: 80%;
+            width: 80%;
+        }
+
+        @media screen and (min-width: 1024px) {
+            top: unset;
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: 75%;
+            max-width: 75%;
+        }
+    }
+}
+
 .cdchildren-container {
     width: 100%;
     max-width: 100%;
@@ -4785,7 +4829,7 @@
         @include media('desktop') {
             font-size: 18px;
             line-height: 1.6875rem;
-            max-width: 49ch;
+            max-width: 52ch;
         }
     }
 
@@ -4794,8 +4838,14 @@
         font-size: 14px;
         font-weight: 500;
         line-height: 1.05rem;
-        max-width: 30ch;
+        max-width: 42ch;
         text-transform: uppercase;
+
+        @media screen and (min-width: 1024px) {
+            font-size: 1.25rem;
+            line-height: 1.465rem;
+            max-width: 30ch;
+        }
     }
 
     &__title {
@@ -4805,20 +4855,17 @@
         @include media('desktop') {
             font-size: 30px;
             line-height: 2.3438rem;
-            max-width: 24ch;
+            max-width: 31ch;
         }
     }
 
     &__video {
-        background-color: #c4c4c4;
-        height: 100%;
         max-width: 43.75rem;
-        padding-top: 3.125rem;
         position: relative;
 
         &-container {
             position: relative;
-            padding: .625rem 0 1.25rem;
+            padding: .625rem 0 .4375rem;
 
             &:before {
                 background-color: $color-blue;
@@ -4832,12 +4879,18 @@
 
                 @media (min-width: 1024px) {
                     border-radius: 22.625rem 0 0 22.75rem;
-                    bottom: 30px;
+                    bottom: 120px;
                     height: 45.5175rem;
-                    left: -35px;
+                    left: -50px;
                     top: unset;
                     transform: rotate(-21deg);
                     width: 69.295rem;
+                }
+
+                @media (min-width: 1900px) {
+                    bottom: 10.9375rem;
+                    left: -7.8125rem;
+                    width: 90rem;
                 }
             }
 
@@ -4846,6 +4899,17 @@
             }
         }
 
+        &-footnote {
+            color: $color-white;
+            font-size: .75rem;
+            line-height: .9rem;
+            margin-top: .3125rem;
+
+            @media (min-width: 1024px) {
+                color: $color-dark-gray;
+                max-width: 88ch;
+            }
+        }
 
         &-title {
             color: $color-white;
@@ -4862,6 +4926,10 @@
 
         @include media('tablet') {
             margin: 0 auto;
+        }
+
+        @media (min-width: 1024px) {
+            max-width: 100%;
         }
     }
 
@@ -4881,7 +4949,7 @@
     }
 
     .cdchildren-container__merged-highlight {
-        border-bottom: 12px solid $color-green;
+        border-bottom: 12px solid $color-mint;
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -4958,6 +5026,10 @@
                 }
             }
         }
+
+        @media screen and (min-width: 1024px) {
+            max-width: 26rem;
+        }
     }
 
     .chart-wrapper {
@@ -5015,15 +5087,71 @@
     .only--desktop {
         display: none;
 
-        @include media('desktop') {
+        @media screen and (min-width: 1024px) {
             display: block;
         }
     }
 
     .only--mobile {
 
-        @include media('desktop') {
+        @media screen and (min-width: 1024px) {
             display: none;
+        }
+    }
+
+    .radiographic-comparator__left {
+        position: relative
+    }
+
+    .radiographic-comparator__right {
+
+        @include media('tablet') {
+            padding-bottom: 1.875rem;
+        }
+
+        @include media ('desktop') {
+            padding-bottom: 4.375rem;
+        }
+    }
+
+    .radiographic-comparator [data-radiographic-footer] {
+        line-height: 1.0938rem;
+        margin-bottom: .3125rem;
+    }
+
+    .radiographic__footnote {
+        max-width: 90%;
+
+        &--bottom {
+            position: absolute;
+            bottom: .9375rem;
+
+            @include media('tablet') {
+                bottom: 1.875rem;
+            }
+
+            @media screen and (min-width: 1200px) {
+                bottom: 4.6875rem;
+            }
+        }
+
+        &--mobile {
+            font-size: .625rem;
+            line-height: .6875rem;
+        }
+
+        &--desktop {
+            font-size: .75rem;
+            line-height: .9rem;
+        }
+
+
+        &--right {
+            max-width: 85%;
+
+            @media screen and (min-width: 799px) {
+                max-width: 80%;
+            }
         }
     }
 
@@ -5163,6 +5291,7 @@
         [role=tablist] {
             @include media('desktop') {
                 justify-content: center;
+                overflow: unset;
 
                 a {
                     font-size: 1rem;
@@ -5179,12 +5308,6 @@
                 }
             }
         }
-
-        /* @media (min-width: 1024px) {
-            .wrapper {
-                justify-content: space-evenly;
-            }
-        } */
     }
 
     &--rgi {
@@ -5207,7 +5330,7 @@
             padding-top: 0;
 
             .cdchildren-container__content:last-child .cdchildren-container__footnote:last-child {
-                width: 85%;
+                width: 70%;
                 margin: 0 auto;
             }
         }
@@ -5216,6 +5339,12 @@
     &--mobility {
         .cdchildren-container__content:last-child {
             padding-top: 0;
+        }
+
+        .cdchildren-container__content--right {
+            .cdchildren-container__image-container+.cdchildren-container__footnote {
+                margin-bottom: .3125rem;
+            }
         }
 
         .cdchildren-container__content {
@@ -5242,6 +5371,14 @@
                 justify-content: space-between;
                 overflow-y: clip;
                 padding-bottom: 3.75rem;
+
+                &>section {
+                    width: 45%;
+                }
+
+                .cdchildren-container__video-container {
+                    width: 50%;
+                }
             }
         }
 
@@ -5250,6 +5387,11 @@
                 display: block;
                 padding-bottom: inherit;
                 overflow: unset;
+
+                &>section,
+                .cdchildren-container__video-container {
+                    width: 100%;
+                }
             }
 
             .highlight-information:nth-of-type(2) {
@@ -5270,6 +5412,10 @@
                 .cdchildren-container__title {
                     margin-top: .625rem;
                     margin-bottom: 1.25rem;
+
+                    @media screen and (min-width: 1024px) {
+                        margin-top: 0;
+                    }
                 }
             }
 
@@ -5279,6 +5425,12 @@
 
                 @include media('desktop') {
                     padding-top: 0;
+                }
+            }
+
+            &--left {
+                .cdchildren-container__merged-highlight {
+                    margin-bottom: .75rem;
                 }
             }
         }
@@ -5296,6 +5448,14 @@
 
         .cdchildren-container__separator {
             display: none;
+        }
+
+        .cdchildren-container__title {
+            color: $color-dark-gray;
+        }
+
+        .animated--bg {
+            color: $color-dark-gray;
         }
 
         @include media('tablet') {
@@ -5406,7 +5566,7 @@
 
         @media (min-width: 1024px) {
             .cdchildren-container__title {
-                max-width: 30ch;
+                max-width: 31ch;
             }
 
             .cdchildren-container__content {
@@ -5420,14 +5580,19 @@
             }
 
             .only--desktop {
-                font-size: 18px;
-                line-height: 1.6875rem;
                 margin-top: 1.5625rem;
-                max-width: 49ch;
             }
 
             .cdchildren-container__list-item {
                 max-width: 55ch;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .only--desktop {
+                font-size: 18px;
+                line-height: 1.6875rem;
+                max-width: 49ch;
             }
         }
     }
