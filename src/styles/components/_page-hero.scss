@@ -124,7 +124,7 @@
     &#how-it-works-page-hero {
         --custom-margin: 1.75rem;
 
-        .wrapper {
+        /* .wrapper {
             max-width: calc(100% - var(--custom-margin));
 
             @media screen and (min-width: 450px) {
@@ -134,7 +134,7 @@
             @media screen and (min-width: 450px) and (max-width: 1023px) {
                 min-height: 200px;
             }
-        }
+        } */
 
         .page-hero__title {
             br {
@@ -224,11 +224,11 @@
             max-height: 20.25rem;
         }
 
-        .wrapper {
+        /* .wrapper {
             max-width: calc(100% - (var(--margin) / 2));
             margin-left: auto;
             margin-right: 0;
-        }
+        } */
 
         .page-hero__image-container {
             position: absolute;
