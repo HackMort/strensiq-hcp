@@ -4633,7 +4633,7 @@
 
     .hpp-related-rickets__chart-footnote,
     .mobility__chart-footnote {
-        margin-top: .5rem;
+        margin-top: 0;
         margin-bottom: .75rem;
 
         p {
@@ -4684,6 +4684,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            align-items: flex-end;
 
             .hpp-related-rickets__radiographics-wrapper {
                 margin-bottom: 2rem;
@@ -4696,12 +4697,6 @@
                     max-width: 46.125rem;
                     margin-bottom: 1rem;
                 }
-
-                .wrapper {
-                    max-width: calc(100% - (var(--margin) / 2));
-                    margin-left: 0;
-                    margin-right: auto;
-                }
             }
 
             .radiographic-images-mobile {
@@ -4710,7 +4705,6 @@
 
             .radiographic-images-desktop {
                 display: block;
-                // height: 32.6044rem;
             }
         }
     }
@@ -4719,17 +4713,26 @@
 .hpp-related-rickets__chart-wrapper {
     @media screen and (min-width: 1024px) {
         max-width: fit-content;
-        margin-left: auto;
+        // margin-left: auto;
 
         &>div:not(.wrapper) {
             max-width: fit-content;
-            margin-left: auto;
+            // margin-left: auto;
         }
 
         .pinch-to-zoom {
             width: fit-content !important;
             margin-right: 0 !important;
             margin-left: auto !important;
+            padding-bottom: 0;
+        }
+
+        .f-panzoom__viewport {
+            margin-bottom: 0;
+        }
+
+        .hpp-related-rickets__chart-footnote {
+            padding-left: 10%;
         }
     }
 }
@@ -4744,33 +4747,106 @@
                 margin-right: 0;
             }
         }
-    }
 
-    .hpp-related-rickets__content-left {
-        .wrapper {
-            @media screen and (min-width: 1024px) {
-                max-width: calc(100% - (var(--margin) / 2));
-                margin-left: auto;
-                margin-right: 0;
-            }
-
-            @media screen and (min-width: 1600px) {
-                max-width: calc(100% - ((100vw - 90rem) / 2));
-            }
+        &__button-container {
+            top: 57%;
+            right: 7%;
         }
     }
 
     .radiographic-comparator {
         @media screen and (min-width: 1440px) {
             max-width: fit-content;
-            margin-left: auto;
+        }
+
+        &__left {
+            position: relative;
+        }
+
+        &__right {
+            [data-radiographic-footer] {
+                max-width: 21ch;
+
+                @media screen and (min-width: 1200px) {
+                    max-width: 27ch;
+                }
+            }
+
+            @media screen and (min-width: 1024px) {
+                padding-bottom: 2.5rem;
+            }
+        }
+
+        [data-radiographic-footer] {
+            margin-bottom: .3125rem;
+
+            @media screen and (min-width: 1024px) {
+                margin-bottom: 1.875rem;
+            }
+        }
+
+        .radiographic__footnote {
+            max-width: 90%;
+
+            &--bottom {
+                position: absolute;
+                bottom: .9375rem;
+
+                @include media('tablet') {
+                    bottom: 1.875rem;
+                }
+
+                @media screen and (min-width: 1024px) {
+                    bottom: 2.5rem;
+                }
+            }
+
+            &--mobile {
+                font-size: .625rem;
+                line-height: .75rem;
+            }
+
+            &--desktop {
+                font-size: .75rem;
+                line-height: .9rem;
+            }
+
+
+            &--right {
+                color: $color-dark-green;
+                max-width: 85%;
+
+                @media screen and (min-width: 799px) {
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+
+    .clinical-study {
+        max-width: 375px;
+    }
+
+    .clinical-study:nth-of-type(1) {
+        .clinical-study__description {
+            max-width: 39ch;
+        }
+    }
+
+    .clinical-studies__clarification {
+        @media screen and (min-width: 1024px) {
+            max-width: 40ch;
+        }
+
+        @media screen and (min-width: 1400px) {
+            max-width: 52ch;
         }
     }
 }
 
 .adolescents__mobility {
     background: $color-bright-gray;
-    padding-bottom: 0;
+    padding-bottom: 3.125rem;
 
     @media screen and (min-width: 1024px) {
         padding-bottom: 4.375rem;
@@ -4779,17 +4855,17 @@
     .clinical-studies__clarification {
         @media screen and (min-width: 1024px) {
             margin-bottom: 0;
+            max-width: 54ch;
         }
     }
 
     .adolescents__title {
         margin-bottom: 1rem;
         color: $color-dark-green;
+        max-width: 23ch;
 
-        @media screen and (min-width: 426px) {
-            br {
-                display: none;
-            }
+        @media screen and (min-width: 1024px) {
+            max-width: 30ch;
         }
     }
 
@@ -4841,7 +4917,6 @@
 
                     &::before {
                         left: 3rem;
-                        // right: calc((100vw - ((46.125rem) + (calc(100% - var(--margin) / 2)))));
                         width: calc(100vw - (46.125rem));
                     }
                 }
@@ -4857,45 +4932,54 @@
         }
     }
 
-    .adolescents__content-left {
-        .wrapper {
-            @media screen and (min-width: 1024px) {
-                max-width: calc(100% - (var(--margin) / 2));
-                margin-right: 0;
-                margin-left: auto;
-            }
-
-            @media screen and (min-width: 1600px) {
-                max-width: calc(100% - ((100vw - 90rem) / 2));
-            }
-        }
-    }
-
     .adolescents__content-right {
         @media screen and (min-width: 1024px) {
             max-width: fit-content;
-            margin-left: auto;
-        }
-
-        .wrapper {
-            @media screen and (min-width: 1024px) {
-                max-width: calc(100% - (var(--margin) / 2));
-                margin-left: 0;
-                margin-right: auto;
-            }
-
-            @media screen and (min-width: 1600px) {
-                max-width: calc(100% - ((100vw - 90rem) / 2));
-            }
-
-            @media screen and (min-width: 1750px) {
-                max-width: calc(100% - var(--margin) / 2);
-            }
+            margin-left: 50px;
         }
     }
 
-    .mobility__chart-footnote {
-        // padding: 0 1.2656rem;
+    .clinical-study {
+        max-width: 375px;
+
+        &__description {
+            color: $color-dark-gray;
+            max-width: 39ch;
+
+            strong {
+                color: $color-dark-green;
+            }
+
+            @media screen and (min-width: 1024px) {
+                max-width: 37ch;
+            }
+        }
+    }
+}
+
+#clinical-data-page-hero.clinical-data-adolescents__page-hero {
+    .page-hero__title {
+        max-width: 17ch;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 1.5rem;
+            max-width: 30ch;
+        }
+    }
+
+    .shape--primary {
+        max-width: 100%;
+        top: -9.375rem;
+        width: 100%;
+
+        @media screen and (min-width: 1024px) {
+            top: unset;
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: 75%;
+            max-width: 75%;
+        }
     }
 }
 
@@ -4903,14 +4987,31 @@
 
 /* Clinical Data - Children Page */
 .adolescents__cta{
-    h3{
+    .cta__heading {
+        margin-bottom: .3125rem;
+        max-width: 16ch;
+        line-height: 2.0313rem;
 
-        max-width: 486px;
+        @media screen and (min-width: 1024px) {
+            max-width: 29ch;
+        }
     }
-    .sub{
+
+    .cta__text {
         color: $color-white;
+        font-size: .75rem;
+        font-weight: 400;
+        line-height: .9rem;
+        text-align: left;
+        margin: 0 auto .9375rem;
+        width: fit-content;
+
+        @media screen and (min-width: 1024px) {
+            width: 59ch;
+        }
     }
 }
+
 .cdchildren-cta {
     .cta__heading {
         max-width: 15ch;
