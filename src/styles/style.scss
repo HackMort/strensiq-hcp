@@ -4934,11 +4934,13 @@
     }
 
     .clinical-studies__clarification {
+        font-size: .875rem;
+        line-height: 1.0938rem;
         margin-bottom: 1.5rem;
 
         @media screen and (min-width: 1024px) {
             font-size: 1.125rem;
-            line-height: 27px;
+            line-height: 1.6875rem;
         }
     }
 
@@ -5070,6 +5072,11 @@
             max-width: fit-content;
         }
 
+        [data-radiographic-title] {
+            margin: 0 auto 1.25rem;
+            max-width: 14ch;
+        }
+
         &__left {
             position: relative;
         }
@@ -5177,6 +5184,7 @@
 
         @media screen and (min-width: 1024px) {
             max-width: 30ch;
+            margin-bottom: 2.5rem;
         }
     }
 
