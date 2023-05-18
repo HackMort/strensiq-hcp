@@ -4567,6 +4567,10 @@
     .hpp-related-rickets__title {
         color: $color-dark-green;
         margin-bottom: .625rem;
+
+        @media screen and (min-width: 1024px) {
+            max-width: 36ch;
+        }
     }
 
     .hpp-related-rickets__description {
@@ -4678,7 +4682,11 @@
     }
 
     .custom-title {
-        @media screen and (min-width: 1024px) {
+        &__text {
+            max-width: 32ch;
+        }
+
+        @media screen and (min-width: 768px) {
             width: 100vw;
 
             &__text {
@@ -4721,6 +4729,48 @@
         padding-top: 4.375rem;
     }
 
+    .wrapper {
+        &--desktop {
+            @media (max-width: 1024px) {
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+
+        &--mobile {
+            @media (min-width: 1025px) {
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+    }
+
+    .tip__wrapper {
+        overflow-x: unset;
+    }
+
+    .custom-title {
+        @media screen and (min-width: 1024px) {
+            width: 110%;
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 75vw;
+        }
+
+        &__text {
+            max-width: 35ch;
+
+            @media screen and (min-width: 1024px) {
+                max-width: 41ch;
+            }
+
+            @media screen and (min-width: 1400px) {
+                max-width: 56ch;
+            }
+        }
+    }
+
     .infants-young-children__survival-content {
         @media screen and (min-width: 1024px) {
             display: grid;
@@ -4732,7 +4782,7 @@
         }
 
         @media screen and (min-width: 1400px) {
-            grid-template-columns: 1fr 810px;
+            grid-template-columns: 1fr 700px;
         }
     }
 
@@ -4832,6 +4882,14 @@
             margin-right: auto;
             width: 100%;
             max-width: initial;
+        }
+
+        @media screen and (min-width: 1366px) {
+            &::before {
+                left: unset;
+                width: 75vw;
+                right: 13%;
+            }
         }
 
         @media screen and (min-width: 1400px) {
