@@ -399,7 +399,7 @@
 }
 
 // Clinical data page - infants young children
-.clinical-data-infants-young-children__page-hero {
+/* .clinical-data-infants-young-children__page-hero {
     .page-hero__title {
         @media screen and (min-width: 500px) {
             br {
@@ -411,10 +411,10 @@
             max-width: 28.75rem;
         }
     }
-}
+} */
 
 // Clinical data page - infants young children
-.clinical-data-children__page-hero {
+/* .clinical-data-children__page-hero {
     .page-hero__title {
         @media screen and (min-width: 500px) {
             br {
@@ -431,10 +431,10 @@
             margin-bottom: 1rem;
         }
     }
-}
+} */
 
 // Clinical data page - adolescents
-.clinical-data-adolescents__page-hero {
+/* .clinical-data-adolescents__page-hero {
     .page-hero__title {
         br {
             display: none;
@@ -446,9 +446,56 @@
             }
         }
     }
-}
+} */
 
 //Clinical data - adults page
+#clinical-data-page-hero.clinical-data-adults__page-hero {
+    .page-hero__title {
+        max-width: 100%;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    .page-hero__subtitle {
+        max-width: 48ch;
+    }
+
+    .shape--primary {
+        max-width: 100%;
+        top: -9.375rem;
+        width: 100%;
+
+        @media screen and (min-width: 1024px) {
+            top: unset;
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: 75%;
+            max-width: 75%;
+        }
+    }
+}
+
+#adults-changes-in-substractes {
+    .wrapper {
+        &--desktop {
+            @media screen and (max-width: 1023px) {
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+
+        &--mobile {
+            @media screen and (min-width: 1023px) {
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
 .clinical-data-adults--tabs-menu {
     .modifier{
         height: 3.125rem;
@@ -462,10 +509,11 @@
 }
 .mwt-block{
     @media screen and (min-width: 1000px) {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
     }
+
     ul{
         @media screen and (min-width: 1000px) {
         display: block;
@@ -474,8 +522,26 @@
 
         li{
             @media screen and (min-width: 1000px) {
-            margin-top: 3rem;
+                margin-top: 3rem;
             }
+
+            p {
+                @media screen and (min-width: 1024px) {
+                    max-width: 69ch;
+                }
+            }
+        }
+    }
+
+    &--right {
+        @media screen and (min-width: 1000px) {
+            width: 50%;
+        }
+    }
+
+    &--left {
+        @media screen and (min-width: 1000px) {
+            width: 45%;
         }
     }
 }
@@ -491,6 +557,16 @@
     }
 }
 .clinical-data-adults {
+    &-cta {
+        .cta__heading {
+            max-width: 15ch;
+
+            @media screen and (min-width: 768px) {
+                max-width: 100%;
+            }
+        }
+    }
+
     &__changes-in-substractes {
         display: flex;
         flex-direction: column;
@@ -499,6 +575,21 @@
         @media screen and (min-width: 1000px) {
             flex-direction: row;
             margin-top: 1rem;
+        }
+
+        [role="tabpanel"] {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .custom-title {
+            @media screen and (min-width: 1024px) {
+                width: 100vw;
+            }
+
+            &__text {
+                max-width: 33ch;
+            }
         }
     }
 
@@ -519,16 +610,13 @@
                 width: 100%;
                 margin-top: 6rem;
             }
-
-            .custom-title {
-                padding: 1.1rem;
-            }
         }
     }
 
     &--img1, &--img2{
-        max-width: 65%;
+        max-width: 300px;
         margin: auto;
+
         @media screen and (min-width: 1000px) {
         max-width: 100%;
         }
@@ -566,12 +654,25 @@
         color: $color-dark-gray;
         font-size: .875rem;
         font-weight: 300;
+        padding-left: 15px;
+
         @media screen and (min-width: 1000px) {
             margin-bottom: 81px;
         }
 
         li {
             margin-bottom: .5rem;
+
+            p {
+                font-size: .875rem;
+                line-height: 1.0938rem;
+
+                @media screen and (min-width: 1024px) {
+                    font-size: 1.125rem;
+                    line-height: 1.6875rem;
+                    max-width: 51ch;
+                }
+            }
         }
 
         &-mobility {
@@ -585,14 +686,11 @@
 
         &--time-to-bone {
             margin-left: 1rem;
+            padding-left: 0;
         }
 
         &--limitations {
             margin-left: 1rem;
-        }
-
-        @media screen and (min-width: 1000px) {
-            margin-left: 2rem;
         }
 
         @media screen and (min-width: 1024px) {
@@ -623,7 +721,18 @@
         }
 
         .clinical-data-adults__title {
+            color: $color-dark-gray;
             margin-bottom: 1rem;
+        }
+
+        .clinical-data-adults--paragraph {
+            font-size: .875rem;
+            line-height: 1.0938rem;
+
+            @media screen and (min-width: 1024px) {
+                font-size: 1.125rem;
+                line-height: 1.6875rem;
+            }
         }
 
         &--content {
@@ -637,11 +746,17 @@
         margin-bottom: 1rem;
     }
 
-    &--title1{
-        @media screen and (min-width: 1000px) {
-        font-size: 20px;
-        line-height: 23px;
+    &--title1 {
+        font-size: .875rem;
+        line-height: 1.05rem;
+        margin: 1.6875rem 0 1.1875rem;
+        max-width: 41ch;
         text-transform: uppercase;
+
+        @media screen and (min-width: 1024px) {
+        font-size: 1.25rem;
+        line-height: 1.465rem;
+        max-width: 46ch;
         }
     }
 
@@ -673,16 +788,14 @@
             }
         }
 
-
-
-        [role=tablist] a {
-            width: 9rem;
-        }
-
         &-menu {
             width: 100%;
             background-color: transparent;
             margin-right: 1rem;
+
+            [role=tablist] a {
+                padding: .6875rem 2.8125rem;
+            }
         }
     }
 
@@ -718,14 +831,49 @@
     &__mobility {
         position: relative;
         background-color: $color-soft-gray;
+        overflow: hidden;
         z-index: 2;
+
+        .clinical-data-adults__title {
+            color: $color-dark-gray;
+        }
+
+        .wrapper {
+            &--desktop {
+                @media screen and (max-width: 999px) {
+                    margin: 0;
+                    max-width: 100%;
+                }
+            }
+
+            &--mobile {
+                @media screen and (min-width: 999px) {
+                    margin: 0;
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .custom-title {
+            @media screen and (min-width: 1000px) {
+                width: 100vw;
+            }
+
+            &__text {
+                max-width: 35ch;
+
+                @media screen and (min-width: 1250px) {
+                    max-width: 100%;
+                }
+            }
+        }
     }
 
     &__content {
         padding-top: 0.5rem;
         padding-bottom: 1rem;
-        overflow-y: clip;
-        overflow: hidden;
+        /* overflow-y: clip;
+        overflow: hidden; */
 
         &--highlightinformation {
             margin-top: 2rem;
@@ -781,6 +929,7 @@
 
             @media screen and (min-width: 1024px) {
                 font-size: 1.125rem;
+                max-width: 51ch;
             }
         }
 
@@ -799,6 +948,7 @@
     &__video {
         background-color: $color-blue;
         padding: 1rem;
+        padding-bottom: 3.0625rem;
         margin-top: 1rem;
         margin-bottom: 2rem;
         position: relative;
@@ -811,15 +961,16 @@
             font-size: 1.25rem;
             font-weight: 700;
             padding-bottom: 0.8rem;
+            line-height: 125%;
+
             @media screen and (min-width: 1024px) {
             font-size: 30px;
-            line-height: 125%;
             margin-left: 74px;
             }
         }
 
         &::before {
-            @media screen and (min-width: 1024px) {
+            @media screen and (min-width: 1000px) {
                 content: '';
                 background-color: $color-blue;
                 position: absolute;
@@ -828,8 +979,13 @@
                 width: 69.295rem;
                 border-radius: 22.7588rem 0px 0px 22.7588rem;
                 transform: rotate(-21deg);
-                left: -30px;
-                bottom: 35px;
+                left: -70px;
+                bottom: 100px;
+            }
+
+            @media screen and (min-width: 2200px) {
+                height: 52.55rem;
+                width: 80rem;
             }
         }
 
@@ -843,7 +999,7 @@
 
     &--img-6MWT {
         background-color: $color-white;
-        max-width: 65%;
+        max-width: 375px;
         margin: auto;
         margin-top: 2rem;
 
@@ -868,8 +1024,48 @@
         background-color: $color-soft-gray;
         padding-top: 0.5rem;
 
+        .clinical-data-adults__title {
+            color: $color-dark-gray;
+        }
+
+        .clinical-data-adults__tabs-title {
+            color: $color-blue-gray;
+        }
+
+        .clinical-data-adults--tabs-menu {
+            [role="tablist"] {
+                max-width: none;
+                white-space: nowrap;
+                width: 110%;
+
+                @media screen and (min-width: 700px) {
+                    width: 100%;
+                }
+            }
+
+            [role=tablist] a  {
+                padding: .625rem 2.375rem;
+
+                @media screen and (min-width: 1024px) {
+                    padding: .625rem 3.25rem;
+                }
+            }
+        }
+
         .table__header--mh--cell{
-            background-color: #6D868E;
+            background-color: $color-slate-gray;
+        }
+
+        .table__body__cell--head {
+            color: $color-blue-gray;
+        }
+
+        .table__header--mh {
+            border-bottom-width: .3125rem;
+        }
+
+        .table__footer {
+            line-height: .9rem;
         }
 
         &-table {
@@ -900,6 +1096,17 @@
             display: flex;
             flex-direction: column;
             padding-bottom: 0;
+            border-bottom-width: .3125rem;
+
+            p {
+                font-size: .875rem;
+                line-height: 1.0938rem;
+
+                @media screen and (min-width: 1024px) {
+                    font-size: 1.125rem;
+                    line-height: 1.6875rem;
+                }
+            }
 
             @media screen and (min-width: 1000px) {
                 flex-direction: row;
@@ -910,7 +1117,9 @@
 
         &-table {
             .table__body__cell {
-                b {
+                font-weight: 300;
+
+                strong   {
                     color: $color-dark-gray !important;
                     margin: 0 !important;
                     padding: 0 !important;
@@ -921,6 +1130,49 @@
 
         &-paragraph {
             margin-bottom: 1rem;
+        }
+
+        [role="tabpanel"] {
+            padding-left: 0;
+            padding-right: 0;
+
+            .clinical-data-adults__title {
+                color: $color-blue-gray;
+            }
+
+            .clinical-data-adults__list {
+                margin-left: 0;
+            }
+
+            .highlight-information {
+                max-width: 23.4375rem;
+            }
+
+            .highlight-information__content {
+                font-size: 3.125rem;
+                line-height: 3.9063rem;
+
+                @media screen and (min-width: 1024px) {
+                    font-size: 2.5rem;
+                    line-height: 3.75rem;
+                }
+            }
+
+            .highlight-information__footnote {
+                font-size: .875rem;
+                line-height: 1.0938rem;
+
+                @media screen and (min-width: 1024px) {
+                    font-size: 1.125rem;
+                    line-height: 1.6875rem;
+                    max-width: 32ch;
+                }
+
+                strong {
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                }
+            }
         }
     }
 
@@ -941,7 +1193,7 @@
             margin: 1rem 0 1rem 1rem;
 
             @media screen and (min-width: 1000px) {
-                margin: 1rem 0 2rem 1rem;
+                margin: 1rem 0 2rem 0;
             }
         }
 
@@ -952,33 +1204,25 @@
 
             &-paragraph {
                 margin-top: 1rem;
-                text-align: center;
+                text-align: left;
+                padding-left: 1.25rem;
             }
 
             .pinch-to-zoom .pinch-to-zoom__button-container {
                 top: 0 !important;
             }
+
+            .pinch-to-zoom {
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
 
         &--highlight {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+
             @media screen and (min-width: 1000px) {
-                max-width: 50%;
                 margin-top: 1rem;
-
-                .highlight-information__footnote {
-                    max-width: 100%;
-                    margin-top: 1rem;
-                    margin-bottom: 0.8rem;
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .highlight-information__content {
-                    letter-spacing: -2px;
-                    line-height: 3.4688rem !important;
-                    font-size: 40px;
-                }
             }
 
 
@@ -990,8 +1234,8 @@
 
 
         &--img {
-            margin: 1rem auto;
-            max-width: 70%;
+            margin: 1.25rem 0 1rem 0;
+            max-width: 400px;
         }
 
         &--button {
@@ -1000,9 +1244,9 @@
         }
     }
 
-    &__CHAIR-RISE--highlight {
+    /* &__CHAIR-RISE--highlight {
         max-width: 80% !important;
-    }
+    } */
 
     &--clinical-data-table {
         margin: 2rem 2rem;
@@ -1060,10 +1304,13 @@
 
 }
 #picture-bone{
-    max-width: 65%;
-    margin: auto;
-    @media screen and (min-width: 700px) {
-    max-width: 100%;
+    img {
+        max-width: 375px;
+        margin: auto;
+
+        @media screen and (min-width: 700px) {
+            max-width: 100%;
+        }
     }
 }
 
