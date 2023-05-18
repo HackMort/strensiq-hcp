@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.cookie = `accessCookie=${accessCode};max-age=604800;path=/`
         // check if user visited a page before it was redirected to the validate page
         const currentHost = window.location.host
-        console.log('currentHost', currentHost)
         const previousPage = document.referrer
         if (previousPage && previousPage.includes(currentHost)) {
           window.location.href = previousPage
