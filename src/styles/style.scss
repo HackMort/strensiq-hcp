@@ -497,30 +497,32 @@
 }
 
 .clinical-data-adults--tabs-menu {
-    .modifier{
+    .modifier {
         height: 3.125rem;
         width: 100%;
         justify-content: center;
         margin-top: 23px;
+
         @media screen and (min-width: 1000px) {
             margin-top: 48px;
         }
     }
 }
-.mwt-block{
+
+.mwt-block {
     @media screen and (min-width: 1000px) {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
     }
 
-    ul{
+    ul {
         @media screen and (min-width: 1000px) {
-        display: block;
-        max-width: 506px;
+            display: block;
+            max-width: 506px;
         }
 
-        li{
+        li {
             @media screen and (min-width: 1000px) {
                 margin-top: 3rem;
             }
@@ -545,17 +547,21 @@
         }
     }
 }
-.clinical-data-adults__page-hero{
-    .shape--primary{
+
+.clinical-data-adults__page-hero {
+    .shape--primary {
         background-color: #6D868E;
     }
-    .shape--secondary{
+
+    .shape--secondary {
         background-color: #48D597;
     }
-    .shape--tertiary{
+
+    .shape--tertiary {
         background-color: white;
     }
 }
+
 .clinical-data-adults {
     &-cta {
         .cta__heading {
@@ -606,7 +612,7 @@
     &__col {
         width: 100%;
 
-        .custom-title{
+        .custom-title {
             background-color: #3D5F66;
         }
 
@@ -623,12 +629,13 @@
         }
     }
 
-    &--img1, &--img2{
+    &--img1,
+    &--img2 {
         max-width: 300px;
         margin: auto;
 
         @media screen and (min-width: 1000px) {
-        max-width: 100%;
+            max-width: 100%;
         }
 
     }
@@ -768,9 +775,9 @@
         text-transform: uppercase;
 
         @media screen and (min-width: 1024px) {
-        font-size: 1.25rem;
-        line-height: 1.465rem;
-        max-width: 46ch;
+            font-size: 1.25rem;
+            line-height: 1.465rem;
+            max-width: 46ch;
         }
     }
 
@@ -817,6 +824,7 @@
     &__list-mobility1 {
         @media screen and (max-width: 999px) {
             display: block;
+
             @media screen and (min-width: 1000px) {
                 margin-bottom: 2rem;
             }
@@ -978,8 +986,8 @@
             line-height: 125%;
 
             @media screen and (min-width: 1024px) {
-            font-size: 30px;
-            margin-left: 74px;
+                font-size: 30px;
+                margin-left: 74px;
             }
         }
 
@@ -1057,7 +1065,7 @@
                 }
             }
 
-            [role=tablist] a  {
+            [role=tablist] a {
                 padding: .625rem 2.375rem;
 
                 @media screen and (min-width: 1024px) {
@@ -1066,7 +1074,7 @@
             }
         }
 
-        .table__header--mh--cell{
+        .table__header--mh--cell {
             background-color: $color-slate-gray;
         }
 
@@ -1133,7 +1141,7 @@
             .table__body__cell {
                 font-weight: 300;
 
-                strong   {
+                strong {
                     color: $color-dark-gray !important;
                     margin: 0 !important;
                     padding: 0 !important;
@@ -1319,13 +1327,15 @@
         @media screen and (min-width: 1000px) {
             margin-bottom: 2rem;
         }
+
         @media screen and (min-width: 1024px) {
             font-size: 1.125rem;
         }
     }
 
 }
-#picture-bone{
+
+#picture-bone {
     img {
         max-width: 375px;
         margin: auto;
@@ -2590,7 +2600,7 @@
 
     &__list {
         margin-bottom: .9375rem;
-        padding-left: .75rem;
+        padding-left: 1rem;
 
         &-item {
             margin-bottom: .9375rem;
@@ -2966,6 +2976,7 @@
 
                 &__panel-footnote {
                     margin-bottom: 3.75rem;
+
                     @media (min-width: 1000px) {
                         margin-bottom: 4.95rem;
                     }
@@ -3285,9 +3296,20 @@
                     font-weight: 900;
                     margin-bottom: .9375rem;
 
+                    @media screen and (min-width: 1024px) {
+
+                        &:first-of-type {
+                            margin-top: 1.25rem;
+                        }
+
+                        margin-bottom: 1.25rem;
+                    }
+
                     &::before {
-                        color: $color-dark-pink;
                         content: '×';
+                        position: relative;
+                        top: 5px;
+                        color: $color-dark-pink;
                         display: inline-block;
                         font-size: 60px;
                         line-height: 0;
@@ -3300,6 +3322,10 @@
                         line-height: 1;
                         max-width: 15ch;
                         vertical-align: text-top;
+
+                        @media screen and (min-width: 768px) {
+                            max-width: fit-content;
+                        }
                     }
 
                     @media(min-width: 412px) {
@@ -5327,7 +5353,7 @@
 //------------------------------------------------------------- Clinical data - Adolescents -------------------------------------------------------------
 
 /* Clinical Data - Children Page */
-.adolescents__cta{
+.adolescents__cta {
     .cta__heading {
         margin-bottom: .3125rem;
         max-width: 16ch;
