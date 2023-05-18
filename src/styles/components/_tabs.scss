@@ -13,6 +13,11 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+
   height: 3.125rem;
 
   @include media('tablet') {
