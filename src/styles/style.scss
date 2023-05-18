@@ -1094,6 +1094,14 @@
             max-width: 1000px;
             margin: 1.5rem auto 0 auto;
 
+            .table__wrapper {
+                margin-right: -1rem;
+
+                @media screen and (min-width: 768px) {
+                    margin-right: auto
+                }
+            }
+
             td,
             th {
                 text-align: left;
