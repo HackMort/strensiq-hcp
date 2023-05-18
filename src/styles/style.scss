@@ -2823,6 +2823,10 @@
                 }
             }
 
+            &__title {
+                margin-bottom: .625rem;
+            }
+
             &__panel {
                 padding-top: 1.25rem;
 
@@ -2888,10 +2892,6 @@
             .footnotes-container {
                 .hypophosphatasia-container__panel-footnote {
                     margin: 0;
-
-                    &:first-child {
-                        margin-bottom: .9375rem;
-                    }
 
                     &:last-child {
                         margin-bottom: 4.375rem;
@@ -3084,6 +3084,12 @@
 
         .highlight-information__content {
             line-height: 1;
+        }
+
+        .highlight-information:nth-of-type(2) {
+            .highlight-information__content {
+                margin-top: -0.9375rem;
+            }
         }
 
         @media (min-width: 1024px) {
