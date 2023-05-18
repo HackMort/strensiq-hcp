@@ -144,6 +144,7 @@
 
                 &--head {
                     padding: 0 0 0 1.25rem !important;
+                    z-index: 1;
                 }
 
                 sup {
@@ -177,7 +178,7 @@
                 }
 
                 &.limit-width {
-                    max-width: 48ch;
+                    max-width: 48ch !important;
                 }
             }
 
@@ -245,6 +246,49 @@
                 font-size: 12px;
                 line-height: .9rem;
             }
+        }
+    }
+
+    &--adults {
+        .clinical-data-modal__wrapper {
+            @media screen and (min-width: 1024px) {
+                justify-content: flex-end;
+                margin-bottom: 1.125rem;
+            }
+        }
+
+        .clinical-data-modal__shape {
+            max-width: 24rem;
+        }
+
+        .clinical-data-modal__header .clinical-data-modal__title {
+            color: $color-blue-gray;
+        }
+
+        .table__header--mh {
+            background-color: $color-slate-gray;
+        }
+
+        .table__header--mh--cell {
+            .table__header--mh--paragraph span {
+                margin-bottom: 0;
+            }
+
+            p {
+                color: $color-white;
+            }
+        }
+
+        .table__body__row--mh .table__body__cell--head {
+            color: $color-blue-gray !important;
+        }
+
+        .table__content td.table__body__cell:last-child p:first-child {
+            max-width: 95ch;
+        }
+
+        .table__content p.limit-width {
+            max-width: 57ch !important;
         }
     }
 }
