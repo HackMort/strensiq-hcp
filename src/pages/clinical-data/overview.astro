@@ -54,9 +54,10 @@ const subSubHeaders = [
   { label: "STRENSIQ (N=20)n(%)" },
 ];
 import data from "./data/safety";
+import References from "../../components/References.astro";
 ---
 
-<Layout title="Overview" displayReferences={true}>
+<Layout title="Overview">
   <PageHero
     pageId="clinical-data"
     classNames="clinical-data-overview__page-hero"
@@ -277,4 +278,9 @@ import data from "./data/safety";
     linkUrl="/clinical-data/infants-young-children"
     classNames="clinical-data-overview__cta"
   />
+  <References slot="references">
+    <p>
+      <strong>References: 1.</strong> STRENSIQ. Package insert. Alexion Pharmaceuticals, Inc. <strong>2.</strong> Whyte MP, Greenberg CR, Salman NJ, et al. Enzyme-replacement therapy in life-threatening hypophosphatasia. <i>N Engl J Med.</i> 2012;366(10):904-913. <strong>3.</strong> Whyte MP, Madson KL, Phillips D, et al. Asfotase alfa therapy for children with hypophosphatasia. <i>JCI Insight.</i> 2016;1(9):e85971. <strong>4.</strong> Whyte MP, Rockman-Greenberg C, Moseley S, Denker AE, McAlister W. Sustained radiographic and functional improvements with asfotase alfa treatment from up to 7 years in children with hypophosphatasia. Presented at: 8th Biennial International Conference on Children's Bone Health (ICCBH); June 10-13, 2017; Wurzburg, Germany. <strong>5.</strong> Whyte M, Bishop N, Hasan J, et al. Safety profile of asfotase alfa treatment of patients with hypophosphatasia: a pooled analysis. <i>J Endocr Soc.</i> 2019;3(suppl 1):OR13-4. <strong>6.</strong> Hofmann CE, Harmatz P, Vockley J, et al. Efficacy and safety of asfotase alfa in infants and young children with hypophosphatasia: a phase 2 open-label study. <i>J Clin Endocrinol Metab.</i> 2019;104(7):2735-2747. <strong>7.</strong> Kishnani PS, Rockman-Greenberg C, Rauch F, et al. Five-year efficacy and safety of asfotase alfa therapy for adults and adolescents with hypophosphatasia. Bone. 2019;121:149-162. <strong>8.</strong> Whyte MP, Simmons JH, Moseley S, et al. Asfotase alfa for infants and young children with hypophosphatasia: 7 year outcomes of a single-arm, open-label, phase 2 extension trial. Lancet Diabetes Endocrinol. 2019;7(2):93-105. <strong>9.</strong> Data on file. Alexion Pharmaceuticals, Inc. <strong>10.</strong> Whyte MP, Rockman-Greenberg C, Moseley S, Denker AE, Watsky E, McAlister WH. Sustained radiographic and functional improvements with asfotase alfa treatment for up to 7 years in children with hypophosphatasia. Poster presented at: <i>International Congress of Inborn Errors of Metabolism (ICIEM);</i> Sept 5–8, 2017; Rio de Janeiro, Brazil. <strong>11.</strong> Whyte MP, Bishop N, Hasan J, et al. Safety profile of asfotase alfa treatment of patients with hypophosphatasia: a pooled analysis. Poster presented at: 9th Biennial International Conference on Children’s Bone Health (ICCBH); June 22-25, 2019; Salzburg, Austria. <strong>12.</strong> NIH US National Library of Medicine. ClinicalTrials.gov. Accessed April 20, 2023. <a href="https://clinicaltrials.gov/ct2/results?cond=hypophosphatasia&term=asfotase+alfa&cntry=&state=&city=&dist=" target="_blank">https://clinicaltrials.gov/ct2/results?cond=hypophosphatasia&term=asfotase+alfa&cntry=&state=&city=&dist=</a> <strong>13.</strong> FDA approves Strensiq™ (asfotase alfa) for treatment of patients with perinatal-, infantile- and juvenile-onset hypophosphatasia (HPP). News release. Alexion Pharmaceuticals, Inc. October 23, 2015. Accessed April 3, 2023. <a href="https://media.alexion.com/news-releases/news-release-details/fda-approves-strensiqtm-asfotase-alfa-treatment-patients" target="_blank">https://media.alexion.com/news-releases/news-release-details/fda-approves-strensiqtm-asfotase-alfa-treatment-patients</a> <strong>14.</strong> Data on file. Alexion Pharmaceuticals, Inc. <strong>15.</strong> Rockman-Greenberg C, Josse R, Francis M, Mhanni A. Impact of discontinuing 5 years of enzyme replacement treatment in a cohort of 6 adults with hypophosphatasia: A case series. <i>Bone Rep.</i> 2022;17:101617. <strong>16.</strong> Bianchi ML, Bishop NJ, Guañabens N, et al; Rare Bone Disease Action Group of the European Calcified Tissue Society Hypophosphatasia in adolescents and adults: overview of diagnosis and treatment. <i>Osteoporos Int.</i> 2020;31(8):1445–1460.
+    </p>
+  </References>
 </Layout>

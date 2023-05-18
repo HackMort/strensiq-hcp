@@ -86,13 +86,35 @@
         [data-radiographic-title] {
             color: $color-dark-gray;
         }
+        [data-radiographic-footer]{
+            margin-bottom: 41px;
+            @media screen and (min-width: 768px) {
+                margin-bottom: 47px;
+            }
+        }
+        .second-footer{
+            font-weight: 300;
+            font-size: 10px;
+            line-height: 120%;
+            margin-bottom: 1rem;
+            max-width: 259px;
+
+            @media screen and (min-width: 1024px) {
+            font-size: 12px;
+            display: block!important;
+            @media screen and (min-width: 1024px) {
+                font-size: 12px;
+                max-width: 198px;
+                margin-top: 153px;
+                }
+            }
+        }
     }
 
     .radiographic-comparator__right {
         padding-right: .3125rem;
         padding-left: 1rem;
         background: $color-mint;
-
         border-bottom-right-radius: 3.125rem;
 
         &>div {
@@ -102,7 +124,6 @@
         @media screen and (min-width: 768px) {
             padding-left: 2.125rem;
             padding-right: 1.375rem;
-
             border-bottom-right-radius: 10.625rem;
         }
 
@@ -112,12 +133,27 @@
 
         [data-radiographic-footer] {
             color: $color-dark-green;
-            font-weight: 700;
+            font-weight: 500;
             line-height: 16.1px;
+            display: block;
+            visibility: visible;
 
             @media screen and (min-width: 768px) {
                 line-height: 20.7px;
+                margin-bottom: 64px;
+                display: block;
+            visibility: visible;
             }
+        }
+        .second-footer{
+            font-weight: 300;
+            font-size: 10px;
+            line-height: 120%;
+            max-width: 259px;
+            @media screen and (min-width: 1024px) {
+                font-size: 12px;
+                max-width: 198px;
+                }
         }
     }
 }
