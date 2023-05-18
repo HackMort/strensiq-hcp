@@ -160,7 +160,8 @@ function highlightActiveInternalNavOnScroll (headerInnerHeight) {
         activeLi.classList.add('is--active')
 
         // Scroll the internal navigation to the active item
-        internalNav.scrollLeft = activeLiPosition - internalNavWidth / 2
+        const activeLiWidth = activeLi.clientWidth
+        internalNav.scrollLeft = activeLiPosition + activeLiWidth - internalNavWidth
       }
     })
   }
