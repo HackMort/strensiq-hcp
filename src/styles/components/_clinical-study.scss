@@ -59,6 +59,21 @@
                     line-height: 37.5px;
                 }
             }
+            .clinical-study__nopercentage {
+                color: $color-dark-green;
+                font-weight: 900;
+                font-size: 3.75rem;
+                line-height: 50px;
+
+                display: inline-flex;
+                align-items: baseline;
+
+                span{
+                    font-size: 32px;
+                    margin-left: 8px;
+                }
+            }
+
         }
     }
 

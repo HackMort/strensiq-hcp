@@ -2,17 +2,17 @@
 import PageHero from "../../components/PageHero.astro";
 import Layout from "../../layouts/Layout.astro";
 import CTA from "../../components/CTA.astro";
-import InternalNavigation from '../../components/InternalNavigation.astro';
-import ClinicalDataModal from '../../components/clinical-data/ClinicalDataModal.astro';
-import PinchToZoom from '../../components/PinchToZoom.astro';
-import AccordionMobile from '../../components/accordion-mobile/AccordionMobile.astro';
-import ExpansionPanelMobile from '../../components/accordion-mobile/ExpansionPanelMobile.astro';
-import RadiographicImagesComparator from '../../components/RadiographicImagesComparator.astro';
-import TipBox from '../../components/TipBox.astro';
+import InternalNavigation from "../../components/InternalNavigation.astro";
+import ClinicalDataModal from "../../components/clinical-data/ClinicalDataModal.astro";
+import PinchToZoom from "../../components/PinchToZoom.astro";
+import AccordionMobile from "../../components/accordion-mobile/AccordionMobile.astro";
+import ExpansionPanelMobile from "../../components/accordion-mobile/ExpansionPanelMobile.astro";
+import RadiographicImagesComparator from "../../components/RadiographicImagesComparator.astro";
 import Table from "../../components/Table/Table.astro";
 import TableHeader from "../../components/Table/TableHeader.astro";
 import TableData from "../../components/Table/TableData.astro";
 import studyData from "../clinical-data/data/clinical-data-adolescents.js";
+import References from "../../components/References.astro";
 
 const internalNavLinks = [
   { href: "hpp-related-rickets", label: "HPP-related rickets", active: true },
@@ -21,221 +21,312 @@ const internalNavLinks = [
 
 const mainHeaders = [
   { label: "", sublabel: "" },
-  { label: "Study 3 subanalisis", subLabel: "ENB-006-09/ ENB-008-10" }
+  { label: "Study 3 Adolescents Subgroup Analysis<sup>1,4-6</sup>", subLabel: "ENB-006-09/ ENB-008-10" },
 ];
 ---
 
-<Layout title="Adolescents" displayReferences={true}>
+<Layout title="Adolescents">
   <PageHero
     pageId="clinical-data"
     classNames="clinical-data-adolescents__page-hero"
   >
     <h2 class="page-hero__subtitle">in adolescents with hypophosphatasia</h2>
     <h1 class="page-hero__title">
-      STRENSIQ provides structural<br /> strength and mobility
+      STRENSIQ provides structural strength and mobility<sup>1</sup>
     </h1>
   </PageHero>
 
-  {internalNavLinks && <InternalNavigation items={internalNavLinks} heading="Adolescents" icon/>}
+  {
+    internalNavLinks && (
+      <InternalNavigation items={internalNavLinks} heading="Adolescents" icon />
+    )
+  }
 
-  <section class="section adolescents__hpp-related-rickets" id="hpp-related-rickets">
-    <div class="hpp-related-rickets__content">
+  <section
+    class="section adolescents__hpp-related-rickets"
+    id="hpp-related-rickets"
+  >
+    <div class="wrapper">
+      <div class="hpp-related-rickets__content">
         <div class="hpp-related-rickets__content-left">
-            <div class="wrapper">
-                <h2 class="hpp-related-rickets__title">
-                    STRENSIQ strengthens bones
-                </h2>
-                <div class="clinical-studies">
-                    <article class="clinical-study">
-                        <h3 class="clinical-study__title">After 6 months</h3>
-                        <div class="clinical-study__results">
-                            <div class="clinical-study__result">
-                                <p class="clinical-study__percentage">67</p>
-                                <div class="clinical-study__orders">
-                                    <p class="clinical-study__order">(6/9)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="clinical-study__description">
-                            <strong>of patients experienced complete or<br> substantial healing of hypophosphatasia<br>-related rickets</strong> as measured by the Radiographic<br> Global Impression of Change (RGI-C)<sup class="symbol-sup">*</sup>
-                        </p>
-                    </article>
-                    <article class="clinical-study">
-                        <h3 class="clinical-study__title">After 7 years </h3>
-                        <div class="clinical-study__results">
-                            <div class="clinical-study__result">
-                                <p class="clinical-study__percentage">100</p>
-                                <div class="clinical-study__orders">
-                                    <p class="clinical-study__order">(9/9)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="clinical-study__description">
-                            <strong>responder rate</strong>
-                        </p>
-                    </article>
-                    <p class="clinical-studies__clarification">Efficacy results reflect data for 9 individuals who reached adolescence (aged 13 to 17 years) during the course of the study.</p>
-                    <p class="clinical-studies__footer-note">
-                        <sup class="symbol-sup">*</sup>The RGI-C scale quantifies change over time in mineralization and bone structure.
-                    </p>
+          <h2 class="hpp-related-rickets__title">
+            STRENSIQ strengthens bones<sup>1</sup>
+          </h2>
+          <div class="clinical-studies">
+            <article class="clinical-study">
+              <h3 class="clinical-study__title">After 6 months<sup>1</sup></h3>
+              <div class="clinical-study__results">
+                <div class="clinical-study__result">
+                  <p class="clinical-study__percentage">67</p>
+                  <div class="clinical-study__orders">
+                    <p class="clinical-study__order">(6/9)</p>
+                  </div>
                 </div>
-            </div>
+              </div>
+              <p class="clinical-study__description">
+                <strong>of patients experienced complete or substantial healing of hypophosphatasia-related rickets</strong> as measured by the Radiographic Global Impression of Change
+                (RGI-C)<sup class="symbol-sup">*</sup>
+              </p>
+            </article>
+            <article class="clinical-study">
+              <h3 class="clinical-study__title">After 7 years<sup>1</sup></h3>
+              <div class="clinical-study__results">
+                <div class="clinical-study__result">
+                  <p class="clinical-study__percentage">100</p>
+                  <div class="clinical-study__orders">
+                    <p class="clinical-study__order">(9/9)</p>
+                  </div>
+                </div>
+              </div>
+              <p class="clinical-study__description">
+                <strong>responder rate</strong>
+              </p>
+            </article>
+            <p class="clinical-studies__clarification">
+              Efficacy results reflect data for 9 individuals who reached
+              adolescence (aged 13 to 17 years) during the course of the study.<sup
+                >1</sup
+              >
+            </p>
+            <p class="clinical-studies__footer-note">
+              <sup class="symbol-sup">*</sup>The RGI-C scale quantifies change
+              over time in mineralization and bone structure.<sup>2</sup>
+            </p>
+          </div>
         </div>
         <div class="hpp-related-rickets__content-right">
-                <div class="hpp-related-rickets__chart-wrapper">
-                    <div class="wrapper">
-                        <PinchToZoom id="median-rgi-c-score" top="50%" left="80%">
-                            <picture>
-                                <source srcset="/assets/images/clinical-data/adolescents/median-rgi-c-score-desktop.png" media="(min-width: 768px)">
-                                <img src="/assets/images/clinical-data/adolescents/median-rgi-c-score-mobile.png" alt="">
-                            </picture>
-                            <div class="hpp-related-rickets__chart-footnote">
-                                <p><sup>a</sup>Values are statistically significant based on P&lt;0.01.</p>
-                                <p><sup>b</sup>Value is statistically significant based on P&lt;0.05</p>
-                            </div>
-                        </PinchToZoom>
-                    </div>
-                </div>
-            <div class="hpp-related-rickets__radiographics-wrapper">
-                <div class="radiographic-images-mobile">
-                    <div class="wrapper">
-                        <p class="hpp-related-rickets__radiographics-title">Radiographic image</p>
-                        <AccordionMobile id="infants-young-children-radiographics">
-                            <ExpansionPanelMobile accordionId="infants-young-children-radiographics" title="Patient: Knee">
-                                <RadiographicImagesComparator>
-                                    <div slot="before">
-                                        <p data-radiographic-title>
-                                            12 years of age (at baseline)
-                                        </p>
-                                        <picture data-radiographic-image>
-                                            <source srcset="/assets/images/clinical-data/adolescents/adolescent-knee-before-desktop.png" media="(min-width: 768px)">
-                                            <img src="/assets/images/clinical-data/adolescents/adolescent-knee-before-mobile.png" alt="">
-                                        </picture>
-                                    </div>
-                                    <div slot="after">
-                                        <p data-radiographic-title>
-                                            17 years of age (at 5 years)
-                                        </p>
-                                        <picture data-radiographic-image>
-                                            <source srcset="/assets/images/clinical-data/adolescents/adolescent-knee-after-desktop.png" media="(min-width: 768px)">
-                                            <img src="/assets/images/clinical-data/adolescents/adolescent-knee-after-mobile.png" alt="">
-                                        </picture>
-                                        <p data-radiographic-footer>
-                                            After 5 years of STRENSIQ treatment, Patient 1 had an <strong>RGI-C score of +2.67</strong>.
-                                        </p>
-                                    </div>
-                                </RadiographicImagesComparator>
-                            </ExpansionPanelMobile>
-                        </AccordionMobile>
-                    </div>
-                </div>
-                <div class="radiographic-images-desktop">
-                    <RadiographicImagesComparator>
-                        <div slot="before">
-                            <p data-radiographic-title>
-                                12 years of age<br> (at baseline)
-                            </p>
-                            <picture data-radiographic-image>
-                                <source srcset="/assets/images/clinical-data/adolescents/adolescent-knee-before-desktop.png" media="(min-width: 768px)">
-                                <img src="/assets/images/clinical-data/adolescents/adolescent-knee-before-mobile.png" alt="">
-                            </picture>
-                        </div>
-                        <div slot="after">
-                            <p data-radiographic-title>
-                                17 years of age<br> (at 5 years)
-                            </p>
-                            <picture data-radiographic-image>
-                                <source srcset="/assets/images/clinical-data/adolescents/adolescent-knee-after-desktop.png" media="(min-width: 768px)">
-                                <img src="/assets/images/clinical-data/adolescents/adolescent-knee-after-mobile.png" alt="">
-                            </picture>
-                            <p data-radiographic-footer>
-                                After 5 years of STRENSIQ treatment, Patient 1 had an <strong>RGI-C score of +2.67</strong>.
-                            </p>
-                        </div>
-                    </RadiographicImagesComparator>
-                </div>
+          <div class="hpp-related-rickets__chart-wrapper">
+            <PinchToZoom id="median-rgi-c-score">
+              <picture>
+                <source
+                  srcset="/assets/images/clinical-data/adolescents/median-rgi-c-score-desktop.png"
+                  media="(min-width: 768px)"
+                />
+                <img
+                  src="/assets/images/clinical-data/adolescents/median-rgi-c-score-mobile.png"
+                  alt=""
+                />
+              </picture>
+            </PinchToZoom>
+            <div class="hpp-related-rickets__chart-footnote">
+              <p>
+                <sup>a</sup>Values are statistically significant based on <i>P</i>&lt;0.01.
+              </p>
+              <p>
+                <sup>b</sup>Value is statistically significant based on <i>P</i>&lt;0.05
+              </p>
             </div>
+          </div>
+          <div class="hpp-related-rickets__radiographics-wrapper">
+            <div class="radiographic-images-mobile">
+              <p class="hpp-related-rickets__radiographics-title">
+                Radiographic image
+              </p>
+              <AccordionMobile id="infants-young-children-radiographics">
+                <ExpansionPanelMobile
+                  accordionId="infants-young-children-radiographics"
+                  title="Patient: Knee"
+                >
+                  <RadiographicImagesComparator>
+                    <div slot="before">
+                      <p data-radiographic-title>
+                        12 years of age (at baseline)
+                      </p>
+                      <picture data-radiographic-image>
+                        <source
+                          srcset="/assets/images/clinical-data/adolescents/adolescent-knee-before-desktop.png"
+                          media="(min-width: 768px)"
+                        />
+                        <img
+                          src="/assets/images/clinical-data/adolescents/adolescent-knee-before-mobile.png"
+                          alt=""
+                        />
+                      </picture>
+                      <p class="radiographic__footnote radiographic__footnote--bottom radiographic__footnote--mobile">
+                        Reproduced from Whyte MP, et al. [supplementary
+                        appendix]. JCI Insight. 2016;1(9):e85971.
+                      </p>
+                    </div>
+                    <div slot="after">
+                      <p data-radiographic-title>
+                        17 years of age (at 5 years)
+                      </p>
+                      <picture data-radiographic-image>
+                        <source
+                          srcset="/assets/images/clinical-data/adolescents/adolescent-knee-after-desktop.png"
+                          media="(min-width: 768px)"
+                        />
+                        <img
+                          src="/assets/images/clinical-data/adolescents/adolescent-knee-after-mobile.png"
+                          alt=""
+                        />
+                      </picture>
+                      <p data-radiographic-footer>
+                        After 5 years of STRENSIQ treatment, Patient 1 had an <strong
+                          >RGI-C score of +2.67</strong
+                        >.
+                      </p>
+                      <p class="radiographic__footnote radiographic__footnote--right radiographic__footnote--mobile">
+                        Representations of efficacy are consistent with results
+                        seen from typical patients in the study. Individual
+                        results may vary.
+                      </p>
+                    </div>
+                  </RadiographicImagesComparator>
+                </ExpansionPanelMobile>
+              </AccordionMobile>
+            </div>
+            <div class="radiographic-images-desktop">
+              <RadiographicImagesComparator>
+                <div slot="before">
+                  <p data-radiographic-title>
+                    12 years of age<br /> (at baseline)
+                  </p>
+                  <picture data-radiographic-image>
+                    <source
+                      srcset="/assets/images/clinical-data/adolescents/adolescent-knee-before-desktop.png"
+                      media="(min-width: 768px)"
+                    />
+                    <img
+                      src="/assets/images/clinical-data/adolescents/adolescent-knee-before-mobile.png"
+                      alt=""
+                    />
+                  </picture>
+                  <p class="radiographic__footnote radiographic__footnote--bottom radiographic__footnote--desktop">
+                    Reproduced from Whyte MP, et al. [supplementary appendix]. JCI
+                    Insight. 2016;1(9):e85971.
+                  </p>
+                </div>
+                <div slot="after">
+                  <p data-radiographic-title>
+                    17 years of age<br /> (at 5 years)
+                  </p>
+                  <picture data-radiographic-image>
+                    <source
+                      srcset="/assets/images/clinical-data/adolescents/adolescent-knee-after-desktop.png"
+                      media="(min-width: 768px)"
+                    />
+                    <img
+                      src="/assets/images/clinical-data/adolescents/adolescent-knee-after-mobile.png"
+                      alt=""
+                    />
+                  </picture>
+                  <p data-radiographic-footer>
+                    After 5 years of STRENSIQ treatment, Patient 1 had an <strong
+                      >RGI-C score of +2.67</strong
+                    >.
+                  </p>
+                  <p class="radiographic__footnote radiographic__footnote--right radiographic__footnote--desktop">
+                    Representations of efficacy are consistent with results seen
+                    from typical patients in the study. Individual results may
+                    vary.
+                  </p>
+                </div>
+              </RadiographicImagesComparator>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
   </section>
   <section class="section adolescents__mobility" id="mobility">
-    <div class="adolescents__content">
+    <div class="wrapper">
+      <div class="adolescents__content">
         <div class="adolescents__content-left">
-           <div class="wrapper">
-                <h2 class="adolescents__title">
-                    Clinically meaningful and<br> maintained improvement in<br> 6-minute walk test (6MWT) in<br> adolescents
-                </h2>
-                <div class="clinical-studies">
-                    <article class="clinical-study">
-                        <h3 class="clinical-study__title">After 6 months</h3>
-                        <div class="clinical-study__results">
-                            <div class="clinical-study__result">
-                                <p class="clinical-study__percentage">36</p>
-                            </div>
-                        </div>
-                        <p class="clinical-study__description">
-                            <strong>median change from baseline in distance walked</strong> (511 meters vs 350 meters) (P=0.0078)
-                        </p>
-                    </article>
-                    <article class="clinical-study">
-                        <h3 class="clinical-study__title">At 7 years</h3>
-                        <div class="clinical-study__results">
-                            <div class="clinical-study__result">
-                                <p class="clinical-study__percentage">68</p>
-                            </div>
-                        </div>
-                        <p class="clinical-study__description">
-                            <strong>median change from baseline in distance walked</strong> (511 meters vs 350 meters) (P=0.0078)
-                        </p>
-                    </article>
-                    <p class="clinical-studies__clarification">
-                        For adolescent patients with hypophosphatasia, the minimal clinically important difference (MCID) is estimated at 33 meters and 43 meters based on 2 distribution-based methods.
-                    </p>
+          <h2 class="adolescents__title">
+            Clinically meaningful and maintained improvement in 6-minute walk test (6MWT) in adolescents<sup>1</sup>
+          </h2>
+          <div class="clinical-studies">
+            <article class="clinical-study">
+              <h3 class="clinical-study__title">AT 6 months<sup>1</sup></h3>
+              <div class="clinical-study__results">
+                <div class="clinical-study__result">
+                  <p class="clinical-study__nopercentage">
+                    142 <span>meters</span>
+                  </p>
                 </div>
-           </div>
-
+              </div>
+              <p class="clinical-study__description">
+                <strong>median change from baseline in distance walked</strong> (511
+                meters vs 350 meters) (<i>P</i>&#61;0.0078)
+              </p>
+            </article>
+            <article class="clinical-study">
+              <h3 class="clinical-study__title">At 7 years<sup>1</sup></h3>
+              <div class="clinical-study__results">
+                <div class="clinical-study__result">
+                  <p class="clinical-study__nopercentage">
+                    270 <span>meters</span>
+                  </p>
+                </div>
+              </div>
+              <p class="clinical-study__description">
+                <strong>median change from baseline in distance walked</strong> (593
+                meters vs 350 meters) (<i>P</i>&#61;0.0010)
+              </p>
+            </article>
+            <p class="clinical-studies__clarification">
+              For adolescent patients with hypophosphatasia, the minimal
+              clinically important difference (MCID) is estimated at 33 meters
+              and 43 meters based on 2 distribution-based methods.<sup>3</sup>
+            </p>
+          </div>
         </div>
         <div class="adolescents__content-right">
-            <div class="wrapper">
-                <div class="mobility__chart-wrapper">
-                    <PinchToZoom id="median-meters-walked" disabled>
-                        <picture>
-                            <source srcset="/assets/images/clinical-data/adolescents/bar-median-rgi-c-score-desktop.png" media="(min-width: 768px)">
-                            <img src="/assets/images/clinical-data/adolescents/bar-median-rgi-c-score-mobile.png" alt="">
-                        </picture>
-                        <div class="mobility__chart-footnote">
-                            <p><sup>b</sup>Values are statistically significant based on P&lt;0.001 vs baseline.</p>
-                            <p><sup>c</sup>Values are statistically significant based on P&lt;0.01.</p>
-                        </div>
-                    </PinchToZoom>
-                </div>
-           </div>
-           <TipBox classNames="toolkit__tip adolescents__mobility-tip" align="right">
-            <strong>
-                Ongoing treatment with STRENSIQ may help patients avoid the natural progression that can occur with hypophosphatasia
-            </strong>
-          </TipBox>
+          <div class="mobility__chart-wrapper">
+            <PinchToZoom id="median-meters-walked" disabled>
+              <picture>
+                <source
+                  srcset="/assets/images/clinical-data/adolescents/bar-median-rgi-c-score-desktop.png"
+                  media="(min-width: 768px)"
+                />
+                <img
+                  src="/assets/images/clinical-data/adolescents/bar-median-rgi-c-score-mobile.png"
+                  alt=""
+                />
+              </picture>
+              <div class="mobility__chart-footnote">
+                <p>
+                  <sup>b</sup>Values are statistically significant based on
+                  <i>P</i>&lt;0.001 vs baseline.
+                </p>
+                <p>
+                  <sup>c</sup>Values are statistically significant based on
+                  <i>P</i>&lt;0.01.
+                </p>
+              </div>
+            </PinchToZoom>
+          </div>
         </div>
+      </div>
     </div>
   </section>
 
   <CTA
-    heading="Dig into STRENSIQ for adults, including real-world outcomes"
+    classNames="adolescents__cta"
+    heading="Dig into STRENSIQ for adults,<sup>†</sup> including real-world outcomes"
+    text="<sup>†</sup>Adults with pediatric-onset hypophosphatasia."
     linkText="Adults"
     linkUrl="/clinical-data/adults"
   />
   <ClinicalDataModal>
     <Table>
-        <!--Table headers -->
-            <TableHeader slot="header" mainHeaders={mainHeaders} />
-        <!--Table data -->
-        <TableData slot="body" data={studyData} />
+      <!--Table headers -->
+      <TableHeader slot="header" mainHeaders={mainHeaders} />
+      <!--Table data -->
+      <TableData slot="body" data={studyData} />
 
-        <div slot="footer" class="table__footer">
-            <p><sup>a</sup>Adolescents in the study were aged 13 to 17 years.</p>
-            <p><sup>b</sup>Consistent with FDA label.</p>
-        </div>
+      <div slot="footer" class="table__footer">
+        <p><sup>a</sup>Adolescents in the study were aged 13 to 17 years.</p>
+        <p><sup>b</sup>Consistent with FDA label.</p>
+      </div>
     </Table>
   </ClinicalDataModal>
-  <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"></script>
+  <References>
+    <p>
+      <strong>References: 1.</strong> Data on file. Alexion Pharmaceuticals, Inc. <strong>2.</strong> Whyte MP, Fujita KP, Moseley S, Thompson DD, McAlister WH. Validation of a novel scoring system for changes in skeletal manifestations of hypophosphatasia in newborns, infants, and children: The Radiographic Global Impression of Change Scale. <i>J Bone Miner Res.</i> 2018;33(5):868-874. <strong>3.</strong> Phillips D, Tomazos I, Moseley S, et al. Reliability and validity of the 6-minute walk test in hypophosphatasia. <i>JBMR Plus.</i> 2019;3(6):e10131. <strong>4.</strong> Whyte MP, Madson KL, Phillips D, et al. Asfotase alfa therapy for children with hypophosphatasia. <i>JCI Insight.</i> 2016;1(9):e85971. <strong>5.</strong> STRENSIQ. Package insert. Alexion Pharmaceuticals, Inc. <strong>6.</strong> Whyte MP, Rockman-Greenberg C, Moseley S, Denker AE, Watsky E, McAlister WH. Sustained radiographic and functional improvements with asfotase alfa treatment for up to 7 years in children with hypophosphatasia. Poster presented at: International Congress of Inborn Errors of Metabolism (ICIEM); Sept 5–8, 2017; Rio de Janeiro, Brazil.
+  </p>
+  </References>
+  <script slot="scripts" is:inline src="/assets/js/mobile-accordion.js"
+  ></script>
 </Layout>

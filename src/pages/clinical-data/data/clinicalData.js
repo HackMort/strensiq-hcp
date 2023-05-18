@@ -1,25 +1,33 @@
-//Table data
+// Table data
 const ClinicalData = [
-    {
-      text: ["Description", "Multicenter, randomized, open-label, concurrent control trial including adolescent and adults with pediatric-onset hypophosphatasia"],
-      classModifier: ["mh"],
-    },
-    {
-        text: ["Duration", "5 years"],
-        classModifier: ["mh", "mb"],
-    },
-    {
-        text: ["N", "19"],
-        classModifier: ["mh"],
-    },
-    {
-        text: ["Age at inclusion", "13 - 65 years (13 adults,<sup>b</sup> 6 adolescents<sup>c</sup>)"],
-        classModifier: ["mh"],
-    },
-    {
-        text: ["Endpoints", "Primary: Changes in tissue-nonspecific alkaline phosphatase (TNSALP) substrate levels (inorganic pyrophosphate[PPi] and pyridoxal 5'-phosphate [PLP]<sup>d,e</sup>) Secondary: Bone mineralization, mobility<sup>d</sup>"],
-        classModifier: ["mh"],
-    },
-];
+  {
+    text: ['Description', '<p class="limit-width">Multicenter, randomized, open-label, concurrent control trial including adolescents and adults with pediatric-onset hypophosphatasia</p>'],
+    classModifier: ['mh']
+  },
+  {
+    text: ['Duration', '<strong>5 years</strong>'],
+    classModifier: ['mh']
+  },
+  {
+    text: ['Primary treatment phase', '6 months'],
+    classModifier: ['normal']
+  },
+  {
+    text: ['Extension', '4.5 years'],
+    classModifier: ['normal']
+  },
+  {
+    text: ['N', '<p>19</p><p>(13 adults,<sup>a</sup> 6 adolescents<sup>b</sup>)</p>'],
+    classModifier: ['mh']
+  },
+  {
+    text: ['Age at inclusion', '13-65 years'],
+    classModifier: ['mh']
+  },
+  {
+    text: ['Endpoints', '<p><strong>Primary:</strong> Changes in tissue-nonspecific alkaline phosphatase (TNSALP) substrate levels (inorganic pyrophosphate [PPi] and pyridoxal 5&#39;-phosphate [PLP] from baseline to Month 6<sup>c,d</sup>)</p> <strong>Secondary:</strong> Bone mineralization, mobility<sup>c</sup></p>'],
+    classModifier: ['mh']
+  }
+]
 
-export default ClinicalData;
+export default ClinicalData

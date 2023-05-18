@@ -18,8 +18,8 @@ const symptomsData = [
   {
     mainWord: 'respiratory',
     symptoms: [
-      'Respiratory failure (in infants)',
-      'Pneumonia (in infants)'
+      'Respiratory failure',
+      'Pneumonia'
     ]
   },
   {
