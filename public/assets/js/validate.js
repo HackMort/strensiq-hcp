@@ -12,7 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const accessCode = form.querySelector('input[name="access-code"]').value
       if (accessCode === 'STr3Ns!Q') {
         document.cookie = `accessCookie=${accessCode};max-age=604800;path=/`
-        window.location.href = '/'
+        // check if user visited a page before it was redirected to the validate page
+        const currentHost = window.location.host
+        const previousPage = document.referrer
+        if (previousPage && previousPage.includes(currentHost)) {
+          window.location.href = previousPage
+        } else {
+          window.location.href = '/'
+        }
       } else {
         window.alert('Invalid Access Code')
       }
