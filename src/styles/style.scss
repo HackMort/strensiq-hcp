@@ -567,6 +567,16 @@
         }
     }
 
+    &__footnote {
+        font-size: .75rem;
+        line-height: 1.125rem;
+
+        @media screen and (min-width: 1000px) {
+            line-height: .9rem;
+            margin-bottom: 5rem;
+        }
+    }
+
     &__changes-in-substractes {
         display: flex;
         flex-direction: column;
@@ -657,7 +667,7 @@
         padding-left: 15px;
 
         @media screen and (min-width: 1000px) {
-            margin-bottom: 81px;
+            margin-bottom: 1.4375rem;
         }
 
         li {
@@ -670,6 +680,10 @@
                 @media screen and (min-width: 1024px) {
                     font-size: 1.125rem;
                     line-height: 1.6875rem;
+                    max-width: 42ch;
+                }
+
+                @media screen and (min-width: 1200px) {
                     max-width: 51ch;
                 }
             }
@@ -678,10 +692,10 @@
         &-mobility {
             margin-top: 1rem;
 
-            @media screen and (max-width: 768px) {
+            /* @media screen and (max-width: 768px) {
                 margin-left: 1rem;
                 margin-right: 1rem;
-            }
+            } */
         }
 
         &--time-to-bone {
@@ -979,7 +993,7 @@
                 width: 69.295rem;
                 border-radius: 22.7588rem 0px 0px 22.7588rem;
                 transform: rotate(-21deg);
-                left: -70px;
+                left: -50px;
                 bottom: 100px;
             }
 
@@ -1203,9 +1217,17 @@
             padding-bottom: 1rem;
 
             &-paragraph {
+                font-size: 12px;
+                line-height: .9rem;
                 margin-top: 1rem;
                 text-align: left;
                 padding-left: 1.25rem;
+
+                sup {
+                    font-size: 10px;
+                    line-height: .9375rem;
+                    top: -0.3125rem;
+                }
             }
 
             .pinch-to-zoom .pinch-to-zoom__button-container {
