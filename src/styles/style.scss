@@ -4924,6 +4924,10 @@
 
     .infants-young-children__survival-tip {
 
+        .tip__box_content {
+            max-width: 36ch;
+        }
+
         @media screen and (min-width: 1024px) {
             min-height: 5rem;
             border-radius: 0px 95.5px 95.5px 0px;
@@ -4940,13 +4944,37 @@
         }
 
         @media screen and (min-width: 1024px) {
-            margin-left: 0;
             margin-right: auto;
             width: 100%;
             max-width: initial;
         }
 
+        @media screen and (min-width: 1025px) {
+            margin-left: -2.1875rem;
+            width: 110%;
+
+        }
+
         @media screen and (min-width: 1366px) {
+            background-color: transparent;
+
+            .tip__box_content {
+                position: relative;
+                z-index: 1;
+            }
+
+            &::after {
+                background-color: $color-blue;
+                border-radius: 95.5px;
+                content: '';
+                height: 100px;
+                position: absolute;
+                right: 5%;
+                top: 0;
+                width: 100vw;
+                z-index: 0;
+            }
+
             &::before {
                 left: unset;
                 width: 75vw;
