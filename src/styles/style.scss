@@ -2570,6 +2570,18 @@
     }
 }
 
+.testimonial--hypophosphatasia {
+    .testimonial__quote {
+        p {
+            max-width: 25ch;
+
+            @include media('tablet') {
+                max-width: 31ch;
+            }
+        }
+    }
+}
+
 .hypophosphatasia-container {
     display: flex;
     flex-wrap: wrap;
@@ -6377,6 +6389,18 @@
 }
 
 /* Home */
+.testimonial--home {
+    .testimonial__quote {
+        p {
+            max-width: 26ch;
+
+            @include media('tablet') {
+                max-width: 33ch;
+            }
+        }
+    }
+}
+
 .home {
     &+.references {
         margin-top: 0;
