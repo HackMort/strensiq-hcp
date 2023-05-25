@@ -5026,7 +5026,7 @@
 
     .hpp-related-rickets__title {
         color: $color-dark-green;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     .clinical-studies__clarification {
@@ -5093,7 +5093,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            align-items: flex-end;
+            align-items: center;
 
             .hpp-related-rickets__radiographics-wrapper {
                 margin-bottom: 2rem;
@@ -5136,6 +5136,10 @@
             padding-bottom: 0;
         }
 
+        .pinch-to-zoom__container {
+            margin-top: 0;
+        }
+
         .f-panzoom__viewport {
             margin-bottom: 0;
         }
@@ -5169,7 +5173,7 @@
         }
 
         [data-radiographic-title] {
-            margin: 0 auto 1.25rem;
+            margin: 0 auto 0rem;
             max-width: 14ch;
         }
 
@@ -5195,12 +5199,12 @@
             margin-bottom: .3125rem;
 
             @media screen and (min-width: 1024px) {
-                margin-bottom: 1.875rem;
+                margin-bottom: 0.5rem;
             }
         }
 
         .radiographic__footnote {
-            max-width: 90%;
+            max-width: 80%;
 
             &--bottom {
                 position: absolute;
@@ -5259,7 +5263,7 @@
 }
 
 .adolescents__mobility {
-    background: $color-bright-gray;
+    background: $color-soft-gray;
     padding-bottom: 3.125rem;
 
     @media screen and (min-width: 1024px) {
@@ -5423,6 +5427,7 @@
 
         @media screen and (min-width: 1024px) {
             width: 59ch;
+            padding-left: 1.4%;
         }
     }
 }
