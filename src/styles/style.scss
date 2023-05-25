@@ -5581,6 +5581,7 @@
     &__title {
         font-weight: 700;
         margin-bottom: 1.3125rem;
+        letter-spacing: -0.6px;
 
         @include media('desktop') {
             font-size: 30px;
