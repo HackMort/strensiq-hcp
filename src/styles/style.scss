@@ -5247,7 +5247,7 @@
 
     .clinical-study:nth-of-type(1) {
         .clinical-study__description {
-            max-width: 39ch;
+            max-width: 38ch;
         }
     }
 
@@ -5314,6 +5314,10 @@
 
         @media screen and (min-width: 1750px) {
             grid-template-columns: 1fr 1fr;
+        }
+
+        .clinical-study__result .clinical-study__nopercentage {
+            font-weight: 400;
         }
     }
 
