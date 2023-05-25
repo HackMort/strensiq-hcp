@@ -242,6 +242,7 @@
     }
 
     &__symptom {
+        color: $color-dark-gray;
         font-size: 14px;
         font-weight: 300;
         line-height: 1.0938rem;
@@ -303,11 +304,6 @@
         text-align: center;
         width: 100%;
         // left: 1.25rem;
-    }
-
-    sup {
-        font-size: 40%;
-        top: -1rem;
     }
 
     &--desktop {
@@ -449,6 +445,12 @@
                 right: -16.5625rem;
                 bottom: 1.25rem;
             }
+
+        }
+
+        sup {
+            font-size: 40%;
+            top: -1rem;
         }
     }
 }
