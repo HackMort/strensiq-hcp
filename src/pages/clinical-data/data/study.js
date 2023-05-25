@@ -1,7 +1,7 @@
 // Table data
 const studyData = [
   {
-    text: ['Age at inclusion', '&#8804;3 years', '&#8804;5 years', '6-12 years', '≥13 years'],
+    text: ['Age at inclusion', '<span class="font-thin">&#8804;</span>3 years', '<span class="font-thin">&#8804;</span>5 years', '6-12 years', '≥13 years'],
     classModifier: ['mh']
   },
   {

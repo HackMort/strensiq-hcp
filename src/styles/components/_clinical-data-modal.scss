@@ -136,6 +136,10 @@
             &__cell {
                 padding: 0 0 0 1.25rem;
 
+                .font-thin {
+                    padding: 0 !important;
+                }
+
                 :first-child {
                     color: $color-dark-gray!important;
                     font-weight: 300;
