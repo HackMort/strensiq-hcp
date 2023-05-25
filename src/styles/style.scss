@@ -399,7 +399,7 @@
 }
 
 // Clinical data page - infants young children
-.clinical-data-infants-young-children__page-hero {
+/* .clinical-data-infants-young-children__page-hero {
     .page-hero__title {
         @media screen and (min-width: 500px) {
             br {
@@ -411,10 +411,10 @@
             max-width: 28.75rem;
         }
     }
-}
+} */
 
 // Clinical data page - infants young children
-.clinical-data-children__page-hero {
+/* .clinical-data-children__page-hero {
     .page-hero__title {
         @media screen and (min-width: 500px) {
             br {
@@ -431,10 +431,10 @@
             margin-bottom: 1rem;
         }
     }
-}
+} */
 
 // Clinical data page - adolescents
-.clinical-data-adolescents__page-hero {
+/* .clinical-data-adolescents__page-hero {
     .page-hero__title {
         br {
             display: none;
@@ -446,52 +446,143 @@
             }
         }
     }
-}
+} */
 
 //Clinical data - adults page
+#clinical-data-page-hero.clinical-data-adults__page-hero {
+    .page-hero__title {
+        max-width: 100%;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    .page-hero__subtitle {
+        max-width: 48ch;
+    }
+
+    .shape--primary {
+        max-width: 100%;
+        top: -9.375rem;
+        width: 100%;
+
+        @media screen and (min-width: 1024px) {
+            top: unset;
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: 75%;
+            max-width: 75%;
+        }
+    }
+}
+
+#adults-changes-in-substractes {
+    .wrapper {
+        &--desktop {
+            @media screen and (max-width: 1023px) {
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+
+        &--mobile {
+            @media screen and (min-width: 1023px) {
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
 .clinical-data-adults--tabs-menu {
-    .modifier{
+    .modifier {
         height: 3.125rem;
         width: 100%;
         justify-content: center;
         margin-top: 23px;
+
         @media screen and (min-width: 1000px) {
             margin-top: 48px;
         }
     }
 }
-.mwt-block{
+
+.mwt-block {
     @media screen and (min-width: 1000px) {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
     }
-    ul{
+
+    ul {
         @media screen and (min-width: 1000px) {
-        display: block;
-        max-width: 506px;
+            display: block;
+            max-width: 506px;
         }
 
-        li{
+        li {
             @media screen and (min-width: 1000px) {
-            margin-top: 3rem;
+                margin-top: 3rem;
+            }
+
+            p {
+                @media screen and (min-width: 1024px) {
+                    max-width: 69ch;
+                }
             }
         }
     }
+
+    &--right {
+        @media screen and (min-width: 1000px) {
+            width: 50%;
+        }
+    }
+
+    &--left {
+        @media screen and (min-width: 1000px) {
+            width: 45%;
+        }
+    }
 }
-.clinical-data-adults__page-hero{
-    .shape--primary{
+
+.clinical-data-adults__page-hero {
+    .shape--primary {
         background-color: #6D868E;
     }
-    .shape--secondary{
+
+    .shape--secondary {
         background-color: #48D597;
     }
-    .shape--tertiary{
+
+    .shape--tertiary {
         background-color: white;
     }
 }
 
 .clinical-data-adults {
+    &-cta {
+        .cta__heading {
+            max-width: 15ch;
+
+            @media screen and (min-width: 768px) {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__footnote {
+        font-size: .75rem;
+        line-height: 1.125rem;
+
+        @media screen and (min-width: 1000px) {
+            line-height: .9rem;
+            margin-bottom: 5rem;
+        }
+    }
+
     &__changes-in-substractes {
         display: flex;
         flex-direction: column;
@@ -501,12 +592,27 @@
             flex-direction: row;
             margin-top: 1rem;
         }
+
+        [role="tabpanel"] {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .custom-title {
+            @media screen and (min-width: 1024px) {
+                width: 100vw;
+            }
+
+            &__text {
+                max-width: 33ch;
+            }
+        }
     }
 
     &__col {
         width: 100%;
 
-        .custom-title{
+        .custom-title {
             background-color: #3D5F66;
         }
 
@@ -520,18 +626,16 @@
                 width: 100%;
                 margin-top: 6rem;
             }
-
-            .custom-title {
-                padding: 1.1rem;
-            }
         }
     }
 
-    &--img1, &--img2{
-        max-width: 65%;
+    &--img1,
+    &--img2 {
+        max-width: 300px;
         margin: auto;
+
         @media screen and (min-width: 1000px) {
-        max-width: 100%;
+            max-width: 100%;
         }
 
     }
@@ -567,33 +671,47 @@
         color: $color-dark-gray;
         font-size: .875rem;
         font-weight: 300;
+        padding-left: 15px;
+
         @media screen and (min-width: 1000px) {
-            margin-bottom: 81px;
+            margin-bottom: 1.4375rem;
         }
 
         li {
             margin-bottom: .5rem;
+
+            p {
+                font-size: .875rem;
+                line-height: 1.0938rem;
+
+                @media screen and (min-width: 1024px) {
+                    font-size: 1.125rem;
+                    line-height: 1.6875rem;
+                    max-width: 42ch;
+                }
+
+                @media screen and (min-width: 1200px) {
+                    max-width: 51ch;
+                }
+            }
         }
 
         &-mobility {
             margin-top: 1rem;
 
-            @media screen and (max-width: 768px) {
+            /* @media screen and (max-width: 768px) {
                 margin-left: 1rem;
                 margin-right: 1rem;
-            }
+            } */
         }
 
         &--time-to-bone {
             margin-left: 1rem;
+            padding-left: 0;
         }
 
         &--limitations {
             margin-left: 1rem;
-        }
-
-        @media screen and (min-width: 1000px) {
-            margin-left: 2rem;
         }
 
         @media screen and (min-width: 1024px) {
@@ -624,7 +742,18 @@
         }
 
         .clinical-data-adults__title {
+            color: $color-dark-gray;
             margin-bottom: 1rem;
+        }
+
+        .clinical-data-adults--paragraph {
+            font-size: .875rem;
+            line-height: 1.0938rem;
+
+            @media screen and (min-width: 1024px) {
+                font-size: 1.125rem;
+                line-height: 1.6875rem;
+            }
         }
 
         &--content {
@@ -638,11 +767,17 @@
         margin-bottom: 1rem;
     }
 
-    &--title1{
-        @media screen and (min-width: 1000px) {
-        font-size: 20px;
-        line-height: 23px;
+    &--title1 {
+        font-size: .875rem;
+        line-height: 1.05rem;
+        margin: 1.6875rem 0 1.1875rem;
+        max-width: 41ch;
         text-transform: uppercase;
+
+        @media screen and (min-width: 1024px) {
+            font-size: 1.25rem;
+            line-height: 1.465rem;
+            max-width: 46ch;
         }
     }
 
@@ -674,16 +809,14 @@
             }
         }
 
-
-
-        [role=tablist] a {
-            width: 9rem;
-        }
-
         &-menu {
             width: 100%;
             background-color: transparent;
             margin-right: 1rem;
+
+            [role=tablist] a {
+                padding: .6875rem 2.8125rem;
+            }
         }
     }
 
@@ -691,6 +824,7 @@
     &__list-mobility1 {
         @media screen and (max-width: 999px) {
             display: block;
+
             @media screen and (min-width: 1000px) {
                 margin-bottom: 2rem;
             }
@@ -719,14 +853,49 @@
     &__mobility {
         position: relative;
         background-color: $color-soft-gray;
+        overflow: hidden;
         z-index: 2;
+
+        .clinical-data-adults__title {
+            color: $color-dark-gray;
+        }
+
+        .wrapper {
+            &--desktop {
+                @media screen and (max-width: 999px) {
+                    margin: 0;
+                    max-width: 100%;
+                }
+            }
+
+            &--mobile {
+                @media screen and (min-width: 999px) {
+                    margin: 0;
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .custom-title {
+            @media screen and (min-width: 1000px) {
+                width: 100vw;
+            }
+
+            &__text {
+                max-width: 35ch;
+
+                @media screen and (min-width: 1250px) {
+                    max-width: 100%;
+                }
+            }
+        }
     }
 
     &__content {
         padding-top: 0.5rem;
         padding-bottom: 1rem;
-        overflow-y: clip;
-        overflow: hidden;
+        /* overflow-y: clip;
+        overflow: hidden; */
 
         &--highlightinformation {
             margin-top: 2rem;
@@ -782,6 +951,7 @@
 
             @media screen and (min-width: 1024px) {
                 font-size: 1.125rem;
+                max-width: 51ch;
             }
         }
 
@@ -800,6 +970,7 @@
     &__video {
         background-color: $color-blue;
         padding: 1rem;
+        padding-bottom: 3.0625rem;
         margin-top: 1rem;
         margin-bottom: 2rem;
         position: relative;
@@ -812,15 +983,16 @@
             font-size: 1.25rem;
             font-weight: 700;
             padding-bottom: 0.8rem;
-            @media screen and (min-width: 1024px) {
-            font-size: 30px;
             line-height: 125%;
-            margin-left: 74px;
+
+            @media screen and (min-width: 1024px) {
+                font-size: 30px;
+                margin-left: 74px;
             }
         }
 
         &::before {
-            @media screen and (min-width: 1024px) {
+            @media screen and (min-width: 1000px) {
                 content: '';
                 background-color: $color-blue;
                 position: absolute;
@@ -829,8 +1001,13 @@
                 width: 69.295rem;
                 border-radius: 22.7588rem 0px 0px 22.7588rem;
                 transform: rotate(-21deg);
-                left: -30px;
-                bottom: 35px;
+                left: -50px;
+                bottom: 100px;
+            }
+
+            @media screen and (min-width: 2200px) {
+                height: 52.55rem;
+                width: 80rem;
             }
         }
 
@@ -844,7 +1021,7 @@
 
     &--img-6MWT {
         background-color: $color-white;
-        max-width: 65%;
+        max-width: 375px;
         margin: auto;
         margin-top: 2rem;
 
@@ -869,13 +1046,61 @@
         background-color: $color-soft-gray;
         padding-top: 0.5rem;
 
-        .table__header--mh--cell{
-            background-color: #6D868E;
+        .clinical-data-adults__title {
+            color: $color-dark-gray;
+        }
+
+        .clinical-data-adults__tabs-title {
+            color: $color-blue-gray;
+        }
+
+        .clinical-data-adults--tabs-menu {
+            [role="tablist"] {
+                max-width: none;
+                white-space: nowrap;
+                width: 110%;
+
+                @media screen and (min-width: 700px) {
+                    width: 100%;
+                }
+            }
+
+            [role=tablist] a {
+                padding: .625rem 2.375rem;
+
+                @media screen and (min-width: 1024px) {
+                    padding: .625rem 3.25rem;
+                }
+            }
+        }
+
+        .table__header--mh--cell {
+            background-color: $color-slate-gray;
+        }
+
+        .table__body__cell--head {
+            color: $color-blue-gray;
+        }
+
+        .table__header--mh {
+            border-bottom-width: .3125rem;
+        }
+
+        .table__footer {
+            line-height: .9rem;
         }
 
         &-table {
             max-width: 1000px;
             margin: 1.5rem auto 0 auto;
+
+            .table__wrapper {
+                margin-right: -1rem;
+
+                @media screen and (min-width: 768px) {
+                    margin-right: auto
+                }
+            }
 
             td,
             th {
@@ -901,6 +1126,17 @@
             display: flex;
             flex-direction: column;
             padding-bottom: 0;
+            border-bottom-width: .3125rem;
+
+            p {
+                font-size: .875rem;
+                line-height: 1.0938rem;
+
+                @media screen and (min-width: 1024px) {
+                    font-size: 1.125rem;
+                    line-height: 1.6875rem;
+                }
+            }
 
             @media screen and (min-width: 1000px) {
                 flex-direction: row;
@@ -911,7 +1147,9 @@
 
         &-table {
             .table__body__cell {
-                b {
+                font-weight: 300;
+
+                strong {
                     color: $color-dark-gray !important;
                     margin: 0 !important;
                     padding: 0 !important;
@@ -922,6 +1160,49 @@
 
         &-paragraph {
             margin-bottom: 1rem;
+        }
+
+        [role="tabpanel"] {
+            padding-left: 0;
+            padding-right: 0;
+
+            .clinical-data-adults__title {
+                color: $color-blue-gray;
+            }
+
+            .clinical-data-adults__list {
+                margin-left: 0;
+            }
+
+            .highlight-information {
+                max-width: 23.4375rem;
+            }
+
+            .highlight-information__content {
+                font-size: 3.125rem;
+                line-height: 3.9063rem;
+
+                @media screen and (min-width: 1024px) {
+                    font-size: 2.5rem;
+                    line-height: 3.75rem;
+                }
+            }
+
+            .highlight-information__footnote {
+                font-size: .875rem;
+                line-height: 1.0938rem;
+
+                @media screen and (min-width: 1024px) {
+                    font-size: 1.125rem;
+                    line-height: 1.6875rem;
+                    max-width: 32ch;
+                }
+
+                strong {
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                }
+            }
         }
     }
 
@@ -942,7 +1223,7 @@
             margin: 1rem 0 1rem 1rem;
 
             @media screen and (min-width: 1000px) {
-                margin: 1rem 0 2rem 1rem;
+                margin: 1rem 0 2rem 0;
             }
         }
 
@@ -952,34 +1233,34 @@
             padding-bottom: 1rem;
 
             &-paragraph {
+                font-size: 12px;
+                line-height: .9rem;
                 margin-top: 1rem;
-                text-align: center;
+                text-align: left;
+                padding-left: 1.25rem;
+
+                sup {
+                    font-size: 10px;
+                    line-height: .9375rem;
+                    top: -0.3125rem;
+                }
             }
 
             .pinch-to-zoom .pinch-to-zoom__button-container {
                 top: 0 !important;
             }
+
+            .pinch-to-zoom {
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
 
         &--highlight {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+
             @media screen and (min-width: 1000px) {
-                max-width: 50%;
                 margin-top: 1rem;
-
-                .highlight-information__footnote {
-                    max-width: 100%;
-                    margin-top: 1rem;
-                    margin-bottom: 0.8rem;
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .highlight-information__content {
-                    letter-spacing: -2px;
-                    line-height: 3.4688rem !important;
-                    font-size: 40px;
-                }
             }
 
 
@@ -991,8 +1272,8 @@
 
 
         &--img {
-            margin: 1rem auto;
-            max-width: 70%;
+            margin: 1.25rem 0 1rem 0;
+            max-width: 400px;
         }
 
         &--button {
@@ -1001,9 +1282,9 @@
         }
     }
 
-    &__CHAIR-RISE--highlight {
+    /* &__CHAIR-RISE--highlight {
         max-width: 80% !important;
-    }
+    } */
 
     &--clinical-data-table {
         margin: 2rem 2rem;
@@ -1054,17 +1335,22 @@
         @media screen and (min-width: 1000px) {
             margin-bottom: 2rem;
         }
+
         @media screen and (min-width: 1024px) {
             font-size: 1.125rem;
         }
     }
 
 }
-#picture-bone{
-    max-width: 65%;
-    margin: auto;
-    @media screen and (min-width: 700px) {
-    max-width: 100%;
+
+#picture-bone {
+    img {
+        max-width: 375px;
+        margin: auto;
+
+        @media screen and (min-width: 700px) {
+            max-width: 100%;
+        }
     }
 }
 
@@ -2284,6 +2570,18 @@
     }
 }
 
+.testimonial--hypophosphatasia {
+    .testimonial__quote {
+        p {
+            max-width: 25ch;
+
+            @include media('tablet') {
+                max-width: 31ch;
+            }
+        }
+    }
+}
+
 .hypophosphatasia-container {
     display: flex;
     flex-wrap: wrap;
@@ -2322,7 +2620,7 @@
 
     &__list {
         margin-bottom: .9375rem;
-        padding-left: .75rem;
+        padding-left: 1rem;
 
         &-item {
             margin-bottom: .9375rem;
@@ -2541,13 +2839,29 @@
                 overflow-x: scroll;
                 width: 115%;
 
+                li a {
+                    padding: .6875rem .6563rem;
+                }
+
                 li:first-child {
-                    margin-left: calc(130px - (100vw - 320px));
+                    margin-left: calc(80px - (100vw - 320px));
+                }
+
+                @media (min-width: 420px) {
+                    li:first-child {
+                        margin-left: -20px;
+                    }
+                }
+
+                @media (min-width: 460px) {
+                    li:first-child {
+                        margin-left: -30px;
+                    }
                 }
 
                 @media (min-width: 480px) {
                     li:first-child {
-                        margin-left: calc(0 - (100vw - 480px));
+                        margin-left: -40px;
                     }
                 }
 
@@ -2559,6 +2873,10 @@
                         margin-left: 0px;
                     }
                 }
+            }
+
+            &__title {
+                margin-bottom: .625rem;
             }
 
             &__panel {
@@ -2627,10 +2945,6 @@
                 .hypophosphatasia-container__panel-footnote {
                     margin: 0;
 
-                    &:first-child {
-                        margin-bottom: .9375rem;
-                    }
-
                     &:last-child {
                         margin-bottom: 4.375rem;
                     }
@@ -2682,6 +2996,7 @@
 
                 &__panel-footnote {
                     margin-bottom: 3.75rem;
+
                     @media (min-width: 1000px) {
                         margin-bottom: 4.95rem;
                     }
@@ -2816,6 +3131,20 @@
             margin-bottom: 2.5rem;
         }
 
+        .hypophosphatasia-container__title {
+            max-width: 28ch;
+        }
+
+        .highlight-information__content {
+            line-height: 1;
+        }
+
+        .highlight-information:nth-of-type(2) {
+            .highlight-information__content {
+                margin-top: -0.9375rem;
+            }
+        }
+
         @media (min-width: 1024px) {
             padding-bottom: 0;
 
@@ -2871,6 +3200,10 @@
                 &__tabs-container {
                     width: 100%;
                 }
+
+                &__title {
+                    max-width: 31ch;
+                }
             }
         }
     }
@@ -2894,7 +3227,7 @@
 
         .hypophosphatasia-container__content--treatments {
             color: $color-white;
-            padding-bottom: 5.625rem;
+            padding-bottom: 5.25rem;
             padding-top: 2.5rem;
             padding-left: 0;
             position: relative;
@@ -2934,13 +3267,17 @@
                 }
 
                 @media (min-width: 1200px) {
-                    left: -60%;
+                    left: -70%;
+                }
+
+                @media (min-width: 1276px) {
+                    left: -65%;
                 }
 
                 @media (min-width: 1500px) {
-                    left: -90%;
+                    left: -100%;
                     width: 156.25rem;
-                    height: 300%;
+                    height: 350%;
                     top: -150%;
                 }
             }
@@ -2956,7 +3293,7 @@
 
                     @include media('tablet') {
                         padding: 0 .9375rem;
-                        max-width: 46ch;
+                        max-width: 52ch;
                     }
 
                     @include media('desktop') {
@@ -2965,26 +3302,50 @@
                     }
                 }
 
+                &__list {
+                    margin-top: .625rem;
+                    padding-left: 0;
+
+                    @media screen and (min-width: 1081px) {
+                        padding-left: .625rem;
+                    }
+                }
+
                 &__list-item {
                     list-style-type: none;
                     font-weight: 900;
-                    margin-bottom: 0;
+                    margin-bottom: .9375rem;
+
+                    @media screen and (min-width: 1024px) {
+
+                        &:first-of-type {
+                            margin-top: 1.25rem;
+                        }
+
+                        margin-bottom: 1.25rem;
+                    }
 
                     &::before {
-                        color: $color-dark-pink;
                         content: '×';
+                        position: relative;
+                        top: 5px;
+                        color: $color-dark-pink;
                         display: inline-block;
                         font-size: 60px;
-                        line-height: 1;
+                        line-height: 0;
                         vertical-align: middle;
                     }
 
                     span {
                         display: inline-block;
                         font-size: 25px;
-                        line-height: 1.115rem;
+                        line-height: 1;
                         max-width: 15ch;
                         vertical-align: text-top;
+
+                        @media screen and (min-width: 768px) {
+                            max-width: fit-content;
+                        }
                     }
 
                     @media(min-width: 412px) {
@@ -3002,17 +3363,22 @@
         }
 
         .hypophosphatasia-container__content:first-child {
-            max-width: 70ch;
+            max-width: 73ch;
 
             .hypophosphatasia-container__paragraph {
                 @media (min-width: 1021px) {
-                    max-width: 50ch;
+                    max-width: 51ch;
                 }
             }
         }
 
         .hypophosphatasia-container__title {
             margin-bottom: .625rem;
+            max-width: 29ch;
+
+            @media screen and (min-width: 768px) {
+                max-width: 100%;
+            }
         }
 
         .wrapper {
@@ -3024,11 +3390,11 @@
 
             @media(min-width: 1081px) {
                 flex-wrap: nowrap;
-                justify-content: space-around;
+                justify-content: space-between;
             }
 
             @include media('desktop') {
-                justify-content: space-around;
+                justify-content: space-between;
             }
         }
 
@@ -3037,10 +3403,10 @@
             position: absolute;
 
             @media(min-width: 1081px) {
-                bottom: 20%;
+                justify-content: flex-start;
                 left: 0;
-                width: fit-content;
-                padding: 0 1.5625rem;
+                max-width: 50vw;
+                padding: 0;
 
                 .hypophosphatasia-container__paragraph {
                     padding: 1.125rem 6.25rem;
@@ -3048,37 +3414,49 @@
                     &::after {
                         border-radius: 0 5.9688rem 5.9688rem 0;
                         left: unset;
-                        right: 1.5625rem;
+                        right: 90px;
                     }
 
                     &::before {
                         right: 0;
                         left: unset;
-                        width: 110%;
+                        width: 100%;
                     }
                 }
             }
 
             .hypophosphatasia-container__paragraph {
                 max-width: 33ch;
-                text-align: left;
-                margin-left: 1.25rem;
+                text-align: center;
+                padding-left: 1.625rem;
 
                 @media (min-width: 530px) {
-                    max-width: 31ch;
+                    max-width: 32ch;
                 }
 
                 @media (min-width: 1081px) {
-                    max-width: 60ch;
+                    max-width: 65ch;
+                    padding: 1.125rem 9.375rem;
                 }
 
                 @include media('desktop') {
-                    max-width: 49ch;
+                    max-width: 50ch;
+                    padding: 1.125rem 8.125rem;
                 }
 
                 @media (min-width: 1400px) {
-                    max-width: 60ch;
+                    max-width: 57ch;
                     padding: 1.25rem 10.25rem;
+                }
+
+                &--highlight {
+                    &::after {
+                        bottom: -5px;
+
+                        @media screen and (min-width: 1081px) {
+                            bottom: -10px;
+                        }
+                    }
                 }
             }
         }
@@ -4263,6 +4641,10 @@
     .hpp-related-rickets__title {
         color: $color-dark-green;
         margin-bottom: .625rem;
+
+        @media screen and (min-width: 1024px) {
+            max-width: 36ch;
+        }
     }
 
     .hpp-related-rickets__description {
@@ -4374,7 +4756,11 @@
     }
 
     .custom-title {
-        @media screen and (min-width: 1024px) {
+        &__text {
+            max-width: 32ch;
+        }
+
+        @media screen and (min-width: 768px) {
             width: 100vw;
 
             &__text {
@@ -4417,6 +4803,48 @@
         padding-top: 4.375rem;
     }
 
+    .wrapper {
+        &--desktop {
+            @media (max-width: 1024px) {
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+
+        &--mobile {
+            @media (min-width: 1025px) {
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+    }
+
+    .tip__wrapper {
+        overflow-x: unset;
+    }
+
+    .custom-title {
+        @media screen and (min-width: 1024px) {
+            width: 110%;
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 75vw;
+        }
+
+        &__text {
+            max-width: 35ch;
+
+            @media screen and (min-width: 1024px) {
+                max-width: 41ch;
+            }
+
+            @media screen and (min-width: 1400px) {
+                max-width: 56ch;
+            }
+        }
+    }
+
     .infants-young-children__survival-content {
         @media screen and (min-width: 1024px) {
             display: grid;
@@ -4428,7 +4856,7 @@
         }
 
         @media screen and (min-width: 1400px) {
-            grid-template-columns: 1fr 810px;
+            grid-template-columns: 1fr 700px;
         }
     }
 
@@ -4508,6 +4936,10 @@
 
     .infants-young-children__survival-tip {
 
+        .tip__box_content {
+            max-width: 36ch;
+        }
+
         @media screen and (min-width: 1024px) {
             min-height: 5rem;
             border-radius: 0px 95.5px 95.5px 0px;
@@ -4524,10 +4956,42 @@
         }
 
         @media screen and (min-width: 1024px) {
-            margin-left: 0;
             margin-right: auto;
             width: 100%;
             max-width: initial;
+        }
+
+        @media screen and (min-width: 1025px) {
+            margin-left: -2.1875rem;
+            width: 110%;
+
+        }
+
+        @media screen and (min-width: 1366px) {
+            background-color: transparent;
+
+            .tip__box_content {
+                position: relative;
+                z-index: 1;
+            }
+
+            &::after {
+                background-color: $color-blue;
+                border-radius: 95.5px;
+                content: '';
+                height: 100px;
+                position: absolute;
+                right: 5%;
+                top: 0;
+                width: 100vw;
+                z-index: 0;
+            }
+
+            &::before {
+                left: unset;
+                width: 75vw;
+                right: 13%;
+            }
         }
 
         @media screen and (min-width: 1400px) {
@@ -4573,17 +5037,19 @@
     }
 
     .clinical-studies__clarification {
+        font-size: .875rem;
+        line-height: 1.0938rem;
         margin-bottom: 1.5rem;
 
         @media screen and (min-width: 1024px) {
             font-size: 1.125rem;
-            line-height: 27px;
+            line-height: 1.6875rem;
         }
     }
 
     .hpp-related-rickets__chart-footnote,
     .mobility__chart-footnote {
-        margin-top: .5rem;
+        margin-top: 0;
         margin-bottom: .75rem;
 
         p {
@@ -4634,6 +5100,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            align-items: flex-end;
 
             .hpp-related-rickets__radiographics-wrapper {
                 margin-bottom: 2rem;
@@ -4646,12 +5113,6 @@
                     max-width: 46.125rem;
                     margin-bottom: 1rem;
                 }
-
-                .wrapper {
-                    max-width: calc(100% - (var(--margin) / 2));
-                    margin-left: 0;
-                    margin-right: auto;
-                }
             }
 
             .radiographic-images-mobile {
@@ -4660,7 +5121,6 @@
 
             .radiographic-images-desktop {
                 display: block;
-                // height: 32.6044rem;
             }
         }
     }
@@ -4669,17 +5129,26 @@
 .hpp-related-rickets__chart-wrapper {
     @media screen and (min-width: 1024px) {
         max-width: fit-content;
-        margin-left: auto;
+        // margin-left: auto;
 
         &>div:not(.wrapper) {
             max-width: fit-content;
-            margin-left: auto;
+            // margin-left: auto;
         }
 
         .pinch-to-zoom {
             width: fit-content !important;
             margin-right: 0 !important;
             margin-left: auto !important;
+            padding-bottom: 0;
+        }
+
+        .f-panzoom__viewport {
+            margin-bottom: 0;
+        }
+
+        .hpp-related-rickets__chart-footnote {
+            padding-left: 10%;
         }
     }
 }
@@ -4694,33 +5163,111 @@
                 margin-right: 0;
             }
         }
-    }
 
-    .hpp-related-rickets__content-left {
-        .wrapper {
-            @media screen and (min-width: 1024px) {
-                max-width: calc(100% - (var(--margin) / 2));
-                margin-left: auto;
-                margin-right: 0;
-            }
-
-            @media screen and (min-width: 1600px) {
-                max-width: calc(100% - ((100vw - 90rem) / 2));
-            }
+        &__button-container {
+            top: 57%;
+            right: 7%;
         }
     }
 
     .radiographic-comparator {
         @media screen and (min-width: 1440px) {
             max-width: fit-content;
-            margin-left: auto;
+        }
+
+        [data-radiographic-title] {
+            margin: 0 auto 1.25rem;
+            max-width: 14ch;
+        }
+
+        &__left {
+            position: relative;
+        }
+
+        &__right {
+            [data-radiographic-footer] {
+                max-width: 21ch;
+
+                @media screen and (min-width: 1200px) {
+                    max-width: 27ch;
+                }
+            }
+
+            @media screen and (min-width: 1024px) {
+                padding-bottom: 2.5rem;
+            }
+        }
+
+        [data-radiographic-footer] {
+            margin-bottom: .3125rem;
+
+            @media screen and (min-width: 1024px) {
+                margin-bottom: 1.875rem;
+            }
+        }
+
+        .radiographic__footnote {
+            max-width: 90%;
+
+            &--bottom {
+                position: absolute;
+                bottom: .9375rem;
+
+                @include media('tablet') {
+                    bottom: 1.875rem;
+                }
+
+                @media screen and (min-width: 1024px) {
+                    bottom: 2.5rem;
+                }
+            }
+
+            &--mobile {
+                font-size: .625rem;
+                line-height: .75rem;
+            }
+
+            &--desktop {
+                font-size: .75rem;
+                line-height: .9rem;
+            }
+
+
+            &--right {
+                color: $color-dark-green;
+                max-width: 85%;
+
+                @media screen and (min-width: 799px) {
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+
+    .clinical-study {
+        max-width: 375px;
+    }
+
+    .clinical-study:nth-of-type(1) {
+        .clinical-study__description {
+            max-width: 39ch;
+        }
+    }
+
+    .clinical-studies__clarification {
+        @media screen and (min-width: 1024px) {
+            max-width: 40ch;
+        }
+
+        @media screen and (min-width: 1400px) {
+            max-width: 52ch;
         }
     }
 }
 
 .adolescents__mobility {
     background: $color-bright-gray;
-    padding-bottom: 0;
+    padding-bottom: 3.125rem;
 
     @media screen and (min-width: 1024px) {
         padding-bottom: 4.375rem;
@@ -4729,17 +5276,18 @@
     .clinical-studies__clarification {
         @media screen and (min-width: 1024px) {
             margin-bottom: 0;
+            max-width: 54ch;
         }
     }
 
     .adolescents__title {
         margin-bottom: 1rem;
         color: $color-dark-green;
+        max-width: 23ch;
 
-        @media screen and (min-width: 426px) {
-            br {
-                display: none;
-            }
+        @media screen and (min-width: 1024px) {
+            max-width: 30ch;
+            margin-bottom: 2.5rem;
         }
     }
 
@@ -4791,7 +5339,6 @@
 
                     &::before {
                         left: 3rem;
-                        // right: calc((100vw - ((46.125rem) + (calc(100% - var(--margin) / 2)))));
                         width: calc(100vw - (46.125rem));
                     }
                 }
@@ -4807,60 +5354,86 @@
         }
     }
 
-    .adolescents__content-left {
-        .wrapper {
-            @media screen and (min-width: 1024px) {
-                max-width: calc(100% - (var(--margin) / 2));
-                margin-right: 0;
-                margin-left: auto;
-            }
-
-            @media screen and (min-width: 1600px) {
-                max-width: calc(100% - ((100vw - 90rem) / 2));
-            }
-        }
-    }
-
     .adolescents__content-right {
         @media screen and (min-width: 1024px) {
             max-width: fit-content;
-            margin-left: auto;
-        }
-
-        .wrapper {
-            @media screen and (min-width: 1024px) {
-                max-width: calc(100% - (var(--margin) / 2));
-                margin-left: 0;
-                margin-right: auto;
-            }
-
-            @media screen and (min-width: 1600px) {
-                max-width: calc(100% - ((100vw - 90rem) / 2));
-            }
-
-            @media screen and (min-width: 1750px) {
-                max-width: calc(100% - var(--margin) / 2);
-            }
+            margin-left: 50px;
         }
     }
 
-    .mobility__chart-footnote {
-        // padding: 0 1.2656rem;
+    .clinical-study {
+        max-width: 375px;
+
+        &__description {
+            color: $color-dark-gray;
+            max-width: 39ch;
+
+            strong {
+                color: $color-dark-green;
+            }
+
+            @media screen and (min-width: 1024px) {
+                max-width: 37ch;
+            }
+        }
+    }
+}
+
+#clinical-data-page-hero.clinical-data-adolescents__page-hero {
+    .page-hero__title {
+        max-width: 17ch;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 1.5rem;
+            max-width: 30ch;
+        }
+    }
+
+    .shape--primary {
+        max-width: 100%;
+        top: -9.375rem;
+        width: 100%;
+
+        @media screen and (min-width: 1024px) {
+            top: unset;
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: 75%;
+            max-width: 75%;
+        }
     }
 }
 
 //------------------------------------------------------------- Clinical data - Adolescents -------------------------------------------------------------
 
 /* Clinical Data - Children Page */
-.adolescents__cta{
-    h3{
+.adolescents__cta {
+    .cta__heading {
+        margin-bottom: .3125rem;
+        max-width: 16ch;
+        line-height: 2.0313rem;
 
-        max-width: 486px;
+        @media screen and (min-width: 1024px) {
+            max-width: 29ch;
+        }
     }
-    .sub{
+
+    .cta__text {
         color: $color-white;
+        font-size: .75rem;
+        font-weight: 400;
+        line-height: .9rem;
+        text-align: left;
+        margin: 0 auto .9375rem;
+        width: fit-content;
+
+        @media screen and (min-width: 1024px) {
+            width: 59ch;
+        }
     }
 }
+
 .cdchildren-cta {
     .cta__heading {
         max-width: 15ch;
@@ -5823,6 +6396,18 @@
 }
 
 /* Home */
+.testimonial--home {
+    .testimonial__quote {
+        p {
+            max-width: 26ch;
+
+            @include media('tablet') {
+                max-width: 33ch;
+            }
+        }
+    }
+}
+
 .home {
     &+.references {
         margin-top: 0;

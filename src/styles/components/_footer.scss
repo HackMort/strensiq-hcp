@@ -100,8 +100,8 @@
                     content: '';
                     position: absolute;
                     top: 10px;
-                    right: -1.1rem;
-                    border: 3px solid $color-dark-yellow;
+                    right: -1rem;
+                    border: 2px solid $color-dark-yellow;
                     height: 50px;
                 }
             }
@@ -164,7 +164,7 @@
         line-height: 1.6875rem;
         margin-right: auto;
         margin-left: auto;
-        margin-bottom: 80px;
+        margin-bottom: 40px;
         max-width: 328px;
         text-align: center;
 
@@ -196,6 +196,11 @@
             margin-top: 1rem;
             margin-right: auto;
             margin-left: auto;
+            padding: .9375rem 2.1563rem;
+
+            @include media('tablet') {
+                padding: .9375rem 1.25rem;
+            }
         }
 
     }
@@ -236,29 +241,40 @@
         &_text {
             color: $color-dark-gray;
             font-weight: 300;
-            font-size: .75rem;
-            line-height: 1.125rem;
+            font-size: .875rem;
+            line-height: 1.3125rem;
             letter-spacing: 0.01em;
-            margin-bottom: 2rem;
             text-align: center;
+            max-width: 43ch;
+
+            &:last-of-type {
+                margin-bottom: .6875rem;
+                max-width: 32ch;
+            }
 
             @include media('tablet') {
-                font-size: .875rem;
-                line-height: 1.3125rem;
                 text-align: left;
+            }
+
+            @include media('desktop') {
+                max-width: 62ch;
+
+                &:last-of-type {
+                    max-width: 46ch;
+                }
             }
         }
 
         .footer__nav_menu {
             display: flex;
-            flex-direction: column;
+            // flex-direction: column;
             align-items: center;
             @include flex-gap(1.125rem);
             margin-bottom: 1.5rem;
 
-            @media screen and (min-width: 375px) {
+            /* @media screen and (min-width: 375px) {
                 flex-direction: row;
-            }
+            } */
 
             @media screen and (min-width: 768px) {
                 @include flex-gap(.5rem);
@@ -274,6 +290,7 @@
                 font-size: .875rem;
                 font-weight: 300;
                 line-height: 18px;
+                text-align: center;
 
                 @include media('tablet') {
                     font-size: 1.125rem;

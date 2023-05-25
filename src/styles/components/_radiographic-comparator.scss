@@ -87,7 +87,6 @@
             color: $color-dark-gray;
         }
         [data-radiographic-footer]{
-            color: white;
             margin-bottom: 41px;
             @media screen and (min-width: 768px) {
                 margin-bottom: 47px;
@@ -99,7 +98,7 @@
             line-height: 120%;
             margin-bottom: 1rem;
             max-width: 259px;
-           
+
             @media screen and (min-width: 1024px) {
             font-size: 12px;
             display: block!important;
