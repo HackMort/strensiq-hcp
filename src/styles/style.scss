@@ -2597,6 +2597,10 @@
         padding-bottom: 2.25rem;
     }
 
+    .html-symbol {
+        color: $color-dark-gray;
+    }
+
     &__tabs-container {
         @include media('desktop') {
             padding-top: 1.5625rem;
