@@ -1,124 +1,124 @@
 // Utility classes file
 .mobile--only {
-  display: block;
+    display: block;
 
-  @include media('desktop') {
-    display: none;
-  }
+    @include media('desktop') {
+        display: none;
+    }
 }
 
 .desktop--only {
-  display: none;
+    display: none;
 
-  @include media('desktop') {
-    display: block;
-  }
+    @include media('desktop') {
+        display: block;
+    }
 }
 
 .text-transform--none {
-  text-transform: none;
+    text-transform: none;
 }
 
 .text-uppercase {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .text-capitalize {
-  text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 .text--center {
-  text-align: center;
+    text-align: center;
 }
 
 .text--right {
-  text-align: right;
+    text-align: right;
 }
 
 .text--left {
-  text-align: left;
+    text-align: left;
 }
 
 .text--justify {
-  text-align: justify;
+    text-align: justify;
 }
 
 .text--nowrap {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 .text--decoration-underline {
-  text-decoration: underline !important;
+    text-decoration: underline !important;
 }
 
 .color--yellow {
-  color: $color-dark-yellow;
+    color: $color-dark-yellow;
 }
 
 .color--white {
-  color: $color-white;
+    color: $color-white;
 }
 
 .color--green {
-  color: $color-green;
+    color: $color-green;
 }
 
 .color--dark-green {
-  color: $color-dark-green;
+    color: $color-dark-green;
 }
 
 .color--dark-pink {
-  color: $color-dark-pink;
+    color: $color-dark-pink;
 }
 
 .color--blue {
-  color: $color-blue;
+    color: $color-blue;
 }
 
 .color--slate-gray {
-  color: $color-slate-gray;
+    color: $color-slate-gray;
 }
 
 
 // Animations
 .animated--bg {
-  --animation-speed: 2.5s;
-  --animation-color: rgba(92, 199, 153, 0.4);
-  --animation-type: ease-out;
-  --animation-origin: 50% 0;
-  position: relative;
+    --animation-speed: 2.5s;
+    --animation-color: rgba(92, 199, 153, 0.4);
+    --animation-type: ease-out;
+    --animation-origin: 50% 0;
+    position: relative;
 
-  &--gray {
-    --animation-color: rgba(98,100,105,0.4);
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--animation-color);
-    -webkit-transform: scaleY(0);
-    transform: scaleY(0);
-    -webkit-transform-origin: var(--animation-origin);
-    transform-origin: var(--animation-origin);
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-duration: var(--animation-speed);
-    transition-duration: var(--animation-speed);
-    -webkit-transition-timing-function: var(--animation-type);
-    transition-timing-function: var(--animation-type);
-    z-index: -1;
-  }
-
-  &.fill-in {
-    &::before {
-      -webkit-transform: scaleY(1);
-      transform: scaleY(1);
+    &--gray {
+        --animation-color: rgba(98, 100, 105, 0.4);
     }
-  }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--animation-color);
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: var(--animation-origin);
+        transform-origin: var(--animation-origin);
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: var(--animation-speed);
+        transition-duration: var(--animation-speed);
+        -webkit-transition-timing-function: var(--animation-type);
+        transition-timing-function: var(--animation-type);
+        z-index: -1;
+    }
+
+    &.fill-in {
+        &::before {
+            -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+        }
+    }
 
 }
 
@@ -126,4 +126,8 @@
     @media screen and (min-width: 768px) {
         display: none;
     }
+}
+
+.font-thin {
+    font-weight: 200 !important;
 }
