@@ -305,6 +305,11 @@
         // left: 1.25rem;
     }
 
+    sup {
+        font-size: 40%;
+        top: -1rem;
+    }
+
     &--desktop {
         background-color: $color-dark-green;
         border-radius: 36.3544rem 0 0 0;
