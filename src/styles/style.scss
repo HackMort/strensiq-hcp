@@ -490,6 +490,7 @@
         background-color: white;
     }
 }
+
 .clinical-data-adults {
     &__changes-in-substractes {
         display: flex;
@@ -4546,6 +4547,13 @@
 }
 
 //------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
+.clinical-data-adolescents__page-hero{
+    .shape--primary{
+        width: 392px;
+        max-width: unset;
+        border-radius: 0rem 1.9375rem 8.9375rem 0rem;
+    }
+}
 
 .adolescents__hpp-related-rickets,
 .adolescents__mobility {
