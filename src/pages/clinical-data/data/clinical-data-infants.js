@@ -20,11 +20,11 @@ const studyData = [
     classModifier: ['mh']
   },
   {
-    text: ['Age at inclusion', '≤3 years', '≤5 years'],
+    text: ['Age at inclusion', '&#8804; years', '&#8804;5 years'],
     classModifier: ['mh']
   },
   {
-    text: ['Endpoints', '<p><strong>Primary:</strong> Change in skeletal manifestations, including rickets, at 6 months, as measured by the RGI-C scale</p><p><strong>Secondary:</strong> Growth, survival, and invasive ventilation-free survival vs untreated historical controls'],
+    text: ['Endpoints', '<p><strong>Primary:</strong> Change in skeletal manifestations, including rickets, at 6 months, as measured by the RGI-C scale</p><p><strong>Select secondary:</strong> Growth, survival, and invasive ventilation&mdash;free survival vs untreated historical controls'],
     classModifier: ['mh', 'join']
   }
 ]
