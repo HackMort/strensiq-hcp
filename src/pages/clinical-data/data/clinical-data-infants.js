@@ -20,7 +20,7 @@ const studyData = [
     classModifier: ['mh']
   },
   {
-    text: ['Age at inclusion', '<span><span class="font-thin">&#8804;</span> years</span>', '<span><span class="font-thin">&#8804;</span>5 years</span>'],
+    text: ['Age at inclusion', '<span><span class="font-thin">&#8804;</span>3 years</span>', '<span><span class="font-thin">&#8804;</span>5 years</span>'],
     classModifier: ['mh']
   },
   {
