@@ -35,11 +35,11 @@ const studyData = [
     classModifier: ['mh', 'mb']
   },
   {
-    text: ['<div style="color: #626469">Primary treatment phase</div>', '6 months', '1-6 years', '6 months', '6 months'],
+    text: ['<div style="color: #626469!important;">Primary treatment phase</div>', '6 months', '1-6 years', '6 months', '6 months'],
     classModifier: ['mh']
   },
   {
-    text: ['<div style="color: #626469">Extension</div>', '6.5 years', '1-6 years', '6.5 years', '4.5 years'],
+    text: ['<div style="color: #626469!important;">Extension</div>', '6.5 years', '1-6 years', '6.5 years', '4.5 years'],
     classModifier: ['mh']
   },
   {
