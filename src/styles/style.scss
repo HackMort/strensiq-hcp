@@ -870,7 +870,15 @@
 
     &__list-mobility {
         @media screen and (min-width: 1000px) {
-            margin-top: 5.6rem;
+            margin-top: 8.5rem;
+        }
+
+        @media screen and (min-width: 1200px) {
+            margin-top: 7.5rem;
+        }
+
+        @media screen and (min-width: 1400px) {
+            margin-top: 7rem;
         }
     }
 
@@ -982,6 +990,7 @@
 
             @media screen and (min-width: 1024px) {
                 font-size: 1.125rem;
+                line-height: 1.6875rem;
                 max-width: 51ch;
             }
         }
@@ -1317,6 +1326,7 @@
         &--img {
             margin: 1rem 2rem 2rem;
             max-width: 80%;
+
             @media screen and (min-width: 1000px) {
                 margin: 1.25rem 0 1rem 2rem;
                 max-width: 50%;
@@ -1324,6 +1334,7 @@
 
             &--left {
                 margin: 1rem 2rem 2rem;
+
                 @media screen and (min-width: 1000px) {
                     margin-left: 0;
                 }
@@ -1340,6 +1351,7 @@
 
         .highlight-information {
             max-width: 18.7rem !important;
+
             @media screen and (max-width: 999px) {
                 max-width: 100% !important;
             }
