@@ -1,7 +1,7 @@
 // Table data
 const data = [
   {
-    text: ['Injection site reactions', '38 (58)', '6 (46)', '44 (56)', '18 (90)'],
+    text: ['<div style="font-weight:bold; margin-left:-23px;">Injection site reactions</div>', '38 (58)', '6 (46)', '44 (56)', '18 (90)'],
     classModifier: ['mh']
   },
   {
@@ -38,11 +38,11 @@ const data = [
     text: ['Other injection site reactions<sup>c</sup>', '10 (15)', '3 (23)', '13 (17)', '4 (20)']
   },
   {
-    text: ['Ectopic calcifications', '3 (5)', '0 (0)', '13 (17)', '4 (20)'],
+    text: ['<div style="font-weight:bold; margin-left:-23px;">Ectopic calcifications</div>', '3 (5)', '0 (0)', '13 (17)', '4 (20)'],
     classModifier: ['mh']
   },
   {
-    text: ['Lipodystrophy', '12 (18)', '0 (0)', '3 (4)', '11 (55)'],
+    text: ['<div style="font-weight:bold; margin-left:-23px;">Lipodystrophy</div>', '12 (18)', '0 (0)', '3 (4)', '11 (55)'],
     classModifier: ['mh']
   },
   {
@@ -55,7 +55,7 @@ const data = [
     text: ['Other lipodystrophy<sup>d</sup>', '4 (6)', '0 (0)', '4 (5)', '1 (5)']
   },
   {
-    text: ['Hypersensitivity reactions', '7 (11)', '3 (23)', '10 (13)', '2 (10)'],
+    text: ['<div style="font-weight:bold; margin-left:-23px;">Hypersensitivity reactions</div>', '7 (11)', '3 (23)', '10 (13)', '2 (10)'],
     classModifier: ['mh']
   },
   {
