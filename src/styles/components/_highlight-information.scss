@@ -13,7 +13,7 @@
     &__content {
         color: $color-dark-green;
         font-size: 60px;
-        font-weight: 900;
+        font-weight: 400;
         line-height: 4.6875rem;
         position: relative;
 
@@ -122,6 +122,7 @@
         }
 
         &-footnote {
+            padding-bottom: 1rem;
             .highlight-information__footnote {
                 strong {
                     color: $color-blue-gray;
