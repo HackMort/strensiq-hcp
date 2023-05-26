@@ -2379,6 +2379,13 @@
                 .hpp__sub-title {
                     margin-bottom: .375rem;
                     max-width: 42ch;
+
+                    br{
+                        display: none;
+                        @media screen and (min-width: 500px) {
+                            display: block;
+                    }
+                }
                 }
 
                 .hpp__normal-text {
