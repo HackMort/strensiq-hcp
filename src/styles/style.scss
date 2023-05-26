@@ -115,6 +115,9 @@
 }
 
 // Clinical data page - Overview
+.mtable{
+    @media screen and (min-width:900px){margin-right: 2.3rem;}
+}
 .clinical-data-overview {
     &__page-hero {
         .page-hero__title {
@@ -554,7 +557,7 @@
     }
 
     .shape--secondary {
-        background-color: #48D597;
+        background-color: #91E6C1;
     }
 
     .shape--tertiary {
@@ -601,10 +604,28 @@
         .custom-title {
             @media screen and (min-width: 1024px) {
                 width: 100vw;
+
+
+                &__text {
+                    max-width: 50% !important;
+
+                    &::after {
+                        max-width: 13.5rem !important;
+                    }
+
+                    br {
+                        display: block !important;
+                    }
+                }
+
             }
 
             &__text {
                 max-width: 33ch;
+
+                br {
+                    display: none;
+                }
             }
         }
     }
@@ -625,6 +646,10 @@
             @media screen and (min-width: 1000px) {
                 width: 100%;
                 margin-top: 6rem;
+            }
+
+            .custom-title__text {
+                padding-top: 1rem;
             }
         }
     }
@@ -768,11 +793,13 @@
     }
 
     &--title1 {
-        font-size: .875rem;
-        line-height: 1.05rem;
+        font-size: 1rem;
+        line-height: 1.3rem;
         margin: 1.6875rem 0 1.1875rem;
         max-width: 41ch;
         text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.5px;
 
         @media screen and (min-width: 1024px) {
             font-size: 1.25rem;
@@ -846,7 +873,15 @@
 
     &__list-mobility {
         @media screen and (min-width: 1000px) {
-            margin-top: 3rem;
+            margin-top: 8.5rem;
+        }
+
+        @media screen and (min-width: 1200px) {
+            margin-top: 7.5rem;
+        }
+
+        @media screen and (min-width: 1400px) {
+            margin-top: 7rem;
         }
     }
 
@@ -879,6 +914,7 @@
         .custom-title {
             @media screen and (min-width: 1000px) {
                 width: 100vw;
+                padding: 1.3rem 0 1.5rem 1.5rem;
             }
 
             &__text {
@@ -922,6 +958,7 @@
             &-span {
                 font-size: 2rem;
                 margin-left: -6px;
+                letter-spacing: -0.03em;
             }
 
             .highlight-information__content {
@@ -936,6 +973,10 @@
                     margin: 1rem 0 0 0;
                 }
 
+                span {
+                    font-weight: 400;
+                }
+
             }
 
             .highlight-information__title {
@@ -947,10 +988,12 @@
 
         &--paragraph {
             margin-top: 1rem;
+            max-width: 39ch;
 
 
             @media screen and (min-width: 1024px) {
                 font-size: 1.125rem;
+                line-height: 1.6875rem;
                 max-width: 51ch;
             }
         }
@@ -1015,6 +1058,11 @@
             background-color: transparent;
             padding: 0;
             margin: 5rem auto 0 auto;
+        }
+
+        &-container {
+            position: relative;
+            z-index: 2;
         }
     }
 
@@ -1178,6 +1226,10 @@
                 max-width: 23.4375rem;
             }
 
+            .highlight-information--rise-test {
+                max-width: 16.7rem;
+            }
+
             .highlight-information__content {
                 font-size: 3.125rem;
                 line-height: 3.9063rem;
@@ -1229,7 +1281,6 @@
 
         &--graph {
             background-color: $color-white;
-            padding-top: 1rem;
             padding-bottom: 1rem;
 
             &-paragraph {
@@ -1237,13 +1288,17 @@
                 line-height: .9rem;
                 margin-top: 1rem;
                 text-align: left;
-                padding-left: 1.25rem;
+                padding-left: 14%;
 
                 sup {
                     font-size: 10px;
                     line-height: .9375rem;
                     top: -0.3125rem;
                 }
+            }
+
+            &-img {
+                padding: 0 0.5rem;
             }
 
             .pinch-to-zoom .pinch-to-zoom__button-container {
@@ -1272,8 +1327,21 @@
 
 
         &--img {
-            margin: 1.25rem 0 1rem 0;
-            max-width: 400px;
+            margin: 1rem 2rem 2rem;
+            max-width: 80%;
+
+            @media screen and (min-width: 1000px) {
+                margin: 1.25rem 0 1rem 2rem;
+                max-width: 16.9719rem;
+            }
+
+            &--left {
+                margin: 1rem 2rem 2rem;
+
+                @media screen and (min-width: 1000px) {
+                    margin-left: 0;
+                }
+            }
         }
 
         &--button {
@@ -1282,9 +1350,25 @@
         }
     }
 
-    /* &__CHAIR-RISE--highlight {
-        max-width: 80% !important;
-    } */
+    &__CHAIR-RISE--highlight {
+
+        .highlight-information {
+            max-width: 18.7rem !important;
+
+            @media screen and (max-width: 999px) {
+                max-width: 100% !important;
+            }
+        }
+
+        .clinical-data-adults__6MWT--img {
+            margin-right: 0 !important;
+            max-width: 22.1875rem;
+
+            @media screen and (max-width: 999px) {
+                max-width: 80% !important;
+            }
+        }
+    }
 
     &--clinical-data-table {
         margin: 2rem 2rem;
@@ -2080,6 +2164,7 @@
             font-size: 1.125rem;
             line-height: 1.375rem;
             color: $color-dark-gray;
+            /* color: #828388; */
             margin-bottom: .5rem;
             max-width: 39.6875rem;
 
@@ -2114,8 +2199,8 @@
         &__normal-text {
             font-style: normal;
             font-weight: 300;
-            font-size: .875rem;
-            line-height: 1.125rem;
+            font-size: 18px;
+            line-height: 27px;
             margin-bottom: .9375rem;
             max-width: 39.6875rem;
 
@@ -2132,14 +2217,21 @@
             font-style: normal;
             font-weight: 300;
             font-size: .875rem;
-            line-height: 125%;
+            line-height: 150%;
             color: $color-dark-gray;
             margin-left: 1rem;
             margin-right: 1rem;
             margin-bottom: .25rem;
+            max-width: 570px;
 
             @media screen and (min-width:768px) {
                 font-size: 1.125rem;
+            }
+
+            &.dmodifier {
+                @media screen and (min-width:1400px) {
+                    max-width: 474px;
+                }
             }
         }
 
@@ -2147,7 +2239,8 @@
             font-style: normal;
             font-weight: 300;
             font-size: .875rem;
-            line-height: 125%;
+            /* line-height: 125%; */
+            line-height: 150%;
             color: $color-dark-gray;
             margin-top: 1.0625rem;
             margin-right: 1rem;
@@ -2159,9 +2252,20 @@
                 font-size: 1.125rem;
             }
 
+            @media screen and (min-width:1024px) {
+                margin-bottom: 38px;
+            }
+
+            &.nosubmod {
+                @media screen and (min-width:1400px) {
+                    margin-bottom: 31px;
+                }
+            }
+
             &.modifier {
                 @media screen and (min-width:1024px) {
                     margin-bottom: .875rem;
+
                 }
 
                 @media screen and (min-width:1400px) {
@@ -2174,7 +2278,7 @@
             font-style: normal;
             font-weight: 300;
             font-size: .875rem;
-            line-height: 1.125rem;
+            line-height: 150%;
             color: $color-dark-gray;
             margin-left: 2.75rem;
             margin-bottom: 1.75rem;
@@ -2191,6 +2295,12 @@
                 margin-bottom: 1.6875rem;
             }
 
+            &.dmodifier {
+                @media screen and (min-width:1400px) {
+                    max-width: 533px;
+                }
+            }
+
             @media screen and (min-width:768px) {
                 font-size: 1.125rem;
                 max-width: unset;
@@ -2198,7 +2308,16 @@
 
             @media screen and (min-width:1024px) {
                 margin-top: 1rem;
-                margin-bottom: 1.3125rem;
+                margin-bottom: 15px;
+                max-width: 459px;
+                margin-left: 71px;
+            }
+
+            &.modifier2 {
+                @media screen and (min-width:1024px) {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
             }
         }
 
@@ -2237,6 +2356,12 @@
                 position: unset;
                 width: unset;
             }
+
+            &.modifier img {
+                @media screen and (min-width:675px) {
+                    max-height: 353px;
+                }
+            }
         }
 
         &__container {
@@ -2247,7 +2372,7 @@
                 justify-content: space-between;
 
                 :first-child {
-                    width: 27.0625rem;
+                    width: 410px;
                     margin-right: .3125rem;
                     margin-top: .1875rem;
 
@@ -2275,11 +2400,12 @@
         .hpp__image {
             &.modifier {
                 @media screen and (min-width:1024px) {
-                    margin-top: 7rem;
+                    margin-top: 126px;
                 }
 
                 @media screen and (min-width:1400px) {
-                    margin-top: 5.05rem;
+                    margin-top: 125px;
+                    max-height: 353px;
                 }
             }
         }
@@ -2341,10 +2467,24 @@
                 .hpp__sub-title {
                     margin-bottom: .375rem;
                     max-width: 42ch;
+
+                    br {
+                        display: none;
+
+                        @media screen and (min-width: 500px) {
+                            display: block;
+                        }
+                    }
                 }
 
                 .hpp__normal-text {
                     max-width: 61ch;
+                }
+
+                .hpp__block--left img {
+                    @media screen and (min-width: 1400px) {
+                        max-height: 353px;
+                    }
                 }
             }
         }
@@ -2386,6 +2526,8 @@
                     }
                 }
             }
+
+
         }
 
         .hpp__image-disclaimer--fifth {
@@ -2399,6 +2541,10 @@
                 display: none;
             }
         }
+    }
+
+    sub {
+        margin-right: 0 !important;
     }
 }
 
@@ -2595,6 +2741,11 @@
 
     @include media ('desktop') {
         padding-bottom: 2.25rem;
+    }
+
+    .html-symbol {
+        color: $color-dark-gray;
+        font-weight: 200;
     }
 
     &__tabs-container {
@@ -3016,6 +3167,7 @@
                     font-size: .875rem;
                     line-height: 1.0938rem;
                     max-width: 35ch;
+                    margin-bottom: .625rem;
 
                     strong {
                         font-size: 1rem;
@@ -3685,7 +3837,7 @@
         background-color: $color-dark-green;
         z-index: 1;
 
-        @media (min-width: 870px) {
+        @media (min-width: 1024px) {
             display: flex;
             justify-content: center;
             width: 100%;
@@ -3705,7 +3857,7 @@
         padding: 3.125rem 0 0;
 
 
-        @media (min-width: 870px) {
+        @media (min-width: 1024px) {
             background-color: transparent;
             display: flex
         }
@@ -3715,13 +3867,14 @@
 
             .skeleton__word {
                 font-size: 1.875rem;
+                line-height: 2.5rem;
             }
         }
     }
 
     .skeleton--mobile {
 
-        @media (min-width: 870px) {
+        @media (min-width: 1024px) {
             display: none;
         }
     }
@@ -3844,7 +3997,7 @@
 
                 .shape-body {
                     font-style: normal;
-                    font-weight: 900;
+                    font-weight: 400;
                     font-size: 3.75rem;
                     line-height: 3.1875rem;
                     letter-spacing: -0.03em;
@@ -5011,6 +5164,13 @@
 }
 
 //------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
+.clinical-data-adolescents__page-hero {
+    .shape--primary {
+        width: 392px;
+        max-width: unset;
+        border-radius: 0rem 1.9375rem 8.9375rem 0rem;
+    }
+}
 
 .adolescents__hpp-related-rickets,
 .adolescents__mobility {
