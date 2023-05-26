@@ -554,7 +554,7 @@
     }
 
     .shape--secondary {
-        background-color: #48D597;
+        background-color: #91E6C1;
     }
 
     .shape--tertiary {
@@ -601,10 +601,28 @@
         .custom-title {
             @media screen and (min-width: 1024px) {
                 width: 100vw;
+
+
+                &__text {
+                    max-width: 50% !important;
+
+                    &::after {
+                        max-width: 13.5rem !important;
+                    }
+
+                    br {
+                        display: block !important;
+                    }
+                }
+
             }
 
             &__text {
                 max-width: 33ch;
+
+                br {
+                    display: none;
+                }
             }
         }
     }
@@ -625,6 +643,10 @@
             @media screen and (min-width: 1000px) {
                 width: 100%;
                 margin-top: 6rem;
+            }
+
+            .custom-title__text {
+                padding-top: 1rem;
             }
         }
     }
@@ -768,11 +790,13 @@
     }
 
     &--title1 {
-        font-size: .875rem;
-        line-height: 1.05rem;
+        font-size: 1rem;
+        line-height: 1.3rem;
         margin: 1.6875rem 0 1.1875rem;
         max-width: 41ch;
         text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.5px;
 
         @media screen and (min-width: 1024px) {
             font-size: 1.25rem;
@@ -846,7 +870,7 @@
 
     &__list-mobility {
         @media screen and (min-width: 1000px) {
-            margin-top: 3rem;
+            margin-top: 5.6rem;
         }
     }
 
@@ -879,6 +903,7 @@
         .custom-title {
             @media screen and (min-width: 1000px) {
                 width: 100vw;
+                padding: 1.3rem 0 1.5rem 1.5rem;
             }
 
             &__text {
@@ -922,6 +947,7 @@
             &-span {
                 font-size: 2rem;
                 margin-left: -6px;
+                letter-spacing: -0.03em;
             }
 
             .highlight-information__content {
@@ -936,6 +962,10 @@
                     margin: 1rem 0 0 0;
                 }
 
+                span {
+                    font-weight: 400;
+                }
+
             }
 
             .highlight-information__title {
@@ -947,6 +977,7 @@
 
         &--paragraph {
             margin-top: 1rem;
+            max-width: 39ch;
 
 
             @media screen and (min-width: 1024px) {
@@ -1015,6 +1046,11 @@
             background-color: transparent;
             padding: 0;
             margin: 5rem auto 0 auto;
+        }
+
+        &-container {
+            position: relative;
+            z-index: 2;
         }
     }
 
@@ -1178,6 +1214,10 @@
                 max-width: 23.4375rem;
             }
 
+            .highlight-information--rise-test {
+                max-width: 16.7rem;
+            }
+
             .highlight-information__content {
                 font-size: 3.125rem;
                 line-height: 3.9063rem;
@@ -1229,7 +1269,6 @@
 
         &--graph {
             background-color: $color-white;
-            padding-top: 1rem;
             padding-bottom: 1rem;
 
             &-paragraph {
@@ -1237,13 +1276,17 @@
                 line-height: .9rem;
                 margin-top: 1rem;
                 text-align: left;
-                padding-left: 1.25rem;
+                padding-left: 14%;
 
                 sup {
                     font-size: 10px;
                     line-height: .9375rem;
                     top: -0.3125rem;
                 }
+            }
+
+            &-img {
+                padding: 0 0.5rem;
             }
 
             .pinch-to-zoom .pinch-to-zoom__button-container {
@@ -1272,8 +1315,19 @@
 
 
         &--img {
-            margin: 1.25rem 0 1rem 0;
-            max-width: 400px;
+            margin: 1rem 2rem 2rem;
+            max-width: 80%;
+            @media screen and (min-width: 1000px) {
+                margin: 1.25rem 0 1rem 2rem;
+                max-width: 50%;
+            }
+
+            &--left {
+                margin: 1rem 2rem 2rem;
+                @media screen and (min-width: 1000px) {
+                    margin-left: 0;
+                }
+            }
         }
 
         &--button {
@@ -1282,9 +1336,24 @@
         }
     }
 
-    /* &__CHAIR-RISE--highlight {
-        max-width: 80% !important;
-    } */
+    &__CHAIR-RISE--highlight {
+
+        .highlight-information {
+            max-width: 18.7rem !important;
+            @media screen and (max-width: 999px) {
+                max-width: 100% !important;
+            }
+        }
+
+        .clinical-data-adults__6MWT--img {
+            margin-right: 0 !important;
+            max-width: 58%;
+
+            @media screen and (max-width: 999px) {
+                max-width: 80% !important;
+            }
+        }
+    }
 
     &--clinical-data-table {
         margin: 2rem 2rem;
