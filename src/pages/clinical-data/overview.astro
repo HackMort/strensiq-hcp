@@ -224,6 +224,7 @@ import References from "../../components/References.astro";
         STRENSIQ Prescribing Information<sup>1,a</sup>
       </h4>
       <!-- TODO: Is necesary to refactor title prop in Table component to be able to send html -->
+      <div class="mtable">
       <Table className="safety-table">
         <TableHeader
           slot="header"
@@ -232,6 +233,7 @@ import References from "../../components/References.astro";
         />
         <TableData slot="body" data={data} className="no-padding" />
       </Table>
+    </div>
     </div>
 
     <div
