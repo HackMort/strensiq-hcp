@@ -2080,6 +2080,7 @@
             font-size: 1.125rem;
             line-height: 1.375rem;
             color: $color-dark-gray;
+            /* color: #828388; */
             margin-bottom: .5rem;
             max-width: 39.6875rem;
 
@@ -2114,8 +2115,8 @@
         &__normal-text {
             font-style: normal;
             font-weight: 300;
-            font-size: .875rem;
-            line-height: 1.125rem;
+            font-size: 18px;
+            line-height: 27px;
             margin-bottom: .9375rem;
             max-width: 39.6875rem;
 
@@ -2132,14 +2133,21 @@
             font-style: normal;
             font-weight: 300;
             font-size: .875rem;
-            line-height: 125%;
+            line-height: 150%;
             color: $color-dark-gray;
             margin-left: 1rem;
             margin-right: 1rem;
             margin-bottom: .25rem;
+            max-width: 570px;
 
             @media screen and (min-width:768px) {
                 font-size: 1.125rem;
+            }
+
+            &.dmodifier {
+                @media screen and (min-width:1400px) {
+                    max-width: 474px;
+                }
             }
         }
 
@@ -2147,7 +2155,8 @@
             font-style: normal;
             font-weight: 300;
             font-size: .875rem;
-            line-height: 125%;
+            /* line-height: 125%; */
+            line-height: 150%;
             color: $color-dark-gray;
             margin-top: 1.0625rem;
             margin-right: 1rem;
@@ -2159,9 +2168,20 @@
                 font-size: 1.125rem;
             }
 
+            @media screen and (min-width:1024px) {
+                margin-bottom: 38px;
+            }
+
+            &.nosubmod {
+                @media screen and (min-width:1400px) {
+                    margin-bottom: 31px;
+                }
+            }
+
             &.modifier {
                 @media screen and (min-width:1024px) {
                     margin-bottom: .875rem;
+
                 }
 
                 @media screen and (min-width:1400px) {
@@ -2174,7 +2194,7 @@
             font-style: normal;
             font-weight: 300;
             font-size: .875rem;
-            line-height: 1.125rem;
+            line-height: 150%;
             color: $color-dark-gray;
             margin-left: 2.75rem;
             margin-bottom: 1.75rem;
@@ -2191,6 +2211,12 @@
                 margin-bottom: 1.6875rem;
             }
 
+            &.dmodifier {
+                @media screen and (min-width:1400px) {
+                    max-width: 533px;
+                }
+            }
+
             @media screen and (min-width:768px) {
                 font-size: 1.125rem;
                 max-width: unset;
@@ -2198,7 +2224,16 @@
 
             @media screen and (min-width:1024px) {
                 margin-top: 1rem;
-                margin-bottom: 1.3125rem;
+                margin-bottom: 15px;
+                max-width: 459px;
+                margin-left: 71px;
+            }
+
+            &.modifier2 {
+                @media screen and (min-width:1024px) {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
             }
         }
 
@@ -2237,6 +2272,12 @@
                 position: unset;
                 width: unset;
             }
+
+            &.modifier img {
+                @media screen and (min-width:675px) {
+                    max-height: 353px;
+                }
+            }
         }
 
         &__container {
@@ -2247,7 +2288,7 @@
                 justify-content: space-between;
 
                 :first-child {
-                    width: 27.0625rem;
+                    width: 410px;
                     margin-right: .3125rem;
                     margin-top: .1875rem;
 
@@ -2275,11 +2316,12 @@
         .hpp__image {
             &.modifier {
                 @media screen and (min-width:1024px) {
-                    margin-top: 7rem;
+                    margin-top: 126px;
                 }
 
                 @media screen and (min-width:1400px) {
-                    margin-top: 5.05rem;
+                    margin-top: 125px;
+                    max-height: 353px;
                 }
             }
         }
@@ -2341,10 +2383,24 @@
                 .hpp__sub-title {
                     margin-bottom: .375rem;
                     max-width: 42ch;
+
+                    br {
+                        display: none;
+
+                        @media screen and (min-width: 500px) {
+                            display: block;
+                        }
+                    }
                 }
 
                 .hpp__normal-text {
                     max-width: 61ch;
+                }
+
+                .hpp__block--left img {
+                    @media screen and (min-width: 1400px) {
+                        max-height: 353px;
+                    }
                 }
             }
         }
@@ -2386,6 +2442,8 @@
                     }
                 }
             }
+
+
         }
 
         .hpp__image-disclaimer--fifth {
@@ -2399,6 +2457,10 @@
                 display: none;
             }
         }
+    }
+
+    sub {
+        margin-right: 0 !important;
     }
 }
 
@@ -5018,6 +5080,13 @@
 }
 
 //------------------------------------------------------------- Clinical data - infants young children page -------------------------------------------------------------
+.clinical-data-adolescents__page-hero {
+    .shape--primary {
+        width: 392px;
+        max-width: unset;
+        border-radius: 0rem 1.9375rem 8.9375rem 0rem;
+    }
+}
 
 .adolescents__hpp-related-rickets,
 .adolescents__mobility {
