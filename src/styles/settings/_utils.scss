@@ -127,6 +127,11 @@
         display: none;
     }
 }
+.xl\:block {
+    @media screen and (min-width: 1440px) {
+        display: block;
+    }
+}
 
 .font-thin {
     font-weight: 200 !important;

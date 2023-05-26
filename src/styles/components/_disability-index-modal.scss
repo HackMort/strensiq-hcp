@@ -1,11 +1,10 @@
 .disability-index-modal {
-    background-color: $color-slate-gray;
+    background-color: $color-hit-gray;
     border-radius: 1.875rem;
     color: $color-white;
     height: 100%;
     margin: 0 auto;
-    max-height: 42.3125rem;
-    max-width: 20.5rem;
+    max-height: 23.125rem;
     overflow: hidden;
     padding: 0;
     position: relative;
@@ -17,7 +16,8 @@
 
     @media screen and (min-width: 768px) {
         max-width: 95%;
-        height: 31.875rem;
+        max-height: 37.625rem;
+        // height: 31.875rem;
     }
 
     @media screen and (min-width: 1366px) {
@@ -74,7 +74,8 @@
         height: fit-content;
         line-height: 1.2581rem;
         margin: auto 0;
-        padding-left: 4.0625rem;
+        //padding-left: 4.0625rem;
+        padding-left: 1.9rem;
         position: absolute;
         text-align: center;
         top: 0;
@@ -96,15 +97,17 @@
         sup {
             font-size: .75rem;
             line-height: .6863rem;
-            right: .3125rem;
+            // right: .3125rem;
+            right: -0.4rem;
             letter-spacing: -0.03em;
-            top: -1rem;
+            // top: -1rem;
+            top: -0.5rem;
 
             @media (min-width: 1200px) {
-                font-size: 1.875rem;
+                font-size: 20px;
                 line-height: 1.7156rem;
-                right: 0;
-                top: -1.5rem;
+                right: -5px;
+                top: -.75rem;
             }
         }
     }
@@ -120,7 +123,7 @@
         z-index: 1;
 
         &::before {
-            --width-line: .9375rem;
+            --width-line: 1.9375rem;
             --position-line: calc(var(--width-line) * -1);
             border-top: 3px dashed $color-white;
             content: '';
@@ -137,14 +140,14 @@
             top: 0;
 
             &::before {
-                --width-line: 1rem;
+                --width-line: 1.8rem;
                 bottom: 0;
                 margin: auto 0;
                 top: 0;
                 left: var(--position-line);
 
                 @media (min-width: 425px) {
-                    --width-line: 3.75rem;
+                    //--width-line: 3.75rem;
                 }
             }
         }
@@ -276,7 +279,7 @@
             &[data-word="grip"] {
 
                 &::before {
-                    --width-line: 7.8125rem;
+                    --width-line: 7rem;
                     --position-line: calc((var(--width-line) * -1) - .3125rem)
                 }
             }
@@ -363,7 +366,7 @@
 
             &[data-word="activities"] {
                 &::before {
-                    --width-line: 3rem;
+                    --width-line: 4rem;
                 }
             }
 
