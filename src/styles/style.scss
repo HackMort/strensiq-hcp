@@ -115,6 +115,9 @@
 }
 
 // Clinical data page - Overview
+.mtable{
+    @media screen and (min-width:900px){margin-right: 2.3rem;}
+}
 .clinical-data-overview {
     &__page-hero {
         .page-hero__title {
