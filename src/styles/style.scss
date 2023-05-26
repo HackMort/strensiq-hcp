@@ -2659,6 +2659,11 @@
         padding-bottom: 2.25rem;
     }
 
+    .html-symbol {
+        color: $color-dark-gray;
+        font-weight: 200;
+    }
+
     &__tabs-container {
         @include media('desktop') {
             padding-top: 1.5625rem;
@@ -3078,6 +3083,7 @@
                     font-size: .875rem;
                     line-height: 1.0938rem;
                     max-width: 35ch;
+                    margin-bottom: .625rem;
 
                     strong {
                         font-size: 1rem;
@@ -3747,7 +3753,7 @@
         background-color: $color-dark-green;
         z-index: 1;
 
-        @media (min-width: 870px) {
+        @media (min-width: 1024px) {
             display: flex;
             justify-content: center;
             width: 100%;
@@ -3767,7 +3773,7 @@
         padding: 3.125rem 0 0;
 
 
-        @media (min-width: 870px) {
+        @media (min-width: 1024px) {
             background-color: transparent;
             display: flex
         }
@@ -3777,13 +3783,14 @@
 
             .skeleton__word {
                 font-size: 1.875rem;
+                line-height: 2.5rem;
             }
         }
     }
 
     .skeleton--mobile {
 
-        @media (min-width: 870px) {
+        @media (min-width: 1024px) {
             display: none;
         }
     }
@@ -3906,7 +3913,7 @@
 
                 .shape-body {
                     font-style: normal;
-                    font-weight: 900;
+                    font-weight: 400;
                     font-size: 3.75rem;
                     line-height: 3.1875rem;
                     letter-spacing: -0.03em;
