@@ -3532,10 +3532,6 @@
                 color: $color-dark-green;
             }
         }
-
-        &__content {
-            font-weight: 400;
-        }
     }
 
     .information {
@@ -3855,7 +3851,7 @@
 
                 .shape-body {
                     font-style: normal;
-                    font-weight: 900;
+                    font-weight: 400;
                     font-size: 3.75rem;
                     line-height: 3.1875rem;
                     letter-spacing: -0.03em;
