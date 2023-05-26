@@ -1,7 +1,7 @@
 .clinical-study {
     position: relative;
     padding-bottom: 1.25rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.75rem;
 
     &::after {
         content: "";
@@ -28,7 +28,6 @@
 
     .clinical-study__results {
         display: flex;
-        margin-bottom: .5rem;
 
         .clinical-study__result {
 
@@ -63,11 +62,11 @@
                 color: $color-dark-green;
                 font-weight: 900;
                 font-size: 3.75rem;
-                line-height: 50px;
+                line-height: 45px;
 
                 display: inline-flex;
                 align-items: baseline;
-
+                padding-top: 0.3rem;
                 span{
                     font-size: 32px;
                     margin-left: 8px;
