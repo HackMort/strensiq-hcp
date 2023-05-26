@@ -115,9 +115,12 @@
 }
 
 // Clinical data page - Overview
-.mtable{
-    @media screen and (min-width:900px){margin-right: 2.3rem;}
+.mtable {
+    @media screen and (min-width:900px) {
+        margin-right: 2.3rem;
+    }
 }
+
 .clinical-data-overview {
     &__page-hero {
         .page-hero__title {
@@ -5591,7 +5594,7 @@
 
         @media screen and (min-width: 1024px) {
             width: 59ch;
-            padding-left: 1.4%;
+            padding-left: 0.8rem;
         }
     }
 }
