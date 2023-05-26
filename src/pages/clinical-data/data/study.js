@@ -1,7 +1,7 @@
 // Table data
 const studyData = [
   {
-    text: ['<div style="font-weight:bold;">Age at inclusion</div>', '<span class="font-thin">&#8804;</span>3 years', '<span class="font-thin">&#8804;</span>5 years', '6-12 years', '≥13 years'],
+    text: ['<div style="font-weight:bold;">Age at inclusion</div>', '<span class="font-thin">&#8804;</span>3 years', '<span class="font-thin">&#8804;</span>5 years', '6-12 years', '13-65 years'],
     classModifier: ['mh']
   },
   {
@@ -35,11 +35,11 @@ const studyData = [
     classModifier: ['mh', 'mb']
   },
   {
-    text: ['Primary treatment phase', '6 months', '1-6 years', '6 months', '6 months'],
+    text: ['<div style="color: #626469">Primary treatment phase</div>', '6 months', '1-6 years', '6 months', '6 months'],
     classModifier: ['mh']
   },
   {
-    text: ['Extension', '6.5 years', '1-6 years', '6 months', '6 months'],
+    text: ['<div style="color: #626469">Extension</div>', '6.5 years', '1-6 years', '6.5 years', '4.5 years'],
     classModifier: ['mh']
   },
   {
