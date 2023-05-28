@@ -4344,7 +4344,9 @@
 
             span {
                 @media screen and (min-width: 1440px) {
-                    font-size: 3.625rem;
+                    font-size: 50px;
+                    display: block;
+                    width: 42.6131rem;
                 }
             }
         }
@@ -4359,6 +4361,9 @@
             letter-spacing: 0.05em;
             margin-top: .25rem;
             color: $color-white;
+            @media screen and (min-width: 1440px) {
+                margin-top: -7px;
+            }
         }
 
         &__text {
@@ -4455,6 +4460,7 @@
         font-size: .875rem;
         line-height: 1.125rem;
         margin-top: 1rem;
+        color: #626469;
 
         @media screen and (min-width: 768px) {
             &:nth-child(3) {
@@ -4576,6 +4582,7 @@
         font-size: .875rem;
         line-height: 1.125rem;
         margin-top: 1rem;
+        color: #626469;
 
         @media screen and (min-width: 768px) {
             margin-left: .9375rem;
