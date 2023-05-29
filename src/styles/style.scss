@@ -189,8 +189,16 @@
                     padding: 0.9375rem .25rem;
                 }
 
+                th.buttons-container {
+                    @media screen and (min-width: 1024px) {
+                        display: table-cell;
+                        width: 330px;
+                    }
+                }
+
                 .buttons-container {
                     display: flex;
+
                     .button {
                         margin-left: .25rem;
                         margin-right: .25rem;
