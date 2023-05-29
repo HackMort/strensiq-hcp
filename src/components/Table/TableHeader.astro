@@ -52,6 +52,7 @@ const { mainHeaders = [], subHeaders = [], subSubHeaders = [] } = Astro.props;
 {
     mainHeaders && subHeaders ? (
         <thead>
+            <slot name="aditional-header"/>
             {mainHeaders && (
                 <tr class="table__header--mh">
                     {mainHeaders.map((header: any) => (
