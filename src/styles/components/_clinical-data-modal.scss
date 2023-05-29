@@ -56,7 +56,15 @@
         }
 
         @media screen and (min-width: 1024px) {
-            max-width: 30rem;
+            max-width: 24rem;
+        }
+
+        @media screen and (min-width: 1300px) {
+            max-width: 25.5rem;
+        }
+
+        @media screen and (min-width: 1400px) {
+            max-width: 28rem;
         }
     }
 
@@ -141,9 +149,9 @@
                 }
 
                 :first-child {
-                    color: $color-dark-gray!important;
+                    color: $color-dark-gray !important;
                     font-weight: 300;
-                    padding-left: 0!important;
+                    padding-left: 0 !important;
                 }
 
                 &--head {
@@ -152,7 +160,7 @@
                 }
 
                 sup {
-                    padding: 0!important;
+                    padding: 0 !important;
                 }
 
                 @include media('tablet') {
@@ -167,7 +175,7 @@
         }
 
         &__content {
-            p{
+            p {
                 font-size: inherit;
                 line-height: inherit;
                 padding-top: 0 !important;
@@ -191,7 +199,7 @@
             }
 
             strong {
-                font-weight: bold!important;
+                font-weight: bold !important;
                 padding: 0 !important;
             }
 
