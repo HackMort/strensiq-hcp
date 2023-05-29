@@ -3968,10 +3968,24 @@ aqui
             line-height: 1.6875rem;
             letter-spacing: -0.0313rem;
             color: $color-dark-gray;
+            br{
+                display: none;
+            }
 
+            @media screen and (min-width: 358px) {
+                br{
+                    display: block;
+                }
+            }
+            @media screen and (min-width: 376px) {
+                br{
+                    display: none;
+                }
+            }
             @media screen and (min-width: 1300px) {
                 margin-left: 4rem;
             }
+            
         }
 
         &__shapes {
@@ -4348,7 +4362,7 @@ aqui
             }
 
             span {
-                @media screen and (min-width: 1440px) {
+                @media screen and (min-width: 1400px) {
                     font-size: 50px;
                     display: block;
                     width: 42.6131rem;
