@@ -179,40 +179,40 @@ function highlightActiveInternalNavOnScroll (headerInnerHeight) {
   * It requires IntersectionObserver API
   * * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 */
-async function setActiveIternalNavItemOnClick() {
-  const internalNav = document.querySelector(".internal__nav");
+async function setActiveIternalNavItemOnClick () {
+  const internalNav = document.querySelector('.internal__nav')
 
   internalNav &&
-    internalNav.addEventListener("click", (e) => {
-      e.preventDefault();
-      const target = e.target;
+    internalNav.addEventListener('click', (e) => {
+      e.preventDefault()
+      const target = e.target
 
-      if (target.tagName === "A") {
-        const sectionID = target.getAttribute("href");
-        if (sectionID !== "#") {
-          const targetSection = document.querySelector(sectionID);
+      if (target.tagName === 'A') {
+        const sectionID = target.getAttribute('href')
+        if (sectionID !== '#') {
+          const targetSection = document.querySelector(sectionID)
 
-          let marginTop = 330;
+          let marginTop = 330
 
           if (window.pageYOffset > 0) {
             targetSection.getBoundingClientRect().top <= 0
               ? (marginTop = 225)
-              : (marginTop = 100);
+              : (marginTop = 100)
           }
 
           // Scroll to section
           const totalOffset =
             targetSection.getBoundingClientRect().top +
             window.pageYOffset -
-            marginTop;
+            marginTop
 
           window.scrollTo({
             top: totalOffset,
-            behavior: "smooth",
-          });
+            behavior: 'smooth'
+          })
         }
       }
-    });
+    })
 }
 
 /* Change CSS variable for top position of the
