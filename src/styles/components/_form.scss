@@ -136,6 +136,7 @@ input {
             transform: translateY(-50%);
             right: 1.25rem;
             transition: transform 200ms ease-in-out;
+            z-index: -1;
         }
 
         .form__control-select {

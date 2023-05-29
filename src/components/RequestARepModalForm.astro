@@ -127,11 +127,13 @@
                 placeholder="*Phone Number"
                 required
                 aria-required="true"
-                pattern="^[0-9]+"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                 onblur="validateFormControl(event)"
                 onchange="validateFormControl(event)"
               />
-              <p class="form__control-error">Please enter phone number</p>
+              <p class="form__control-error">
+                Please enter a valid phone number
+              </p>
             </div>
             <div
               class="form__control"
@@ -228,7 +230,7 @@
             <div
               class="form__control"
               data-touched="false"
-              data-required="true"
+              data-required="false"
               data-is-valid="false"
             >
               <input
@@ -236,9 +238,8 @@
                 type="text"
                 id="npi-number"
                 name="npi-number"
-                placeholder="*NPI Number"
-                required
-                aria-required="true"
+                placeholder="NPI Number"
+                aria-required="false"
                 pattern="^[0-9]+"
                 onblur="validateFormControl(event)"
                 onchange="validateFormControl(event)"
