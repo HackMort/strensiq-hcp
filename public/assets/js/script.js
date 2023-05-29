@@ -179,55 +179,40 @@ function highlightActiveInternalNavOnScroll (headerInnerHeight) {
   * It requires IntersectionObserver API
   * * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 */
-function setActiveIternalNavItemOnClick () {
+async function setActiveIternalNavItemOnClick () {
   const internalNav = document.querySelector('.internal__nav')
-  const internalNavItems = document.querySelectorAll('.internal__nav_list_item')
 
   internalNav &&
-  internalNav.addEventListener('click', (e) => {
-    e.preventDefault()
-    const target = e.target
+    internalNav.addEventListener('click', (e) => {
+      e.preventDefault()
+      const target = e.target
 
-    if (target.tagName === 'A') {
-      const sectionID = target.getAttribute('href')
-      if (sectionID !== '#') {
-        const targetSection = document.querySelector(sectionID)
+      if (target.tagName === 'A') {
+        const sectionID = target.getAttribute('href')
+        if (sectionID !== '#') {
+          const targetSection = document.querySelector(sectionID)
 
-        const internalNav = document.querySelector('.internal__nav')
-        const headerInner = document.querySelector('.header__inner')
-        const headerInnerStyles = getComputedStyle(headerInner)
-        const internalNavStyles = getComputedStyle(internalNav)
-        const headerInnerHeight = parseInt(headerInnerStyles.getPropertyValue('height').slice(0, -2))
-        const internalNavHeight = parseInt(internalNavStyles.getPropertyValue('height').slice(0, -2))
-        let openedMenuExtraHeight = screen.width < 1200 ? 77 : 119
-        if (window.pageYOffset === 0) {
-          openedMenuExtraHeight -= 160
+          let marginTop = 330
+
+          if (window.pageYOffset > 0) {
+            targetSection.getBoundingClientRect().top <= 0
+              ? (marginTop = 225)
+              : (marginTop = 100)
+          }
+
+          // Scroll to section
+          const totalOffset =
+            targetSection.getBoundingClientRect().top +
+            window.pageYOffset -
+            marginTop
+
+          window.scrollTo({
+            top: totalOffset,
+            behavior: 'smooth'
+          })
         }
-        /* console.log(targetSection.getBoundingClientRect().top)
-        console.log(window.pageYOffset) */
-        if (targetSection.getBoundingClientRect().top > 0) {
-          openedMenuExtraHeight *= -1
-        }
-        // const openedMenuExtraHeight = screen.width < 1200 ? 118.469 : 167.4
-        // Scroll to section
-        const totalOffset = targetSection.getBoundingClientRect().top + window.pageYOffset - (headerInnerHeight + internalNavHeight + openedMenuExtraHeight)
-
-        window.scrollTo({
-          top: totalOffset,
-          behavior: 'smooth'
-        })
       }
-    }
-
-    // Remove class is--active from all internal navigation items
-    internalNavItems.forEach((item) => {
-      item.classList.remove('is--active')
     })
-
-    if (!internalNav.classList.contains('is--fixed')) {
-      internalNav.classList.add('is--fixed')
-    }
-  })
 }
 
 /* Change CSS variable for top position of the
