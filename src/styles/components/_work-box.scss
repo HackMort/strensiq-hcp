@@ -1,32 +1,42 @@
-.work-box{
+.work-box {
     background-color: $color-dark-green;
     max-width: 18.5rem;
     height: 6.25rem;
     margin: auto;
     display: flex;
     align-items: center;
-    padding-top: .8125rem;    
-    padding-bottom: .8125rem;    
-    padding-right: .5rem;   
-    
+
+
     @media screen and (min-width:350px) {
-    max-width: 21.5rem;
+        max-width: 21.5rem;
     }
 
     @include media('tablet') {
+        position: relative;
         height: 11.7825rem;
         width: 18.75rem;
         display: block;
-        position: relative;
-        padding-left: 1.8125rem;
     }
 
-    
+    &__link {
+        display: block;
+        height: 100%;
+        padding-top: .8125rem;
+        padding-bottom: .8125rem;
+        padding-right: .5rem;
+        width: 100%;
 
-    &__image{
+        @include media('tablet') {
+            padding-left: 1.8125rem;
+        }
+    }
+
+
+
+    &__image {
         width: 7.5625rem;
         margin-bottom: -27px;
-        margin-left: -10px;        
+        margin-left: -10px;
 
         @include media('tablet') {
             margin-bottom: unset;
@@ -37,13 +47,13 @@
         }
     }
 
-    &__content{
+    &__content {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    &__content-arrow{
+    &__content-arrow {
 
         width: 2.0625rem;
 
@@ -54,29 +64,31 @@
         }
     }
 
-    &__content-text{
+    &__content-text {
         max-width: 8.75rem;
-        
+
         font-family: 'Roboto';
         font-style: normal;
         font-weight: 700;
         font-size: 1.125rem;
         line-height: 1.25rem;
         color: $color-white;
-        
+
         @media screen and (min-width:350px) {
-        margin-right: 2rem;
+            margin-right: 2rem;
         }
+
         @media screen and (min-width:370px) {
-        margin-right: unset;
-        max-width: 11.75rem;
+            margin-right: unset;
+            max-width: 11.75rem;
         }
-            @include media('tablet') {
-                font-weight: 700;
-                line-height: 115%;
-                letter-spacing: -0.5px;
-                font-size: 1.5625rem;
-                max-width: 12.9375rem;
-            }       
+
+        @include media('tablet') {
+            font-weight: 700;
+            line-height: 115%;
+            letter-spacing: -0.5px;
+            font-size: 1.5625rem;
+            max-width: 12.9375rem;
+        }
     }
 }

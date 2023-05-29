@@ -43,15 +43,15 @@ const subSubHeaders = [
     classModifier: "cg",
   },
   {
-    label: "STRENSIQ ≤6 mg/kg per week (N=66)n(%)",
+    label: "STRENSIQ<br> ≤6 mg/kg per<br> week (N=66)n(%)",
     classModifier: "nb",
   },
   {
-    label: "STRENSIQ > 6 mg/kg per week<sup>b</sup> (N=13)n(%)",
+    label: "STRENSIQ<br> >6 mg/kg per<br> week<sup>b</sup> (N=13)n(%)",
     classModifier: "nb",
   },
-  { label: "TOTAL (N=79)n(%)", classModifier: "nb" },
-  { label: "STRENSIQ (N=20)n(%)" },
+  { label: "TOTAL<br> (N=79)n(%)", classModifier: "nb" },
+  { label: "STRENSIQ<br> (N=20)n(%)" },
 ];
 import data from "./data/safety";
 import References from "../../components/References.astro";
@@ -224,6 +224,7 @@ import References from "../../components/References.astro";
         STRENSIQ Prescribing Information<sup>1,a</sup>
       </h4>
       <!-- TODO: Is necesary to refactor title prop in Table component to be able to send html -->
+      <div class="mtable">
       <Table className="safety-table">
         <TableHeader
           slot="header"
@@ -232,6 +233,7 @@ import References from "../../components/References.astro";
         />
         <TableData slot="body" data={data} className="no-padding" />
       </Table>
+    </div>
     </div>
 
     <div

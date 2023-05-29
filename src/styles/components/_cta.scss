@@ -40,9 +40,16 @@
     margin-right: auto;
     margin-left: auto;
     width: max-content;
-    // @include media('tablet') {
-    //   margin-bottom: 1.3125rem;
-    // }
+
+    &:hover {
+      background-color: $color-dark-green;
+      color: $color-white;
+
+      &::after {
+        background-image: url('/assets/icons/icon-arrow-white.svg');
+      }
+
+    }
 
   }
 
