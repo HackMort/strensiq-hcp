@@ -4859,6 +4859,9 @@
             width: calc(100% - 4.125rem);
             justify-content: center;
             overflow-y: unset;
+
+            margin-right: 0;
+            margin-left: auto;
         }
 
         [role=tablist] a {
@@ -4895,7 +4898,6 @@
         }
 
         .radiographic__footnote {
-            max-width: 90%;
 
             &--mobile {
                 font-size: .625rem;
@@ -4907,9 +4909,8 @@
                 line-height: .9rem;
             }
 
-            &--bottom {
-                position: absolute;
-                bottom: 15px;
+            &--container {
+                margin-top: auto;
             }
 
             &--right {
