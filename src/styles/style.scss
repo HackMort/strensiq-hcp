@@ -153,6 +153,7 @@
 
     &__study-design {
         margin-bottom: 1rem;
+        padding-top: .5rem;
         width: 100%;
 
         &__table {
@@ -160,6 +161,41 @@
 
             .table__header--mh--study-4 {
                 background-color: #6D868E;
+            }
+
+            .buttons-table-header {
+                display: none;
+
+                @media screen and (min-width: 1024px) {
+                    display: table-row;
+                }
+
+                th {
+                    padding: 0;
+                    border: none;
+
+                    &:last-of-type {
+                        .button {
+                            margin-left: .25rem;
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                .button {
+                    width: calc(100% - .25rem);
+                    justify-content: center;
+                    margin-bottom: .75rem;
+                    padding: 0.9375rem .25rem;
+                }
+
+                .buttons-container {
+                    display: flex;
+                    .button {
+                        margin-left: .25rem;
+                        margin-right: .25rem;
+                    }
+                }
             }
         }
 
