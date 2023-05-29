@@ -36,10 +36,12 @@
         margin-bottom: 1rem;
 
         @media screen and (min-width: 768px) {
-            max-width: 17.3125rem;
+            max-width: 19.3125rem;
+            max-height: 20.4375rem;
             margin-left: initial;
             margin-right: initial;
-            margin: 0;
+
+            // margin: 0;
             img {
                 object-fit: contain;
             }
@@ -74,6 +76,16 @@
         padding-left: .3125rem;
         padding-right: 1rem;
 
+        display: flex;
+        flex-direction: column;
+
+        >div {
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+        }
+
         @media screen and (min-width: 768px) {
             padding-left: 1.375rem;
             padding-right: 2.125rem;
@@ -89,13 +101,16 @@
         [data-radiographic-title] {
             color: $color-dark-gray;
         }
-        [data-radiographic-footer]{
+
+        [data-radiographic-footer] {
             margin-bottom: 41px;
+
             @media screen and (min-width: 768px) {
                 margin-bottom: 47px;
             }
         }
-        .second-footer{
+
+        .second-footer {
             font-weight: 300;
             font-size: 10px;
             line-height: 120%;
@@ -103,12 +118,13 @@
             max-width: 259px;
 
             @media screen and (min-width: 1024px) {
-            font-size: 12px;
-            display: block!important;
-            @media screen and (min-width: 1024px) {
                 font-size: 12px;
-                max-width: 198px;
-                margin-top: 153px;
+                display: block !important;
+
+                @media screen and (min-width: 1024px) {
+                    font-size: 12px;
+                    max-width: 198px;
+                    margin-top: 153px;
                 }
             }
         }
@@ -145,18 +161,20 @@
                 line-height: 20.7px;
                 margin-bottom: 64px;
                 display: block;
-            visibility: visible;
+                visibility: visible;
             }
         }
-        .second-footer{
+
+        .second-footer {
             font-weight: 300;
             font-size: 10px;
             line-height: 120%;
             max-width: 259px;
+
             @media screen and (min-width: 1024px) {
                 font-size: 12px;
                 max-width: 198px;
-                }
+            }
         }
     }
 }
