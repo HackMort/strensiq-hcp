@@ -154,7 +154,14 @@
     }
   }
 
+  &-fixed {
+    .isi__section_header {
+      display: none;
+    }
+  }
+
   &__section_header.is--fixed {
+    display: block;
     position: fixed;
     right: 0;
     bottom: 0;
