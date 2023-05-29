@@ -1481,7 +1481,7 @@
         margin-bottom: 4rem;
     }
 
-    /* 
+    /*
 aqui
     .steps-modifier{
         max-width: 1260px;
@@ -4859,6 +4859,12 @@ aqui
         font-weight: 300;
     }
 
+    .clinical-study__description {
+        @media screen and (min-width: 1024px) {
+            max-width: 35ch;
+        }
+    }
+
     .hpp-related-rickets__content-right {
 
         .custom-title {
@@ -5036,16 +5042,16 @@ aqui
     .infants-young-children__survival-content {
         @media screen and (min-width: 1024px) {
             display: grid;
-            grid-template-columns: 1fr 490px;
+            grid-template-columns: 44% 56%;
         }
 
-        @media screen and (min-width: 1200px) {
+        /* @media screen and (min-width: 1200px) {
             grid-template-columns: 1fr 600px;
         }
 
         @media screen and (min-width: 1400px) {
             grid-template-columns: 1fr 700px;
-        }
+        } */
     }
 
     .infants-young-children__survival-left {
@@ -5063,6 +5069,7 @@ aqui
 
         @media screen and (min-width: 1400px) {
             margin-bottom: 8.5156rem;
+            max-width: 31ch;
         }
     }
 
@@ -5151,8 +5158,6 @@ aqui
 
         @media screen and (min-width: 1025px) {
             margin-left: -2.1875rem;
-            width: 110%;
-
         }
 
         @media screen and (min-width: 1366px) {
