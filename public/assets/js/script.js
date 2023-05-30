@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', function (e) {
     isiHeaderFixed()
     setNavTopPosition()
   })
-  const toggleIsiSection = document.querySelector('.isi__section_toggle')
+  /* const toggleIsiSection = document.querySelector('.isi__section_toggle')
   if (toggleIsiSection) {
     toggleIsiSection.addEventListener('click', () => {
       const isiHeader = document.querySelector('.isi__section_header.is--fixed')
       isiHeader.classList.toggle('is--open')
     })
-  }
+  } */
 
   // Toggle Menu Button
   const mobileMenuToogleBtn = document.getElementById('toggle-menu-button')
@@ -63,12 +63,53 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
   // Animated BG on Scroll
   animatedBgColorOnScroll()
+
+  const isiLinks = document.querySelectorAll('.isi-trigger')
+  const mainIsi = document.querySelector('#isi')
+  if (isiLinks && mainIsi) {
+    isiLinks.forEach(isiLink => {
+      isiLink.addEventListener('click', event => {
+        event.preventDefault()
+        /* Get Containers */
+        const headerInner = document.querySelector('.header__inner')
+        const internalNav = document.querySelector('.internal__nav')
+
+        let topBar = document.querySelector('.header__inner .mobile .top_bar')
+        if (window.innerWidth >= 1200) {
+          topBar = document.querySelector('.header__inner .desktop .top_bar')
+        }
+
+        /* Set variables for calcs */
+        let internalNavScrollHeight = 0
+        if (internalNav) {
+          internalNavScrollHeight = internalNav.scrollHeight
+        }
+        const headerInnerScrollHeight = headerInner.scrollHeight
+        const topBarScrollHeight = topBar.scrollHeight
+        const windowPageYOffset = window.pageYOffset
+        let isiOffsetTop = mainIsi.getBoundingClientRect().top + windowPageYOffset
+        if (!(headerInner.classList.contains('is--sticky-down') || headerInner.classList.contains('is--sticky-up'))) {
+          isiOffsetTop = isiOffsetTop - headerInnerScrollHeight - internalNavScrollHeight
+        }
+
+        /* Calculate new position */
+        const scrollPosition = isiOffsetTop - internalNavScrollHeight - topBarScrollHeight
+
+        /* Scroll to position */
+        window.scroll({
+          top: scrollPosition,
+          behavior: 'smooth'
+        })
+      })
+    })
+  }
 })
 
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
 const header = document.querySelector('.site__header')
 const headerInner = document.querySelector('.header__inner')
 const internalNav = document.querySelector('.internal__nav')
+
 // const headerMainBar = document.querySelectorAll('.main_bar')
 // NodeList to Array
 // const headerMainBarArray = Array.prototype.slice.call(headerMainBar)
@@ -238,8 +279,8 @@ function setNavTopPosition () {
   */
 function isiHeaderFixed () {
   // const mobileMedia = window.matchMedia('(min-width: 100px)')
-  const isiHeader = document.querySelector('.isi__section_header')
-  const isiSection = document.querySelector('.isi')
+  const isiHeader = document.querySelector('.isi-fixed .isi__section_header')
+  const isiSection = document.querySelector('.isi-fixed')
   const observerOptions = {
     root: null,
     rootMargin: '0px',

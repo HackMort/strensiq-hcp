@@ -4,15 +4,14 @@ type Props = {};
 const {} = Astro.props;
 ---
 
-<section id="isi" class="isi">
-  <!-- <div class="wrapper"> -->
+<section class="isi isi-fixed">
   <div class="isi__section_header">
     <div class="isi__section_header_inner">
       <div class="wrapper">
-        <h3 class="isi__section_heading">
+        <h3 class="isi-trigger isi__section_heading">
           Indication and Important Safety Information
         </h3>
-        <button class="isi__section_toggle"></button>
+        <a href="#isi" class="isi-trigger isi__section_toggle"></a>
       </div>
     </div>
     <div class="wrapper wrapper__inner">
@@ -167,6 +166,20 @@ const {} = Astro.props;
             </p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Para Observer <div></div> -->
+<section id="isi" class="isi">
+  <!-- <div class="wrapper"> -->
+  <div class="isi__section_header">
+    <div class="isi__section_header_inner">
+      <div class="wrapper">
+        <h3 class="isi__section_heading">
+          Indication and Important Safety Information
+        </h3>
+        <!-- <button class="isi__section_toggle"></button> -->
       </div>
     </div>
   </div>
