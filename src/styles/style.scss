@@ -3274,21 +3274,41 @@ aqui
                 .hypophosphatasia-container {
                     &__list:first-of-type {
                         margin-bottom: 2.8125rem;
+
+                        .hypophosphatasia-container__list-item:first-child {
+                            max-width: 45ch;
+                        }
+
+                        .hypophosphatasia-container__list-item:nth-child(2){
+                            max-width: 39ch;
+                        }
                     }
 
                     &__paragraph {
                         margin-bottom: .375rem;
+                        max-width: 53ch;
                     }
 
                 }
 
                 &>.hypophosphatasia-container__panel-chart {
-                    width: 50%;
+                    width: 55%;
                 }
 
                 &>.hypophosphatasia-container__panel-content {
                     padding-bottom: 6.25rem;
                     width: 45%;
+                }
+            }
+
+            @media screen and (min-width: 1200px) {
+                .hypophosphatasia-container {
+                    &__list:first-of-type {
+
+                        .hypophosphatasia-container__list-item:nth-child(2){
+                            max-width: 40ch;
+                        }
+                    }
                 }
             }
         }
