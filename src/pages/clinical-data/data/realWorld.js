@@ -16,7 +16,7 @@ const Data = [
     classModifier: ['mh']
   },
   {
-    text: ['Age at inclusion', '≥18years'],
+    text: ['Age at inclusion', '>18 years'],
     classModifier: ['mh']
   },
   {
