@@ -8,7 +8,7 @@ const Data = [
     classModifier: ['mh']
   },
   {
-    text: ['Duration', '<strong>Iterim data reported at 2 years</strong>'],
+    text: ['Duration', '<strong>Interim data reported at 2 years</strong>'],
     classModifier: ['mh']
   },
   {

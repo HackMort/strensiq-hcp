@@ -78,6 +78,7 @@
         .page-hero__title {
             color: $color-white;
             max-width: 21.5625rem;
+            font-weight: 400;
 
             @media screen and (min-width: 768px) {
                 max-width: 25.9375rem;
@@ -143,6 +144,7 @@
 
             color: $color-dark-green;
             max-width: 22ch;
+            font-weight: 400;
 
             @media screen and (min-width: 768px) {
                 // max-width: 40.625rem;
@@ -287,6 +289,7 @@
             font-size: 1.5625rem;
             line-height: 1.75rem;
             max-width: 12.5rem;
+            font-weight: 400;
 
             br {
                 display: none;
