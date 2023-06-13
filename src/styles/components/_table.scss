@@ -219,6 +219,7 @@ $headRowsWidth: 16%;
             border-left: 0;
             border-top: 0;
             width: $headRowsWidth !important;
+            z-index: 1;
 
             @media screen and (max-width: 768px) {
                 position: sticky;
