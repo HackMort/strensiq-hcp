@@ -446,6 +446,12 @@
     .table__content tr th:first-child {
         width: 28% !important;
     }
+
+    .table__header--ssh {
+        sup {
+            top: -0.3125rem;
+        }
+    }
 }
 
 // Clinical data page - infants young children
