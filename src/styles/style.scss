@@ -163,6 +163,12 @@
                 background-color: #6D868E;
             }
 
+            .table__body__row--mh {
+                sup {
+                    color: $color-dark-gray !important;
+                }
+            }
+
             .buttons-table-header {
                 display: none;
 
