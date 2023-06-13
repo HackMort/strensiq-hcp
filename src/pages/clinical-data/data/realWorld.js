@@ -3,7 +3,7 @@ const Data = [
   {
     text: [
       'Description',
-      'Single-center, observational, retrospective and prospective study of adults with confirmed <br /> diagnosis of pediatric-onset hypophosphatasia who received STRENSIQ for ≥24 months'
+      'Single-center, observational, retrospective, and prospective study of adults with confirmed <br /> diagnosis of pediatric-onset hypophosphatasia who received STRENSIQ for ≥24 months'
     ],
     classModifier: ['mh']
   },
