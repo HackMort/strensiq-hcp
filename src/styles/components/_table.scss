@@ -4,7 +4,9 @@ $headRowsWidth: 16%;
     width: 100%;
 
     sup {
-        font-size: 75%;
+        font-size: 65%;
+        top: -0.4em;
+        left: .0625rem;
     }
 
     &__title {
@@ -219,6 +221,7 @@ $headRowsWidth: 16%;
             border-left: 0;
             border-top: 0;
             width: $headRowsWidth !important;
+            z-index: 1;
 
             @media screen and (max-width: 768px) {
                 position: sticky;

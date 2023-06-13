@@ -163,6 +163,12 @@
                 background-color: #6D868E;
             }
 
+            .table__body__row--mh {
+                sup {
+                    color: $color-dark-gray !important;
+                }
+            }
+
             .buttons-table-header {
                 display: none;
 
@@ -2277,13 +2283,15 @@ aqui
         &__normal-text {
             font-style: normal;
             font-weight: 300;
-            font-size: 18px;
-            line-height: 27px;
+            font-size: .875rem;
+            line-height: 1.0938rem;
             margin-bottom: .9375rem;
             max-width: 39.6875rem;
 
             @media screen and (min-width:1024px) {
                 max-width: 27.6875rem;
+                font-size: 1.125rem;
+                line-height: 1.6875rem;
             }
 
             @media screen and (min-width:1400px) {
@@ -3303,21 +3311,41 @@ aqui
                 .hypophosphatasia-container {
                     &__list:first-of-type {
                         margin-bottom: 2.8125rem;
+
+                        .hypophosphatasia-container__list-item:first-child {
+                            max-width: 45ch;
+                        }
+
+                        .hypophosphatasia-container__list-item:nth-child(2){
+                            max-width: 39ch;
+                        }
                     }
 
                     &__paragraph {
                         margin-bottom: .375rem;
+                        max-width: 53ch;
                     }
 
                 }
 
                 &>.hypophosphatasia-container__panel-chart {
-                    width: 50%;
+                    width: 55%;
                 }
 
                 &>.hypophosphatasia-container__panel-content {
                     padding-bottom: 6.25rem;
                     width: 45%;
+                }
+            }
+
+            @media screen and (min-width: 1200px) {
+                .hypophosphatasia-container {
+                    &__list:first-of-type {
+
+                        .hypophosphatasia-container__list-item:nth-child(2){
+                            max-width: 40ch;
+                        }
+                    }
                 }
             }
         }
@@ -5751,6 +5779,14 @@ aqui
         @media screen and (min-width: 1200px) {
             width: 75%;
             max-width: 75%;
+        }
+    }
+}
+
+#clinical-data-page-hero.clinical-data-infants-young-children__page-hero {
+    .page-hero__title {
+        @media screen and (min-width: 768px) {
+            max-width: 24ch;
         }
     }
 }
