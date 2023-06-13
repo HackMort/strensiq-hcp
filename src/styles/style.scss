@@ -5736,6 +5736,14 @@ aqui
     }
 }
 
+#clinical-data-page-hero.clinical-data-infants-young-children__page-hero {
+    .page-hero__title {
+        @media screen and (min-width: 768px) {
+            max-width: 24ch;
+        }
+    }
+}
+
 .cdchildren-container {
     width: 100%;
     max-width: 100%;
