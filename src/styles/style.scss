@@ -769,13 +769,25 @@
                 line-height: 1.0938rem;
 
                 @media screen and (min-width: 1024px) {
+                    max-width: 45ch;
                     font-size: 1.125rem;
                     line-height: 1.6875rem;
-                    max-width: 42ch;
                 }
 
                 @media screen and (min-width: 1200px) {
                     max-width: 51ch;
+                }
+            }
+
+            @media screen and (min-width: 1024px) {
+                &:first-child {
+                    & > p {
+                        max-width: 44ch;
+                    }
+
+                    ul p {
+                        max-width: 41ch;
+                    }
                 }
             }
         }
