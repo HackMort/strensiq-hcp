@@ -285,11 +285,13 @@
             }
 
             .nav__menu_item_link::after {
+              
               top: 1.65rem;
               right: 0;
               height: 0.5rem;
               border-top: 2px solid $color-dark-green;
               border-right: 2px solid $color-dark-green;
+              transform: translateY(-50%) rotate(135deg);
               width: 0.5rem;
 
               @media screen and (min-width: 1200px) {
@@ -303,7 +305,7 @@
                   display: block;
                 }
 
-                .nav__menu_item_link {
+                .nav__menu_item_link {  
                   color: $color-dark-pink;
                 }
 
@@ -312,6 +314,7 @@
                   border-top: 3px solid $color-dark-pink;
                   border-right: 3px solid $color-dark-pink;
                   transform: translateY(-50%) rotate(-45deg);
+                  //aqui
                 }
               }
             }
@@ -340,6 +343,11 @@
                   width: 100%;
                   border-bottom: 4px solid $color-dark-pink;
                   // transition: all 0.3s ease-in-out;
+                }
+              }
+              &:hover{
+                .nav__sub_menu {
+                  display: block;
                 }
               }
 
