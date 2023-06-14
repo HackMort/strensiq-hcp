@@ -224,36 +224,56 @@ async function setActiveIternalNavItemOnClick () {
   const internalNav = document.querySelector('.internal__nav')
 
   internalNav &&
-    internalNav.addEventListener('click', (e) => {
-      e.preventDefault()
-      const target = e.target
+  internalNav.addEventListener('click', (e) => {
+    e.preventDefault()
+    const target = e.target
 
-      if (target.tagName === 'A') {
-        const sectionID = target.getAttribute('href')
-        if (sectionID !== '#') {
-          const targetSection = document.querySelector(sectionID)
+    if (target.tagName === 'A') {
+      const sectionID = target.getAttribute('href')
+      if (sectionID !== '#') {
+        // const internalNavStyles = window.getComputedStyle(internalNav)
+        const targetSection = document.querySelector(sectionID)
+        const headerInner = document.querySelector('.header__inner')
+        let mainBarHeight = 77.5
 
-          let marginTop = 330
-
-          if (window.pageYOffset > 0) {
-            targetSection.getBoundingClientRect().top <= 0
-              ? (marginTop = 225)
-              : (marginTop = 100)
-          }
-
-          // Scroll to section
-          const totalOffset =
-            targetSection.getBoundingClientRect().top +
-            window.pageYOffset -
-            marginTop
-
-          window.scrollTo({
-            top: totalOffset,
-            behavior: 'smooth'
-          })
+        let topBar = document.querySelector('.header__inner .mobile .top_bar')
+        if (window.innerWidth >= 1200) {
+          topBar = document.querySelector('.header__inner .desktop .top_bar')
+          mainBarHeight = 119
         }
+
+        /* Set variables for calcs */
+        let internalNavScrollHeight = 0
+        if (internalNav) {
+          internalNavScrollHeight = internalNav.scrollHeight
+        }
+        const headerInnerScrollHeight = headerInner.scrollHeight
+        const topBarScrollHeight = topBar.scrollHeight
+        const windowPageYOffset = window.pageYOffset
+        let targetOffsetTop = targetSection.getBoundingClientRect().top + windowPageYOffset
+        if (!(headerInner.classList.contains('is--sticky-down') || headerInner.classList.contains('is--sticky-up'))) {
+          targetOffsetTop = targetOffsetTop - headerInnerScrollHeight - internalNavScrollHeight
+        }
+
+        /* Calculate new position */
+        let scrollPosition = targetOffsetTop - internalNavScrollHeight - topBarScrollHeight
+
+        if (headerInner.classList.contains('is--sticky-down') && scrollPosition < windowPageYOffset) {
+          scrollPosition = scrollPosition - mainBarHeight
+        } else if (headerInner.classList.contains('is--sticky-up') && scrollPosition < windowPageYOffset) {
+          scrollPosition = scrollPosition - mainBarHeight
+        } else if (headerInner.classList.contains('is--sticky-up') && (scrollPosition - mainBarHeight) === windowPageYOffset) {
+          scrollPosition = scrollPosition - mainBarHeight
+        }
+
+        /* Scroll to position */
+        window.scroll({
+          top: scrollPosition,
+          behavior: 'smooth'
+        })
       }
-    })
+    }
+  })
 }
 
 /* Change CSS variable for top position of the
