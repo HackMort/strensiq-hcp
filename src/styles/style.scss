@@ -3068,6 +3068,7 @@ aqui
             &__tabs {
                 overflow-x: scroll;
                 width: 115%;
+                padding: 0 2.5rem;
 
                 li a {
                     padding: .6875rem .6563rem;
@@ -3098,6 +3099,7 @@ aqui
                 @media (min-width: 530px) {
                     overflow-x: hidden;
                     width: fit-content;
+                    padding: 0 10px;
 
                     li:first-child {
                         margin-left: 0px;

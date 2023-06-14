@@ -61,5 +61,18 @@ document.addEventListener('DOMContentLoaded', function () {
     prevTab.setAttribute('tabindex', '-1')
     panels[tabLinks.indexOf(prevTab)].hidden = true
     panels[tabLinks.indexOf(newTab)].hidden = false
+
+    scrollToTab(newTab)
+  }
+
+  const scrollToTab = targetTab => {
+    const scrollableTabIds = ['childrentab', 'adultstab', 'neonatestab']
+
+    if (scrollableTabIds.indexOf(targetTab.id) !== -1) {
+      const tabsContainer = targetTab.parentElement.parentElement
+      if (tabsContainer && tabsContainer.role === 'tablist') {
+        tabsContainer.scrollLeft = targetTab.offsetLeft - 5
+      }
+    }
   }
 })
