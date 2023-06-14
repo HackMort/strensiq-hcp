@@ -137,6 +137,16 @@
         @media screen and (min-width: 1366px) {
             margin-right: 4.0769rem;
         }
+
+        .table__body {
+            &__row--mh {
+                td:first-child {
+                    color: $color-dark-green;
+                    font-family: 'Roboto Black', 'Roboto', sans-serif;
+                    font-weight: 900;
+                }
+            }
+        }
     }
 
     .table {
