@@ -4898,6 +4898,16 @@ aqui
         .radiographic-images-desktop {
             display: block;
         }
+
+        [data-radiographic-title] {
+            height: 4.375rem;
+        }
+    }
+
+    @media screen and (min-width: 1100px) {
+        [data-radiographic-title] {
+            height: 3.125rem;
+        }
     }
 
     @media screen and (min-width: 1440px) {
