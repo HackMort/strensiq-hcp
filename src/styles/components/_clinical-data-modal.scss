@@ -23,7 +23,7 @@
     }
 
     @media screen and (min-width: 1366px) {
-        max-width: max-content;
+        max-width: 100%;
         width: 90rem !important;
     }
 
@@ -93,16 +93,26 @@
         overflow-y: scroll;
         z-index: -1;
 
+        @media screen and (min-width: 425px) {
+            padding-top: 1.25rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            padding-top: 2.5rem;
+        }
+
         @media screen and (min-width: 1024px) {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             overflow-y: unset;
+            padding-top: 0;
+            padding-left: 1.5625rem;
         }
 
-        @media screen and (min-width: 1366px) {
+        /* @media screen and (min-width: 1366px) {
             justify-content: center;
-        }
+        } */
     }
 
     .clinical-data-modal__header {
@@ -126,16 +136,54 @@
         margin-left: 1.25rem;
         // margin-right: 1.25rem;
         overflow-x: visible;
-        overflow-y: scroll;
+        // overflow-y: scroll;
 
         @media screen and (min-width: 1024px) {
             margin-right: 2.0769rem;
             margin-left: 0;
-            overflow-y: unset;
+            // overflow-y: unset;
+        }
+
+        @media (min-width:1024px) and (max-height: 730px) {
+            margin-top: 6.875rem;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+
+            &:hover {
+                scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+            }
+
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 4px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+            }
         }
 
         @media screen and (min-width: 1366px) {
             margin-right: 4.0769rem;
+        }
+
+        .table__body {
+            &__row--mh {
+                td:first-child {
+                    color: $color-dark-green;
+                    font-family: 'Roboto Black', 'Roboto', sans-serif;
+                    font-weight: 900;
+                }
+            }
         }
     }
 
