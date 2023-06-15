@@ -34,7 +34,8 @@ if (disabled) {
     <div class="f-panzoom__content">
       <slot />
     </div>
-  </div>
+    
+</div>
 </div>
 <script>
   import { Panzoom, Fancybox } from "@fancyapps/ui";
@@ -58,53 +59,91 @@ new instance of the `Panzoom` class with the container element, the `options` ob
 using the pan and zoom controls provided by the `Panzoom` library. */
   document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll("button.button--pich-to-zoom");
-
+    
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
+        //const phantom =document.querySelector(".phantom-text");
+        //phantom.style.display = 'block'
+        //setTimeout(()=>{phantom.style.display = 'block'},0) 
+        //setTimeout(()=>{phantom.style.visibility = 'visible'},100) 
+        
         const containerId = button.dataset.contentId;
         const container = document.getElementById(containerId);
         const body = document.querySelector("body");
-
+        
         const clone = container.cloneNode(true) as HTMLElement;
         clone.setAttribute("style", "display: none");
         clone.id = "clone-" + clone.id;
         const cloneZoomButton = clone.querySelector(
           "button.button--pich-to-zoom"
-        );
-        cloneZoomButton.parentElement.removeChild(cloneZoomButton);
-        body.appendChild(clone);
+          );
+          cloneZoomButton.parentElement.removeChild(cloneZoomButton);
+          body.appendChild(clone);
+          
+          let panzoom: Panzoom;
+          
+          const modal = new Fancybox([{ src: clone.id }], {
+            autoFocus: true,
+            defaultType: "inline",
+            placeFocusBack: true,
+            trapFocus: true,
+            closeButton: false,
+            id: clone.id,
+            hideScrollbar: true,
+            defaultDisplay: "flex",
+            on: {
+              done: () => {
+                //phantom.style.visibility = 'visible'
+                //const phantom =document.querySelector(".phantom-text");
+               
+                panzoom = new Panzoom(clone, options, { Toolbar });
+                const slideContainer = document.querySelector(".fancybox__slide");
+                if (slideContainer) {
+                  slideContainer.setAttribute("style", "padding: 0 !important");
+                }
+                //setTimeout(()=>{phantom.style.display = 'block'},100) 
+                
+                const closeModalButton = clone.querySelector(
+                  ".pinch-to-zoom__close-modal"
+                  );
+                  closeModalButton.removeAttribute("style");
+                  closeModalButton.addEventListener("click", () => {
+                    panzoom.destroy();
+                    modal.close();
+                  });
 
-        let panzoom: Panzoom;
+                const phantom = document.querySelectorAll(
 
-        const modal = new Fancybox([{ src: clone.id }], {
-          autoFocus: true,
-          defaultType: "inline",
-          placeFocusBack: true,
-          trapFocus: true,
-          closeButton: false,
-          id: clone.id,
-          hideScrollbar: true,
-          defaultDisplay: "flex",
-          on: {
-            done: () => {
-              panzoom = new Panzoom(clone, options, { Toolbar });
-              const slideContainer = document.querySelector(".fancybox__slide");
+                ".phantom-text"
 
-              if (slideContainer) {
-                slideContainer.setAttribute("style", "padding: 0 !important");
-              }
+              ) as NodeListOf<HTMLElement>;
 
-              const closeModalButton = clone.querySelector(
-                ".pinch-to-zoom__close-modal"
-              );
-              closeModalButton.removeAttribute("style");
-              closeModalButton.addEventListener("click", () => {
-                panzoom.destroy();
-                modal.close();
+              phantom.forEach((element) => {
+
+                element.style.display = "block";
+
               });
-            },
-            destroy: () => {
-              clone.parentElement.removeChild(clone);
+
+                },
+                destroy: () => {
+                  clone.parentElement.removeChild(clone);
+                },
+                
+                close: () => {
+              //const phantom =document.querySelector(".phantom-text");
+              //phantom.style.display = 'none'
+              //phantom.style.visibility = 'hidden'
+              const phantom = document.querySelectorAll(
+
+                ".phantom-text"
+
+              ) as NodeListOf<HTMLElement>;
+
+              phantom.forEach((element) => {
+
+                element.style.display = "none";
+
+              }); 
             },
           },
         });
