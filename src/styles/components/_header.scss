@@ -285,7 +285,7 @@
             }
 
             .nav__menu_item_link::after {
-              
+              /* 
               top: 1.65rem;
               right: 0;
               height: 0.5rem;
@@ -296,7 +296,7 @@
 
               @media screen and (min-width: 1200px) {
                 right: -1rem;
-              }
+              } */
             }
 
             @media screen and (min-width: 1200px) {
@@ -313,8 +313,7 @@
                   top: 50%;
                   border-top: 3px solid $color-dark-pink;
                   border-right: 3px solid $color-dark-pink;
-                  transform: translateY(-50%) rotate(-45deg);
-                  //aqui
+                  transform: translateY(15%) rotate(-45deg);
                 }
               }
             }
@@ -362,5 +361,23 @@
 
   }
 
-
+.clinical-item{
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: 1200px) {
+    display: flex!important;
+    align-items: center!important;
+  } 
+  &::after{ 
+  content: '';
+ 
+  top: 1.65rem;
+  margin-left: 5px;
+              height: 0.5rem;
+              border-top: 2px solid $color-dark-green;
+              border-right: 2px solid $color-dark-green;
+              transform: translateY(-50%) rotate(135deg);
+              width: 0.5rem;
+}
+}
 }
