@@ -1,12 +1,26 @@
 /* eslint-disable no-undef */
+
+let lastScrollPosition = 0
 document.addEventListener('DOMContentLoaded', function (e) {
   // console.log('DOM fully loaded and parsed')
   isiHeaderFixed()
+  setFixHeader()
+  toggleHeaderbar()
+  setFixNav()
+  setNavTopPosition()
+
   window.addEventListener('scroll', () => {
     isiHeaderFixed()
+    setFixHeader()
+    toggleHeaderbar()
+    setFixNav()
+    setNavTopPosition()
   })
+
   window.addEventListener('resize', () => {
-    isiHeaderFixed()
+    setFixHeader()
+    toggleHeaderbar()
+    setFixNav()
     setNavTopPosition()
   })
   /* const toggleIsiSection = document.querySelector('.isi__section_toggle')
@@ -106,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 })
 
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
-const header = document.querySelector('.site__header')
+/* const header = document.querySelector('.site__header')
 const headerInner = document.querySelector('.header__inner')
 const internalNav = document.querySelector('.internal__nav')
 
@@ -160,7 +174,7 @@ window.addEventListener('scroll', () => {
     })
   }, headerObserverOptions)
   headerObserver.observe(header)
-})
+}) */
 
 /*
   * highlightActiveInternalNavOnScroll
@@ -232,23 +246,38 @@ async function setActiveIternalNavItemOnClick () {
         const sectionID = target.getAttribute('href')
         if (sectionID !== '#') {
           const targetSection = document.querySelector(sectionID)
+          const headerInner = document.querySelector('.header__inner')
 
-          let marginTop = 330
+          /* Set variables for calcs */
+          let mainBarHeight = 77.5
 
-          if (window.pageYOffset > 0) {
-            targetSection.getBoundingClientRect().top <= 0
-              ? (marginTop = 225)
-              : (marginTop = 100)
+          let topBar = document.querySelector('.header__inner .mobile .top_bar')
+          if (window.innerWidth >= 1200) {
+            topBar = document.querySelector('.header__inner .desktop .top_bar')
+            mainBarHeight = 119
           }
 
-          // Scroll to section
-          const totalOffset =
-            targetSection.getBoundingClientRect().top +
-            window.pageYOffset -
-            marginTop
+          let internalNavScrollHeight = 0
+          if (internalNav) {
+            internalNavScrollHeight = internalNav.scrollHeight
+          }
 
-          window.scrollTo({
-            top: totalOffset,
+          const topBarScrollHeight = topBar.scrollHeight
+          const windowPageYOffset = window.pageYOffset
+          let targetOffsetTop = targetSection.getBoundingClientRect().top + windowPageYOffset
+          if (!headerInner.classList.contains('is--sticky-down')) {
+            targetOffsetTop = targetOffsetTop - mainBarHeight
+          }
+
+          /* Calculate new position */
+          let scrollPosition = targetOffsetTop - internalNavScrollHeight - topBarScrollHeight
+
+          if (headerInner.classList.contains('is--sticky-up')) {
+            scrollPosition -= mainBarHeight
+          }
+
+          window.scroll({
+            top: scrollPosition,
             behavior: 'smooth'
           })
         }
@@ -262,9 +291,8 @@ function setNavTopPosition () {
   const internalNav = document.querySelector('.internal__nav')
   if (internalNav) {
     const headerInner = document.querySelector('.header__inner')
-    const headerInnerStyles = getComputedStyle(headerInner)
-    const headerInnerHeight = headerInnerStyles.getPropertyValue('height')
-    internalNav.style.setProperty('--nav-top-position', headerInnerHeight)
+    const headerInnerHeight = headerInner.offsetHeight
+    internalNav.style.setProperty('--nav-top-position', headerInnerHeight + 'px')
   }
 }
 
@@ -318,7 +346,7 @@ function isiHeaderFixed () {
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
  * @see https://caniuse.com/#feat=intersectionobserver
  */
-function animatedBgColorOnScroll () {
+function animatedBgColorOnScroll() {
   const animatedBg = document.querySelectorAll('.animated--bg')
   const observerOptions = {
     root: null,
@@ -336,4 +364,71 @@ function animatedBgColorOnScroll () {
   animatedBg.forEach((element) => {
     observer.observe(element)
   })
+}
+
+/* This function add/remove class that allow Header starts to show/hide the main-bar */
+function setFixHeader () {
+  let extraOffset = 0
+  const sectionElement = document.querySelector('.header__inner')
+  const previousSibling = sectionElement.previousElementSibling
+
+  if (previousSibling) {
+    extraOffset += previousSibling.offsetHeight
+  }
+
+  const sectionElementHeight = sectionElement.offsetHeight
+  if (window.pageYOffset > (sectionElementHeight + extraOffset)) {
+    sectionElement.classList.add('is--sticky-down')
+  } else {
+    sectionElement.classList.remove('is--sticky-up')
+    sectionElement.classList.remove('is--sticky-down')
+  }
+}
+
+/* This function add/remove class that show/hide main-bar according to the scroll direction (up or down) */
+function toggleHeaderbar () {
+  const headerInner = document.querySelector('.header__inner')
+
+  if (headerInner && headerInner.classList.contains('is--sticky-down')) {
+    const windowPageYOffset = window.pageYOffset
+    if (windowPageYOffset < lastScrollPosition) {
+      headerInner.classList.add('is--sticky-up')
+    }
+
+    if (windowPageYOffset > lastScrollPosition) {
+      headerInner.classList.remove('is--sticky-up')
+    }
+  }
+
+  lastScrollPosition = window.scrollY
+}
+
+/*
+  This function change the internal__nav position, fixed when get a point on scrolling down and initial value (sticky) on scrolling up
+  When change to fixed, adds a margin-bottom to Hero element to keep vertical scrolling dimensions, and when returns to original position, removes the margin-bottom from Hero element
+*/
+function setFixNav () {
+  let extraOffset = 0
+  const internalNav = document.querySelector('.internal__nav')
+  const pageHero = document.querySelector('.page-hero')
+  const windowPageYOffset = window.pageYOffset
+
+  if (internalNav) {
+    if (pageHero) {
+      extraOffset += pageHero.offsetHeight
+    }
+
+    if (windowPageYOffset > extraOffset) {
+      internalNav.classList.add('is--fixed')
+      let fixMarginBottom = internalNav.scrollHeight * 1.45
+      const mobileQuery = window.matchMedia('(max-width: 1199px)')
+      if (mobileQuery) {
+        fixMarginBottom = internalNav.scrollHeight
+      }
+      pageHero.style.setProperty('margin-bottom', fixMarginBottom + 'px')
+    } else {
+      internalNav.classList.remove('is--fixed')
+      pageHero.style.removeProperty('margin-bottom')
+    }
+  }
 }

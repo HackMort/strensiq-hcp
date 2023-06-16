@@ -14,6 +14,7 @@ id ? id : `custom-section-${randomNumber}`;
 ---
 
 <section id={id} class={classnames}>
+  <slot name="navigation-data" />
   <div class="custom-section__header">
     <div class="wrapper">
       <div class="custom-section__header-wrapper">
