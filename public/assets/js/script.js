@@ -1,12 +1,26 @@
 /* eslint-disable no-undef */
+
+let lastScrollPosition = 0
 document.addEventListener('DOMContentLoaded', function (e) {
   // console.log('DOM fully loaded and parsed')
-  isiHeaderFixed()
+  // isiHeaderFixed()
+  setFixHeader()
+  toggleHeaderbar()
+  setFixNav()
+  setNavTopPosition()
+
   window.addEventListener('scroll', () => {
-    isiHeaderFixed()
+    // isiHeaderFixed()
+    setFixHeader()
+    toggleHeaderbar()
+    setFixNav()
+    setNavTopPosition()
   })
+
   window.addEventListener('resize', () => {
-    isiHeaderFixed()
+    setFixHeader()
+    toggleHeaderbar()
+    setFixNav()
     setNavTopPosition()
   })
   /* const toggleIsiSection = document.querySelector('.isi__section_toggle')
@@ -106,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 })
 
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
-const header = document.querySelector('.site__header')
+/* const header = document.querySelector('.site__header')
 const headerInner = document.querySelector('.header__inner')
 const internalNav = document.querySelector('.internal__nav')
 
@@ -160,7 +174,7 @@ window.addEventListener('scroll', () => {
     })
   }, headerObserverOptions)
   headerObserver.observe(header)
-})
+}) */
 
 /*
   * highlightActiveInternalNavOnScroll
@@ -224,56 +238,51 @@ async function setActiveIternalNavItemOnClick () {
   const internalNav = document.querySelector('.internal__nav')
 
   internalNav &&
-  internalNav.addEventListener('click', (e) => {
-    e.preventDefault()
-    const target = e.target
+    internalNav.addEventListener('click', (e) => {
+      e.preventDefault()
+      const target = e.target
 
-    if (target.tagName === 'A') {
-      const sectionID = target.getAttribute('href')
-      if (sectionID !== '#') {
-        // const internalNavStyles = window.getComputedStyle(internalNav)
-        const targetSection = document.querySelector(sectionID)
-        const headerInner = document.querySelector('.header__inner')
-        let mainBarHeight = 77.5
+      if (target.tagName === 'A') {
+        const sectionID = target.getAttribute('href')
+        if (sectionID !== '#') {
+          const targetSection = document.querySelector(sectionID)
+          const headerInner = document.querySelector('.header__inner')
 
-        let topBar = document.querySelector('.header__inner .mobile .top_bar')
-        if (window.innerWidth >= 1200) {
-          topBar = document.querySelector('.header__inner .desktop .top_bar')
-          mainBarHeight = 119
+          /* Set variables for calcs */
+          let mainBarHeight = 77.5
+
+          let topBar = document.querySelector('.header__inner .mobile .top_bar')
+          if (window.innerWidth >= 1200) {
+            topBar = document.querySelector('.header__inner .desktop .top_bar')
+            mainBarHeight = 119
+          }
+
+          let internalNavScrollHeight = 0
+          if (internalNav) {
+            internalNavScrollHeight = internalNav.scrollHeight
+          }
+
+          const topBarScrollHeight = topBar.scrollHeight
+          const windowPageYOffset = window.pageYOffset
+          let targetOffsetTop = targetSection.getBoundingClientRect().top + windowPageYOffset
+          if (!headerInner.classList.contains('is--sticky-down')) {
+            targetOffsetTop = targetOffsetTop - mainBarHeight
+          }
+
+          /* Calculate new position */
+          let scrollPosition = targetOffsetTop - internalNavScrollHeight - topBarScrollHeight
+
+          if (headerInner.classList.contains('is--sticky-up')) {
+            scrollPosition -= mainBarHeight
+          }
+
+          window.scroll({
+            top: scrollPosition,
+            behavior: 'smooth'
+          })
         }
-
-        /* Set variables for calcs */
-        let internalNavScrollHeight = 0
-        if (internalNav) {
-          internalNavScrollHeight = internalNav.scrollHeight
-        }
-        const headerInnerScrollHeight = headerInner.scrollHeight
-        const topBarScrollHeight = topBar.scrollHeight
-        const windowPageYOffset = window.pageYOffset
-        let targetOffsetTop = targetSection.getBoundingClientRect().top + windowPageYOffset
-        if (!(headerInner.classList.contains('is--sticky-down') || headerInner.classList.contains('is--sticky-up'))) {
-          targetOffsetTop = targetOffsetTop - headerInnerScrollHeight - internalNavScrollHeight
-        }
-
-        /* Calculate new position */
-        let scrollPosition = targetOffsetTop - internalNavScrollHeight - topBarScrollHeight
-
-        if (headerInner.classList.contains('is--sticky-down') && scrollPosition < windowPageYOffset) {
-          scrollPosition = scrollPosition - mainBarHeight
-        } else if (headerInner.classList.contains('is--sticky-up') && scrollPosition < windowPageYOffset) {
-          scrollPosition = scrollPosition - mainBarHeight
-        } else if (headerInner.classList.contains('is--sticky-up') && (scrollPosition - mainBarHeight) === windowPageYOffset) {
-          scrollPosition = scrollPosition - mainBarHeight
-        }
-
-        /* Scroll to position */
-        window.scroll({
-          top: scrollPosition,
-          behavior: 'smooth'
-        })
       }
-    }
-  })
+    })
 }
 
 /* Change CSS variable for top position of the
@@ -282,9 +291,8 @@ function setNavTopPosition () {
   const internalNav = document.querySelector('.internal__nav')
   if (internalNav) {
     const headerInner = document.querySelector('.header__inner')
-    const headerInnerStyles = getComputedStyle(headerInner)
-    const headerInnerHeight = headerInnerStyles.getPropertyValue('height')
-    internalNav.style.setProperty('--nav-top-position', headerInnerHeight)
+    const headerInnerHeight = headerInner.offsetHeight
+    internalNav.style.setProperty('--nav-top-position', headerInnerHeight + 'px')
   }
 }
 
@@ -297,7 +305,7 @@ function setNavTopPosition () {
    * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
    * @see https://caniuse.com/#feat=intersectionobserver
   */
-function isiHeaderFixed () {
+/* function isiHeaderFixed () {
   // const mobileMedia = window.matchMedia('(min-width: 100px)')
   const isiHeader = document.querySelector('.isi-fixed .isi__section_header')
   const isiSection = document.querySelector('.isi-fixed')
@@ -328,7 +336,7 @@ function isiHeaderFixed () {
   if (isiSection) {
     isiObserver.observe(isiSection)
   }
-}
+} */
 
 /**
  * animatedBgColorOnScroll
@@ -338,7 +346,7 @@ function isiHeaderFixed () {
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
  * @see https://caniuse.com/#feat=intersectionobserver
  */
-function animatedBgColorOnScroll () {
+function animatedBgColorOnScroll() {
   const animatedBg = document.querySelectorAll('.animated--bg')
   const observerOptions = {
     root: null,
@@ -356,4 +364,71 @@ function animatedBgColorOnScroll () {
   animatedBg.forEach((element) => {
     observer.observe(element)
   })
+}
+
+/* This function add/remove class that allow Header starts to show/hide the main-bar */
+function setFixHeader () {
+  let extraOffset = 0
+  const sectionElement = document.querySelector('.header__inner')
+  const previousSibling = sectionElement.previousElementSibling
+
+  if (previousSibling) {
+    extraOffset += previousSibling.offsetHeight
+  }
+
+  const sectionElementHeight = sectionElement.offsetHeight
+  if (window.pageYOffset > (sectionElementHeight + extraOffset)) {
+    sectionElement.classList.add('is--sticky-down')
+  } else {
+    sectionElement.classList.remove('is--sticky-up')
+    sectionElement.classList.remove('is--sticky-down')
+  }
+}
+
+/* This function add/remove class that show/hide main-bar according to the scroll direction (up or down) */
+function toggleHeaderbar () {
+  const headerInner = document.querySelector('.header__inner')
+
+  if (headerInner && headerInner.classList.contains('is--sticky-down')) {
+    const windowPageYOffset = window.pageYOffset
+    if (windowPageYOffset < lastScrollPosition) {
+      headerInner.classList.add('is--sticky-up')
+    }
+
+    if (windowPageYOffset > lastScrollPosition) {
+      headerInner.classList.remove('is--sticky-up')
+    }
+  }
+
+  lastScrollPosition = window.scrollY
+}
+
+/*
+  This function change the internal__nav position, fixed when get a point on scrolling down and initial value (sticky) on scrolling up
+  When change to fixed, adds a margin-bottom to Hero element to keep vertical scrolling dimensions, and when returns to original position, removes the margin-bottom from Hero element
+*/
+function setFixNav () {
+  let extraOffset = 0
+  const internalNav = document.querySelector('.internal__nav')
+  const pageHero = document.querySelector('.page-hero')
+  const windowPageYOffset = window.pageYOffset
+
+  if (internalNav) {
+    if (pageHero) {
+      extraOffset += pageHero.offsetHeight
+    }
+
+    if (windowPageYOffset > extraOffset) {
+      internalNav.classList.add('is--fixed')
+      let fixMarginBottom = internalNav.scrollHeight * 1.45
+      const mobileQuery = window.matchMedia('(max-width: 1199px)')
+      if (mobileQuery) {
+        fixMarginBottom = internalNav.scrollHeight
+      }
+      pageHero.style.setProperty('margin-bottom', fixMarginBottom + 'px')
+    } else {
+      internalNav.classList.remove('is--fixed')
+      pageHero.style.removeProperty('margin-bottom')
+    }
+  }
 }

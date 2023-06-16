@@ -214,11 +214,13 @@
         }
 
         &__head {
-            margin: 3rem 0;
+            margin: 0 0 3rem;
             width: 100%;
+            padding-top: 3rem;
 
             @media screen and (max-width: 768px) {
-                margin: 1.5rem 0;
+                margin: 0 0 1.5rem;
+                padding-top: 1.5rem;
             }
         }
 
@@ -282,8 +284,9 @@
             }
 
             &--title {
-                margin: 10px 0;
+                margin: 0 0 10px;
                 color: $color-dark-green;
+                padding-top: .625rem;
             }
 
             &--paragraph1 {
@@ -1548,11 +1551,11 @@
 
 //-------------------------------------------------------------toolkit steps section -------------------------------------------------------------
 .toolkit-steps {
-    margin-top: 1.5625rem;
+    padding-top: 1.5625rem;
     margin-bottom: 2.625rem;
 
     @include media('tablet') {
-        margin-top: 3rem;
+        padding-top: 3rem;
         margin-bottom: 4rem;
     }
 
@@ -3997,11 +4000,12 @@ aqui
 
 //-------------------------------------------------------------dosing page -------------------------------------------------------------
 .dosing {
-    margin-top: 1.6875rem;
+    // margin-top: 1.6875rem;
+    padding-top: 1.6875rem;
 
-    @media screen and (min-width: 1300px) {
+    /* @media screen and (min-width: 1300px) {
         padding-top: 1.875rem;
-    }
+    } */
 
 
     &__container {
