@@ -92,7 +92,7 @@ import References from "../../components/References.astro";
     )
   }
 
-  <div class="clinical-data-overview__study-design__head">
+  <div id="study-design" class="section clinical-data-overview__study-design__head">
     <div class="wrapper">
       <h2 class="clinical-data-overview__study-design--title">
         STRENSIQ is the only treatment for adults and children with
@@ -113,8 +113,7 @@ import References from "../../components/References.astro";
   </div>
 
   <section
-    id="study-design"
-    class="wrapper wrapper--only-left wrapper--only-left--mobile-only section clinical-data-overview__study-design"
+    class="wrapper wrapper--only-left wrapper--only-left--mobile-only clinical-data-overview__study-design"
   >
     <div class="clinical-data-overview__study-design__table">
       <Table>
@@ -159,9 +158,10 @@ import References from "../../components/References.astro";
     </div>
   </section>
 
-  <section id="safety" class="section clinical-data-overview__safety">
+  <section class="clinical-data-overview__safety">
     <div class="clinical-data-overview__safety__description">
       <div class="wrapper">
+        <div id="safety" class="section"></div>
         <div>
           <h2 class="clinical-data-overview__safety__description--title">
             STRENSIQ has a well-established safety profile, evidenced by 7 years
