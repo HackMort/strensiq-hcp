@@ -3,14 +3,14 @@
 let lastScrollPosition = 0
 document.addEventListener('DOMContentLoaded', function (e) {
   // console.log('DOM fully loaded and parsed')
-  // isiHeaderFixed()
+  isiHeaderFixed()
   setFixHeader()
   toggleHeaderbar()
   setFixNav()
   setNavTopPosition()
 
   window.addEventListener('scroll', () => {
-    // isiHeaderFixed()
+    isiHeaderFixed()
     setFixHeader()
     toggleHeaderbar()
     setFixNav()
@@ -305,7 +305,7 @@ function setNavTopPosition () {
    * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
    * @see https://caniuse.com/#feat=intersectionobserver
   */
-/* function isiHeaderFixed () {
+function isiHeaderFixed () {
   // const mobileMedia = window.matchMedia('(min-width: 100px)')
   const isiHeader = document.querySelector('.isi-fixed .isi__section_header')
   const isiSection = document.querySelector('.isi-fixed')
@@ -336,7 +336,7 @@ function setNavTopPosition () {
   if (isiSection) {
     isiObserver.observe(isiSection)
   }
-} */
+}
 
 /**
  * animatedBgColorOnScroll
