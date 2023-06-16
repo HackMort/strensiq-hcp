@@ -149,7 +149,7 @@ function calculateListPosition (symptomsList, pointElement) {
     let listVerticalPosition = pointElementVerticalPosition + distanceFromPointElement
 
     if (dataWord === 'skeletal') {
-      listVerticalPosition = pointElementVerticalPosition + wordElementHeight - 35
+      listVerticalPosition = pointElementVerticalPosition + wordElementHeight
     } else if (dataWord === 'growth') {
       listVerticalPosition = pointElementVerticalPosition + wordElementHeight - 15
     }
@@ -177,7 +177,7 @@ function setLengthAfterElement (symptomsList, pointElement) {
     pointElement.style.setProperty('--point-active-after-height', '15px')
 
     if (dataWord === 'skeletal') {
-      pointElement.style.setProperty('--point-active-after-height', '45px')
+      pointElement.style.setProperty('--point-active-after-height', '65px')
     } else if (dataWord === 'growth') {
       pointElement.style.setProperty('--point-active-after-height', '65px')
     }

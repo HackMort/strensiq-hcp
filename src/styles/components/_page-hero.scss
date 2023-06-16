@@ -511,6 +511,12 @@
         }
 
         .shape--tertiary {
+            max-width: 40%;
+
+            @media screen and (min-width: 500px) {
+                max-width: 50%;
+            }
+
             @media screen and (min-width: 1440px) {
                 width: 50%;
                 max-width: initial;
