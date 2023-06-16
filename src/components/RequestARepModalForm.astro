@@ -302,6 +302,10 @@
     </div>
   </div>
 </div>
+<style>
+  @import url(../../node_modules/nice-select2/dist/css/nice-select2.css);
+</style>
+<script src="../../node_modules/nice-select2/dist/js/nice-select2.js"></script>
 
 <script>
   /**
@@ -368,6 +372,15 @@
         field.setAttribute("data-is-valid", "false");
         field.classList.remove("form__control--valid");
       });
+      if (window.niceSelectSpecialty) {
+        window.niceSelectSpecialty.clear()
+        document.getElementById('specialty').parentElement.parentElement.classList.remove('form__control--invalid')
+      }
+
+      if (window.niceSelectContactPreference) {
+        window.niceSelectContactPreference.clear()
+        document.getElementById('contact-preference').parentElement.parentElement.classList.remove('form__control--invalid')
+      }
       this.form.reset();
     }
   }
@@ -391,6 +404,9 @@
         requestRepModal.cleanUpFields();
       }
     });
+
+    window.niceSelectSpecialty = NiceSelect.bind(document.getElementById('specialty'), {placeholder: 'Specialty*'})
+    window.niceSelectContactPreference = NiceSelect.bind(document.getElementById('contact-preference'), {placeholder: '*Contact preference?'})
   });
 
   /**
