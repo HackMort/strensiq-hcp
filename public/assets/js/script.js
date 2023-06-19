@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-
 let lastScrollPosition = 0
+let wasIsiTriggerClicked = false
 document.addEventListener('DOMContentLoaded', function (e) {
   // console.log('DOM fully loaded and parsed')
   isiHeaderFixed()
@@ -110,6 +110,16 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
         /* Calculate new position */
         const scrollPosition = isiOffsetTop - internalNavScrollHeight - topBarScrollHeight
+        if (window.hasOwnProperty('lastScrollPositionIsiFixed')) {
+          window.lastScrollPositionIsiFixed = windowPageYOffset
+        }
+
+        addIsiScrollbar()
+        showIsiBackToTopTrigger()
+        wasIsiTriggerClicked = true
+        setTimeout(() => {
+          wasIsiTriggerClicked = false
+        }, 1000)
 
         /* Scroll to position */
         window.scroll({
@@ -119,6 +129,11 @@ document.addEventListener('DOMContentLoaded', function (e) {
       })
     })
   }
+
+  addIsiBackToTop()
+  window.addEventListener('resize', () => {
+    addIsiBackToTop()
+  })
 })
 
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
@@ -332,6 +347,11 @@ function isiHeaderFixed () {
           isiHeader.classList.remove('is--fixed')
         }
       }
+
+      if (isiHeader.classList.contains('is--fixed') && !wasIsiTriggerClicked) {
+        removeIsiScrollbar()
+        hideIsiBackToTopTrigger()
+      }
     })
   }
   , observerOptions)
@@ -432,5 +452,57 @@ function setFixNav () {
       internalNav.classList.remove('is--fixed')
       pageHero.style.removeProperty('margin-bottom')
     }
+  }
+}
+
+function addIsiBackToTop () {
+  if (!window.hasOwnProperty('lastScrollPositionIsiFixed')) {
+    const isiElement = document.querySelector('#isi')
+    window.lastScrollPositionIsiFixed = 0
+    const headerWrapper = isiElement.querySelector('.isi__section_header .wrapper')
+
+    const linkElement = document.createElement('a')
+    linkElement.classList.add('isi-back-top')
+    linkElement.classList.add('isi__section_toggle')
+    linkElement.classList.add('hidden')
+    linkElement.addEventListener('click', event => {
+      event.preventDefault()
+
+      window.scroll({
+        top: window.lastScrollPositionIsiFixed,
+        behavior: 'smooth'
+      })
+    })
+    headerWrapper.appendChild(linkElement)
+  }
+}
+
+function showIsiBackToTopTrigger () {
+  const backToTop = document.querySelector('.isi-back-top')
+  if (backToTop && backToTop.classList.contains('hidden')) {
+    backToTop.classList.remove('hidden')
+  }
+}
+
+function hideIsiBackToTopTrigger () {
+  const backToTop = document.querySelector('.isi-back-top')
+  if (backToTop && !backToTop.classList.contains('hidden')) {
+    backToTop.classList.add('hidden')
+  }
+}
+
+function addIsiScrollbar () {
+  const isiElement = document.querySelector('#isi')
+
+  if (!isiElement.classList.contains('has--scrollbar')) {
+    isiElement.classList.add('has--scrollbar')
+  }
+}
+
+function removeIsiScrollbar () {
+  const isiElement = document.querySelector('#isi')
+
+  if (isiElement.classList.contains('has--scrollbar')) {
+    isiElement.classList.remove('has--scrollbar')
   }
 }
