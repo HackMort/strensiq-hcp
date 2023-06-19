@@ -280,6 +280,10 @@
   .isi-back-top {
     display: block;
     transform: rotate(180deg);
+
+    &.hidden {
+      display: none;
+    }
   }
 
   &.has--scrollbar {
