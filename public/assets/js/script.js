@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-
 let lastScrollPosition = 0
 document.addEventListener('DOMContentLoaded', function (e) {
   // console.log('DOM fully loaded and parsed')
@@ -110,6 +109,9 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
         /* Calculate new position */
         const scrollPosition = isiOffsetTop - internalNavScrollHeight - topBarScrollHeight
+        if (window.hasOwnProperty('lastScrollPositionIsiFixed')) {
+          window.lastScrollPositionIsiFixed = windowPageYOffset
+        }
 
         /* Scroll to position */
         window.scroll({
@@ -119,6 +121,11 @@ document.addEventListener('DOMContentLoaded', function (e) {
       })
     })
   }
+
+  prepareIsiBackToTop()
+  window.addEventListener('resize', () => {
+    prepareIsiBackToTop()
+  })
 })
 
 // Make Header Sticky when the user scrolls down the page and the header is not in viewport using IntersectionObserver API
@@ -432,5 +439,27 @@ function setFixNav () {
       internalNav.classList.remove('is--fixed')
       pageHero.style.removeProperty('margin-bottom')
     }
+  }
+}
+
+function prepareIsiBackToTop () {
+  const isiElement = document.querySelector('#isi')
+
+  if (!window.hasOwnProperty('lastScrollPositionIsiFixed')) {
+    window.lastScrollPositionIsiFixed = 0
+    const headerWrapper = isiElement.querySelector('.isi__section_header .wrapper')
+
+    const linkElement = document.createElement('a')
+    linkElement.classList.add('isi-back-top')
+    linkElement.classList.add('isi__section_toggle')
+    linkElement.addEventListener('click', event => {
+      event.preventDefault()
+
+      window.scroll({
+        top: window.lastScrollPositionIsiFixed,
+        behavior: 'smooth'
+      })
+    })
+    headerWrapper.appendChild(linkElement)
   }
 }
