@@ -89,8 +89,10 @@ document.addEventListener('DOMContentLoaded', function (e) {
         const internalNav = document.querySelector('.internal__nav')
 
         let topBar = document.querySelector('.header__inner .mobile .top_bar')
+        let mainBarHeight = 77.5
         if (window.innerWidth >= 1200) {
           topBar = document.querySelector('.header__inner .desktop .top_bar')
+          mainBarHeight = 119
         }
 
         /* Set variables for calcs */
@@ -98,12 +100,12 @@ document.addEventListener('DOMContentLoaded', function (e) {
         if (internalNav) {
           internalNavScrollHeight = internalNav.scrollHeight
         }
-        const headerInnerScrollHeight = headerInner.scrollHeight
+
         const topBarScrollHeight = topBar.scrollHeight
         const windowPageYOffset = window.pageYOffset
         let isiOffsetTop = mainIsi.getBoundingClientRect().top + windowPageYOffset
-        if (!(headerInner.classList.contains('is--sticky-down') || headerInner.classList.contains('is--sticky-up'))) {
-          isiOffsetTop = isiOffsetTop - headerInnerScrollHeight - internalNavScrollHeight
+        if (headerInner.classList.contains('is--sticky-up') || !headerInner.classList.contains('is--sticky-down')) {
+          isiOffsetTop = isiOffsetTop - mainBarHeight
         }
 
         /* Calculate new position */
