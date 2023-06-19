@@ -1,5 +1,4 @@
 ---
-import '/node_modules/nice-select2/dist/css/nice-select2.css'
 ---
 
 <div id="request-a-rep-modal-form-template" style="display: none;">
@@ -307,8 +306,6 @@ import '/node_modules/nice-select2/dist/css/nice-select2.css'
   </div>
 </div>
 
-<script src="../../node_modules/nice-select2/dist/js/nice-select2.js"></script>
-
 <script>
   /**
    * #################################################################################################
@@ -375,13 +372,21 @@ import '/node_modules/nice-select2/dist/css/nice-select2.css'
         field.classList.remove("form__control--valid");
       });
       if (window.niceSelectSpecialty) {
-        window.niceSelectSpecialty.clear()
-        document.getElementById('specialty').parentElement.parentElement.classList.remove('form__control--invalid')
+        window.niceSelectSpecialty.clear();
+        document
+          .getElementById("specialty")
+          .parentElement.parentElement.classList.remove(
+            "form__control--invalid"
+          );
       }
 
       if (window.niceSelectContactPreference) {
-        window.niceSelectContactPreference.clear()
-        document.getElementById('contact-preference').parentElement.parentElement.classList.remove('form__control--invalid')
+        window.niceSelectContactPreference.clear();
+        document
+          .getElementById("contact-preference")
+          .parentElement.parentElement.classList.remove(
+            "form__control--invalid"
+          );
       }
       this.form.reset();
     }
@@ -407,8 +412,14 @@ import '/node_modules/nice-select2/dist/css/nice-select2.css'
       }
     });
 
-    window.niceSelectSpecialty = NiceSelect.bind(document.getElementById('specialty'), {placeholder: 'Specialty*'})
-    window.niceSelectContactPreference = NiceSelect.bind(document.getElementById('contact-preference'), {placeholder: '*Contact preference?'})
+    window.niceSelectSpecialty = NiceSelect.bind(
+      document.getElementById("specialty"),
+      { placeholder: "Specialty*" }
+    );
+    window.niceSelectContactPreference = NiceSelect.bind(
+      document.getElementById("contact-preference"),
+      { placeholder: "*Contact preference?" }
+    );
   });
 
   /**

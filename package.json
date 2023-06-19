@@ -12,8 +12,7 @@
   },
   "dependencies": {
     "@fancyapps/ui": "5.0.14",
-    "astro": "2.1.8",
-    "nice-select2": "2.1.0"
+    "astro": "2.1.8"
   },
   "devDependencies": {
     "sass": "1.59.3",
