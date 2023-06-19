@@ -130,8 +130,17 @@
     }
 
     .nice-select {
+        align-items: center;
+        display: flex;
         font-size: 1.125rem;
         font-weight: 300;
+        border: none;
+
+        &::after {
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
 
         &-dropdown {
             width: 100%;
