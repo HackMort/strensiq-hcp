@@ -122,9 +122,11 @@ document.addEventListener('DOMContentLoaded', function (e) {
     })
   }
 
-  prepareIsiBackToTop()
+  addIsiBackToTop()
+  addIsiScrollbar()
   window.addEventListener('resize', () => {
-    prepareIsiBackToTop()
+    addIsiBackToTop()
+    addIsiScrollbar()
   })
 })
 
@@ -442,10 +444,9 @@ function setFixNav () {
   }
 }
 
-function prepareIsiBackToTop () {
-  const isiElement = document.querySelector('#isi')
-
+function addIsiBackToTop () {
   if (!window.hasOwnProperty('lastScrollPositionIsiFixed')) {
+    const isiElement = document.querySelector('#isi')
     window.lastScrollPositionIsiFixed = 0
     const headerWrapper = isiElement.querySelector('.isi__section_header .wrapper')
 
@@ -461,5 +462,13 @@ function prepareIsiBackToTop () {
       })
     })
     headerWrapper.appendChild(linkElement)
+  }
+}
+
+function addIsiScrollbar () {
+  const isiElement = document.querySelector('#isi')
+
+  if (!isiElement.classList.contains('has--scrollbar')) {
+    isiElement.classList.add('has--scrollbar')
   }
 }
