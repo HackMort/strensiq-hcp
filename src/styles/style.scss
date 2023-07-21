@@ -144,11 +144,6 @@
 
         @include flex-gap(1rem);
 
-        .button--adults {
-            background-color: #C183B1;
-            justify-content: center;
-            min-width: 276px;
-        }
     }
 
     &__study-design {
@@ -261,6 +256,12 @@
                     margin-left: calc((100vw - 90rem) / 2);
                 }
             }
+        }
+
+        .button--adults {
+            background-color: #C183B1;
+            justify-content: center;
+            min-width: 276px;
         }
 
     }
