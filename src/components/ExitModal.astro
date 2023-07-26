@@ -34,20 +34,21 @@
 
 <script>
   import { Fancybox } from "@fancyapps/ui";
-  const linksWithHideContent = [
-    'https://alexionaccessnavigator.com/',
-    'https://strensiq.com/',
-    'https://alexion.com/',
-    'https://alexion.com/Legal#legalstatement',
-    'https://alexion.com/Legal#privacynotice',
-    'https://alexion.com/Legal#termsofuse',
-    'https://alexion.com/contact-alexion',
-    'https://alexiononesource.com/'
-  ]
 
   const externalLinks = document.querySelectorAll(
     'a[target="_blank"]:not(.document-link)'
   );
+
+  const hideContentLinks = [
+    "https://alexionaccessnavigator.com/",
+    "https://strensiq.com/",
+    "https://alexion.com/",
+    "https://alexion.com/Legal#legalstatement",
+    "https://alexion.com/Legal#privacynotice",
+    "https://alexion.com/Legal#termsofuse",
+    "https://alexion.com/contact-alexion",
+    "https://alexiononesource.com/",
+  ];
 
   if (externalLinks && externalLinks.length > 0) {
     externalLinks.forEach((link) => {
@@ -62,15 +63,18 @@
         const continueButton = modal.querySelector(".modal--continue");
         const stayButton = modal.querySelector(".modal--stay");
         const modalClose = modal.querySelector(".modal__close");
-        const modalText = modal.querySelector(".modal__text")
+        const modalText = modal.querySelector(".modal__text");
 
-        if (linksWithHideContent.indexOf(href) !== -1) {
-          modalText.style.setProperty('display', 'none')
+        if (hideContentLinks.indexOf(href) !== -1) {
+          modalText.style.setProperty("display", "none");
 
-          if ((href === 'https://alexion.com/Legal#privacynotice' || href === 'https://alexion.com/Legal#termsofuse') && !e.target.classList.contains('footer__nav_menu_item_link')) {
-            modalText.style.removeProperty('display')
+          if (
+            (href === "https://alexion.com/Legal#privacynotice" ||
+              href === "https://alexion.com/Legal#termsofuse") &&
+            !e.target.classList.contains("footer__nav_menu_item_link")
+          ) {
+            modalText.style.removeProperty("display");
           }
-
         }
 
         continueButton.setAttribute("href", href);
@@ -87,8 +91,8 @@
 
         if (continueLink) {
           const secondaryLink = "https://alexion.com/Legal#privacynotice";
-          continueLink.setAttribute('href', secondaryLink)
-          continueLink.setAttribute('target', '_blank')
+          continueLink.setAttribute("href", secondaryLink);
+          continueLink.setAttribute("target", "_blank");
           continueLink.addEventListener("click", handleClickContinueLink);
         }
 
@@ -102,23 +106,26 @@
           dragToClose: false,
           on: {
             close: () => {
-              continueButton.removeEventListener('click', handleClickContinue)
-              if(continueLink) {
-                continueLink.removeEventListener("click", handleClickContinueLink)
+              continueButton.removeEventListener("click", handleClickContinue);
+              if (continueLink) {
+                continueLink.removeEventListener(
+                  "click",
+                  handleClickContinueLink
+                );
               }
-              modalText.style.removeProperty('display')
+              modalText.style.removeProperty("display");
             },
           },
         });
 
-        function handleClickContinue (event) {
+        function handleClickContinue(event) {
           setTimeout(() => {
             instance.close();
           }, 500);
           return;
         }
 
-        function handleClickContinueLink (event) {
+        function handleClickContinueLink(event) {
           setTimeout(() => {
             instance.close();
           }, 500);
