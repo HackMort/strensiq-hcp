@@ -62,13 +62,7 @@
           instance.close();
         });
 
-        continueButton.addEventListener("click", () => {
-          setTimeout(() => {
-            window.open(href, "_blank");
-            instance.close();
-          }, 500);
-          return;
-        });
+        continueButton.addEventListener("click", handleClickContinue);
 
         if (continueLink) {
           continueLink.addEventListener("click", () => {
@@ -91,10 +85,17 @@
           dragToClose: false,
           on: {
             close: () => {
-              continueButton.setAttribute("href", "");
+              continueButton.removeEventListener('click', handleClickContinue)
             },
           },
         });
+
+        function handleClickContinue (event) {
+          setTimeout(() => {
+            instance.close();
+          }, 500);
+          return;
+        }
       });
     });
   }
