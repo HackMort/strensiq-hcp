@@ -20,13 +20,12 @@
       </div>
 
       <div class="modal__text">
-        <p>
+        <!-- <p>
           You are now leaving strensiq-hcp.com, a website provided by Alexion
           Pharmaceuticals, Inc. This link will take you to a different site that
           is owned and operated by an independent third party to which this <br
           />
-          <a class="modal__text-link">Privacy Notice</a> does not apply.
-        </p>
+          <a class="modal__text-link">Privacy Notice</a> does not apply. -->
       </div>
     </div>
   </div>
@@ -71,14 +70,16 @@
           return;
         });
 
-        continueLink.addEventListener("click", () => {
-          const secondaryLink = "https://alexion.com/Legal#privacynotice";
+        if (continueLink) {
+          continueLink.addEventListener("click", () => {
+            const secondaryLink = "https://alexion.com/Legal#privacynotice";
 
-          setTimeout(() => {
-            window.open(secondaryLink, "_blank");
-            instance.close();
-          }, 500);
-        });
+            setTimeout(() => {
+              window.open(secondaryLink, "_blank");
+              instance.close();
+            }, 500);
+          });
+        }
 
         instance = new Fancybox([{ src: "modal" }], {
           autoFocus: true,
