@@ -66,6 +66,11 @@
 
         if (linksWithHideContent.indexOf(href) !== -1) {
           modalText.style.setProperty('display', 'none')
+
+          if ((href === 'https://alexion.com/Legal#privacynotice' || href === 'https://alexion.com/Legal#termsofuse') && !e.target.classList.contains('footer__nav_menu_item_link')) {
+            modalText.style.removeProperty('display')
+          }
+
         }
 
         continueButton.setAttribute("href", href);
