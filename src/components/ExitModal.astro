@@ -20,12 +20,13 @@
       </div>
 
       <div class="modal__text">
-        <!-- <p>
+        <p>
           You are now leaving strensiq-hcp.com, a website provided by Alexion
           Pharmaceuticals, Inc. This link will take you to a different site that
           is owned and operated by an independent third party to which this <br
           />
-          <a class="modal__text-link">Privacy Notice</a> does not apply. -->
+          <a class="modal__text-link">Privacy Notice</a> does not apply.
+        </p>
       </div>
     </div>
   </div>
@@ -33,6 +34,16 @@
 
 <script>
   import { Fancybox } from "@fancyapps/ui";
+  const linksWithHideContent = [
+    'https://alexionaccessnavigator.com/',
+    'https://strensiq.com/',
+    'https://alexion.com/',
+    'https://alexion.com/Legal#legalstatement',
+    'https://alexion.com/Legal#privacynotice',
+    'https://alexion.com/Legal#termsofuse',
+    'https://alexion.com/contact-alexion',
+    'https://alexiononesource.com/'
+  ]
 
   const externalLinks = document.querySelectorAll(
     'a[target="_blank"]:not(.document-link)'
@@ -51,6 +62,11 @@
         const continueButton = modal.querySelector(".modal--continue");
         const stayButton = modal.querySelector(".modal--stay");
         const modalClose = modal.querySelector(".modal__close");
+        const modalText = modal.querySelector(".modal__text")
+
+        if (linksWithHideContent.indexOf(href) !== -1) {
+          modalText.style.setProperty('display', 'none')
+        }
 
         continueButton.setAttribute("href", href);
         continueButton.setAttribute("target", "_blank");
@@ -65,14 +81,10 @@
         continueButton.addEventListener("click", handleClickContinue);
 
         if (continueLink) {
-          continueLink.addEventListener("click", () => {
-            const secondaryLink = "https://alexion.com/Legal#privacynotice";
-
-            setTimeout(() => {
-              window.open(secondaryLink, "_blank");
-              instance.close();
-            }, 500);
-          });
+          const secondaryLink = "https://alexion.com/Legal#privacynotice";
+          continueLink.setAttribute('href', secondaryLink)
+          continueLink.setAttribute('target', '_blank')
+          continueLink.addEventListener("click", handleClickContinueLink);
         }
 
         instance = new Fancybox([{ src: "modal" }], {
@@ -86,6 +98,10 @@
           on: {
             close: () => {
               continueButton.removeEventListener('click', handleClickContinue)
+              if(continueLink) {
+                continueLink.removeEventListener("click", handleClickContinueLink)
+              }
+              modalText.style.removeProperty('display')
             },
           },
         });
@@ -95,6 +111,12 @@
             instance.close();
           }, 500);
           return;
+        }
+
+        function handleClickContinueLink (event) {
+          setTimeout(() => {
+            instance.close();
+          }, 500);
         }
       });
     });
