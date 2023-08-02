@@ -48,7 +48,7 @@
     "https://alexion.com/Legal#termsofuse",
     "https://alexion.com/contact-alexion",
     "https://alexiononesource.com/",
-    "https://alexion.com/Legal#privacynotice%5D"
+    "https://alexion.com/Legal#privacynotice%5D",
   ];
 
   if (externalLinks && externalLinks.length > 0) {
@@ -114,7 +114,9 @@
                   handleClickContinueLink
                 );
               }
-              modalText.style.removeProperty("display");
+              setTimeout(() => {
+                modalText.style.removeProperty("display");
+              }, 200);
             },
           },
         });
