@@ -1225,6 +1225,16 @@
                 }
             }
 
+            .table__footer {
+                sup {
+                    left: 3px;
+                }
+
+                span {
+                    text-indent: -3px;
+                }
+            }
+
             td,
             th {
                 text-align: left;
@@ -5951,6 +5961,12 @@ aqui
 
         }
 
+        @media screen and (min-width: 1024px) {
+            &:first-of-type {
+                max-width: 49ch;
+            }
+        }
+
         @include media('desktop') {
             font-size: 18px;
             line-height: 1.6875rem;
@@ -5958,9 +5974,6 @@ aqui
             max-width: 53ch;
             height: auto;
 
-            &:first-of-type {
-                max-width: 52ch;
-            }
         }
     }
 
@@ -6783,7 +6796,7 @@ aqui
 
             .cdchildren-container {
                 &__title {
-                    max-width: 35ch;
+                    max-width: 34ch;
                 }
 
                 &__footnote {
