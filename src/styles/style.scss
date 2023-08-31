@@ -1225,6 +1225,16 @@
                 }
             }
 
+            .table__footer {
+                sup {
+                    left: 3px;
+                }
+
+                span {
+                    text-indent: -3px;
+                }
+            }
+
             td,
             th {
                 text-align: left;
