@@ -1,0 +1,81 @@
+---
+export interface Props {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+---
+
+<div class={`video-modal ${className}`} id="video-modal" style="display: none;">
+  <div class="video-modal__head">
+    <button class="video-modal--close-modal" data-fancybox-close>×</button>
+    <div class="video-modal__header">
+      <h2 class="video-modal__title">Video title</h2>
+    </div>
+  </div>
+  <div class="video-modal__wrapper">
+    <div class="video-modal__content">
+      <div class="video-modal__content-video">
+        <slot name="video" />
+      </div>
+      <div class="video-modal__content-chapters">
+        <slot name="chapters" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { Fancybox } from "@fancyapps/ui";
+
+  class videoDataModal {
+    modal: Fancybox;
+
+    constructor() {
+      this.modal = undefined;
+    }
+
+    open() {
+      this.modal = new Fancybox([{ src: "video-modal" }], {
+        autoFocus: true,
+        defaultType: "inline",
+        placeFocusBack: true,
+        trapFocus: true,
+        closeButton: false,
+        defaultDisplay: "flex",
+        dragToClose: false,
+      });
+
+      activeChapter();
+    }
+
+    close() {
+      this.modal.close();
+    }
+  }
+
+  function activeChapter() {
+    const chapters = document.querySelectorAll(".chapter");
+
+    chapters.forEach((chapter) => {
+      chapter.addEventListener("click", (event) => {
+        event.preventDefault();
+        chapters.forEach((c) => {
+          c.classList.remove("--active");
+        });
+
+        chapter.classList.add("--active");
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const videoData = new videoDataModal();
+
+    const button = document.querySelector("[data-modal-trigger='video-modal']");
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      videoData.open();
+    });
+  });
+</script>

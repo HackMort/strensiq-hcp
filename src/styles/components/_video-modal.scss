@@ -1,0 +1,115 @@
+.video-modal {
+  width: 100%;
+  max-width: 70%;
+  border-radius: 10px;
+  &--close-modal {
+    position: absolute;
+    right: 1.5rem;
+    top: 0.5rem;
+    font-size: 3rem;
+    font-weight: 300;
+    color: $color-dark-pink;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: auto 35%;
+    grid-auto-rows: minmax(100px, auto); /* Set minimum height for rows */
+    margin-bottom: 2rem;
+
+    &-video {
+      height: fit-content;
+      max-height: fit-content;
+    }
+
+    &-chapters {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      max-height: 370px;
+
+      .chapter {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 0.8rem;
+        padding: 0.5rem;
+        border-bottom: 1px solid $color-light-gray;
+
+        &.--active {
+          background-color: $color-light-gray;
+        }
+        img {
+          width: 100px;
+          max-width: 100px;
+        }
+        &__info {
+          &--title {
+            font-size: 1rem;
+          }
+          &--desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0;
+          }
+        }
+      }
+
+      /* width */
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 10px 5px 5px $color-soft-gray;
+        border-radius: 10px;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: $color-dark-pink;
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #991576;
+      }
+
+      @media screen and (max-width: 1024px) {
+        margin-top: 1rem;
+        max-height: 310px;
+      }
+    }
+
+    @media screen and (max-width: 1280px) {
+      grid-template-columns: auto 50%;
+    }
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    max-width: 80%;
+    height: 90vh;
+    max-height: 90vh;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 95%;
+    height: 90vh;
+    max-height: 90vh;
+    overflow: hidden;
+  }
+}

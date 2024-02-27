@@ -1,4 +1,5 @@
 ---
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import "../styles/style.scss";
 import "../styles/settings/_design.scss";
 import Header from "../components/Header.astro";
@@ -14,6 +15,7 @@ import TipBox from "../components/TipBox.astro";
 import Table from "../components/Table/Table.astro";
 import TableHeader from "../components/Table/TableHeader.astro";
 import TableData from "../components/Table/TableData.astro";
+import Video from "../components/modal/Video.astro";
 //Table header data
 const mainHeaders = [
   { label: "" },
@@ -47,6 +49,7 @@ import studyData from "./clinical-data/data/study.js";
 
     <main id="content" role="main">
       <h1 class="title text--center">Design System</h1>
+
       <section class="design-system-section">
         <div class="section-wrapper section-wrapper--small">
           <h1 class="title">Colors</h1>
@@ -465,6 +468,139 @@ import studyData from "./clinical-data/data/study.js";
             </div>
           </Table>
         </div>
+      </section>
+
+      <section class="design-system-section">
+        <button class="button" data-modal-trigger="video-modal"
+          >View video</button
+        >
+        <Video>
+          <div slot="video">
+            <script
+              src="https://fast.wistia.com/embed/medias/30q7n48g4f.jsonp"
+              async
+            ></script>
+            <script src="https://fast.wistia.com/assets/external/E-v1.js" async
+            ></script>
+
+            <div
+              class="wistia_responsive_padding"
+              style="padding:52.71% 0 0 0;position:relative; max-height: 600px;"
+            >
+              <div
+                class="wistia_responsive_wrapper"
+                style="height:100%;left:0;position:absolute;top:0;width:100%;"
+              >
+                <div
+                  class="wistia_embed wistia_async_30q7n48g4f seo=false videoFoam=true"
+                  style="height:100%;position:relative;width:100%"
+                >
+                  <div
+                    class="wistia_swatch"
+                    style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"
+                  >
+                    <img
+                      src="https://fast.wistia.com/embed/medias/30q7n48g4f/swatch"
+                      style="filter:blur(5px);height:100%;object-fit:contain;width:100%;"
+                      alt=""
+                      aria-hidden="true"
+                      onload="this.parentNode.style.opacity=1;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div slot="chapters">
+            <a class="chapter --active" href="#wistia_30q7n48g4f?time=0">
+              <img
+                src="https://embed-ssl.wistia.com/deliveries/14f24e6e7a2a97589480047ddf01861bed07c2e9.jpg?video_still_time=0"
+                alt=""
+                srcset=""
+              />
+              <div class="chapter__info">
+                <h4 class="chapter__info--title">Part 1</h4>
+                <p class="chapter__info--desc">
+                  Title for the part goes here in max two lines height, making a
+                  sandwich
+                </p>
+              </div>
+            </a>
+            <a class="chapter" href="#wistia_30q7n48g4f?time=10">
+              <img
+                src="https://embed-ssl.wistia.com/deliveries/14f24e6e7a2a97589480047ddf01861bed07c2e9.jpg?video_still_time=10"
+                alt=""
+                srcset=""
+              />
+
+              <div class="chapter__info">
+                <h4 class="chapter__info--title">Part 2</h4>
+                <p class="chapter__info--desc">
+                  Title for the part goes here in max two lines height, making a
+                  sandwich
+                </p>
+              </div>
+            </a>
+            <a class="chapter" href="#wistia_30q7n48g4f?time=15">
+              <img
+                src="https://embed-ssl.wistia.com/deliveries/14f24e6e7a2a97589480047ddf01861bed07c2e9.jpg?video_still_time=15"
+                alt=""
+                srcset=""
+              />
+              <div class="chapter__info">
+                <h4 class="chapter__info--title">Part 3</h4>
+                <p class="chapter__info--desc">
+                  Title for the part goes here in max two lines height, making a
+                  sandwich
+                </p>
+              </div>
+              <a class="chapter" href="#wistia_30q7n48g4f?time=20">
+                <img
+                  src="https://embed-ssl.wistia.com/deliveries/14f24e6e7a2a97589480047ddf01861bed07c2e9.jpg?video_still_time=20"
+                  alt=""
+                  srcset=""
+                />
+                <div class="chapter__info">
+                  <h4 class="chapter__info--title">Part 4</h4>
+                  <p class="chapter__info--desc">
+                    Title for the part goes here in max two lines height, making
+                    a sandwich
+                  </p>
+                </div>
+              </a>
+
+              <a class="chapter" href="#wistia_30q7n48g4f?time=25">
+                <img
+                  src="https://embed-ssl.wistia.com/deliveries/14f24e6e7a2a97589480047ddf01861bed07c2e9.jpg?video_still_time=25"
+                  alt=""
+                  srcset=""
+                />
+                <div class="chapter__info">
+                  <h4 class="chapter__info--title">Part 5</h4>
+                  <p class="chapter__info--desc">
+                    Title for the part goes here in max two lines height, making
+                    a sandwich
+                  </p>
+                </div>
+              </a>
+
+              <a class="chapter" href="#wistia_30q7n48g4f?time=30">
+                <img
+                  src="https://embed-ssl.wistia.com/deliveries/14f24e6e7a2a97589480047ddf01861bed07c2e9.jpg?video_still_time=30"
+                  alt=""
+                  srcset=""
+                />
+                <div class="chapter__info">
+                  <h4 class="chapter__info--title">Part 6</h4>
+                  <p class="chapter__info--desc">
+                    Title for the part goes here in max two lines height, making
+                    a sandwich
+                  </p>
+                </div>
+              </a>
+            </a>
+          </div>
+        </Video>
       </section>
     </main>
     <script src="/assets/js/script.js" type="module"></script>
